@@ -8072,17 +8072,17 @@ body:not(.no-outline) .slide__link:focus {
     --padding-top: calc(var(--PT) + var(--radius-large));
   }
 }
-.section-footer--parallax .site-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* .section-footer--parallax .site-footer {
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* left: 0; */
   width: 100%;
-  height: var(--footer-parallax-height);
+  /* height: var(--footer-parallax-height); */
   transform: matrix(1, 0, 0, 1, 0, var(--transformY, 0));
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transform-style: preserve-3d;
-}
+} */
 @media only screen and (max-width: 767px) {
   .section-footer--parallax .site-footer {
     position: relative;

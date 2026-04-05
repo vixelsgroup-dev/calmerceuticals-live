@@ -1,4 +1,5 @@
 <!-- /sections/section-text.liquid -->
+
 {%- liquid
   assign section_width = section.settings.width
   assign unique = section.id
@@ -398,7 +399,7 @@
                       {%- assign animation_delay = animation_delay | plus: 150 -%}
                     {% endif %}
                     {{ block.shopify_attributes }}>
-                    <a href="{{ button_link | default: '#!' }}" class="btn {{ button_style }} {{ button_size }} {{ button_color }} {{ button_advanced_class }}">
+                    <a href="{{ button_link | default: '#!' }}" class="btn {{ button_style }} {{ button_size }} {{ button_color }} {{ button_advanced_class }}" style="border-radius:0;">
                       <hover-button></hover-button>
                       {{- button_text -}}
                     </a>
