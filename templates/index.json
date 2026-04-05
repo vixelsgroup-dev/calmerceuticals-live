@@ -409,6 +409,141 @@
         "placeholder_color": "#7b324d"
       }
     },
+    "brand_comparison_m3Kp9n": {
+      "type": "brand-comparison",
+      "name": "Brand comparison",
+      "settings": {
+        "logo_alt": "CalmerCeuticals",
+        "subtitle": "VS. Other Collagen Brands",
+        "product_image_us_alt": "CalmerCeuticals liquid collagen sachet",
+        "product_image_other_alt": "Generic collagen powder sachet",
+        "table_caption": "Comparison of CalmerCeuticals versus other collagen brands",
+        "label_column_heading": "",
+        "us_column_heading": "CalmerCeuticals",
+        "other_column_heading": "Other Collagen Brands",
+        "max_container_width": "1440",
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "background_color": "#ffffff",
+        "accent_color": "#610c27",
+        "text_color": "#1a1a1a",
+        "other_column_text_color": "#323232",
+        "muted_text_color": "#555555",
+        "subtitle_color": "#323232",
+        "divider_color": "#e5e5e5",
+        "footnote": ""
+      },
+      "blocks": {
+        "bc_row_a1": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Clinical Dose Per Serve",
+            "show_us_icon": true,
+            "us_title": "10,000mg VERISOL®",
+            "us_subtext": "Minimum therapeutic dose for biological response.",
+            "show_other_icon": true,
+            "other_title": "1–5g typical",
+            "other_subtext": "Below the effective threshold"
+          }
+        },
+        "bc_row_a2": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Delivery Format",
+            "show_us_icon": true,
+            "us_title": "Liquid (~95% absorption)",
+            "us_subtext": "Absorbs directly through the intestinal wall.",
+            "show_other_icon": true,
+            "other_title": "Powder or Capsule",
+            "other_subtext": "Loses potency through additional digestion."
+          }
+        },
+        "bc_row_a3": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Peer-Reviewed Ingredients",
+            "show_us_icon": true,
+            "us_title": "VERISOL® Patented",
+            "us_subtext": "Clinically studied and backed by published data.",
+            "show_other_icon": true,
+            "other_title": "Generic Collagen",
+            "other_subtext": "Unpatented with no proven clinical data."
+          }
+        },
+        "bc_row_a4": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Complete Skin System",
+            "show_us_icon": true,
+            "us_title": "Full System Formula",
+            "us_subtext": "Includes Vitamin C co-factors for synthesis.",
+            "show_other_icon": true,
+            "other_title": "Peptide Only",
+            "other_subtext": "Lacks the co-factors needed to build fibers."
+          }
+        },
+        "bc_row_a5": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Measurable Results",
+            "show_us_icon": true,
+            "us_title": "Visible from 4 Weeks†",
+            "us_subtext": "Documented structural changes at 8-12 weeks.",
+            "show_other_icon": true,
+            "other_title": "No Timeline Given",
+            "other_subtext": "Results are often anecdotal, not documented."
+          }
+        },
+        "bc_row_a6": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Purity & Fillers",
+            "show_us_icon": true,
+            "us_title": "Zero Fillers",
+            "us_subtext": "100% active ingredients; no synthetic binders.",
+            "show_other_icon": true,
+            "other_title": "Common in Category",
+            "other_subtext": "Often contains bulking agents and padding."
+          }
+        },
+        "bc_row_a7": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Ingredient Integrity",
+            "show_us_icon": true,
+            "us_title": "Therapeutic Doses Only",
+            "us_subtext": "No 'trace-level' dosing for marketing appeal.",
+            "show_other_icon": true,
+            "other_title": "Label Dressing",
+            "other_subtext": "Ingredients added at doses too low to function."
+          }
+        },
+        "bc_row_a8": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Origin",
+            "show_us_icon": true,
+            "us_title": "Australian Made",
+            "us_subtext": "Formulated to strict clinical standards.",
+            "show_other_icon": true,
+            "other_title": "Often Unspecified",
+            "other_subtext": "Frequently outsourced or cost-optimised."
+          }
+        }
+      },
+      "block_order": [
+        "bc_row_a1",
+        "bc_row_a2",
+        "bc_row_a3",
+        "bc_row_a4",
+        "bc_row_a5",
+        "bc_row_a6",
+        "bc_row_a7",
+        "bc_row_a8"
+      ]
+    },
     "product_cards_slider_6cbNy7": {
       "type": "product-cards-slider",
       "blocks": {
@@ -902,6 +1037,7 @@
     "featured_product_grid_U7hdWd",
     "custom_videos_slider_7n67zb",
     "clinical_stats_hhXJ4n",
+    "brand_comparison_m3Kp9n",
     "product_cards_slider_6cbNy7",
     "global_spotlight_iEKXU4",
     "testimonial_showcase_3jgHQx",

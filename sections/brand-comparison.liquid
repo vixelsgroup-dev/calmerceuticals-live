@@ -1,0 +1,530 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400&display=swap"
+  rel="stylesheet"
+>
+{{ 'brand-comparison.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign bc_pt_mobile = section.settings.padding_top_mobile | default: 48
+  assign bc_pb_mobile = section.settings.padding_bottom_mobile | default: 48
+  assign bc_pt_desktop = section.settings.padding_top_desktop | default: 72
+  assign bc_pb_desktop = section.settings.padding_bottom_desktop | default: 72
+  assign bc_container_max = section.settings.max_container_width | default: '1440'
+
+  if bc_container_max == 'full'
+    assign bc_container_max_css = 'none'
+  else
+    assign bc_container_max_css = bc_container_max | append: 'px'
+  endif
+
+  assign fallback_logo = 'https://cdn.shopify.com/s/files/1/0657/6907/8877/files/CalmerCeuticals_Master_BURGUNDY_1.png?v=1775410268'
+  assign fallback_img_us = 'https://cdn.shopify.com/s/files/1/0657/6907/8877/files/9956b04e-4ae3-4462-8750-71c321bc5b74_3.png?v=1775410382'
+  assign fallback_img_other = 'https://cdn.shopify.com/s/files/1/0657/6907/8877/files/9956b04e-4ae3-4462-8750-71c321bc5b74_3_1.png?v=1775410383'
+
+  assign logo_href = routes.root_url
+  if section.settings.logo_link != blank
+    assign logo_href = section.settings.logo_link
+  endif
+  assign logo_alt_text = section.settings.logo_alt | default: shop.name
+  assign cap_us = section.settings.product_image_us_alt | default: section.settings.us_column_heading
+  assign cap_other = section.settings.product_image_other_alt | default: section.settings.other_column_heading
+%}
+
+<section
+  id="BrandComparison-{{ section.id }}"
+  class="brand-comparison"
+  style="
+    --bc-bg: {{ section.settings.background_color }};
+    --bc-accent: {{ section.settings.accent_color }};
+    --bc-text: {{ section.settings.text_color }};
+    --bc-text-other: {{ section.settings.other_column_text_color }};
+    --bc-text-muted: {{ section.settings.muted_text_color }};
+    --bc-subtitle-color: {{ section.settings.subtitle_color }};
+    --bc-divider: {{ section.settings.divider_color }};
+    --bc-container-max: {{ bc_container_max_css }};
+    --bc-pt-mobile: {{ bc_pt_mobile }}px;
+    --bc-pb-mobile: {{ bc_pb_mobile }}px;
+    --bc-pt-desktop: {{ bc_pt_desktop }}px;
+    --bc-pb-desktop: {{ bc_pb_desktop }}px;
+  "
+  {{ section.shopify_attributes }}
+>
+  <div class="brand-comparison__inner">
+    <header class="brand-comparison__header">
+      {% if section.settings.logo != blank %}
+        <a class="brand-comparison__logo" href="{{ logo_href }}">
+          {{
+            section.settings.logo
+            | image_url: width: 800
+            | image_tag: class: 'brand-comparison__logo-img', loading: 'lazy', alt: logo_alt_text
+          }}
+        </a>
+      {% else %}
+        <a class="brand-comparison__logo" href="{{ logo_href }}">
+          <img
+            class="brand-comparison__logo-img"
+            src="{{ fallback_logo }}"
+            alt="{{ logo_alt_text | escape }}"
+            width="400"
+            height="120"
+            loading="lazy"
+          >
+        </a>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="brand-comparison__subtitle">{{ section.settings.subtitle | escape }}</p>
+      {% endif %}
+    </header>
+
+    <div class="brand-comparison__scroll">
+      <table class="brand-comparison__table">
+        <caption>
+          {% if section.settings.table_caption != blank %}
+            {{ section.settings.table_caption | escape }}
+          {% else %}
+            {{ section.settings.subtitle | escape }}
+          {% endif %}
+        </caption>
+        <colgroup class="brand-comparison__colgroup">
+          <col class="brand-comparison__colgroup-col brand-comparison__colgroup-col--label" span="1">
+          <col class="brand-comparison__colgroup-col brand-comparison__colgroup-col--us" span="1">
+          <col class="brand-comparison__colgroup-col brand-comparison__colgroup-col--other" span="1">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td class="brand-comparison__product-cell brand-comparison__product-cell--label brand-comparison__col-label"></td>
+            <td class="brand-comparison__product-cell brand-comparison__product-cell--us brand-comparison__col-us">
+              {% if section.settings.product_image_us != blank %}
+                {{
+                  section.settings.product_image_us
+                  | image_url: width: 1400
+                  | image_tag: class: 'brand-comparison__product-img', loading: 'lazy', alt: cap_us
+                }}
+              {% else %}
+                <img
+                  class="brand-comparison__product-img"
+                  src="{{ fallback_img_us }}"
+                  alt="{{ cap_us | escape }}"
+                  width="300"
+                  height="400"
+                  loading="lazy"
+                >
+              {% endif %}
+            </td>
+            <td class="brand-comparison__product-cell brand-comparison__product-cell--other brand-comparison__col-other">
+              {% if section.settings.product_image_other != blank %}
+                {{
+                  section.settings.product_image_other
+                  | image_url: width: 1400
+                  | image_tag: class: 'brand-comparison__product-img brand-comparison__product-img--other', loading: 'lazy', alt: cap_other
+                }}
+              {% else %}
+                <img
+                  class="brand-comparison__product-img brand-comparison__product-img--other"
+                  src="{{ fallback_img_other }}"
+                  alt="{{ cap_other | escape }}"
+                  width="300"
+                  height="400"
+                  loading="lazy"
+                >
+              {% endif %}
+            </td>
+          </tr>
+
+          {% for block in section.blocks %}
+            {% if block.type == 'row' %}
+              <tr {{ block.shopify_attributes }}>
+                <td class="brand-comparison__cell brand-comparison__cell--label brand-comparison__col-label">
+                  {{ block.settings.feature_label | escape }}
+                </td>
+                <td class="brand-comparison__cell brand-comparison__cell--us brand-comparison__col-us">
+                  <div class="brand-comparison__line">
+                    {% if block.settings.show_us_icon %}
+                      <span class="brand-comparison__icon brand-comparison__icon--yes" aria-hidden="true">✓</span>
+                    {% endif %}
+                    <div class="brand-comparison__text">
+                      {% if block.settings.us_title != blank %}
+                        <p class="brand-comparison__title-line">{{ block.settings.us_title | escape }}</p>
+                      {% endif %}
+                      {% if block.settings.us_subtext != blank %}
+                        <p class="brand-comparison__sub-line">{{ block.settings.us_subtext | escape }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </td>
+                <td class="brand-comparison__cell brand-comparison__cell--other brand-comparison__col-other">
+                  <div class="brand-comparison__line">
+                    {% if block.settings.show_other_icon %}
+                      <span class="brand-comparison__icon brand-comparison__icon--no" aria-hidden="true">✕</span>
+                    {% endif %}
+                    <div class="brand-comparison__text">
+                      {% if block.settings.other_title != blank %}
+                        <p class="brand-comparison__title-line">{{ block.settings.other_title | escape }}</p>
+                      {% endif %}
+                      {% if block.settings.other_subtext != blank %}
+                        <p class="brand-comparison__sub-line">{{ block.settings.other_subtext | escape }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if section.settings.footnote != blank %}
+      <div class="brand-comparison__footnote rte">{{ section.settings.footnote }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand comparison",
+  "tag": "section",
+  "class": "section-brand-comparison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "If empty, the theme uses the default CalmerCeuticals logo URL."
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "CalmerCeuticals"
+    },
+    {
+      "type": "url",
+      "id": "logo_link",
+      "label": "Logo link",
+      "info": "Optional. Defaults to home page when blank."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "VS. Other Collagen Brands"
+    },
+    {
+      "type": "header",
+      "content": "Product images (top row)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_us",
+      "label": "Our product image",
+      "info": "Middle column. Falls back to bundled default URL when empty."
+    },
+    {
+      "type": "text",
+      "id": "product_image_us_alt",
+      "label": "Our product image alt text",
+      "default": "CalmerCeuticals liquid collagen sachet"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_other",
+      "label": "Other brands product image",
+      "info": "Right column. Falls back to bundled default URL when empty."
+    },
+    {
+      "type": "text",
+      "id": "product_image_other_alt",
+      "label": "Other product image alt text",
+      "default": "Generic collagen powder sachet"
+    },
+    {
+      "type": "header",
+      "content": "Accessibility"
+    },
+    {
+      "type": "text",
+      "id": "table_caption",
+      "label": "Table caption (screen readers)",
+      "default": "Comparison of CalmerCeuticals versus other collagen brands"
+    },
+    {
+      "type": "text",
+      "id": "label_column_heading",
+      "label": "Left column name (context only)",
+      "default": "Feature",
+      "info": "Used for assistive tech context. The visible column header row is not shown."
+    },
+    {
+      "type": "text",
+      "id": "us_column_heading",
+      "label": "Our brand column name (alt fallback)",
+      "default": "CalmerCeuticals"
+    },
+    {
+      "type": "text",
+      "id": "other_column_heading",
+      "label": "Other brands column name (alt fallback)",
+      "default": "Other Collagen Brands"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "max_container_width",
+      "label": "Max width",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "1200", "label": "1200px" },
+        { "value": "1280", "label": "1280px" },
+        { "value": "1440", "label": "1440px" },
+        { "value": "1536", "label": "1536px" }
+      ],
+      "default": "1440"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Brand column (middle) background",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Left column text",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "other_column_text_color",
+      "label": "Right column main text",
+      "default": "#323232"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Muted / secondary text",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle text",
+      "default": "#323232"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Row dividers",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "header",
+      "content": "Footnote"
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote",
+      "info": "Optional disclaimer (e.g. dagger reference)."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_label",
+          "label": "Feature label (left)",
+          "default": "Clinical dose per serve"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_us_icon",
+          "label": "Show checkmark (us)",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "us_title",
+          "label": "Our brand — main line",
+          "default": "10,000mg VERISOL®"
+        },
+        {
+          "type": "text",
+          "id": "us_subtext",
+          "label": "Our brand — subline",
+          "default": "Minimum therapeutic dose for biological response."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_other_icon",
+          "label": "Show cross (others)",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "other_title",
+          "label": "Others — main line",
+          "default": "1–5g typical"
+        },
+        {
+          "type": "text",
+          "id": "other_subtext",
+          "label": "Others — subline",
+          "default": "Below the effective threshold"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "Brand comparison",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Clinical Dose Per Serve",
+            "us_title": "10,000mg VERISOL®",
+            "us_subtext": "Minimum therapeutic dose for biological response.",
+            "other_title": "1–5g typical",
+            "other_subtext": "Below the effective threshold"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Delivery Format",
+            "us_title": "Liquid (~95% absorption)",
+            "us_subtext": "Absorbs directly through the intestinal wall.",
+            "other_title": "Powder or Capsule",
+            "other_subtext": "Loses potency through additional digestion."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Peer-Reviewed Ingredients",
+            "us_title": "VERISOL® Patented",
+            "us_subtext": "Clinically studied and backed by published data.",
+            "other_title": "Generic Collagen",
+            "other_subtext": "Unpatented with no proven clinical data."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Complete Skin System",
+            "us_title": "Full System Formula",
+            "us_subtext": "Includes Vitamin C co-factors for synthesis.",
+            "other_title": "Peptide Only",
+            "other_subtext": "Lacks the co-factors needed to build fibers."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Measurable Results",
+            "us_title": "Visible from 4 Weeks†",
+            "us_subtext": "Documented structural changes at 8-12 weeks.",
+            "other_title": "No Timeline Given",
+            "other_subtext": "Results are often anecdotal, not documented."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Purity & Fillers",
+            "us_title": "Zero Fillers",
+            "us_subtext": "100% active ingredients; no synthetic binders.",
+            "other_title": "Common in Category",
+            "other_subtext": "Often contains bulking agents and padding."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Ingredient Integrity",
+            "us_title": "Therapeutic Doses Only",
+            "us_subtext": "No 'trace-level' dosing for marketing appeal.",
+            "other_title": "Label Dressing",
+            "other_subtext": "Ingredients added at doses too low to function."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "feature_label": "Origin",
+            "us_title": "Australian Made",
+            "us_subtext": "Formulated to strict clinical standards.",
+            "other_title": "Often Unspecified",
+            "other_subtext": "Frequently outsourced or cost-optimised."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
