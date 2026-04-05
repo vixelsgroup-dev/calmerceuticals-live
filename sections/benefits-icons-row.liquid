@@ -1,0 +1,294 @@
+{% comment %}
+  Section: Benefits Icons Row
+  Features: Dynamic items, rich text descriptions, padding controls, mobile responsive
+{% endcomment %}
+
+<section class="benefits-icons-row" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color: {{ section.settings.background_color }};">
+  <div class="benefits-icons-row__container {% if section.settings.container_width %}wrapper {% endif %}">
+    <div class="benefits-icons-row__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit_item' %}
+          <div class="benefits-icons-row__item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="benefits-icons-row__icon-wrap">
+                <img
+                  src="{{ block.settings.icon | img_url: '120x120' }}"
+                  alt="{{ block.settings.icon.alt | escape }}"
+                  class="benefits-icons-row__icon"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                >
+              </div>
+            {% else %}
+              <div class="benefits-icons-row__icon-wrap benefits-icons-row__icon-wrap--placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" class="benefits-icons-row__icon">
+                  <circle cx="40" cy="40" r="36" stroke="#4a5568" stroke-width="2"/>
+                  <path d="M28 40h24M40 28v24" stroke="#4a5568" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+            {% endif %}
+            <div class="benefits-icons-row__text">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.disclaimer != blank %}
+      <div class="benefits-icons-row__disclaimer">
+        {{ section.settings.disclaimer }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .benefits-icons-row {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .benefits-icons-row__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .benefits-icons-row__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .benefits-icons-row__icon-wrap {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .benefits-icons-row__icon-wrap--placeholder svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .benefits-icons-row__icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .benefits-icons-row__text p {
+    font-size: {{ section.settings.font_size }}px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.4;
+    font-family:"Jost" ;
+    font-weight: 400;
+  }
+
+  .benefits-icons-row__text strong,
+  .benefits-icons-row__text b {
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+  }
+
+  .benefits-icons-row__disclaimer > * {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #3A3D38;
+    font-family: 'Jost' ;
+  }
+
+  /* Tablet: 2-3 columns */
+  @media screen and (max-width: 1024px) {
+    .benefits-icons-row__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .benefits-icons-row__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  /* Mobile: 1 column */
+  @media screen and (max-width: 480px) {
+    .benefits-icons-row__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .benefits-icons-row__item {
+      flex-direction: row;
+      text-align: left;
+      gap: 16px;
+    }
+
+    .benefits-icons-row__icon-wrap {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+    }
+
+    .benefits-icons-row__icon {
+      width: 60px;
+      height: 60px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Benefits Icons Row",
+  "tag": "section",
+  "class": "section-benefits-icons",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 48
+    },
+     {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors & Typography"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f7f8fc"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2d3748"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer Text",
+      "default": "<p>*Studies conducted on the ingredient complex; not on the finished product. Individual results may vary.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_item",
+      "name": "Benefit Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description Text",
+          "info": "Use bold formatting for highlighted numbers/text. Supports line breaks.",
+          "default": "<p>Brain antioxidant protection increased by <strong>up to 67%</strong></p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Icons Row",
+      "blocks": [
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Brain antioxidant protection increased by <strong>up to 67%</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Cellular stress markers reduced by <strong>approximately 40%</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Learning and memory performance improved by <strong>over 80%</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Inflammatory markers improved by up to <strong>90% within 2 weeks</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Neuronal resilience and cell survival increased <strong>by nearly 60%</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Short-chain fatty acids increased by <strong>up to 2x</strong></p>"
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "description": "<p>Beneficial gut bacteria and short-chain <strong>fatty acids increased</strong></p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

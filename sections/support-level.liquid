@@ -1,0 +1,353 @@
+{% comment %}
+  Section: Support at Every Level
+  - Light grey bg
+  - Top: two columns (left = big heading + pill button, right = body text)
+  - Bottom: white rounded card with centered text
+{% endcomment %}
+
+<section class="sel-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="sel-section__inner {% if section.settings.container_width %}wrapper {% endif %}">
+
+    <!-- TOP ROW: Heading + Body text -->
+    <div class="sel-section__top">
+
+      <!-- Left: Heading + Button -->
+      <div class="sel-section__left">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="sel-section__heading" >
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        
+        <div class="btn__group flex_group-btn">
+          {%- if section.settings.button_label != blank -%}
+            <a href="{{ section.settings.button_link }}" class="sel-section__btn hidden-mobile"
+              style="background: {{ section.settings.button_bg }}; color: {{ section.settings.button_text_color }};">
+              <span class="sel-btn-desktop">{{ section.settings.button_label }}</span>
+              <span class="sel-btn-mobile">{{ section.settings.mobile_button_label | default: section.settings.button_label }}</span>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.secondary_button_label != blank -%}
+            <a href="{{ section.settings.secondary_button_link }}" class="sel-section__btn sel-secondary_section__btn hidden-mobile"
+              style="background: {{ section.settings.secondary_button_bg }}; color: {{ section.settings.secondary_button_text_color }}; border: 1px solid {{ section.settings.secondary_btn_border_color }};">
+              <span class="sel-btn-desktop">{{ section.settings.secondary_button_label }}</span>
+              <span class="sel-btn-mobile">{{ section.settings.mobile_secondary_button_label | default: section.settings.secondary_button_label }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Right: Body paragraph -->
+      <div class="sel-section__right">
+        {%- if section.settings.body_text != blank -%}
+          <div class="sel-section__body">
+            {{ section.settings.body_text }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link }}" class="sel-section__btn hidden-desktop"
+            style="background: {{ section.settings.button_bg }}; color: {{ section.settings.button_text_color }};">
+            <span class="sel-btn-desktop">{{ section.settings.button_label }}</span>
+            <span class="sel-btn-mobile">{{ section.settings.mobile_button_label | default: section.settings.button_label }}</span>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_button_label != blank -%}
+          <a href="{{ section.settings.secondary_button_link }}" class="sel-section__btn sel-secondary_section__btn hidden-desktop"
+            style="background: {{ section.settings.secondary_button_bg }}; color: {{ section.settings.secondary_button_text_color }}; border: 1px solid #000;">
+            <span class="sel-btn-desktop">{{ section.settings.secondary_button_label }}</span>
+            <span class="sel-btn-mobile">{{ section.settings.mobile_secondary_button_label | default: section.settings.secondary_button_label }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    <!-- BOTTOM: White rounded card -->
+    {%- if section.settings.card_text != blank -%}
+      <div class="sel-section__card" style="background: {{ section.settings.card_bg }}; border-radius: {{ section.settings.card_radius }}px;">
+        <p class="sel-section__card-text">
+          {{ section.settings.card_text }}
+        </p>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+.sel-section { width: 100%; box-sizing: border-box; }
+.sel-section__inner { margin: 0 auto; display: flex; flex-direction: column; gap: 35px; }
+/* TOP ROW */
+.sel-section__top { display: flex; justify-content: space-between; align-items: start;  }
+/* LEFT */
+.sel-section__left { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; width: 65%; }
+.sel-section__heading > * {font-family:"Jost"; font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -1px; color: {{ section.settings.heading_color }}; font-size: {{ section.settings.heading_size }}px; }
+.sel-section__heading > strong, .sel-section__heading > b { font-weight: 600; }
+.sel-section__heading p { margin: 0; }
+/* BUTTON */
+.btn__group.flex_group-btn{display: flex; justify-content: start; align-items: center; gap: 10px;}
+.sel-section__btn { border-radius: 100px; font-size: 16px; letter-spacing: 0%; text-transform: uppercase; font-weight: 400; text-decoration: none; max-width:414px; min-width: 350px; height: 53px; display: flex; justify-content: center; align-items:center;}
+/* RIGHT */
+.sel-section__right {    width: 35%; display: flex; align-items: center; justify-content: flex-end; }
+.sel-section__body > * {font-family:"Jost" ; line-height: calc( {{ section.settings.body_size }}px + 5px); color: {{ section.settings.body_color }}; font-size: {{ section.settings.body_size }}px; font-weight: 400;}
+.sel-section__body p { margin: 0; }
+/* BOTTOM CARD */
+.sel-section__card { width: 100%; box-sizing: border-box; padding: 24px 40px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 4px 12px 0px #00000012; }
+.sel-section__card-text { margin: 0; text-align: center; font-weight: 500; line-height: 1.5; color: {{ section.settings.card_text_color }}; font-size: {{ section.settings.card_text_size }}px;letter-spacing: -2%; font-family: "Jost"; }
+.sel-section__btn.hidden-desktop{display: none;}
+.sel-btn-mobile { display: none; }
+.sel-btn-desktop { display: inline; }
+
+@media screen and (min-width: 1001px) and (max-width: 1250px){
+  .sel-section__btn{min-width: 300px; font-size: 14px;}
+   .btn__group.flex_group-btn{flex-wrap: wrap;}
+}
+@media screen and (max-width: 1000px){
+  .sel-section__btn{min-width: 280px; font-size: 13px;}
+  .btn__group.flex_group-btn{flex-wrap: wrap;}
+}
+/* RESPONSIVE */
+@media screen and (max-width: 767px) {
+.sel-btn-desktop { display: none; }
+.sel-btn-mobile { display: inline; }
+.sel-section{padding-top: 90px !important; padding-bottom : 30px !important;}
+.sel-section__btn{min-width: 350px;}
+.sel-section__btn.hidden-mobile{display: none;}
+.sel-section__btn.hidden-desktop{display: flex;}
+.sel-section__top {flex-direction : column; justify-content: start;align-items: start; gap: 16px;}
+.sel-section__heading > *{font-size: 34px; line-height: 36px;}
+.sel-section__left{width: 100%; flex-direction: row; justify-content: center;}
+.sel-section__right{width: 100%; flex-direction: column; align-items: center; gap: 10px}
+.sel-section__right .sel-section__body{text-align:center;}
+.sel-section__body { max-width: 100%; }
+.sel-section__card-text{font-size: 16px; line-height: 17px;}
+.sel-section__card{padding: 38px 19px; border-radius: 0 !important;}
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Support at Every Level",
+  "tag": "section",
+  "class": "section-sel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+   {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background",
+      "default": "#f4f3f1"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Text Color",
+      "default": "#4a4040"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "<p>Support at<br>Every Level</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 28,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "START YOUR REJUVENATION"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_label",
+      "label": "Button Label (Mobile)",
+      "info": "Leave blank to use desktop label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color_background",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "radial-gradient(93.96% 93.96% at 54.14% 82.02%, #8A4C5B 0%, #170D0F 100%)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Secondary Button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary Button Label",
+      "default": "START YOUR REJUVENATION"
+    },
+    {
+      "type": "text",
+      "id": "mobile_secondary_button_label",
+      "label": "Secondary Button Label (Mobile)",
+      "info": "Leave blank to use desktop label"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "color_background",
+      "id": "secondary_button_bg",
+      "label": "Secondary Button Background",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text_color",
+      "label": "Secondary Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_border_color",
+      "label": "Secondary Button Border Color",
+      "default" : "#000"
+    },
+    {
+      "type": "header",
+      "content": "Body Text (Right Column)"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Paragraph",
+      "default": "<p>Longevity is systemic. When the core biological pathways that govern energy, inflammation, and repair are supported consistently, resilience strengthens over time</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Body Font Size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Bottom Card"
+    },
+    {
+      "type": "color_background",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "Longevity is built through consistency, not intensity."
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Text Font Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Text Color",
+      "default": "#2a1a1e"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support at Every Level"
+    }
+  ]
+}
+{% endschema %}

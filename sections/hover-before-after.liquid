@@ -1,0 +1,850 @@
+{% comment %}
+  ============================================================
+  Section: Before / After Accordion Reveal
+  File:    sections/before-after-accordion.liquid
+
+  DESKTOP: Accordion — all pairs visible as strips, hover/auto
+           expands the whole pair (before + after side by side).
+  MOBILE:  One pair at a time, full-width drag-to-reveal slider
+           with dot pagination to switch between pairs.
+  Same blocks/images used for both layouts.
+  ============================================================
+{% endcomment %}
+
+<section
+  class="baa-section"
+  id="baa-{{ section.id }}"
+  style="
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="inner {% if section.settings.container_width %} wrapper {% endif %}">
+
+  {%- if section.settings.heading != blank or section.settings.subtext != blank -%}
+    <div class="baa-section__heading-block">
+      {%- if section.settings.heading != blank -%}
+        <div class="wis-section__heading">{{ section.settings.heading }}</div>
+      {%- endif -%}
+      {%- if section.settings.subtext != blank -%}
+        <p class="wis-section__subtext">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <!-- ══════════════════════════════════════
+       DESKTOP: Accordion strip layout
+       ══════════════════════════════════════ -->
+  <div class="baa-track" id="baa-track-{{ section.id }}">
+    {% for block in section.blocks %}
+      {% if block.type == 'pair' %}
+        <div class="baa-pair" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          <div class="baa-half baa-half--before">
+            {%- if block.settings.before_image != blank -%}
+              <img src="{{ block.settings.before_image | image_url: width: 900 }}"
+                   alt="{{ block.settings.before_image.alt | default: 'Before' | escape }}"
+                   loading="lazy" draggable="false">
+            {%- else -%}
+              <div class="baa-placeholder" style="background:#c0a8a8;"><span>Before</span></div>
+            {%- endif -%}
+          </div>
+          <div class="baa-half baa-half--after">
+            {%- if block.settings.after_image != blank -%}
+              <img src="{{ block.settings.after_image | image_url: width: 900 }}"
+                   alt="{{ block.settings.after_image.alt | default: 'After' | escape }}"
+                   loading="lazy" draggable="false">
+            {%- else -%}
+              <div class="baa-placeholder" style="background:#a8b8a8;"><span>After</span></div>
+            {%- endif -%}
+          </div>
+          <div class="baa-divider"></div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MOBILE: Drag slider + dot pagination
+       ══════════════════════════════════════ -->
+  <div class="baa-mobile" id="baa-mobile-{{ section.id }}">
+
+    <!-- Slides wrapper -->
+    <div class="baa-mobile__slides">
+      {% assign pair_index = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'pair' %}
+          <div class="baa-mobile__slide{% if pair_index == 0 %} is-active{% endif %}" data-slide="{{ pair_index }}">
+
+            <!-- The drag comparison container -->
+            <div class="baa-drag" data-drag-split="50">
+
+              <!-- AFTER image (bottom layer, full width) -->
+              <div class="baa-drag__after">
+                {%- if block.settings.after_image != blank -%}
+                  <img src="{{ block.settings.after_image | image_url: width: 900 }}"
+                       alt="{{ block.settings.after_image.alt | default: 'After' | escape }}"
+                       loading="lazy" draggable="false">
+                {%- else -%}
+                  <div class="baa-placeholder" style="background:#a8b8a8;"><span>After</span></div>
+                {%- endif -%}
+              </div>
+
+              <!-- BEFORE image (top layer, clipped) -->
+              <div class="baa-drag__before">
+                {%- if block.settings.before_image != blank -%}
+                  <img src="{{ block.settings.before_image | image_url: width: 900 }}"
+                       alt="{{ block.settings.before_image.alt | default: 'Before' | escape }}"
+                       loading="lazy" draggable="false">
+                {%- else -%}
+                  <div class="baa-placeholder" style="background:#c0a8a8;"><span>Before</span></div>
+                {%- endif -%}
+              </div>
+
+              <!-- Drag handle -->
+              <div class="baa-drag__line">
+                <div class="baa-drag__handle" aria-label="Drag to compare">
+  <!-- left arrow -->
+  <svg class="left-svg" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="15,4 7,12 15,20" fill="black"/>
+  </svg>
+  <!-- right arrow -->
+  <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="9,4 17,12 9,20" fill="black"/>
+  </svg>
+</div>
+              </div>
+
+            </div><!-- /.baa-drag -->
+          </div><!-- /.baa-mobile__slide -->
+          {% assign pair_index = pair_index | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div><!-- /.baa-mobile__slides -->
+
+    <!-- Dot navigation -->
+    {% if section.blocks.size > 1 %}
+      <div class="baa-mobile__dots" id="baa-dots-{{ section.id }}">
+        {% assign dot_index = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'pair' %}
+            <button
+              class="baa-mobile__dot{% if dot_index == 0 %} is-active{% endif %}"
+              data-dot="{{ dot_index }}"
+              aria-label="Go to slide {{ dot_index | plus: 1 }}"
+            ></button>
+            {% assign dot_index = dot_index | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div><!-- /.baa-mobile -->
+
+  <!-- CTA Buttons -->
+  <div class="wis_section-btn-group">
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link }}" class="hover-section__btn hover-section__main-btn">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.secondary_button_label != blank -%}
+      <a href="{{ section.settings.secondary_button_link }}" class="hover-section__secondary_btn hover-section__main-btn">
+        {{ section.settings.secondary_button_label }}
+      </a>
+    {%- endif -%}
+  </div>
+  <div class="footer__hover-text">
+      {{section.settings.footer_hover_text }}
+  </div>
+
+    </div>
+</section>
+
+
+<style>
+/* ═══════════════════════════════════════════════════
+   Shared
+   ═══════════════════════════════════════════════════ */
+#baa-{{ section.id }} { font-family: inherit; }
+
+.baa-section__heading-block {
+  text-align: center;
+  margin-bottom: 28px;
+  padding: 0 20px;
+}
+.wis-section__heading { margin: 0 0 14px 0; }
+.wis-section__heading > * {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  color: {{ section.settings.heading_color }};
+  font-size: {{ section.settings.heading_size }}px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+.wis-section__heading strong,
+.wis-section__heading b { font-weight: 500; }
+.wis-section__subtext {
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  line-height: 120%;
+  margin: 0;
+  font-weight: 400;
+  color: {{ section.settings.subtext_color }};
+}
+
+.baa-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.baa-placeholder span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Buttons */
+.wis_section-btn-group {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 0 20px;
+}
+.hover-section__main-btn {
+  min-width: 410px;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hover-section__btn {
+  font-family: "Jost", sans-serif;
+  border-radius: 100px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  background: {{ section.settings.button_bg }};
+  color: {{ section.settings.button_text_color }};
+}
+.hover-section__secondary_btn {
+  font-family: "Jost", sans-serif;
+  border-radius: 100px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  background: transparent;
+  color: #8A4C5B;
+  border: 1px solid #610C27;
+}
+
+/* ═══════════════════════════════════════════════════
+   DESKTOP — Accordion
+   ═══════════════════════════════════════════════════ */
+.baa-mobile { display: none; }
+
+.baa-track {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: {{ section.settings.height }}px;
+  overflow: hidden;
+  gap: 4px;
+  padding: 0 {{ section.settings.side_padding }}px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.baa-pair {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: flex 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.baa-pair.is-expanded { flex: 1 1 0; }
+.baa-track.has-expanded .baa-pair:not(.is-expanded) { flex: 0.35 1 0; }
+
+.baa-half {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.baa-half img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.baa-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(255,255,255,0.65);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s 0.25s;
+}
+.baa-pair.is-expanded .baa-divider { opacity: 1; }
+
+.footer__hover-text{font-family: "Jost"; font-weight: 400; font-size: 16px; color : #323232; text-align: center; margin-top: 34px;}
+/* ═══════════════════════════════════════════════════
+   MOBILE — Drag Slider
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Hide desktop accordion on mobile */
+  .baa-track { display: none; }
+
+  /* Show mobile slider */
+  .baa-mobile {
+    display: block;
+    width: 100%;
+    padding: 0 {{ section.settings.side_padding | divided_by: 2 }}px;
+    box-sizing: border-box;
+  }
+
+  /* Slides wrapper */
+  .baa-mobile__slides {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Individual slide */
+  .baa-mobile__slide {
+    display: none;
+    width: 100%;
+  }
+  .baa-mobile__slide.is-active {
+    display: block;
+  }
+
+  /* ── Drag comparison box ── */
+  .baa-drag {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.mobile_height }}px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: ew-resize;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+  }
+
+  /* After (bottom) — full width */
+  .baa-drag__after {
+    position: absolute;
+    inset: 0;
+  }
+  .baa-drag__after img,
+  .baa-drag__before img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    draggable: false;
+  }
+
+  /* Before (top) — clipped by CSS var --split */
+  .baa-drag__before {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 calc(100% - var(--split, 50%)) 0 0);
+    transition: clip-path 0.04s linear;
+  }
+  .baa-drag.is-dragging .baa-drag__before {
+    transition: none;
+  }
+
+  /* Vertical line */
+  .baa-drag__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--split, 50%);
+    transform: translateX(-50%);
+    width: 2px;
+    background: rgba(255,255,255,0.8);
+    pointer-events: none;
+    z-index: 3;
+    transition: left 0.04s linear;
+  }
+  .baa-drag.is-dragging .baa-drag__line {
+    transition: none;
+  }
+
+  /* Circle handle */
+  .baa-drag__handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+    pointer-events: none;
+    color: #555;
+    flex-shrink: 0;
+  }
+  .baa-drag__handle svg{
+    width: 20px; height: 20px; text-align: right; 
+  }
+
+  .baa-drag__handle .left-svg{margin-right: -14px;}
+
+  /* ── Dot Navigation ── */
+  .baa-mobile__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .baa-mobile__dot {
+     width: 21px;
+    height: 14px;
+    border-radius: 100px;
+    background: #ddd;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+    flex-shrink: 0;
+  }
+  .baa-mobile__dot.is-active {
+    background: #787878;
+  }
+
+  /* Adjust buttons on mobile */
+  .hover-section__main-btn {
+    min-width: 350px;
+  }
+}
+</style>
+
+
+<script>
+(function () {
+  'use strict';
+
+  var SECTION_ID    = '{{ section.id }}';
+  var AUTO_DELAY    = {{ section.settings.auto_delay }};
+  var AUTO_INTERVAL = {{ section.settings.auto_interval }};
+
+  /* ═══════════════════════════
+     DESKTOP — Accordion logic
+     ═══════════════════════════ */
+  var track = document.getElementById('baa-track-' + SECTION_ID);
+
+  if (track) {
+    var pairs      = Array.from(track.querySelectorAll('.baa-pair'));
+    var cycleIndex = 0;
+    var isHovering = false;
+
+    function expandPair(idx) {
+      track.classList.add('has-expanded');
+      pairs.forEach(function (p) { p.classList.remove('is-expanded'); });
+      if (pairs[idx]) pairs[idx].classList.add('is-expanded');
+    }
+
+    function nextCycle() {
+      if (isHovering) return;
+      expandPair(cycleIndex % pairs.length);
+      cycleIndex++;
+    }
+
+    function startDesktopCycle() {
+      setTimeout(function () {
+        nextCycle();
+        setInterval(function () { if (!isHovering) nextCycle(); }, AUTO_INTERVAL);
+      }, AUTO_DELAY);
+    }
+
+    pairs.forEach(function (pair, idx) {
+      pair.addEventListener('mouseenter', function () { isHovering = true;  expandPair(idx); });
+      pair.addEventListener('mouseleave', function () { isHovering = false; });
+      pair.addEventListener('click',      function () { expandPair(idx); });
+    });
+
+    track.addEventListener('mouseenter', function () { isHovering = true; });
+    track.addEventListener('mouseleave', function () { isHovering = false; });
+
+   var desktopIO = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting && window.innerWidth > 767) {
+      startDesktopCycle();
+      desktopIO.disconnect();
+    }
+  });
+}, { threshold: 0.25 });
+desktopIO.observe(track);
+  }
+
+
+  /* ═══════════════════════════
+     MOBILE — Drag slider logic
+     ═══════════════════════════ */
+  var mobileEl = document.getElementById('baa-mobile-' + SECTION_ID);
+  var dotsEl   = document.getElementById('baa-dots-' + SECTION_ID);
+  if (!mobileEl) return;
+
+  var slides    = Array.from(mobileEl.querySelectorAll('.baa-mobile__slide'));
+  var dots      = dotsEl ? Array.from(dotsEl.querySelectorAll('.baa-mobile__dot')) : [];
+  var activeIdx = 0;
+
+  /* ── Slide switching ── */
+  function goToSlide(idx) {
+    slides[activeIdx].classList.remove('is-active');
+    if (dots[activeIdx]) dots[activeIdx].classList.remove('is-active');
+    activeIdx = (idx + slides.length) % slides.length;
+    slides[activeIdx].classList.add('is-active');
+    if (dots[activeIdx]) dots[activeIdx].classList.add('is-active');
+    // Reset the new active slide's drag to 50%
+    var drag = slides[activeIdx].querySelector('.baa-drag');
+    if (drag) setDragSplit(drag, 50);
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { goToSlide(i); });
+  });
+
+  /* ── Drag comparison ── */
+  function setDragSplit(drag, pct) {
+    pct = Math.max(2, Math.min(98, pct));
+    drag.style.setProperty('--split', pct + '%');
+  }
+
+  function initDrag(drag) {
+    setDragSplit(drag, 50);
+
+    var isDragging = false;
+
+    function getPct(clientX) {
+      var rect = drag.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    function onStart(clientX) {
+      isDragging = true;
+      drag.classList.add('is-dragging');
+      setDragSplit(drag, getPct(clientX));
+    }
+    function onMove(clientX) {
+      if (!isDragging) return;
+      setDragSplit(drag, getPct(clientX));
+    }
+    function onEnd() {
+      isDragging = false;
+      drag.classList.remove('is-dragging');
+    }
+
+    /* Mouse */
+    drag.addEventListener('mousedown',  function (e) { onStart(e.clientX); });
+    drag.addEventListener('mousemove',  function (e) { if (isDragging) onMove(e.clientX); });
+    document.addEventListener('mouseup', onEnd);
+
+    /* Touch — prevent scroll only when dragging horizontally */
+    var touchStartX = 0, touchStartY = 0, touchLocked = false;
+
+    drag.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchLocked = false;
+    }, { passive: true });
+
+    drag.addEventListener('touchmove', function (e) {
+      var dx = Math.abs(e.touches[0].clientX - touchStartX);
+      var dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (!touchLocked) {
+        touchLocked = true;
+        isDragging = dx > dy; // only drag if horizontal intent
+      }
+      if (isDragging) {
+        e.preventDefault();
+        onMove(e.touches[0].clientX);
+        drag.classList.add('is-dragging');
+      }
+    }, { passive: false });
+
+    drag.addEventListener('touchend', function () {
+      isDragging = false;
+      touchLocked = false;
+      drag.classList.remove('is-dragging');
+    });
+  }
+
+  /* Init all drag instances */
+  mobileEl.querySelectorAll('.baa-drag').forEach(function (drag) {
+    initDrag(drag);
+  });
+
+  /* Auto-reveal on first slide: animate 80% → 50% after delay */
+  var firstDrag = mobileEl.querySelector('.baa-drag');
+  if (firstDrag) {
+    setDragSplit(firstDrag, 80);
+    var mobileIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          setTimeout(function () {
+            firstDrag.querySelector('.baa-drag__before').style.transition =
+              'clip-path 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            firstDrag.querySelector('.baa-drag__line').style.transition =
+              'left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            setDragSplit(firstDrag, 50);
+            setTimeout(function () {
+              firstDrag.querySelector('.baa-drag__before').style.transition = '';
+              firstDrag.querySelector('.baa-drag__line').style.transition = '';
+            }, 1000);
+          }, AUTO_DELAY);
+          mobileIO.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    mobileIO.observe(firstDrag);
+  }
+
+})();
+</script>
+
+
+{% schema %}
+{
+  "name": "Before / After Accordion",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "default": true,
+      "label": "Container Width"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading (use <strong> for bold word)",
+      "default": "<p>Before &amp; <strong>After</strong></p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext (below heading)",
+      "default": "Based on 12 Weeks daily use."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2c1a1a"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext Color",
+      "default": "#888888"
+    },
+    {
+      "type": "header",
+      "content": "Button & Footnote"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "START YOUR SKIN TRANSFORMATION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary Button Label",
+      "default": "TRY IT ONCE"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "color_background",
+      "id": "button_bg",
+      "label": "Primary Button Background",
+      "default": "#2c1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Primary Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section Layout"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Desktop Slider Height (px)",
+      "min": 200,
+      "max": 700,
+      "step": 10,
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile Slider Height (px)",
+      "min": 200,
+      "max": 600,
+      "step": 10,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Side Padding (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "auto_delay",
+      "label": "Auto-Start Delay (ms)",
+      "info": "800–1200ms recommended",
+      "min": 500,
+      "max": 3000,
+      "step": 100,
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "auto_interval",
+      "label": "Auto-Cycle Interval (ms)",
+      "min": 800,
+      "max": 5000,
+      "step": 200,
+      "default": 1800
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "richtext",
+      "id": "footer_hover_text",
+      "label": "Footer Bottom Text",
+      "default" : "<p>Footer Text</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pair",
+      "name": "Before / After Pair",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before / After Accordion",
+      "blocks": [
+        { "type": "pair" },
+        { "type": "pair" },
+        { "type": "pair" },
+        { "type": "pair" }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

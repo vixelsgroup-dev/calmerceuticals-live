@@ -1,0 +1,85 @@
+{%- comment -%}
+  Longevity (Hormone balance & comfort) flow — product result. Same hero image as collagen card.
+  Expects: shop_now_url, section, branch_parent, branch_trigger, longevity_concern (gut|barrier|immune|muscles).
+  Uses longevity_shop_url via skip-gender CTA (no collagen gender routing).
+{%- endcomment -%}
+<article
+  class="questionnaire__screen questionnaire__screen--product-result questionnaire__screen--product-result-longevity"
+  data-questionnaire-screen
+  data-screen-type="product_result"
+  data-default-url="{{ shop_now_url | escape }}"
+  data-skip-gender-product-url="true"
+  {% if branch_parent != blank %}
+    data-branch-parent="{{ branch_parent | escape }}"
+  {% endif %}
+  {% if branch_trigger != blank %}
+    data-branch-trigger="{{ branch_trigger | escape }}"
+  {% endif %}
+>
+  <div class="questionnaire__product-stage questionnaire__product-stage--longevity">
+    <div class="questionnaire__product-card questionnaire__product-card--longevity">
+      <div class="questionnaire__product-badge questionnaire__product-badge--longevity">Recommended for you</div>
+
+      <div class="questionnaire__product-media questionnaire__product-media--longevity">
+        <img
+          class="questionnaire__product-img questionnaire__product-img--longevity"
+          src="{{ 'questionnaire-longevity-product.png' | asset_url }}"
+          alt="Microbiome-First Longevity Support"
+          width="460"
+          height="460"
+          decoding="async"
+          fetchpriority="high"
+          loading="eager"
+        >
+      </div>
+
+      <div class="questionnaire__product-banner questionnaire__product-banner--longevity">
+        <div class="questionnaire__product-banner-text questionnaire__product-banner-text--longevity">
+          <p class="questionnaire__product-banner-primary questionnaire__product-banner-primary--longevity">
+            See results in 180 days
+          </p>
+          <p class="questionnaire__product-banner-secondary questionnaire__product-banner-secondary--longevity">
+            or your money back
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-body questionnaire__product-body--longevity">
+        <div class="questionnaire__product-body-inner questionnaire__product-body-inner--longevity">
+          <h2 class="questionnaire__product-title questionnaire__product-title--longevity">
+            Microbiome-First Longevity Support
+          </h2>
+
+          <div class="questionnaire__product-lead questionnaire__product-lead--longevity">
+            <p class="questionnaire__product-lead-line questionnaire__product-lead-line--longevity">
+              Based on your concern about gut health affecting your skin and immunity, here is <br> he microbiome-first formula built for the gut–skin axis.
+            </p>
+          </div>
+
+          <p class="questionnaire__product-detail questionnaire__product-detail--longevity">
+            Formulated with XOBIOME® EpiBright Postbiotic — clinically shown to support skin tone — and Zinc and Vitamin D3 to support immune function. Designed as a microbiome-first formula that addresses the gut–skin connection at its root, supporting both skin barrier function and immune resilience together.
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-price-row questionnaire__product-price-row--longevity">
+        <span class="questionnaire__product-plan questionnaire__product-plan--longevity">12-Week Longevity Reset</span>
+        <div class="questionnaire__product-prices questionnaire__product-prices--longevity">
+          <span class="questionnaire__product-price-compare questionnaire__product-price-compare--longevity"
+            >$686.00</span
+          >
+          <span class="questionnaire__product-price-sale questionnaire__product-price-sale--longevity">$447.00</span>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-cta-wrap questionnaire__product-cta-wrap--longevity">
+        <a
+          class="questionnaire__product-cta questionnaire__product-cta--longevity"
+          href="{{ shop_now_url | escape }}"
+          data-questionnaire-product-cta
+          >SHOP NOW</a
+        >
+      </div>
+    </div>
+  </div>
+</article>

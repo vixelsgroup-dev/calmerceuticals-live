@@ -1,0 +1,174 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_slideshow_CNbL7w": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_XfL8tU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_27.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 80,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p>Where science meets beauty, and results meet loyalty.</p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Join a select network of stockists carrying clinically formulated collagen without fillers, fluff, or false promises.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "#shopify-section-template--19007016992861__1748363015a53f0a20",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_XfL8tU"
+      ],
+      "disabled": true,
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "two-thirds-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": ""
+      }
+    },
+    "section_slideshow_pkzG3g": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_wLUdmF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_27.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p>Where science meets beauty, and results meet loyalty.</p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Join a select network of stockists carrying clinically formulated collagen without fillers, fluff, or false promises.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_1_color": "btn--primary",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_wLUdmF"
+      ],
+      "custom_css": [
+        ".slide__text.main-text {margin-top: 15px;}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "six-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": true,
+        "duration": 6,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": "scheme-3"
+      }
+    },
+    "1748363015a53f0a20": {
+      "type": "apps",
+      "blocks": {
+        "helium_customer_fields_app_block_JLbJGR": {
+          "type": "shopify://apps/helium-customer-fields/blocks/app-block/bab58598-3e6a-4377-aaaa-97189b15f131",
+          "settings": {
+            "form_id": "6Rt8PA",
+            "width": 600,
+            "vertical_spacing": 60,
+            "horizontal_spacing": 0
+          }
+        }
+      },
+      "block_order": [
+        "helium_customer_fields_app_block_JLbJGR"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_slideshow_CNbL7w",
+    "section_slideshow_pkzG3g",
+    "1748363015a53f0a20"
+  ]
+}

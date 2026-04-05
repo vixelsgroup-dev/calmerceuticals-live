@@ -1,0 +1,571 @@
+{% comment %}
+  Section: Simple Ingredients, Powerful Results
+  - Light bg, eyebrow + heading + body text (full width top)
+  - Two columns: left = product image, right = ingredients list + CTA button
+  - Each ingredient: name + source subtitle (left) + code ID (right), separated by dividers
+{% endcomment %}
+ 
+ {%- assign tag_opacity = section.settings.tag_bg_opacity | divided_by: 100.0 -%}
+{%- assign tag_bg = section.settings.tag_bg_color | color_modify: 'alpha', tag_opacity -%}
+
+
+<section class="it-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="it-section__inner  {% if section.settings.container_width %}wrapper {% endif %}" >
+
+    <!-- TOP: Eyebrow + Heading + Body -->
+    <div class="it-section__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="it-section__eyebrow" style="color: {{ section.settings.eyebrow_color }};">
+          <span class="it-section__eyebrow-dash">—</span>
+          {{ section.settings.eyebrow }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="it-section__heading" >
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="it-section__body" >
+          {{ section.settings.body_text }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- BOTTOM: Two columns -->
+    <div class="it-section__cols">
+
+      <!-- Left: Product Image -->
+      <div class="it-section__image-col">
+        {%- if section.settings.product_image != blank -%}
+          <img
+            src="{{ section.settings.product_image | img_url: '700x700', crop: 'center' }}"
+            alt="{{ section.settings.product_image.alt | default: 'Product' | escape }}"
+            class="it-section__image"
+            style="border-radius: {{ section.settings.image_radius }}px;"
+            loading="lazy"
+            width="700"
+            height="700"
+          >
+        {%- else -%}
+          <div class="it-section__image-placeholder" style="border-radius: {{ section.settings.image_radius }}px;">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Right: Ingredients List -->
+      <div class="it-section__list-col">
+
+        {%- if section.settings.list_label != blank -%}
+          <div class="it-section__list-label" style="background-color:{{ section.settings.badge_bg_color }} ; color: {{ section.settings.label_color }}; border-color: {{ section.settings.label_border_color }};">
+            {{ section.settings.list_label }}
+          </div>
+        {%- endif -%}
+
+        <div class="it-section__list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'ingredient' -%}
+              {% if forloop.first %}
+                <div class="it-section__divider" style="background: {{ section.settings.divider_color }};"></div>
+              {% endif %}
+              <div class="it-section__ingredient" {{ block.shopify_attributes }}>
+                <div class="it-section__ingredient-left">
+                  <div class="it-section__ingredient-name" >
+                    {{ block.settings.name }}
+                  </div>
+                  {%- if block.settings.source != blank -%}
+                    <div class="it-section__ingredient-source"
+                    >
+                      {{ block.settings.source }}
+                    </div>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.code != blank -%}
+                  <div class="it-section__ingredient-code" style="font-size: {{ section.settings.ingredient_code_size }}px;">
+                    {{ block.settings.code }}
+                  </div>
+                {%- endif -%}
+              </div>
+              {%- unless forloop.last -%}
+                <div class="it-section__divider" style="background: {{ section.settings.divider_color }};"></div>
+              {%- endunless -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link }}" class="it-section__btn"
+            style="background: {{ section.settings.button_bg }}; color: {{ section.settings.button_text_color }};">
+            <span class="it-btn-desktop">{{ section.settings.button_label }}</span>
+            <span class="it-btn-mobile">{{ section.settings.mobile_button_label | default: section.settings.button_label }}</span>
+          </a>
+        {%- endif -%}
+
+        {%  if section.settings.bottom_text %}
+        <div class="bottom-text-field">
+            <p>{{  section.settings.bottom_text }}</p>
+        </div> 
+      {%  endif %}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.it-section { width: 100%; box-sizing: border-box; }
+
+.it-section__inner { margin: 0 auto;  display: flex; flex-direction: column; gap: 16px; }
+
+/* HEADER */
+.it-section__header { display: flex; flex-direction: column; gap: 14px; margin-bottom : 96px;}
+
+.it-section__eyebrow {letter-spacing: 0%; font-family:"Jost" ; display: flex; align-items: center; gap: 8px; font-size: 20px; letter-spacing: 1.5px; font-weight: 400; }
+
+.it-section__heading > * {font-family: "Jost"; color: {{ section.settings.heading_color }}; font-size: {{ section.settings.heading_size }}px; font-weight: 500; line-height: 1.15; margin: 0; letter-spacing: -2.5px; }
+
+.it-section__heading > b, .it-section__heading > strong { font-weight: 700; }
+
+.it-section__heading p { margin: 0; }
+
+.it-section__body > * {font-family: "Jost";  color: {{ section.settings.body_color }}; font-size: {{ section.settings.body_size }}px; line-height: 1.6; }
+
+.it-section__body p { margin: 0; }
+
+/* TWO COLUMNS */
+.it-section__cols { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+
+/* LEFT IMAGE */
+.it-section__image-col { width: 100%; height: 100%; }
+
+.it-section__image { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+.it-section__image-placeholder { width: 100%; aspect-ratio: 1 / 1; background: #d8d0cc; display: flex; align-items: center; justify-content: center; }
+
+.it-section__image-placeholder svg { width: 50%; height: 50%; opacity: 0.3; }
+
+/* RIGHT LIST */
+.it-section__list-col { display: flex; flex-direction: column; gap: 20px; }
+
+/* Label pill */
+.it-section__list-label {font-family: "Jost"; display: inline-block; padding: 6px 14px; border: 1px solid; border-radius: 8px; font-size: 12px; letter-spacing: 1px; font-weight: 500; align-self: flex-start; }
+
+/* Ingredient list */
+.it-section__list { display: flex; flex-direction: column; }
+
+.it-section__ingredient { display: flex; align-items: center; justify-content: space-between; gap: 50px; padding: 24px 0; }
+
+.it-section__ingredient-left { display: flex; flex-direction: column; gap: 3px; }
+
+.it-section__ingredient-name { color: {{ section.settings.ingredient_name_color }}; font-size: {{ section.settings.ingredient_name_size }}px; font-weight: 500; line-height: 1.3; font-family:"Jost" ; }
+
+.it-section__ingredient-source { line-height: 120%; color: {{ section.settings.ingredient_source_color }}; font-size: {{ section.settings.ingredient_source_size }}px; font-family: '{{ section.settings.ingredient_source_font }}'; font-weight: {{section.settings.ingredient_source_font_weight}}; }
+
+.it-section__ingredient-code {font-weight: 400; letter-spacing: 0.5px; white-space: nowrap; flex-shrink: 0; padding: 6px 10px; border-radius: 2px; color: {{ section.settings.tag_text_color }}; background-color: {%- if section.settings.use_custom_tag_bg -%} {{ tag_bg }} {%- else -%} rgba(122, 140, 110, 0.12) {%- endif -%}; }
+
+.it-section__divider { height: 1px; width: 100%;  }
+
+/* Button */
+.it-section__btn { display: inline-block;border-radius: 100px; font-size: 16px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 400; text-decoration: none; transition: opacity 0.2s ease; align-self: flex-start; margin-top: 4px;min-width:414px; height: 53px; display: flex; justify-content:center; align-items: center; }
+.bottom-text-field p{color: {{ section.settings.bottom_text_color }}; font-size:15px ; font-family:"Jost" ; font-weight: 500; margin: 0;}
+.it-btn-mobile { display: none; }
+.it-btn-desktop { display: inline; }
+/* RESPONSIVE */
+@media screen and (max-width: 767px) {
+.it-btn-desktop { display: none; }
+.it-btn-mobile { display: inline; }
+.it-section__header {margin-bottom : 25px;}
+.it-section__heading > *{font-size: 34px; line-height: 45px; letter-spacing: 0;}
+.it-section__cols { grid-template-columns: 1fr; gap: 32px; }
+.it-section__image-col { max-width: 400px; }
+.it-section__list-col{align-items: center;}
+.it-section__inner{gap: 30px;}
+.it-section__btn{min-width: 350px; letter-spacing: 0%; margin : 0 auto;}
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Ingredients Transparency",
+  "tag": "section",
+  "class": "section-it",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f4f3f1"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow & Heading"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color",
+      "default": "#7a5060"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Radical Transparency"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Simple ingredients,<br><strong>powerful results.</strong></p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Text Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Paragraph",
+      "default": "<p>We believe you deserve to see the exact strains, doses, and clinical trial matches behind every sachet. No proprietary blends. No hiding behind \"complexes.\"</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Body Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Ingredients List"
+    },
+    {
+      "type": "text",
+      "id": "list_label",
+      "label": "List Badge Label",
+      "default": "Active Ingredients"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#D4DCCF"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Badge Text Color",
+      "default": "#3A3D38"
+    },
+    {
+      "type": "color",
+      "id": "label_border_color",
+      "label": "Badge Border Color",
+      "default": "#c8a0a8"
+    },
+    {
+      "type": "color",
+      "id": "ingredient_name_color",
+      "label": "Ingredient Name Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_tag_bg",
+      "label": "Use Custom Tag Background",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_color",
+      "label": "Tag Background Color",
+      "default": "#7A8C6E"
+    },
+    {
+      "type": "range",
+      "id": "tag_bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Tag Background Opacity",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "tag_text_color",
+      "label": "Tag Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "ingredient_name_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Ingredient Name Font Size",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "ingredient_source_font",
+      "label": "Ingredient Source Font Family",
+      "options": [
+        { "value": "Space Mono", "label": "Space Mono" },
+        { "value": "Jost", "label": "Jost" },
+        { "value": "inherit", "label": "Inherit" }
+      ],
+      "default": "Space Mono"
+    },
+    {
+      "type": "select",
+      "id": "ingredient_source_font_weight",
+      "label": "Ingredient Font Weight",
+      "options": [
+        { "value": "100", "label": "100" },
+        { "value": "400", "label": "400" },
+        { "value": "500", "label": "500" }
+      ],
+      "default": "100"
+    },
+    {
+      "type": "color",
+      "id": "ingredient_source_color",
+      "label": "Source Text Color",
+      "default": "#6b5058"
+    },
+    {
+      "type": "range",
+      "id": "ingredient_source_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Source Font Size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "ingredient_code_size",
+      "min": 9,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "label": "Code ID Font Size",
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Row Divider Color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "color",
+      "id": "bottom_text_color",
+      "label": "Bottom Text Color",
+      "default" : "#545454"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "START YOUR REJUVENATION"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_label",
+      "label": "Button Label (Mobile)",
+      "info": "Leave blank to use desktop label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color_background",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "radial-gradient(93.96% 93.96% at 54.14% 82.02%, #8A4C5B 0%, #170D0F 100%)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom Text",
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Ingredient Name",
+          "default": "Akkermansia muciniphila"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Source / Origin (small text)",
+          "default": "Centenarian-sourced · Okinawa"
+        },
+        {
+          "type": "text",
+          "id": "code",
+          "label": "Code / ID (right side)",
+          "default": "LTL1361"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients Transparency",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "Akkermansia muciniphila",
+            "source": "Centenarian-sourced · Okinawa",
+            "code": "LTL1361"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "Lactobacillus longevitas",
+            "source": "Biofermented · Guangxi",
+            "code": "LB-72"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "Faecalibacterium prausnitzii",
+            "source": "Centenarian-sourced · Sardinia",
+            "code": "FP-106"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "Urolithin A",
+            "source": "Pomegranate ellagitannins",
+            "code": "UA-P1"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "Oleuropein Complex",
+            "source": "Cold-pressed olive leaf",
+            "code": "OL-Phyto"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "name": "EGCG (Green Tea)",
+            "source": "Standardised extract",
+            "code": "GT-866"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

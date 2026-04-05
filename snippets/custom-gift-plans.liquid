@@ -1,0 +1,410 @@
+<div class="product__subs__wrap"
+  {% if animations_enabled %}
+    data-aos="hero"
+    data-aos-anchor="{{ animation_anchor }}"
+    data-aos-order="{{ animation_order }}"
+  {% endif %}>
+  <h3 class="program-cards__heading">Select a Gift Option:</h3>
+  <fieldset class="program-cards" data-variant-selectors>
+    <legend class="visually-hidden">Gift Options</legend>
+
+    {%- comment -%}
+      === VARIANT CARDS ===
+      Three specific variants displayed as cards:
+      1. 2 week supply (order: 1)
+      2. Starter Pack / 6 week supply (order: 2)
+      3. 12 week transformation Program (order: 3)
+    {%- endcomment -%}
+
+    {% assign variant_2week = null %}
+    {% assign variant_starter = null %}
+    {% assign variant_12week = null %}
+
+    {% for variant in product.variants %}
+      {% assign title_lower = variant.title | downcase %}
+      {% if title_lower contains '12 week' %}
+        {% assign variant_12week = variant %}
+      {% elsif title_lower contains 'starter' or title_lower contains '6 week' %}
+        {% assign variant_starter = variant %}
+      {% elsif title_lower contains '2 week' %}
+        {% assign variant_2week = variant %}
+      {% endif %}
+    {% endfor %}
+
+    {%- comment -%}
+      2 WEEK SUPPLY CARD
+    {%- endcomment -%}
+    {% if variant_2week %}
+      {% assign is_selected = false %}
+      {% if product.selected_or_first_available_variant.id == variant_2week.id %}
+        {% assign is_selected = true %}
+      {% endif %}
+
+      {% assign discount_percentage = 0 %}
+      {% if variant_2week.compare_at_price > variant_2week.price and variant_2week.compare_at_price > 0 %}
+        {% assign discount_percentage = variant_2week.compare_at_price | minus: variant_2week.price | times: 100 | divided_by: variant_2week.compare_at_price %}
+      {% endif %}
+
+      <div class="program-card program-card--2week {% if is_selected %}program-card--active{% endif %}"
+        data-variant-id="{{ variant_2week.id }}">
+        <label class="program-card__inner">
+          <input
+            type="radio"
+            class="program-card__radio"
+            name="variant-selector"
+            value="{{ variant_2week.id }}"
+            {% if is_selected %}checked{% endif %}
+          />
+
+          <div class="program-card__content">
+            <span class="program-card__ribbon badge-2">Perfect Gift</span>
+
+            {% if discount_percentage > 0 %}
+              <div class="discount-badge badge">
+                Save
+                <span class="subscription-save-amount-main">
+                  <span class="subscription-save-amount">{{ discount_percentage }}</span>%
+                </span>
+              </div>
+            {% endif %}
+
+            <div class="header">
+              <h4 class="program-card__title">2 Week <br>Supply</h4>
+
+              <div class="program-card__price-wrap">
+                <div class="prices">
+                  {% if variant_2week.compare_at_price and variant_2week.compare_at_price > variant_2week.price %}
+                    <s class="program-card__price--compare">
+                      {{ variant_2week.compare_at_price | money }}
+                    </s>
+                  {% endif %}
+                  <span class="program-card__price">
+                    {{ variant_2week.price | money }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="program-card__text">
+              Try a 2-week sample. Perfect for testing the product before committing to a longer programme.
+            </p>
+
+            <div class="select-btn-main">
+              <button type="button" class="select-btn btn btn--primary btn--solid">Select</button>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endif %}
+
+    {%- comment -%}
+      STARTER PACK (6 WEEK) CARD
+    {%- endcomment -%}
+    {% if variant_starter %}
+      {% assign is_selected = false %}
+      {% if product.selected_or_first_available_variant.id == variant_starter.id %}
+        {% assign is_selected = true %}
+      {% endif %}
+
+      {% assign discount_percentage = 0 %}
+      {% if variant_starter.compare_at_price > variant_starter.price and variant_starter.compare_at_price > 0 %}
+        {% assign discount_percentage = variant_starter.compare_at_price | minus: variant_starter.price | times: 100 | divided_by: variant_starter.compare_at_price %}
+      {% endif %}
+
+      <div class="program-card program-card--starter {% if is_selected %}program-card--active{% endif %}"
+        data-variant-id="{{ variant_starter.id }}">
+        <label class="program-card__inner">
+          <input
+            type="radio"
+            class="program-card__radio"
+            name="variant-selector"
+            value="{{ variant_starter.id }}"
+            {% if is_selected %}checked{% endif %}
+          />
+
+          <div class="program-card__content">
+            <span class="program-card__ribbon badge-2">Popular</span>
+
+            {% if discount_percentage > 0 %}
+              <div class="discount-badge badge">
+                Save
+                <span class="subscription-save-amount-main">
+                  <span class="subscription-save-amount">{{ discount_percentage }}</span>%
+                </span>
+              </div>
+            {% endif %}
+
+            <div class="header">
+              <h4 class="program-card__title">Starter Pack <br>(6 Week Supply)</h4>
+
+              <div class="program-card__price-wrap">
+                <div class="prices">
+                  {% if variant_starter.compare_at_price and variant_starter.compare_at_price > variant_starter.price %}
+                    <s class="program-card__price--compare">
+                      {{ variant_starter.compare_at_price | money }}
+                    </s>
+                  {% endif %}
+                  <span class="program-card__price">
+                    {{ variant_starter.price | money }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="program-card__text">
+              6-week starter pack. A great way to begin your journey with better value than the 2-week option.
+            </p>
+
+            <div class="select-btn-main">
+              <button type="button" class="select-btn btn btn--primary btn--solid">Select</button>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endif %}
+
+    {%- comment -%}
+      12 WEEK TRANSFORMATION PROGRAM CARD
+    {%- endcomment -%}
+    {% if variant_12week %}
+      {% assign is_selected = false %}
+      {% if product.selected_or_first_available_variant.id == variant_12week.id %}
+        {% assign is_selected = true %}
+      {% endif %}
+
+      {% assign discount_percentage = 0 %}
+      {% if variant_12week.compare_at_price > variant_12week.price and variant_12week.compare_at_price > 0 %}
+        {% assign discount_percentage = variant_12week.compare_at_price | minus: variant_12week.price | times: 100 | divided_by: variant_12week.compare_at_price %}
+      {% endif %}
+
+      <div class="program-card program-card--12week {% if is_selected %}program-card--active{% endif %}"
+        data-variant-id="{{ variant_12week.id }}">
+        <label class="program-card__inner">
+          <input
+            type="radio"
+            class="program-card__radio"
+            name="variant-selector"
+            value="{{ variant_12week.id }}"
+            {% if is_selected %}checked{% endif %}
+          />
+
+          <div class="program-card__content">
+            <span class="program-card__ribbon badge-1">Best Seller</span>
+
+            {% if discount_percentage > 0 %}
+              <div class="discount-badge badge">
+                Save
+                <span class="subscription-save-amount-main">
+                  <span class="subscription-save-amount">{{ discount_percentage }}</span>%
+                </span>
+              </div>
+            {% endif %}
+
+            <div class="header">
+              <h4 class="program-card__title">12 Week <br>Transformation Program</h4>
+
+              <div class="program-card__price-wrap">
+                <div class="prices">
+                  {% if variant_12week.compare_at_price and variant_12week.compare_at_price > variant_12week.price %}
+                    <s class="program-card__price--compare">
+                      {{ variant_12week.compare_at_price | money }}
+                    </s>
+                  {% endif %}
+                  <span class="program-card__price">
+                    {{ variant_12week.price | money }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="program-card__text">
+              Complete 12-week transformation program. Best value and most popular choice for committed results.
+            </p>
+
+            <div class="select-btn-main">
+              <button type="button" class="select-btn btn btn--primary btn--solid">Select</button>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endif %}
+  </fieldset>
+</div>
+
+<style>
+    .program-cards__heading{margin-bottom:.75rem;font-weight:600;}
+    .program-cards{border:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+    .program-card--2week{order:1;}
+    .program-card--starter{order:2;}
+    .program-card--12week{order:3;}
+    .small-info em{font-size:10.5px;}
+    .program-card{border:1px solid #e1e1e1;background:#f7f7f7;overflow:hidden;position:relative;transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease;}
+    .program-card .discount-badge{display:flex;flex-direction:column;justify-content:center;position:absolute;top:5px;right:5px;text-align:center;width:42px;height:42px;line-height:normal;padding:5px;background:linear-gradient(180deg,#FFC400 0%,#9E5F00 100%);color:#fff;border-radius:100%;font-size:10px;}
+    .program-card .program-card__content{display:flex;flex-direction:column;text-align:center;height:100%;}
+    .program-card .program-card__price-wrap{margin:7px 0;min-height:43px;}
+    .program-card .prices{display:flex;flex-direction:column;line-height:normal;}
+    .program-card .program-card__price-wrap s{display:block;}
+    .program-card .program-card__price-wrap s{font-size:11px;line-height:10px;}
+    .program-card__inner{display:block;padding:45px 10px 12px;cursor:pointer;height:100%;}
+    .program-card__radio{position:absolute;opacity:0;pointer-events:none;}
+    .program-card__title{margin:0 0 .5rem;text-align:center;font-size:15px;font-weight:700;}
+    .program-card__price{text-align:center;font-size:20px;font-weight:700;margin:0;}
+    .program-card__text{font-size:12px;line-height:1.5;text-align:center;margin:0;flex:1;}
+    .program-card__ribbon{position:absolute;top: 14px; left: -35px; transform: rotate(-25deg);background:linear-gradient(90deg,#FFC400 0%,#9E5F00 100%);color:#fff;font-size:13px;font-weight:700;padding:1px 45px;text-transform:uppercase;}
+    .program-card__ribbon.badge-2{left: -30px;}
+    .program-card--active{background:#610c27;color:#fff;border-color:#610c27;box-shadow:0 0 7px #610c2769;}
+    .program-card--active .program-card__price,
+    .program-card--active .program-card__title,
+    .program-card--active .program-card__text{color:#fff;}
+    .program-cards .select-btn-main{margin-top:7px;}
+    .program-cards .select-btn-main button{min-width:inherit;border-radius:0;background:#000;}
+    .program-cards .select-btn-main button{font-size:12px;font-weight:700;text-align:center;text-transform:initial;height:25px;max-width:140px;padding:0 10px;}
+    .select__fieldset .select__label{--heading-size:calc(1.75rem * var(--adjust-heading));font-size:var(--heading-size);font-weight:600;text-transform:initial;}
+    @media (min-width: 768px) {
+      .program-card__title{font-size:12.5px;}
+    }
+    @media (max-width:767px){
+      .select__fieldset .select__label{--heading-size: calc(1.25rem * var(--adjust-heading));}
+      .program-cards{grid-template-columns:1fr;}
+      .program-card .discount-badge{font-size:12px;width:50px;height:50px;}
+      .program-card__ribbon{font-size:15px;left:-40px;}
+      .program-card__ribbon.badge-2{left:-35px;}
+    }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Helper function to update variant across all possible selectors
+    function updateVariant(variantId) {
+      console.log('Attempting to update variant to:', variantId);
+
+      // Get the variant options for this variant ID
+      const variantOptions = window.variantOptions;
+      if (variantOptions && variantOptions[variantId]) {
+        const options = variantOptions[variantId];
+        console.log('Variant options:', options);
+
+        // Update option1 (Flavour) - find and check the matching radio button
+        if (options.option1) {
+          const option1Inputs = document.querySelectorAll('input[data-index="option1"]');
+          option1Inputs.forEach(function (input) {
+            if (input.value === options.option1) {
+              input.checked = true;
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+              console.log('Set option1 (Flavour) to:', options.option1);
+            }
+          });
+        }
+
+        // Update option2 (Gift Option) - find and check the matching radio button
+        if (options.option2) {
+          const option2Inputs = document.querySelectorAll('input[data-index="option2"]');
+          option2Inputs.forEach(function (input) {
+            if (input.value === options.option2) {
+              input.checked = true;
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+              console.log('Set option2 (Gift Option) to:', options.option2);
+            }
+          });
+        }
+      }
+
+      // Also directly update the hidden variant ID input
+      const hiddenInput = document.querySelector('input[name="id"][data-product-select]');
+      if (hiddenInput) {
+        hiddenInput.value = variantId;
+        hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+        console.log('Updated hidden input to:', variantId);
+      }
+
+      console.log('Variant update complete');
+    }
+
+    // Handle card clicks
+    document.querySelectorAll('.program-card').forEach(function (card) {
+      const radio = card.querySelector('.program-card__radio');
+      const variantId = card.getAttribute('data-variant-id');
+
+      card.addEventListener('click', function (e) {
+        const tag = e.target.tagName.toLowerCase();
+        if (tag === 'input') return;
+
+        if (radio) {
+          radio.checked = true;
+        }
+
+        // Update active state
+        document.querySelectorAll('.program-card')
+          .forEach(function (c) { c.classList.remove('program-card--active'); });
+        card.classList.add('program-card--active');
+
+        // Update the theme's variant
+        if (variantId) {
+          updateVariant(variantId);
+        }
+      });
+    });
+
+    // Handle radio button changes
+    document.querySelectorAll('.program-card__radio').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          const card = this.closest('.program-card');
+          const variantId = card.getAttribute('data-variant-id');
+
+          // Update active state
+          document.querySelectorAll('.program-card')
+            .forEach(function (c) { c.classList.remove('program-card--active'); });
+          card.classList.add('program-card--active');
+
+          // Update the theme's variant
+          if (variantId) {
+            updateVariant(variantId);
+          }
+        }
+      });
+    });
+
+    // Listen for variant changes from other selectors
+    const variantSelectors = [
+      'select[name="id"]',
+      'input[name="id"]',
+      '#product-select'
+    ];
+
+    variantSelectors.forEach(function (selector) {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.addEventListener('change', function () {
+          const selectedVariantId = this.value;
+
+          // Update card active states to match
+          document.querySelectorAll('.program-card').forEach(function (card) {
+            const cardVariantId = card.getAttribute('data-variant-id');
+            const radio = card.querySelector('.program-card__radio');
+
+            if (cardVariantId === selectedVariantId) {
+              card.classList.add('program-card--active');
+              if (radio) radio.checked = true;
+            } else {
+              card.classList.remove('program-card--active');
+              if (radio) radio.checked = false;
+            }
+          });
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+  // Map variantId -> option values (option1/2/3)
+  window.variantOptions = window.variantOptions || {};
+  {% for variant in product.variants %}
+    window.variantOptions["{{ variant.id }}"] = {
+      option1: {{ variant.option1 | json }},
+      option2: {{ variant.option2 | json }},
+      option3: {{ variant.option3 | json }}
+    };
+  {% endfor %}
+</script>

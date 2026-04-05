@@ -1,0 +1,265 @@
+<link rel="stylesheet" href="{{ 'clinical-stats.css' | asset_url }}">
+
+{% liquid
+  assign cs_pt_mobile = section.settings.padding_top_mobile | default: 72
+  assign cs_pb_mobile = section.settings.padding_bottom_mobile | default: 72
+  assign cs_pt_desktop = section.settings.padding_top_desktop | default: 100
+  assign cs_pb_desktop = section.settings.padding_bottom_desktop | default: 100
+  assign cs_container_max = section.settings.max_container_width | default: '1440'
+
+  if cs_container_max == 'full'
+    assign cs_container_max_css = 'none'
+  else
+    assign cs_container_max_css = cs_container_max | append: 'px'
+  endif
+%}
+
+<section
+  id="ClinicalStats-{{ section.id }}"
+  class="clinical-stats"
+  style="
+    --cs-bg: {{ section.settings.background_color }};
+    --cs-container-max: {{ cs_container_max_css }};
+    --cs-pt-mobile: {{ cs_pt_mobile }}px;
+    --cs-pb-mobile: {{ cs_pb_mobile }}px;
+    --cs-pt-desktop: {{ cs_pt_desktop }}px;
+    --cs-pb-desktop: {{ cs_pb_desktop }}px;
+    --cs-heading-color: {{ section.settings.heading_color }};
+    --cs-label-color: {{ section.settings.label_color }};
+    --cs-value-color: {{ section.settings.value_color }};
+    --cs-divider-color: {{ section.settings.divider_color }};
+    --cs-placeholder-color: {{ section.settings.placeholder_color }};
+  "
+  data-clinical-stats
+  {{ section.shopify_attributes }}
+>
+  <div class="clinical-stats__inner wrapper">
+    {% if section.settings.heading != blank %}
+      <div class="clinical-stats__headline">
+        <div class="clinical-stats__heading rte">{{ section.settings.heading }}</div>
+      </div>
+    {% endif %}
+
+    <div class="clinical-stats__lock-panel" data-stats-shell>
+      <div class="clinical-stats__metrics" data-stats-grid>
+        {% for block in section.blocks %}
+          <article
+            class="clinical-stats__metric"
+            data-metric
+            data-start-offset="{{ block.settings.start_offset_desktop }}"
+            data-step-start="{{ forloop.index0 }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="clinical-stats__metric-placeholder" aria-hidden="true">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg clinical-stats__placeholder-svg' }}
+            </div>
+            <div class="clinical-stats__metric-content">
+              <p class="clinical-stats__metric-label">{{ block.settings.label | escape }}</p>
+              <p class="clinical-stats__metric-value">{{ block.settings.value | escape }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'clinical-stats.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Clinical stats",
+  "tag": "section",
+  "class": "section-clinical-stats",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#610c27",
+      "info": "Spans the full width of the viewport."
+    },
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "select",
+      "id": "max_container_width",
+      "label": "Max container width",
+      "options": [
+        { "value": "full", "label": "Full width (no max)" },
+        { "value": "1100", "label": "1100px" },
+        { "value": "1200", "label": "1200px" },
+        { "value": "1280", "label": "1280px" },
+        { "value": "1320", "label": "1320px" },
+        { "value": "1440", "label": "1440px" },
+        { "value": "1536", "label": "1536px" },
+        { "value": "1600", "label": "1600px" },
+        { "value": "1680", "label": "1680px" },
+        { "value": "1920", "label": "1920px" }
+      ],
+      "default": "1440"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Our formulations are built on clinically studied ingredients and tested in real-world routines. Across global users, we track visible improvements in skin elasticity, hydration, and overall vitality - because results should be measured, not assumed.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Metric label color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "Metric value color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Column divider color",
+      "default": "#8f4f65"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder color",
+      "default": "#7b324d"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "metric",
+      "name": "Metric",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "improvement in skin elasticity"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "30%"
+        },
+        {
+          "type": "range",
+          "id": "start_offset_desktop",
+          "label": "Desktop start offset",
+          "min": 0,
+          "max": 400,
+          "step": 4,
+          "unit": "px",
+          "default": 300,
+          "info": "Higher value starts lower and travels further during desktop animation."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Clinical stats",
+      "blocks": [
+        {
+          "type": "metric",
+          "settings": {
+            "label": "improvement in skin elasticity",
+            "value": "30%",
+            "start_offset_desktop": 300
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "label": "fewer crow's feet",
+            "value": "34%",
+            "start_offset_desktop": 220
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "label": "absorption via liquid delivery",
+            "value": "44%",
+            "start_offset_desktop": 140
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "label": "VERISOL(R) per serve",
+            "value": "10,000mg",
+            "start_offset_desktop": 72
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

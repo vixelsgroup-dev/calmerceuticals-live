@@ -1,0 +1,574 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "show_page_title": true,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_slideshow_LCWc4D": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_HqPJrq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_4_2df1eb7d-4e45-482b-9bf0-f03f74a4f300.png",
+            "image_mobile": "shopify://shop_images/Group_93_2.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 80,
+            "text_position": "left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<h2>Something’s <br/><strong>Been Quietly <br/>Brewing…</strong></h2>",
+            "heading_size": 140,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "For the last 18 months, our team <br class=\"hidden-desktop\">of <br class=\"hidden-mobile\">researchers and scientists<br class=\"hidden-desktop\"> has been <br class=\"hidden-mobile\">working behind the<br class=\"hidden-desktop\"> scenes on <br class=\"hidden-mobile\">something different, <br class=\"hidden-desktop\">a daily ritual that <br class=\"hidden-mobile\">doesn’t just <br class=\"hidden-desktop\">support longevity… <br><strong>It helps you measure it.</strong>\n<br><br>\n<div class=\"actions \">\n<a href=\"#custom-klaviyo-form\" class=\"slide__btn btn btn--black btn--solid btn--large btn--advanced\">REGISTER FOR EARLY ACCESS</a>\n</div>\n<div class=\"bottom-txt\">\n<p>\nand <strong>your chance to <br class=\"hidden-desktop\">win 3 months free.</strong></p>\n</div>",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": false,
+            "button_1_text": "",
+            "button_1_link": "#",
+            "button_1_color": "btn--black",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--text",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_HqPJrq"
+      ],
+      "custom_css": [
+        ".slide__text {margin-top: 20px; font-weight: 300;}",
+        "@media (max-width: 767px) {.main-heading {font-size: 20px; } .slide__text {font-size: 9px; } .btn {font-size: 8px; padding: 6px 10px; }}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "full-height",
+        "enable_mobile_height": true,
+        "mobile_slide_height": "original-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": false,
+        "color_scheme": ""
+      }
+    },
+    "section_text_TnUBrC": {
+      "type": "section-text",
+      "blocks": {
+        "heading_TfXFg3": {
+          "type": "heading",
+          "settings": {
+            "text": "<h2>Ageing Is Biological <strong><br/>But, What If It’s Also Optional?</strong></h2>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_TfXFg3"
+      ],
+      "custom_css": [],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "scheme-5e0771a3-06e7-4beb-9486-4442fa4a80e1",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "section_multicolumn_ciYABA": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "text_ixepCa": {
+          "type": "text",
+          "settings": {
+            "column_width": 50,
+            "subheading": "",
+            "title": "",
+            "heading_size": 140,
+            "text": "<p>You’ve felt it: energy dips, slow recovery, foggy thinking, inflammation that seems to come out of nowhere. It’s not just ageing. It’s something deeper.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": ""
+          }
+        },
+        "text_TxdRMn": {
+          "type": "text",
+          "settings": {
+            "column_width": 50,
+            "subheading": "",
+            "title": "",
+            "heading_size": 140,
+            "text": "<p>What we’ve discovered targets one of the most overlooked systems in the body, the place where resilience, clarity, and cellular strength all begin.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_ixepCa",
+        "text_TxdRMn"
+      ],
+      "custom_css": [
+        "@media (max-width: 767px) {.grid--mobile {align-items: flex-start; } .column-item__text * {font-size: 13px; }}"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "color_scheme": "scheme-5e0771a3-06e7-4beb-9486-4442fa4a80e1",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "section_image_exyPnQ": {
+      "type": "section-image",
+      "name": "Image",
+      "settings": {
+        "image": "shopify://shop_images/Mask_group_07afce3a-2743-439d-89af-b34a2f4dd353.png",
+        "height": "original-height",
+        "enable_mobile_height": false,
+        "mobile_height": "original-height-mobile",
+        "enable_stretch": true,
+        "image_position": "center",
+        "color_scheme": "scheme-5e0771a3-06e7-4beb-9486-4442fa4a80e1",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "waitlist_form_dbELEy": {
+      "type": "waitlist-form",
+      "custom_css": [
+        "> div {background-color: #f7f6f2;}"
+      ],
+      "name": "Waitlist Form (Klaviyo)",
+      "settings": {
+        "title": "<h2><strong>Register for Early Access</strong></h2>",
+        "sub_title": "<p>and your chance to win 3 months free before launch.</p>",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_custom_4_tk7bRd": {
+      "type": "multicolumn-custom-4",
+      "blocks": {
+        "image_jdd9YN": {
+          "type": "image",
+          "settings": {
+            "title": "<h2><strong>HINT <br/>#1</strong></h2>",
+            "text": "<p>It’s invisible, but <br/>everywhere in <br/>your body</p>"
+          }
+        },
+        "image_3CBURd": {
+          "type": "image",
+          "settings": {
+            "title": "<h2><strong>HINT <br/>#2</strong></h2>",
+            "text": "<p>Scientists and <br/>doctors call it <br/>the silent killer</p>"
+          }
+        },
+        "image_8WNhV8": {
+          "type": "image",
+          "settings": {
+            "title": "<h2><strong>HINT <br/>#3</strong></h2>",
+            "text": "<p>When you slow it <br/>down, everything <br/>else speeds up</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_jdd9YN",
+        "image_3CBURd",
+        "image_8WNhV8"
+      ],
+      "custom_css": [
+        "> div {background-color: #f7f6f2;}",
+        ".bottom {padding-top: 0 !important;}"
+      ],
+      "name": "Multicolumn - Custom #4",
+      "settings": {
+        "heading": "<p>Can You Guess <strong>What It Targets?</strong></p>",
+        "heading_size": 100,
+        "subheading": "",
+        "desktop_columns": 3,
+        "mobile_columns": 1,
+        "box_shadow": false,
+        "card_color": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_custom_4_gQkE4p": {
+      "type": "multicolumn-custom-4",
+      "blocks": {
+        "image_g4qRpj": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>90% reduction in 14 days</strong></h3>"
+          }
+        },
+        "image_HCd34H": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>Of a factor long believed to be “just part of getting older.”</strong></h3>"
+          }
+        },
+        "image_9qGmiT": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>This isn’t about feeling better.</strong></h3>"
+          }
+        },
+        "image_Y9pipw": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>This is about ageing differently.</strong></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "image_g4qRpj",
+        "image_HCd34H",
+        "image_9qGmiT",
+        "image_Y9pipw"
+      ],
+      "custom_css": [
+        "> div {background-color: #f7f6f2;}",
+        "h2 p {margin: 0;}",
+        ".multi-item {justify-content: center;}"
+      ],
+      "name": "Multicolumn - Custom #4",
+      "settings": {
+        "heading": "<p>The<strong> Results?</strong></p>",
+        "heading_size": 100,
+        "subheading": "<p>In a clinical study, something surprising happened:</p>",
+        "desktop_columns": 4,
+        "mobile_columns": 1,
+        "box_shadow": true,
+        "card_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 32
+      }
+    },
+    "section_multicolumn_tJwn4Y": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_Q9kMFy": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/Mask_group_1_3caf689f-4fee-42dd-b9d5-7dad34448673.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "text_96MUwU": {
+          "type": "text",
+          "settings": {
+            "column_width": 33,
+            "subheading": "",
+            "title": "",
+            "heading_size": 140,
+            "text": "<h3><strong>One Ritual. Once a Day. <br/>No pills. No guesswork.</strong></h3><p>Just one precisely measured <br/>serving to add to your routine. <strong><br/>Simple. Measurable.  <br/>And about to change everything.</strong></p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": ""
+          }
+        },
+        "image_dycURc": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/Mask_group_2_99ecfc3b-8d90-49fb-aa86-d98527e2972d.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_Q9kMFy",
+        "text_96MUwU",
+        "image_dycURc"
+      ],
+      "custom_css": [
+        "@media (max-width: 767px) {.grid--mobile {gap: 10px; } .column-item {width: calc(33.3333% - 10px); } .column-item__text h3 {font-size: 10px; margin-bottom: 5px; } .column-item__text p {font-size: 8px; line-height: 8px; }}"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-center",
+        "color_scheme": "scheme-5e0771a3-06e7-4beb-9486-4442fa4a80e1",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "images_with_text_UQVXKy": {
+      "type": "images-with-text",
+      "blocks": {
+        "image_6eeaNL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_93.png"
+          }
+        },
+        "image_ydnwU4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_94.png"
+          }
+        },
+        "image_jpCkQE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_93.png"
+          }
+        },
+        "heading_imArFw": {
+          "type": "heading",
+          "settings": {
+            "title": "<h2>Designed for <br/><strong>People Who Are:</strong></h2>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "liquid_nMEbaA": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<br>\n<h3>Done with quick fixes and ready for long-term vitality</h3>\n<hr>\n<h3>Feeling the early signs of fatigue or burnout</h3>\n<hr>\n<h3>Focused on healthy ageing, inside and out</h3>\n<hr>\n<h3>Investing now in how they’ll feel 10 years from today</h3>\n\n<style>\n#shopify-section-{{ section.id }} hr{width:100%;margin:22px 0;}\n@media (max-width: 767px) {\n#shopify-section-{{ section.id }} hr{margin:8px 0;}\n}\n</style>"
+          }
+        },
+        "button_KzR7Wd": {
+          "type": "button",
+          "settings": {
+            "button_text": "REGISTER FOR EARLY ACCESS",
+            "button_link": "#custom-klaviyo-form",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--large",
+            "video_link": "",
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "image_6eeaNL",
+        "image_ydnwU4",
+        "image_jpCkQE",
+        "heading_imArFw",
+        "liquid_nMEbaA",
+        "button_KzR7Wd"
+      ],
+      "custom_css": [
+        "> div {background-color: #f7f6f2;}",
+        "@media (max-width: 767px) {.image-with-text__content-items {max-width: 300px; margin-left: auto; margin-right: auto; } .image-with-text__content-items * {text-align: center; } .main-buttons__item {justify-content: center; }}"
+      ],
+      "name": "Images with text",
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "block_bg_color": "",
+        "color_scheme": "scheme-5e0771a3-06e7-4beb-9486-4442fa4a80e1",
+        "section_width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_tnERqd": {
+      "type": "section-text",
+      "blocks": {
+        "heading_DPDEVU": {
+          "type": "heading",
+          "settings": {
+            "text": "<h2>We’ll Tell You <strong>More Soon.</strong></h2>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_DPDEVU"
+      ],
+      "custom_css": [],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "scheme-6",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "section_slideshow_zFxMTH": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_WXNWVi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_93_1.png",
+            "image_mobile": "shopify://shop_images/Group_94.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "https://cdn.shopify.com/videos/c/o/v/8031ba1a947a49d3b89f0a372e03366a.mp4",
+            "content_width": 80,
+            "text_position": "bottom-center",
+            "text_alignment": "text-center",
+            "subheading": "",
+            "title": "<h4>But for now… <strong>Be the First to Know.</strong></h4>",
+            "heading_size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "",
+            "text_size": 100,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": false,
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_WXNWVi"
+      ],
+      "custom_css": [
+        ".slide__text__wrapper {padding-bottom: 30px; margin-bottom: 0;}",
+        "@media (max-width: 767px) {.slide__text__wrapper {padding-bottom: 15px; } .main-heading {font-size: 15px; }}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "seven-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "original-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_slideshow_LCWc4D",
+    "section_text_TnUBrC",
+    "section_multicolumn_ciYABA",
+    "section_image_exyPnQ",
+    "waitlist_form_dbELEy",
+    "multicolumn_custom_4_tk7bRd",
+    "multicolumn_custom_4_gQkE4p",
+    "section_multicolumn_tJwn4Y",
+    "images_with_text_UQVXKy",
+    "section_text_tnERqd",
+    "section_slideshow_zFxMTH"
+  ]
+}

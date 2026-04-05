@@ -1,0 +1,311 @@
+{% comment %}
+  SECTION: Clinical Stats
+  - 4 cards: icon + heading text + "up to" label + big number % + description
+  - All text fields: richtext / text / number as specified
+  - Font: Jost throughout
+{% endcomment %}
+
+<style>
+    #cst-{{ section.id }} { background: {{ section.settings.section_bg }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; font-family: "Jost", sans-serif; } 
+    #cst-{{ section.id }} .cst-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: {{ section.settings.col_gap }}px; align-items: start; }
+    #cst-{{ section.id }} .cst-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: {{ section.settings.card_pad }}px 12px; position: relative; }
+    #cst-{{ section.id }} .cst-card:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background: {{ section.settings.divider_color }}; }
+    #cst-{{ section.id }} .cst-card__icon { width: {{ section.settings.icon_size }}px; height: {{ section.settings.icon_size }}px; margin-bottom: 20px; object-fit: contain; display: block; } 
+    #cst-{{ section.id }} .cst-card__icon-placeholder { width: {{ section.settings.icon_size }}px; height: {{ section.settings.icon_size }}px; margin-bottom: 20px; background: #e0e0e0; border-radius: 50%; display: block; }
+    #cst-{{ section.id }} .cst-card__heading, #cst-{{ section.id }} .cst-card__heading p { font-family: "Jost", sans-serif; font-size: {{ section.settings.heading_size }}px; font-weight: 400; color: {{ section.settings.heading_color }}; line-height: 1.4; margin: 0 0 6px; }
+    #cst-{{ section.id }} .cst-card__heading strong, #cst-{{ section.id }} .cst-card__heading b { font-weight: 700; color: {{ section.settings.heading_color }}; }
+    #cst-{{ section.id }} .cst-card__upto { font-family: "Jost", sans-serif; font-size: {{ section.settings.upto_size }}px; font-weight: 400; color: {{ section.settings.upto_color }}; margin: 0 0 2px; display: block; }
+    #cst-{{ section.id }} .cst-card__number { font-family: "Jost", sans-serif; font-size: {{ section.settings.number_size }}px; font-weight: 400; color: {{ section.settings.number_color }}; line-height: 1; margin: 0 0 14px; display: block; letter-spacing: -1px; } 
+    #cst-{{ section.id }} .cst-card__desc, #cst-{{ section.id }} .cst-card__desc p { font-family: "Jost", sans-serif; font-size: {{ section.settings.desc_size }}px; font-weight: 400; color: {{ section.settings.desc_color }}; line-height: 1.55; margin: 0; } 
+    #cst-{{ section.id }} .cst-card__desc strong, #cst-{{ section.id }} .cst-card__desc b { font-weight: 700; color: {{ section.settings.desc_color }}; }#cst-{{ section.id }} .cst-card__number { font-family: "Jost", sans-serif; font-size: {{ section.settings.number_size }}px; font-weight: 400; color: {{ section.settings.number_color }}; line-height: 1; margin: 0 0 14px; display: block; letter-spacing: -1px; } 
+    #cst-{{ section.id }} .cst-card__desc, #cst-{{ section.id }} 
+    .cst-card__desc p { font-family: "Jost", sans-serif; font-size: {{ section.settings.desc_size }}px; font-weight: 400; color: {{ section.settings.desc_color }}; line-height: 1.55; margin: 0; } 
+    #cst-{{ section.id }} .cst-card__desc strong, #cst-{{ section.id }} .cst-card__desc b { font-weight: 700; color: {{ section.settings.desc_color }}; }
+
+  @media screen and (max-width: 767px) {
+    #cst-{{ section.id }} .cst-grid { grid-template-columns:1fr; } 
+    #cst-{{ section.id }} .cst-card__desc{max-width: 300px;} 
+    #cst-{{ section.id }} .cst-card:not(:last-child)::after { display: none; } 
+    #cst-{{ section.id }} .cst-card { border-bottom: 1px solid {{ section.settings.divider_color }}; padding-bottom: 24px; margin-bottom: 4px; } 
+    #cst-{{ section.id }} .cst-card:nth-child(2), #cst-{{ section.id }} .cst-card:last-child { border-bottom: none; }
+  }
+
+</style>
+
+<section id="cst-{{ section.id }}">
+  <div class="cst-inner {% if section.settings.container_width %}wrapper{% endif %}">
+    <div class="cst-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'stat_card' -%}
+          <div class="cst-card" {{ block.shopify_attributes }}>
+
+            {%- comment -%} Icon {%- endcomment -%}
+            {%- if block.settings.icon != blank -%}
+              <img
+                src="{{ block.settings.icon | image_url: width: 200 }}"
+                alt="{{ block.settings.icon.alt | default: '' }}"
+                class="cst-card__icon"
+                loading="lazy"
+                width="{{ section.settings.icon_size }}"
+                height="{{ section.settings.icon_size }}"
+              >
+            {%- else -%}
+              <span class="cst-card__icon-placeholder"></span>
+            {%- endif -%}
+
+            {%- comment -%} Heading — richtext {%- endcomment -%}
+            {%- if block.settings.heading != blank -%}
+              <div class="cst-card__heading">{{ block.settings.heading }}</div>
+            {%- endif -%}
+
+            {%- comment -%} Up to label — text {%- endcomment -%}
+            {%- if block.settings.upto_label != blank -%}
+              <span class="cst-card__upto">{{ block.settings.upto_label }}</span>
+            {%- endif -%}
+
+            {%- comment -%} Big number — number field + suffix {%- endcomment -%}
+            {%- if block.settings.number != blank -%}
+              <span class="cst-card__number">{{ block.settings.number }}{{ block.settings.number_suffix }}</span>
+            {%- endif -%}
+
+            {%- comment -%} Description — richtext {%- endcomment -%}
+            {%- if block.settings.description != blank -%}
+              <div class="cst-card__desc">{{ block.settings.description }}</div>
+            {%- endif -%}
+
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ultra Clinical Stats",
+  "tag": "section",
+  "class": "section-clinical-stats",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable container (wrapper)",
+      "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "#f5f4f4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Bottom",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "col_gap",
+      "min": 0, "max": 60, "step": 4, "unit": "px",
+      "label": "Column Gap",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_pad",
+      "min": 8, "max": 60, "step": 4, "unit": "px",
+      "label": "Card Padding",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "#d4d4d4"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 60, "max": 160, "step": 4, "unit": "px",
+      "label": "Icon Size",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 10, "max": 22, "step": 1, "unit": "px",
+      "label": "Heading Font Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#3a3a3a"
+    },
+    {
+      "type": "header",
+      "content": "Up To Label"
+    },
+    {
+      "type": "range",
+      "id": "upto_size",
+      "min": 8, "max": 18, "step": 1, "unit": "px",
+      "label": "Up To Font Size",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "upto_color",
+      "label": "Up To Color",
+      "default": "#888888"
+    },
+    {
+      "type": "header",
+      "content": "Number"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "min": 32, "max": 96, "step": 4, "unit": "px",
+      "label": "Number Font Size",
+      "default": 64
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "min": 10, "max": 18, "step": 1, "unit": "px",
+      "label": "Description Font Size",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default": "#555555"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_card",
+      "name": "Stat Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<p>Increase<br>in <strong>healthy testosterone</strong></p>"
+        },
+        {
+          "type": "text",
+          "id": "upto_label",
+          "label": "Up To Label",
+          "default": "Up to"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "number_suffix",
+          "label": "Number Suffix (e.g. % or x)",
+          "default": "%"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Powered by clinical doses of <strong>Fermented Shilajit</strong> over 90 days</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ultra Clinical Stats",
+      "blocks": [
+        {
+          "type": "stat_card",
+          "settings": {
+            "heading": "<p>Increase<br>in <strong>healthy testosterone</strong></p>",
+            "upto_label": "Up to",
+            "number": "20",
+            "number_suffix": "%",
+            "description": "<p>Powered by clinical doses of <strong>Fermented Shilajit</strong> over 90 days</p>"
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "heading": "<p>Reduction<br>in <strong>physical fatigue</strong></p>",
+            "upto_label": "Up to",
+            "number": "26",
+            "number_suffix": "%",
+            "description": "<p>Driven by <strong>Cultavit® B-Complex</strong> to optimize daily energy metabolism</p>"
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "heading": "<p>Improvement<br>in <strong>physical resilience</strong></p>",
+            "upto_label": "Up to",
+            "number": "34",
+            "number_suffix": "%",
+            "description": "<p>Supported by <strong>Maca Root</strong> & <strong>adaptogens</strong> for physical resilience</p>"
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "heading": "<p>Savings<br>on <strong>performance programs</strong></p>",
+            "upto_label": "Up to",
+            "number": "39",
+            "number_suffix": "%",
+            "description": "<p>Designed for the <strong>12-Week Intro Programme</strong> to ensure lasting results</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,154 @@
+{% comment %}
+  Section: Featured In – Quote
+  White background, top border, eyebrow label, large decorative quotes, centered quote text
+{% endcomment %}
+
+<section class="fi-quote" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="fi-quote__inner" >
+
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="fi-quote__eyebrow" style="color: {{ section.settings.eyebrow_color }};">
+        {{ section.settings.eyebrow }}
+      </div>
+    {%- endif -%}
+
+    <div class="fi-quote__body">
+      {% comment %} <div class="fi-quote__marks" style="color: {{ section.settings.quote_mark_color }};">&ldquo;</div> {% endcomment %}
+       <div class="fi-quote__marks" style="color: {{ section.settings.quote_mark_color }};">
+        <img src="{{ section.settings.quote_image | img_url: '300x' }}" />
+       </div>
+      
+      {%- if section.settings.quote_text != blank -%}
+        <div class="fi-quote__text" >
+          {{ section.settings.quote_text }}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fi-quote{width:100%;box-sizing:border-box;}
+.fi-quote__inner{margin:0 auto;display:flex;flex-direction:column;align-items:center;}
+.fi-quote__eyebrow{font-size:13px;text-transform:uppercase;font-weight:400;text-align:center;margin-bottom:20px;}
+.fi-quote__body{position: relative; display: flex; flex-direction: column; align-items: center; max-width: 330px; width: 100%; justify-content: center; gap: 0;}
+.fi-quote__marks{font-size:150px;line-height:0.75;font-family:Georgia,serif;flex-shrink:0;user-select:none; position: absolute; left: -280px; top: 0; margin: 0;}
+.fi-quote__text{text-align:center;}
+.fi-quote__text p{font-family: "Jost"; margin:0;color:{{ section.settings.text_color }};font-size:{{ section.settings.font_size }}px;line-height:120%;font-weight:600;letter-spacing:-0.3px;}
+
+@media screen and (min-width:768px){
+  .fi-quote__text{margin-top: 63px;}
+}
+
+@media screen and (max-width:767px){
+  .fi-quote { padding-top: 0 !important;}
+  .fi-quote__text{margin-top: 90px;}
+  .fi-quote__marks{font-size:80px;}
+  .fi-quote__body{flex-direction:column;align-items:center;text-align:center;padding:0 40px;}
+  .fi-quote__marks{margin-right:0;margin-bottom:-10px;display:none;}
+  .fi-quote__text p{font-size:24px;line-height:24px;}
+}
+</style>
+
+{% schema %}
+{
+  "name": "Featured In – Quote",
+  "tag": "section",
+  "class": "section-fi-quote",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Text Color",
+      "default": "#4a2030"
+    },
+    {
+      "type": "image_picker",
+      "id": "quote_image",
+      "label": "Quote Image",
+    },
+    {
+      "type": "color",
+      "id": "quote_mark_color",
+      "label": "Quote Mark Color",
+      "default": "#e0d8db"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Quote Text Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "FEATURED IN"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_text",
+      "label": "Quote Text",
+      "default": "<p>Built around the mechanisms that shape how we age.</p>"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 28
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured In – Quote"
+    }
+  ]
+}
+{% endschema %}

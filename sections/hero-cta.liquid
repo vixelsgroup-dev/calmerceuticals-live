@@ -1,0 +1,355 @@
+{% comment %}
+  Section: Hero CTA with Image
+  - Deep burgundy background
+  - Centered text: eyebrow + large heading + body lines + outlined pill button
+  - Full-width rounded image below text
+{% endcomment %}
+
+<section class="hci-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="hci-section__inner {% if section.settings.container_width %}wrapper{% endif %}">
+
+    <!-- TEXT BLOCK — centered -->
+    <div class="hci-section__text">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="hci-section__eyebrow" style="color: {{ section.settings.eyebrow_color }}; font-size: {{ section.settings.eyebrow_size }}px;">
+          {{ section.settings.eyebrow }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="hci-section__heading" style="color: {{ section.settings.heading_color }}; font-size: {{ section.settings.heading_size }}px;">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="hci-section__body" >
+          {{ section.settings.body_text }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.tagline != blank -%}
+        <p class="hci-section__tagline" style="color: {{ section.settings.tagline_color }}; font-size: {{ section.settings.tagline_size }}px;">
+          {{ section.settings.tagline }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="hci-section__btn"
+          style="
+            color: {{ section.settings.button_text_color }};
+            border-color: {{ section.settings.button_border_color }};
+            background: {{ section.settings.button_bg }};
+            font-size: {{ section.settings.button_size }}px;
+          "
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+
+    </div>
+
+    <!-- IMAGE -->
+    {%- if section.settings.image != blank -%}
+      <div class="hci-section__image-wrap" style="border-radius: {{ section.settings.image_radius }}px; margin-top: {{ section.settings.image_gap }}px;">
+        <img
+          src="{{ section.settings.image | img_url: '1400x700', crop: 'center' }}"
+          alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+          class="hci-section__image"
+          loading="lazy"
+          width="1400"
+          height="700"
+        >
+      </div>
+    {%- elsif section.settings.show_placeholder -%}
+      <div class="hci-section__image-wrap hci-section__image-placeholder" style="border-radius: {{ section.settings.image_radius }}px; margin-top: {{ section.settings.image_gap }}px;">
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+.hci-section{width:100%;box-sizing:border-box;}
+.hci-section__inner{display:flex;flex-direction:column;align-items:center;margin:0 auto;}
+.hci-section__text{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:850px;width:100%;}
+.hci-section__eyebrow{font-family:"Jost";margin:0;font-weight:400;letter-spacing:-0.16px;line-height:1;}
+.hci-section__heading{font-family:"Jost";  font-weight:400;line-height:calc({{ section.settings.heading_size }}px + 5px);margin:0;letter-spacing:-1.2px;}
+.hci-section__heading p{margin:0;}
+.hci-section__body>*{font-family:"Jost";  line-height:calc({{ section.settings.body_size }}px + 5px);color:{{ section.settings.body_color }};font-size:{{ section.settings.body_size }}px; font-weight: 400;}
+.hci-section__body p{margin:0 0 4px 0;}
+.hci-section__body p:last-child{margin:0;}
+.hci-section__tagline{margin:0;font-style:italic;opacity:0.75;line-height:1.5;}
+.hci-section__btn{font-family:"Jost" ; display:inline-block;padding:11px 28px;border-radius:6px;border:1.5px solid;font-size:12px;letter-spacing:1.5px;font-weight:500;text-decoration:none;transition:opacity 0.2s ease,background 0.2s ease;margin-top:4px;}
+.hci-section__image-wrap{width:100%;overflow:hidden;}
+.hci-section__image{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:{{ section.settings.image_ratio }};}
+.hci-section__image-placeholder{aspect-ratio:16/7;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;}
+.hci-section__image-placeholder svg{width:30%;height:30%;opacity:0.15;}
+
+@media screen and (max-width:767px){
+    .hci-section__heading{font-size:28px; line-height: 120%; padding: 0 20px; }
+    .hci-section__body>*{font-size: 14px;}
+    .hci-section__image{aspect-ratio:4/3;}
+}
+
+@media screen and (max-width: 400px){
+  .hci-section__body>*{font-size: 15px;}
+}
+</style>
+{% schema %}
+{
+  "name": "Hero CTA with Image",
+  "tag": "section",
+  "class": "section-hci",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#5c1020"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Recommended plan"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow Font Size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Balance your nights with better mornings"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 38
+    },
+    {
+      "type": "header",
+      "content": "Body Text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Paragraphs",
+      "default": "<p>Bio-fermentation enhances nutrient bioavailability and functional activity in the gut.</p><p>Advanced biomanufacturing improves delivery, stability, and efficacy – so the body can actually use what you take.</p>"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Body Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (italic line)",
+      "default": "This is proactive ageing support, not damage control."
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Tagline Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Tagline Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "12 Week Performance Reset"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "16 / 5", "label": "Ultra Wide 16:5" },
+        { "value": "16 / 7", "label": "Wide 16:7" },
+        { "value": "16 / 9", "label": "16:9" },
+        { "value": "4 / 3", "label": "4:3" },
+        { "value": "1 / 1", "label": "Square" }
+      ],
+      "default": "16 / 7"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap Between Text & Image",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "show_placeholder",
+      "label": "Show Placeholder if No Image",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero CTA with Image"
+    }
+  ]
+}
+{% endschema %}

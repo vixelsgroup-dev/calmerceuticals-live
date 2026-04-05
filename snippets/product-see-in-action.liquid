@@ -1,0 +1,341 @@
+{% comment %} snippets/product-see-in-action.liquid {% endcomment %}
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+
+<div class="product__block product__block--sia" style="padding-bottom: {{ block.settings.padding_bottom }}px;" {{ block.shopify_attributes }}>
+  {%- if block.settings.label != blank -%}
+    <p class="sia-label">{{ block.settings.label }}</p>
+  {%- endif -%}
+
+  <div class="sia-flickity-wrap">
+    <div class="sia-slider" id="sia-slider-{{ block.id }}">
+      {%- for i in (1..8) -%}
+        {%- assign vid_key = 'video_' | append: i -%}
+        {%- assign vid = block.settings[vid_key] -%}
+        {%- if vid != blank -%}
+          <div class="sia-slide" data-video-url="{{ vid.sources[1].url | default: vid.sources[0].url }}">
+            <div class="sia-thumb-wrap">
+              {%- if vid.preview_image != blank -%}
+                {{ vid.preview_image | image_url: width: 300 | image_tag: loading: 'lazy', alt: '', class: 'sia-thumb-img' }}
+              {%- else -%}
+                <div class="sia-thumb-placeholder"></div>
+              {%- endif -%}
+              <video class="sia-bg-video" muted playsinline preload="none"></video>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="sia-modal" id="sia-modal-{{ block.id }}">
+    <div class="sia-modal-overlay"></div>
+    <div class="sia-modal-content">
+      <button class="sia-modal-close" aria-label="Close">&#10005;</button>
+      <video class="sia-modal-video" controls playsinline></video>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sia-label {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #212121;
+    margin: 0 0 12px;
+  }
+
+  /* Desktop wrapper — padding makes room for arrows outside */
+  .sia-flickity-wrap {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .sia-slider {
+    width: 100%;
+  }
+
+  /* Desktop — 6 slides visible + half of 7th */
+  .sia-slide {
+    width: calc((100% - 36px) / 5.5);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .sia-thumb-wrap {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid gray;
+  }
+
+  .sia-thumb-img,
+  .sia-bg-video {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 6px;
+    display: block;
+  }
+
+  /* bg video hidden by default, shows when playing */
+  .sia-bg-video {
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .sia-slide.is-playing .sia-bg-video {
+    opacity: 1;
+  }
+
+  /* Arrow buttons — outside slides */
+  #sia-slider-{{ block.id }} .flickity-prev-next-button {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #sia-slider-{{ block.id }} .flickity-prev-next-button.previous {
+    left: -40px;
+  }
+
+  #sia-slider-{{ block.id }} .flickity-prev-next-button.next {
+    right: -40px;
+  }
+
+  #sia-slider-{{ block.id }} .flickity-page-dots {
+    display: none;
+  }
+
+  /* ── Modal — desktop ── */
+  .sia-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding-right: 20px;
+  }
+
+  .sia-modal.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .sia-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 0;
+  }
+
+  .sia-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 340px;
+    height: 85vh;
+    max-height: 700px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  .sia-modal-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+    object-fit: contain;
+  }
+
+  .sia-modal-close {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 99999;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    /* No arrows, no padding on mobile */
+    #sia-slider-{{ block.id }} .flickity-prev-next-button {
+      display: none !important;
+    }
+
+    .sia-flickity-wrap {
+      padding: 0 !important;
+    }
+
+    /* Small cards on mobile */
+    .sia-slide {
+      width: 66px !important;
+      margin-right: 0px !important;
+    }
+
+    .sia-thumb-wrap {
+      height: 95px !important;
+    }
+
+    /* Mobile modal — fullscreen, sits below header */
+    .sia-modal {
+      padding-right: 0 !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+    }
+
+    .sia-modal-content {
+      width: 100% !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      border-radius: 0 !important;
+    }
+
+    .sia-modal-video {
+      object-fit: cover !important;
+    }
+
+    /* Close button below nav bar on mobile */
+    .sia-modal-close {
+      top: 55px !important;
+      left: 16px !important;
+      width: 40px !important;
+      height: 40px !important;
+      font-size: 18px !important;
+      background: rgba(0,0,0,0.75) !important;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var blockId   = '{{ block.id }}';
+  var sliderEl  = document.getElementById('sia-slider-' + blockId);
+  var modalEl   = document.getElementById('sia-modal-' + blockId);
+  var videoEl   = modalEl.querySelector('.sia-modal-video');
+  var closeBtn  = modalEl.querySelector('.sia-modal-close');
+  var overlayEl = modalEl.querySelector('.sia-modal-overlay');
+
+  if (!sliderEl) return;
+
+  var slides = Array.from(sliderEl.querySelectorAll('.sia-slide'));
+  var currentIndex = 0;
+  var modalOpen = false;
+
+  // ── Flickity init ──────────────────────────────────
+  var flkty = new Flickity(sliderEl, {
+    cellAlign: 'left',
+    contain: true,
+    pageDots: false,
+    prevNextButtons: true,
+    freeScroll: false,
+    draggable: true
+  });
+
+  // ── Auto-play muted one by one ─────────────────────
+  function playSlideVideo(index) {
+    if (modalOpen) return;
+    if (!slides.length) return;
+
+    // Stop all bg videos
+    slides.forEach(function(s) {
+      var v = s.querySelector('.sia-bg-video');
+      if (v) { v.pause(); v.src = ''; }
+      s.classList.remove('is-playing');
+    });
+
+    currentIndex = index % slides.length;
+    var slide = slides[currentIndex];
+    var url = slide.dataset.videoUrl;
+    if (!url) { playSlideVideo(currentIndex + 1); return; }
+
+    var bgVideo = slide.querySelector('.sia-bg-video');
+    bgVideo.src = url;
+    bgVideo.muted = true;
+    bgVideo.play().catch(function() {});
+    slide.classList.add('is-playing');
+
+    bgVideo.onended = function() {
+      playSlideVideo(currentIndex + 1);
+    };
+  }
+
+  playSlideVideo(0);
+
+  // ── Click → open modal with sound ─────────────────
+  sliderEl.addEventListener('click', function(e) {
+    var slide = e.target.closest('.sia-slide');
+    if (!slide) return;
+    var url = slide.dataset.videoUrl;
+    if (!url) return;
+
+    currentIndex = slides.indexOf(slide);
+    modalOpen = true;
+
+    var bgVideo = slide.querySelector('.sia-bg-video');
+    if (bgVideo) bgVideo.pause();
+
+    videoEl.src = url;
+    videoEl.muted = false;
+    modalEl.classList.add('is-open');
+    videoEl.play();
+    document.body.style.overflow = 'hidden'; // ← ADD THIS
+  });
+
+  // ── Close modal ────────────────────────────────────
+ function closeModal() {
+    videoEl.pause();
+    videoEl.src = '';
+    modalEl.classList.remove('is-open');
+    modalOpen = false;
+    document.body.style.overflow = ''; // ← ADD THIS
+    playSlideVideo(currentIndex);
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlayEl.addEventListener('click', closeModal);
+
+  videoEl.addEventListener('ended', function() {
+    closeModal();
+    currentIndex++;
+    playSlideVideo(currentIndex);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+});
+</script>

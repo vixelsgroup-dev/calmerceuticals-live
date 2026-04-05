@@ -1,0 +1,242 @@
+<div class="multicolumn-custom{% if section.settings.bg_video != blank %} bg-video{% endif %}">
+  {% if section.settings.bg_video != blank %}
+    <div class="video">
+      {% assign image_poster = section.settings.bg_image | image_url: width: 2000 %}
+      {{ section.settings.bg_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, poster: image_poster }}
+    </div>
+  {% endif %}
+  <div class="multicolumn-custom-inner wrapper"{% unless section.settings.bg_video != blank %} style="background-image:url({{ section.settings.bg_image | image_url: width: 2000 }});"{% endunless %}>
+      <div class="section__header text-center">
+          {% if section.settings.heading != blank %}
+              <h2 class="section__heading h2">
+                  {{- section.settings.heading -}}
+              </h2>
+          {% endif %}
+          {% if section.settings.subheading != blank %}
+              <div class="text__content">
+                  {{- section.settings.subheading -}}
+              </div>
+          {% endif %}
+      </div>
+      <div id="multi-items-{{ section.id }}" class="multi-items text-center" data-aos-intersection="0.3">
+          <div class="multi-items-inner cols-{{ section.settings.desktop_columns }}">
+              {% assign animation_delay = 250 %}
+              {% for block in section.blocks %}
+                  <div 
+                      class="multi-item block-{{ block.id }}"
+                      data-aos="fade-up"
+                      data-aos-anchor="{{ '#multi-items-' | append: section.id }}"
+                      data-aos-delay="{{ animation_delay }}"
+                      {%- assign animation_delay = animation_delay | plus: 400 -%}>
+                      <div class="top">
+                          {% if block.settings.points != blank %}
+                              <div class="points">{{ block.settings.points }}</div>
+                          {% endif %}
+                          {% if block.settings.image != blank %}
+                              <div class="image">{{ block.settings.image | image_url: width: 200 | image_tag }}</div>
+                          {% endif %}
+                      </div>
+                      <div class="bottom bottom-{{ section.id }}">
+                          {% if block.settings.title != blank %}
+                              <div class="text">{{ block.settings.title }}</div>
+                          {% endif %}
+                          {% if block.settings.button_link != blank %}
+                              <div class="cta">
+                                <a 
+                                href="{{ block.settings.button_link }}" 
+                                class="btn btn--black btn--solid btn--small"
+                                {% if block.settings.button_link contains 'http' %}target="_blank"{% endif %}>
+                                  {{ block.settings.button_label }}
+                                </a>
+                              </div>
+                          {% endif %}
+                      </div>
+                      <style>
+                          .block-{{ block.id }} .top .points{background:{{ block.settings.points_bg_color }};}
+                      </style>
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</div>
+<style>
+    #shopify-section-{{ section.id }} .multicolumn-custom{position:relative;background-repeat:no-repeat;background-size:cover;padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+    #shopify-section-{{ section.id }} .multicolumn-custom.bg-video .multicolumn-custom-inner{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+    #shopify-section-{{ section.id }} .multicolumn-custom.bg-video video{width:100%;object-fit:cover;height:280px;}
+    #shopify-section-{{ section.id }} h2{--adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ section.settings.heading_size | times: 0.01 }});}
+    #shopify-section-{{ section.id }} .multicolumn-custom.bg-video .multi-items{width:100%;}
+    #shopify-section-{{ section.id }} .multi-items-inner{display:flex;justify-content:space-between;gap:10px;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item{width:calc(30% - 15px);display: flex; flex-direction: column;gap:20px;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image{display:flex;justify-content:center;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image img{transition:all 1s ease;height:auto;object-fit:contain;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image:hover img{transform:scale(1.1);}
+    #shopify-section-{{ section.id }} .top .points{display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;width:50px;height:50px;color:#fff;border-radius:100%;margin:0 auto 30px;}
+    #shopify-section-{{ section.id }} .bottom .cta{margin-top:10px;}
+    @media (min-width: 768px) {
+      #shopify-section-{{ section.id }} .multi-items-inner{justify-content:center;flex-wrap:wrap;gap:30px;}
+      #shopify-section-{{ section.id }} .multicolumn-custom.bg-video video{height:420px;}
+      #shopify-section-{{ section.id }} .multi-items-inner .multi-item{gap:30px;}
+      #shopify-section-{{ section.id }} .cols-6 .multi-item{width:calc(16.6667% - 30px);}
+      #shopify-section-{{ section.id }} .cols-5 .multi-item{width:calc(20% - 30px);}
+      #shopify-section-{{ section.id }} .cols-4 .multi-item{width:calc(25% - 30px);}
+      #shopify-section-{{ section.id }} .cols-3 .multi-item{width:calc(33.3333% - 30px);}
+      #shopify-section-{{ section.id }} .cols-2 .multi-item{width:calc(50% - 30px);}
+      #shopify-section-{{ section.id }} .cols-1 .multi-item{width:calc(100% - 30px);}
+      #shopify-section-{{ section.id }} .top .points{font-size:30px;width:95px;height:95px;}
+    }
+    @media (max-width: 767px) {
+      #shopify-section-{{ section.id }} .multi-items-inner .bottom .text{font-size:13px;}
+      #shopify-section-{{ section.id }} .bottom .cta a{font-size:10px;padding:10px;}
+    }
+</style>
+{% if section.settings.custom_liquid %}
+  {{ section.settings.custom_liquid }}
+{% endif %}
+<script>
+    function equalizeBottomHeight() {
+        const bottoms = document.querySelectorAll(
+            '.multi-item .bottom-{{ section.id }}'
+        );
+        let maxHeight = 0;
+
+        bottoms.forEach(el => {
+            el.style.height = 'auto';
+        });
+
+        bottoms.forEach(el => {
+            if (el.offsetHeight > maxHeight) {
+            maxHeight = el.offsetHeight;
+            }
+        });
+
+        bottoms.forEach(el => {
+            el.style.height = maxHeight + 'px';
+        });
+    }
+
+    window.addEventListener('load', equalizeBottomHeight);
+    window.addEventListener('resize', equalizeBottomHeight);
+</script>
+{% schema %}
+{
+  "name": "Multicolumn Custom #2",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Multicolumn Custom</p>"
+    },
+    {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Size",
+        "min": 50,
+        "max": 300,
+        "default": 100,
+        "step": 5,
+        "unit": "%"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Earning points is easy, the more you engage, the more you earn!</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "video",
+      "id": "bg_video",
+      "label": "Background Video"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "CSS/Javascript"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "points",
+          "label": "Points text",
+          "default": "+20"
+        },
+        {
+          "type": "color_background",
+          "id": "points_bg_color",
+          "label": "Background color"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Create an Account</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "FOLLOW US"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn - Custom #2",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,356 @@
+<div class="multicolumn-custom">
+    <div class="multicolumn-custom-inner wrapper">
+        <div class="section__header text-center">
+            {% if section.settings.heading != blank %}
+                <h2 class="section__heading h2">
+                    {{- section.settings.heading -}}
+                </h2>
+            {% endif %}
+            {% if section.settings.subheading != blank %}
+                <div class="text__content">
+                    {{- section.settings.subheading -}}
+                </div>
+            {% endif %}
+        </div>
+        <div id="multi-items-{{ section.id }}" class="multi-items text-center" data-aos-intersection="0.3">
+            <div class="multi-items-inner cols-{{ section.settings.desktop_columns }} cols-mobile-{{ section.settings.mobile_columns }} multi-items-inner--slider-{{ section.id }}">
+                {% for block in section.blocks %}
+                    <div 
+                        class="multi-item block-{{ block.id }} comparison-container comparison-container-{{ section.id }}">
+                        {% if block.settings.before_image != blank %}
+                            <div class="before before-{{ section.id }}">
+                                <div class="image">{{ block.settings.before_image | image_url: width: 1000 | image_tag }}</div>
+                                {% if block.settings.before_text != blank %}
+                                <div class="caption">{{ block.settings.before_text }}</div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% if block.settings.after_image != blank %}
+                            <div class="after after-{{ section.id }}">
+                                <div class="image">{{ block.settings.after_image | image_url: width: 1000 | image_tag }}</div>
+                                {% if block.settings.after_text != blank %}
+                                <div class="caption">{{ block.settings.after_text }}</div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+  #shopify-section-{{ section.id }} .comparison-container{position:relative;display:table;overflow:hidden;touch-action: none;}
+  #shopify-section-{{ section.id }} .before,
+  #shopify-section-{{ section.id }} .before-wrapper{position:absolute;top:0;left:0;}
+  #shopify-section-{{ section.id }} .before{display:block;max-width:none;}
+  #shopify-section-{{ section.id }} .before-wrapper{height:100%;width:50%;overflow:hidden;}
+  #shopify-section-{{ section.id }} .comparison-dragger{position:absolute;top:0;left:50%;width:0;height:100%;cursor:ew-resize;}
+  #shopify-section-{{ section.id }} .comparison-dragger::before{content:'';display:block;width:2px;height:100%;background:rgba(255,255,255,0.7);}
+  #shopify-section-{{ section.id }} .comparison-dragger svg{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3; cursor: pointer;width:35px;height:35px;}
+  #shopify-section-{{ section.id }} .caption{display: inline-block; font-size: 10px; position: absolute; bottom: .5em; right: .5em; padding: 2px 8px; border-radius: 5px; background: #fff;}
+  #shopify-section-{{ section.id }} .before .caption{right:auto;left:.5em;}
+  #shopify-section-{{ section.id }} .multicolumn-custom{background-image:url({{ section.settings.bg_image | image_url: width: 2000 }});background-repeat:no-repeat;background-size:cover;padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+  #shopify-section-{{ section.id }} h2{--adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ section.settings.heading_size | times: 0.01 }});}
+  #shopify-section-{{ section.id }} .multi-items-inner .multi-item{display: flex; flex-direction: column;background-color:{{ section.settings.card_color }};}
+  #shopify-section-{{ section.id }} .cols-mobile-4 .multi-item{width:calc(25% - 5px);}
+  #shopify-section-{{ section.id }} .cols-mobile-3 .multi-item{width:calc(33.3333% - 5px);}
+  #shopify-section-{{ section.id }} .cols-mobile-2 .multi-item{width:calc(50% - 5px);}
+  #shopify-section-{{ section.id }} .cols-mobile-1 .multi-item{width:calc(100% - 5px);}
+  #shopify-section-{{ section.id }} .multi-items-inner .text p:first-of-type{margin-top:0;}
+  {% if section.settings.box_shadow %}
+  #shopify-section-{{ section.id }} .multi-items-inner .multi-item{box-shadow: 0 4px 13.9px 0 #D9D9D9;}
+  {% endif %}
+  #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image{display: flex; justify-content: center;margin-left: auto; margin-right: auto;overflow:hidden;}
+  #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image img{transition:all 1s ease;width:100%;height:auto;aspect-ratio:1/0.9;object-fit:cover;}
+  #shopify-section-{{ section.id }} .flickity-page-dots{display:flex;justify-content:center;position:static;margin-top:30px;}
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .caption{font-size:13px;}
+    {% unless section.settings.desktop_carousel %}
+    #shopify-section-{{ section.id }} .multi-items-inner{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;gap:30px;}
+    #shopify-section-{{ section.id }} .cols-6 .multi-item{width:calc(16.6667% - 30px);}
+    #shopify-section-{{ section.id }} .cols-5 .multi-item{width:calc(20% - 30px);}
+    #shopify-section-{{ section.id }} .cols-4 .multi-item{width:calc(25% - 30px);}
+    #shopify-section-{{ section.id }} .cols-3 .multi-item{width:calc(33.3333% - 30px);}
+    #shopify-section-{{ section.id }} .cols-2 .multi-item{width:calc(50% - 30px);}
+    #shopify-section-{{ section.id }} .cols-1 .multi-item{width:calc(100% - 30px);}
+    {% else %}
+    #shopify-section-{{ section.id }} .multi-item{margin-right:10px;}
+    #shopify-section-{{ section.id }} .cols-6 .multi-item{width:calc(16.6667% - 5px);}
+    #shopify-section-{{ section.id }} .cols-5 .multi-item{width:calc(20% - 5px);}
+    #shopify-section-{{ section.id }} .cols-4 .multi-item{width:calc(25% - 5px);}
+    #shopify-section-{{ section.id }} .cols-3 .multi-item{width:calc(33.3333% - 5px);}
+    #shopify-section-{{ section.id }} .cols-2 .multi-item{width:calc(50% - 5px);}
+    #shopify-section-{{ section.id }} .cols-1 .multi-item{width:calc(100% - 5px);}
+    {% endunless %}
+    #shopify-section-{{ section.id }} .comparison-dragger svg{width:40px;height:40px;}
+  }
+  @media (max-width: 767px) {
+      #shopify-section-{{ section.id }} .multi-items-inner .multi-item{margin-right:10px;}
+      #shopify-section-{{ section.id }} .flickity-page-dots .dot{width:100%;}
+  }
+</style>
+<script>
+  (function() {
+    "use strict";
+
+    function $$(selector) {
+      return Array.from(document.querySelectorAll(selector));
+    }
+
+    function syncSize(master, slave) {
+      slave.style.width = master.clientWidth + 'px';
+    }
+
+    function getMouseX(parent, e) {
+      const bounds = parent.getBoundingClientRect(),
+          x = e.clientX - bounds.left;
+      return { x, width: bounds.width };
+    }
+
+    function initComparer(lhs) {
+      const container = lhs.closest('.comparison-container-{{ section.id }}'),
+            splitPos = lhs.dataset.comparisonSplitter;
+      let dragOffset;
+
+      //Lock the compared element's width to the original width:
+      window.addEventListener('load', e => syncSize(container, lhs));
+      window.addEventListener('resize', e => syncSize(container, lhs));
+      syncSize(container, lhs);
+
+      //Put the compared element into a resizable wrapper:
+      const lhsWrapper = container.appendChild(document.createElement('div'));
+      lhsWrapper.classList.add('before-wrapper');
+      lhsWrapper.appendChild(lhs);
+
+      const dragger = container.appendChild(document.createElement('div'));
+      dragger.classList.add('comparison-dragger');
+      dragger.innerHTML = `<svg role="presentation" focusable="false" fill="none" width="50" height="50" viewBox="0 0 50 50">
+                            <g>
+                              <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+                              <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000" stroke-width=".75" stroke-linecap="square"></path>
+                            </g>
+                          </svg>
+                          `;
+
+      if(splitPos) {
+        lhsWrapper.style.width = dragger.style.left = splitPos;
+      }
+      
+      function pointerX(e){
+        return e.touches ? e.touches[0].clientX : e.clientX;
+      }
+
+      function getX(parent, e){
+        const bounds = parent.getBoundingClientRect();
+        return {
+          x: pointerX(e) - bounds.left,
+          width: bounds.width
+        };
+      }
+
+      // START DRAG
+      function startDrag(e){
+        e.preventDefault();
+        dragOffset = getX(dragger, e);
+      }
+
+      // MOVE DRAG
+      function moveDrag(e){
+        if(!dragOffset) return;
+
+        const newX = getX(container, e),
+              relX = (newX.x - dragOffset.x) / newX.width;
+
+        lhsWrapper.style.width = dragger.style.left =
+          (Math.max(0, Math.min(relX, 1)) * 100) + '%';
+      }
+
+      // END DRAG
+      function stopDrag(){
+        dragOffset = undefined;
+      }
+
+      dragger.addEventListener('mousedown', startDrag);
+      dragger.addEventListener('touchstart', startDrag, {passive:false});
+
+      container.addEventListener('mousemove', moveDrag);
+      container.addEventListener('touchmove', moveDrag, {passive:false});
+
+      window.addEventListener('mouseup', stopDrag);
+      window.addEventListener('touchend', stopDrag);
+    }
+
+    function init() {
+      $$('.before-{{ section.id }}').forEach(initComparer);
+    }
+    init();
+  })();
+</script>
+<script>
+  !function() {
+      "use strict";
+      document.addEventListener('DOMContentLoaded', function () {
+        {% if section.settings.desktop_carousel %}
+          const slider = document.querySelector('.multi-items-inner--slider-{{ section.id }}');
+
+          if (slider) {
+              let flkty = window.theme.Flickity.data(slider);
+              if (!flkty) {
+                  flkty = new window.theme.Flickity(slider, {
+                      cellAlign: 'left',
+                      contain: true,
+                      pageDots: true,
+                      prevNextButtons: false,
+                      wrapAround: true,
+                      draggable: false
+                  });
+              }
+          }
+        {% else %}
+          if (window.innerWidth <= 767) {
+            const slider = document.querySelector('.multi-items-inner--slider-{{ section.id }}');
+
+            if (slider) {
+                let flkty = window.theme.Flickity.data(slider);
+                if (!flkty) {
+                    flkty = new window.theme.Flickity(slider, {
+                        cellAlign: 'left',
+                        contain: true,
+                        pageDots: true,
+                        prevNextButtons: false,
+                        wrapAround: true,
+                        draggable: false
+                    });
+                }
+            }
+          }
+        {% endif %}
+      });
+  }();
+</script>
+{% schema %}
+{
+  "name": "Multicolumn Before/After",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Multicolumn Custom</p>"
+    },
+    {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Size",
+        "min": 50,
+        "max": 300,
+        "default": 100,
+        "step": 5,
+        "unit": "%"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Earning points is easy, the more you engage, the more you earn!</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_carousel",
+      "label": "Desktop carousel",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "box_shadow",
+      "label": "Box shadow",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "before_text",
+          "label": "Before Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After Image"
+        },
+        {
+          "type": "text",
+          "id": "after_text",
+          "label": "After Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn - Before/After",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

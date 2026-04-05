@@ -1,0 +1,378 @@
+{% comment %}
+  Section: Hero - Rewrite Your Age
+  Two-column layout: left = text/stats/CTA, right = product image with badges
+  Dark burgundy background, fully dynamic via Theme Editor
+{% endcomment %}
+
+<section class="rya-hero" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background: {{ section.settings.background_color }};
+">
+  <div class="rya-hero__inner {% if section.settings.container_width %}wrapper {% endif %}">
+
+    {%- comment -%} ── LEFT COLUMN ── {%- endcomment -%}
+    <div class="rya-hero__left">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="rya-hero__eyebrow">
+          <span class="rya-hero__eyebrow-dash">—</span>
+          <span class="rya-hero__eyebrow-text">{{ section.settings.eyebrow }}</span>
+        </div>
+      {%- endif -%}
+
+
+      {%- if section.settings.heading != blank -%}
+        <div class="rya-hero__heading-main">
+           {{ section.settings.heading }}
+        </div>
+      {%- endif -%}
+      
+       {%- if section.settings.divider != blank -%}
+        <div class="rya-hero__divider"></div>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <div class="rya-hero__subheading-wrap">
+          <span class="rya-hero__subheading">{{ section.settings.subheading }}</span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="rya-hero__body">{{ section.settings.body_text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.disclaimer != blank -%}
+        <div class="rya-hero__disclaimer">{{ section.settings.disclaimer }}</div>
+      {%- endif -%}
+
+      {%- comment -%} Stats Row {%- endcomment -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="rya-hero__stats">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'stat' -%}
+              <div class="rya-hero__stat" {{ block.shopify_attributes }}>
+                <div class="rya-hero__stat-number">{{ block.settings.number }}</div>
+                <div class="rya-hero__stat-label">{{ block.settings.label }}</div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="rya-hero__btn"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%} ── RIGHT COLUMN ── {%- endcomment -%}
+    <div class="rya-hero__right">
+
+      <div class="rya-hero__image-wrap">
+
+        {%- comment -%} Top-right badge {%- endcomment -%}
+        {%- if section.settings.badge_top_title != blank -%}
+          <div class="rya-hero__badge rya-hero__badge--top">
+            <div class="rya-hero__badge-number">{{ section.settings.badge_top_title }}</div>
+            <div class="rya-hero__badge-subtitle">{{ section.settings.badge_top_subtitle }}</div>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Product image {%- endcomment -%}
+        {%- if section.settings.product_image != blank -%}
+          <img
+            src="{{ section.settings.product_image | img_url: '700x700' }}"
+            alt="{{ section.settings.product_image.alt | escape }}"
+            class="rya-hero__product-img"
+            loading="eager"
+            width="700"
+            height="700"
+          >
+        {%- else -%}
+          <div class="rya-hero__product-img rya-hero__product-img--placeholder">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+
+
+      </div>
+
+      {%- comment -%} Product label below image {%- endcomment -%}
+      {%- if section.settings.product_label != blank -%}
+        <div class="rya-hero__product-label">{{ section.settings.product_label }}</div>
+      {%- endif -%}
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.rya-hero{width:100%;box-sizing:border-box;overflow:hidden;}
+.rya-hero > *{font-family: "Jost";}
+.rya-hero__inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.rya-hero__eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.rya-hero__eyebrow-dash{color:{{ section.settings.eyebrow_color }};font-size:20px;letter-spacing:1px;}
+.rya-hero__eyebrow-text{color:{{ section.settings.eyebrow_color }};font-size:16px;font-weight:400;}
+.rya-hero__heading-main>*{font-family: "Jost"; font-size:64px;line-height:1.05;color:{{ section.settings.heading_color }};margin:0 0 20px 0;font-weight:400;letter-spacing:-1px;}
+.rya-hero__heading-main strong,.rya-hero__heading-main b{font-weight:600;color:{{ section.settings.heading_color }};}
+.rya-hero__divider{height:1px;width:100%;border:2px solid #fff;margin:20px 0;}
+.rya-hero__subheading-wrap{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.rya-hero__subheading{color:{{ section.settings.subheading_color }};font-size:24px;font-weight:400;white-space:nowrap;letter-spacing:0.5px;}
+.rya-hero__body{margin-bottom:10px;max-width:420px;}
+.rya-hero__body p{color:{{ section.settings.body_color }};font-size:18px;line-height:120%;margin:0 0 8px 0; font-weight: 400;}
+.rya-hero__disclaimer{margin-bottom:28px;}
+.rya-hero__disclaimer p{margin:0;color:{{ section.settings.body_color }};font-size:13px;line-height:1.5;  font-weight: 400;}
+.rya-hero__stats{display:flex;gap:40px;margin-bottom:36px;align-items:flex-start;}
+.rya-hero__stat{display:flex;flex-direction:column;gap:4px;}
+.rya-hero__stat-number{font-size:48px;font-weight:300;color:{{ section.settings.stat_number_color }};line-height:1;letter-spacing:-1px;}
+.rya-hero__stat-label{font-size:12px;color:{{ section.settings.stat_label_color }};letter-spacing:1.5px;text-transform:uppercase;font-weight:400;line-height:1.4;}
+.rya-hero__btn{display:inline-block;padding:14px 28px;border:1.5px solid {{ section.settings.button_border_color }};color:{{ section.settings.button_text_color }};background:{{ section.settings.button_border_color }};font-size:16px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:400;transition:background 0.25s ease,color 0.25s ease;cursor:pointer;border-radius:40px;}
+.rya-hero__right{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.rya-hero__image-wrap{position:relative;width:100%;max-width:420px;}
+.rya-hero__product-img{width:100%;height:auto;display:block;object-fit:contain;}
+.rya-hero__product-img--placeholder{width:100%;aspect-ratio:1;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;}
+.rya-hero__badge{position:absolute;background:rgba(50,35,40,0.85);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.12);padding:10px 14px;min-width:100px;}
+.rya-hero__badge--top{top:8%;right:-4%;}
+.rya-hero__badge--bottom{bottom:18%;left:-4%;}
+.rya-hero__badge-number{font-size:18px;font-weight:700;color:#ffffff;line-height:1;margin-bottom:3px;letter-spacing:-0.5px;}
+.rya-hero__badge-subtitle{font-size:8px;color:rgba(255,255,255,0.6);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;}
+.rya-hero__product-label{text-align:center;color:{{ section.settings.body_color }};font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;line-height:1.8;opacity:0.85;}
+@media screen and (max-width:767px){
+  .rya-hero{padding-top: 40px; padding-bottom: 40px;}
+  .rya-hero__inner{grid-template-columns:1fr;gap:48px;}
+  .rya-hero__left{order:2;}
+  .rya-hero__right{order:1;}
+  .rya-hero__image-wrap{max-width:400px;margin:0 auto;}
+  .rya-hero__stat{max-width: 130px;}
+  .rya-hero__stats{row-gap: 35px; flex-wrap: wrap;}
+  .rya-hero__badge--top{right:0;}
+  .rya-hero__badge--bottom{left:0;}
+  .rya-hero__btn{display: flex; justify-content: center;  align-items: center; font-size: 15px;letter-spacing: 0;}
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Hero – Rewrite Your Age",
+  "tag": "section",
+  "class": "section-rya-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#3d1a24"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Text Color",
+      "default": "#c8b8bc"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#f5eeef"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading / Accent Color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body & Label Text Color",
+      "default": "#d4c5c8"
+    },
+    {
+      "type": "color",
+      "id": "stat_number_color",
+      "label": "Stat Number Color",
+      "default": "#f0e8e8"
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Stat Label Color",
+      "default": "#b09298"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border & Hover Color",
+      "default": "#e8dfe0"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#f0e8e8"
+    },
+    {
+      "type": "header",
+      "content": "Left Column – Text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Line",
+      "default": "Precision Longevity System"
+    },
+    {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show Divider Below Heading",
+        "default" : true
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Main Heading",
+      "info": "Use <strong> or bold for the bold word. Each line will stack naturally.",
+      "default": "<p>Rewrite<br>Your <strong>Age.</strong></p>"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading (Gold accent)",
+      "default": "World's First"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Paragraph",
+      "default": "<p>The world's first microbiome catalyst clinically shown to reduce biological inflammageing markers by up to 90% within 14 days*. Engineered from centenarian-sourced probiotics.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer (small italic text)",
+      "default": "<p>*Studies conducted on the ingredient complex; not on Calmerceuticals Longevity as a finished product. Individual results may vary.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "START YOUR 14-DAY REJUVENATION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Right Column – Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Product Label (below image)",
+      "default": "LONGEVITY™\nVIACAP™ MICRO-\nENCAPSULATED SYSTEM"
+    },
+    
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Stat Number / Value",
+          "default": "–90%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Stat Label",
+          "default": "INFLAMMATORY AGE REDUCTION"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero – Rewrite Your Age",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "–90%",
+            "label": "INFLAMMATORY AGE REDUCTION"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "14",
+            "label": "DAY CLINICAL WINDOW"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "+84%",
+            "label": "COGNITIVE PERFORMANCE"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,312 @@
+<style>
+  .graph-section-{{ section.id }} { position: relative; display: flex; align-items: flex-end; gap: 24px; min-height: 700px; padding-left: 40px; padding-bottom: 40px;  justify-content: flex-start; }
+  .bar-{{ section.id }} { min-width: 150px; text-align: center; display: flex; flex-direction: column; gap: 20px; justify-content: flex-end;  }
+  .bar-top-{{ section.id }} { display: flex; justify-content: center; align-items: center; min-height: 125px; }
+  .bar-track-{{ section.id }} {  margin-top: auto;  height: var(--bar-height); display: flex; align-items: flex-end; overflow: hidden; transition: height 1s cubic-bezier(0.4, 0, 0.2, 1); }
+  .bar-fill-{{ section.id }} { width: 100%; height: 0; transform-origin: bottom; transition: height 1s cubic-bezier(0.4, 0, 0.2, 1); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .bar-{{ section.id }}.animate .bar-fill-{{ section.id }} { height: 100%; }
+  .badge-{{ section.id }} { padding: 6px 14px; border-radius: 100%; font-size: 25px; width: 95px; height: 95px; opacity: 0; transition: opacity 0.5s ease 0.6s; display: flex; justify-content: center; align-items: center; font-weight: 700; }
+  .bar-{{ section.id }}.animate .badge-{{ section.id }} { opacity: 1; }
+  .bar-bottom-{{ section.id }} { min-height: 110px; display: flex; flex-direction: column; gap: 10px; }
+  .bar-{{ section.id }} p { margin: 10px 0; }
+  .bar-button-{{ section.id }} { display: inline-block; padding: 8px 16px; text-decoration: none; border-radius: 8px; font-size: 14px; transition: all 0.3s ease; }
+  .bar-button-{{ section.id }}:hover { opacity: 0.85; transform: translateY(-2px); }
+  .y-axis-{{ section.id }}{ width: 2px; height: 0; left: 20px; bottom: 40px; transform-origin: bottom; transition: height 1.2s cubic-bezier(0.4, 0, 0.2, 1);}
+  {% comment %} .y-axis-{{ section.id }}.animate { height: 520px; } {% endcomment %}
+  .x-axis-{{ section.id }} { height: 2px; width: 0; left: 20px; bottom: 40px; transform-origin: left; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; }
+  .x-axis-{{ section.id }}.animate { width: calc(100% - 40px); }
+  .axis-{{ section.id }}{position: absolute; background: #999;display:none;}
+  .section__header { margin-bottom: 40px; }
+  @media screen and (max-width:749px){
+    .graph-section-{{ section.id }}{padding-left: 0; gap: 12px; overflow-x: scroll;}
+    .x-axis-{{ section.id }}, .y-axis-{{ section.id }} {display:none;}
+    .bar-{{ section.id }} {min-width: 90px;}
+    .badge-{{ section.id }} {font-size: 17px; width: 70px; height: 70px;}
+    .bar-bottom-{{ section.id }}{min-height: 150px; gap: 0;}
+    .bar-button-{{ section.id }} { font-size: 10px; padding: 10px; }
+    .bar-{{ section.id }} p { font-size: 13px; }
+  }
+</style>
+
+<div class="graph-wrapper-{{ section.id }}">
+  <div class="graph-inner wrapper">
+    <div class="section__header text-center">
+      {% if section.settings.heading != blank %}
+        <h2 class="section__heading h2">
+          {{- section.settings.heading -}}
+        </h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <div class="text__content">
+          {{- section.settings.subheading -}}
+        </div>
+      {% endif %}
+    </div>
+
+    <section class="graph-section-{{ section.id }}">
+      <!-- Y axis -->
+      <div class="axis-{{ section.id }} y-axis-{{ section.id }}"></div>
+
+      <!-- X axis -->
+      <div class="axis-{{ section.id }} x-axis-{{ section.id }}"></div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'bar' %}
+          <div
+            class="bar-{{ section.id }} block-{{ block.id }}"
+            data-delay="{{ forloop.index0 | times: 200 }}"
+            data-percentage="{{ block.settings.percentage }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="bar-top-{{ section.id }}">
+              <span class="badge-{{ section.id }}">+{{ block.settings.percentage }}%</span>
+            </div>
+
+            <div class="bar-track-{{ section.id }}" style="--bar-height: 0;">
+              <div class="bar-fill-{{ section.id }}"></div>
+            </div>
+            <div class="bar-bottom-{{ section.id }}">
+              {% if block.settings.text != blank %}
+                <p>{{ block.settings.text }}</p>
+              {% endif %}
+              {% if block.settings.button_text != blank %}
+                <a href="{{ block.settings.button_link }}" class="btn bar-button-{{ section.id }}">
+                  {{ block.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+          <style>
+             .block-{{ block.id }} .bar-fill-{{ section.id }} {
+               {% if block.settings.bar_image != blank %}
+                 background-image: url('{{ block.settings.bar_image | img_url: 'master' }}');
+               {% endif %}
+             }
+            .block-{{ block.id }} .badge-{{ section.id }} {
+               background-image: {{ block.settings.badge_bg_color }};
+               color: {{ block.settings.badge_text_color }};
+             }
+             .block-{{ block.id }} .bar-button-{{ section.id }} {
+               background: {{ block.settings.button_bg_color }};
+               color: {{ block.settings.button_text_color }};
+             }
+          </style>
+        {% endif %}
+      {% endfor %}
+    </section>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const sectionId = '{{ section.id }}';
+    let animated = false;
+
+    function animateChart() {
+      const graphSection = document.querySelector('.graph-section-' + sectionId);
+
+      if (!graphSection || animated) return;
+
+      const rect = graphSection.getBoundingClientRect();
+      const isInViewport = rect.top <= window.innerHeight * 0.8;
+
+      if (isInViewport) {
+        animated = true;
+        const yAxis = document.querySelector('.y-axis-' + sectionId);
+        const xAxis = document.querySelector('.x-axis-' + sectionId);
+
+        if (yAxis) yAxis.classList.add('animate');
+        if (xAxis) xAxis.classList.add('animate');
+        const bars = document.querySelectorAll('.bar-' + sectionId);
+        const maxHeight = 650;
+        const minHeight = 80;
+
+        let tallestBar = 0;
+
+        bars.forEach((bar) => {
+          const percentage = parseInt(bar.dataset.percentage) || 0;
+
+          let calculatedHeight = minHeight + (Math.log(percentage + 1) / Math.log(301)) * (maxHeight - minHeight);
+
+          tallestBar = Math.max(tallestBar, calculatedHeight);
+        });
+
+        // Animate Y axis based on tallest bar
+        if (yAxis) {
+          yAxis.style.height = tallestBar + 40 + 'px'; // extra padding
+        }
+
+        // Animate bars (same as before)
+        bars.forEach((bar) => {
+          const delay = parseInt(bar.dataset.delay) || 0;
+          const percentage = parseInt(bar.dataset.percentage) || 0;
+
+          let calculatedHeight = minHeight + (Math.log(percentage + 1) / Math.log(301)) * (maxHeight - minHeight);
+
+          const barTrack = bar.querySelector('.bar-track-' + sectionId);
+
+          setTimeout(() => {
+            if (barTrack) {
+              barTrack.style.setProperty('--bar-height', calculatedHeight + 'px');
+            }
+            bar.classList.add('animate');
+          }, 1500 + delay);
+        });
+
+        window.removeEventListener('scroll', animateChart);
+      }
+    }
+
+    window.addEventListener('scroll', animateChart);
+    window.addEventListener('load', animateChart);
+
+    if (window.Shopify && window.Shopify.designMode) {
+      document.addEventListener('shopify:section:load', animateChart);
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Animated Bar Chart",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Bar Chart Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Animated Bar Chart</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Watch our progress grow with each milestone!</p>"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add bars using the blocks below. Each bar requires an uploaded image as background."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bar",
+      "name": "Bar",
+      "settings": [
+        {
+          "type": "number",
+          "id": "percentage",
+          "label": "Percentage Value",
+          "default": 50,
+          "info": "Enter any number (e.g., 20, 100, 300). The bar height adjusts automatically."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Bar Label Text",
+          "default": "Label Text",
+          "info": "Text shown below the bar"
+        },
+        {
+          "type": "header",
+          "content": "Bar Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bar_image",
+          "label": "Bar Background Image",
+          "info": "Upload an image to use as the bar background. Image will cover the entire bar area."
+        },
+        {
+          "type": "header",
+          "content": "Badge Settings"
+        },
+        {
+          "type": "color_background",
+          "id": "badge_bg_color",
+          "label": "Badge Background"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "info": "Leave empty to hide button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#6a0036"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Animated Bar Chart",
+      "blocks": [
+        {
+          "type": "bar",
+          "settings": {
+            "percentage": 70,
+            "text": "Create an Account",
+            "badge_bg_color": "#6a0036",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_bg_color": "#6a0036",
+            "button_text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "bar",
+          "settings": {
+            "percentage": 40,
+            "text": "Follow on Instagram",
+            "badge_bg_color": "#6a0036",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_bg_color": "#6a0036",
+            "button_text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "bar",
+          "settings": {
+            "percentage": 300,
+            "text": "Birthday Reward",
+            "badge_bg_color": "#6a0036",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_bg_color": "#6a0036",
+            "button_text_color": "#ffffff"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

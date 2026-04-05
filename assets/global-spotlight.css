@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Lexend:wght@400&display=swap');
+
+.global-spotlight {
+  background: var(--gs-bg, #f4f4f4);
+  padding-top: var(--gs-pt-mobile, 56px);
+  padding-bottom: var(--gs-pb-mobile, 56px);
+  overflow: hidden;
+}
+
+.global-spotlight__inner {
+  width: min(100%, var(--gs-container-max, 1440px));
+  margin-inline: auto;
+  display: grid;
+  gap: 36px;
+  padding-inline: 20px;
+}
+
+.global-spotlight__left {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.global-spotlight__title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: clamp(40px, 8.5vw, 61px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+  color: var(--gs-heading-color, #000);
+  font-weight: 500;
+}
+
+.global-spotlight__title-line--accent {
+  color: var(--gs-heading-accent-color, #610c27);
+}
+
+.global-spotlight__description {
+  margin: 0;
+  max-width: 352px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--gs-description-color, #131014);
+}
+
+.global-spotlight__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 385px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: var(--gs-cta-text-color, #fff);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.1),
+    0 1.5px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1.5px 8px 1px rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(
+      134.54deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    linear-gradient(90deg, var(--gs-cta-bg-color, #610c27) 0%, var(--gs-cta-bg-color, #610c27) 100%);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.global-spotlight__cta:hover {
+  filter: brightness(1.06);
+}
+
+.global-spotlight__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.global-spotlight__cta-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.35;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    transparent 60%
+  );
+  mix-blend-mode: soft-light;
+}
+
+.global-spotlight__cta-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+}
+
+.global-spotlight__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  color: #d8d8d8;
+  display: block;
+}
+
+.global-spotlight__cta-avatar-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.global-spotlight__cta-label {
+  position: relative;
+  z-index: 1;
+  font-family: Lexend, system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  letter-spacing: -0.24px;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--gs-cta-text-color, #fff);
+}
+
+.global-spotlight__right {
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  min-height: 280px;
+}
+
+.global-spotlight__globe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  min-height: min(72vh, 640px);
+}
+
+.global-spotlight__earth-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: manipulation;
+}
+
+@media (min-width: 990px) {
+  .global-spotlight {
+    padding-top: var(--gs-pt-desktop, 72px);
+    padding-bottom: var(--gs-pb-desktop, 72px);
+  }
+
+  .global-spotlight__inner {
+    grid-template-columns: minmax(360px, 1fr) minmax(460px, 780px);
+    align-items: stretch;
+    gap: 0;
+    padding-inline: 0;
+  }
+
+  .global-spotlight__left {
+    padding-left: 44px;
+    padding-right: 20px;
+    justify-content: center;
+  }
+
+  .global-spotlight__description {
+    max-width: 336px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .global-spotlight__title {
+    font-size: 61px;
+    width: 260px;
+  }
+
+  .global-spotlight__cta {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    background:
+      linear-gradient(
+        144.44deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.04) 100%
+      ),
+      linear-gradient(90deg, var(--gs-cta-bg-color, #610c27) 0%, var(--gs-cta-bg-color, #610c27) 100%);
+  }
+
+  .global-spotlight__right {
+    width: 122vw;
+    position: relative;
+    margin-left: -64vw;
+    left: 50%;
+    padding: 70px 0 30px;
+    min-height: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-spotlight__cta {
+    transition: none;
+  }
+}

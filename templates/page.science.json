@@ -1,0 +1,470 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_image_UDfF7W": {
+      "type": "section-banner-image",
+      "blocks": {
+        "text_gPnqxx": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "size": 100
+          }
+        },
+        "subheading_JH6nUN": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>From Lab to Life: Results You Can See</p>",
+            "size": 90
+          }
+        },
+        "heading_j8KyWx": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>The Beauty of Science</p>",
+            "size": 170,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_gPnqxx",
+        "subheading_JH6nUN",
+        "heading_j8KyWx"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1400px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "height": "four-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/u9778399291_httpss.mj.runSKnjgNhSGGc_A_minimalistic_abstract__04f9510c-7ce8-40e1-add0-31bf3a0bb1b0_1_1.png",
+        "image_mobile": "shopify://shop_images/u9778399291_httpss.mj.runSKnjgNhSGGc_A_minimalistic_abstract__6523a847-51ef-4c94-959e-34e7d0513977_2_1.png",
+        "overlay_type": "disabled",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 80,
+        "text_position": "bottom-left",
+        "text_alignment": "text-left",
+        "color_scheme": "scheme-1",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 10,
+        "padding_bottom": 30
+      }
+    },
+    "section_text_GyVTR4": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_Hnkntk": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Why CalmerCeuticals is Superior</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_nKPWjB": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Beauty Meets Science</strong></p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_NjjpEn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Meticulously formulated with rigorously tested ingredients. Every element of our formula is backed by cutting-edge science and crafted to compliment each other. </p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Hnkntk",
+        "heading_nKPWjB",
+        "text_NjjpEn"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 800px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_7nnz8L": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_dkLDCa": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>What is VERISOL?</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_hfdPhp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>Verisol® is a branded form of bioactive collagen peptides, specifically optimised for skin health. It is derived from Type I and Type III collagen and is produced through enzymatic hydrolysis to create smaller peptides that are more easily absorbed by the body.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_dkLDCa",
+        "text_hfdPhp"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/u9778399291_httpss.mj.run9xfy53EvHUY_representation_of_a_scie_c5762503-b850-4701-bb0d-25cf7a66d6bd_3_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_text_MCCnEe": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_hfG4bm": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Proven in Medical Studies</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_BzJkxT": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Powered by Research, Driven by Results</strong></p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_DmxLzq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Many supplements lack the dosages or scientific backing to support their claims. At Calmerceuticals,we use ingredients that are patented and supported by peer-reviewed clinical research. We formulate at optimised doses to ensure you experience real, tangible benefits. This is supplementation as it should be, proven, transparent, and transformative.</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hfG4bm",
+        "heading_BzJkxT",
+        "text_DmxLzq"
+      ],
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_accordions_CjqwhE": {
+      "type": "section-accordions",
+      "blocks": {
+        "text_UxBRTn": {
+          "type": "text",
+          "settings": {
+            "title": "Wrinkle Reduction",
+            "text": "<p>A study with 114 women aged 45–65 showed that after 8 weeks of daily <strong>Verisol®</strong> supplementation, <strong>wrinkle volume decreased</strong> significantly. Participants also reported smoother, firmer skin.</p><p><a href=\"https://link.springer.com/article/10.1007/s13555-024-01184-2#:~:text=In%20a%20double%2Dblind%2C%20placebo,weeks%20of%20intake%2C%20with%20a\" target=\"_blank\" title=\"https://link.springer.com/article/10.1007/s13555-024-01184-2#:~:text=In%20a%20double%2Dblind%2C%20placebo,weeks%20of%20intake%2C%20with%20a\">View Clinical Study (1)</a><br/><a href=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf#:~:text=The%20study%20revealed%20that%20supplementation%20with%20VERISOL%C2%AE,over%20the%20course%20of%20the%20washout%20period.\" target=\"_blank\" title=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf#:~:text=The%20study%20revealed%20that%20supplementation%20with%20VERISOL%C2%AE,over%20the%20course%20of%20the%20washout%20period.\">View Clinical Study (2)</a><br/><a href=\"https://www.rachelstaggsaesthetics.co.uk/media/ky2huguo/collegen-verisol.pdf#:~:text=After%208%20weeks%20the%20wrinkle%20volume%20of,helped%20to%20improve%20the%20appearance%20of%20wrinkles.\" target=\"_blank\" title=\"https://www.rachelstaggsaesthetics.co.uk/media/ky2huguo/collegen-verisol.pdf#:~:text=After%208%20weeks%20the%20wrinkle%20volume%20of,helped%20to%20improve%20the%20appearance%20of%20wrinkles.\">View Clinical Study (3)</a><br/><a href=\"https://link.springer.com/article/10.1007/s13555-024-01184-2#:~:text=In%20a%20double%2Dblind%2C%20placebo,weeks%20of%20intake%2C%20with%20a\" target=\"_blank\" title=\"https://link.springer.com/article/10.1007/s13555-024-01184-2#:~:text=In%20a%20double%2Dblind%2C%20placebo,weeks%20of%20intake%2C%20with%20a\">View Clinical Study (4)</a></p>"
+          }
+        },
+        "text_pnFxGc": {
+          "type": "text",
+          "settings": {
+            "title": "Skin Elasticity",
+            "text": "<p>A placebo-controlled trial with 69 women aged 35–55 found that daily supplementation with <strong>Verisol®</strong> improved skin elasticity by <strong>15%</strong> within just <strong>4 weeks</strong>.</p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/23949208/#:~:text=In%20this%20double%2Dblind%2C%20placebo%2Dcontrolled%20trial%2C%2069%20women,subjects%20being%20allocated%20to%20each%20treatment%20group.&text=After%204%20weeks%20of%20follow%2Dup%20treatment%2C%20a,elasticity%20level%20was%20determined%20in%20elderly%20women.\" target=\"_blank\" title=\"https://pubmed.ncbi.nlm.nih.gov/23949208/#:~:text=In%20this%20double%2Dblind%2C%20placebo%2Dcontrolled%20trial%2C%2069%20women,subjects%20being%20allocated%20to%20each%20treatment%20group.&text=After%204%20weeks%20of%20follow%2Dup%20treatment%2C%20a,elasticity%20level%20was%20determined%20in%20elderly%20women.\">View Clinical Study (1)</a><br/><a href=\"https://www.blueiron.fi/data/pam/public/attachements/verisol%C2%AE_studies.pdf\" target=\"_blank\" title=\"https://www.blueiron.fi/data/pam/public/attachements/verisol%C2%AE_studies.pdf\">View Clinical Study (2)</a></p>"
+          }
+        },
+        "text_3BkUjE": {
+          "type": "text",
+          "settings": {
+            "title": "Cellulite Reduction",
+            "text": "<p>A clinical trial in women aged 50–70 demonstrated that fish-derived that <strong>Verisol® F</strong> reduced cellulite appearance and improved skin elasticity within <strong>4 to 8 weeks</strong>.</p><p><a href=\"https://www.nmi.health/collagen-a-review-of-clinical-use-and-efficacy/#:~:text=the%20gut%20microbiota.-,Cellulite,improvement%20with%20longer%20therapy%20duration.\" target=\"_blank\" title=\"https://www.nmi.health/collagen-a-review-of-clinical-use-and-efficacy/#:~:text=the%20gut%20microbiota.-,Cellulite,improvement%20with%20longer%20therapy%20duration.\">View Clinical Study (1)</a><br/><a href=\"https://www.blueiron.fi/data/pam/public/attachements/verisol%C2%AE_studies.pdf\" target=\"_blank\" title=\"https://www.blueiron.fi/data/pam/public/attachements/verisol%C2%AE_studies.pdf\">View Clinical Study (2)</a><br/><a href=\"https://www.gelita.com/en/blog/amazingcollagen/verisolr-f-fishing-best-results#:~:text=And%20now%2C%20a%20new%20study,Collagen%20Peptides%2C%20contact%20us%20today.\" target=\"_blank\" title=\"https://www.gelita.com/en/blog/amazingcollagen/verisolr-f-fishing-best-results#:~:text=And%20now%2C%20a%20new%20study,Collagen%20Peptides%2C%20contact%20us%20today.\">View Clinical Study (3)</a><br/><a href=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf\" target=\"_blank\" title=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf\">View Clinical Study (4)</a></p>"
+          }
+        },
+        "text_3WVqT8": {
+          "type": "text",
+          "settings": {
+            "title": "Nail Health",
+            "text": "<p>In a study of 25 participants, daily <strong>Verisol®</strong> use led to faster nail growth and a <strong>42%</strong> reduction in cracked or chipped nails after 6 months.</p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/28786550/\" target=\"_blank\" title=\"https://pubmed.ncbi.nlm.nih.gov/28786550/\">View Clinical Study (1)</a><br/><a href=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf#:~:text=The%20study%20revealed%20that%20supplementation%20with%20VERISOL%C2%AE,over%20the%20course%20of%20the%20washout%20period.\" target=\"_blank\" title=\"https://www.gelita.com/sites/default/files/documents/2021-03/VERISOL%20Beauty%20from%20within%202020%20%20%28WEB%29.pdf#:~:text=The%20study%20revealed%20that%20supplementation%20with%20VERISOL%C2%AE,over%20the%20course%20of%20the%20washout%20period.\">View Clinical Study (2)</a></p>"
+          }
+        },
+        "text_njzBRM": {
+          "type": "text",
+          "settings": {
+            "title": "Hair Thickness",
+            "text": "<p>A 16-week trial with 44 women aged 39–75 revealed increased hair thickness and strength. The results were attributed to improved hair follicle activity and collagen matrix support.</p><p><a href=\"https://www.gelita.com/en/study-increasedhairthickness#:~:text=New%20randomized%2C%20placebo%2Dcontrolled%20study%20shows%20that%20supplementation,and%20proliferation%20of%20human%20hair%20follicle%20cells.\" target=\"_blank\" title=\"https://www.gelita.com/en/study-increasedhairthickness#:~:text=New%20randomized%2C%20placebo%2Dcontrolled%20study%20shows%20that%20supplementation,and%20proliferation%20of%20human%20hair%20follicle%20cells.\">View Clinical Study (1)</a><br/><a href=\"https://www.gelita.com/sites/default/files/documents/2020-04/Positiv%20effect%20VEISOL%20on%20hair%20PR.pdf\" target=\"_blank\" title=\"https://www.gelita.com/sites/default/files/documents/2020-04/Positiv%20effect%20VEISOL%20on%20hair%20PR.pdf\">View Clinical Study (2)</a><br/><a href=\"https://www.nutritioninsight.com/news/gelitas-bioactive-collagen-peptides-boosts-hair-thickness-new-study-finds.html\" target=\"_blank\" title=\"https://www.nutritioninsight.com/news/gelitas-bioactive-collagen-peptides-boosts-hair-thickness-new-study-finds.html\">View Clinical Study (3)</a></p>"
+          }
+        },
+        "text_xEjyMN": {
+          "type": "text",
+          "settings": {
+            "title": "Bone Health",
+            "text": "<p>A study involving 131 postmenopausal women found that daily <strong>Verisol®</strong> supplementation increased bone mineral density (BMD) after 12 months.</p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5793325/#:~:text=5.,age%2Drelated%20decline%20in%20BMD.\" target=\"_blank\" title=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5793325/#:~:text=5.,age%2Drelated%20decline%20in%20BMD.\">View Clinical Study (1)</a><br/><a href=\"https://www.gelita.com/en/applications/health-nutrition/bone-health#:~:text=Collagen%20isn't%20just%20an,%2Ddrink%20concentrates%2C%20sports%20drinks.\" target=\"_blank\" title=\"https://www.gelita.com/en/applications/health-nutrition/bone-health#:~:text=Collagen%20isn't%20just%20an,%2Ddrink%20concentrates%2C%20sports%20drinks.\">View Clinical Study (2)</a><br/><a href=\"https://www.gelita.com/en/blog/amazingcollagen/collagen-peptides-missing-link-bone-health#:~:text=Additionally%2C%20changes%20in%20bone%20turnover%20markers%20were,interactions%20with%20other%20medications%20or%20tolerability%20issues.\" target=\"_blank\" title=\"https://www.gelita.com/en/blog/amazingcollagen/collagen-peptides-missing-link-bone-health#:~:text=Additionally%2C%20changes%20in%20bone%20turnover%20markers%20were,interactions%20with%20other%20medications%20or%20tolerability%20issues.\">View Clinical Study (3)</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_UxBRTn",
+        "text_pnFxGc",
+        "text_3BkUjE",
+        "text_3WVqT8",
+        "text_njzBRM",
+        "text_xEjyMN"
+      ],
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": true,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#ffffff",
+        "color_scheme": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_6nDVe6": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_6mjzXD": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>What is Cultavit?</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_VTQqgn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cultavit® is a patented <strong>sprouted buckwheat-derived</strong> ingredient that provides a <strong>natural, bioavailable source of B vitamins</strong>. It is a plant-based alternative to synthetic B-vitamin supplements. It plays a <strong>supportive role</strong> in collagen synthesis, absorption, and overall skin health.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_6mjzXD",
+        "text_VTQqgn"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/u9778399291_multicolored_powder_explosion_with_orange_slices__4edcf5ee-19b4-4fb2-af72-3a1f9e432a59_2_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_hFQTyy": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_w9dMmL": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Vitamin C and Collagen?</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_nq9wVB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vitamin C plays a crucial role in <strong>collagen synthesis</strong>, making it an important nutrient to pair with collagen supplements for <strong>skin, joint, and overall health benefits</strong>. As a powerful antioxidant, vitamin C neutralises <strong>free radicals</strong> that degrade collagen (e.g., from UV exposure, pollution, and ageing).</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_w9dMmL",
+        "text_nq9wVB"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/2123131231.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_grid_ApwhJy": {
+      "type": "section-grid",
+      "blocks": {
+        "image_ezXjUT": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/u9778399291_httpss.mj.runqnluflDiU2k_On_the_desk_in_the_lab_i_99c8024f-2246-4e41-a5e3-a0afee563284_2_1.png",
+            "overlay_type": "disabled",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": ""
+          }
+        },
+        "text_EynQDi": {
+          "type": "text",
+          "settings": {
+            "width": "66.66",
+            "text_position": "center",
+            "subheading": "",
+            "title": "Made with care in Australia",
+            "text": "Beauty and wellness from the inside out.",
+            "button_1_text": "Learn More About The Formulation",
+            "button_1_link": "shopify://pages/formulation",
+            "button_2_text": "Buy Now",
+            "button_2_link": "shopify://products/verisol-enhanced-marine-collagen",
+            "block_bg_color": "#cfcfcf",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ezXjUT",
+        "text_EynQDi"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1200px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "desktop_height": "three-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "text_size": 100,
+        "button_1_color": "btn--primary",
+        "button_1_style": "btn--solid",
+        "button_1_size": "btn--large",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--solid",
+        "button_2_size": "btn--large",
+        "color_scheme": "",
+        "overlayed_text": "#ffffff",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "section_banner_image_UDfF7W",
+    "section_text_GyVTR4",
+    "section_image_with_text_7nnz8L",
+    "section_text_MCCnEe",
+    "section_accordions_CjqwhE",
+    "section_image_with_text_6nDVe6",
+    "section_image_with_text_hFQTyy",
+    "section_grid_ApwhJy",
+    "main"
+  ]
+}

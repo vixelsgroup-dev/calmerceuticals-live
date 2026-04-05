@@ -1,0 +1,281 @@
+{% comment %}
+  Comparison Split Section – generic two-column comparison
+{% endcomment %}
+
+<section id="comparison-{{ section.id }}" class="comparison-wrapper {{ section.settings.color_scheme }}">
+    <div class="section-padding">
+        <div class="wrapper">
+            {% if section.settings.main_title != blank %}
+            <div class="main-header">
+                {{ section.settings.main_title }}
+            </div>
+            {% endif %}
+            <div class="comparison-inner">
+                <!-- LEFT COLUMN -->
+                <div class="comparison-col comparison-col--left">
+                    <div class="column-header{% if section.settings.left_title_image != blank %} with-image{% endif %}">
+                        <div class="brand-heading">
+                            {% if section.settings.left_title_image != blank %}
+                                <div class="figure">{{ section.settings.left_title_image | image_url: width: 500 | image_tag }}</div>
+                            {% endif %}
+                            {% if section.settings.left_title != blank %}
+                                <h2 class="brand-heading__title">{{ section.settings.left_title }}</h2>
+                            {% endif %}
+                            {% if section.settings.left_subtitle != blank %}
+                                <span class="brand-heading__subtitle">{{ section.settings.left_subtitle }}</span>
+                            {% endif %}
+                        </div>
+
+                        {% if section.settings.left_image != blank %}
+                            <div class="product-image">
+                            {{ section.settings.left_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.left_title }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <ul class="feature-list">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'feature' and block.settings.side == 'left' %}
+                        <li class="feature-item" {{ block.shopify_attributes }}>
+                            {% assign icon_symbol = '' %}
+                            {% case block.settings.icon_type %}
+                            {% when 'check' %}
+                                {% assign icon_symbol = images['check_7843c422-247b-4398-a2b1-4a0094f92ec4.png'] | image_url: width: 100 | image_tag %}
+                            {% when 'cross' %}
+                                {% assign icon_symbol = images['cross.png'] | image_url: width: 100 | image_tag %}
+                            {% endcase %}
+                            {% if block.settings.icon_type != 'none' %}
+                            <div class="feature-icon feature-icon--{{ block.settings.icon_type }}-left">{{ icon_symbol }}</div>
+                            {% endif %}
+                            <div class="feature-text feature-text--left">{{ block.settings.text }}</div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="comparison-col comparison-col--right">
+                    <div class="column-header{% if section.settings.right_title_image != blank %} with-image{% endif %}">
+                        <div class="other-heading">
+                            {% if section.settings.right_title_image != blank %}
+                                <div class="figure">{{ section.settings.right_title_image | image_url: width: 500 | image_tag }}</div>
+                            {% endif %}
+                            {% if section.settings.right_title != blank %}
+                                <h2 class="other-heading__title">{{ section.settings.right_title }}</h2>
+                            {% endif %}
+                            {% if section.settings.right_subtitle != blank %}
+                                <span class="other-heading__subtitle">{{ section.settings.right_subtitle }}</span>
+                            {% endif %}
+                        </div>
+
+                        {% if section.settings.right_image != blank %}
+                            <div class="product-image">
+                            {{ section.settings.right_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.right_title }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <ul class="feature-list">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'feature' and block.settings.side == 'right' %}
+                        <li class="feature-item" {{ block.shopify_attributes }}>
+                            {% assign icon_symbol = '' %}
+                            {% case block.settings.icon_type %}
+                            {% when 'check' %}
+                                {% assign icon_symbol = images['check_7843c422-247b-4398-a2b1-4a0094f92ec4.png'] | image_url: width: 100 | image_tag %}
+                            {% when 'cross' %}
+                                {% assign icon_symbol = images['cross.png'] | image_url: width: 100 | image_tag %}
+                            {% endcase %}
+                            {% if block.settings.icon_type != 'none' %}
+                            <div class="feature-icon feature-icon--{{ block.settings.icon_type }}-right">{{ icon_symbol }}</div>
+                            {% endif %}
+                            <div class="feature-text feature-text--right">{{ block.settings.text }}</div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+#shopify-section-{{ section.id }}{--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;}
+#comparison-{{ section.id }} .comparison-inner{display:flex;width:100%;max-width:960px;margin:40px auto;background:{{ section.settings.section_bg }};border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06);}
+#comparison-{{ section.id }} .main-header{text-align:center;}
+#comparison-{{ section.id }} .comparison-col{width:50%;padding:40px 48px;box-sizing:border-box}
+#comparison-{{ section.id }} .comparison-col--left{background:{{ section.settings.left_bg }}}
+#comparison-{{ section.id }} .comparison-col--right{background:{{ section.settings.right_bg }}}
+#comparison-{{ section.id }} .column-header{min-height:290px;max-height:290px;overflow:hidden;}
+#comparison-{{ section.id }} .column-header:not(.with-image){padding-top:20px;}
+#comparison-{{ section.id }} .column-header .figure img{object-fit: contain; object-position: center center; }
+#comparison-{{ section.id }} .brand-heading,
+#comparison-{{ section.id }} .other-heading{text-align:center;margin-bottom:20px;min-height:70px;}
+#comparison-{{ section.id }} .brand-heading__title,
+#comparison-{{ section.id }} .other-heading__title{margin:0;letter-spacing:.18em;font-size:18px;text-transform:uppercase;font-weight:700}
+#comparison-{{ section.id }} .brand-heading__subtitle,
+#comparison-{{ section.id }} .other-heading__subtitle{display:block;margin-top:4px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+#comparison-{{ section.id }} .product-image{margin-bottom:20px;text-align:center;}
+#comparison-{{ section.id }} .product-image img{max-width:220px;height:auto;aspect-ratio: 360 / 250; object-fit: contain;}
+#comparison-{{ section.id }} .feature-list{list-style:none;margin:0;padding:0}
+#comparison-{{ section.id }} .feature-item{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+#comparison-{{ section.id }} .feature-icon{flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+#comparison-{{ section.id }} .feature-icon img{width:40px;height:40px;}
+#comparison-{{ section.id }} .feature-text--left{color:#036953;font-weight:700;font-size:14px}
+#comparison-{{ section.id }} .comparison-col--left .brand-heading__subtitle{color:#036953;}
+#comparison-{{ section.id }} .feature-text--right{color:#333;font-size:14px}
+@media (max-width:768px){#comparison-{{ section.id }} .comparison-inner{flex-direction:column}#comparison-{{ section.id }} .comparison-col{width:100%;padding:32px 24px}}
+</style>
+
+{% schema %}
+{
+  "name": "Comparison split",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "main_title",
+      "label": "Main title",
+      "default": "<h2>Comparison Split</h2>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Card background",
+      "default": "#fafafa"
+    },
+    {
+      "type": "header",
+      "content": "Left"
+    },
+    {
+      "type": "color",
+      "id": "left_bg",
+      "label": "Left column background",
+      "default": "#f0f5f4"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_title_image",
+      "label": "Left title image"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left title",
+      "default": "CALMERCEUTICALS"
+    },
+    {
+      "type": "text",
+      "id": "left_subtitle",
+      "label": "Left subtitle",
+      "default": "ULTRA PERFORMANCE™ FOR MEN"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image"
+    },
+    {
+      "type": "header",
+      "content": "Right"
+    },
+    {
+      "type": "color",
+      "id": "right_bg",
+      "label": "Right column background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_title_image",
+      "label": "Right title image"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right title",
+      "default": "OTHER BRANDS"
+    },
+    {
+      "type": "text",
+      "id": "right_subtitle",
+      "label": "Right subtitle",
+      "default": "Right Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right image"
+    },
+    {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature row",
+      "settings": [
+        {
+          "type": "select",
+          "id": "side",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon type",
+          "options": [
+            { "value": "check", "label": "Check" },
+            { "value": "cross", "label": "Cross" },
+            { "value": "none", "label": "None" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Your comparison point"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison split",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

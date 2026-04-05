@@ -1,0 +1,416 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_image_UDfF7W": {
+      "type": "section-banner-image",
+      "blocks": {
+        "text_gPnqxx": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "size": 100
+          }
+        },
+        "subheading_JH6nUN": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Why Collagen Matters for Beauty and Wellness</p>",
+            "size": 90
+          }
+        },
+        "heading_j8KyWx": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Understanding Collagen </strong></p>",
+            "size": 170,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_gPnqxx",
+        "subheading_JH6nUN",
+        "heading_j8KyWx"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1400px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "height": "four-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/CC_FEB_TEXTURE_WEB.jpg",
+        "image_mobile": "shopify://shop_images/u9778399291_httpss.mj.runeMVL_trq1jA_A_minimalistic_abstract__1829a6c6-2d86-4b5e-a987-9b0895d8ffa7_0_1.png",
+        "overlay_type": "disabled",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 80,
+        "text_position": "bottom-left",
+        "text_alignment": "text-left",
+        "color_scheme": "scheme-1",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 10,
+        "padding_bottom": 30
+      }
+    },
+    "section_text_BtbJdL": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_reikzB": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Calmerceuticals: Glowing Skin, From Within</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_mrDdJa": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Feel the Difference. See the Results.</strong></p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_hUKQym": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Calmerceuticals, where science meets functional, effective, results-driven health and beauty. Our premium liquid hydrolysed marine collagen formulation combines the most advanced, scientifically supported, and bioavailable ingredients. Designed to transform your beauty and wellness from within, it enhances skin elasticity, radiance, and resilience while also benefiting hair, nails, and joint health.</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_reikzB",
+        "heading_mrDdJa",
+        "text_hUKQym"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 800px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_7nnz8L": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "subheading_mMyMRg": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Collagen 101",
+            "size": 75,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "heading_pddGkj": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Collagen Benefits</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_Mwr94q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Collagen is the most abundant protein in your body and a critical building block for skin, hair, nails, and joints. It provides strength, structure, and elasticity, keeping your body’s tissues resilient and youthful. However, as we age, collagen production naturally declines, leading to visible signs of ageing. Let’s dive into why collagen matters and how you can restore it to look and feel your best. </p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "subheading_mMyMRg",
+        "heading_pddGkj",
+        "text_Mwr94q"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/u9778399291_httpss.mj.runp9eFfe0gmKE_closeup_of_skin_with_wat_aea14d31-86b8-427c-990b-c781bf99aa72_0_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_aqdKBL": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_3mwtjG": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Types of Collagen</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_GDcEKF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Collagen is a structural protein that acts as the glue holding your body together. It’s found in skin, tendons, ligaments, and bones, providing strength and elasticity. Among the different types of collagen, Type I is primarily found in the skin, tendons, and bones, where it provides tensile strength. Type II is located in cartilage, offering cushioning and flexibility, while Type III is found in reticular fibers, contributing to the structure of organs.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_3mwtjG",
+        "text_GDcEKF"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/0_1_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_6nDVe6": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_Lyx9KJ": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Why Do We Lose Collagen?</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_baBpGN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Collagen production begins to decline in our mid-20s, decreasing by about 1% per year. By our 40s, we’ve lost approximately 30% of our collagen, reaching 50% in our 50s, and up to 80% by our 60s. This decline accelerates after menopause, with women losing up to 30% of their skin’s collagen within the first five years post-menopause. This results in visible effects such as fine lines and wrinkles, a loss of skin elasticity and firmness, thinning and brittle hair, and weak, peeling nails.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_Lyx9KJ",
+        "text_baBpGN"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/Feel_the_Difference._See_the_Results._Designed_for_You._Trusted_by_Women_Everywhere._All_Supplements_Are_Not_the_Same_Most_supplements_are_designed_to_simply_address_dietary_gaps_but_96537479-96a8-4a6c-aca3-99915396897f.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_DMm7hx": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_G7KknP": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Can Collagen Supplements Make a Difference?</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_rdV3Ve": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In a market flooded with vague promises and unsubstantiated claims, Calmerceuticals stands apart. We prioritise results, not marketing hype. Each sachet is engineered to empower your body, helping you look and feel your best. Just like medication, you expect a supplement to work. We deliver on that expectation with patented, peer-reviewed, and third-party tested collagen.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_G7KknP",
+        "text_rdV3Ve"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/u9778399291_httpss.mj.runuUIhhlnqzvY_A_clear_serum_drips_from_857d563b-f37a-468e-bc7d-3f9f009923cc_2_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_grid_ApwhJy": {
+      "type": "section-grid",
+      "blocks": {
+        "image_ezXjUT": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/jung_goeun_82316_On_the_desk_in_the_lab_in_the_beaker_in_the_be_6b57bd9a-c875-4d27-8d4d-21c116c76233_1.png",
+            "overlay_type": "disabled",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": ""
+          }
+        },
+        "text_EynQDi": {
+          "type": "text",
+          "settings": {
+            "width": "66.66",
+            "text_position": "center",
+            "subheading": "Maximum Efficacy",
+            "title": "Scientifically Formulated",
+            "text": "Every ingredient in Calmerceuticals Collagen is carefully chosen and clinically validated to deliver unparalleled benefits for your skin and body.",
+            "button_1_text": "Learn More About The Science",
+            "button_1_link": "shopify://pages/science",
+            "button_2_text": "Buy Now",
+            "button_2_link": "shopify://products/verisol-enhanced-marine-collagen",
+            "block_bg_color": "#cfcfcf",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ezXjUT",
+        "text_EynQDi"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1200px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "desktop_height": "three-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "text_size": 100,
+        "button_1_color": "btn--primary",
+        "button_1_style": "btn--solid",
+        "button_1_size": "btn--large",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--solid",
+        "button_2_size": "btn--large",
+        "color_scheme": "",
+        "overlayed_text": "#ffffff",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "section_banner_image_UDfF7W",
+    "section_text_BtbJdL",
+    "section_image_with_text_7nnz8L",
+    "section_image_with_text_aqdKBL",
+    "section_image_with_text_6nDVe6",
+    "section_image_with_text_DMm7hx",
+    "section_grid_ApwhJy",
+    "main"
+  ]
+}

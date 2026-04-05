@@ -1,0 +1,103 @@
+<div class="collagen-columns">
+    <div class="collagen-columns-inner text-center">
+        <div class="collagen-columns-list">
+            <div class="collagen-columns-list-inner collagen-columns-list-inner--{{ section.id }}">
+                <div class="collagen-column">
+                    <div class="header-top hidden-mobile">
+                        <h4 class="h6">Up to</h4>
+                        <h3>43%<br>reduction</h3>
+                        <p>in wrinkle depth</p>
+                    </div>
+                    <div class="figure">{{ images['collagen-columns-icon-1-new.png'] | image_url: width: 200 | image_tag: alt: 'Skin appears smoother and more even, particularly in areas prone to fine lines.' }}</div>
+                    <div class="content-details hidden-desktop">
+                        <div class="header-top">
+                            <h4 class="h6">Up to</h4>
+                            <h3>43%<br>reduction</h3>
+                            <p>in wrinkle depth</p>
+                        </div>
+                        <p class="hidden">Skin appears smoother <br>and more even,<br> particularly in areas<br> prone to fine lines.</p>
+                    </div>
+                </div>
+                <div class="collagen-column">
+                    <div class="header-top hidden-mobile">
+                        <h4 class="h6">Up to</h4>
+                        <h3>34%<br>reduction</h3>
+                        <p>in crow's-feet wrinkles</p>
+                    </div>
+                    <div class="figure">{{ images['collagen-columns-icon-2-new.png'] | image_url: width: 200 | image_tag: alt: 'The eye area looks visibly softer and more refreshed.' }}</div>
+                    <div class="content-details hidden-desktop">
+                        <div class="header-top">
+                            <h4 class="h6">Up to</h4>
+                            <h3>34%<br>reduction</h3>
+                            <p>in crow's-feet wrinkles</p>
+                        </div>
+                        <p class="hidden">The eye area looks<br> visibly softer and more<br> refreshed.</p>
+                    </div>
+                </div>
+                <div class="collagen-column">
+                    <div class="header-top hidden-mobile">
+                        <h4 class="h6">Up to</h4>
+                        <h3>30%<br>improvement</h3>
+                        <p>in skin elasticity</p>
+                    </div>
+                    <div class="figure">{{ images['collagen-columns-icon-3-new.png'] | image_url: width: 200, height: 200 | image_tag: alt: 'Skin feels firmer, more resilient, and less prone to sagging.' }}</div>
+                    <div class="content-details hidden-desktop">
+                        <div class="header-top">
+                            <h4 class="h6">Up to</h4>
+                            <h3>30%<br>improvement</h3>
+                            <p>in skin elasticity</p>
+                        </div>
+                        <p class="hidden">Skin feels firmer, <br>more resilient, and<br> less prone to sagging.</p>
+                    </div>
+                </div>
+                <div class="collagen-column">
+                    <div class="header-top hidden-mobile">
+                        <h4 class="h6">Up to</h4>
+                        <h3>Noticeably <br>hydrated</h3>
+                        <p>smoother-looking  skin</p>
+                    </div>
+                    <div class="figure">{{ images['collagen-columns-icon-4-new.png'] | image_url: width: 200 | image_tag: alt: 'Improved moisture retention supports a healthy, supple appearance.' }}</div>
+                    <div class="content-details hidden-desktop">
+                        <div class="header-top">
+                            <h4 class="h6">Up to</h4>
+                            <h3>Noticeably <br>hydrated</h3>
+                            <p>smoother-looking  skin</p>
+                        </div>
+                        <p class="hidden">Improved moisture<br> retention supports a<br> healthy, supple <br>appearance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .collagen-columns .columns-footer{padding:0 10px;}
+    .collagen-columns .columns-footer{margin-bottom:10px;}
+    .collagen-columns .collagen-columns-list-inner .collagen-column{width:100%;min-height:100%}
+    .collagen-columns .collagen-column .header-top h4{font-size: 10px;color: #929292;}
+    .collagen-columns .collagen-column .header-top h3{font-size: 13px;font-weight:700;margin:0;}
+    .collagen-columns .collagen-column .header-top p{font-size: 11px;line-height:10px;margin:0;}
+    .collagen-columns .collagen-column .content-details p{font-size: 11px;line-height:10px;margin-top:5px;}
+    .collagen-columns .collagen-column .figure{display:flex;align-items:center;justify-content:center;max-width:45px;height:45px;}
+    .collagen-columns .collagen-column .figure img{height:auto;}
+    @media (min-width: 768px) {
+        .collagen-columns{border-radius: 10px; border: 1px solid #6A0927; background: #FFF; box-shadow: 0 4px 13.7px 0 #CE99AA;}
+        .collagen-columns .collagen-columns-list-inner{display:flex;flex-wrap:wrap;}
+        .collagen-columns .collagen-columns-list-inner .collagen-column{width:25%;padding:12px;}
+        .collagen-columns .collagen-columns-list-inner .collagen-column:not(:last-child){border-right:1px solid #D9D9D9;}
+        .collagen-columns .collagen-column .figure{max-width:35px;height:35px;margin:10px auto;}
+        .collagen-columns .collagen-column .header-top h4{font-size: 12px;}
+        .collagen-columns .collagen-column .header-top h3{font-size: 14px;}
+        .collagen-columns .collagen-column .header-top p{font-size: 12px;line-height:12px;margin-top:5px;}
+        .collagen-columns .collagen-column .content-details p{font-size: 12px;line-height:12px;}
+    }
+    @media (max-width: 767px) {
+        .collagen-columns{margin-bottom:15px;}
+        .collagen-columns .collagen-column .header-top h4{margin:0;}
+        .collagen-columns .collagen-column{display:flex;gap:35px;padding:10px 10px 10px 30px;}
+        .collagen-columns .collagen-column .content-details{flex:1;text-align:left;}
+        .collagen-columns .collagen-column:not(:last-child) .content-details{border-bottom:1px solid #D9D9D9;padding-bottom:10px;}
+        .collagen-columns .collagen-column .content-details br{display:none;}
+    }
+</style>

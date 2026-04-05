@@ -1,0 +1,579 @@
+<!-- Custom Selling Plan -->
+<div class="product__subs__wrap"
+  {% if animations_enabled %}
+    data-aos="hero"
+    data-aos-anchor="{{ animation_anchor }}"
+    data-aos-order="{{ animation_order }}"
+  {% endif %}>
+  <h3 class="program-cards__heading">Select a program:</h3>
+  <fieldset class="program-cards" data-subscription-selectors>
+    <legend class="visually-hidden">Subscription</legend>
+
+    {% assign current_variant_highest_price = product.variants | sort: 'price' | last %}
+
+    {%- comment -%}
+     custom-selling-plans
+      === SUBSCRIPTION CARDS (12-week + Regular) ===
+      We want:
+      - 12-week to appear LAST visually
+      - First non-12-week option selected by default
+      - 12-week always visible (Liquid never hides intro)
+    {%- endcomment -%}
+    {% assign non_intro_index = 0 %}
+    {% assign any_group_has_selected = false %}
+    {% comment %} edited by Skio {% endcomment %}
+    {% assign allowed_selling_plan_group_ids = product.selling_plan_groups | where: 'app_id', 'SKIO' %}
+    {% for selling_plan_group in allowed_selling_plan_group_ids %}
+      {% assign is_intro_plan = selling_plan_group.name %}
+
+      {%- comment -%}
+        Determine if this group is the 12-week intro group.
+        We'll track non-intro groups with non_intro_index.
+      {%- endcomment -%}
+      {% assign is_intro_group = 'false' %}
+      {% if is_intro_plan contains '12' %}
+        {% assign is_intro_group = 'true' %}
+      {% else %}
+        {% assign non_intro_index = non_intro_index | plus: 1 %}
+      {% endif %}
+
+      {% assign group_has_allocation = false %}
+      {% assign group_has_selected   = false %}
+
+      {%- comment -%}
+        Single loop over plans:
+        - check if any plan is selected
+        - check if any plan has an allocation for current_variant
+      {%- endcomment -%}
+      {% for plan in selling_plan_group.selling_plans %}
+        {% if plan.selected %}
+          {% assign group_has_selected = true %}
+          {% assign any_group_has_selected = true %}
+        {% endif %}
+
+        {% unless group_has_allocation %}
+          {% for spa in current_variant.selling_plan_allocations %}
+            {% if spa.selling_plan.id == plan.id %}
+              {% assign group_has_allocation = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
+
+        {% if group_has_allocation and group_has_selected %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      <div class="
+        program-card
+        {% if is_intro_group == 'true' %}
+          program-card--intro
+        {% else %}
+          program-card--standard
+        {% endif %}
+        {% if group_has_selected %}
+          program-card--active
+        {% elsif is_intro_group == 'false' and non_intro_index == 1 and any_group_has_selected == false %}
+          program-card--active
+        {% endif %}
+        {% if group_has_allocation == false and is_intro_group == 'false' %}
+          hidden
+        {% endif %}
+        "
+        data-selling-plan-group-id="{{ selling_plan_group.id }}">
+
+        <label class="program-card__inner">
+          {%- comment -%}
+            This is the ORIGINAL group radio the theme JS listens to.
+          {%- endcomment -%}
+          <input
+            type="radio"
+            class="program-card__radio"
+            data-toggles-group
+            name="selling-plan-group"
+            value="{{ selling_plan_group.id }}"
+            {% if group_has_selected %}
+              checked
+            {% elsif is_intro_group == 'false' and non_intro_index == 1 and any_group_has_selected == false %}
+              checked
+            {% endif %}
+          />
+
+          <div class="program-card__content">
+            {%- assign allocation = nil -%}
+            {%- assign plan = selling_plan_group.selling_plans.first -%}
+
+            {%- comment -%}
+              By default use the *current* variant for pricing,
+              but for 12-week programme use the highest-priced variant instead.
+            {%- endcomment -%}
+            {%- assign variant_for_allocation = current_variant -%}
+            {%- if is_intro_plan contains '12' -%}
+              {%- assign variant_for_allocation = current_variant_highest_price -%}
+            {%- endif -%}
+
+            {%- for spa in variant_for_allocation.selling_plan_allocations -%}
+              {%- if spa.selling_plan.id == plan.id -%}
+                {%- assign allocation = spa -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- if allocation -%}
+              {%- assign total_price   = allocation.price -%}
+              {%- assign compare_price = allocation.compare_at_price -%}
+              {%- assign per_delivery  = allocation.per_delivery_price -%}
+
+              {%- if allocation.compare_at_price > allocation.price and allocation.compare_at_price > 0 -%}
+                {%- assign discount_percentage = compare_price | minus: total_price | times: 100 | divided_by: compare_price -%}
+              {%- else -%}
+                {%- assign discount_percentage = 0 -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- assign discount_percentage = 0 -%}
+            {%- endif -%}
+
+            {% if is_intro_plan contains '12' %}
+              <span class="program-card__ribbon badge-1">Best Seller</span>
+            {% else %}
+              <span class="program-card__ribbon badge-2">Popular</span>
+            {% endif %}
+
+            {% if discount_percentage > 0 %}
+              <div class="discount-badge badge">
+                Save
+                <span class="subscription-save-amount-main">
+                  <span class="subscription-save-amount">{{ discount_percentage }}</span>%
+                </span>
+              </div>
+            {% endif %}
+
+            <div class="header">
+              <h4 class="program-card__title">
+                {% if is_intro_plan contains '12' %}
+                  12-Week Introductory <br>Programme (Most Popular)
+                {% else %}
+                  Regular <br>Subscription
+                {% endif %}
+              </h4>
+
+              {%- if allocation -%}
+                {%- assign deliveries = 1 -%}
+                {%- if per_delivery and per_delivery > 0 -%}
+                  {%- assign deliveries = total_price | divided_by: per_delivery -%}
+                {%- endif -%}
+
+                <div class="program-card__price-wrap">
+                  <div class="prices">
+                    {%- if compare_price and compare_price > total_price -%}
+                      <s class="program-card__price--compare">
+                        {{ compare_price | money }}
+                      </s>
+                    {%- endif -%}
+                    <span class="program-card__price">
+                      {{ total_price | money }}
+                    </span>
+                  </div>
+                  {% if deliveries > 1 %}
+                    <div class="price-per-delivery-wrapper hidden">
+                      <small class="price-per-delivery">
+                        {% if is_intro_plan contains '12' %}
+                          {%- comment -%}
+                            12-week programme = 84 days = 6 x 14-day periods (fortnights)
+                          {%- endcomment -%}
+                          {%- assign fortnight_count = 6 -%}
+                          {%- assign fortnight_price = total_price | divided_by: fortnight_count -%}
+                          ({{ fortnight_price | money }} per 14 fortnight)
+                        {% else %}
+                          ({{ per_delivery | money }} per fortnight)
+                        {% endif %}
+                      </small>
+                    </div>
+                  {% endif %}
+                </div>
+              {%- else -%}
+                <div class="program-card__price-wrap">
+                  <div class="prices">
+                    <div class="program-card__price">
+                      {{ product.selected_or_first_available_variant.price | money }}
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+
+            <p class="program-card__text">
+              {{ plan.description }}
+            </p>
+
+            {%- comment -%}
+              Duration selector built from group's plans.
+            {%- endcomment -%}
+            {% if selling_plan_group.selling_plans.size > 1 %}
+              <div class="program-card__duration">
+                <label class="program-card__duration-label hidden">Duration</label>
+                <select
+                  class="program-card__duration-select"
+                  data-selling-plan-select="{{ selling_plan_group.id }}"
+                >
+                  {% for plan in selling_plan_group.selling_plans %}
+                    <option
+                      value="{{ plan.id }}"
+                      data-discount-percentage-val="{{ plan.price_adjustments[0].value }}"
+                      {% if plan.selected %}
+                        selected
+                      {% elsif is_intro_group == 'false'
+                        and non_intro_index == 1
+                        and any_group_has_selected == false
+                        and forloop.first %}
+                        selected
+                      {% endif %}
+                    >
+                      Every {{ plan.name }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% else %}
+              <div class="program-name">
+                <small>
+                  {% unless is_intro_plan contains '12' %}<strong>Deliver Every: </strong>{% endunless %}
+                  {{ plan.name }}
+                  {% if is_intro_plan contains '12' %}
+                    <div class="small-info"><small><em>(change flavour anytime)</em></small></div>
+                  {% endif %}
+                </small>
+              </div>
+            {% endif %}
+
+            <div class="select-btn-main">
+              <button class="select-btn btn btn--primary btn--solid">Select</button>
+            </div>
+          </div>
+        </label>
+
+        {%- comment -%}
+          ORIGINAL plan radios – kept for the theme JS, just hidden.
+        {%- endcomment -%}
+        <div class="product__subs__plans visually-hidden" data-group-toggle="{{ selling_plan_group.id }}">
+          {% for plan in selling_plan_group.selling_plans %}
+            <label class="product__subs__option">
+              <input
+                type="radio"
+                name="selling_plan"
+                value="{{ plan.id }}"
+                {% if plan.selected %}
+                  checked
+                {% elsif is_intro_group == 'false'
+                  and non_intro_index == 1
+                  and any_group_has_selected == false
+                  and forloop.first %}
+                  checked
+                {% endif %}
+              />
+              <span>{{ plan.name }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    {%- comment -%}
+      === ONE-TIME / SAMPLE CARD ===
+    {%- endcomment -%}
+    {% unless product.requires_selling_plan %}
+      <div class="program-card program-card--one-time">
+        <label class="program-card__inner">
+          <input
+            type="radio"
+            class="program-card__radio"
+            name="selling-plan-group"
+            value=""
+            data-toggles-group
+          >
+
+          <div class="program-card__content">
+            <div class="header">
+              <h4 class="program-card__title">One Time <br>Purchase</h4>
+              <div class="program-card__price-wrap">
+                <div class="prices">
+                  <p class="program-card__price">
+                    {{ product.selected_or_first_available_variant.price | money }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="program-card__text">
+              Try a sample first before committing.
+              Perfect for testing the product before starting a full programme.
+            </div>
+            <div class="select-btn-main">
+              <button class="select-btn btn btn--primary btn--solid">Select</button>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endunless %}
+  </fieldset>
+</div>
+
+<script>
+  // Export selling plan availability per variant
+  window.variantSellingPlans = window.variantSellingPlans || {};
+  {% for variant in product.variants %}
+    window.variantSellingPlans["{{ variant.id }}"] = [
+      {% for spa in variant.selling_plan_allocations %}
+        {% comment %} edited by Skio {% endcomment %}
+        {% if allowed_selling_plan_group_ids contains spa.selling_plan_group_id %}
+          "{{ spa.selling_plan.id }}"{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    ];
+  {% endfor %}
+
+  // Export pricing for each variant (one-time and subscription)
+  window.variantPricing = window.variantPricing || {};
+  {% for variant in product.variants %}
+    window.variantPricing["{{ variant.id }}"] = {
+      one_time: {
+        price: {{ variant.price | default: 0 }},
+        compare_price: {{ variant.compare_at_price | default: 0 }},
+        price_formatted: "{{ variant.price | money | strip_newlines }}",
+        compare_price_formatted: "{{ variant.compare_at_price | money | strip_newlines }}"
+      },
+      selling_plans: {
+        {% for spa in variant.selling_plan_allocations %}
+          {% comment %} edited by Skio {% endcomment %}
+          {% if allowed_selling_plan_group_ids contains spa.selling_plan_group_id %}
+            "{{ spa.selling_plan.id }}": {
+              price: {{ spa.price | default: 0 }},
+              compare_price: {{ spa.compare_at_price | default: 0 }},
+              price_formatted: "{{ spa.price | money | strip_newlines }}",
+              compare_price_formatted: "{{ spa.compare_at_price | money | strip_newlines }}"
+            }{% unless forloop.last %},{% endunless %}
+          {% endif %}
+        {% endfor %}
+      }
+    };
+  {% endfor %}
+</script>
+
+<script>
+  // Map variantId -> option values (option1/2/3)
+  window.variantOptions = window.variantOptions || {};
+  {% for variant in product.variants %}
+    window.variantOptions["{{ variant.id }}"] = {
+      option1: {{ variant.option1 | json }},
+      option2: {{ variant.option2 | json }},
+      option3: {{ variant.option3 | json }}
+    };
+  {% endfor %}
+</script>
+
+<style>
+    .program-cards__heading{margin-bottom:.75rem;font-weight:600;}
+    .program-cards{border:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+    .program-card--standard{order:1;}
+    .program-card--one-time{order:2;}
+    .program-card--intro{order:3;}
+    .small-info em{font-size:10.5px;}
+    /* Disabled state for 12-week when not available for current variant */
+    {% comment %} .program-card--disabled{
+      opacity:.55;
+      pointer-events:none;
+    }
+    .program-card--disabled .select-btn-main button{
+      cursor:not-allowed;
+    } {% endcomment %}
+    .program-card{border:1px solid #e1e1e1;background:#f7f7f7;overflow:hidden;position:relative;transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease;}
+    .program-card .discount-badge{display:flex;flex-direction:column;justify-content:center;position:absolute;top:5px;right:5px;text-align:center;width:42px;height:42px;line-height:normal;padding:5px;background:linear-gradient(180deg,#FFC400 0%,#9E5F00 100%);color:#fff;border-radius:100%;font-size:10px;}
+    .program-card .program-card__content{display:flex;flex-direction:column;text-align:center;height:100%;}
+    .program-card .program-card__price-wrap{margin:7px 0;min-height:43px;}
+    .program-card .prices{display:flex;flex-direction:column;line-height:normal;}
+    .program-card .program-card__price-wrap s{display:block;}
+    .program-card .program-card__price-wrap s,
+    .program-card .program-card__price-wrap .price-per-delivery{font-size:11px;line-height:10px;}
+    .program-card .program-card__price-wrap .price-per-delivery-wrapper{line-height:10px;}
+    .program-card__inner{display:block;padding:45px 10px 12px;cursor:pointer;height:100%;}
+    .program-card__radio{position:absolute;opacity:0;pointer-events:none;}
+    .program-card__title{margin:0 0 .5rem;text-align:center;font-size:15px;font-weight:700;}
+    .program-card__price{text-align:center;font-size:20px;font-weight:700;margin:0;}
+    .program-card__text{font-size:12px;line-height:1.5;text-align:center;margin:0;flex:1;}
+    .program-card__ribbon{position:absolute;top: 14px; left: -35px; transform: rotate(-25deg);background:linear-gradient(90deg,#FFC400 0%,#9E5F00 100%);color:#fff;font-size:13px;font-weight:700;padding:1px 45px;text-transform:uppercase;}
+    .program-card__ribbon.badge-2{left: -30px;}
+    .program-card--active{background:#610c27;color:#fff;border-color:#610c27;box-shadow:0 0 7px #610c2769;}
+    .program-card--active .program-card__price,
+    .program-card--active .program-card__title,
+    .program-card--active .program-card__text{color:#fff;}
+    .program-card__duration{margin-top:.5rem;text-align:center;}
+    .program-cards .select-btn-main{margin-top:7px;}
+    .program-cards .select-btn-main button{min-width:inherit;border-radius:0;background:#000;}
+    .program-card__duration-select{width:100%;appearance:auto;text-transform:initial;border-radius:0;border:1px solid #EBEBEB;outline:none;background-color:#EBEBEB;color:#000;}
+    .program-cards .program-card__duration-select,
+    .program-cards .select-btn-main button{font-size:12px;font-weight:700;text-align:center;text-transform:initial;height:25px;max-width:140px;padding:0 10px;}
+    .select__fieldset .select__label{--heading-size:calc(1.75rem * var(--adjust-heading));font-size:var(--heading-size);font-weight:600;text-transform:initial;}
+    @media (min-width: 768px) {
+      .program-card__title{font-size:12.5px;}
+    }
+    @media (max-width:767px){
+      .select__fieldset .select__label{--heading-size: calc(1.25rem * var(--adjust-heading));}
+      .program-cards{grid-template-columns:1fr;}
+      .program-card .discount-badge{font-size:12px;width:50px;height:50px;}
+      .program-card__ribbon{font-size:15px;left:-40px;}
+      .program-card__ribbon.badge-2{left:-35px;}
+    }
+</style>
+
+<script>
+  // ======================================================================
+  // Helper: select a variant by clicking the same popout options
+  // ======================================================================
+  window.selectVariantViaSwatch = function(variantId) {
+    if (!variantId || !window.variantOptions) return;
+
+    variantId = String(variantId);
+    var vOpts = window.variantOptions[variantId];
+    if (!vOpts) return;
+
+    // We'll click the right <a data-popout-option data-value="...">
+    // for option1 / option2 / option3
+    ['option1', 'option2', 'option3'].forEach(function(key, index) {
+      var value = vOpts[key];
+      if (!value) return; // e.g. product only has 1 or 2 options
+
+      var optionIndex = 'option' + (index + 1); // "option1", "option2", ...
+
+      // Find the hidden single-option-selector input for this option
+      var hiddenInput = document.querySelector(
+        'form.product__form [data-single-option-selector][data-index="' + optionIndex + '"],' +
+        'form.shopify-product-form [data-single-option-selector][data-index="' + optionIndex + '"]'
+      );
+
+      if (!hiddenInput) return;
+
+      // Go up to the popout-select wrapper
+      var popout = hiddenInput.closest('popout-select, .select-popout');
+      if (!popout) return;
+
+      // Find the matching popout option link
+      var link = popout.querySelector(
+        '.select-popout__option[data-popout-option][data-value="' + CSS.escape(value) + '"]'
+      );
+
+      if (link) {
+        // This will trigger popupOptionsClick and all theme logic
+        link.click();
+      }
+    });
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.program-card').forEach(function (card) {
+      const radio = card.querySelector('.program-card__radio');
+
+      card.addEventListener('click', function (e) {
+        const tag = e.target.tagName.toLowerCase();
+        if (tag === 'select' || tag === 'input' || tag === 'button') return;
+
+        if (card.classList.contains('program-card--intro')) {
+          var introPlanRadio = card.querySelector(
+            '.product__subs__plans input[name="selling_plan"]'
+          );
+
+          if (introPlanRadio && window.variantSellingPlans && window.selectVariantViaSwatch) {
+            var introPlanId = String(introPlanRadio.value);
+            var map = window.variantSellingPlans;
+            var targetVariantId = null;
+
+            Object.keys(map).some(function (variantId) {
+              var plans = map[variantId] || [];
+              if (plans.indexOf(introPlanId) !== -1) {
+                targetVariantId = variantId;
+                return true;
+              }
+              return false;
+            });
+
+            if (targetVariantId) {
+              window.forceIntroCardNext = true;
+
+              window.selectVariantViaSwatch(targetVariantId);
+
+              document.querySelectorAll('.program-card')
+                .forEach(function (c) { c.classList.remove('program-card--active'); });
+              card.classList.add('program-card--active');
+
+              var groupRadio = card.querySelector('.program-card__radio');
+              if (groupRadio) {
+                groupRadio.checked = true;
+                groupRadio.dispatchEvent(new Event('change', { bubbles: true }));
+              }
+
+              if (introPlanRadio) {
+                introPlanRadio.checked = true;
+                introPlanRadio.dispatchEvent(new Event('change', { bubbles: true }));
+              }
+
+              if (window.updateProgramCardButtons) {
+                window.updateProgramCardButtons();
+              }
+
+              return;
+            }
+          }
+        }
+
+        if (radio) {
+          radio.click();
+        }
+
+        document.querySelectorAll('.program-card')
+          .forEach(function (c) { c.classList.remove('program-card--active'); });
+        card.classList.add('program-card--active');
+
+        if (window.updateProgramCardButtons) {
+          window.updateProgramCardButtons();
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-selling-plan-select]').forEach(function (select) {
+      select.addEventListener('change', function () {
+        var planId = this.value;
+        if (!planId) return;
+
+        var planRadio = document.querySelector(
+          'input[name="selling_plan"][value="' + planId + '"]'
+        );
+
+        if (planRadio) {
+          planRadio.checked = true;
+          planRadio.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+
+        var card = this.closest('.program-card');
+
+        if (card) {
+          document.querySelectorAll('.program-card')
+            .forEach(function (c) { c.classList.remove('program-card--active'); });
+
+          card.classList.add('program-card--active');
+
+          var groupRadio = card.querySelector('input[name="selling-plan-group"]');
+          if (groupRadio) {
+            groupRadio.checked = true;
+            groupRadio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+          if (window.updateProgramCardButtons) {
+            window.updateProgramCardButtons();
+          }
+        }
+      });
+    });
+
+    if (window.updateProgramCardButtons) {
+      window.updateProgramCardButtons();
+    }
+  });
+</script>

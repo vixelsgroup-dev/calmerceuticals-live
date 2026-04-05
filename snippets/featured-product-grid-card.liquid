@@ -1,0 +1,73 @@
+{%- liquid
+  assign img_class_main = 'featured-product-grid__img featured-product-grid__img--main'
+-%}
+<article class="featured-product-grid__card" role="listitem" {{ block.shopify_attributes }}>
+  {% if block.settings.product_link != blank %}
+    <a
+      class="featured-product-grid__card-link"
+      href="{{ block.settings.product_link }}"
+      aria-label="{{ block.settings.title | default: 'Product' | escape }}"
+    >
+  {% else %}
+    <div class="featured-product-grid__card-link featured-product-grid__card-link--static">
+  {% endif %}
+  <div class="featured-product-grid__media">
+    <div class="featured-product-grid__media-clip">
+      <div class="featured-product-grid__media-stage">
+        <div class="featured-product-grid__main-shot">
+          {% if block.settings.image != blank %}
+            {{
+              block.settings.image
+              | image_url: width: 900
+              | image_tag:
+                loading: 'lazy',
+                class: img_class_main,
+                sizes: '(min-width: 990px) 22vw, (min-width: 600px) 45vw, 100vw',
+                widths: '400, 600, 900'
+            }}
+          {% else %}
+            <span
+              class="featured-product-grid__media-placeholder"
+              role="img"
+              aria-label="{{ block.settings.title | default: 'Product' | escape }}"
+            >
+              {{- 'product-apparel-1' | placeholder_svg_tag: class: 'featured-product-grid__placeholder-svg' -}}
+            </span>
+          {% endif %}
+        </div>
+        <div class="featured-product-grid__hover-stack">
+          <div class="featured-product-grid__hover-inner">
+            {% if block.settings.hover_image != blank %}
+              {{
+                block.settings.hover_image
+                | image_url: width: 900
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'featured-product-grid__img featured-product-grid__img--hover-shot',
+                  sizes: '(min-width: 990px) 22vw, (min-width: 600px) 45vw, 100vw',
+                  widths: '400, 600, 900'
+              }}
+            {% else %}
+              <span class="featured-product-grid__media-placeholder featured-product-grid__media-placeholder--hover" aria-hidden="true">
+                {{- 'product-apparel-2' | placeholder_svg_tag: class: 'featured-product-grid__placeholder-svg' -}}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="featured-product-grid__meta">
+    {% if block.settings.title != blank %}
+      <span class="featured-product-grid__name">{{ block.settings.title | escape }}</span>
+    {% endif %}
+    {% if block.settings.price != blank %}
+      <span class="featured-product-grid__price">{{ block.settings.price | escape }}</span>
+    {% endif %}
+  </div>
+  {% if block.settings.product_link != blank %}
+    </a>
+  {% else %}
+    </div>
+  {% endif %}
+</article>

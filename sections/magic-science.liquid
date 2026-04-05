@@ -1,0 +1,355 @@
+{% comment %}
+  Section: It's Not Magic, It's Science
+  - Light cream bg, two columns
+  - Left: rounded product image
+  - Right: large heading, horizontal dividers, body text blocks, accent statement lines (accordion)
+{% endcomment %}
+
+<section class="inm-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="inm-section__inner {% if section.settings.container_width %}wrapper {% endif %}" >
+
+    <!-- LEFT: Product Image -->
+    <div class="inm-section__image-col">
+      {%- if section.settings.product_image != blank -%}
+        <img
+          src="{{ section.settings.product_image | img_url: '1000x1000', crop: 'center' }}"
+          alt="{{ section.settings.product_image.alt | default: 'Product' | escape }}"
+          class="inm-section__image"
+          style="border-radius: {{ section.settings.image_radius }}px;"
+          loading="lazy"
+          width="1000"
+          height="1000"
+        >
+      {%- else -%}
+        <div class="inm-section__image-placeholder" style="border-radius: {{ section.settings.image_radius }}px;">
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- RIGHT: Text Content -->
+    <div class="inm-section__content-col">
+
+      <!-- Heading -->
+      {%- if section.settings.heading != blank -%}
+        <div class="inm-section__heading" >
+          {{ section.settings.heading }}
+        </div>
+      {%- endif -%}
+
+      <!-- Dynamic blocks -->
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'body_block' -%}
+          <div class="inm-section__body-block" {{ block.shopify_attributes }}>
+            {%- if block.settings.bold_line != blank -%}
+              <p class="inm-section__body-bold" >
+                {{ block.settings.bold_line }}
+              </p>
+            {%- endif -%}
+            {%- if block.settings.body_text != blank -%}
+              <div class="inm-section__body-text" >
+                {{ block.settings.body_text }}
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="inm-section__divider" style="background: {{ section.settings.divider_color }};"></div>
+
+        {%- elsif block.type == 'accent_line' -%}
+          <div class="inm-section__accordion-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.text != blank -%}
+              <button
+                class="inm-section__accordion-trigger"
+                aria-expanded="false"
+                style="--accent-color: {{ section.settings.accent_color }}; --heading-color: {{ section.settings.body_dark_color }};"
+              >
+                <span class="inm-section__accent-text">{{ block.settings.text }}</span>
+                <span class="inm-section__accordion-icon" aria-hidden="true"></span>
+              </button>
+            {%- endif -%}
+            {%- if block.settings.accordion_body != blank -%}
+              <div class="inm-section__accordion-body">
+                <div class="inm-section__accordion-body-inner">
+                  <div class="inm-section__body-text">{{ block.settings.accordion_body }}</div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="inm-section__divider" style="background: {{ section.settings.divider_color }};"></div>
+
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.inm-section{width:100%;box-sizing:border-box;}
+.inm-section__inner{margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;}
+.inm-section__image-col{width:100%;}
+.inm-section__image{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:1/1;}
+.inm-section__image-placeholder{width:100%;aspect-ratio:1/1;background:#c8b8bc;display:flex;align-items:center;justify-content:center;}
+.inm-section__image-placeholder svg{width:50%;height:50%;opacity:0.25;}
+.inm-section__content-col{display:flex;flex-direction:column;gap:0;}
+.inm-section__heading{border-bottom:3px solid #CCCEB7;padding-bottom:30px;}
+.inm-section__heading>*{font-family:"Jost"; color:{{ section.settings.heading_color }};font-size:{{ section.settings.heading_size }}px;font-weight:300;line-height:{{ section.settings.heading_size }}px;margin:0 0 24px 0;letter-spacing:-0.5px;}
+.inm-section__heading p{margin:0; }
+.inm-section__divider{height:1px;width:100%;margin:0;flex-shrink:0;}
+.inm-section__body-block{padding:20px 0;display:flex;flex-direction:column;gap:8px;}
+.inm-section__body-bold{font-family:"Jost"; color:{{ section.settings.body_dark_color }};font-size:24px;font-weight:700;line-height:1.4;margin:0;}
+.inm-section__body-text>*{font-family:"Jost"; color:{{ section.settings.body_light_color }};line-height:1.65;font-size:16px;font-weight:400;}
+.inm-section__body-text p{margin:0 0 10px 0;}
+.inm-section__body-text p:last-child{margin:0;}
+/* Accordion styles */
+.inm-section__accordion-item{width:100%;} .inm-section__accordion-trigger{ display:flex; align-items:center; justify-content:space-between; width:100%; padding:18px 0; background:none; border:none; cursor:pointer; text-align:left; gap:12px; }
+.inm-section__accordion-trigger .inm-section__accent-text{ font-family:"Jost"; font-weight:400; line-height:1.4; font-size:24px; margin:0; color: var(--accent-color); transition: color 0.25s ease; }
+/* Plus/minus icon */
+.inm-section__accordion-icon{flex-shrink:0;width:20px;height:20px;position:relative;display:block;}
+.inm-section__accordion-icon::before,
+.inm-section__accordion-icon::after{ content:''; position:absolute; background: var(--heading-color); border-radius:2px; transition: opacity 0.25s ease, transform 0.25s ease; }
+/* horizontal bar */
+.inm-section__accordion-icon::before{width:100%;height:2px;top:50%;left:0;transform:translateY(-50%);}
+/* vertical bar */
+.inm-section__accordion-icon::after{width:2px;height:100%;left:50%;top:0;transform:translateX(-50%);}
+.inm-section__accordion-trigger[aria-expanded="true"] .inm-section__accordion-icon::after{ opacity:0; transform:translateX(-50%) rotate(90deg); }
+/* Accordion body collapse */
+.inm-section__accordion-body{ overflow:hidden; max-height:0; transition: max-height 0.35s ease; }
+.inm-section__accordion-body.is-open{max-height:500px;}
+.inm-section__accordion-body-inner{padding-bottom:18px;}
+
+@media screen and (max-width:767px){
+  .inm-section__inner{grid-template-columns:1fr;gap:36px;}
+  .inm-section__heading>*{font-size : 40px; line-height: 40px;}
+  .inm-section__image-col{max-width:480px;margin:0 auto;width:100%;}
+}
+</style>
+
+<script>
+(function() {
+  var triggers = document.querySelectorAll('.inm-section__accordion-trigger');
+  triggers.forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+      var body = this.nextElementSibling;
+      if (!body || !body.classList.contains('inm-section__accordion-body')) return;
+
+      // Close ALL other accordions first
+      triggers.forEach(function(otherTrigger) {
+        if (otherTrigger !== trigger) {
+          otherTrigger.setAttribute('aria-expanded', 'false');
+          var otherBody = otherTrigger.nextElementSibling;
+          if (otherBody && otherBody.classList.contains('inm-section__accordion-body')) {
+            otherBody.classList.remove('is-open');
+          }
+        }
+      });
+
+      // Toggle clicked one
+      if (isOpen) {
+        this.setAttribute('aria-expanded', 'false');
+        body.classList.remove('is-open');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        body.classList.add('is-open');
+      }
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Magic Science",
+  "tag": "section",
+  "class": "section-inm",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+      {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f0ede8"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "body_dark_color",
+      "label": "Bold Body Text Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "body_light_color",
+      "label": "Regular Body Text Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Statement Color",
+      "default": "#7a2040"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Line Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 46
+    },
+
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "<p>It's not magic,<br>It's science</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "body_block",
+      "name": "Body Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bold_line",
+          "label": "Bold Opening Line",
+          "default": "Ageing is driven by a process called Inflammageing."
+        },
+        {
+          "type": "richtext",
+          "id": "body_text",
+          "label": "Body Paragraphs",
+          "default": "<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.</p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".</p>"
+        }
+      ]
+    },
+    {
+      "type": "accent_line",
+      "name": "Accent Statement Line",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Statement Text",
+          "default": "Ageing cells suffer from Mitochondrial Decay."
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_body",
+          "label": "Accordion Body (optional)",
+          "default": "<p>Add expanded content here that appears when this accordion item is opened.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Magic Science",
+      "blocks": [
+        {
+          "type": "body_block",
+          "settings": {
+            "bold_line": "Ageing is driven by a process called Inflammageing.",
+            "body_text": "<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.</p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".</p>"
+          }
+        },
+        {
+          "type": "accent_line",
+          "settings": {
+            "text": "Ageing cells suffer from Mitochondrial Decay.",
+            "accordion_body": "<p>Add expanded content here that appears when this accordion item is opened.</p>"
+          }
+        },
+        {
+          "type": "accent_line",
+          "settings": {
+            "text": "Persistent low energy is a byproduct of Metabolic Ageing.",
+            "accordion_body": "<p>Add expanded content here that appears when this accordion item is opened.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

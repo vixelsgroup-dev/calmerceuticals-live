@@ -1,0 +1,1083 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "divider_twPkfy": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 0
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_price": true,
+            "subheading": "none",
+            "title_size": 85,
+            "price_size": 100,
+            "bold_price": true,
+            "padding_bottom": 10
+          }
+        },
+        "inventory_countdown": {
+          "type": "inventory_countdown",
+          "disabled": true,
+          "settings": {
+            "max_inventory": 20,
+            "hide_inventory_count": true,
+            "padding_bottom": 12
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "enable_full_width": false,
+            "padding_bottom": 20
+          }
+        },
+        "text_PDKdAh": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "<h6>14 x 17.5ml - Liquid Collagen Sachets</h6>",
+            "text_alignment": "left",
+            "padding_bottom": 4
+          }
+        },
+        "divider_fMkTtJ": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 30
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_price": false,
+            "show_labels": true,
+            "show_quantity": false,
+            "show_payment_button": false,
+            "enable_subscriptions_selectors": true,
+            "padding_bottom": 2
+          }
+        },
+        "text_4cHHhC": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "<p><strong>*12-Week Starter Program Terms & Conditions</strong><br/>Offer applies exclusively to customers who sign up for the 12-Week Starter Program. A complimentary box valued at $95 will be shipped at the end of 12 weeks of continuous use. This is a lock-in subscription and cannot be cancelled prior to completing 12 weeks, and any early cancellations, skipped orders, or failed payments will void eligibility. One redemption per customer. While stocks last. Not valid in conjunction with any other offer.<br/><br/><br/><br/></p>",
+            "text_alignment": "left",
+            "padding_bottom": 20
+          }
+        },
+        "custom_code_zdb8RR": {
+          "type": "custom_code",
+          "disabled": true,
+          "settings": {
+            "custom_code": "<img src=\"https://cdn.shopify.com/s/files/1/0657/6907/8877/files/HERO_MOB.jpg?v=1758076453?\n\" alt=\"\" style=\"width:520px;\" />",
+            "padding_bottom": 0
+          }
+        },
+        "text_bx8aeL": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "<p><strong>*Terms & Conditions</strong><br/>Offer applies exclusively to customers who sign up for the 12-week subscription plan. A complimentary 1-week supply, deducted from the first order, plus a Face Mask valued at $60 are included as part of this offer. If the subscription is cancelled prior to the completion of the 12-week term, the value of the complimentary items will be charged to the customer.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 20
+          }
+        },
+        "text_NEAPzP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "<p><strong>Subscribe & Save</strong><br/>12-Week Subscription: Save More, Get Results</p>",
+            "text_alignment": "center",
+            "padding_bottom": 20
+          }
+        },
+        "icon_iKriEA": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "dollar-sign",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Exclusive Discount",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_qMUTEV": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "gem",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Exclusive Gift",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_GHV7XY": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "heart",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Money-Back Guaranteed",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_9gDhzF": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "star",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Cancel Anytime",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_4DMnfN": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "smile",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "VIP Customer Support",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_RYQybL": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "truck",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Auto-Shipping",
+            "text_size": 90,
+            "width": "half",
+            "text_alignment": "center",
+            "bg_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "product_accordion_dDignk": {
+          "type": "product_accordion",
+          "disabled": true,
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "How Collagen Work",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>As the body ages, natural collagen levels decline, leading to reduced elasticity, wrinkles, and dryness. Calmerceuticals Premium Liquid Collagen is designed to combat these effects, targeting dull, tired-looking skin and visible signs of ageing.</p><p>Each serving contains 10,000mg of Type 1 hydrolysed marine collagen, clinically proven to improve skin elasticity and reduce wrinkles. Enriched with hyaluronic acid, Cultavit®, polyphenols, and essential vitamins C and D, it delivers deep hydration and supports optimal collagen performance within the body.</p><p>Crafted with the highest quality ingredients in Australian laboratories, Calmerceuticals ensures safety, efficacy, and superior results. A daily sachet helps rebuild and restore collagen levels, boosting your body’s natural collagen and hyaluronic acid production. Each box contains 14 ready-to-drink sachets for convenient, effective beauty support.</p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_xjcMLe": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "How CalmerCeuticals Collagen Works",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>As we age, the body’s natural collagen production slows down, leading to a loss of skin elasticity, firmness, and hydration - and the visible signs of ageing such as wrinkles, fine lines, and dryness begin to appear.</p><p>Each daily sachet of Calmerceuticals Premium Liquid Collagen delivers 10,000 mg of Type I hydrolysed marine collagen, clinically shown to support the body’s natural collagen matrix. Once ingested, these bioactive collagen peptides are efficiently absorbed into the bloodstream and transported to the deeper layers of the skin, where they help stimulate and boost the body’s own collagen synthesis.</p><p>This internal support system promotes skin rejuvenation from within — helping to restore firmness and elasticity, reduce the appearance of wrinkles, and reveal a smoother, more radiant complexion.</p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tR8fPG": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_wNpDji": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "How To Use",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>Enjoy one sachet every day as part of your wellness ritual. Simply tear, sip, and go - convenient, mess-free, and designed to fit seamlessly into your lifestyle.</p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tDa8RC": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_ceLNHT": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Ingredients",
+            "heading_style": "font-heading",
+            "accordion_text": "<p><strong>Mixed Berry Flavour:</strong><br/>Marine Hydrolysed Collagen, Water, Organic Shiitake Mushroom Powder (Vitamin D), Acerola Juice Powder (Vitamin C), Fermented Kakadu Plum (Vitamin C), Silica, Citric Acid, Potassium Sorbate, Sodium Benzoate, Cranberry Extract (Vitamin C and E), Pomegranate Extract (Vitamins C and K), Grape Skin Extract (Vitamins C and E), Aronia (Chokeberry) Extract (Vitamin C), Blueberry Juice Powder (Vitamins C, K and E), Hyaluronic Acid, Buckwheat Seed Powder (Cultavit) (B Vitamins), Thaumatin, Red Beet Colour Powder, Natural Mixed Berry Flavour.</p><p><strong>Mango & Mandarin Flavour:</strong><br/>Marine Hydrolysed Collagen, Water, Organic Shiitake Mushroom Powder (Vitamin D), Acerola Juice Powder (Vitamin C), Fermented Kakadu Plum (Vitamin C), Silica, Citric Acid, Potassium Sorbate, Sodium Benzoate, Cranberry Extract (Vitamins C and E), Pomegranate Extract (Vitamins C and K), Grape Skin Extract (Vitamins C and E), Aronia (Chokeberry) Extract (Vitamin C), Blueberry Juice Powder (Vitamins C, K and E), Hyaluronic Acid, Buckwheat Seed Powder (Cultavit) (B Vitamins), Thaumatin, Natural Mandarin Flavour, Natural Mango Flavour, Turmeric Powder.</p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_N3cQVC": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "custom_code_XexTMh": {
+          "type": "custom_code",
+          "settings": {
+            "custom_code": "<div style=\"display: table; width: 100%;\">\n  <div style=\"display: table-row;\">\n    <div style=\"display: table-cell; vertical-align: middle; text-align: left;\">\n      <a href=\"#faq-section\" style=\"text-decoration: none; color: inherit;\">FAQ</a>\n    </div>\n    <div style=\"display: table-cell; vertical-align: middle; text-align: right; font-size: 24px;\">\n      +\n    </div>\n  </div>\n</div>",
+            "padding_bottom": 20
+          }
+        },
+        "divider_A7Rq74": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "divider_NiLTG8": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "text_DXHqFG": {
+          "type": "text",
+          "settings": {
+            "title": "<p>BEFORE & AFTER: BASED ON 12 WEEKS DAILY USE.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_mrzDHQ": {
+          "type": "text",
+          "settings": {
+            "title": "<p>BEFORE & AFTER: BASED ON 12 WEEKS DAILY USE.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_WAmhMB": {
+          "type": "text",
+          "settings": {
+            "title": "<p>BEFORE & AFTER: BASED ON 12 WEEKS DAILY USE.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_7pkR8n": {
+          "type": "text",
+          "settings": {
+            "title": "<p>BEFORE & AFTER: BASED ON 12 WEEKS DAILY USE.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_9HtFXb": {
+          "type": "text",
+          "settings": {
+            "title": "<p>BEFORE & AFTER: BASED ON 12 WEEKS DAILY USE.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "upsell_iUEaDz": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "product_list": [
+              "collagen-boost-facemask"
+            ],
+            "padding_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "divider_twPkfy",
+        "title",
+        "inventory_countdown",
+        "description",
+        "text_PDKdAh",
+        "divider_fMkTtJ",
+        "form",
+        "text_4cHHhC",
+        "custom_code_zdb8RR",
+        "text_bx8aeL",
+        "text_NEAPzP",
+        "icon_iKriEA",
+        "icon_qMUTEV",
+        "icon_GHV7XY",
+        "icon_9gDhzF",
+        "icon_4DMnfN",
+        "icon_RYQybL",
+        "product_accordion_dDignk",
+        "product_accordion_xjcMLe",
+        "divider_tR8fPG",
+        "product_accordion_wNpDji",
+        "divider_tDa8RC",
+        "product_accordion_ceLNHT",
+        "divider_N3cQVC",
+        "custom_code_XexTMh",
+        "divider_A7Rq74",
+        "divider_NiLTG8",
+        "text_DXHqFG",
+        "text_mrzDHQ",
+        "text_WAmhMB",
+        "text_7pkR8n",
+        "text_9HtFXb",
+        "upsell_iUEaDz"
+      ],
+      "custom_css": [
+        ".product__selectors .select-popout__item {background-color: #f0eeed;}",
+        ".product__selectors .select-popout__toggle {background-color: #f0eeed;}",
+        ".product__selectors .select-popout__toggle:hover {background-color: #d7d6d6;}",
+        ".sldr-label-img-container img {aspect-ratio: 2 / 1.2;}",
+        ".product__feature {text-align: center; border-radius: 20px;}",
+        ".product__feature a {color: var(--text);}",
+        "@media (max-width: 749px) {.product__feature {padding: 15px; } .product__feature p {font-size: 12px; }}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "image_layout": "stacked",
+        "image_width": "standard",
+        "product_image_aspect_ratio": false,
+        "enable_zoom": false,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 30
+      }
+    },
+    "section_marquee_fmBda3": {
+      "type": "section-marquee",
+      "blocks": {
+        "text_eQTNnW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>No Fillers</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "non-gmo",
+            "icon_color": "#610c27",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_UDNrk6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Clinically Trialed</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "check",
+            "icon_color": "#610c27",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_BkTCDW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sustainably Sourced</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "eco-friendly",
+            "icon_color": "#610c27",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_ptmFWF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Third Party Tested</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "scientific",
+            "icon_color": "#610c27",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_y7T8jW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Peer Reviewed</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "award",
+            "icon_color": "#610c27",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text_eQTNnW",
+        "text_UDNrk6",
+        "text_BkTCDW",
+        "text_ptmFWF",
+        "text_y7T8jW"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding": 20,
+        "marquee_speed": 50,
+        "direction": "ticker-rtl",
+        "slider_speed": 10,
+        "show_arrows": false,
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "text_size": 120,
+        "text_size_mobile": 80,
+        "letter_spacing": 0,
+        "message_spacing": 25,
+        "color_scheme": "scheme-1",
+        "color": "#000000",
+        "border_color": "#000000",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_accordions_HUdDKH": {
+      "type": "section-accordions",
+      "blocks": {
+        "text_UzXpCb": {
+          "type": "text",
+          "settings": {
+            "title": "What is VERISOL® Enhanced Marine Collagen?",
+            "text": "<p>VERISOL® Enhanced Marine Collagen is a premium, gold-standard liquid collagen supplement designed to support healthy, youthful-looking skin from within. It combines clinically proven marine collagen peptides with a powerful blend of vitamins, antioxidants, and botanicals to improve skin elasticity, reduce wrinkles, and promote overall vitality. Conveniently packaged in single-serve sachets, it’s an easy daily ritual for radiant skin, stronger hair and nails, and enhanced wellbeing.<br/><br/></p>"
+          }
+        },
+        "text_bx9WKg": {
+          "type": "text",
+          "settings": {
+            "title": "How long should I use Calmerceuticals Collagen to see results?",
+            "text": "<p>Clinical research shows visible results from Calmerceuticals Collagen in as little as 8–12 weeks of consistent daily use. This is the scientifically proven timeframe to support skin elasticity, smooth the appearance of wrinkles, and enhance overall vitality. For best results, we recommend making it part of your daily routine.</p>"
+          }
+        },
+        "text_TCCMAn": {
+          "type": "text",
+          "settings": {
+            "title": "Can I take Calmerceuticals Collagen if pregnant or breastfeeding?",
+            "text": "<p>Our products are made with naturally sourced, premium ingredients and are independently tested for quality and safety. However, pregnancy and breastfeeding are unique experiences for everyone. We recommend consulting your doctor or a healthcare professional for personalized advice before using any supplement, including Calmerceuticals Collagen.</p>"
+          }
+        },
+        "text_eymWzc": {
+          "type": "text",
+          "settings": {
+            "title": "Why is Calmerceuticals collagen more expensive than other brands?",
+            "text": "<p>At Calmerceuticals, we believe in delivering results you can see and feel. Our pricing reflects the clinical-grade quality, scientifically backed ingredients, and comprehensive formulation behind every sachet.<br/>Each formula is crafted with exceptional, research-proven ingredients - including 10,000 mg of VERISOL® marine collagen, shown to improve skin elasticity and reduce wrinkles in as little as 8–12 weeks. We also include premium bioactives like fermented Kakadu Plum (for natural Vitamin C), Hyaluronic Acid, and B-Complex to support absorption, hydration, and overall vitality. This is not a cheap product - it is a gold-standard formulation designed for those who value real, visible results.</p>"
+          }
+        },
+        "text_RPcecJ": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen suitable for people with allergies?",
+            "text": "<p>Our formula is gluten-free, dairy-free, and soy-free, making it suitable for many dietary needs. However, as it contains marine collagen, it is not suitable for those with fish allergies.</p>"
+          }
+        },
+        "text_tqLMF8": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen gluten-free?",
+            "text": "<p>Yes, our collagen supplement is gluten-free and made with carefully selected, clean ingredients</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_UzXpCb",
+        "text_bx9WKg",
+        "text_TCCMAn",
+        "text_eymWzc",
+        "text_RPcecJ",
+        "text_tqLMF8"
+      ],
+      "custom_css": [],
+      "name": "Accordions",
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "color_scheme": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_promotion_row_MeR7nm": {
+      "type": "section-promotion-row",
+      "blocks": {
+        "column_qGBdP8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/u9778399291_liquid_--style_raw_--sref_httpss.mj.runYNbHG92Wexs__da37bee9-224f-4366-9290-57cfaeace816.png",
+            "subheading": "<p><strong>Our Collagen Peptides</strong></p>",
+            "subheading_size": 110,
+            "heading": "<p>95%</p>",
+            "heading_size": 250,
+            "heading_highlight_type": "italics",
+            "highlight_color": "#ffffff",
+            "highlight_text_color": "",
+            "description": "Absorption Rate",
+            "description_size": 125,
+            "disclaimer": "",
+            "disclaimer_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "bg_color": "rgba(0,0,0,0)",
+            "gradient_background": "linear-gradient(228deg, rgba(187, 126, 60, 1) 14%, rgba(95, 67, 46, 1) 83%)",
+            "text_color": "#ffffff",
+            "overlay_type": "disabled"
+          }
+        },
+        "column_q8QtQ6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/u9778399291_dark_tan_background_shadows_whites_with_20_white_lo_d1627bf8-0261-4e90-8073-9d694e352731.png",
+            "subheading": "<p><strong>Collagen Tablet</strong></p>",
+            "subheading_size": 110,
+            "heading": "<p>30%</p>",
+            "heading_size": 250,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "description": "Absorption Rate",
+            "description_size": 125,
+            "disclaimer": "",
+            "disclaimer_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "bg_color": "rgba(0,0,0,0)",
+            "gradient_background": "linear-gradient(133deg, rgba(155, 155, 155, 1) 11%, rgba(66, 66, 66, 1) 87%)",
+            "text_color": "#ffffff",
+            "overlay_type": "disabled"
+          }
+        }
+      },
+      "block_order": [
+        "column_qGBdP8",
+        "column_q8QtQ6"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "layout": "1",
+        "count_up_enabled": true,
+        "count_up_duration": 90,
+        "height": "250",
+        "enable_mobile_height": true,
+        "mobile_height": "300",
+        "color_scheme": "scheme-1",
+        "enable_slider_mobile": false,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_overlapping_images_Tcf3ny": {
+      "type": "section-overlapping-images",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "center",
+        "images_width": 500,
+        "images_offset": 75,
+        "image_1": "shopify://shop_images/marine-collagen_1.webp",
+        "image_link_1": "",
+        "image_2": "shopify://shop_images/Screenshot_2025-02-28_at_12.51.28_PM.png",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "subheading": "",
+        "title": "<p>Compare Leading Brands</p>",
+        "heading_size": 110,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000000",
+        "highlight_text_color": "",
+        "description": "<p>Follow this link for a side-by-side comparison with the top collagen brands in Australia. </p>",
+        "text_size": 100,
+        "button_text": "Compare Now",
+        "button_link": "shopify://pages/compare-collagen-brands",
+        "button_color": "btn--black",
+        "button_style": "btn--outline",
+        "button_size": "btn--small",
+        "video_text": "",
+        "video_link": "",
+        "color_scheme": "scheme-1",
+        "animation": "diagonal",
+        "animation_intensity": 60,
+        "width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "overlapping-images-0": {
+      "type": "section-overlapping-images",
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "center",
+        "images_width": 500,
+        "images_offset": 75,
+        "image_1": "shopify://shop_images/Untitled_design_4_1.png",
+        "image_link_1": "",
+        "image_2": "shopify://shop_images/150mg_moisture_booster_for_skin_and_joints_holding_up_to_1_000_times_its_weight_in_water._1.png",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "subheading": "",
+        "title": "<p>Good. Better. Best. </p>",
+        "heading_size": 110,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000000",
+        "highlight_text_color": "",
+        "description": "<p>Seven years in development and now finally available. This is the highest quality Enhanced Marine Collagen Peptides available in Australia (or the world for that matter). Try it today. </p>",
+        "text_size": 100,
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--small",
+        "video_text": "",
+        "video_link": "",
+        "color_scheme": "scheme-1",
+        "animation": "diagonal",
+        "animation_intensity": 60,
+        "width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 68
+      }
+    },
+    "1747794847cb867fda": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_image_with_text_bamwLr": {
+      "type": "section-image-with-text",
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}",
+        "ul {list-style: disc; padding-left: -50px; text-align: left; margin: 0 auto; width: fit-content;}",
+        "ul li {text-align: left; margin-top: -10px; margin-bottom: -10px;}",
+        "ul li::marker {font-size: 30px; color: #610c27;}"
+      ],
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/u9778399291_Synegestic_ingredients_in_a_supplement_mixing_toget_911b8aa4-2e6e-4d7c-a7fc-4cb3e49c4a03.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "tabs": {
+      "type": "section-accordions",
+      "blocks": {
+        "acordion-0": {
+          "type": "text",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>"
+          }
+        },
+        "acordion-1": {
+          "type": "text",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>"
+          }
+        },
+        "acordion-2": {
+          "type": "text",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>"
+          }
+        },
+        "d0defd0d-94c3-403c-bd36-dc2f140a104f": {
+          "type": "text",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "acordion-0",
+        "acordion-1",
+        "acordion-2",
+        "d0defd0d-94c3-403c-bd36-dc2f140a104f"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#f0eeed",
+        "color_scheme": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_testimonials_with_images_BVXFjx": {
+      "type": "section-testimonials-with-images",
+      "blocks": {
+        "image_hP4tAD": {
+          "type": "image",
+          "settings": {
+            "star_rating": 0,
+            "enable_border": false,
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_4.36.35_PM.png",
+            "aspect_ratio": 1.3,
+            "heading": "",
+            "text_size": 125,
+            "customer_name": "",
+            "block_color": ""
+          }
+        },
+        "testimonial_6WWwCA": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "Gamechanger",
+            "text_size": 125,
+            "text": "<p>I’ve been using Calmerceuticals for a month, and my skin is glowing! So impressed with the results.</p>",
+            "content_size": 100,
+            "customer_name": "Emily R.",
+            "subheading": "<p>8 Days Ago</p>"
+          }
+        },
+        "image_NXxe7m": {
+          "type": "image",
+          "settings": {
+            "star_rating": 0,
+            "enable_border": false,
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_5.04.37_PM.png",
+            "aspect_ratio": 1.3,
+            "heading": "",
+            "text_size": 125,
+            "customer_name": "",
+            "block_color": ""
+          }
+        },
+        "testimonial_hcmdtw": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "I'm a believer",
+            "text_size": 125,
+            "text": "<p>I was skeptical, but wow, my skin look samazing. This collagen is a next level.</p>",
+            "content_size": 100,
+            "customer_name": "Sophia L.",
+            "subheading": "<p>12 days ago</p>"
+          }
+        },
+        "image_kCt6Bq": {
+          "type": "image",
+          "settings": {
+            "star_rating": 0,
+            "enable_border": false,
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_5.04.47_PM.png",
+            "aspect_ratio": 1.3,
+            "heading": "",
+            "text_size": 125,
+            "customer_name": "",
+            "block_color": ""
+          }
+        },
+        "testimonial_Yh38FJ": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "Truly effective",
+            "text_size": 125,
+            "text": "<p>I love how easy it is to take, and I’ve noticed such a difference in my skin already.</p>",
+            "content_size": 100,
+            "customer_name": "Olivia M.",
+            "subheading": "<p>18 days ago</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_hP4tAD",
+        "testimonial_6WWwCA",
+        "image_NXxe7m",
+        "testimonial_hcmdtw",
+        "image_kCt6Bq",
+        "testimonial_Yh38FJ"
+      ],
+      "settings": {
+        "subheading": "Real Results, Real Confidence",
+        "subheading_size": 100,
+        "title": "From the 'Calmer Community'",
+        "heading_size": 100,
+        "text_alignment": "text-left",
+        "color_scheme": "scheme-1",
+        "testimonial_block_color": "#f0eeed",
+        "star_color": "#610c27",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "icons": {
+      "type": "section-icons-row",
+      "blocks": {
+        "icon-0": {
+          "type": "text",
+          "settings": {
+            "icon_name": "truck",
+            "title": "Free Shipping",
+            "text": "<p>on all order over $99</p>"
+          }
+        },
+        "icon-1": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "title": "Free Returns",
+            "text": "<p>within 30 days of purchase</p>"
+          }
+        },
+        "icon-2": {
+          "type": "text",
+          "settings": {
+            "icon_name": "eco-friendly",
+            "title": "1% Donated Annually",
+            "text": "<p>to forest conservation</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon-0",
+        "icon-1",
+        "icon-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 30,
+        "show_vertical_borders": true,
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "heading_size": 120,
+        "text_size": 100,
+        "color_scheme": "",
+        "text_color": "#333333",
+        "box_color": "",
+        "color_border": "#333333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--small",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "173683081661364599": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_XKJeJK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_XKJeJK"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "title": "You May Also Like",
+            "product_recommendations_limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "title": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "layout": "grid",
+        "columns_mobile": "2",
+        "type_style": "subheading-text",
+        "tab_heading_size": 130,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_marquee_fmBda3",
+    "section_accordions_HUdDKH",
+    "section_promotion_row_MeR7nm",
+    "section_overlapping_images_Tcf3ny",
+    "overlapping-images-0",
+    "1747794847cb867fda",
+    "section_image_with_text_bamwLr",
+    "tabs",
+    "section_testimonials_with_images_BVXFjx",
+    "icons",
+    "173683081661364599",
+    "related"
+  ]
+}

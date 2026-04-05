@@ -1,0 +1,164 @@
+{%- liquid
+  assign mega_parent = section.settings.mega_menu_parent | downcase | strip
+  assign card_bg = section.settings.mega_card_bg
+  assign card_text = section.settings.mega_card_title_color
+  assign card_subtext = section.settings.mega_card_text_color
+  assign quick_bg = section.settings.mega_quick_bg
+  assign quick_text = section.settings.mega_quick_text_color
+  assign menu_group = blank
+  assign featured_keys = ''
+-%}
+  {%- for child_link in link.links -%}
+    {%- if child_link.links.size > 0 and menu_group == blank -%}
+      {%- assign menu_group = child_link -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign key = link.url | append: link.title | append: link.levels | md5 -%}
+<hover-disclosure
+    class="menu__item grandparent kids-4 images-0"
+    data-nav-item
+    role="navigation"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="dropdown-{{ key }}"
+  >
+    <a
+      href="{{ link.url }}"
+      data-top-link
+      class="navlink navlink--toplevel{% if link_hover_dot %} navlink--dot{% endif %}{% if settings.nav_caps_toplevel %} caps{% endif %}"
+    >
+      <span class="navtext">{{ link.title | escape }}</span>
+    </a>
+
+    <div class="header__dropdown header__dropdown--mega-grid" role="combobox" id="dropdown-{{ key }}">
+      <div class="header__dropdown__wrapper wrapper">
+        <div class="header__dropdown__inner">
+          <div
+            class="header-mega-grid"
+            style="
+              --mega-card-bg: {{ card_bg }};
+              --mega-card-title: {{ card_text }};
+              --mega-card-text: {{ card_subtext }};
+              --mega-quick-bg: {{ quick_bg }};
+              --mega-quick-text: {{ quick_text }};
+            "
+          >
+            <div class="header-mega-grid__row" style="--columns: 4;">
+              {%- if menu_group != blank -%}
+                {%- for item_link in menu_group.links limit: 4 -%}
+                  {%- liquid
+                    assign item_menu_key = item_link.title | downcase | strip
+                    assign item_title = item_link.title
+                    assign item_desc = blank
+                    assign item_image = blank
+                  -%}
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'mega_feature_item' -%}
+                      {%- assign block_parent_key = block.settings.parent_menu_item | downcase | strip -%}
+                      {%- assign block_item_key = block.settings.menu_item | downcase | strip -%}
+                      {%- if block_parent_key == mega_parent and block_item_key == item_menu_key -%}
+                        {%- if block.settings.title != blank -%}
+                          {%- assign item_title = block.settings.title -%}
+                        {%- endif -%}
+                        {%- assign item_desc = block.settings.description -%}
+                        {%- assign item_image = block.settings.image -%}
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  <a
+                    href="{{ item_link.url }}"
+                    class="header-mega-grid__card"
+                    style="background: var(--mega-card-bg); color: var(--mega-card-title); box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);"
+                  >
+                    <div class="header-mega-grid__media">
+                      {%- if item_image != blank -%}
+                        {{ item_image | image_url: width: 600 | image_tag: class: 'header-mega-grid__image', loading: 'lazy', alt: item_title }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </div>
+                    <div>
+                      <p class="header-mega-grid__title">{{ item_title | escape }}</p>
+                      {%- if item_desc != blank -%}
+                        <p class="header-mega-grid__desc" style="color: var(--mega-card-text);">{{ item_desc | escape }}</p>
+                      {%- endif -%}
+                    </div>
+                  </a>
+                  {%- capture featured_keys -%}{{ featured_keys }}|{{ item_menu_key }}|{%- endcapture -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- assign direct_feature_count = 0 -%}
+                {%- for item_link in link.links -%}
+                  {%- if item_link.links.size == 0 and direct_feature_count < 4 -%}
+                    {%- liquid
+                      assign item_menu_key = item_link.title | downcase | strip
+                      assign item_title = item_link.title
+                      assign item_desc = blank
+                      assign item_image = blank
+                    -%}
+                    {%- if item_menu_key != 'products' -%}
+                      {%- for block in section.blocks -%}
+                        {%- if block.type == 'mega_feature_item' -%}
+                          {%- assign block_parent_key = block.settings.parent_menu_item | downcase | strip -%}
+                          {%- assign block_item_key = block.settings.menu_item | downcase | strip -%}
+                          {%- if block_parent_key == mega_parent and block_item_key == item_menu_key -%}
+                            {%- if block.settings.title != blank -%}
+                              {%- assign item_title = block.settings.title -%}
+                            {%- endif -%}
+                            {%- assign item_desc = block.settings.description -%}
+                            {%- assign item_image = block.settings.image -%}
+                          {%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <a
+                        href="{{ item_link.url }}"
+                        class="header-mega-grid__card"
+                        style="background: var(--mega-card-bg); color: var(--mega-card-title); box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);"
+                      >
+                        <div class="header-mega-grid__media">
+                          {%- if item_image != blank -%}
+                            {{ item_image | image_url: width: 600 | image_tag: class: 'header-mega-grid__image', loading: 'lazy', alt: item_title }}
+                          {%- else -%}
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                          {%- endif -%}
+                        </div>
+                        <div>
+                          <p class="header-mega-grid__title">{{ item_title | escape }}</p>
+                          {%- if item_desc != blank -%}
+                            <p class="header-mega-grid__desc" style="color: var(--mega-card-text);">{{ item_desc | escape }}</p>
+                          {%- endif -%}
+                        </div>
+                      </a>
+                      {%- capture featured_keys -%}{{ featured_keys }}|{{ item_menu_key }}|{%- endcapture -%}
+                      {%- assign direct_feature_count = direct_feature_count | plus: 1 -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+
+            <div class="header-mega-grid__row" style="--columns: 3;">
+              {%- assign quick_count = 0 -%}
+              {%- for child_link in link.links -%}
+                {%- assign child_key = child_link.title | downcase | strip -%}
+                {%- capture featured_token -%}|{{ child_key }}|{%- endcapture -%}
+                {%- unless featured_keys contains featured_token -%}
+                  {%- if child_link.links.size == 0 and quick_count < 3 and child_key != 'products' -%}
+                    <a
+                      href="{{ child_link.url }}"
+                      class="header-mega-grid__card header-mega-grid__quick"
+                      style="background: var(--mega-quick-bg); color: var(--mega-quick-text); box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);"
+                    >
+                      <p class="header-mega-grid__title">{{ child_link.title | escape }}</p>
+                    </a>
+                    {%- assign quick_count = quick_count | plus: 1 -%}
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </hover-disclosure>

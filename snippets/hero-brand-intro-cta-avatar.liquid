@@ -1,0 +1,13 @@
+{%- comment -%}
+  Circular CTA avatar: merchant image or Shopify placeholder SVG.
+  @param {object} [cta_avatar] - image from image_picker (optional)
+{%- endcomment -%}
+{%- if cta_avatar != blank -%}
+  {{
+    cta_avatar
+    | image_url: width: 128
+    | image_tag: class: 'hero-brand-intro__cta-avatar-img', loading: 'lazy', alt: ''
+  }}
+{%- else -%}
+  {{ 'image' | placeholder_svg_tag: class: 'hero-brand-intro__cta-avatar-img hero-brand-intro__placeholder-svg' }}
+{%- endif -%}

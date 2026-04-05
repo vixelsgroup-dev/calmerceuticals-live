@@ -1,0 +1,37 @@
+{%- liquid
+  assign stars = block.settings.star_rating | plus: 0
+  if stars > 5
+    assign stars = 5
+  elsif stars < 1
+    assign stars = 5
+  endif
+-%}
+<article
+  class="testimonial-showcase__slide"
+  data-tsc-slide
+  {{ block.shopify_attributes }}
+>
+  <div class="testimonial-showcase__slide-inner">
+    {% render 'icon-stars-row',
+      count: stars,
+      row_class: 'testimonial-showcase__stars',
+      star_wrap_class: 'testimonial-showcase__star-wrap',
+      star_class: 'testimonial-showcase__star'
+    %}
+
+    {%- if block.settings.quote != blank -%}
+      <blockquote class="testimonial-showcase__quote">
+        <p class="testimonial-showcase__quote-text">{{ block.settings.quote | escape | newline_to_br }}</p>
+      </blockquote>
+    {%- endif -%}
+
+    <div class="testimonial-showcase__profile">
+      <div class="testimonial-showcase__avatar-wrap">
+        {% render 'testimonial-showcase-avatar', avatar: block.settings.avatar %}
+      </div>
+      {%- if block.settings.author != blank -%}
+        <p class="testimonial-showcase__author">{{ block.settings.author | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,348 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap"
+>
+<link rel="stylesheet" href="{{ 'featured-product-grid.css' | asset_url }}">
+
+{% liquid
+  assign layout_mode = section.settings.layout_mode | default: 'grid'
+  assign is_carousel = false
+  if layout_mode == 'carousel'
+    assign is_carousel = true
+  endif
+  assign carousel_desktop = section.settings.carousel_desktop_slides | default: 2
+  if carousel_desktop < 1
+    assign carousel_desktop = 1
+  elsif carousel_desktop > 4
+    assign carousel_desktop = 4
+  endif
+  assign fpg_pt_m = section.settings.padding_top_mobile | default: section.settings.padding_top | default: 72
+  assign fpg_pb_m = section.settings.padding_bottom_mobile | default: section.settings.padding_bottom | default: 72
+  assign fpg_pt_d = section.settings.padding_top_desktop | default: section.settings.padding_top | default: 72
+  assign fpg_pb_d = section.settings.padding_bottom_desktop | default: section.settings.padding_bottom | default: 72
+  assign fpg_container_max = section.settings.max_container_width | default: '1440'
+  if fpg_container_max == 'full'
+    assign fpg_container_max_css = 'none'
+  else
+    assign fpg_container_max_css = fpg_container_max | append: 'px'
+  endif
+%}
+
+<section
+  id="FeaturedProductGrid-{{ section.id }}"
+  class="featured-product-grid{% if is_carousel %} featured-product-grid--carousel{% endif %}"
+  style="--fpg-bg: {{ section.settings.background_color }}; --fpg-pt-mobile: {{ fpg_pt_m }}px; --fpg-pb-mobile: {{ fpg_pb_m }}px; --fpg-pt-desktop: {{ fpg_pt_d }}px; --fpg-pb-desktop: {{ fpg_pb_d }}px; --fpg-carousel-desktop: {{ carousel_desktop }}; --fpg-container-max: {{ fpg_container_max_css }};"
+  aria-label="{{ section.settings.heading_line_1 | default: 'Featured products' | escape }}"
+  {% if is_carousel %}
+    data-fpg-carousel
+    data-fpg-mobile-width="{{ section.settings.carousel_mobile_width | default: 'peek' }}"
+  {% endif %}
+  {{ section.shopify_attributes }}
+>
+  <div class="featured-product-grid__inner">
+    <header class="featured-product-grid__header">
+      <div class="featured-product-grid__intro">
+        {% if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank %}
+          <h2 class="featured-product-grid__title">
+            {% if section.settings.heading_line_1 != blank %}
+              <span class="featured-product-grid__title-line">{{ section.settings.heading_line_1 | escape }}</span>
+            {% endif %}
+            {% if section.settings.heading_line_2 != blank %}
+              <span class="featured-product-grid__title-line">{{ section.settings.heading_line_2 | escape }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="featured-product-grid__sub">{{ section.settings.subheading | escape }}</p>
+        {% endif %}
+      </div>
+      {% if section.settings.shop_label != blank %}
+        <a
+          class="featured-product-grid__shop-link"
+          href="{% if section.settings.shop_link != blank %}{{ section.settings.shop_link }}{% else %}{{ routes.all_products_collection_url }}{% endif %}"
+        >
+          <span class="featured-product-grid__shop-label">{{ section.settings.shop_label | escape }}</span>
+          <span class="featured-product-grid__shop-icon" aria-hidden="true">
+            {% render 'icon-arrow-right-small' %}
+          </span>
+        </a>
+      {% endif %}
+    </header>
+
+    {% if section.blocks.size > 0 %}
+      {% if is_carousel %}
+        <div class="featured-product-grid__carousel-shell">
+          {% if section.settings.carousel_show_arrows %}
+            <button
+              type="button"
+              class="featured-product-grid__carousel-btn featured-product-grid__carousel-btn--prev"
+              aria-controls="FeaturedProductGrid-{{ section.id }}-viewport"
+              aria-label="Previous products"
+            >
+              {% render 'icon-chevron-24', direction: 'left' %}
+            </button>
+            <button
+              type="button"
+              class="featured-product-grid__carousel-btn featured-product-grid__carousel-btn--next"
+              aria-controls="FeaturedProductGrid-{{ section.id }}-viewport"
+              aria-label="Next products"
+            >
+              {% render 'icon-chevron-24', direction: 'right' %}
+            </button>
+          {% endif %}
+          <div
+            id="FeaturedProductGrid-{{ section.id }}-viewport"
+            class="featured-product-grid__viewport"
+            tabindex="0"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="{{ section.settings.heading_line_1 | default: 'Products' | escape }}"
+          >
+      {% endif %}
+      <div class="featured-product-grid__grid{% if is_carousel %} featured-product-grid__grid--track{% endif %}" role="list">
+        {% for block in section.blocks %}
+          {% render 'featured-product-grid-card', block: block %}
+        {% endfor %}
+      </div>
+      {% if is_carousel %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+{% if is_carousel %}
+  <script src="{{ 'featured-product-grid.js' | asset_url }}" defer></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured product grid",
+  "tag": "section",
+  "class": "section-featured-product-grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#610c27",
+      "info": "Spans the full width of the viewport."
+    }, 
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "select",
+      "id": "max_container_width",
+      "label": "Max container width",
+      "options": [
+        { "value": "full", "label": "Full width (no max)" },
+        { "value": "1100", "label": "1100px" },
+        { "value": "1200", "label": "1200px" },
+        { "value": "1280", "label": "1280px" },
+        { "value": "1320", "label": "1320px" },
+        { "value": "1440", "label": "1440px" },
+        { "value": "1536", "label": "1536px" },
+        { "value": "1600", "label": "1600px" },
+        { "value": "1680", "label": "1680px" },
+        { "value": "1920", "label": "1920px" }
+      ],
+      "default": "1440"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Four systems."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "One gold standard."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Clinically dosed systems for skin, hormones, gut, and performance."
+    },
+    {
+      "type": "text",
+      "id": "shop_label",
+      "label": "Shop link label",
+      "default": "Shop all"
+    },
+    {
+      "type": "url",
+      "id": "shop_link",
+      "label": "Shop link"
+    },
+    {
+      "type": "header",
+      "content": "Product layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_mode",
+      "label": "Product layout",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
+      "id": "carousel_mobile_width",
+      "label": "Carousel: mobile slide",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "peek", "label": "Peek next slide" }
+      ],
+      "default": "peek",
+      "info": "Only applies when layout is Carousel."
+    },
+    {
+      "type": "range",
+      "id": "carousel_desktop_slides",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Carousel: slides on large screens",
+      "default": 2,
+      "info": "Screens 990px and up. Only applies when layout is Carousel."
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_show_arrows",
+      "label": "Carousel: show prev/next buttons",
+      "default": true,
+      "info": "Only applies when layout is Carousel."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Product"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$84.4"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Featured product grid",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "title": "Collagen",
+            "price": "$84.4"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Pericalm",
+            "price": "$84.4"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Ultra Perforamance",
+            "price": "$84.4"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Longevity",
+            "price": "$84.4"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

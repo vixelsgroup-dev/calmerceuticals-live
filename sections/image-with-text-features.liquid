@@ -1,0 +1,244 @@
+{% liquid
+  assign iwtf_image_alt = section.settings.image.alt | default: section.settings.heading | default: 'Product' | escape
+%}
+<link rel="preload" href="{{ 'image-with-text-features.css' | asset_url }}" as="style">
+{{ 'image-with-text-features.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="ImageWithTextFeatures-{{ section.id }}"
+  class="iwtf-section"
+  style="
+    --iwtf-heading-color: {{ section.settings.heading_color }};
+    --iwtf-body-color: {{ section.settings.body_color }};
+    --iwtf-list-color: {{ section.settings.list_color }};
+    --iwtf-bg: {{ section.settings.background_color }};
+    --iwtf-radius: {{ section.settings.image_radius }}px;
+    --iwtf-pad-x: {{ section.settings.padding_horizontal }}px;
+    --iwtf-gap: {{ section.settings.column_gap }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: var(--iwtf-bg);
+  "
+>
+  <div class="iwtf-section__container">
+    <div
+      class="iwtf-section__row{% if section.settings.image_position == 'left' %} iwtf-section__row--reverse{% endif %}"
+    >
+      <div class="iwtf-section__text">
+        <div class="iwtf-section__text-inner">
+          {% if section.settings.heading != blank %}
+            <h2 class="iwtf-section__heading">{{ section.settings.heading | escape }}</h2>
+          {% endif %}
+
+          {% if section.settings.intro != blank %}
+            <div class="iwtf-section__intro rte">{{ section.settings.intro }}</div>
+          {% endif %}
+
+          {% if section.blocks.size > 0 %}
+            <ul class="iwtf-section__list" role="list">
+              {% for block in section.blocks %}
+                {% if block.type == 'feature' %}
+                  <li class="iwtf-section__item" {{ block.shopify_attributes }}>
+                    <span class="iwtf-section__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none" focusable="false">
+                        <path d="M21.6535 12.4629C20.8449 16.5059 17.7965 20.3128 13.519 21.1634C11.4329 21.5789 9.26877 21.3256 7.33492 20.4395C5.40108 19.5535 3.79606 18.08 2.7484 16.2287C1.70075 14.3774 1.26386 12.2428 1.49996 10.1288C1.73606 8.0148 2.63309 6.02916 4.06335 4.45463C6.99693 1.22349 11.9504 0.334036 15.9933 1.95122" stroke="#A91443" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.90723 10.8457L11.9502 14.8887L21.6533 4.37695" stroke="#A91443" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <p class="iwtf-section__item-copy">
+                      {% if block.settings.label != blank %}
+                        <strong class="iwtf-section__item-label">{{ block.settings.label | escape }}</strong>
+                      {% endif %}
+                      {% if block.settings.label != blank and block.settings.text != blank %}:{% endif %}
+                      {% if block.settings.text != blank %}
+                        <span class="iwtf-section__item-text"> {{ block.settings.text | escape }}</span>
+                      {% endif %}
+                    </p>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="iwtf-section__media">
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 1600
+            | image_tag:
+              class: 'iwtf-section__image',
+              loading: 'lazy',
+              sizes: '(min-width: 990px) 50vw, 100vw',
+              widths: '375, 550, 750, 1100, 1400, 1600',
+              alt: iwtf_image_alt
+          }}
+        {% else %}
+          <div class="iwtf-section__image iwtf-section__image--placeholder">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text features",
+  "tag": "section",
+  "class": "section-image-with-text-features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stop Masking Symptoms. Start Solving Them"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text",
+      "default": "<p>Unlike traditional supplements, PeriCalm™ works at the source to stabilize your internal cooling system and mental focus</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position on desktop",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 24,
+      "max": 96,
+      "step": 8,
+      "unit": "px",
+      "label": "Space between columns",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Intro text color",
+      "default": "#323232"
+    },
+    {
+      "type": "color",
+      "id": "list_color",
+      "label": "Feature list color",
+      "default": "#545454"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Bold label",
+          "default": "Pure Results"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "No fillers or synthetic hormones."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Pure Results",
+            "text": "No fillers or synthetic hormones."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Clinical Precision",
+            "text": "Made in Australia to the world's highest safety standards."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Total Support",
+            "text": "Specifically formulated to end brain fog, night sweats, and mood swings."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

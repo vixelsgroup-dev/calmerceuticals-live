@@ -1,0 +1,617 @@
+{% comment %}
+  Section: Video Testimonials Slider – "Loved by Thousands"
+  - Uses Flickity (same instance as columns-with-image.js)
+  - Light bg, heading top-left, arrows top-right
+  - Portrait video cards, rounded corners, gradient overlay
+  - Overflow peek on right side, left-aligned to container
+{% endcomment %}
+
+{%- liquid
+  assign unique = section.id
+  assign id = 'VideoTestimonials--' | append: section.id
+  assign selector_id = '#' | append: id
+-%}
+
+{%- style -%}
+  {{ selector_id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section
+  id="{{ id }}"
+  class="vt-section section-padding"
+  style="background-color: {{ section.settings.background_color }};"
+>
+  <!-- Full-width container but heading/arrows sit inside wrapper -->
+  <div class="{% if section.settings.container_width %}wrapper{% else %}wrapper--full-padded{% endif %} vt-section__inner">
+
+    <!-- Header row: heading left, arrows right -->
+    <div class="vt-section__header">
+      <h2 class="vt-section__heading" style="font-size: {{ section.settings.heading_size }}px; color: {{ section.settings.heading_color }};">
+        {%- if section.settings.heading_brand != blank -%}
+          <span class="vt-section__heading-brand" style="color: {{ section.settings.heading_brand_color }};">{{ section.settings.heading_brand }}</span>
+        {%- endif -%}
+        {{ section.settings.heading_rest }}
+      </h2>
+
+      <div class="vt-section__arrows" id="vt-arrows-{{ unique }}">
+        <button class="vt-section__arrow vt-section__arrow--prev" aria-label="Previous">
+          <img src="{{ 'left-arrow.png' | file_url }}" alt="Previous" width="40" height="40" loading="lazy">
+        </button>
+        <button class="vt-section__arrow vt-section__arrow--next" aria-label="Next">
+          <img src="{{ 'right-arrow.png' | file_url }}" alt="Next" width="40" height="40" loading="lazy">
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Left mask: covers left bleed so wrapAround clones don't flash on left side -->
+  {% comment %} <div class="vt-section__left-mask " style="background-color: {{ section.settings.background_color }};"></div> {% endcomment %}
+
+  <!-- Carousel sits outside wrapper so it can overflow right -->
+  <div class="vt-section__carousel-wrap {% if section.settings.container_width %}wrapper{% else %}wrapper--full-padded{% endif %}">
+    <div class="vt-section__carousel-offset">
+      <div
+        class="vt-section__carousel js-flickity"
+        id="vt-carousel-{{ unique }}"
+        data-flickity-options='{
+          "cellAlign": "left",
+          "contain": false,
+          "wrapAround": true,
+          "pageDots": false,
+          "prevNextButtons": false,
+          "groupCells": false,
+          "freeScroll": false,
+          "friction": 0.28,
+          "selectedAttraction": 0.025
+        }'
+      >
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'video_card' -%}
+            <div class="vt-section__cell" {{ block.shopify_attributes }}>
+              <div class="vt-section__card" style="width: {{ section.settings.card_width }}px; margin-right: {{ section.settings.card_gap }}px;">
+                <div class="vt-section__video-wrap" style="border-radius: {{ section.settings.card_radius }}px;">
+
+                  {%- if block.settings.video != blank -%}
+                    {%- assign poster_image = block.settings.thumbnail | image_url: width: 600 -%}
+                    {{ block.settings.video | video_tag:
+                      controls: false,
+                      autoplay: false,
+                      loop: false,
+                      muted: false,
+                      playsinline: true,
+                      poster: poster_image,
+                      class: 'vt-section__video'
+                    }}
+                  {%- elsif block.settings.thumbnail != blank -%}
+                    <img
+                      src="{{ block.settings.thumbnail | img_url: '600x900', crop: 'center' }}"
+                      alt="{{ block.settings.thumbnail.alt | default: 'Video thumbnail' | escape }}"
+                      class="vt-section__video"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <div class="vt-section__video vt-section__video--placeholder"></div>
+                  {%- endif -%}
+
+                  <!-- Play button overlay -->
+                  {%- if block.settings.video != blank -%}
+                    <div class="vt-section__play-btn" data-play-id="{{ block.id }}">
+                      <div class="vt-section__play-icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                          <polygon points="6,3 20,11 6,19" fill="white"/>
+                        </svg>
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+                  <!-- Bottom gradient + text overlay -->
+                  <div class="vt-section__card-overlay" style="border-radius: 0 0 {{ section.settings.card_radius }}px {{ section.settings.card_radius }}px;">
+                    {%- if block.settings.quote != blank -%}
+                      <p class="vt-section__quote" style="font-size: {{ section.settings.quote_size }}px;">"{{ block.settings.quote }}"</p>
+                    {%- endif -%}
+                    {%- if block.settings.name != blank -%}
+                      <p class="vt-section__name" style="font-size: {{ section.settings.name_size }}px;">– {{ block.settings.name }}</p>
+                    {%- endif -%}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+/* ── Section base ── */
+.vt-section {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: var(--PT, 60px);
+  padding-bottom: var(--PB, 60px);
+  overflow: visible; /* MUST be visible so Flickity wrapAround clones slide in smoothly */
+  position: relative;
+}
+
+/*
+  Left mask: paints over the area to the left of the carousel offset
+  using the section background color — this gives the "contained left edge"
+  look without overflow:hidden clipping Flickity's looping cells.
+*/
+.vt-section__left-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* matches the carousel-offset padding so it covers exactly the gap */
+  width: max(20px, calc((100vw - 1320px) / 2 + 20px));
+  background-color: inherit;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.vt-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.vt-section__heading {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.5px;
+  max-width: 560px;
+}
+.vt-section__heading-brand {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* ── Arrows ── */
+.vt-section__arrows {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-bottom: 4px;
+}
+.vt-section__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.vt-section__arrow:hover { background: #fff; border-color: rgba(0,0,0,0.3); }
+
+/* ── Carousel wrapper: offset left to align with wrapper, overflow right ── */
+.vt-section__carousel-wrap {
+  width: 100%;
+  overflow: visible; /* allow right overflow */
+}
+
+
+/* Flickity carousel */
+.vt-section__carousel {
+  outline: none;
+}
+
+/* Flickity cell */
+.vt-section__cell {
+  /* width is set by the inner card for flexibility */
+}
+
+/* Card */
+.vt-section__card {
+  /* width & margin-right set inline from settings */
+}
+
+/* Video wrap */
+.vt-section__video-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  background: #1a0d10;
+}
+.vt-section__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vt-section__video--placeholder {
+  background: linear-gradient(135deg, #c8b8bc 0%, #8a7080 100%);
+}
+
+/* Play button */
+.vt-section__play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 2;
+}
+.vt-section__play-btn:hover { background: rgba(0,0,0,0.28); }
+.vt-section__play-btn.is-hidden { opacity: 0; pointer-events: none; }
+.vt-section__play-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255,255,255,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vt-section__play-icon svg { margin-left: 3px; }
+
+/* Overlay */
+.vt-section__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 18px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  z-index: 3;
+}
+.vt-section__quote {
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.1px;
+  text-align: center;
+}
+.vt-section__name {
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* ── Flickity overrides ── */
+.vt-section__carousel .flickity-viewport {
+  overflow: hidden !important; /* allow cards to show beyond viewport */
+}
+
+/* ── Mobile ── */
+@media screen and (max-width: 767px) {
+  .vt-section__card { width: 260px !important; }
+  .vt-section__heading { font-size: 34px !important; }
+   .vt-section__arrows{display: none;} 
+  .vt-section__arrow { width: 36px; height: 36px; }
+  .vt-section__left-mask { width: 16px; }
+  .vt-section__carousel .flickity-viewport{overflow: hidden !important;}
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  function initVTSlider() {
+    var carouselEl = document.getElementById('vt-carousel-{{ unique }}');
+    if (!carouselEl) return;
+
+    // Wait for Flickity to be available (loaded by columns-with-image.js)
+    if (!window.theme || !window.theme.Flickity) {
+      setTimeout(initVTSlider, 100);
+      return;
+    }
+
+    var Flickity = window.theme.Flickity;
+
+    // Destroy any existing instance
+    var existing = Flickity.data(carouselEl);
+    if (existing) existing.destroy();
+
+    var flkty = new Flickity(carouselEl, {
+      cellAlign: 'left',
+      contain: false,
+      wrapAround: true,
+      pageDots: false,
+      prevNextButtons: false,
+      freeScroll: false,
+      friction: 0.28,
+      selectedAttraction: 0.025,
+      on: {
+        ready: function() {
+          // Make flickity viewport overflow visible so right cards peek
+          var viewport = carouselEl.querySelector('.flickity-viewport');
+          if (viewport) viewport.style.overflow = 'visible';
+        }
+      }
+    });
+
+    // ── Custom arrows ──
+    var prevBtn = document.querySelector('#vt-arrows-{{ unique }} .vt-section__arrow--prev');
+    var nextBtn = document.querySelector('#vt-arrows-{{ unique }} .vt-section__arrow--next');
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { flkty.previous(); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { flkty.next(); });
+
+    // ── Play / Pause logic ──
+    carouselEl.addEventListener('click', function(e) {
+      // Prevent play when flickity is dragging
+      if (flkty.isDragging) return;
+
+      var playBtn = e.target.closest('.vt-section__play-btn');
+      var videoEl = (e.target.tagName && e.target.tagName.toLowerCase() === 'video') ? e.target : null;
+
+      if (playBtn) {
+        var video = playBtn.closest('.vt-section__video-wrap').querySelector('video');
+        if (!video) return;
+        video.play();
+        playBtn.classList.add('is-hidden');
+        return;
+      }
+
+      if (videoEl) {
+        var icon = videoEl.closest('.vt-section__video-wrap').querySelector('.vt-section__play-btn');
+        if (videoEl.paused) {
+          videoEl.play();
+          if (icon) icon.classList.add('is-hidden');
+        } else {
+          videoEl.pause();
+          if (icon) icon.classList.remove('is-hidden');
+        }
+      }
+    });
+
+    // Restore play icon when video ends
+    carouselEl.querySelectorAll('video').forEach(function(v) {
+      v.addEventListener('ended', function() {
+        var icon = v.closest('.vt-section__video-wrap').querySelector('.vt-section__play-btn');
+        if (icon) icon.classList.remove('is-hidden');
+      });
+    });
+
+    // Pause videos when sliding away
+    flkty.on('change', function() {
+      carouselEl.querySelectorAll('video').forEach(function(v) {
+        if (!v.paused) {
+          v.pause();
+          var icon = v.closest('.vt-section__video-wrap').querySelector('.vt-section__play-btn');
+          if (icon) icon.classList.remove('is-hidden');
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVTSlider);
+  } else {
+    initVTSlider();
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Video Testimonials Slider",
+  "tag": "section",
+  "class": "section-vt",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f0ede8"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "heading_brand_color",
+      "label": "Brand Name Color (bold part)",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_brand",
+      "label": "Brand Name (bold, colored)",
+      "default": "Calmerceuticals"
+    },
+    {
+      "type": "text",
+      "id": "heading_rest",
+      "label": "Rest of Heading",
+      "default": " is loved by thousands"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 22,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "label": "Card Width",
+      "default": 210
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Between Cards",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Name Font Size",
+      "default": 11
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_card",
+      "name": "Video Card",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail",
+          "label": "Thumbnail / Cover Image"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote Text",
+          "default": "After trying it once I was hooked"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Jordyn H."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Testimonials Slider",
+      "blocks": [
+        {
+          "type": "video_card",
+          "settings": {
+            "quote": "After trying it once I was hooked",
+            "name": "Jordyn H."
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "quote": "One Calmerceuticals is all you need",
+            "name": "Falon C."
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "quote": "Best Ever",
+            "name": "Marianna M."
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "quote": "It quite literally has changed my life",
+            "name": "Marcelo L."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

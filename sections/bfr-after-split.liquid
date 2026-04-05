@@ -1,0 +1,379 @@
+{% comment %} Before After Split Section {% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} .ba-section { background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+
+  /* TOP CENTER */
+  #shopify-section-{{ section.id }} .ba-top { text-align: center; margin-bottom: 40px; }
+  #shopify-section-{{ section.id }} .ba-title { font-family: 'Jost', sans-serif ; font-size: {{ section.settings.title_size }}px ; color: {{ section.settings.title_color }} ; font-weight: 500 ; margin: 0 0 10px ; line-height: 1.2 ; }
+  #shopify-section-{{ section.id }} .ba-subtitle { font-family: 'Jost', sans-serif ; font-size: {{ section.settings.subtitle_size }}px ; color: {{ section.settings.subtitle_color }} ; font-weight: 400 ; margin: 0 ; line-height: 1.5 ; }
+
+  /* MIDDLE */
+  #shopify-section-{{ section.id }} .ba-middle { display: flex; align-items: center; gap: 50px; margin-bottom: 40px; }
+  #shopify-section-{{ section.id }} .ba-left { flex: 0 0 50%; max-width: 50%; }
+  #shopify-section-{{ section.id }} .ba-right { flex: 1; min-width: 0; }
+  #shopify-section-{{ section.id }} .ba-heading { font-family: 'Jost', sans-serif ; font-size: {{ section.settings.heading_size }}px ; color: {{ section.settings.heading_color }} ; font-weight: 500 ; margin: 0 0 16px ; line-height: 1.2 ; }
+  #shopify-section-{{ section.id }} .ba-body { font-family: 'Jost', sans-serif ; font-size: {{ section.settings.body_size }}px ; color: {{ section.settings.body_color }} ; font-weight: 400 ; margin: 0 ; line-height: 120% ; }
+
+  /* COMPARISON SLIDER */
+  #shopify-section-{{ section.id }} .ba-comparison { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 12px; touch-action: none; user-select: none; }
+
+  /* AFTER image — sits behind, fills container */
+  #shopify-section-{{ section.id }} .ba-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  #shopify-section-{{ section.id }} .ba-after img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* BEFORE wrapper — clips from left, does NOT resize the image inside */
+  #shopify-section-{{ section.id }} .ba-before-wrapper { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 2; }
+
+  /* BEFORE image — width is the CONTAINER width, not the wrapper width, so it never zooms */
+#shopify-section-{{ section.id }} .ba-before-wrapper img { position: absolute; top: 0; left: 0; width: var(--container-w); max-width: none; height: 100%; object-fit: cover; object-position: center; display: block; }
+  #shopify-section-{{ section.id }} .ba-dragger { position: absolute; top: 0; left: 50%; height: 100%; width: 0; cursor: ew-resize; z-index: 10; }
+  #shopify-section-{{ section.id }} .ba-dragger::before { content: ''; display: block; width: 2px; height: 100%; background: rgba(255,255,255,0.8); margin-left: -1px; }
+  #shopify-section-{{ section.id }} .ba-dragger svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; cursor: pointer; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2)); }
+  #shopify-section-{{ section.id }} .ba-caption { display: inline-block; font-family: 'Jost', sans-serif; font-size: 11px; position: absolute; bottom: 10px; padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,0.9); color: #222; z-index: 5; }
+  #shopify-section-{{ section.id }} .ba-caption-before { left: 10px; z-index: 6; }
+  #shopify-section-{{ section.id }} .ba-caption-after { right: 10px; }
+
+  /* BOTTOM CENTER */
+  #shopify-section-{{ section.id }} .ba-bottom { text-align: center; }
+  #shopify-section-{{ section.id }} .ba-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+  #shopify-section-{{ section.id }} .ba-btn-primary { font-family: 'Jost', sans-serif ; font-size: 16px; background: {{ section.settings.btn_primary_bg }} ; color: {{ section.settings.btn_primary_color }} ;  border-radius: 50px ; text-decoration: none ; font-weight: 400 ; letter-spacing: 0% ; min-width: 414px; height: 53px; display: flex; justify-content: center; align-items: center; padding: 10px 38px; box-sizing: border-box; }
+  #shopify-section-{{ section.id }} .ba-btn-secondary { font-family: 'Jost', sans-serif ; font-size: 16px ; background-color: transparent ; color: {{ section.settings.btn_secondary_color }} ; border: 1px solid #610C27 ;  border-radius: 50px ; text-decoration: none ; font-weight: 400 ; letter-spacing: 0% ; min-width: 414px; height: 53px; display: flex; justify-content: center; align-items: center; padding: 10px 38px; box-sizing: border-box; }
+  #shopify-section-{{ section.id }} .ba-footnote { font-family: 'Jost', sans-serif ; font-size: {{ section.settings.subtitle_size }}px ; color: {{ section.settings.body_color }} ; font-weight: 400 ; margin: 0 ; line-height: 1.5 ; }
+
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .ba-middle { flex-direction: column; gap: 30px; }
+    #shopify-section-{{ section.id }} .ba-left {order :2; flex: none; max-width: 100%; width: 100%; }
+    #shopify-section-{{ section.id }} .ba-right { width: 100%; }
+    #shopify-section-{{ section.id }} .ba-buttons { flex-direction: column; align-items: center; }
+    #shopify-section-{{ section.id }} .ba-btn-primary { min-width: unset; width: 100%; }
+    #shopify-section-{{ section.id }} .ba-btn-secondary { min-width: unset; width: 100%; }
+  }
+</style>
+
+<section class="ba-section">
+  <div class="{% if section.settings.container_width %}wrapper{% endif %}">
+
+    {% comment %} TOP: Centered title + subtitle {% endcomment %}
+    <div class="ba-top">
+      {% if section.settings.title != blank %}<h2 class="ba-title">{{ section.settings.title }}</h2>{% endif %}
+      {% if section.settings.subtitle != blank %}<p class="ba-subtitle">{{ section.settings.subtitle }}</p>{% endif %}
+    </div>
+
+    {% comment %} MIDDLE: Left text + Right slider {% endcomment %}
+    <div class="ba-middle">
+      <div class="ba-left">
+        {% if section.settings.heading != blank %}<h3 class="ba-heading">{{ section.settings.heading }}</h3>{% endif %}
+        {% if section.settings.body != blank %}<p class="ba-body">{{ section.settings.body }}</p>{% endif %}
+      </div>
+      <div class="ba-right">
+        <div class="ba-comparison" id="ba-comparison-{{ section.id }}">
+          {% if section.settings.after_image != blank %}
+            <div class="ba-after">
+              <img src="{{ section.settings.after_image | img_url: '500x' }}" alt="{{ section.settings.after_image.alt | default: 'After' }}" loading="lazy">
+            </div>
+          {% endif %}
+          {% if section.settings.before_image != blank %}
+            <div class="ba-before-wrapper" id="ba-before-wrapper-{{ section.id }}">
+              <img src="{{ section.settings.before_image | img_url: '500x' }}" alt="{{ section.settings.before_image.alt | default: 'Before' }}" loading="lazy">
+            </div>
+          {% endif %}
+          <div class="ba-dragger" id="ba-dragger-{{ section.id }}">
+            <svg role="presentation" focusable="false" fill="none" viewBox="0 0 50 50">
+              <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+              <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000" stroke-width="1.5" stroke-linecap="square"></path>
+            </svg>
+          </div>
+          {% if section.settings.before_caption != blank %}<span class="ba-caption ba-caption-before">{{ section.settings.before_caption }}</span>{% endif %}
+          {% if section.settings.after_caption != blank %}<span class="ba-caption ba-caption-after">{{ section.settings.after_caption }}</span>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% comment %} BOTTOM: Centered buttons + footnote {% endcomment %}
+    <div class="ba-bottom">
+      {% if section.settings.btn_primary_label != blank or section.settings.btn_secondary_label != blank %}
+        <div class="ba-buttons">
+          {% if section.settings.btn_primary_label != blank %}<a href="{{ section.settings.btn_primary_link }}" class="ba-btn-primary">{{ section.settings.btn_primary_label }}</a>{% endif %}
+          {% if section.settings.btn_secondary_label != blank %}<a href="{{ section.settings.btn_secondary_link }}" class="ba-btn-secondary">{{ section.settings.btn_secondary_label }}</a>{% endif %}
+        </div>
+      {% endif %}
+      {% if section.settings.footnote != blank %}<p class="ba-footnote">{{ section.settings.footnote }}</p>{% endif %}
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  "use strict";
+  var container = document.getElementById('ba-comparison-{{ section.id }}');
+  var wrapper   = document.getElementById('ba-before-wrapper-{{ section.id }}');
+  var dragger   = document.getElementById('ba-dragger-{{ section.id }}');
+  var beforeImg = wrapper ? wrapper.querySelector('img') : null;
+  if (!container || !wrapper || !dragger) return;
+
+  // Sync before image width to full container width (same as reference code)
+  function syncSize() {
+  container.style.setProperty('--container-w', container.offsetWidth + 'px');
+    if (beforeImg) beforeImg.style.width = container.offsetWidth + 'px';
+  }
+  window.addEventListener('load', syncSize);
+  window.addEventListener('resize', syncSize);
+  syncSize();
+
+  var dragging = false;
+
+  function pointerX(e) {
+    return e.touches ? e.touches[0].clientX : e.clientX;
+  }
+
+  function getPercent(e) {
+    var bounds = container.getBoundingClientRect();
+    var pct = (pointerX(e) - bounds.left) / bounds.width;
+    return (Math.max(0, Math.min(pct, 1)) * 100) + '%';
+  }
+
+  function setPos(pct) { 
+    wrapper.style.width = pct; 
+    dragger.style.left = pct; 
+  }
+
+  dragger.addEventListener('mousedown',  function(e){ e.preventDefault(); dragging = true; });
+  dragger.addEventListener('touchstart', function(e){ dragging = true; }, { passive: false });
+  window.addEventListener('mousemove',   function(e){ if (dragging) setPos(getPercent(e)); });
+  window.addEventListener('touchmove',   function(e){ if (dragging) { e.preventDefault(); setPos(getPercent(e)); } }, { passive: false });
+  window.addEventListener('mouseup',     function(){ dragging = false; });
+  window.addEventListener('touchend',    function(){ dragging = false; });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Before After Split",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Use Container Width",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Top Center — Title & Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Before & After"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Based on 12 Weeks daily use."
+    },
+    {
+      "type": "header",
+      "content": "Middle Left — Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Left Heading",
+      "default": "Real Men. Real Results."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Left Body Text",
+      "default": "Don't just take our word for it. See the visible difference achieved with just 12 weeks of consistent daily use. Backed by clinical trials, our high-potency liquid collagen goes to work from within to noticeably reduce deep wrinkles, restore skin elasticity, and support thicker, healthier hair."
+    },
+    {
+      "type": "header",
+      "content": "Middle Right — Comparison Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before Image"
+    },
+    {
+      "type": "text",
+      "id": "before_caption",
+      "label": "Before Caption",
+      "default": "Before"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After Image"
+    },
+    {
+      "type": "text",
+      "id": "after_caption",
+      "label": "After Caption",
+      "default": "After"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Center — Buttons & Footnote"
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_label",
+      "label": "Primary Button Label",
+      "default": "START YOUR 12-WEEK TRANSFORMATION"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_label",
+      "label": "Secondary Button Label",
+      "default": "TRY IT ONCE"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote Text",
+      "default": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy."
+    },
+    {
+      "type": "header",
+      "content": "Font Sizes"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Main Title Size",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle / Footnote Size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 18,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Left Heading Size",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Body / Button Size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Main Title Color",
+      "default": "#5c1a3a"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Left Heading Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body / Footnote Color",
+      "default": "#444444"
+    },
+    {
+      "type": "color_background",
+      "id": "btn_primary_bg",
+      "label": "Primary Button Background",
+      "default": "#5c1a3a"
+    },
+    {
+      "type": "color",
+      "id": "btn_primary_color",
+      "label": "Primary Button Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_secondary_color",
+      "label": "Secondary Button Border & Text",
+      "default": "#5c1a3a"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before After Split"
+    }
+  ]
+}
+{% endschema %}

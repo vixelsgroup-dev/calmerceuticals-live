@@ -1,0 +1,477 @@
+{% comment %}
+  Section: Reviews Grid
+  - Light cream bg
+  - Header: "1,450 verified [accent]5 star reviews[/accent]" left + outlined "All reviews" pill button right
+  - Desktop: CSS grid when ≤4 blocks, Flickity slider when >4 blocks (4 cards visible)
+  - Mobile: Flickity slider always when >1 block (1.2 cards visible)
+  - All font sizes use > * selector pattern for reliable rendering
+{% endcomment %}
+
+{%- assign uid = section.id -%}
+{%- assign block_count = section.blocks | size -%}
+{%- assign use_slider_desktop = false -%}
+{%- assign use_slider_mobile = false -%}
+{%- if block_count > 4 -%}{%- assign use_slider_desktop = true -%}{%- endif -%}
+{%- if block_count > 1 -%}{%- assign use_slider_mobile = true -%}{%- endif -%}
+{%- assign use_slider = false -%}
+{%- assign grid_cols = block_count | at_most: 4 -%}
+{%- if use_slider_desktop or use_slider_mobile -%}{%- assign use_slider = true -%}{%- endif -%}
+
+<section id="rv-section__grid-column" class="rv-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="rv-section__inner {% if section.settings.container_width %}wrapper{% endif %}">
+
+    <!-- HEADER ROW -->
+    <div class="rv-section__header">
+      <h2 class="rv-section__heading">
+        <span class="rv-section__heading-main">{{ section.settings.heading_main }}</span>
+        <span class="rv-section__heading-accent">{{ section.settings.heading_accent }}</span>
+      </h2>
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="rv-section__btn"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <!-- CARDS: grid or slider -->
+    <div 
+      class="rv-section__grid{% if use_slider_desktop %} rv-section__grid--slider-desktop{% endif %}{% if use_slider_mobile %} rv-section__grid--slider-mobile{% endif %}{% if use_slider %} rv-section__grid--slider{% endif %}"
+      id="rvGrid--{{ uid }}"
+      data-slider-desktop="{{ use_slider_desktop }}"
+      data-slider-mobile="{{ use_slider_mobile }}"
+      data-uid="{{ uid }}"
+    >
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <div class="rv-section__card" {{ block.shopify_attributes }}>
+
+            <!-- Stars -->
+            <div class="rv-section__stars">
+              {%- assign star_count = block.settings.stars | plus: 0 -%}
+              {%- for i in (1..5) -%}
+                {%- if i <= star_count -%}
+                  <span class="rv-section__star rv-section__star--filled">★</span>
+                {%- else -%}
+                  <span class="rv-section__star rv-section__star--empty">★</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <!-- Quote -->
+            {%- if block.settings.quote != blank -%}
+              <div class="rv-section__quote">
+                {{ block.settings.quote }}
+              </div>
+            {%- endif -%}
+
+            <!-- Name -->
+            {%- if block.settings.name != blank -%}
+              <div class="rv-section__name">
+                – {{ block.settings.name }}
+              </div>
+            {%- endif -%}
+
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.rv-section{width:100%;box-sizing:border-box;}
+.rv-section__inner{display:flex;flex-direction:column;gap:32px;margin:0 auto;}
+.rv-section__header{ display:none;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.rv-section__heading{margin:0;font-weight:700;line-height:1.2;letter-spacing:-0.5px;}
+.rv-section__heading-main{color:{{ section.settings.heading_main_color }};font-size:{{ section.settings.heading_size }}px;font-weight:400;}
+.rv-section__heading-accent{color:{{ section.settings.heading_accent_color }};font-size:{{ section.settings.heading_size }}px;font-weight:400;margin-left:8px;}
+.rv-section__btn{display:inline-block;padding:10px 24px;border-radius:100px;border:1.5px solid {{ section.settings.button_border_color }};background:transparent;color:{{ section.settings.button_text_color }};font-size:{{ section.settings.button_size }}px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+.rv-section__btn:hover{background:{{ section.settings.button_border_color }};color:#fff;}
+.rv-section__grid{display:grid;grid-template-columns:repeat({{ grid_cols }},1fr);gap:{{ section.settings.card_gap }}px;}
+.rv-section__grid--slider-desktop{display:block;overflow:hidden;}
+.rv-section__grid--slider-desktop .rv-section__card{width:calc(25% - {{ section.settings.card_gap }}px * 3 / 4);margin-right:{{ section.settings.card_gap }}px;}
+.rv-section__grid--slider .flickity-page-dots,.rv-section__grid--slider .flickity-prev-next-button{display:none !important;}
+.rv-section__card{background-color:{{ section.settings.card_bg }};border-radius:{{ section.settings.card_radius }}px;border:1px solid {{ section.settings.card_border_color }};padding:{{ section.settings.card_padding }}px;display:flex;flex-direction:column;gap:20px;text-align:center;box-sizing:border-box;box-shadow: 0px 4px 16px 0px #1122110D;}
+.rv-section__stars{display:flex;justify-content:center;gap:3px;line-height:1;}
+.rv-section__star{font-size:{{ section.settings.star_size }}px;line-height:1;}
+.rv-section__star--filled{color:{{ section.settings.star_color }};}
+.rv-section__star--empty{color:{{ section.settings.star_empty_color }};opacity:0.3;}
+.rv-section__quote>*{font-size:{{ section.settings.quote_size }}px;line-height:calc({{ section.settings.quote_size }}px + 5px);color:{{ section.settings.quote_color }};font-weight:400;margin:0;text-align:center;}
+.rv-section__name{font-size:{{ section.settings.name_size }}px;color:{{ section.settings.name_color }};font-weight:400;text-align:center;margin-top:auto;line-height:1.4;}
+@media screen and (max-width:767px){
+  .rv-section{padding-topp:30px;padding-bottom:30px;}
+  .rv-section__grid:not(.rv-section__grid--slider-mobile){grid-template-columns:1fr;}
+  .rv-section__grid--slider-mobile{display:block !important;overflow:hidden;grid-template-columns:unset;}
+  .rv-section__grid--slider-mobile .rv-section__card{width:calc(100% / 1.2 - {{ section.settings.card_gap }}px) !important;margin-right:{{ section.settings.card_gap }}px;}
+
+  .rv-section__header{flex-wrap: nowrap; flex-direction: column; align-items: start;}
+  .rv-section__heading{display: flex; justify-content: space-between; align-items: center; gap: 10px; width: 100%;}
+  .rv-section__heading-main{font-size:{{ section.settings.heading_size | times: 0.7 | round }}px;}
+  .rv-section__heading-accent{font-size: 20px;}
+}
+</style>
+
+{%- if use_slider -%}
+<script>
+(function() {
+  function initRvSlider() {
+    var el = document.getElementById('rvGrid--{{ uid }}');
+    if (!el) return;
+
+    var isMobile = window.innerWidth <= 480;
+    var sliderDesktop = el.dataset.sliderDesktop === 'true';
+    var sliderMobile  = el.dataset.sliderMobile  === 'true';
+
+    // Decide if we should init slider for this viewport
+    var shouldSlide = (isMobile && sliderMobile) || (!isMobile && sliderDesktop);
+    if (!shouldSlide) return;
+
+    var Flickity = (window.theme && window.theme.Flickity) ? window.theme.Flickity : (window.Flickity || null);
+
+    if (Flickity) {
+      var flkty = new Flickity(el, {
+        cellAlign: 'left',
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        draggable: true,
+        wrapAround: false,
+        friction: 0.28,
+        selectedAttraction: 0.025
+      });
+    } else {
+      // Fallback: native scroll snap
+      el.style.display = 'flex';
+      el.style.overflowX = 'auto';
+      el.style.scrollSnapType = 'x mandatory';
+      el.style.webkitOverflowScrolling = 'touch';
+      el.style.scrollbarWidth = 'none';
+      el.querySelectorAll('.rv-section__card').forEach(function(card) {
+        card.style.scrollSnapAlign = 'start';
+        card.style.flexShrink = '0';
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRvSlider);
+  } else {
+    initRvSlider();
+  }
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Reviews Grid",
+  "tag": "section",
+  "class": "section-rv",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f4f2ee"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Heading — Main Part",
+      "default": "1,450 verified"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading — Accent Part (colored)",
+      "default": "5 star reviews"
+    },
+    {
+      "type": "color",
+      "id": "heading_main_color",
+      "label": "Heading Main Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Heading Accent Color",
+      "default": "#7a2040"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 34
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "All reviews"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#c8b8bc"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#faf8f5"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#e8e0da"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Inner Padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap Between Cards",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color (filled)",
+      "default": "#7a2040"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Star Color (empty)",
+      "default": "#7a2040"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Star Size",
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Quote Text"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote Text Color",
+      "default": "#2a1a1e"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Name"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name Color",
+      "default": "#7a6060"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Name Font Size",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Card",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Review Quote",
+          "default": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer Name & Location",
+          "default": "Neil (San Francisco, CA)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Grid",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

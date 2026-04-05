@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="no-js no-touch page-loading" lang="{{ request.locale.iso_code }}">
+<head>
+  <script>const observer = new MutationObserver(e => { e.forEach(({ addedNodes: e }) => { e.forEach(e => { 1 === e.nodeType && "SCRIPT" === e.tagName && (e.innerHTML.includes("asyncLoad") && (e.innerHTML = e.innerHTML.replace("if(window.attachEvent)", "document.addEventListener('asyncLazyLoad',function(event){asyncLoad();});if(window.attachEvent)").replaceAll(", asyncLoad", ", function(){}")), e.innerHTML.includes("PreviewBarInjector") && (e.innerHTML = e.innerHTML.replace("DOMContentLoaded", "asyncLazyLoad")), (e.className == 'analytics') && (e.type = 'text/lazyload'),(e.src.includes("assets/storefront/features")||e.src.includes("assets/shopify_pay")||e.src.includes("connect.facebook.net"))&&(e.setAttribute("data-src", e.src), e.removeAttribute("src")))})})});observer.observe(document.documentElement,{childList:!0,subtree:!0})</script>
+  <script>
+    if(navigator.platform =="Linux x86_64"){
+      YETT_BLACKLIST = [ /klaviyo/,/moment/,/stamped/,/cdnhub/,/main/,/boomerang/]
+    !function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e(t.yett={})}(this,function(t){"use strict";var e={blacklist:window.YETT_BLACKLIST,whitelist:window.YETT_WHITELIST},r={blacklisted:[]},n=function(t,r){return t&&(!r||"javascript/blocked"!==r)&&(!e.blacklist||e.blacklist.some(function(e){return e.test(t)}))&&(!e.whitelist||e.whitelist.every(function(e){return!e.test(t)}))},i=function(t){var r=t.getAttribute("src");return e.blacklist&&e.blacklist.every(function(t){return!t.test(r)})||e.whitelist&&e.whitelist.some(function(t){return t.test(r)})},c=new MutationObserver(function(t){t.forEach(function(t){for(var e=t.addedNodes,i=function(t){var i=e[t];if(1===i.nodeType&&"SCRIPT"===i.tagName){var c=i.src,o=i.type;if(n(c,o)){r.blacklisted.push(i.cloneNode()),i.type="javascript/blocked";i.addEventListener("beforescriptexecute",function t(e){"javascript/blocked"===i.getAttribute("type")&&e.preventDefault(),i.removeEventListener("beforescriptexecute",t)}),i.parentElement.removeChild(i)}}},c=0;c<e.length;c++)i(c)})});c.observe(document.documentElement,{childList:!0,subtree:!0});var o=document.createElement;document.createElement=function(){for(var t=arguments.length,e=Array(t),r=0;r<t;r++)e[r]=arguments[r];if("script"!==e[0].toLowerCase())return o.bind(document).apply(void 0,e);var i=o.bind(document).apply(void 0,e),c=i.setAttribute.bind(i);return Object.defineProperties(i,{src:{get:function(){return i.getAttribute("src")},set:function(t){return n(t,i.type)&&c("type","javascript/blocked"),c("src",t),!0}},type:{set:function(t){var e=n(i.src,i.type)?"javascript/blocked":t;return c("type",e),!0}}}),i.setAttribute=function(t,e){"type"===t||"src"===t?i[t]=e:HTMLScriptElement.prototype.setAttribute.call(i,t,e)},i};var l=function(t){if(Array.isArray(t)){for(var e=0,r=Array(t.length);e<t.length;e++)r[e]=t[e];return r}return Array.from(t)},a=new RegExp("[|\\{}()[\\]^$+*?.]","g");t.unblock=function(){for(var t=arguments.length,n=Array(t),o=0;o<t;o++)n[o]=arguments[o];n.length<1?(e.blacklist=[],e.whitelist=[]):(e.blacklist&&(e.blacklist=e.blacklist.filter(function(t){return n.every(function(e){return!t.test(e)})})),e.whitelist&&(e.whitelist=[].concat(l(e.whitelist),l(n.map(function(t){var r=".*"+t.replace(a,"\\$&")+".*";return e.whitelist.find(function(t){return t.toString()===r.toString()})?null:new RegExp(r)}).filter(Boolean)))));for(var s=document.querySelectorAll('script[type="javascript/blocked"]'),u=0;u<s.length;u++){var p=s[u];i(p)&&(p.type="application/javascript",r.blacklisted.push(p),p.parentElement.removeChild(p))}var d=0;[].concat(l(r.blacklisted)).forEach(function(t,e){if(i(t)){var n=document.createElement("script");n.setAttribute("src",t.src),n.setAttribute("type","application/javascript"),document.head.appendChild(n),r.blacklisted.splice(e-d,1),d++}}),e.blacklist&&e.blacklist.length<1&&c.disconnect()},Object.defineProperty(t,"__esModule",{value:!0})});
+    }
+  </script>
+  {%- render 'ecom_header' -%}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- unless settings.type_heading_font.system? and settings.type_base_font.system? -%}
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  {%- endunless -%}
+  {%- unless settings.type_base_font.system? -%}
+    <link rel="preload" as="font" href="{{ settings.type_base_font | font_url }}" type="font/woff2" crossorigin>
+  {%- endunless -%}
+  {%- unless settings.type_heading_font.system? -%}
+    <link rel="preload" as="font" href="{{ settings.type_heading_font | font_url }}" type="font/woff2" crossorigin>
+  {%- endunless -%}
+
+  <link rel="preload" as="image" href="{{ 'loading.svg' | asset_url }}">{%- liquid
+    assign loading_appearance = settings.loading_appearance
+    assign image_width = settings.loading_image_width
+    assign image = settings.loading_image
+    assign loading_background = settings.loading_background
+    assign loading_svg_color = '#fff'
+    assign loading_background_brightness = loading_background | color_brightness | round
+    if loading_background_brightness > 153
+      assign loading_svg_color = '#000'
+    endif
+  -%}
+
+  {%- unless loading_appearance == 'never' -%}
+    {%- if image != blank -%}
+      {%- assign image_height = image_width | divided_by: image.aspect_ratio | round -%}
+      {%- capture preload_image_size -%}{{ image_width }}x{{ image_height }}{%- endcapture -%}
+      <link
+        rel="preload"
+        as="image"
+        href="{{ image | img_url: preload_image_size }}"
+        data-preload="{{ preload_image_size }}"
+      >
+    {%- endif -%}
+
+    {%- style -%}
+      .loader__image__holder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 0; display: none; align-items: center; justify-content: center; animation: pulse-loading 2s infinite ease-in-out; }
+      .loader__image__holder:has(.loader__image--fallback) { animation: none; }
+      .loading-image .loader__image__holder { display: flex; }
+      .loader__image { max-width: {{ image_width }}px; height: auto; object-fit: contain; }
+      .loading-image .loader__image--fallback { width: 150px; height: 150px; max-width: 150px; mask: var(--loading-svg) center center/contain no-repeat; background: var(--overlay-bg-svg, var(--COLOR-WHITE-BLACK)); }
+    {%- endstyle -%}
+
+    <script>
+      const loadingAppearance = {{ loading_appearance | json }};
+      const loaded = sessionStorage.getItem('loaded');
+
+      if (loadingAppearance === 'once') {
+        if (loaded === null) {
+          sessionStorage.setItem('loaded', true);
+          document.documentElement.classList.add('loading-image');
+        }
+      } else {
+        document.documentElement.classList.add('loading-image');
+      }
+    </script>
+  {%- endunless -%}
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {% comment %} Title and description {% endcomment %}
+  <title>
+    {{- page_title }}
+    {% if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif %}
+    {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+    {% unless page_title contains shop.name %} &ndash; {{ shop.name -}}{% endunless -%}
+  </title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- else -%}
+    <meta name="description" content="{{ shop.description | escape }}">
+  {%- endif -%}
+
+  {%- render 'social-meta-tags' -%}
+
+  {%- render 'css-variables' -%}
+
+  {%- comment -%} CSS {%- endcomment -%}
+  {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+  {%- if template.name == 'page' and template.suffix == 'questionnaire' -%}
+    <link rel="preload" href="{{ 'questionnaire.css' | asset_url }}" as="style">
+  {%- endif -%}
+  {%- if template.name == 'product' and template.suffix == 'pericalm-perimenopause' -%}
+    {{- 'product-pericalm-perimenopause.css' | asset_url | stylesheet_tag -}}
+  {%- endif -%}
+
+  {% capture vendors %}
+    <link href="{{ 'dialogs.css' | asset_url }}" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    {%- if settings.color_swatches_type != 'disabled' -%}
+      <style>
+        {{ 'swatches.css' | inline_asset_content }}
+      </style>
+      {%- render 'swatch-color-list' -%}
+    {%- endif %}
+
+    {%- liquid
+      capture icon_close
+        render 'icon-close'
+      endcapture
+    -%}
+    <script type="text/javascript">
+      if (window.MSInputMethodContext && document.documentMode) {
+        var scripts = document.getElementsByTagName('script')[0];
+        var polyfill = document.createElement("script");
+        polyfill.defer = true;
+        polyfill.src = "{{ 'ie11.js' | asset_url }}";
+
+        scripts.parentNode.insertBefore(polyfill, scripts);
+
+        document.documentElement.classList.add('ie11');
+      } else {
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      }
+
+      let root = '{{ routes.root_url }}';
+      if (root[root.length - 1] !== '/') {
+        root = `${root}/`;
+      }
+
+      window.theme = {
+        routes: {
+          root: root,
+          cart_url: {{ routes.cart_url | json }},
+          cart_add_url: {{ routes.cart_add_url | json }},
+          cart_change_url: {{ routes.cart_change_url | json }},
+          cart_update_url: {{ routes.cart_update_url | json }},
+          shop_url: {{ shop.url | json }},
+          searchUrl: '{{ routes.search_url }}',
+          predictiveSearchUrl: '{{ routes.predictive_search_url }}',
+          product_recommendations_url: {{ routes.product_recommendations_url | json }}
+        },
+        assets: {
+          photoswipe: '{{ "photoswipe.js" | asset_url }}',
+          smoothscroll: '{{ "smoothscroll.js" | asset_url }}',
+          no_image: "{{ image | img_url: '1024x' }}",
+          base: "{{ 'blank.svg' | asset_url | split: 'blank.svg' | first }}"
+        },
+        strings: {
+          add_to_cart: {{ "products.product.add_to_cart" | t | json }},
+          cart_acceptance_error: {{ "cart.general.accept_terms" | t | json }},
+          cart_empty: {{ "cart.general.empty" | t | json }},
+          cart_price: {{ "cart.label.price" | t | json }},
+          cart_quantity: {{ "cart.label.quantity" | t | json }},
+          cart_items_one: {{ "cart.label.items_with_count.one" | t | json }},
+          cart_items_many: {{ "cart.label.items_with_count.other" | t | json }},
+          cart_title: {{ "cart.general.title" | t | json }},
+          cart_total: {{ "cart.label.total" | t | json }},
+          discount_not_applicable: {{ "cart.general.discount_not_applicable" | t | json }},
+          shipping_discounts_at_checkout: {{ "cart.general.shipping_discounts_at_checkout" | t | json }},
+          discount_already_applied: {{ "cart.general.discount_already_applied" | t | json }},
+          continue_shopping: {{ "cart.general.continue_shopping" | t | json }},
+          free: {{ 'products.product.free' | t | json }},
+          limit_error: {{ "cart.general.limit_error" | t | json }},
+          preorder: {{ "products.product.preorder" | t | json }},
+          remove: {{ 'cart.general.remove' | t | json }},
+          sale_badge_text: {{ "products.product.sale" | t | json }},
+          saving_badge: {{ "products.product.save_badge_html" | t | json }},
+          saving_up_to_badge: {{ "products.product.save_badge_up_to_html" | t | json }},
+          sold_out: {{ "products.product.sold_out" | t | json }},
+          subscription: {{ "products.product.subscription" | t | json }},
+          unavailable: {{ "products.product.unavailable" | t | json }},
+          unit_price_label: {{ "products.product.unit_price_label" | t | json }},
+          unit_price_separator: {{ "general.accessibility.unit_price_separator" | t | json }},
+          zero_qty_error: {{ "cart.general.zero_qty_error" | t | json }},
+          delete_confirm: {{ "customer.addresses.delete_confirm" | t | json }},
+          newsletter_product_availability: {{ "general.newsletter_form.newsletter_product_availability" | t | json }}
+        },
+        icons: {
+          close: '{{ icon_close | strip_newlines }}'
+        },
+        settings: {
+          animationsEnabled: {{ settings.animations_enabled | json }},
+          cartType: {{ settings.cart_type | json }},
+          enableAcceptTerms: {{ settings.enable_accept_terms | json }},
+          enableInfinityScroll: {{ settings.enable_infinity_scroll | json }},
+          enablePaymentButton: {{ settings.show_payment_button | json }},
+          gridImageSize: {{ settings.image_size | json }},
+          gridImageAspectRatio: {{ settings.image_aspect_ratio | json }},
+          mobileMenuBehaviour: {{ settings.mobile_menu_behaviour | json }},
+          productGridHover: {{ settings.product_grid_hover | json }},
+          savingBadgeType: {{ settings.saving_badge_type | json }},
+          showSaleBadge: {{ settings.show_sale_badge | json }},
+          showSoldBadge: {{ settings.show_sold_badge | json }},
+          showSavingBadge: {{ settings.show_saving_badge | json }},
+          quickBuy: {{ settings.quick_buy | json }},
+          suggestArticles: {{ settings.suggest_articles | json }},
+          suggestCollections: {{ settings.suggest_collections | json }},
+          suggestProducts: {{ settings.suggest_products | json }},
+          suggestPages: {{ settings.suggest_pages | json }},
+          suggestionsResultsLimit: {{ settings.suggestions_results_limit | json }},
+          currency_code_enable: {{ settings.currency_code_enable | json }},
+          hideInventoryCount: {{ settings.hide_inventory_count | json }},
+          colorSwatchesType: {{ settings.color_swatches_type | json }},
+          atcButtonShowPrice: {{ settings.atc_show_product_price | json }},
+          buynowButtonColor: {{ settings.buynow_btn_color | json }},
+          buynowButtonStyle: {{ settings.buynow_btn_style | json }},
+          buynowButtonSize: {{ settings.buynow_button_size | json }},
+          mobileMenuType: {{ settings.mobile_menu_type | json }},
+        },
+        sizes: {
+          mobile: 480,
+          small: 768,
+          large: 1024,
+          widescreen: 1440
+        },
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        subtotal: {{ cart.total_price | json }},
+        current_iso_code: {{ cart.currency.iso_code | json }},
+        info: {
+          name: 'Palo Alto',
+          version: '8.0.2',
+          role: '{{ theme.role }}'
+        },
+      };
+      window.PaloAlto = window.PaloAlto || {};
+      window.slate = window.slate || {};
+      window.isHeaderTransparent = false;
+      window.stickyHeaderHeight = 60;
+      window.lastWindowWidth = window.innerWidth || document.documentElement.clientWidth;
+    </script>
+
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
+
+    {%- if request.design_mode -%}
+      <script
+        src="{{ 'theme-editor.js' | asset_url }}"
+        defer="defer"
+        data-owner-email="{{ shop.email }}"
+        data-owner-id="{{ shop.id }}"
+      ></script>
+    {%- endif -%}
+
+    {%- comment -%}
+      If you need to do some edits in Theme JS use theme.dev.js file
+
+      *** DO NOT EDIT theme.js file ***
+
+      Then call theme.dev.js file by editing the row above from:
+      <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+      to
+      <script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
+
+    {{ content_for_header }}
+    {% comment %} {% include 'pagefly-app-header' %} {% endcomment %}
+
+
+    {%- if customer.metafields.sparklayer.authentication -%}
+      <!-- Start of SparkLayer core script-->
+      <script>
+      window.sparkOptions = {
+        siteId: "calmerceuticals",
+        platform: "shopify",
+        rootUrl: {{ routes.root_url | json }},
+        language: {{ request.locale.iso_code | json }},
+        accountRedirect: {
+          urlRegex: /\/account/g,
+          goTo: "/index", // page to redirect logged in users to
+        },
+        auth: {
+          user: {{ customer.email | json }},
+          token: {{ customer.metafields.sparklayer.authentication | json }},
+        },
+      };
+      </script>
+      <script async src="https://sparkcdn.io/sparkjs/calmerceuticals/live"></script>
+      <!-- End of SparkLayer core script-->
+      <!-- SparkLayer Sample CSS Code -->
+      <style type="text/css">
+        :root {
+          /* Set the brand styling */
+          --b2b-brand-color: #610C27; /* Main brand colour*/
+          --spark-error-color: #610C27;
+          --b2b-brand-color-hover: #610C27; /* Main brand colour hover */
+          --b2b-brand-font: Roboto, sans-serif; /* Main brand font */
+          --b2b-brand-font-heading: Poppins, sans-serif; /* Main brand heading font */
+
+          /* Update colours */
+          --spark-default-body-color: #555555; /* Main body colour*/
+          --spark-primary-color: #000000; /* Main title colour*/
+          --spark-secondary-color: var(--b2b-brand-color); /* Main highlight colour*/
+          --spark-link-color: var(--b2b-brand-color); /* Link colour*/
+
+          /* Typefaces */
+          --spark-font-default: var(--b2b-brand-font); /* Body typeface*/
+          --spark-font-highlight: var(--b2b-brand-font-heading); /* Highlight typeface*/
+          --spark-font-weight-default: 400; /* Default font weight*/
+          --spark-font-weight-medium: 500; /* Medium font weight*/
+          --spark-font-weight-heavy: 600; /* Bold font weight*/
+
+          /* General */
+          --spark-border-radius-default: 0; /* Default border radius*/
+          --spark-drawer-max-width: 700px; /* Width of overlay*/
+          --spark-drawer-max-width-wide: 1000px; /* Width of overlay in maximised view*/
+
+          /* Font sizes */
+          --spark-font-default-size: 14px; /* Default font size*/
+          --spark-font-default-size-small: 14px; /* Default font size - small screens*/
+          --spark-header-font: var(--b2b-brand-font-heading); /* Header typeface*/
+          --spark-header-font-weight: 500; /* Header font weight*/
+          --spark-h1-fontsize: 24px; /* Header 1 font size*/
+          --spark-h2-fontsize: 22px; /* Header 2 font size*/
+          --spark-h3-fontsize: 20px; /* Header 3 font size*/
+          --spark-h4-fontsize: 16px; /* Header 4 font size*/
+          --spark-h5-fontsize: 15px; /* Header 5 font size*/
+          --spark-h6-fontsize: 14px; /* Header 6 font size*/
+
+          --spark-pricing-fontsize: 16px; /* Font size of pricing*/
+          --spark-pricing-font-weight: 500; /* Font weight of pricing*/
+          --spark-pricing-fontsize-small: 14px; /* Font size of pricing on mobile*/
+
+          --spark-product-code-fontsize: 16px; /* Font size of product code*/
+          --spark-product-code-font-weight: 500; /* Font weight of product code*/
+          --spark-product-code-fontsize-small: 14px; /* Font size of product code on mobile*/
+          --spark-product-stockstatus-align: flex-start; /* Aligment of stock status for single variants*/
+
+          /* Buttons */
+          --spark-pdp-button-add-width: 100%;
+          --spark-button-display: block;
+          --spark-button-font-family: var(--b2b-brand-font-heading); /* Button typeface*/
+          --spark-button-color: var(--b2b-brand-color); /* Default sutton colour*/
+          --spark-button-color-highlight: var(--b2b-brand-color-hover); /* Default button colour hover*/
+          --spark-button-large-color: var(--b2b-brand-color); /* Large button colour*/
+          --spark-button-large-color-highlight: var(--b2b-brand-color-hover); /* Large button colour hover*/
+          --spark-border-radius-button: 0; /* Button border radius*/
+          --spark-button-font-weight: 600; /* Button font weight*/
+          --spark-button-text-transform: none; /* Button text transform*/
+          --spark-button-text-letter-spacing: 0; /* Button letter spacing*/
+          --spark-button-padding: 1em 2.75em; /* Button padding*/
+          --spark-button-small-font-size: 16px; /* Small button font size*/
+
+          /* Tables */
+          --spark-table-border-color: #CCCCCC; /* Table border colour*/
+          --spark-table-header-background-color: #F1F1F1; /* Table header background*/
+          --spark-table-header-text-color: #222222; /* Table header font colour*/
+          --spark-table-header-font-weight: 500; /* Table header font weight*/
+
+          /* Product Card */
+          --spark-product-card-button-radius: 0; /* Button radius*/
+          --spark-product-card-button-padding: 0.75em 1em; /* Button padding*/
+          --spark-product-card-pricing-font-size: 15px; /* Pricng font size*/
+          --spark-product-card-pricing-font-size-small: 14px; /* Pricng font size on mobile*/
+          --spark-product-card-select-min-height: 0; /* Set a min-height for select menu*/
+
+        }
+      </style>
+      <!-- End SparkLayer Sample CSS Code -->
+    {%- endif -%}
+  {% endcapture %}
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{vendors | json}});}document.close();</script>
+
+
+  <script>
+    if (window.location.pathname.startsWith('/a/subscriptions')) window.location.href = '/a/account/login'; 
+  </script>
+</head>
+{%- capture body_classes -%}
+template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
+{% if customer %} customer-logged-in{% endif %}
+{% if settings.show_rounded_corners %} body--rounded-corners{% endif %}
+{% if settings.animations_enabled %} aos-initialized{% endif %}
+
+{%- assign selected_color_scheme = settings.color_scheme | strip -%}
+{%- assign scheme_bg_color = settings.color_schemes[selected_color_scheme].settings.section_bg -%}
+{%- assign scheme_bg_color_brightness = scheme_bg_color | color_brightness | round -%}
+{% if scheme_bg_color_brightness < 153 %} palette--dark{% else %} palette--light{% endif %}
+  no-outline
+{%- endcapture -%}
+{%- assign body_classes = body_classes | strip_newlines | strip -%}
+  <body id="{{ page_title | handle }}" class="{{ body_classes }}">
+    {%- render 'loading' -%}
+
+    <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    {%  capture body_header %}
+      {% sections 'group-header' %}
+      {% sections 'group-overlay' %}
+    {% endcapture %}<script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{body_header | json}});}document.close();</script>
+    {% comment %} {% if template == 'index' %}
+      {% section 'section-slideshow' %}
+    {% endif %} {% endcomment %}
+    {%  capture body_content %}
+      <main id="MainContent" class="main-content" data-main>
+        {{ content_for_layout }}
+      </main>
+
+      {% sections 'group-footer' %}
+
+      {%- comment -%} Photoswipe containers {%- endcomment -%}
+      {%- render 'zoom-pswp', template_index: 0 -%}
+      {%- render 'zoom-pswp', template_index: 1 -%}
+
+      {%- if settings.show_scroll_to_top -%}
+        <button type="button" class="btn btn--primary btn--solid btn--scroll-top" data-scroll-top-button aria-label="{{ 'general.accessibility.scroll_to_top' | t }}">
+          <hover-button></hover-button>
+          {% render 'icon-select' %}
+        </button>
+      {%- endif -%}
+
+      {%- comment -%}
+        In order to use your custom javascript file at assets/custom.js
+        just cut this next line and paste it outside this comment:
+        <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+      {%- endcomment -%}
+
+      <!-- Paste marketing code or third party scripts below this comment line ============== -->
+
+      <!-- And above this comment line ================================================== -->
+
+      {%- render "ecom_footer"-%}
+    {% endcapture %}<script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{body_content | json}});}document.close();</script>
+    {{ "optimizer.js" | asset_url | script_tag }}
+
+     <script>
+      function delayJS(){
+          let scripts = document.querySelectorAll('script[type="lazyload"]');
+          scripts.forEach(script => {
+            let s = document.createElement('script');
+            s.src = script.dataset.src;
+            document.body.appendChild(s);
+          });
+        }
+        window.addEventListener("scroll", delayJS, {once:true});
+        window.addEventListener("mousemove", delayJS, {once:true});
+        window.addEventListener("touchstart", delayJS, {once:true});
+      </script>
+
+
+  </body>
+</html>

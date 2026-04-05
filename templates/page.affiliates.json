@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "smile-landing-page": {
+      "type": "smile-landing-page",
+      "settings": {}
+    },
+    "17533978157ff8f0a5": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_header_Acd7EF": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-header/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "background_image": "shopify://shop_images/banner-2.jpg",
+            "title_text": "Welcome to Calmer Rewards",
+            "description_text": "Earn points on every purchase and automatically reduce your subscription costs. It takes just 2 weeks to benefit from this amazing program; with long term subscribers lowering fortnightly / monthly payments by up to 60%.",
+            "join_button_text": "Join now",
+            "login_button_text": "Log in",
+            "is_previewing_logged_in_state": false,
+            "discover_button_text": "View my rewards"
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_header_Acd7EF"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1753397694f81f2e56": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_how_it_works_nxTCEN": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-how-it-works/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "title_text": "How it works",
+            "step1_heading_text": "Join",
+            "step1_description_text": "It's FREE, simply join the program.",
+            "step2_heading_text": "Earn",
+            "step2_description_text": "Earn points for every dollar spent.",
+            "step3_heading_text": "Enjoy",
+            "step3_description_text": "Points reduce your subscription price."
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_how_it_works_nxTCEN"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1753397824a5f490b6": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_earning_rule_highlight_xGmJqn": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-earning-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "image": "shopify://shop_images/bags.jpg",
+            "title_text": "Reduce your subscription cost",
+            "description_text": "The fact is that Calmerceuticals supplements require daily use for optimal results, that's why we reward dedicated customers by lowering subscription costs each month. In the end, loyal customers get better results and lower costs. It's a win-win scenario.",
+            "button_text": "Get started"
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_earning_rule_highlight_xGmJqn"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "17533978611d443fa0": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_redeeming_rule_highlight_CxCmDH": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-redeeming-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "image": "shopify://shop_images/Screenshot_2025-07-24_at_4.46.52_pm.png",
+            "title_text": "Redeem points for rewards",
+            "description_text": "You can also use points to purchase new, upcoming and limited time only products.",
+            "button_text": "Ways to redeem"
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_redeeming_rule_highlight_CxCmDH"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "smile-landing-page",
+    "17533978157ff8f0a5",
+    "1753397694f81f2e56",
+    "1753397824a5f490b6",
+    "17533978611d443fa0"
+  ]
+}

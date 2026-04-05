@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {
+        "show_date": false,
+        "show_author": false,
+        "show_tags": false,
+        "show_share_button": false,
+        "text": "Share",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "recommended-posts": {
+      "type": "section-recommended-posts",
+      "settings": {
+        "posts_type": "paging",
+        "title": "",
+        "default_color": "accent",
+        "blog_style": "photo",
+        "image_aspect_ratio": 1.3,
+        "show_rss_icon": false,
+        "show_date": true,
+        "show_author": true,
+        "show_tags": true,
+        "show_comments_count": false,
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_blog_pbd6hq": {
+      "type": "section-blog",
+      "settings": {
+        "blog": "",
+        "blog_style": "photo",
+        "image_aspect_ratio": 1.1,
+        "rows": 1,
+        "columns": 3,
+        "columns_mobile": "2",
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_comments_count": false,
+        "default_color": "none",
+        "heading": "",
+        "button_text": "View all posts",
+        "button_color": "btn--primary",
+        "button_style": "btn--solid",
+        "button_size": "btn--large",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommended-posts",
+    "section_blog_pbd6hq"
+  ]
+}

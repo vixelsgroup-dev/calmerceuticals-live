@@ -1,0 +1,35 @@
+<article class="product-cards-slider-card" {{ block.shopify_attributes }}>
+  <div class="product-cards-slider-card__media">
+    {% if block.settings.image != blank %}
+      {{
+        block.settings.image
+        | image_url: width: 760
+        | image_tag: loading: 'lazy', class: 'product-cards-slider-card__img', alt: block.settings.title_line_1
+      }}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'product-cards-slider-card__placeholder' }}
+    {% endif %}
+  </div>
+
+  <div class="product-cards-slider-card__body">
+    <h3 class="product-cards-slider-card__title">
+      {% if block.settings.title_line_1 != blank %}
+        <span>{{ block.settings.title_line_1 | escape }}</span>
+      {% endif %}
+      {% if block.settings.title_line_2 != blank %}
+        <span>{{ block.settings.title_line_2 | escape }}</span>
+      {% endif %}
+    </h3>
+
+    {% if block.settings.description != blank %}
+      <p class="product-cards-slider-card__description">{{ block.settings.description | escape }}</p>
+    {% endif %}
+  </div>
+
+  <a
+    class="product-cards-slider-card__button"
+    href="{% if block.settings.button_link != blank %}{{ block.settings.button_link }}{% else %}#{% endif %}"
+  >
+    {{ block.settings.button_label | default: 'Shop Now' | escape }}
+  </a>
+</article>

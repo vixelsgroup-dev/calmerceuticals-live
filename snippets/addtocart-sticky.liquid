@@ -1,0 +1,459 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+<div id="sticky-addtocart" class="sticky-addtocart">
+  <div class="sticky-addtocart-inner">
+    <div class="wrapper">
+        <div class="sticky-addtocart-content">
+            <div class="product-details hidden-mobile">
+                <div class="product-image">
+                    {{ product.featured_image | image_url: width: 100, height: 100 | image_tag }}
+                </div>
+                <div class="product-info">
+                    <div class="product-title">
+                        <h3 class="product-form__title bold"><strong>{{ product.title }}</strong></h3>
+                        <div class="product-small-info h5">Money-back guarantee, Free shipping, Clinically trialled ingredients</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-addtocart-form">
+                <div class="custom-dropdown-options">
+                    <select name="checkout_option" class="custom-sticky-select">
+                        {% assign current_selling_id = '' %}
+                        {% assign seen_plan_ids = '|' %}
+                        {% comment %} edited by Skio {% endcomment %}
+                        {% assign allowed_selling_plan_group_ids = product.selling_plan_groups | where: 'app_id', 'SKIO' | map: 'id' %}
+                        {% if product.variants.size > 1 %}
+                            {% for variant in product.variants %}
+                                {% for allocation in variant.selling_plan_allocations %}
+                                    {% if allowed_selling_plan_group_ids contains allocation.selling_plan_group_id %}
+                                        {% assign pid = allocation.selling_plan.id | append: '' %}
+                                        {% assign token = '|' | append: pid | append: '|' %}
+
+                                        {% unless seen_plan_ids contains token %}
+                                            {% assign seen_plan_ids = seen_plan_ids | append: pid | append: '|' %}
+
+                                            {% if variant.id == current_variant.id and current_selling_id == '' %}
+                                            {% assign current_selling_id = allocation.selling_plan.id %}
+                                            {% endif %}
+
+                                            <option
+                                            value="selling_plan_{{ allocation.selling_plan.id }}"
+                                            data-variant-id="{{ variant.id }}"
+                                            data-selling-plan-id="{{ allocation.selling_plan.id }}"
+                                            data-value="{{ allocation.selling_plan_group_id }}"
+                                            >
+                                            {{ allocation.selling_plan.name }}
+                                            </option>
+                                        {% endunless %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            {% assign allowed_selling_plan_groups = product.selling_plan_groups | where: 'app_id', 'SKIO' %}
+                            {% for group in allowed_selling_plan_groups %}
+                                {% for selling_plan in group.selling_plans %}
+                                    
+                                    <option
+                                        value="selling_plan_{{ selling_plan.id }}"
+                                        data-selling-plan-id="{{ selling_plan.id }}"
+                                        data-selling-plan-group-id="{{ group.id }}"
+                                    >
+                                    {{ selling_plan.name }}
+                                    </option>
+
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                        <option value="one_time" data-selling-plan-id="">One-time</option>
+                    </select>
+                </div>
+                <div class="addtocart-action">
+                    <product-form
+                    class="product__block product__form__wrapper"
+                    data-form-wrapper>
+                        {% liquid
+                            assign unique = unique | default: section.id
+                            assign product_form_id = 'StickyAddToCartForm--' | append: unique
+                            assign atc_button_color = settings.atc_button_color
+                            assign atc_button_style = settings.atc_button_style
+                            assign atc_button_size = settings.atc_button_size
+                        %}
+                        {%- form 'product',
+                            product,
+                            class: 'product__form',
+                            data-product-form: '',
+                            id: product_form_id
+                        -%}
+                            <input type="hidden" name="id" value="{{ current_variant.id }}" data-product-select>
+                            <input type="hidden" data-sticky-selling-plan name="selling_plan" value="{{ current_selling_id }}">
+                            <div class="product__submit__holder">
+                                <div class="product__submit__buttons">
+                                    <div class="product__submit__item">
+                                        <button
+                                            type="submit"
+                                            name="add"
+                                            id="AddToCart--{{ unique }}"
+                                            class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add btn--black"
+                                            data-add-to-cart>
+                                            <hover-button></hover-button>
+                                            <span data-add-to-cart-text{% if settings.atc_show_product_price %} data-price-wrapper data-atc-button{% endif %}>
+                                            {%- if current_variant.available and product.tags contains '_preorder' -%}
+                                                {{ 'products.product.preorder' | t }}
+                                            {%- elsif current_variant.available -%}
+                                                {{ 'products.product.add_to_cart' | t }}
+                                            {%- else -%}
+                                                {{ sold_out_text }}
+                                            {%- endif -%}
+
+                                            {%- if settings.atc_show_product_price -%}
+                                                <span data-product-price class="product__price--regular">
+                                                {%- liquid
+                                                    if current_variant.price == 0
+                                                    echo 'products.product.free' | t
+                                                    elsif currency_code_enable
+                                                    echo current_variant.price | money_with_currency
+                                                    else
+                                                    echo current_variant.price | money
+                                                    endif
+                                                -%}
+                                                </span>
+                                            {%- endif -%}
+                                            </span>
+                                            <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div data-cart-errors-container role="alert" class="product__form__errors"></div>
+                            </div>
+                        {%- endform -%}
+                    </product-form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    .sticky-addtocart{position: fixed; bottom: 0; z-index: 999; width: 100%; left: 0;right:0;transform:translateY(0);transition: all .7s cubic-bezier(.76,0,.24,1), color 0s;}
+    .sticky-addtocart:not(.sticky){transform:translateY(120%);}
+    .sticky-addtocart .product-form__title{margin-bottom:0;}
+    .sticky-addtocart-form{display:flex;align-items:center;gap:10px;width:100%;}
+    .sticky-addtocart-form .custom-dropdown-options{width:50%;}
+    .sticky-addtocart-form .addtocart-action{width:50%;}
+    .sticky-addtocart .sticky-addtocart-inner{background:{{section.settings.sticky_bg_color}};box-shadow:0 0 10px rgba(0,0,0,0.3);}
+    .sticky-addtocart .sticky-addtocart-content{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px;}
+    .sticky-addtocart .sticky-addtocart-content .product-details{display:flex;align-items:center;gap:20px;}
+    .sticky-addtocart .sticky-addtocart-content .product-image img{max-width:80px;height:auto;margin:0 auto;}
+    .sticky-addtocart .swatches__swatch.is-color .swatches__swatch-inner{width:30px;height:30px;}
+    .custom-sticky-select{padding: 10px 25px 12px 10px; width: 100%; border-radius: 8px;font-weight: 700; font-size: 16px; line-height: 26px; letter-spacing: -0.16px; color: #610C27; border-color: #610C27; background-image: url(https://cdn.shopify.com/s/files/1/0657/6907/8877/files/mingcute_down-fill.png?v=1761622531); background-repeat: no-repeat; background-position: 98% center;}
+    .sticky-addtocart .product-image{display:flex;}
+    .sticky-addtocart .product__form__wrapper{margin-bottom:0;}
+    .sticky-addtocart .btn--submit{height:50px;}
+    .sticky-addtocart .product-info *{color:{{ section.settings.sticky_text_color }};}
+    body.addtocart-is-sticky #smile-ui-lite-launcher-frame-container{bottom:80px!important;}
+    {% comment %} .needsclick[data-testid="animated-teaser"]{ display: none !important; } {% endcomment %}
+    .needsclick.kl-teaser-WcVv8c{ display:none !important; }
+    @media (min-width: 750px) {
+        body.addtocart-is-sticky #smile-ui-lite-launcher-frame-container{bottom:110px!important;}
+        .sticky-addtocart .sticky-addtocart-content{padding:10px 20px;}
+        .sticky-addtocart-form{flex:0 50%;justify-content:flex-end;}
+        .sticky-addtocart-form .custom-dropdown-options{width:max-content;}
+        .sticky-addtocart-form .addtocart-action{width:50%;}
+    }
+    @media (max-width: 749px) {
+        .sticky-addtocart-inner .wrapper{padding:0;}
+        .custom-sticky-select{font-size:13px;}
+         
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var sticky = document.getElementById('sticky-addtocart');
+    var productContainer = document.querySelector(".product-single__wrapper .product__form");
+    var footer = document.querySelector(".section-footer");
+
+    if (!sticky) return;
+
+    var stickySellingInput = sticky.querySelector('[data-sticky-selling-plan]');
+    var stickySelects = sticky.querySelectorAll('.custom-sticky-select');
+    var programCards = document.querySelectorAll('.program-card');
+
+    let productOut = false;
+
+    function updateSticky() {
+        const productRect = productContainer.getBoundingClientRect();
+        const footerRect = footer.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        productOut = productRect.bottom < viewportHeight * 0.2;
+
+        const reachedFooterZone = window.innerHeight + window.scrollY >= document.body.offsetHeight - 150;
+
+        if (productOut && !reachedFooterZone) {
+            sticky.classList.add("sticky");
+            document.body.classList.add("addtocart-is-sticky");
+        } else {
+            sticky.classList.remove("sticky");
+            document.body.classList.remove("addtocart-is-sticky");
+        }
+    }
+
+    window.addEventListener("scroll", updateSticky);
+    window.addEventListener("resize", updateSticky);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ===== Helpers =====
+    const sticky = document.getElementById('sticky-addtocart');
+    const stickySelect = sticky ? sticky.querySelector('.custom-sticky-select') : null;
+    const stickySellingInput = sticky ? sticky.querySelector('[data-sticky-selling-plan]') : null;
+
+    // Main subscription area elements
+    const mainGroupRadios = document.querySelectorAll('input.program-card__radio[name="selling-plan-group"][data-toggles-group]');
+    const mainPlanRadios = document.querySelectorAll('input[name="selling_plan"]');
+    const durationSelects = document.querySelectorAll('select.program-card__duration-select[data-selling-plan-select]');
+
+    let isSyncing = false;
+
+    function dispatchChange(el) {
+        if (!el) return;
+        el.dispatchEvent(new Event('change', {
+            bubbles: true
+        }));
+    }
+
+    function setStickyToPlan(planId) {
+        if (!stickySelect) return;
+
+        if (!planId) {
+            stickySelect.value = 'one_time';
+            if (stickySellingInput) stickySellingInput.value = '';
+            dispatchChange(stickySelect);
+            return;
+        }
+
+        // sticky option values are: selling_plan_XXXX
+        const targetVal = 'selling_plan_' + String(planId);
+
+        // If option exists, select it
+        const opt = stickySelect.querySelector(`option[value="${CSS.escape(targetVal)}"]`);
+        if (opt) {
+            stickySelect.value = targetVal;
+            if (stickySellingInput) stickySellingInput.value = String(planId);
+            dispatchChange(stickySelect);
+        }
+    }
+
+    function setMainToPlan(planId, variantIdFromSticky) {
+        function clickCard(card) {
+            if (!card) return;
+            card.dispatchEvent(new MouseEvent('click', {
+                bubbles: true
+            }));
+        }
+
+        function showInfo(type) {
+            document.querySelectorAll('.card-info').forEach(function(ci) {
+                ci.classList.add('hidden');
+            });
+            const el = document.querySelector(`.card-info[data-subscription-type="${type}"]`);
+            if (el) el.classList.remove('hidden');
+        }
+
+        if (!planId) {
+            const oneTimeCard = document.querySelector('.program-card--one-time');
+            if (oneTimeCard) clickCard(oneTimeCard);
+
+            const checkedPlan = document.querySelector('input[name="selling_plan"]:checked');
+            if (checkedPlan) {
+                checkedPlan.checked = false;
+                checkedPlan.dispatchEvent(new Event('change', {
+                    bubbles: true
+                }));
+            }
+
+            if (variantIdFromSticky && window.selectVariantViaSwatch) {
+                window.selectVariantViaSwatch(String(variantIdFromSticky));
+            }
+            return;
+        }
+
+        planId = String(planId);
+
+        const planRadio = document.querySelector(`input[name="selling_plan"][value="${CSS.escape(planId)}"]`);
+        if (planRadio) {
+            planRadio.checked = true;
+            planRadio.dispatchEvent(new Event('change', {
+                bubbles: true
+            }));
+        }
+
+        const plansWrap = planRadio ? planRadio.closest('.product__subs__plans[data-group-toggle]') : null;
+        const groupId = plansWrap ? plansWrap.getAttribute('data-group-toggle') : null;
+
+        if (groupId) {
+            const topLevelGroupCard = document.querySelector(
+                `.program-cards > .program-card[data-selling-plan-group-id="${CSS.escape(groupId)}"]`
+            );
+
+            if (topLevelGroupCard) {
+                clickCard(topLevelGroupCard);
+
+                const durSel = topLevelGroupCard.querySelector(
+                    `select.program-card__duration-select[data-selling-plan-select="${CSS.escape(groupId)}"]`
+                );
+                if (durSel && durSel.value !== planId) {
+                    durSel.value = planId;
+                    durSel.dispatchEvent(new Event('change', {
+                        bubbles: true
+                    }));
+                }
+            } else {
+                const regularMainCard = document.querySelector('.program-card--regular-subscriptions-general');
+                if (regularMainCard) clickCard(regularMainCard);
+
+                const regularScheduleCard = document.querySelector(
+                    `.regular-subscriptions-main .program-card[data-selling-plan-group-id="${CSS.escape(groupId)}"]`
+                );
+
+                const regularRadio = regularScheduleCard ?
+                    regularScheduleCard.querySelector('input[name="selling-plan-group-regular"]') :
+                    null;
+
+                if (regularRadio) {
+                    regularRadio.checked = true;
+                    regularRadio.dispatchEvent(new Event('change', {
+                        bubbles: true
+                    }));
+                }
+
+                const planRadio2 = document.querySelector(`input[name="selling_plan"][value="${CSS.escape(planId)}"]`);
+                if (planRadio2) {
+                    planRadio2.checked = true;
+                    planRadio2.dispatchEvent(new Event('change', {
+                        bubbles: true
+                    }));
+                }
+
+                const topLevelCards = document.querySelectorAll('.program-cards > .program-card');
+                topLevelCards.forEach(function(c) {
+                    c.classList.remove('program-card--active');
+                });
+                if (regularMainCard) regularMainCard.classList.add('program-card--active');
+
+                showInfo('regular-subscriptions');
+            }
+        }
+
+        if (variantIdFromSticky && window.selectVariantViaSwatch) {
+            window.selectVariantViaSwatch(String(variantIdFromSticky));
+        }
+    }
+
+    function getCurrentMainSelectedPlanId() {
+        // Priority: if an active duration select exists, use that selected option's value as plan id
+        // But your duration select options value = plan.id
+        const activeDuration = document.querySelector('.program-card--active select.program-card__duration-select');
+        if (activeDuration && activeDuration.value) return String(activeDuration.value);
+
+        // Else: use checked selling_plan hidden radio
+        const checked = document.querySelector('input[name="selling_plan"]:checked');
+        if (checked) return String(checked.value);
+
+        return '';
+    }
+
+    // ===== Main -> Sticky =====
+    function syncStickyFromMain() {
+        if (!stickySelect) return;
+        const planId = getCurrentMainSelectedPlanId();
+        setStickyToPlan(planId);
+    }
+
+    // Listen to hidden plan radios changes (most reliable)
+    mainPlanRadios.forEach(function(r) {
+        r.addEventListener('change', function() {
+            if (isSyncing) return;
+            isSyncing = true;
+            try {
+                syncStickyFromMain();
+            } finally {
+                isSyncing = false;
+            }
+        });
+    });
+
+    // Listen to duration dropdown changes
+    durationSelects.forEach(function(sel) {
+        sel.addEventListener('change', function() {
+            if (isSyncing) return;
+            isSyncing = true;
+            try {
+                // selecting duration should select that plan id
+                const planId = sel.value;
+                // also set hidden selling_plan radio to match
+                const planRadio = document.querySelector(`input[name="selling_plan"][value="${CSS.escape(String(planId))}"]`);
+                if (planRadio) {
+                    planRadio.checked = true;
+                    dispatchChange(planRadio);
+                }
+                syncStickyFromMain();
+            } finally {
+                isSyncing = false;
+            }
+        });
+    });
+
+    // Also when group radio changes (card switch), update sticky to whatever plan becomes selected
+    mainGroupRadios.forEach(function(gr) {
+        gr.addEventListener('change', function() {
+            if (isSyncing) return;
+            isSyncing = true;
+            try {
+                syncStickyFromMain();
+            } finally {
+                isSyncing = false;
+            }
+        });
+    });
+
+    // ===== Sticky -> Main =====
+    if (stickySelect) {
+        stickySelect.addEventListener('change', function() {
+            if (isSyncing) return;
+            isSyncing = true;
+
+            try {
+                const selectedOpt = stickySelect.options[stickySelect.selectedIndex];
+                const planId = selectedOpt ? selectedOpt.getAttribute('data-selling-plan-id') : '';
+                const variantId = selectedOpt ? selectedOpt.getAttribute('data-variant-id') : '';
+
+                if (stickySellingInput) stickySellingInput.value = planId || '';
+
+                if (!planId) {
+                    // one-time
+                    setMainToPlan('', variantId);
+                } else {
+                    setMainToPlan(planId, variantId);
+                }
+            } finally {
+                isSyncing = false;
+            }
+        });
+    }
+
+    // ===== Initial sync (page load) =====
+    // Ensure sticky reflects whatever main has selected initially
+    if (!isSyncing) {
+        isSyncing = true;
+        try {
+            syncStickyFromMain();
+        } finally {
+            isSyncing = false;
+        }
+    }
+});
+</script>

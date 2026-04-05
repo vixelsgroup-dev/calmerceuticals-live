@@ -1,0 +1,360 @@
+<style>
+  .yndh-main-container{ background: {{ section.settings.card_bg }}; min-height: {{ section.settings.card_min_height }}px; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+  #yndh-{{ section.id }} .yndh-card { display: flex; justify-content: space-between; align-items: center; gap: 64px;}
+  #yndh-{{ section.id }} .yndh-left { display: flex; flex-direction: column; justify-content: flex-start; width: 50%;}
+  #yndh-{{ section.id }} .yndh-heading {font-family:"Jost" ; font-size: {{ section.settings.heading_size }}px; font-weight: {{ section.settings.heading_weight }}; color: {{ section.settings.heading_color }}; line-height: 1.1; margin: 0 0 {{ section.settings.heading_mb }}px; letter-spacing: -0.02em; }
+  #yndh-{{ section.id }} .yndh-steps { display: flex; flex-direction: column; margin-top: auto; }
+  #yndh-{{ section.id }} .yndh-step { padding-top: 20px; padding-bottom: 40px }
+  #yndh-{{ section.id }} .yndh-step + .yndh-step { border-top: 2px solid {{ section.settings.divider_color }}; }
+  #yndh-{{ section.id }} .yndh-step__title {font-family:"Jost" ; font-size: {{ section.settings.step_title_size }}px; font-weight: 700; color: {{ section.settings.step_title_color }}; margin: 0 0 8px; line-height: 1.2; }
+  #yndh-{{ section.id }} .yndh-step__body {font-family:"Jost" ; font-size: {{ section.settings.step_body_size }}px; font-weight: 400; color: {{ section.settings.step_body_color }}; line-height: 1.55; margin: 0; }
+  #yndh-{{ section.id }} .yndh-right {  width: 45%; }
+  #yndh-{{ section.id }} .yndh-right img { height: {{ section.settings.image_height }}px; object-fit: cover; border-radius: 8px; }
+  #yndh-{{ section.id }} .yndh-right .placeholder-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #yndh-{{ section.id }} .yndh-img-mobile { display: none; }
+  #yndh-{{ section.id }} .yndh-img-desktop { display: block; }
+  /* ── Responsive ── */
+  @media screen and (max-width: 767px) {
+    .yndh-main-container{padding-bottom : 16px;}
+    #yndh-{{ section.id }} .yndh-card {flex-direction: column; justify-content: start; align-items: start; gap: 32px; }
+    #yndh-{{ section.id }} .yndh-right, #yndh-{{ section.id }} .yndh-left  {  width: 100%; }
+    #yndh-{{ section.id }} .yndh-right {  aspect-ratio: 0; position: relative; }
+     #yndh-{{ section.id }} .yndh-heading {margin-bottom : 15px; font-size: {{ section.settings.heading_size | times: 0.65 | round }}px; }
+    #yndh-{{ section.id }} .yndh-step__title { font-size: {{ section.settings.step_title_size | times: 0.9 | round }}px; }
+    #yndh-{{ section.id }} .yndh-img-desktop { display: none; }
+    #yndh-{{ section.id }} .yndh-img-mobile { display: block; }
+  }
+</style>
+
+<section id="yndh-{{ section.id }}" class="yndh-main-container">
+  <div class="yndh-inner {% if section.settings.container_width %} wrapper {% endif %}">
+    <div class="yndh-card">
+
+      {%- comment -%} ── LEFT COL ── {%- endcomment -%}
+      <div class="yndh-left">
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="yndh-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        <div class="yndh-steps">
+
+          {%- for i in (1..3) -%}
+            {%- liquid
+              case i
+                when 1
+                  assign title_key = 'step1_title'
+                  assign body_key  = 'step1_body'
+                when 2
+                  assign title_key = 'step2_title'
+                  assign body_key  = 'step2_body'
+                when 3
+                  assign title_key = 'step3_title'
+                  assign body_key  = 'step3_body'
+               
+              endcase
+              assign step_title = section.settings[title_key]
+              assign step_body  = section.settings[body_key]
+            -%}
+            {%- if step_title != blank or step_body != blank -%}
+              <div class="yndh-step">
+                {%- if step_title != blank -%}
+                  <p class="yndh-step__title">{{ step_title }}</p>
+                {%- endif -%}
+                {%- if step_body != blank -%}
+                  <p class="yndh-step__body">{{ step_body }}</p>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
+        </div>
+      </div>
+
+      {%- comment -%} ── RIGHT COL ── {%- endcomment -%}
+      <div class="yndh-right">
+        {%- if section.settings.product_image != blank -%}
+          <span class="yndh-img-desktop">
+            {{ section.settings.product_image | image_url: width: 1200 | image_tag: loading: 'eager', alt: section.settings.product_image.alt | escape }}
+          </span>
+        {%- endif -%}
+
+        {%- if section.settings.mobile_image != blank -%}
+          <span class="yndh-img-mobile">
+            {{ section.settings.mobile_image | image_url: width: 800 | image_tag: loading: 'eager', alt: section.settings.mobile_image.alt | escape }}
+          </span>
+        {%- endif -%}
+
+        {%- if section.settings.product_image == blank and section.settings.mobile_image == blank -%}
+          {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Your New Daily Habit",
+  "tag": "section",
+  "class": "section-daily-habit",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "⚙️ Layout & Spacing"
+    },
+    {
+        "type": "checkbox",
+        "id": "container_width",
+        "label": "Container Width",
+        "default" : true
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+
+    {
+      "type": "header",
+      "content": "🃏 Card"
+    },
+    {
+      "type": "color_background",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#4a1828"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Card min-height",
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "left_col_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Left column width (fr)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "right_col_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Right column width (fr)",
+      "default": 3
+    },
+
+    {
+      "type": "header",
+      "content": "📝 Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Your New Daily Habit"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 52
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading font weight",
+      "options": [
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_mb",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 48
+    },
+
+    {
+      "type": "header",
+      "content": "📋 Steps (shared styles)"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider line color",
+      "default": "#7a3a4a"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Step title font size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Step title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "step_body_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step body font size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "step_body_color",
+      "label": "Step body color",
+      "default": "#c8a8b0"
+    },
+
+    {
+      "type": "header",
+      "content": "Step 1"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 — title",
+      "default": "Tear"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_body",
+      "label": "Step 1 — body",
+      "default": "Take one 17.5ml ready-to-drink sachet daily."
+    },
+
+    {
+      "type": "header",
+      "content": "Step 2"
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 — title",
+      "default": "Drink"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_body",
+      "label": "Step 2 — body",
+      "default": "Enjoy the great-tasting Wild Berry or Mango & Mandarin flavor on its own, or drop it into your morning smoothie."
+    },
+
+    {
+      "type": "header",
+      "content": "Step 3"
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 — title",
+      "default": "Transform"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_body",
+      "label": "Step 3 — body",
+      "default": "Stick with it! Results typically begin at 4-6 weeks, with full, clinically backed results peaking at 12 weeks of continuous use."
+    },
+    {
+      "type": "header",
+      "content": "🖼️ Right Image"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height",
+      "default": 470
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Product image (Mobile)"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Your New Daily Habit",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

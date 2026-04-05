@@ -1,0 +1,98 @@
+{%- comment -%}
+  Collagen (skin) flow — final product step. Branch attrs gate which path shows this screen.
+  Optional: skip_gender_product_url, product_title, product_lead_line, product_detail.
+{%- endcomment -%}
+<article
+  class="questionnaire__screen questionnaire__screen--product-result questionnaire__screen--product-result-collagen"
+  data-questionnaire-screen
+  data-screen-type="product_result"
+  data-default-url="{{ shop_now_url | escape }}"
+  {% if skip_gender_product_url %}
+    data-skip-gender-product-url="true"
+  {% endif %}
+  {% if branch_parent != blank %}
+    data-branch-parent="{{ branch_parent | escape }}"
+  {% endif %}
+  {% if branch_any != blank %}
+    data-branch-any="{{ branch_any | escape }}"
+  {% elsif branch_trigger != blank %}
+    data-branch-trigger="{{ branch_trigger | escape }}"
+  {% endif %}
+>
+  <div class="questionnaire__product-stage questionnaire__product-stage--collagen">
+    <div class="questionnaire__product-card questionnaire__product-card--collagen">
+      <div class="questionnaire__product-badge questionnaire__product-badge--collagen">Recommended for you</div>
+
+      <div class="questionnaire__product-media questionnaire__product-media--collagen">
+        <img
+          class="questionnaire__product-img questionnaire__product-img--collagen"
+          src="{{ 'questionnaire-collagen-product.png' | asset_url }}"
+          alt="VERISOL® Enhanced Marine Collagen — Calmerceuticals"
+          width="460"
+          height="460"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="questionnaire__product-banner questionnaire__product-banner--collagen">
+        <div class="questionnaire__product-banner-text questionnaire__product-banner-text--collagen">
+          <p class="questionnaire__product-banner-primary questionnaire__product-banner-primary--collagen">
+            See results in 180 days
+          </p>
+          <p class="questionnaire__product-banner-secondary questionnaire__product-banner-secondary--collagen">
+            or your money back
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-body questionnaire__product-body--collagen">
+        <div class="questionnaire__product-body-inner questionnaire__product-body-inner--collagen">
+          <h2 class="questionnaire__product-title questionnaire__product-title--collagen">
+            {%- if product_title != blank -%}
+              {{- product_title -}}
+            {%- else -%}
+              VERISOL® Enhanced Marine Collagen
+            {%- endif -%}
+          </h2>
+          <div class="questionnaire__product-lead questionnaire__product-lead--collagen">
+            <p class="questionnaire__product-lead-line questionnaire__product-lead-line--collagen">
+              {%- if product_lead_line != blank -%}
+                {{- product_lead_line -}}
+              {%- else -%}
+                Based on your responses, here is the formula clinically proven to support visible skin results.
+              {%- endif -%}
+            </p>
+          </div>
+          <p class="questionnaire__product-detail questionnaire__product-detail--collagen">
+            {%- if product_detail != blank -%}
+              {{- product_detail -}}
+            {%- else -%}
+              Formulated with 10g VERISOL® Enhanced Marine Collagen, clinically shown to reduce eye-wrinkle volume by up
+              to 17% in 8 weeks, and up to 43% reduction in wrinkle depth and up to 34% fewer crow&rsquo;s-feet in 12
+              weeks. Delivered as a liquid for up to 95% absorption — 3× more effective than powders.
+            {%- endif -%}
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-price-row questionnaire__product-price-row--collagen">
+        <span class="questionnaire__product-plan questionnaire__product-plan--collagen">12-Week Longevity Reset</span>
+        <div class="questionnaire__product-prices questionnaire__product-prices--collagen">
+          <span class="questionnaire__product-price-compare questionnaire__product-price-compare--collagen"
+            >$686.00</span
+          >
+          <span class="questionnaire__product-price-sale questionnaire__product-price-sale--collagen">$447.00</span>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-cta-wrap questionnaire__product-cta-wrap--collagen">
+        <a
+          class="questionnaire__product-cta questionnaire__product-cta--collagen"
+          href="{{ shop_now_url | escape }}"
+          data-questionnaire-product-cta
+          >SHOP NOW</a
+        >
+      </div>
+    </div>
+  </div>
+</article>

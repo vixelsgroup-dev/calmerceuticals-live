@@ -1,0 +1,265 @@
+{% assign right_side = false %}
+{% for block in section.blocks %}
+  {% if block.type == 'text' %}
+    {% assign right_side = true %}
+  {% endif %}
+{% endfor %}
+<section class="icon-with-text{% unless right_side %} no-right-side{% endunless %}">
+    <div class="icon-with-text-inner">
+        <div class="wrapper">
+            <div class="header text-center">
+                {% if section.settings.heading != blank %}
+                <h2 class="icon-with-text__heading">
+                    <strong>{{ section.settings.heading }}</strong>
+                </h2>
+                {% endif %}
+                {% if section.settings.subheading != blank %}
+                <p class="icon-with-text__subheading">
+                    {{ section.settings.subheading }}
+                </p>
+                {% endif %}
+            </div>
+            <div class="icon-with-text__layout">
+            <!-- LEFT : FLIP CARDS -->
+            <div class="icon-with-text__cards icon-with-text__cards--{{ section.id }}">
+                {% for block in section.blocks %}
+                    {% if block.type == 'icon-with-text' %}
+                        <button
+                        class="icon-with-text__card icon-{{ block.id }}"
+                        type="button"
+                        {{ block.shopify_attributes }}
+                        >
+                          <div class="icon-with-text__card-inner">
+                              <!-- FRONT -->
+                              <div class="icon-with-text__card-front">
+                                  {% if block.settings.icon != blank %}
+                                      <div class="figure">
+                                          {{ block.settings.icon | image_url: width: 200 | image_tag: alt: block.settings.title.alt, loading: 'lazy' }}
+                                      </div>
+                                  {% endif %}
+
+                                  {% if block.settings.title != blank %}
+                                      <div class="icon-with-text__card-title">
+                                          <span>{{ block.settings.title }}</span>
+                                      </div>
+                                  {% endif %}
+                              </div>
+                              <!-- BACK -->
+                              <div class="icon-with-text__card-back">
+                              {{ block.settings.flip_text }}
+                              </div>
+                          </div>
+                        </button>
+                        <style>
+                          .icon-{{ block.id }} .figure{width:{{ block.settings.icon_size_mobile }}px;}
+                          @media (min-width: 768px) {
+                            .icon-{{ block.id }} .figure{width:{{ block.settings.icon_size }}px;}
+                          }
+                        </style>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <!-- RIGHT : TEXT -->
+            {% if right_side %}
+              <div class="icon-with-text__content">
+                  <ul class="icon-with-text__list">
+                  {% for block in section.blocks %}
+                      {% if block.type == 'text' %}
+                      <li class="icon-with-text__list-item" {{ block.shopify_attributes }}>
+                          {{ block.settings.text }}
+                      </li>
+                      {% endif %}
+                  {% endfor %}
+                  </ul>
+                  {% if section.settings.bottom_text != blank %}
+                  <div class="bottom-txt">{{ section.settings.bottom_text }}</div>
+                  {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+</section>
+<style>
+    #shopify-section-{{ section.id }}{padding-top:{{section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+    .icon-with-text__card{perspective:1000px;background:none;border:0;padding:0;cursor:pointer;}
+    .icon-with-text__card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .6s ease;height:135px;}
+    .icon-with-text__card:hover .icon-with-text__card-inner,
+    .icon-with-text__card:focus .icon-with-text__card-inner,
+    .icon-with-text__card:active .icon-with-text__card-inner{transform:rotateY(180deg);}
+    .icon-with-text__card-front,
+    .icon-with-text__card-back{inset:0;backface-visibility:hidden;padding:15px 12px 12px;display:flex;align-items:center;justify-content:center;border-radius: 22px; background: #FFF; box-shadow: 0 4px 13.9px 0 #D9D9D9;}
+    .icon-with-text__card-front{flex-direction:column;gap:12px;justify-content:space-between;height:100%;}
+    .icon-with-text__card-front .figure{display: flex; align-items: center;}
+    .icon-with-text__card-front img{height: auto; aspect-ratio: 4 / 2.5; object-fit: contain;}
+    .icon-with-text__card-title{font-weight:700;text-align:left;width:100%;}
+    .icon-with-text__card-title *{font-size: 9px;line-height:9px;margin:0;}
+    .icon-with-text__card-back{transform:rotateY(180deg);position:absolute;}
+    .icon-with-text__card-back p{font-size:8px;line-height:normal;}
+    .icon-with-text__list{list-style:none;padding:0;margin:0;}
+    .icon-with-text__list-item{font-size:20px;padding:16px 0;}
+    .icon-with-text__list-item:not(:last-child){border-bottom:1px solid #ddd;}
+    #shopify-section-{{ section.id }} .header{margin-bottom:30px;}
+    #shopify-section-{{ section.id }} .flickity-page-dots{display:flex;justify-content:center;position:static;margin-top:20px;}
+    #shopify-section-{{ section.id }} .flickity-page-dots .dot{width:100%;}
+    @media (min-width:768px){
+      .icon-with-text:not(.no-right-side) .icon-with-text__layout{display:grid;align-items:flex-start;grid-template-columns:1.3fr 1fr;gap:28px;}
+      #shopify-section-{{ section.id }} .icon-with-text__content{display:flex;flex-direction:column;justify-content:center;}
+      #shopify-section-{{ section.id }} .icon-with-text__list-item{font-size:25px;padding:30px 0;}
+      .icon-with-text__card-back p{font-size:13px;}
+      .icon-with-text__layout{gap:48px;}
+      .icon-with-text__card-inner{height:190px;}
+      .icon-with-text__cards{display:grid;grid-template-columns:repeat(3,minmax(160px,1fr));gap:24px;}
+      .icon-with-text__card-title *{font-size:13px;line-height:13px;}
+      #shopify-section-{{ section.id }} .header{margin-bottom:55px;}
+      .icon-with-text__card-front,
+      .icon-with-text__card-back{padding:15px 22px 20px;border-radius: 42px;}
+    }
+    @media (max-width:767px){
+      .icon-with-text__layout{grid-template-columns:1fr;}
+      #shopify-section-{{ section.id }}{overflow:hidden;}
+      #shopify-section-{{ section.id }} .flickity-viewport{overflow:initial;}
+      .icon-with-text__cards{display:flex;flex-wrap:wrap;gap:12px;}
+      .icon-with-text__card{width:calc(33.333% - 12px);}
+      .icon-with-text__list{text-align:center;}
+    }
+</style>
+{% comment %} <script>
+    !function() {
+        "use strict";
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth <= 767) {
+                const slider = document.querySelector('.icon-with-text__cards--{{ section.id }}');
+
+                if (slider) {
+                    let flkty = window.theme.Flickity.data(slider);
+
+                    if (!flkty) {
+                        flkty = new window.theme.Flickity(slider, {
+                            cellAlign: 'left',
+                            contain: true,
+                            pageDots: true,
+                            prevNextButtons: false,
+                            wrapAround: true
+                        });
+                    }
+                }
+            }
+        });
+    }();
+</script> {% endcomment %}
+{% schema %}
+{
+  "name": "Icons with text Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "WHAT'S INSIDE"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "Designed using evidence-backed compounds selected for daily use:"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_text",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon-with-text",
+      "name": "Icon with Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon / Image"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "label": "Icon Size",
+          "min": 50,
+          "max": 300,
+          "step": 5,
+          "default": 100
+        },
+        {
+          "type": "range",
+          "id": "icon_size_mobile",
+          "label": "Icon Size Mobile",
+          "min": 30,
+          "max": 300,
+          "step": 5,
+          "default": 80
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Ingredient name</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "flip_text",
+          "label": "Flip text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Clinically studied ingredients"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Icons with text",
+      "blocks": [
+        {
+          "type": "icon-with-text"
+        },
+        {
+          "type": "icon-with-text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

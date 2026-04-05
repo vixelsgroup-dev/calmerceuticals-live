@@ -1,0 +1,462 @@
+{%- assign uid = section.id -%}
+{%- assign block_count = section.blocks | size -%}
+{%- assign autoplay_speed_seconds = section.settings.autoplay_speed | default: 28 -%}
+
+<link rel="stylesheet" href="{{ 'reviews-slider.css' | asset_url }}">
+
+<section
+  class="rvs-section{% if section.settings.card_min_height > 0 %} rvs-section--card-fixed rvs-section--mobile-card-fixed{% endif %}"
+  id="rvs-section--{{ uid }}"
+  style="
+    --rvs-pad-top: {{ section.settings.padding_top }}px;
+    --rvs-pad-bottom: {{ section.settings.padding_bottom }}px;
+    --rvs-bg: {{ section.settings.background_color }};
+    --rvs-header-gap: {{ section.settings.header_gap }}px;
+    --rvs-heading-main: {{ section.settings.heading_main_color }};
+    --rvs-heading-accent: {{ section.settings.heading_accent_color }};
+    --rvs-heading-size: {{ section.settings.heading_size }}px;
+    --rvs-heading-ls: {{ section.settings.heading_letter_spacing | times: 0.1 }}px;
+    --rvs-btn-text: {{ section.settings.button_text_color }};
+    --rvs-btn-border: {{ section.settings.button_border_color }};
+    --rvs-btn-size: {{ section.settings.button_size }}px;
+    --rvs-btn-pad-y: {{ section.settings.button_padding_y }}px;
+    --rvs-btn-pad-x: {{ section.settings.button_padding_x }}px;
+    --rvs-card-bg: {{ section.settings.card_bg }};
+    --rvs-card-radius: {{ section.settings.card_radius }}px;
+    --rvs-card-min-height: {{ section.settings.card_min_height }}px;
+    --rvs-slider-shadow-pad: {{ section.settings.slider_shadow_padding }}px;
+    --rvs-star-filled: {{ section.settings.star_color }};
+    --rvs-star-empty: {{ section.settings.star_empty_color }};
+    --rvs-star-size: {{ section.settings.star_size }}px;
+    --rvs-quote: {{ section.settings.quote_color }};
+    --rvs-quote-size: {{ section.settings.quote_size }}px;
+    --rvs-name: {{ section.settings.name_color }};
+    --rvs-name-size: {{ section.settings.name_size }}px;
+    --rvs-slides-desktop: {{ section.settings.slides_desktop }};
+  "
+>
+  <div class="rvs-section__inner">
+    <div class="rvs-section__header{% if section.settings.container_width %} wrapper{% endif %}">
+      <h2 class="rvs-section__heading">
+        <span class="rvs-section__heading-main">{{ section.settings.heading_main }}</span>
+        <span class="rvs-section__heading-accent">{{ section.settings.heading_accent }}</span>
+      </h2>
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="rvs-section__btn">
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if block_count > 0 -%}
+      <div class="{% if section.settings.container_width_slider %}wrapper{% endif %}">
+        <div
+          class="rvs-section__slider"
+          id="rvsSlider--{{ uid }}"
+          data-rvs-slider
+          data-uid="{{ uid }}"
+          data-carousel-autoplay="{{ section.settings.autoplay_carousel }}"
+          data-autoplay-speed="{{ autoplay_speed_seconds }}"
+        >
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'review' -%}
+              <div class="rvs-section__card" {{ block.shopify_attributes }}>
+                <div class="rvs-section__stars">
+                  {%- assign star_count = block.settings.stars | plus: 0 -%}
+                  {%- for i in (1..5) -%}
+                    {%- if i <= star_count -%}
+                      <span class="rvs-section__star rvs-section__star--filled" aria-hidden="true">★</span>
+                    {%- else -%}
+                      <span class="rvs-section__star rvs-section__star--empty" aria-hidden="true">★</span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+
+                {%- if block.settings.quote != blank -%}
+                  <div class="rvs-section__quote">
+                    {{ block.settings.quote }}
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.name != blank -%}
+                  <div class="rvs-section__name">– {{ block.settings.name }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="rvs-section__mobile-header">
+        <a href="{{ section.settings.button_link | default: '#' }}" class="rvs-section__btn">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script src="{{ 'reviews-slider.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Reviews Slider",
+  "tag": "section",
+  "class": "section-rvs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Space Below Header",
+      "default": 42
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable Max Container Width (Header)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width_slider",
+      "label": "Enable Max Container Width (Slider)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Slides Visible (Desktop)",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_carousel",
+      "label": "Autoplay carousel",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "unit": "sec",
+      "min": 5,
+      "max": 70,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9f9fb"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Heading — Main Part",
+      "default": "1,450 verified"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading — Accent Part (colored)",
+      "default": "5 star reviews"
+    },
+    {
+      "type": "color",
+      "id": "heading_main_color",
+      "label": "Heading Main Color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Heading Accent Color",
+      "default": "#f7bb07"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "min": -30,
+      "max": 10,
+      "step": 1,
+      "label": "Heading Letter Spacing (÷10 px)",
+      "default": -12
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "All reviews"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#212121"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#ccceb7"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "min": 8,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Vertical Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Horizontal Padding",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#ebebeb"
+    },
+    {
+      "type": "range",
+      "id": "slider_shadow_padding",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Space below cards for shadow",
+      "default": 20,
+      "info": "Prevents the drop shadow from being clipped by the slider."
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color (filled)",
+      "default": "#f7bb07"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Star Color (empty)",
+      "default": "#f7bb07"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Star Size",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Quote Text"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote Text Color",
+      "default": "#212121"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Name"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name Color",
+      "default": "#212121"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Name Font Size",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Card",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Review Quote",
+          "default": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer Name & Location",
+          "default": "Neil (San Francisco, CA)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Slider",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>\"I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.\"</p>",
+            "name": "Neil (San Francisco, CA)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

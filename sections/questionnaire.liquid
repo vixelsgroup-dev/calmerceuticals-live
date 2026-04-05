@@ -1,0 +1,477 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Mono&family=Jost:wght@400;500;600&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Mono&family=Jost:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+</noscript>
+<link rel="preload" href="{{ 'questionnaire.css' | asset_url }}" as="style">
+{{ 'questionnaire.css' | asset_url | stylesheet_tag }}
+
+{%- assign bg_type = section.settings.bg_type -%}
+{%- if bg_type == 'image' and section.settings.bg_image != blank -%}
+  {%- assign bg_img_url = section.settings.bg_image | image_url: width: 2000 -%}
+  {%- assign bg_style = 'background-image:url('
+    | append: bg_img_url
+    | append: ');background-size:'
+    | append: section.settings.bg_image_size
+    | append: ';background-position:'
+    | append: section.settings.bg_image_position
+    | append: ';background-repeat:no-repeat;'
+  -%}
+{%- else -%}
+  {%- assign bg_style = 'background-color:' | append: section.settings.bg_color | append: ';' -%}
+{%- endif -%}
+
+{%- liquid
+  assign questionnaire_product = all_products['verisol-enhanced-marine-collagen']
+  if questionnaire_product != blank
+    assign questionnaire_fallback_product_url = questionnaire_product.url
+  else
+    assign questionnaire_fallback_product_url = '/products/verisol-enhanced-marine-collagen'
+  endif
+  if section.settings.url_default != blank
+    assign questionnaire_shop_now_url = section.settings.url_default
+  else
+    assign questionnaire_shop_now_url = questionnaire_fallback_product_url
+  endif
+
+  if section.settings.collagen_url_male != blank
+    assign questionnaire_gender_url_male = section.settings.collagen_url_male
+  else
+    assign questionnaire_gender_url_male = questionnaire_shop_now_url
+  endif
+
+  if section.settings.collagen_url_female_nonbinary != blank
+    assign questionnaire_gender_url_female = section.settings.collagen_url_female_nonbinary
+  else
+    assign questionnaire_gender_url_female = questionnaire_shop_now_url
+  endif
+
+  if section.settings.collagen_url_female_nonbinary != blank
+    assign questionnaire_gender_url_nonbinary = section.settings.collagen_url_female_nonbinary
+  else
+    assign questionnaire_gender_url_nonbinary = questionnaire_shop_now_url
+  endif
+
+  if section.settings.perimenopause_shop_url != blank
+    assign questionnaire_perimenopause_shop_url = section.settings.perimenopause_shop_url
+  else
+    assign questionnaire_perimenopause_shop_url = questionnaire_shop_now_url
+  endif
+
+  if section.settings.longevity_shop_url != blank
+    assign questionnaire_longevity_shop_url = section.settings.longevity_shop_url
+  else
+    assign questionnaire_longevity_shop_url = questionnaire_shop_now_url
+  endif
+
+  comment
+    Ultra Performance (gut axis): fixed in code (no section settings). Prefer product.url from handle(s).
+  endcomment
+  assign questionnaire_ultra_men_product = all_products['ultra-performance-for-men']
+  assign questionnaire_ultra_women_product = all_products['ultra-performance-for-women']
+  if questionnaire_ultra_women_product == blank
+    assign questionnaire_ultra_women_product = all_products['ultra-performance-for-wom']
+  endif
+  if questionnaire_ultra_men_product != blank
+    assign questionnaire_ultra_men_shop_url = questionnaire_ultra_men_product.url
+  else
+    assign questionnaire_ultra_men_shop_url = shop.url | append: '/products/ultra-performance-for-men'
+  endif
+  if questionnaire_ultra_women_product != blank
+    assign questionnaire_ultra_women_shop_url = questionnaire_ultra_women_product.url
+  else
+    assign questionnaire_ultra_women_shop_url = shop.url | append: '/products/ultra-performance-for-women'
+  endif
+-%}
+
+<section
+  class="section-questionnaire"
+  data-questionnaire
+  data-ultra-performance-url-men="{{ questionnaire_ultra_men_shop_url | escape }}"
+  data-ultra-performance-url-women="{{ questionnaire_ultra_women_shop_url | escape }}"
+  style="{{ bg_style }}"
+>
+  {%- if bg_type == 'image' and section.settings.bg_image != blank and section.settings.bg_overlay_opacity > 0 -%}
+    {%- assign overlay_opacity = section.settings.bg_overlay_opacity | divided_by: 100.0 -%}
+    <div
+      class="questionnaire__bg-overlay"
+      style="background-color:{{ section.settings.bg_overlay_color }};opacity:{{ overlay_opacity }};"
+      aria-hidden="true"
+    ></div>
+  {%- endif -%}
+
+  {%- comment -%} ── Logo ── {%- endcomment -%}
+  <div class="questionnaire__logo-wrap">
+    <a href="{{ routes.root_url }}" class="questionnaire__logo-link" aria-label="{{ shop.name }}">
+      {% if section.settings.logo != blank %}
+        {%- assign logo_w = section.settings.logo_max_width -%}
+        {%- assign logo_w2x = logo_w | times: 2 -%}
+        {%- assign logo_widths = logo_w | append: ', ' | append: logo_w2x -%}
+        {%- assign logo_sizes = logo_w | append: 'px' -%}
+        {%- assign logo_style = 'max-width:' | append: logo_w | append: 'px;width:100%;height:auto' -%}
+        {{
+          section.settings.logo
+          | image_url: width: logo_w2x
+          | image_tag:
+            class: 'questionnaire__logo-img',
+            alt: shop.name,
+            loading: 'eager',
+            widths: logo_widths,
+            sizes: logo_sizes,
+            style: logo_style
+        }}
+      {% else %}
+        <span class="questionnaire__logo-text">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+  </div>
+
+  {%- comment -%} ── Screens ── {%- endcomment -%}
+  <div class="questionnaire__body">
+    {%- comment -%} ══ SCREEN 1 — Age ══ {%- endcomment -%}
+    <article
+      class="questionnaire__screen is-active"
+      data-questionnaire-screen
+      data-screen-index="0"
+      data-screen-type="single_choice"
+    >
+      <h2 class="questionnaire__question">How old are you?</h2>
+      <div class="questionnaire__options" role="radiogroup">
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="18-30"
+          aria-pressed="false"
+        >
+          18–30
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="31-50"
+          aria-pressed="false"
+        >
+          31–50
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="50-70"
+          aria-pressed="false"
+        >
+          50–70
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="70+"
+          aria-pressed="false"
+        >
+          70+
+        </button>
+      </div>
+      {% render 'questionnaire-why-box', title: section.settings.why_title, text: section.settings.why_text %}
+    </article>
+
+    {%- comment -%} ══ SCREEN 2 — Gender ══ {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-questionnaire-gender-screen
+      data-screen-index="1"
+      data-screen-type="single_choice"
+    >
+      <h2 class="questionnaire__question">What is your gender?</h2>
+      <div class="questionnaire__options" role="radiogroup">
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Male"
+          data-option-url="{{ questionnaire_gender_url_male | escape }}"
+          data-gender-product-url-ultra="{{ questionnaire_ultra_men_shop_url | escape }}"
+          aria-pressed="false"
+        >
+          Male
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Female"
+          data-option-url="{{ questionnaire_gender_url_female | escape }}"
+          data-gender-product-url-ultra="{{ questionnaire_ultra_women_shop_url | escape }}"
+          aria-pressed="false"
+        >
+          Female
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Non-binary"
+          data-option-url="{{ questionnaire_gender_url_nonbinary | escape }}"
+          data-gender-product-url-ultra="{{ questionnaire_ultra_women_shop_url | escape }}"
+          aria-pressed="false"
+        >
+          Non-binary
+        </button>
+      </div>
+      {% render 'questionnaire-why-box', title: section.settings.why_title, text: section.settings.why_text %}
+    </article>
+
+    {%- comment -%} ══ SCREEN 3 — Health area ══ {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-index="2"
+      data-screen-type="single_choice"
+    >
+      <h2 class="questionnaire__question">
+        Which area of health are you<br>
+        looking to support?
+      </h2>
+      <div class="questionnaire__options" role="radiogroup">
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Skin, glow & anti-aging"
+          aria-pressed="false"
+        >
+          Skin, glow &amp; anti-aging
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Energy, strength & vitality"
+          aria-pressed="false"
+        >
+          Energy, strength &amp; vitality
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Hormone balance & comfort"
+          aria-pressed="false"
+        >
+          Hormone balance &amp; comfort
+        </button>
+        <button
+          class="questionnaire__option"
+          type="button"
+          data-questionnaire-option
+          data-value="Gut health, immunity & skin axis"
+          aria-pressed="false"
+        >
+          Gut health, immunity &amp; skin axis
+        </button>
+      </div>
+      {% render 'questionnaire-why-box', title: section.settings.why_title, text: section.settings.why_text %}
+    </article>
+
+    {% render 'questionnaire-collagen-flow', section: section, shop_now_url: questionnaire_shop_now_url %}
+
+    {% render 'questionnaire-perimenopause-flow',
+      section: section,
+      perimenopause_shop_url: questionnaire_perimenopause_shop_url
+    %}
+
+    {% render 'questionnaire-longevity-flow',
+      section: section,
+      longevity_shop_url: questionnaire_longevity_shop_url
+    %}
+
+    {% render 'questionnaire-ultra-men-flow',
+      section: section,
+      ultra_men_shop_url: questionnaire_ultra_men_shop_url
+    %}
+
+    {% render 'questionnaire-ultra-women-flow',
+      section: section,
+      ultra_women_shop_url: questionnaire_ultra_women_shop_url
+    %}
+  </div>
+</section>
+
+<script src="{{ 'questionnaire.js' | asset_url }}" async></script>
+
+{% schema %}
+{
+  "name": "Questionnaire",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Logo max width (px)",
+      "min": 60,
+      "max": 460,
+      "step": 4,
+      "default": 308
+    },
+    {
+      "type": "header",
+      "content": "Why we're asking"
+    },
+    {
+      "type": "paragraph",
+      "content": "Shown below every question. Same heading and body on all steps."
+    },
+    {
+      "type": "text",
+      "id": "why_title",
+      "label": "Heading",
+      "default": "Why We're Asking"
+    },
+    {
+      "type": "textarea",
+      "id": "why_text",
+      "label": "Body text",
+      "default": "Nutritional needs vary based on hormones, body composition, and metabolism. While some products are categorized for specific groups, our formulations are designed for broad applicability. Our approach is grounded in clinical research, which is often reported using traditional demographic groupings."
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "options": [
+        { "value": "color", "label": "Color" },
+        { "value": "image", "label": "Image" }
+      ],
+      "default": "color"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "bg_image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "center center", "label": "Center" },
+        { "value": "top center", "label": "Top center" },
+        { "value": "bottom center", "label": "Bottom center" },
+        { "value": "left center", "label": "Left" },
+        { "value": "right center", "label": "Right" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
+      "id": "bg_image_size",
+      "label": "Image size",
+      "options": [
+        { "value": "cover", "label": "Cover (fill)" },
+        { "value": "contain", "label": "Contain (fit)" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "bg_overlay_opacity",
+      "label": "Color overlay opacity (over image)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "bg_overlay_color",
+      "label": "Color overlay (over image)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Product URL routing"
+    },
+    {
+      "type": "paragraph",
+      "content": "Collagen paths use Collagen gender URLs and the default below. Perimenopause and Longevity use their Shop now URLs when set. Ultra Performance (gut axis) uses fixed men’s and women’s product URLs in code."
+    },
+    {
+      "type": "header",
+      "content": "Collagen flow — product URL"
+    },
+    {
+      "type": "url",
+      "id": "collagen_url_male",
+      "label": "Male → Collagen product URL",
+      "info": "Used when the shopper selects Male. Leave blank to use the default product URL."
+    },
+    {
+      "type": "url",
+      "id": "collagen_url_female_nonbinary",
+      "label": "Female & Non-binary → Collagen product URL",
+      "info": "Used when the shopper selects Female or Non-binary. Leave blank to use the default product URL."
+    },
+    {
+      "type": "header",
+      "content": "Perimenopause flow — product URL"
+    },
+    {
+      "type": "url",
+      "id": "perimenopause_shop_url",
+      "label": "Perimenopause — Shop now URL",
+      "info": "Used for the final CTA on the Energy, strength & vitality (perimenopause) path. Leave blank to use the default product URL below."
+    },
+    {
+      "type": "header",
+      "content": "Longevity flow — product URL"
+    },
+    {
+      "type": "url",
+      "id": "longevity_shop_url",
+      "label": "Longevity — Shop now URL",
+      "info": "Used for the final CTA on the Hormone balance & comfort (longevity) path. Leave blank to use the default product URL below."
+    },
+    {
+      "type": "url",
+      "id": "url_default",
+      "label": "Default / fallback product URL",
+      "info": "Leave blank to use the VERISOL® Enhanced Marine Collagen product. Used when Collagen, Perimenopause, Longevity, or other flow-specific URLs are not set. Ultra Performance gut-axis URLs are fixed in the theme code."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Questionnaire"
+    }
+  ]
+}
+{% endschema %}

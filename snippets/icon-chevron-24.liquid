@@ -1,0 +1,38 @@
+{%- comment -%}
+  Stroke chevron in a 24×24 viewBox. direction: left | right (default right).
+  Optional: icon_class, width, height (defaults 20 for display size).
+{%- endcomment -%}
+{%- liquid
+  assign direction = direction | default: 'right'
+  assign icon_class = icon_class | default: ''
+  assign width = width | default: 20
+  assign height = height | default: 20
+-%}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="{{ width }}"
+  height="{{ height }}"
+  viewBox="0 0 24 24"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+  {% if icon_class != blank %}class="{{ icon_class }}"{% endif %}
+>
+  {%- if direction == 'left' -%}
+    <path
+      d="M15 18l-6-6 6-6"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  {%- else -%}
+    <path
+      d="M9 18l6-6-6-6"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  {%- endif -%}
+</svg>

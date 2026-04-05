@@ -1,0 +1,1285 @@
+    {%- comment -%} Longevity — main concern entry (Hormone path) {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area of health are you looking to support?"
+      data-branch-trigger="Hormone balance &amp; comfort"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Which best describes your main health concern?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Gut health affecting my skin and immunity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Gut health affecting my skin and immunity</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Skin barrier feeling weakened and uneven"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Skin barrier feeling weakened and uneven</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Immune resilience feels like it has dropped"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Immune resilience feels like it has dropped</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Muscles, nerves and energy feel off"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Muscles, nerves and energy feel off</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — gut — showing up {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Gut health affecting my skin and immunity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is poor gut health showing up for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Dull skin, uneven tone or breakouts from digestion"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Dull skin, uneven tone or breakouts from digestion</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Weakened immunity — I get sick more often"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Weakened immunity — I get sick more often</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Both skin and immunity are being affected"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Both skin and immunity are being affected</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — gut — connection duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Gut health affecting my skin and immunity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you noticed this gut–skin connection?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Recently — a few weeks"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Recently — a few weeks</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Long-term — it has always been an issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Long-term — it has always been an issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — gut — oxidative {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Gut health affecting my skin and immunity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you experience oxidative stress symptoms?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — tired skin, slow recovery and low vitality"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — tired skin, slow recovery and low vitality</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Possibly — I want to protect against photo-ageing"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Possibly — I want to protect against photo-ageing</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I want a daily microbiome defence"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I want a daily microbiome defence</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — gut — thinking long-term {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Gut health affecting my skin and immunity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long-term is your thinking about health?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Very — I actively invest in prevention"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Very — I actively invest in prevention</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I have started taking it more seriously"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I have started taking it more seriously</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I want a simple daily habit that does the work"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I want a simple daily habit that does the work</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — gut — supplement priorities {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Gut health affecting my skin and immunity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What matters most to you in a daily supplement?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Targets the gut–skin axis with clinically studied postbiotics"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Targets the gut–skin axis with clinically studied postbiotics</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Supports immune balance and skin barrier function"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Supports immune balance and skin barrier function</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Antioxidant defence and skin tone support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Antioxidant defence and skin tone support</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Comprehensive daily micronutrient support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Comprehensive daily micronutrient support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — email / result (longevity-gut) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'longevity-gut',
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Gut health affecting my skin and immunity'
+    %}
+    {% render 'questionnaire-longevity-product-result',
+      shop_now_url: longevity_shop_url,
+      section: section,
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Gut health affecting my skin and immunity',
+      longevity_concern: 'gut'
+    %}
+
+    {%- comment -%} Longevity — barrier — skin changes {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Skin barrier feeling weakened and uneven"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What skin changes concern you most?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Uneven skin tone and loss of radiance"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Uneven skin tone and loss of radiance</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Skin barrier feels fragile and reactive"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Skin barrier feels fragile and reactive</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Overall skin health linked to gut and immunity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Overall skin health linked to gut and immunity</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — barrier — gut role {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Skin barrier feeling weakened and uneven"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you think gut health plays a role in your skin issues?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — I am sure they are connected"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — I am sure they are connected</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Possibly — I haven't explored this much"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Possibly — I haven't explored this much</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I just want better skin"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I just want better skin</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — barrier — oxidative {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Skin barrier feeling weakened and uneven"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you experience oxidative stress symptoms?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — dull skin, slow recovery, low vitality"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — dull skin, slow recovery, low vitality</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Possibly — I want to protect against photo-ageing"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Possibly — I want to protect against photo-ageing</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I want a comprehensive skin defence"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I want a comprehensive skin defence</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — barrier — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Skin barrier feeling weakened and uneven"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you noticed these skin barrier changes?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Recently — past few weeks"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Recently — past few weeks</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months — gradual decline"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months — gradual decline</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Long-term — it has always been fragile"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Long-term — it has always been fragile</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — barrier — supplement priorities {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Skin barrier feeling weakened and uneven"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What matters most to you in a daily supplement?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Supports skin barrier and even skin tone via the gut"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Supports skin barrier and even skin tone via the gut</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Antioxidant defence and collagen synthesis support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Antioxidant defence and collagen synthesis support</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Clinically studied postbiotics for skin health"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Clinically studied postbiotics for skin health</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Comprehensive micronutrient skin support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Comprehensive micronutrient skin support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — email / result (longevity-barrier) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'longevity-barrier',
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Skin barrier feeling weakened and uneven'
+    %}
+    {% render 'questionnaire-longevity-product-result',
+      shop_now_url: longevity_shop_url,
+      section: section,
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Skin barrier feeling weakened and uneven',
+      longevity_concern: 'barrier'
+    %}
+
+    {%- comment -%} Longevity — immune — showing up {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Immune resilience feels like it has dropped"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How does weakened immunity show up for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I get sick often and recover very slowly"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I get sick often and recover very slowly</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I feel run-down and want proactive protection"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I feel run-down and want proactive protection</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I notice it in my skin and energy levels too"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I notice it in my skin and energy levels too</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — immune — gut contribution {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Immune resilience feels like it has dropped"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is your gut health contributing to low immunity?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — my digestion and immunity both feel off"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — my digestion and immunity both feel off</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Possibly — I want to address the root cause"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Possibly — I want to address the root cause</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I just want immune support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I just want immune support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — immune — oxidative {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Immune resilience feels like it has dropped"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you experience oxidative stress symptoms?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — tired skin, slow recovery, low vitality"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — tired skin, slow recovery, low vitality</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I want to protect proactively before issues arise"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I want to protect proactively before issues arise</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I want a daily immune defence formula"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I want a daily immune defence formula</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — immune — long-term thinking {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Immune resilience feels like it has dropped"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long-term is your thinking about health?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Very — I actively invest in prevention and longevity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Very — I actively invest in prevention and longevity</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I have started taking it more seriously recently"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I have started taking it more seriously recently</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I want a simple daily habit that does the work"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I want a simple daily habit that does the work</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — immune — supplement priorities {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Immune resilience feels like it has dropped"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What matters most to you in a daily supplement?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Supports immune balance via the gut–skin axis"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Supports immune balance via the gut–skin axis</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Vitamin D3 and Zinc for normal immune function"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Vitamin D3 and Zinc for normal immune function</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Antioxidant defence against everyday stressors"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Antioxidant defence against everyday stressors</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Comprehensive micronutrient immune support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Comprehensive micronutrient immune support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — email / result (longevity-immune) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'longevity-immune',
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Immune resilience feels like it has dropped'
+    %}
+    {% render 'questionnaire-longevity-product-result',
+      shop_now_url: longevity_shop_url,
+      section: section,
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Immune resilience feels like it has dropped',
+      longevity_concern: 'immune'
+    %}
+
+    {%- comment -%} Longevity — muscles — showing up {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Muscles, nerves and energy feel off"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How do these issues show up for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Muscle tension, cramps or nerve discomfort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Muscle tension, cramps or nerve discomfort</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low energy and slow recovery from daily effort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low energy and slow recovery from daily effort</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Both physical tension and energy are affected"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Both physical tension and energy are affected</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — muscles — skin immunity {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Muscles, nerves and energy feel off"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you also notice skin or immunity changes alongside this?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — skin, energy and immunity all feel off"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — skin, energy and immunity all feel off</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — mainly the physical tension"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — mainly the physical tension</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — just muscle and nerve support needed"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — just muscle and nerve support needed</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — muscles — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Muscles, nerves and energy feel off"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been experiencing this?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Recently — past few weeks"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Recently — past few weeks</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months — gradually worsening"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months — gradually worsening</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Long-term — it has always been an issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Long-term — it has always been an issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — muscles — oxidative {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Muscles, nerves and energy feel off"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you experience oxidative stress symptoms?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — tired skin, slow recovery, low vitality"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — tired skin, slow recovery, low vitality</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I want to protect against cellular fatigue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I want to protect against cellular fatigue</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not sure — I want a comprehensive daily formula"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not sure — I want a comprehensive daily formula</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — muscles — supplement priorities {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which best describes your main health concern?"
+      data-branch-trigger="Muscles, nerves and energy feel off"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What matters most to you in a daily supplement?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Supports normal muscle and nerve function"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Supports normal muscle and nerve function</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Magnesium and Vitamin D3 for physical comfort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Magnesium and Vitamin D3 for physical comfort</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Antioxidant protection against cellular fatigue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Antioxidant protection against cellular fatigue</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Comprehensive long-term daily micronutrient support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Comprehensive long-term daily micronutrient support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Longevity — email / result (longevity-muscles) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'longevity-muscles',
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Muscles, nerves and energy feel off'
+    %}
+    {% render 'questionnaire-longevity-product-result',
+      shop_now_url: longevity_shop_url,
+      section: section,
+      branch_parent: 'Which best describes your main health concern?',
+      branch_trigger: 'Muscles, nerves and energy feel off',
+      longevity_concern: 'muscles'
+    %}

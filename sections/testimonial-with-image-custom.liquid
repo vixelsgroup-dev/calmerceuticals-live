@@ -1,0 +1,733 @@
+<!-- /sections/testimonials-with-images-custom.liquid -->
+<!-- Custom version: split-color heading + top-right arrow navigation -->
+
+{%- liquid
+  assign title = section.settings.title
+  assign title_highlight = section.settings.title_highlight
+  assign subheading = section.settings.subheading
+  assign section_width = section.settings.width
+  assign total_blocks = section.blocks.size
+  assign text_alignment = section.settings.text_alignment
+  assign section_id = 'TestimonialsWithImagesCustom--' | append: section.id
+  assign selector_id = '#' | append: section_id
+  assign animation_anchor = selector_id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+  assign block_bg = section.settings.testimonial_block_color
+  assign star_color = section.settings.star_color
+  assign highlight_color = section.settings.title_highlight_color
+  assign has_border = false
+
+  for block in section.blocks
+    if block.settings.enable_border == true
+      assign has_border = true
+      break
+    endif
+  endfor
+-%}
+
+{%- if request.design_mode -%}
+  <style>
+    {{ 'section-testimonials.css' | inline_asset_content }}
+  </style>
+{%- else -%}
+  <link
+    href="{{ 'section-testimonials.css' | asset_url }}"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  >
+{%- endif -%}
+
+<script src="{{ 'testimonials.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .my__testimonial-custom-section .flickity-button-holder { display: none; }
+  .my__testimonial-custom-section .testimonial__item__inner { border: none !important; }
+  .my__testimonial-custom-section  .rating__star .icon{width: 16px; height: 16px;margin-right: 3px !important;}
+  .testimonial__item__content{display: flex; flex-direction: column; justify-content: center; height: 100%;}
+  /* Font family */
+  .testimonial__heading,
+  .testimonial__subheading,
+  .testimonial__text p,
+  .testimonial__user > * { font-family: "Jost", sans-serif; }
+
+  /* Background color */
+  #{{ section_id }} { background-color: {{ section.settings.background_color }}; }
+
+  [data-section-id="{{ section.id }}"] {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% if star_color.alpha != 0.0 and star_color != '' -%}
+    [data-section-id="{{ section.id }}"] .testimonial__stars { color: {{ star_color }}; }
+  {%- endif %}
+
+  /* ── Custom: header row layout ── */
+  [data-section-id="{{ section.id }}"] .testimonials__header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  [data-section-id="{{ section.id }}"] .testimonials__header-row .section__header {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+  }
+
+  /* ── Split-color heading ── */
+  [data-section-id="{{ section.id }}"] .testimonial__heading .heading-highlight {
+    color: {{ highlight_color | default: '#7B1C35' }};
+    font-style: normal;
+  }
+
+  /* ── Section heading font size ── */
+  [data-section-id="{{ section.id }}"] .section__header {
+    max-width: 900px !important;
+  }
+  [data-section-id="{{ section.id }}"] .section__header .testimonial__heading {
+    font-size: {{ section.settings.section_heading_size }}px !important;
+    line-height: 120%;
+  }
+
+  /* ── Section subheading font size ── */
+  [data-section-id="{{ section.id }}"] .testimonial__subheading {
+    font-size: {{ section.settings.section_subheading_size }}px !important;
+  }
+
+  /* ── Block: testimonial heading (e.g. "Love it!") ── */
+  [data-section-id="{{ section.id }}"] .testimonial__item .testimonial__heading-text,
+  [data-section-id="{{ section.id }}"] .testimonial__item h3,
+  [data-section-id="{{ section.id }}"] .testimonial__item .testimonial__heading {
+    font-size: {{ section.settings.block_heading_size }}px !important;
+    line-height: 120%;
+    font-weight: 600;   
+  }
+
+  /* ── Block: testimonial body text ── */
+  [data-section-id="{{ section.id }}"] .testimonial__text,
+  [data-section-id="{{ section.id }}"] .testimonial__text p {
+    font-size: {{ section.settings.block_body_size }}px !important;
+    line-height: 120%;
+    font-weight: 400;
+  }
+
+  /* ── Block: author name ── */
+  [data-section-id="{{ section.id }}"] .testimonial__user-name {
+    font-size: {{ section.settings.block_author_size }}px !important;
+    font-weight: 600;
+  }
+
+
+
+  /* ── Arrow nav ── */
+  [data-section-id="{{ section.id }}"] .testimonials__nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding-top: 6px;
+  }
+
+  [data-section-id="{{ section.id }}"] .testimonials__nav__btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    background: transparent;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    padding: 0;
+  }
+
+  [data-section-id="{{ section.id }}"] .testimonials__nav__btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+
+  [data-section-id="{{ section.id }}"] .testimonials__nav__btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  @media screen and (max-width: 767px) {
+    [data-section-id="{{ section.id }}"] .testimonials__nav {
+      padding-top: 0;
+    }
+    [data-section-id="{{ section.id }}"] .section__header .testimonial__heading {
+      font-size: 34px !important;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  id="{{ section_id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="testimonials"
+  class="my__testimonial-custom-section section-padding testimonials-section has-quotes"
+>
+  <div class="{{ section_width }}">
+
+    <!-- Header row: heading LEFT, arrows RIGHT -->
+    <div class="testimonials__header-row">
+
+      {%- if title != blank or subheading != blank -%}
+        <div class="section__header {{ text_alignment }}">
+          {%- if subheading != blank -%}
+            <h4
+              class="testimonial__subheading subheading-text"
+              {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}
+            >
+              {{ subheading }}
+            </h4>
+          {%- endif -%}
+
+          {%- if title != blank -%}
+            <h2
+              class="testimonial__heading section__heading h2"
+              {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+              {% endif %}
+            >
+              {%- if title_highlight != blank -%}
+                <span class="heading-highlight" style="font-weight: 600;">{{ title_highlight | escape }}</span>{{ ' ' }}{{ title | escape }}
+              {%- else -%}
+                {{ title | escape }}
+              {%- endif -%}
+            </h2>
+          {%- endif -%}
+
+          {%- if settings.show_spacer_lines -%}
+            <hr
+              class="section__heading-line"
+              {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}
+            >
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <!-- Prev / Next arrows -->
+      <div class="testimonials__nav" aria-label="Testimonial navigation">
+        <button
+          class="testimonials__nav__btn testimonials__nav__btn--prev"
+          aria-label="Previous testimonials"
+          data-prev
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button
+          class="testimonials__nav__btn testimonials__nav__btn--next"
+          aria-label="Next testimonials"
+          data-next
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+    </div><!-- /.testimonials__header-row -->
+
+    <div class="testimonials__wrapper">
+      <testimonials-slider
+        id="testimonials-slider-{{ section.id }}"
+        class="testimonials__slider testimonials__slider--blocks-{{ total_blocks }} testimonials__slider--{{ text_alignment }}{% if has_border %} testimonials__slider--border{% endif %}"
+        data-slider-alignment="{% if text_alignment == 'text-center' %}center{% else %}left{% endif %}"
+        role="group"
+      >
+        {%- if total_blocks > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+
+            {%- case block.type -%}
+              {%- when 'testimonial' -%}
+                {%- render 'testimonial-item',
+                  block: block,
+                  selector_id: selector_id,
+                  block_bg: block_bg,
+                  animations_enabled: animations_enabled,
+                  animation_anchor: animation_anchor,
+                  animation_delay: animation_delay
+                -%}
+
+              {%- when 'text' -%}
+                {%- render 'testimonial-text',
+                  block: block,
+                  selector_id: selector_id,
+                  animations_enabled: animations_enabled,
+                  animation_anchor: animation_anchor,
+                  animation_delay: animation_delay
+                -%}
+
+              {%- when 'image' -%}
+                {%- render 'testimonial-image',
+                  block: block,
+                  selector_id: selector_id,
+                  animations_enabled: animations_enabled,
+                  animation_anchor: animation_anchor,
+                  animation_delay: animation_delay
+                -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- render 'no-blocks' -%}
+        {%- endif -%}
+      </testimonials-slider>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!section) return;
+
+    var prevBtn = section.querySelector('[data-prev]');
+    var nextBtn = section.querySelector('[data-next]');
+    var sliderEl = section.querySelector('testimonials-slider');
+
+    function getFlickity() {
+      if (window.theme && window.theme.Flickity && sliderEl) {
+        return window.theme.Flickity.data(sliderEl) || null;
+      }
+      return null;
+    }
+
+    function updateButtons(flkty) {
+      if (!flkty) return;
+      prevBtn.disabled = flkty.selectedIndex === 0;
+      nextBtn.disabled = flkty.selectedIndex >= flkty.slides.length - 1;
+    }
+
+    function init() {
+      var flkty = getFlickity();
+      if (!flkty) {
+        setTimeout(init, 200);
+        return;
+      }
+
+      updateButtons(flkty);
+      flkty.on('select', function () { updateButtons(flkty); });
+
+      prevBtn.addEventListener('click', function () {
+        var f = getFlickity();
+        if (f) { f.previous(); updateButtons(f); }
+      });
+
+      nextBtn.addEventListener('click', function () {
+        var f = getFlickity();
+        if (f) { f.next(); updateButtons(f); }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      setTimeout(init, 300);
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Custom Testimonial",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background",
+      "default": "#ECEFDF"
+    },
+    {
+      "type": "header",
+      "content": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Highlighted word(s)",
+      "info": "This part appears in the accent color (e.g. 'Calmerceuticals')",
+      "default": "Calmerceuticals"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading (rest of text)",
+      "default": "is loved by thousands"
+    },
+    {
+      "type": "color",
+      "id": "title_highlight_color",
+      "label": "Highlight color",
+      "default": "#7B1C35"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "text-left",
+      "options": [
+        { "label": "Center", "value": "text-center" },
+        { "label": "Left", "value": "text-left" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Font Sizes — Section Header"
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size",
+      "label": "Section Heading Size",
+      "min": 18,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "section_subheading_size",
+      "label": "Section Subheading Size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Font Sizes — Testimonial Blocks"
+    },
+    {
+      "type": "range",
+      "id": "block_heading_size",
+      "label": "Block Heading Size (e.g. 'Love it!')",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "block_body_size",
+      "label": "Block Body / Review Text Size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "block_author_size",
+      "label": "Author Name Size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "block_subtext_size",
+      "label": "Author Sub-text Size (e.g. 'Loyal Customer')",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "testimonial_block_color",
+      "label": "Block background",
+      "alpha": true
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "alpha": true
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper--full-padded",
+      "options": [
+        { "value": "wrapper--full-padded", "label": "Full width padded" },
+        { "value": "wrapper", "label": "Page width" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Review star rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "info": "Set 0 to hide stars"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_border",
+          "label": "Enable border",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Love it!"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Testimonial",
+          "default": "<p>Excellent customer service. I love their products!</p>"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "John Edmonson"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Text",
+          "default": "<p>Loyal Customer</p>"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Review star rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "info": "Set 0 to hide stars"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_border",
+          "label": "Enable border",
+          "default": true
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Heading",
+          "default": "We let our reviews speak for themselves."
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Text",
+          "default": "<p>4.98 average<br>213 reviews</p>"
+        },
+        {
+          "type": "color",
+          "id": "block_color",
+          "label": "Block color",
+          "default": "#000",
+          "alpha": true
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#fff"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "text-left",
+          "options": [
+            { "value": "text-center", "label": "Center" },
+            { "value": "text-left", "label": "Left" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Review star rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "info": "Set 0 to hide stars"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_border",
+          "label": "Enable border",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "aspect_ratio",
+          "min": 0.5,
+          "max": 1.5,
+          "step": 0.1,
+          "unit": ":1",
+          "label": "Aspect ratio",
+          "default": 0.8
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Love it!"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "John Edmonson"
+        },
+        {
+          "type": "color",
+          "id": "block_color",
+          "label": "Block color",
+          "info": "Applies if 'Enable border' is checked",
+          "alpha": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Testimonial",
+      "category": "Storytelling",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "John Edmonson",
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "subheading": "<p>Happy customer</p>"
+          }
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Eric Lopez",
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "subheading": "<p>12 days ago</p>"
+          }
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Dmitri Kristov",
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "subheading": "<p>Verified customer</p>"
+          }
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "footer"]
+  }
+}
+{% endschema %}

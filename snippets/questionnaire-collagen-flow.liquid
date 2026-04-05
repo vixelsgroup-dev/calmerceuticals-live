@@ -1,0 +1,1228 @@
+    {%- comment -%} Primary skin concern (branch: health = Skin) {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area of health are you looking to support?"
+      data-branch-trigger="Skin, glow & anti-aging"
+    >
+      <h2 class="questionnaire__question">What is your primary skin concern?</h2>
+      <div class="questionnaire__options" role="radiogroup">
+        <button class="questionnaire__option" type="button" data-questionnaire-option data-value="Fine lines and wrinkles" aria-pressed="false">Fine lines and wrinkles</button>
+        <button class="questionnaire__option" type="button" data-questionnaire-option data-value="Loss of firmness and elasticity" aria-pressed="false">Loss of firmness and elasticity</button>
+        <button class="questionnaire__option" type="button" data-questionnaire-option data-value="Dryness and lack of hydration" aria-pressed="false">Dryness and lack of hydration</button>
+        <button class="questionnaire__option" type="button" data-questionnaire-option data-value="Dullness and uneven tone" aria-pressed="false">Dullness and uneven tone</button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Fine lines — wrinkle location {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Fine lines and wrinkles"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Where are you noticing wrinkles most?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Around the eyes — crow's-feet"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Around the eyes — crow's-feet</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Forehead and expression lines"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Forehead and expression lines</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Around the mouth and cheeks"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Around the mouth and cheeks</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Fine lines — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Fine lines and wrinkles"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have these wrinkles been noticeable?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Just starting to appear"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Just starting to appear</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Noticeable for several months"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Noticeable for several months</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Well established for over a year"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Well established for over a year</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Fine lines — collagen before {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Fine lines and wrinkles"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Have you tried a collagen supplement before?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — this is my first time"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — this is my first time</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — powders or capsules with little result"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — powders or capsules with little result</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — loved it, want something clinically proven"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — loved it, want something clinically proven</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Fine lines — skin type {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Fine lines and wrinkles"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What is your skin type?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Sensitive — prone to redness"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Sensitive — prone to redness</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Dry — tight and dehydrated"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Dry — tight and dehydrated</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Combination — oily T-zone, dry elsewhere"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Combination — oily T-zone, dry elsewhere</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Normal — balanced but showing age"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Normal — balanced but showing age</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Fine lines — 12-week goal {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Fine lines and wrinkles"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What result matters most to you in 12 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Visibly fewer wrinkles and crow's-feet"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Visibly fewer wrinkles and crow's-feet</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Firmer, bouncier skin overall"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Firmer, bouncier skin overall</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Deeply hydrated, plump skin"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Deeply hydrated, plump skin</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Smoother, more radiant complexion"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Smoother, more radiant complexion</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'collagen-fl',
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Fine lines and wrinkles'
+    %}
+    {% render 'questionnaire-collagen-product-result',
+      shop_now_url: shop_now_url,
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Fine lines and wrinkles'
+    %}
+
+    {%- comment -%} Collagen — Firmness — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Loss of firmness and elasticity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you noticed loss of firmness?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Just beginning — subtle sagging"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Just beginning — subtle sagging</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months — clearly visible"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months — clearly visible</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — quite established"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — quite established</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Firmness — dryness alongside {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Loss of firmness and elasticity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Are you also experiencing dryness alongside firmness loss?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — dry and lacking firmness"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — dry and lacking firmness</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — mainly firmness is the issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — mainly firmness is the issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Firmness — sun exposure {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Loss of firmness and elasticity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How would you describe your daily sun or environmental exposure?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="High — outdoors most of the day"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">High — outdoors most of the day</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Moderate — mix of indoors and outdoors"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Moderate — mix of indoors and outdoors</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low — mostly indoors"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low — mostly indoors</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Firmness — collagen before {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Loss of firmness and elasticity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Have you tried a collagen supplement before?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — never tried one"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — never tried one</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — powders or capsules with little result"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — powders or capsules with little result</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — loved it, want something with higher absorption"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — loved it, want something with higher absorption</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Firmness — 12-week goal {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Loss of firmness and elasticity"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What result matters most to you in 12 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Firmer, more elastic and bouncy skin"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Firmer, more elastic and bouncy skin</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Noticeably smoother and softer texture"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Noticeably smoother and softer texture</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Stronger skin structure from within"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Stronger skin structure from within</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'collagen-fm',
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Loss of firmness and elasticity'
+    %}
+    {% render 'questionnaire-collagen-product-result',
+      shop_now_url: shop_now_url,
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Loss of firmness and elasticity'
+    %}
+
+    {%- comment -%} Collagen — Dryness — day-to-day {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dryness and lack of hydration"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How does dehydrated skin affect you day to day?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Tight and uncomfortable, especially after cleansing"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Tight and uncomfortable, especially after cleansing</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Dull and lifeless — no natural glow"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Dull and lifeless — no natural glow</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Fine lines more visible when skin is dry"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Fine lines more visible when skin is dry</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dryness — water intake {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dryness and lack of hydration"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you drink enough water daily?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — but skin still feels dry and tight"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — but skin still feels dry and tight</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not consistently — I know I should drink more"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not consistently — I know I should drink more</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="I try but my skin absorbs nothing"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">I try but my skin absorbs nothing</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dryness — ageing alongside {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dryness and lack of hydration"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is your skin also showing signs of ageing alongside the dryness?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — fine lines are appearing too"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — fine lines are appearing too</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Slightly — just early signs"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Slightly — just early signs</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not really — mainly a hydration issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not really — mainly a hydration issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dryness — format {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dryness and lack of hydration"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What format of supplement suits your lifestyle?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Quick liquid shot — easy and fuss-free"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Quick liquid shot — easy and fuss-free</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mixed into my morning drink"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mixed into my morning drink</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Whatever delivers the best results"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Whatever delivers the best results</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dryness — 12-week goal {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dryness and lack of hydration"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What result matters most to you in 12 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Deeply hydrated, plump and comfortable skin"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Deeply hydrated, plump and comfortable skin</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Softer, more supple skin with lasting comfort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Softer, more supple skin with lasting comfort</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Glowing, well-nourished complexion"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Glowing, well-nourished complexion</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'collagen-dr',
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Dryness and lack of hydration'
+    %}
+    {% render 'questionnaire-collagen-product-result',
+      shop_now_url: shop_now_url,
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Dryness and lack of hydration'
+    %}
+
+    {%- comment -%} Collagen — Dullness — when bothers most {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dullness and uneven tone"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">When does dull skin bother you most?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Every morning — skin looks tired and flat"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Every morning — skin looks tired and flat</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="After stress or poor sleep"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">After stress or poor sleep</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="In photos — I just don't look glowy"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">In photos — I just don't look glowy</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dullness — ageing alongside {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dullness and uneven tone"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is your skin also ageing or losing firmness?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — dullness and ageing together"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — dullness and ageing together</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — I notice a few fine lines"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — I notice a few fine lines</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — mainly tone and glow concern"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — mainly tone and glow concern</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dullness — diet antioxidants {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dullness and uneven tone"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is your diet in terms of antioxidant-rich foods?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Good — plenty of fruit and vegetables"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Good — plenty of fruit and vegetables</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Average — could definitely be better"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Average — could definitely be better</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Poor — I rely on convenience food mostly"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Poor — I rely on convenience food mostly</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dullness — collagen or vitamin C {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dullness and uneven tone"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Have you used collagen or vitamin C supplements before?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — never tried"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — never tried</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — collagen, with mixed results"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — collagen, with mixed results</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — vitamin C, want something more comprehensive"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — vitamin C, want something more comprehensive</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Collagen — Dullness — 12-week goal {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="What is your primary skin concern?"
+      data-branch-trigger="Dullness and uneven tone"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What result matters most to you in 12 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Brighter, more radiant complexion"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Brighter, more radiant complexion</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Even skin tone with less dullness"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Even skin tone with less dullness</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Protected, antioxidant-defended skin"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Protected, antioxidant-defended skin</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above — full radiance restoration"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above — full radiance restoration</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'collagen-du',
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Dullness and uneven tone'
+    %}
+    {% render 'questionnaire-collagen-product-result',
+      shop_now_url: shop_now_url,
+      branch_parent: 'What is your primary skin concern?',
+      branch_trigger: 'Dullness and uneven tone'
+    %}

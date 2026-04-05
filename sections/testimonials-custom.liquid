@@ -1,0 +1,261 @@
+<div class="testimonials-main wrapper--full-padded">
+  <div class="testimonials" data-section-id="{{ section.id }}">
+    <div class="main-header">{{ section.settings.testimonial_title }}</div>
+    <!-- Testimonial Slider -->
+    <div class="testimonial-slider" data-block-type="testimonial-slider" style="background-image: url('{{ section.settings.background_quote_image | image_url: width: 700 }}');">
+      <testimonials-slider-custom class="testimonial-slider__items" data-section-id="{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="testimonial-slide" data-slide>
+            <blockquote>
+              <p class="review-txt">{{ block.settings.testimonial_block_text }}</p>
+              <p class="author">{{ block.settings.testimonial_block_author }}</p>
+            </blockquote>
+          </div>
+        {% endfor %}
+      </testimonials-slider-custom>
+    </div>
+
+    <!-- Thumbnail Slider -->
+    <div class="testimonial-thumbnail-slider" data-block-type="testimonial-thumbnail-slider">
+      <testimonials-thumbnail-slider-custom class="testimonial-thumbnail-slider__items" data-section-id="{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="testimonial-thumbnail-slide" data-thumbnail></div>
+        {% endfor %}
+      </testimonials-thumbnail-slider-custom>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ------------------------------
+  Wait until theme Flickity loads
+  --------------------------------*/
+  function waitForThemeFlickity(callback) {
+    const check = () => {
+      if (window.theme && window.theme.Flickity) {
+        callback(window.theme.Flickity);
+      } else {
+        setTimeout(check, 50);
+      }
+    };
+    check();
+  }
+
+  /* -----------------------------------
+  Define <testimonials-slider-custom> element
+  --------------------------------------*/
+  if (!customElements.get("testimonials-slider-custom")) {
+    customElements.define(
+      "testimonials-slider-custom",
+      class extends HTMLElement {
+        constructor() {
+          super();
+          this.flkty = null; // main Flickity instance
+        }
+
+        connectedCallback() {
+          this.slider = this;
+          this.items = this.children;
+
+          // Save section ID so thumbnails can locate their matching slider
+          this.dataset.sectionId = this.closest('[data-section-id]').dataset.sectionId;
+
+          if (!this.items || this.items.length <= 1) return;
+
+          waitForThemeFlickity((FlickityConstructor) => {
+            this.initSlider(FlickityConstructor);
+          });
+        }
+
+        /* -----------------------------------
+        MAIN SLIDER INITIALIZATION
+        --------------------------------------*/
+        initSlider(FlickityConstructor) {
+          const arrows = this.dataset.arrows === "true";
+          const dots = false; // Enable Flickity's default dots navigation
+          const center = this.dataset.center === "true";
+
+          // Initialize the main slider
+          this.flkty = new FlickityConstructor(this.slider, {
+            cellSelector: "[data-slide]",
+            contain: true,
+            wrapAround: true,
+            prevNextButtons: arrows,
+            pageDots: dots, // Use Flickity's default dots
+            imagesLoaded: true,
+            draggable: true,
+            dragThreshold: 10,
+            cellAlign: 'center',
+            initialIndex: Math.floor(this.items.length / 2),  // Center the first slide
+
+            // Sync with thumbnail slider
+            asNavFor: '[data-section-id="{{ section.id }}"] .testimonial-thumbnail-slider__items',
+
+            on: {
+              ready: () => {
+                this.flkty.resize();
+                // No need to manually select, Flickity will sync the center automatically
+              }
+            }
+          });
+        }
+
+        disconnectedCallback() {
+          if (this.flkty) this.flkty.destroy();
+        }
+      });
+  }
+
+  /* -----------------------------------
+  Define <testimonials-thumbnail-slider-custom> element
+  --------------------------------------*/
+  if (!customElements.get("testimonials-thumbnail-slider-custom")) {
+    customElements.define(
+      "testimonials-thumbnail-slider-custom",
+      class extends HTMLElement {
+        constructor() {
+          super();
+          this.flkty = null;
+        }
+
+        connectedCallback() {
+          this.slider = this;
+          this.items = this.children;
+
+          // Save section ID so the main slider can locate this
+          this.dataset.sectionId = this.closest('[data-section-id]').dataset.sectionId;
+
+          if (!this.items || this.items.length <= 1) return;
+
+          waitForThemeFlickity((FlickityConstructor) => {
+            this.initThumbnailSlider(FlickityConstructor);
+          });
+        }
+
+        /* -----------------------------------
+        Thumbnail Slider Initialization
+        --------------------------------------*/
+        initThumbnailSlider(FlickityConstructor) {
+          // Initialize the thumbnail slider with 'asNavFor' pointing to the main slider
+          this.flkty = new FlickityConstructor(this.slider, {
+            cellSelector: "[data-thumbnail]",
+            contain: true,
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: false,
+            imagesLoaded: true,
+            draggable: true,
+            dragThreshold: 10,
+            cellAlign: 'center',
+            selectedAttraction: 0.02,
+            friction: 0.15,
+            asNavFor: '[data-section-id="{{ section.id }}"] .testimonial-slider__items',
+            initialIndex: Math.floor(this.items.length / 2),
+
+            on: {
+              ready: () => {
+                // Flickity will automatically sync the thumbnail to the center
+              }
+            }
+          });
+        }
+
+        disconnectedCallback() {
+          if (this.flkty) this.flkty.destroy();
+        }
+      });
+  }
+</script>
+
+<style>
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slider__items .flickity-viewport{height:35px!important;}
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slider__items .flickity-slider{display:flex;align-items:center;gap:10px;}
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slide{position:static !important;flex:1;height:10px;border:1px solid #000;}
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slide.is-selected{background:#000;height:inherit;}
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slider__items .flickity-slider,
+  #shopify-section-{{ section.id }} .testimonial-thumbnail-slider__items .flickity-slider .testimonial-thumbnail-slide{transform:none!important;}
+  #shopify-section-{{ section.id }}{text-align:center;}
+  #shopify-section-{{ section.id }} .main-header{margin-bottom:30px;}
+  #shopify-section-{{ section.id }} .testimonials .testimonial-slider{background-size:200px;background-repeat:no-repeat;background-position:top;} 
+  #shopify-section-{{ section.id }} .testimonial-slider__items{overflow:hidden;padding:0;width:100%;}
+  #shopify-section-{{ section.id }} .testimonial-slide{width:100%;box-sizing:border-box;padding:20px;}
+  #shopify-section-{{ section.id }} .testimonial-slide:not(.is-selected){opacity:0;}
+  #shopify-section-{{ section.id }} .testimonial-slider__nav{display:flex;justify-content:center;margin-top:20px;}
+  #shopify-section-{{ section.id }} .testimonial-nav-item{width:15px;height:15px;background-color:#ccc;margin:0 5px;border-radius:50%;cursor:pointer;transition:background-color .3s ease;}
+  #shopify-section-{{ section.id }} .testimonial-nav-item.is-selected{background-color:#333;}
+  .testimonials-main blockquote{max-width:1040px;margin:0 auto;}
+  .testimonials-main .review-txt{font-size:24px;font-weight:normal;font-style:normal;}
+  .testimonials-main .author{font-size:18px;font-weight:700;}
+  @media (min-width: 768px) {
+    .testimonials-main .author{font-size:26px;}
+    .testimonials-main .review-txt{font-size:26px;}
+    #shopify-section-{{ section.id }} .testimonials .testimonial-slider{background-size:250px;}
+    #shopify-section-{{ section.id }} .testimonials-main .review-txt{font-size:36px;}
+    #shopify-section-{{ section.id }} .testimonials-main .author{margin-top:50px;}
+  }
+  @media (max-width: 767px) {
+    .testimonials-main blockquote{padding:0;}
+  }
+</style>
+{% schema %}
+{
+  "name": "Testimonials Custom",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Why Affiliates Love Us"
+    },
+    {
+      "type": "richtext",
+      "label": "Testimonial Title",
+      "id": "testimonial_title",
+      "default": "<p>Why Affiliates Love Us</p>",
+      "info": "Add the title of the testimonial section."
+    },
+    {
+      "type": "image_picker",
+      "label": "Background Quote Image",
+      "id": "background_quote_image",
+      "info": "Upload an image to be used as the background of the testimonial section."
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable Swipe Functionality",
+      "id": "enable_swipe",
+      "default": true,
+      "info": "Enable swipe functionality on mobile for the testimonial slider."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial Block",
+      "settings": [
+        {
+          "type": "textarea",
+          "label": "Testimonial Text",
+          "id": "testimonial_block_text",
+          "default": "Insert testimonial here.",
+          "info": "Testimonial content for each block"
+        },
+        {
+          "type": "text",
+          "label": "Testimonial Author",
+          "id": "testimonial_block_author",
+          "default": "Testimonial Author",
+          "info": "Name and role of the person providing the testimonial"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Custom",
+      "category": "Custom",
+      "settings": {
+        "testimonial_title": "<p>Why Affiliates Love Us</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

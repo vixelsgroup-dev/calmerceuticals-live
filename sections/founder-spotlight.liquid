@@ -1,0 +1,419 @@
+{% comment %}
+  SECTION: Founder Spotlight
+  - Left: video — Shopify-hosted OR YouTube/Vimeo embed (toggle in settings)
+  - Right: tagline + heading + description (all richtext)
+  - Full settings: padding, spacing, font sizes, colors, bg
+{% endcomment %}
+
+<style>
+#fsp-{{ section.id }} { background: {{ section.settings.section_bg }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; }
+
+#fsp-{{ section.id }} .fsp-inner { display: flex; align-items: center; gap: {{ section.settings.col_gap }}px;}
+
+/* ── Left: Video ── */
+#fsp-{{ section.id }} .fsp-video-col { flex: 0 0 {{ section.settings.image_width }}%; max-width: {{ section.settings.image_width }}%; }
+
+#fsp-{{ section.id }} .fsp-video-wrap { border-radius: {{ section.settings.image_radius }}px; overflow: hidden; width: 100%; position: relative; height: 600px; }
+
+#fsp-{{ section.id }} .fsp-video-wrap video { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; }
+
+/* YouTube / Vimeo embed — responsive 16:9 by default, overridable */
+#fsp-{{ section.id }} .fsp-embed-wrap { position: relative; width: 100%; padding-bottom: {{ section.settings.embed_aspect }}%; border-radius: {{ section.settings.image_radius }}px; overflow: hidden; background: #000; }
+
+#fsp-{{ section.id }} .fsp-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; }
+
+/* ── Right: Text ── */
+#fsp-{{ section.id }} .fsp-text-col { flex: 1; }
+
+/* Tagline */
+#fsp-{{ section.id }} .fsp-tagline, #fsp-{{ section.id }} .fsp-tagline p { font-family: "Jost", sans-serif; font-size: {{ section.settings.tagline_size }}px; font-weight: 400; color: {{ section.settings.tagline_color }}; letter-spacing: {{ section.settings.tagline_spacing }}px; text-transform: uppercase; margin: 0 0 {{ section.settings.tagline_gap }}px; line-height: 1.4; }
+
+/* Heading */
+#fsp-{{ section.id }} .fsp-heading, #fsp-{{ section.id }} .fsp-heading p { font-family: "Jost", sans-serif; font-size: {{ section.settings.heading_size }}px; font-weight: {{ section.settings.heading_weight }}; color: {{ section.settings.heading_color }}; line-height: 1.15; margin: 0 0 {{ section.settings.heading_gap }}px; }
+
+#fsp-{{ section.id }} .fsp-heading strong, #fsp-{{ section.id }} .fsp-heading b { font-weight: 800; color: {{ section.settings.heading_color }}; }
+
+/* Description */
+#fsp-{{ section.id }} .fsp-desc, #fsp-{{ section.id }} .fsp-desc p { font-family: "Jost", sans-serif; font-size: {{ section.settings.desc_size }}px; font-weight: 400; color: {{ section.settings.desc_color }};  margin: 0; }
+
+#fsp-{{ section.id }} .fsp-desc p + p { margin-top: 12px; }
+
+#fsp-{{ section.id }} .fsp-desc strong, #fsp-{{ section.id }} .fsp-desc b { font-weight: 700; color: {{ section.settings.desc_color }}; }
+
+@media screen and (min-width: 768px){
+  #fsp-{{ section.id }} .fsp-inner { max-width: calc(var(--site-width) - 200px); }
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 767px) {
+.fsp-inner.wrapper{padding: 0;}
+.fsp-text-col{display: none;}
+#fsp-{{ section.id }} { padding-top: {{ section.settings.padding_top | divided_by: 2 }}px; padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px; }
+
+#fsp-{{ section.id }} .fsp-inner { flex-direction: column; gap: {{ section.settings.col_gap | divided_by: 2 }}px; }
+
+#fsp-{{ section.id }} .fsp-video-col { flex: 0 0 100%; max-width: 100%; width: 100%; }
+
+#fsp-{{ section.id }} .fsp-heading, #fsp-{{ section.id }} .fsp-heading p { font-size: {{ section.settings.heading_size | times: 0.75 | round }}px; }
+}
+</style>
+<section id="fsp-{{ section.id }}">
+  <div class="fsp-inner {% if section.settings.container_width %}wrapper{% endif %}">
+
+    {%- comment -%} ── Left: Video ── {%- endcomment -%}
+    <div class="fsp-video-col">
+
+      {%- if section.settings.video_source == 'shopify' -%}
+        {%- comment -%} Shopify-hosted video {%- endcomment -%}
+        <div class="fsp-video-wrap">
+          {%- if section.settings.video != blank -%}
+            {{
+              section.settings.video
+              | video_tag:
+                autoplay: section.settings.video_autoplay,
+                loop: section.settings.video_loop,
+                muted: section.settings.video_muted,
+                controls: section.settings.video_controls,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {%- elsif section.settings.video_url != blank -%}
+            <video
+              src="{{ section.settings.video_url }}"
+              {% if section.settings.video_autoplay %}autoplay{% endif %}
+              {% if section.settings.video_loop %}loop{% endif %}
+              {% if section.settings.video_muted %}muted{% endif %}
+              {% if section.settings.video_controls %}controls{% endif %}
+              playsinline
+              preload="metadata"
+              style="width:100%; height:100%; display:block; object-fit:cover; object-position:top center;"
+            ></video>
+          {%- else -%}
+            <div style="aspect-ratio: 3/4; background: #ddd; display:flex; align-items:center; justify-content:center; border-radius: {{ section.settings.image_radius }}px;">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+
+      {%- else -%}
+        {%- comment -%} YouTube / Vimeo embed {%- endcomment -%}
+        {%- if section.settings.embed_url != blank -%}
+          {%- assign embed_url = section.settings.embed_url -%}
+
+          {%- comment -%} Auto-append autoplay + mute params for YouTube {%- endcomment -%}
+          {%- if embed_url contains 'youtube.com' or embed_url contains 'youtu.be' -%}
+            {%- if embed_url contains 'watch?v=' -%}
+              {%- assign embed_url = embed_url | replace: 'watch?v=', 'embed/' -%}
+            {%- endif -%}
+            {%- if section.settings.embed_autoplay -%}
+              {%- assign embed_url = embed_url | append: '?autoplay=1&mute=1&loop=1&playsinline=1' -%}
+            {%- else -%}
+              {%- assign embed_url = embed_url | append: '?rel=0' -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- comment -%} Auto-append autoplay params for Vimeo {%- endcomment -%}
+          {%- if embed_url contains 'vimeo.com' -%}
+            {%- if section.settings.embed_autoplay -%}
+              {%- assign embed_url = embed_url | append: '?autoplay=1&muted=1&loop=1' -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          <div class="fsp-embed-wrap">
+            <iframe
+              src="{{ embed_url }}"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              title="{{ section.settings.embed_title | escape }}"
+            ></iframe>
+          </div>
+        {%- else -%}
+          <div style="aspect-ratio: 16/9; background: #ddd; display:flex; align-items:center; justify-content:center; border-radius: {{ section.settings.image_radius }}px;">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%} ── Right: Text ── {%- endcomment -%}
+    <div class="fsp-text-col">
+      {%- if section.settings.tagline != blank -%}
+        <div class="fsp-tagline">{{ section.settings.tagline }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <div class="fsp-heading">{{ section.settings.heading }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="fsp-desc">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Founder Spotlight",
+  "tag": "section",
+  "class": "section-founder-spotlight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable container (wrapper)",
+      "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "#f5f1ef"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "col_gap",
+      "min": 16, "max": 100, "step": 4, "unit": "px",
+      "label": "Gap Between Image & Text",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Video Source"
+    },
+    {
+      "type": "select",
+      "id": "video_source",
+      "label": "Video Source",
+      "default": "shopify",
+      "options": [
+        { "value": "shopify", "label": "Shopify-hosted Video" },
+        { "value": "embed", "label": "YouTube / Vimeo Embed" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Shopify-hosted Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Upload Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video",
+      "info": "MP4 video link from files — used if no video uploaded above"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Muted",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show Controls",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "YouTube / Vimeo Embed"
+    },
+    {
+      "type": "text",
+      "id": "embed_url",
+      "label": "Embed URL",
+      "info": "Paste the YouTube or Vimeo URL (e.g. https://www.youtube.com/watch?v=XXXX or https://vimeo.com/XXXX)"
+    },
+    {
+      "type": "checkbox",
+      "id": "embed_autoplay",
+      "label": "Autoplay (muted, looped)",
+      "default": false,
+      "info": "Autoplay requires muted video — browsers enforce this"
+    },
+    {
+      "type": "text",
+      "id": "embed_title",
+      "label": "Video Title (accessibility)",
+      "default": "Founder video"
+    },
+    {
+      "type": "select",
+      "id": "embed_aspect",
+      "label": "Embed Aspect Ratio",
+      "default": "56.25",
+      "info": "Controls iframe height. 56.25 = 16:9, 75 = 4:3, 100 = 1:1, 133 = 3:4 (portrait)",
+      "options": [
+        { "value": "56.25", "label": "16:9 (landscape)" },
+        { "value": "75", "label": "4:3" },
+        { "value": "100", "label": "1:1 (square)" },
+        { "value": "125", "label": "4:5 (portrait)" },
+        { "value": "133", "label": "3:4 (portrait tall)" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Video Column Size"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 20, "max": 60, "step": 2, "unit": "%",
+      "label": "Video Column Width",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0, "max": 32, "step": 2, "unit": "px",
+      "label": "Video Border Radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Tagline"
+    },
+    {
+      "type": "richtext",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "<p>The Founder</p>"
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Tagline Color",
+      "default": "#c0614a"
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "min": 10, "max": 24, "step": 1, "unit": "px",
+      "label": "Tagline Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "tagline_spacing",
+      "min": 0, "max": 8, "step": 0.5, "unit": "px",
+      "label": "Tagline Letter Spacing",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "tagline_gap",
+      "min": 0, "max": 32, "step": 2, "unit": "px",
+      "label": "Gap Below Tagline",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Meet Rose Rayner</p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a1a2e"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24, "max": 72, "step": 2, "unit": "px",
+      "label": "Heading Font Size",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading Font Weight",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_gap",
+      "min": 0, "max": 48, "step": 2, "unit": "px",
+      "label": "Gap Below Heading",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Seven years; that's the time that Rose dedicated to the Calmerceuticals Ultra Performance formula. Working with some of Australia's leading scientists, using qualitative and quantitive methods, rigorously testing and comparing what was previously the best on the market with an all new, uncompromising Australian-made formula.</p>"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default": "#444444"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "min": 12, "max": 22, "step": 1, "unit": "px",
+      "label": "Description Font Size",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder Spotlight"
+    }
+  ]
+}
+{% endschema %}

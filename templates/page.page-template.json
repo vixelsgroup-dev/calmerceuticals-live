@@ -1,0 +1,913 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_image_UDfF7W": {
+      "type": "section-banner-image",
+      "blocks": {
+        "text_gPnqxx": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "size": 100
+          }
+        },
+        "subheading_JH6nUN": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Why Collagen Matters for Beauty and Wellness</p>",
+            "size": 100
+          }
+        },
+        "heading_j8KyWx": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Understanding Collagen </strong></p>",
+            "size": 170,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_gPnqxx",
+        "subheading_JH6nUN",
+        "heading_j8KyWx"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1400px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "height": "four-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/Science-Backed-Hydration_2094x2_2094x_e9372dd3-5c64-4afa-a973-d8f277863f34.jpg",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "text_position": "bottom-left",
+        "text_alignment": "text-left",
+        "width": "wrapper--full-padded",
+        "padding_top": 10,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_7nnz8L": {
+      "type": "section-image-with-text",
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "section_height": "four-fifty-height",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_aqdKBL": {
+      "type": "section-image-with-text",
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "section_height": "four-fifty-height",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_overlapping_images_Mg8nNk": {
+      "type": "section-overlapping-images",
+      "disabled": true,
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "center",
+        "images_width": 400,
+        "images_offset": 75,
+        "image_1": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8270.webp",
+        "image_link_1": "",
+        "image_2": "shopify://shop_images/Stocksy_txpa565db0eJgX300_Medium_4428438.webp",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "title": "<p><strong>Why Do We </strong><em><strong>Lose</strong></em><strong> Collagen?</strong></p>",
+        "heading_size": 100,
+        "heading_highlight_type": "highlight-color",
+        "highlight_color": "#610c27",
+        "highlight_text_color": "#610c27",
+        "description": "<p>Collagen loss begins as early as your <strong>mid-20s</strong>, with production declining by about <strong>1% every year</strong>. This natural process accelerates for women after menopause, with depletion rates reaching up to <strong>2% annually</strong>. External factors such as sun exposure, smoking, pollution, and poor nutrition exacerbate the decline, leading to visible effects like fine lines and wrinkles, a loss of skin elasticity and firmness, thinning and brittle hair, and weak, peeling nails.</p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--primary",
+        "button_style": "btn--solid",
+        "button_size": "btn--large",
+        "video_text": "",
+        "video_link": "",
+        "animation": "diagonal",
+        "animation_intensity": 60,
+        "width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_6nDVe6": {
+      "type": "section-image-with-text",
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "section_height": "four-fifty-height",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_image_with_text_DMm7hx": {
+      "type": "section-image-with-text",
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1100px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "section_height": "four-fifty-height",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "narrow",
+        "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_grid_ApwhJy": {
+      "type": "section-grid",
+      "blocks": {
+        "image_ezXjUT": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "text_EynQDi": {
+          "type": "text",
+          "settings": {
+            "width": "66.66",
+            "text_position": "center",
+            "subheading": "Clinically Proven",
+            "title": "Scientifically Formulated",
+            "text": "Take the first step toward radiant skin, stronger nails, and healthier hair. Discover the science of collagen today.",
+            "button_1_text": "Learn More About The Science",
+            "button_1_link": "shopify://pages/science",
+            "button_2_text": "Shop Now",
+            "button_2_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "image_ezXjUT",
+        "text_EynQDi"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1200px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "desktop_height": "three-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "button_1_color": "btn--primary",
+        "button_1_style": "btn--solid",
+        "button_1_size": "btn--large",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--solid",
+        "button_2_size": "btn--large",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 50
+      }
+    },
+    "section_custom_content_f8Kjzd": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_GKCPxY": {
+          "type": "image",
+          "settings": {
+            "text_position": "middle-center",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "title": "Welcome to Palo Alto",
+            "heading_size": 100,
+            "image_text": "<p>Describe in a few words your special products, collection, or brand.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--small"
+          }
+        },
+        "text_qzYmMi": {
+          "type": "text",
+          "settings": {
+            "text_position": "center",
+            "top_image_width": 100,
+            "subheading": "Subheading",
+            "title": "Our Story",
+            "heading_size": 100,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--solid-border",
+            "button_2_size": "btn--small",
+            "bg_color": "#f0eeed"
+          }
+        }
+      },
+      "block_order": [
+        "image_GKCPxY",
+        "text_qzYmMi"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "four-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "reverse_blocks": true,
+        "width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_custom_content_4nRkwh": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_rDAQMK": {
+          "type": "image",
+          "settings": {
+            "text_position": "middle-center",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "title": "Welcome to Palo Alto",
+            "heading_size": 100,
+            "image_text": "<p>Describe in a few words your special products, collection, or brand.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--small"
+          }
+        },
+        "text_BLwRBY": {
+          "type": "text",
+          "settings": {
+            "text_position": "center",
+            "top_image_width": 100,
+            "subheading": "Subheading",
+            "title": "Our Story",
+            "heading_size": 100,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--solid-border",
+            "button_2_size": "btn--small",
+            "bg_color": "#f0eeed"
+          }
+        }
+      },
+      "block_order": [
+        "image_rDAQMK",
+        "text_BLwRBY"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "five-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "reverse_blocks": true,
+        "width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_custom_content_eRPMfe": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_wFiGxB": {
+          "type": "image",
+          "settings": {
+            "text_position": "middle-center",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "title": "Welcome to Palo Alto",
+            "heading_size": 100,
+            "image_text": "<p>Describe in a few words your special products, collection, or brand.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--small"
+          }
+        },
+        "text_KRip7Y": {
+          "type": "text",
+          "settings": {
+            "text_position": "center",
+            "top_image_width": 100,
+            "subheading": "Subheading",
+            "title": "Our Story",
+            "heading_size": 100,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--solid-border",
+            "button_2_size": "btn--small",
+            "bg_color": "#f0eeed"
+          }
+        }
+      },
+      "block_order": [
+        "image_wFiGxB",
+        "text_KRip7Y"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "five-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "reverse_blocks": true,
+        "width": "wrapper",
+        "add_gutter": false,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_text_47cE7M": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_QDTwUP": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>A note from our founder</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_LjeAn4": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Embrace your beauty: where radiance meets empowerment</strong></p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_rUar8A": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From the very inception of our journey, our vision has been to empower individuals with the confidence to embrace their unique beauty. Today, I am humbled to witness how our carefully crafted products have transformed countless lives, enhancing natural radiance and nurturing self-expression. Our commitment to using the finest, ethically-sourced ingredients ensures that you receive only the best for your skin. Together, we will continue to redefine beauty and empower each other to shine, both inside and out.</p>",
+            "size": 100
+          }
+        },
+        "button_WAcBxU": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "button_H6cJHj": {
+          "type": "button",
+          "settings": {
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_QDTwUP",
+        "heading_LjeAn4",
+        "text_rUar8A",
+        "button_WAcBxU",
+        "button_H6cJHj"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_position": "center",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_accordions_CjqwhE": {
+      "type": "section-accordions",
+      "blocks": {
+        "text_pnFxGc": {
+          "type": "text",
+          "settings": {
+            "title": "Hydronic Acid",
+            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p><p></p><p></p>"
+          }
+        },
+        "text_3WVqT8": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer warranty for your products?",
+            "text": "<p>All our products are subject to quality control.<br/><br/>Our warranty provides a guarantee against manufacturer defects.<br/><br/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br/><br/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.</p>"
+          }
+        },
+        "text_UxBRTn": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer refunds?",
+            "text": "<p>Yes, we offer full and partial refunds.<br/><br/>Please enquire for more information about our Refund policy.</p>"
+          }
+        },
+        "text_3BkUjE": {
+          "type": "text",
+          "settings": {
+            "title": "What shipping methods do you offer?",
+            "text": "<p>We use all major carriers, and local courier partners. Use the shipping estimator in the cart to check your shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_pnFxGc",
+        "text_3WVqT8",
+        "text_UxBRTn",
+        "text_3BkUjE"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": true,
+        "subheading": "Scientifically Formulated",
+        "title": "Ingredients",
+        "text": "",
+        "tabs_bg_color": "#ffffff",
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_custom_content_iJ7VXR": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_TywehX": {
+          "type": "image",
+          "settings": {
+            "text_position": "middle-center",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "title": "",
+            "heading_size": 100,
+            "image_text": "",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--small"
+          }
+        },
+        "text_VCpfEX": {
+          "type": "text",
+          "settings": {
+            "text_position": "center",
+            "top_image_width": 100,
+            "subheading": "Subheading",
+            "title": "Our Story",
+            "heading_size": 100,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "button_text": "Learn More About The Science",
+            "button_link": "shopify://pages/science",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--large",
+            "button_2_text": "Shop Now",
+            "button_2_link": "shopify://collections",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--large",
+            "bg_color": "#f0eeed"
+          }
+        }
+      },
+      "block_order": [
+        "image_TywehX",
+        "text_VCpfEX"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "three-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "reverse_blocks": false,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 60
+      }
+    },
+    "section_grid_innYbj": {
+      "type": "section-grid",
+      "blocks": {
+        "text_rCwBeP": {
+          "type": "text",
+          "settings": {
+            "width": "100",
+            "text_position": "center",
+            "subheading": "Brilliant botanicals",
+            "title": "Clean beauty that works",
+            "text": "Our formulas and ingredients are bio-degradable, ethically sourced, cruelty-free and vegan. Our aim is to produce only the best skincare and cosmetic products using high-quality + certified organic ingredients.",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_rCwBeP"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_height": "two-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "button_1_color": "btn--white",
+        "button_1_style": "btn--solid",
+        "button_1_size": "btn--medium",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--text",
+        "button_2_size": "btn--small",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": false,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_grid_WKzCt9": {
+      "type": "section-grid",
+      "blocks": {
+        "image_KURxUT": {
+          "type": "image",
+          "settings": {
+            "width": "100",
+            "image": "shopify://shop_images/img2.png",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_KURxUT"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_height": "two-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "button_1_color": "btn--primary",
+        "button_1_style": "btn--solid",
+        "button_1_size": "btn--large",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--solid",
+        "button_2_size": "btn--large",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_grid_UKy4jy": {
+      "type": "section-grid",
+      "blocks": {
+        "text_ipUVaN": {
+          "type": "text",
+          "settings": {
+            "width": "50",
+            "text_position": "center",
+            "subheading": "",
+            "title": "Why Do We Lose Collagen?",
+            "text": "Collagen loss begins as early as your mid-20s, with production declining by about 1% every year. This natural process accelerates for women after menopause, with depletion rates reaching up to 2% annually. External factors such as sun exposure, smoking, pollution, and poor nutrition exacerbate the decline, leading to visible effects like fine lines and wrinkles, a loss of skin elasticity and firmness, thinning and brittle hair, and weak, peeling nails.",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "image_RJe8gp": {
+          "type": "image",
+          "settings": {
+            "width": "50",
+            "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_8242.jpg",
+            "text_position": "center",
+            "subheading": "",
+            "title": "Our Values",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_ipUVaN",
+        "image_RJe8gp"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_height": "five-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "heading_size": 130,
+        "button_1_color": "btn--primary",
+        "button_1_style": "btn--outline",
+        "button_1_size": "btn--medium",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--text",
+        "button_2_size": "btn--small",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_multicolumn_C6Fp94": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_UVdxgQ": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_mHMDif": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_eW8eA4": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_7AgC8C": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_fr9xiY": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_jWQbH8": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_CB4tJD": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        },
+        "image_EK8FRc": {
+          "type": "image",
+          "settings": {
+            "column_width": 25,
+            "image": "shopify://shop_images/u9778399291_Top-down_view_white_background_with_lighting_and__2_539badf0-3f99-4da4-b51e-5b588677f887.png",
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Hydronic Acid",
+            "heading_size": 120,
+            "text": "<p>test</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small"
+          }
+        }
+      },
+      "block_order": [
+        "image_UVdxgQ",
+        "image_mHMDif",
+        "image_eW8eA4",
+        "image_7AgC8C",
+        "image_fr9xiY",
+        "image_jWQbH8",
+        "image_CB4tJD",
+        "image_EK8FRc"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Ingredients",
+        "heading_size": 120,
+        "text": "<p>Perfectly Formulated</p>",
+        "text_size": 100,
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "layout_mobile": "grid",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "section_banner_image_UDfF7W",
+    "section_image_with_text_7nnz8L",
+    "section_image_with_text_aqdKBL",
+    "section_image_with_text_6nDVe6",
+    "section_image_with_text_DMm7hx",
+    "section_grid_ApwhJy",
+    "section_overlapping_images_Mg8nNk",
+    "section_custom_content_f8Kjzd",
+    "section_custom_content_4nRkwh",
+    "section_custom_content_eRPMfe",
+    "section_text_47cE7M",
+    "section_accordions_CjqwhE",
+    "section_custom_content_iJ7VXR",
+    "section_grid_innYbj",
+    "section_grid_WKzCt9",
+    "section_grid_UKy4jy",
+    "section_multicolumn_C6Fp94",
+    "main"
+  ]
+}

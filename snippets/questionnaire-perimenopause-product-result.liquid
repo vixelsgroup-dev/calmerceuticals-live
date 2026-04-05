@@ -1,0 +1,93 @@
+{%- comment -%}
+  Perimenopause (Energy) flow — product result. Figma 3068:5212.
+  Expects: shop_now_url, section, branch_parent, branch_trigger, peri_concern (hot|sleep|mood|libido).
+{%- endcomment -%}
+{%- liquid
+  assign peri_img_url = 'questionnaire-perimenopause-product.png' | asset_url
+  assign peri_img_alt = 'PeriCalm — Perimenopause Supplement — Calmerceuticals'
+-%}
+<article
+  class="questionnaire__screen questionnaire__screen--product-result questionnaire__screen--product-result-peri"
+  data-questionnaire-screen
+  data-screen-type="product_result"
+  data-default-url="{{ shop_now_url | escape }}"
+  data-skip-gender-product-url="true"
+  {% if branch_parent != blank %}
+    data-branch-parent="{{ branch_parent | escape }}"
+  {% endif %}
+  {% if branch_trigger != blank %}
+    data-branch-trigger="{{ branch_trigger | escape }}"
+  {% endif %}
+>
+  <div class="questionnaire__product-stage questionnaire__product-stage--peri">
+    <div class="questionnaire__product-card questionnaire__product-card--peri">
+      <div class="questionnaire__product-badge questionnaire__product-badge--peri">Recommended for you</div>
+
+      <div class="questionnaire__product-media questionnaire__product-media--peri">
+        <img
+          class="questionnaire__product-img questionnaire__product-img--peri"
+          src="{{ peri_img_url }}"
+          alt="{{ peri_img_alt | escape }}"
+          width="460"
+          height="460"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="questionnaire__product-banner questionnaire__product-banner--peri">
+        <div class="questionnaire__product-banner-text">
+          <p class="questionnaire__product-banner-primary">See results in 180 days</p>
+          <p class="questionnaire__product-banner-secondary">or your money back</p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-body questionnaire__product-body--peri">
+        <div class="questionnaire__product-body-inner questionnaire__product-body-inner--peri">
+          <h2 class="questionnaire__product-title questionnaire__product-title--peri">PeriCalm — Perimenopause Supplement</h2>
+
+          <div class="questionnaire__product-lead questionnaire__product-lead--peri">
+            {% case peri_concern %}
+              {% when 'hot' %}
+                <p class="questionnaire__product-lead-line">Based on your concern about&nbsp;hot flushes and night sweats, here is the formula</p>
+                <p class="questionnaire__product-lead-line">clinically shown to improve flush scores in 8 weeks.</p>
+              {% when 'sleep' %}
+                <p class="questionnaire__product-lead-line">Based on your concern about&nbsp;poor sleep and exhaustion, here is the formula</p>
+                <p class="questionnaire__product-lead-line">clinically shown to support sleep quality and daytime energy in 8 weeks.</p>
+              {% when 'mood' %}
+                <p class="questionnaire__product-lead-line">Based on your concern about&nbsp;mood swings, anxiety or low mood, here is the formula</p>
+                <p class="questionnaire__product-lead-line">clinically shown to support emotional balance in 8 weeks.</p>
+              {% when 'libido' %}
+                <p class="questionnaire__product-lead-line">Based on your concern about&nbsp;low libido, energy and sexual wellbeing, here is the formula</p>
+                <p class="questionnaire__product-lead-line">clinically shown to support vitality and desire in 8 weeks.</p>
+              {% else %}
+                <p class="questionnaire__product-lead-line">Based on your responses, here is the formula selected for perimenopause support.</p>
+            {% endcase %}
+          </div>
+
+          <p class="questionnaire__product-detail questionnaire__product-detail--peri">
+            Formulated with White Grape Seed Extract — clinically shown to improve hot-flush scores and sleep quality within 8 weeks.
+            Adaptogenic Maca further supports the hormonal fluctuations that trigger hot flushes and mood changes. Together they address the
+            root hormonal drivers of perimenopausal discomfort.
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-price-row questionnaire__product-price-row--peri">
+        <span class="questionnaire__product-plan">12-Week Longevity Reset</span>
+        <div class="questionnaire__product-prices">
+          <span class="questionnaire__product-price-compare">$686.00</span>
+          <span class="questionnaire__product-price-sale">$447.00</span>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-cta-wrap questionnaire__product-cta-wrap--peri">
+        <a
+          class="questionnaire__product-cta questionnaire__product-cta--peri"
+          href="{{ shop_now_url | escape }}"
+          data-questionnaire-product-cta
+          >SHOP NOW</a
+        >
+      </div>
+    </div>
+  </div>
+</article>

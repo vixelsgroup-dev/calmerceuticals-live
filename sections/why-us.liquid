@@ -1,0 +1,563 @@
+{%- liquid
+  assign section_id = 'WhyUs-' | append: section.id
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="why-us"
+  style="
+    --why-us-bg: {{ section.settings.background_color }};
+    --why-us-heading: {{ section.settings.heading_color }};
+    --why-us-subtext: {{ section.settings.subtext_color }};
+    --why-us-card-bg: {{ section.settings.card_background }};
+    --why-us-body: {{ section.settings.body_color }};
+    --why-us-button-bg: {{ section.settings.button_bg }};
+    --why-us-button-text: {{ section.settings.button_text_color }};
+    --why-us-footnote: {{ section.settings.footnote_color }};
+    --why-us-play-bg: {{ section.settings.play_bg }};
+    --why-us-play-icon: {{ section.settings.play_icon }};
+    --why-us-pt: {{ section.settings.padding_top }}px;
+    --why-us-pb: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="wrapper why-us__inner">
+    {% if section.settings.heading != blank %}
+      <div class="why-us__heading rte">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.subtext != blank %}
+      <div class="why-us__subtext rte">{{ section.settings.subtext }}</div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="why-us__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'video_card' %}
+            <article class="why-us__card" {{ block.shopify_attributes }}>
+              <div class="why-us__media">
+                {% if block.settings.video != blank %}
+                  {% assign why_us_poster = block.settings.video.preview_image | image_url: width: 1200 %}
+                  {{
+                    block.settings.video
+                    | video_tag:
+                      autoplay: false,
+                      loop: false,
+                      controls: false,
+                      muted: false,
+                      playsinline: true,
+                      preload: 'metadata',
+                      poster: why_us_poster,
+                      class: 'why-us__video'
+                  }}
+                {% elsif block.settings.video_url != blank %}
+                  <video class="why-us__video" playsinline preload="metadata">
+                    <source src="{{ block.settings.video_url | escape }}" type="video/mp4">
+                  </video>
+                {% endif %}
+
+                <button class="why-us__play" type="button" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 6.8v10.4c0 .5.6.8 1 .5l8.2-5.2a.6.6 0 0 0 0-1L9 6.3a.6.6 0 0 0-1 .5z"></path>
+                  </svg>
+                </button>
+              </div>
+
+              {% if block.settings.review_text != blank %}
+                <div class="why-us__review rte">{{ block.settings.review_text }}</div>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_label != blank %}
+      <div class="why-us__actions">
+        <a class="why-us__button" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if section.settings.footnote != blank %}
+      <p class="why-us__footnote">{{ section.settings.footnote | escape }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #{{ section_id }} {
+    background: var(--why-us-bg);
+    padding-top: var(--why-us-pt);
+    padding-bottom: var(--why-us-pb);
+  }
+
+  #{{ section_id }} .why-us__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  #{{ section_id }} .why-us__heading {
+    color: var(--why-us-heading);
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 0;
+    max-width: 760px;
+  }
+
+  #{{ section_id }} .why-us__heading p {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  #{{ section_id }} .why-us__heading  {
+    font-weight: 500 !important;
+  }
+
+  #{{ section_id }} .why-us__subtext {
+    color: var(--why-us-subtext);
+    margin-top: 12px;
+    margin-bottom: 28px;
+    max-width: 640px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  #{{ section_id }} .why-us__subtext p {
+    margin: 0;
+  }
+
+  #{{ section_id }} .why-us__grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x proximity;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  #{{ section_id }} .why-us__grid.is-centered {
+    justify-content: center;
+  }
+
+  #{{ section_id }} .why-us__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #{{ section_id }} .why-us__card {
+    background: var(--why-us-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 0 0 288px;
+    scroll-snap-align: start;
+  }
+
+  #{{ section_id }} .why-us__media {
+    position: relative;
+    background: #ddd;
+    aspect-ratio: 3 / 4;
+  }
+
+  #{{ section_id }} .why-us__video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #{{ section_id }} .why-us__video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  #{{ section_id }} .why-us__video.is-playing::-webkit-media-controls {
+    opacity: 1;
+  }
+
+  #{{ section_id }} .why-us__play {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 2px;
+    background: var(--why-us-play-bg);
+    color: var(--why-us-play-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  #{{ section_id }} .why-us__play svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  #{{ section_id }} .why-us__review {
+    color: var(--why-us-body);
+    text-align: center;
+    padding: 16px 14px 18px;
+    line-height: 1.45;
+  }
+
+  #{{ section_id }} .why-us__review p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  #{{ section_id }} .why-us__review p + p {
+    margin-top: 8px;
+  }
+
+  #{{ section_id }} .why-us__review p:last-child {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  #{{ section_id }} .why-us__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  #{{ section_id }} .why-us__button {
+    min-width: 320px;
+    text-align: center;
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 6px;
+    background: var(--why-us-button-bg);
+    color: var(--why-us-button-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  #{{ section_id }} .why-us__footnote {
+    margin: 24px auto 0;
+    text-align: center;
+    color: var(--why-us-footnote);
+    max-width: 860px;
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  #{{ section_id }} .why-us__footnote,
+  #{{ section_id }} .why-us__footnote p {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 767px) {
+    #{{ section_id }} .why-us__inner {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    #{{ section_id }} .why-us__heading {
+      font-size: 48px;
+      max-width: 320px;
+    }
+
+    #{{ section_id }} .why-us__subtext {
+      margin-top: 10px;
+      margin-bottom: 18px;
+      font-size: 20px;
+      max-width: 320px;
+    }
+
+    #{{ section_id }} .why-us__grid {
+      display: flex !important;
+      flex-direction: column;
+      flex-wrap: nowrap !important;
+      overflow-x: visible !important;
+      overflow-y: visible;
+      gap: 12px;
+      scroll-snap-type: none;
+      padding-bottom: 4px;
+    }
+
+    #{{ section_id }} .why-us__card {
+      flex: 1 1 auto !important;
+      min-width: 100%;
+      width: 100%;
+    }
+
+    #{{ section_id }} .why-us__review {
+      padding: 16px 12px 20px;
+    }
+
+    #{{ section_id }} .why-us__review p {
+      font-size: 16px;
+    }
+
+    #{{ section_id }} .why-us__button {
+      width: 100%;
+      min-width: 0;
+    }
+
+    #{{ section_id }} .why-us__footnote {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const section = document.getElementById('{{ section_id }}');
+    if (!section) return;
+    const grid = section.querySelector('.why-us__grid');
+
+    const syncCenteredState = () => {
+      if (!grid || window.innerWidth <= 767) return;
+      const canScroll = grid.scrollWidth > grid.clientWidth + 2;
+      grid.classList.toggle('is-centered', !canScroll);
+    };
+
+    syncCenteredState();
+    window.addEventListener('resize', syncCenteredState);
+
+    section.querySelectorAll('.why-us__media').forEach((media) => {
+      const video = media.querySelector('video');
+      const playButton = media.querySelector('.why-us__play');
+
+      if (!video || !playButton) return;
+
+      playButton.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+        video.classList.add('is-playing');
+        playButton.style.display = 'none';
+      });
+
+      video.addEventListener('play', () => {
+        video.controls = true;
+        video.classList.add('is-playing');
+        playButton.style.display = 'none';
+      });
+
+      video.addEventListener('pause', () => {
+        video.controls = false;
+        video.classList.remove('is-playing');
+        playButton.style.display = '';
+      });
+
+      video.addEventListener('ended', () => {
+        video.controls = false;
+        video.classList.remove('is-playing');
+        playButton.style.display = '';
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Why us",
+  "tag": "section",
+  "class": "section-why-us",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Don't just take our word for it, see what our customers say</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading max size",
+      "min": 32,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "START YOUR REJUVENATION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Bottom note",
+      "default": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F9F9FB"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext color",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Card text color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#6b0329"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footnote_color",
+      "label": "Footnote color",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "play_bg",
+      "label": "Play button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "play_icon",
+      "label": "Play button icon",
+      "default": "#2f2f2f"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 90
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_card",
+      "name": "Video card",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Shopify hosted video"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "External MP4 URL fallback"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why us",
+      "blocks": [
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,162 @@
+{%- liquid
+  assign testimonial_blocks = section.blocks | where: 'type', 'testimonial'
+  assign slide_count = testimonial_blocks.size
+  assign show_nav = false
+  if slide_count > 1
+    assign show_nav = true
+  endif
+-%}
+
+{%- if slide_count < 1 -%}
+  <div {{ section.shopify_attributes }}></div>
+{%- else -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@500&family=Inter:wght@600&display=swap"
+>
+<link rel="stylesheet" href="{{ 'testimonial-showcase.css' | asset_url }}">
+
+<section
+  id="TestimonialShowcase-{{ section.id }}"
+  class="testimonial-showcase"
+  style="
+    --tsc-pad-top: {{ section.settings.padding_top }}px;
+    --tsc-pad-bottom: {{ section.settings.padding_bottom }}px;
+    --tsc-bg: {{ section.settings.background_color | default: '#ffffff' }};
+  "
+  aria-label="Customer testimonials"
+  {{ section.shopify_attributes }}
+>
+  <div class="testimonial-showcase__bg" aria-hidden="true"></div>
+
+  <div class="testimonial-showcase__inner">
+    <div
+      id="TestimonialShowcase-{{ section.id }}-viewport"
+      class="testimonial-showcase__viewport"
+      data-tsc-slider
+      data-tsc-count="{{ slide_count }}"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div class="testimonial-showcase__track" data-tsc-track>
+        {%- for block in testimonial_blocks -%}
+          {% render 'testimonial-showcase-slide', block: block %}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if show_nav -%}
+      <div class="testimonial-showcase__nav" data-tsc-nav>
+        <button
+          type="button"
+          class="testimonial-showcase__nav-btn"
+          data-tsc-prev
+          aria-controls="TestimonialShowcase-{{ section.id }}-viewport"
+        >
+          <span class="visually-hidden">Previous testimonial</span>
+          {% render 'icon-chevron-24', direction: 'left', icon_class: 'testimonial-showcase__nav-icon' %}
+        </button>
+        <button
+          type="button"
+          class="testimonial-showcase__nav-btn"
+          data-tsc-next
+          aria-controls="TestimonialShowcase-{{ section.id }}-viewport"
+        >
+          <span class="visually-hidden">Next testimonial</span>
+          {% render 'icon-chevron-24', direction: 'right', icon_class: 'testimonial-showcase__nav-icon' %}
+        </button>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script src="{{ 'testimonial-showcase.js' | asset_url }}" defer></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Testimonial showcase",
+  "tag": "section",
+  "class": "section-testimonial-showcase",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "“I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.”"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name",
+          "default": "Jordan Mitchell"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Author photo"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star rating",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial showcase",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "“I'm usually skeptical of supplements doing what they claim, but this one works, so I've bumped up the frequency of my order.”",
+            "author": "Jordan Mitchell",
+            "star_rating": 5
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

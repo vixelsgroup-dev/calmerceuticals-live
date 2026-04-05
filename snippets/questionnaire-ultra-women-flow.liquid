@@ -1,0 +1,1063 @@
+    {%- comment -%} Ultra Performance Women — entry (Gut axis + Female | Non-binary) {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area of health are you looking to support?"
+      data-branch-trigger="Gut health, immunity &amp; skin axis"
+      data-branch-parent2="What is your gender?"
+      data-branch-any2="Female|Non-binary"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Which area do you most want to improve?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Energy and stamina throughout the day"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Energy and stamina throughout the day</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Libido, confidence and drive"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Libido, confidence and drive</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mental focus and mood balance"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mental focus and mood balance</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Strength and active recovery"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Strength and active recovery</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — energy — step 1 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Energy and stamina throughout the day"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is low energy affecting your daily life?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Struggling through work and family demands"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Struggling through work and family demands</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Can't exercise as much as I want to"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Can't exercise as much as I want to</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Relying on caffeine to get through the day"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Relying on caffeine to get through the day</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — energy — step 2 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Energy and stamina throughout the day"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do you also notice mood or hormonal fluctuations?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — mood and energy both feel off"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — mood and energy both feel off</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Slightly — mainly an energy issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Slightly — mainly an energy issue</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — just need more sustained energy"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — just need more sustained energy</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — energy — step 3 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Energy and stamina throughout the day"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How active are you week to week?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Training regularly — performance focused"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Training regularly — performance focused</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Active 2–3 days — health focused"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Active 2–3 days — health focused</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mostly sedentary — want more energy first"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mostly sedentary — want more energy first</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — energy — step 4 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Energy and stamina throughout the day"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 90 days?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Steady energy — no spike, no crash"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Steady energy — no spike, no crash</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="More stamina for work, family and exercise"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">More stamina for work, family and exercise</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Less reliance on caffeine"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Less reliance on caffeine</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — email / result (energy) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'ultra-women-energy',
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Energy and stamina throughout the day'
+    %}
+    {% render 'questionnaire-ultra-women-product-result',
+      shop_now_url: ultra_women_shop_url,
+      section: section,
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Energy and stamina throughout the day',
+      ultra_women_concern: 'energy'
+    %}
+
+    {%- comment -%} Ultra Women — libido — step 1 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Libido, confidence and drive"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is low libido or drive showing up?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low desire and reduced intimacy"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low desire and reduced intimacy</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low confidence and motivation generally"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low confidence and motivation generally</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Feeling disconnected and flat overall"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Feeling disconnected and flat overall</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — libido — step 2 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Libido, confidence and drive"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been experiencing this?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few weeks — something has recently shifted"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few weeks — something has recently shifted</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months — gradually worsening"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months — gradually worsening</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — I need real support now"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — I need real support now</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — libido — step 3 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Libido, confidence and drive"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is low drive linked to hormonal or cycle changes?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — it feels hormonally driven"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — it feels hormonally driven</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Possibly — hard to tell"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Possibly — hard to tell</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — it's more about stress and lifestyle"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — it's more about stress and lifestyle</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — libido — step 4 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Libido, confidence and drive"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 90 days?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Restored confidence, desire and drive"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Restored confidence, desire and drive</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Healthy androgen balance for energy and mood"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Healthy androgen balance for energy and mood</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Better intimacy and sexual satisfaction"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Better intimacy and sexual satisfaction</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — email / result (libido) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'ultra-women-libido',
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Libido, confidence and drive'
+    %}
+    {% render 'questionnaire-ultra-women-product-result',
+      shop_now_url: ultra_women_shop_url,
+      section: section,
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Libido, confidence and drive',
+      ultra_women_concern: 'libido'
+    %}
+
+    {%- comment -%} Ultra Women — focus — step 1 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Mental focus and mood balance"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How does brain fog or mood affect you most?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Hard to concentrate during demanding days"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Hard to concentrate during demanding days</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mood swings affecting work and relationships"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mood swings affecting work and relationships</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Anxious and overwhelmed, lacking calm"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Anxious and overwhelmed, lacking calm</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — focus — step 2 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Mental focus and mood balance"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Do energy crashes contribute to the brain fog?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — I crash and then can't focus"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — I crash and then can't focus</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Sometimes — they are linked"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Sometimes — they are linked</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — energy is fine, focus is the issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — energy is fine, focus is the issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — focus — step 3 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Mental focus and mood balance"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">When do you most need mental clarity?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Work — high-pressure days and tight deadlines"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Work — high-pressure days and tight deadlines</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Family life — staying patient and present"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Family life — staying patient and present</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All day — I want consistent calm clarity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All day — I want consistent calm clarity</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — focus — step 4 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Mental focus and mood balance"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 90 days?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Calm, clear focus every day"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Calm, clear focus every day</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Better mood balance and less anxiety"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Better mood balance and less anxiety</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Composure under pressure"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Composure under pressure</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — email / result (focus) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'ultra-women-focus',
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Mental focus and mood balance'
+    %}
+    {% render 'questionnaire-ultra-women-product-result',
+      shop_now_url: ultra_women_shop_url,
+      section: section,
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Mental focus and mood balance',
+      ultra_women_concern: 'focus'
+    %}
+
+    {%- comment -%} Ultra Women — recovery — step 1 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Strength and active recovery"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What does poor recovery feel like for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Muscle soreness lasting days after training"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Muscle soreness lasting days after training</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low energy the day after exercise"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low energy the day after exercise</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Joint stiffness and physical discomfort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Joint stiffness and physical discomfort</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — recovery — step 2 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Strength and active recovery"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is skin health also a priority alongside performance?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — want to look and feel strong"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — want to look and feel strong</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — recovery is the main goal"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — recovery is the main goal</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not currently — just focused on training"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not currently — just focused on training</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — recovery — step 3 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Strength and active recovery"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How often do you train per week?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="5–7 days — very active schedule"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">5–7 days — very active schedule</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="3–4 days — consistent training"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">3–4 days — consistent training</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="1–2 days — moderate activity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">1–2 days — moderate activity</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — recovery — step 4 {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area do you most want to improve?"
+      data-branch-trigger="Strength and active recovery"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 90 days?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Faster recovery between training sessions"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Faster recovery between training sessions</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Comfortable joints and better mobility"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Comfortable joints and better mobility</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Stronger body that looks and feels great"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Stronger body that looks and feels great</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Ultra Women — email / result (recovery) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'ultra-women-recovery',
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Strength and active recovery'
+    %}
+    {% render 'questionnaire-ultra-women-product-result',
+      shop_now_url: ultra_women_shop_url,
+      section: section,
+      branch_parent: 'Which area do you most want to improve?',
+      branch_trigger: 'Strength and active recovery',
+      ultra_women_concern: 'recovery'
+    %}

@@ -1,0 +1,97 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "logo_7t4cX4": {
+          "type": "logo",
+          "settings": {
+            "alignment": "text-center",
+            "image": "shopify://shop_images/Monogram_6.png",
+            "logo_width": 150,
+            "show_shop_name": false,
+            "text": "",
+            "column_width": "20"
+          }
+        },
+        "divider_GzUArY": {
+          "type": "divider",
+          "settings": {
+            "show_border_line": false,
+            "column_width": "10"
+          }
+        },
+        "footer-block-2": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "shop-footer",
+            "title": "Shop",
+            "column_width": "20"
+          }
+        },
+        "footer-block-3": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "learn-more-footer",
+            "title": "Learn More",
+            "column_width": "20"
+          }
+        },
+        "link_EBTJUC": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "support-footer",
+            "title": "Support",
+            "column_width": "20"
+          }
+        }
+      },
+      "block_order": [
+        "logo_7t4cX4",
+        "divider_GzUArY",
+        "footer-block-2",
+        "footer-block-3",
+        "link_EBTJUC"
+      ],
+      "settings": {
+        "show_footer_wave": false,
+        "enable_footer_parallax": true,
+        "increase_border_radius": true,
+        "bottom_bar_alignment": "text-center",
+        "show_social_links": true,
+        "enable_follow_on_shop": false,
+        "show_payment_icons": true,
+        "enable_greyscale": false,
+        "bottom_menu": "",
+        "color_text": "#ffffff",
+        "color_scheme": "scheme-2",
+        "color_border": "#ffffff",
+        "show_locale_selector": false,
+        "show_locale_code": true,
+        "show_country_selector": true,
+        "show_country_name": false,
+        "show_country_flag": true,
+        "width": "wrapper",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

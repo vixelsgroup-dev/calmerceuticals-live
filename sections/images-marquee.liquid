@@ -1,0 +1,199 @@
+{% comment %}
+  Section: Image Marquee / Auto-scroll
+  - Infinite CSS auto-scroll left
+  - Images continuously moving, pause on hover optional
+  - Edge fade mask on left & right
+  - Fully dynamic image blocks
+{% endcomment %}
+
+<section class="img-marquee" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="img-marquee__track-wrap">
+    <div class="img-marquee__track" style="animation-duration: {{ section.settings.speed }}s; gap: {{ section.settings.image_gap }}px;">
+
+      {%- comment -%} First set {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'image' and block.settings.image != blank -%}
+          <div class="img-marquee__item" style="height: {{ section.settings.image_height }}px; border-radius: {{ section.settings.image_radius }}px;" {{ block.shopify_attributes }}>
+            <img
+              src="{{ block.settings.image | img_url: '600x600', crop: 'center' }}"
+              alt="{{ block.settings.image.alt | default: 'Gallery image' | escape }}"
+              class="img-marquee__img"
+              loading="lazy"
+              width="600"
+              height="600"
+            >
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- comment -%} Duplicate set for seamless loop {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'image' and block.settings.image != blank -%}
+          <div class="img-marquee__item" style="height: {{ section.settings.image_height }}px; border-radius: {{ section.settings.image_radius }}px;" aria-hidden="true">
+            <img
+              src="{{ block.settings.image | img_url: '600x600', crop: 'center' }}"
+              alt=""
+              class="img-marquee__img"
+              loading="lazy"
+              width="600"
+              height="600"
+            >
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+<style>
+.img-marquee{width:100%;box-sizing:border-box;overflow:hidden;}
+.img-marquee__track-wrap{overflow:hidden;width:100%;}
+.img-marquee__track{display:flex;align-items:center;width:max-content;animation:img-marquee-scroll linear infinite;}
+{% if section.settings.pause_on_hover %}.img-marquee__track:hover{animation-play-state:paused;}{% endif %}
+@keyframes img-marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.img-marquee__item{flex-shrink:0;overflow:hidden;aspect-ratio:{{ section.settings.image_ratio }};}
+.img-marquee__img{width:100%;height:100%;object-fit:cover;display:block;}
+</style>
+
+{% schema %}
+{
+  "name": "Image Marquee",
+  "tag": "section",
+  "class": "section-img-marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 80,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Image Height",
+      "default": 180
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "1 / 1", "label": "Square 1:1" },
+        { "value": "4 / 3", "label": "Landscape 4:3" },
+        { "value": "3 / 4", "label": "Portrait 3:4" },
+        { "value": "16 / 9", "label": "Wide 16:9" },
+        { "value": "9 / 16", "label": "Tall 9:16" }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Between Images",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll Speed (higher = slower)",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on Hover",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Marquee",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

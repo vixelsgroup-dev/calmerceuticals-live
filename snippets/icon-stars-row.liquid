@@ -1,0 +1,22 @@
+{%- comment -%}
+  Horizontal row of filled rating stars. Params: count (1–5, default 5),
+  row_class, star_wrap_class, star_class (passed to icon-star-filled), max_stars (default 5 for aria-label).
+{%- endcomment -%}
+{%- liquid
+  assign star_count = count | default: 5 | plus: 0
+  assign max_stars = max_stars | default: 5 | plus: 0
+  if star_count > max_stars
+    assign star_count = max_stars
+  elsif star_count < 1
+    assign star_count = max_stars
+  endif
+  assign row_class = row_class | default: 'icon-stars-row'
+  assign star_wrap_class = star_wrap_class | default: 'icon-stars-row__item'
+-%}
+<div class="{{ row_class }}" role="img" aria-label="{{ star_count }} out of {{ max_stars }} stars">
+  {%- for i in (1..star_count) -%}
+    <span class="{{ star_wrap_class }}">
+      {% render 'icon-star-filled', star_class: star_class %}
+    </span>
+  {%- endfor -%}
+</div>

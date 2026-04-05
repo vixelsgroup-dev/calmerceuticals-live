@@ -1,0 +1,42 @@
+{% liquid
+  assign benefits_card_alt = block.settings.title_line_1 | append: ' ' | append: block.settings.title_line_2 | strip
+  if benefits_card_alt == blank
+    assign benefits_card_alt = 'Benefit'
+  endif
+  assign benefits_image_focus = block.settings.image_focus | default: 'center center'
+%}
+<div
+  class="benefits-grid__card-media"
+  style="--benefits-grid-img-position: {{ benefits_image_focus }};"
+>
+  {% if block.settings.image != blank %}
+    {{
+      block.settings.image
+      | image_url: width: 2000
+      | image_tag:
+        class: 'benefits-grid__card-bg',
+        loading: 'lazy',
+        sizes: '(min-width: 990px) 45vw, 100vw',
+        widths: '375, 550, 750, 1100, 1400, 1800, 2000',
+        alt: benefits_card_alt
+    }}
+  {% else %}
+    <div class="benefits-grid__card-bg benefits-grid__card-bg--placeholder" role="img" aria-label="{{ benefits_card_alt | escape }}"></div>
+  {% endif %}
+  <div class="benefits-grid__card-overlay" aria-hidden="true"></div>
+</div>
+<div class="benefits-grid__card-inner">
+  {% if block.settings.title_line_1 != blank or block.settings.title_line_2 != blank %}
+    <h3 class="benefits-grid__card-title">
+      {% if block.settings.title_line_1 != blank %}
+        <span class="benefits-grid__card-title-line">{{ block.settings.title_line_1 | escape }}</span>
+      {% endif %}
+      {% if block.settings.title_line_2 != blank %}
+        <span class="benefits-grid__card-title-line">{{ block.settings.title_line_2 | escape }}</span>
+      {% endif %}
+    </h3>
+  {% endif %}
+  {% if block.settings.body != blank %}
+    <p class="benefits-grid__card-body">{{ block.settings.body | escape | newline_to_br }}</p>
+  {% endif %}
+</div>

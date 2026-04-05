@@ -1,0 +1,560 @@
+{% comment %}
+  SECTION: Real Results Grid
+{% endcomment %}
+
+<style>
+  /* ── Shell ── */
+  #rrg-{{ section.id }} { background: {{ section.settings.section_bg }};  margin: 0 24px; border-radius: 12px;}
+  #rrg-{{ section.id }} .text-center{text-align: center;}
+  #rrg-{{ section.id }} .rrg-bg{padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; padding-left: 12px; padding-right:12px;}
+
+  #rrg-{{ section.id }} .rrg-row1 { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  #rrg-{{ section.id }} .rrg-row1__heading { margin-bottom: 32px; }
+  #rrg-{{ section.id }} .rrg-row1__heading p {font-family:"Jost"; font-size: {{ section.settings.heading_size }}px; font-weight: 500; color: {{ section.settings.heading_color }}; line-height: 120%; margin: 0; letter-spacing: 0%; }
+  #rrg-{{ section.id }} .rrg-row1__img-wrap { width: 100%; max-width: 700px; }
+  #rrg-{{ section.id }} .rrg-row1__img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+  #rrg-{{ section.id }} .rrg-row2 { display: grid; grid-template-columns: 1fr 1.2fr; gap: {{ section.settings.grid_gap }}px; margin-top: {{ section.settings.grid_gap }}px; align-items: stretch; }
+
+  #rrg-{{ section.id }} .rrg-row2__left { display: flex; flex-direction: column; gap: {{ section.settings.grid_gap }}px; }
+
+  #rrg-{{ section.id }} .rrg-tile-a { position: relative; overflow: hidden; border-radius: {{ section.settings.tile_radius }}px; max-height:310px ; background-color: {{ section.settings.tile_a_fallback }}; }
+  #rrg-{{ section.id }} .rrg-tile-a img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  #rrg-{{ section.id }} .rrg-tile-a__overlay { position: absolute; inset: 0; background: {{ section.settings.tile_a_overlay }}; }
+  #rrg-{{ section.id }} .rrg-tile-a__content { position: relative; z-index: 2; padding: {{ section.settings.tile_pad }}px; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; gap: 48px; }
+  #rrg-{{ section.id }} .rrg-tile-a__top-label {font-family:"Jost"; font-size: {{ section.settings.tile_label_size }}px; font-weight: 500; color: {{ section.settings.tile_label_color }}; }
+  #rrg-{{ section.id }} .rrg-tile-a__number {font-family:"Jost"; font-size: {{ section.settings.tile_a_number_size }}px; font-weight: 500; color: {{ section.settings.tile_a_number_color }}; line-height: 1; letter-spacing: 0%; }
+  #rrg-{{ section.id }} .rrg-tile-a__bottom-label {font-family:"Jost"; font-size: {{ section.settings.tile_label_size }}px; font-weight: 500; color: {{ section.settings.tile_label_color }}; }
+
+  #rrg-{{ section.id }} .rrg-tile-b { background: {{ section.settings.tile_b_bg }}; border-radius: {{ section.settings.tile_radius }}px; padding: {{ section.settings.tile_pad }}px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+  #rrg-{{ section.id }} .rrg-tile-b__number {font-family:"Jost"; font-size: {{ section.settings.tile_b_number_size }}px; font-weight: 500; color: {{ section.settings.tile_b_number_color }}; line-height: 1; letter-spacing: 0%; margin-bottom: 12px; }
+  #rrg-{{ section.id }} .rrg-tile-b__label {font-family:"Jost"; font-size: {{ section.settings.tile_label_size }}px; font-weight: 400; color: {{ section.settings.tile_b_label_color }}; line-height: 120%; }
+
+  #rrg-{{ section.id }} .rrg-tile-c { position: relative; overflow: hidden; border-radius: {{ section.settings.tile_radius }}px; }
+  #rrg-{{ section.id }} .rrg-tile-c img { position: absolute; inset: 0; width: 100%; border-radius: {{ section.settings.tile_radius }}px; height: 100%; object-fit: cover; display: block; }
+  #rrg-{{ section.id }} .rrg-tile-c__overlay { position: absolute; inset: 0; background: {{ section.settings.tile_c_overlay }}; }
+  #rrg-{{ section.id }} .rrg-tile-c__content { position: relative; z-index: 2; padding: {{ section.settings.tile_pad }}px; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; height: 100%; box-sizing: border-box; }
+  #rrg-{{ section.id }} .rrg-tile-c__top-label {font-family:"Jost"; font-size: {{ section.settings.tile_c_font_size }}px; font-weight: 500; color: {{ section.settings.tile_c_label_color }}; }
+  #rrg-{{ section.id }} .rrg-tile-c__number {font-family:"Jost"; font-size: {{ section.settings.tile_c_number_size }}px; font-weight: 400; color: {{ section.settings.tile_c_number_color }}; line-height: 120%; letter-spacing: 0%;  }
+  #rrg-{{ section.id }} .rrg-tile-c__bottom-label {font-family:"Jost"; font-size: {{ section.settings.tile_c_font_size }}px; font-weight: 500; color: {{ section.settings.tile_c_label_color }}; }
+
+  #rrg-{{ section.id }} .rrg-row3 { position: relative; overflow: hidden; border-radius: {{ section.settings.tile_radius }}px; margin-top: {{ section.settings.grid_gap }}px; min-height: 350px; background-color: {{ section.settings.row3_fallback }}; }
+  #rrg-{{ section.id }} .rrg-row3 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  #rrg-{{ section.id }} .rrg-row3__overlay { position: absolute; inset: 0; background: {{ section.settings.row3_overlay }}; }
+  #rrg-{{ section.id }} .rrg-row3__content { position: relative; z-index: 2; padding: {{ section.settings.row3_pad }}px; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; }
+  #rrg-{{ section.id }} .rrg-row3__title p {font-family:"Jost"; font-size: {{ section.settings.row3_title_size }}px; font-weight: 500; color: {{ section.settings.row3_title_color }}; line-height: 1.1; margin: 0 0 26px; letter-spacing: 0%; }
+  #rrg-{{ section.id }} .rrg-row3__body p {font-family:"Jost"; font-size: {{ section.settings.row3_body_size }}px; font-weight: 500; color: {{ section.settings.row3_body_color }}; line-height: 120%; margin: 0;}
+
+  /* ── Responsive ── */
+  @media screen and (max-width: 767px) {
+    #rrg-{{ section.id }} {margin : 0;}
+    #rrg-{{ section.id }} .rrg-tile-c__content {padding: 26px;}
+    #rrg-{{ section.id }} .rrg-bg  {padding-top: 80px; padding-bottom : 10px;}
+    #rrg-{{ section.id }} .rrg-row1__heading{margin-bottom : 50px;}
+    #rrg-{{ section.id }} .rrg-row1__heading p { font-size: 34px;}
+    #rrg-{{ section.id }} .rrg-row2 { grid-template-columns: 1fr; }
+    #rrg-{{ section.id }} .rrg-row2__left {order: 2;}
+    #rrg-{{ section.id }}  .rrg-tile-c{order: 1;}
+    #rrg-{{ section.id }} .rrg-tile-c { min-height: 420px; }
+    #rrg-{{ section.id }} .rrg-tile-c__number { font-size: 128px; }
+    #rrg-{{ section.id }} .rrg-row3 { aspect-ratio: 0; }
+    #rrg-{{ section.id }} .rrg-row3__title p {margin-bottom : 16px; font-weight: 500; font-size: 70px; padding : 0 20px; text-align : center; }
+    #rrg-{{ section.id }} .rrg-row3__body p { font-weight: 500; font-size: 20px; padding : 0 16px; text-align : center;}
+    #rrg-{{ section.id }} .rrg-row3__content {padding: 56px 16px;}
+  }
+</style>
+
+<section id="rrg-{{ section.id }}">
+  <div class="rrg-bg {% if section.settings.container_width %} wrapper {% endif %}">
+    <div class="rrg-inner ">
+      {%- comment -%} ── ROW 1 ── {%- endcomment -%}
+      <div class="rrg-row1">
+        {%- if section.settings.heading != blank -%}
+          <div class="rrg-row1__heading ">{{ section.settings.heading }}</div>
+        {%- endif -%}
+        <div class="rrg-row1__img-wrap">
+          {%- if section.settings.product_image != blank -%}
+            {{
+              section.settings.product_image
+              | image_url: width: 700
+              | image_tag: loading: 'eager', class: 'rrg-row1__img', alt: section.settings.product_image.alt
+              | escape
+            }}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} ── ROW 2 ── {%- endcomment -%}
+      <div class="rrg-row2">
+        {%- comment -%} Left col {%- endcomment -%}
+        <div class="rrg-row2__left">
+          {%- comment -%} Tile A — image bg stat {%- endcomment -%}
+          <div class="rrg-tile-a">
+            {%- if section.settings.tile_a_image != blank -%}
+              {{
+                section.settings.tile_a_image
+                | image_url: width: 700
+                | image_tag: loading: 'lazy', alt: section.settings.tile_a_image.alt
+                | escape
+              }}
+            {%- else -%}
+              {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+            <div class="rrg-tile-a__overlay"></div>
+            <div class="rrg-tile-a__content">
+              {%- if section.settings.tile_a_top_label != blank -%}
+                <span class="rrg-tile-a__top-label {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_a_top_label }}</span>
+              {%- endif -%}
+              {%- if section.settings.tile_a_number != blank -%}
+                <span class="rrg-tile-a__number {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_a_number }}</span>
+              {%- endif -%}
+              {%- if section.settings.tile_a_bottom_label != blank -%}
+                <span class="rrg-tile-a__bottom-label {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_a_bottom_label }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+
+          {%- comment -%} Tile B — white stat {%- endcomment -%}
+          <div class="rrg-tile-b">
+            {%- if section.settings.tile_b_number != blank -%}
+              <div class="rrg-tile-b__number {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_b_number }}</div>
+            {%- endif -%}
+            {%- if section.settings.tile_b_label != blank -%}
+              <div class="rrg-tile-b__label {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_b_label }}</div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- comment -%} Tile C — right col, tall image stat {%- endcomment -%}
+        <div class="rrg-tile-c">
+          {%- if section.settings.tile_c_image != blank -%}
+            {{
+              section.settings.tile_c_image
+              | image_url: width: 900
+              | image_tag: loading: 'lazy', alt: section.settings.tile_c_image.alt
+              | escape
+            }}
+          {%- else -%}
+            {{ 'collection-3' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <div class="rrg-tile-c__overlay"></div>
+          <div class="rrg-tile-c__content">
+            {%- if section.settings.tile_c_top_label != blank -%}
+              <span class="rrg-tile-c__top-label {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_c_top_label }}</span>
+            {%- endif -%}
+            {%- if section.settings.tile_c_number != blank -%}
+              <span class="rrg-tile-c__number {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_c_number }}</span>
+            {%- endif -%}
+            {%- if section.settings.tile_c_bottom_label != blank -%}
+              <span class="rrg-tile-c__bottom-label {% if section.settings.text_center %} text-center {% endif %}">{{ section.settings.tile_c_bottom_label }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      {%- comment -%} ── ROW 3 ── {%- endcomment -%}
+      <div class="rrg-row3">
+        {%- if section.settings.row3_image != blank -%}
+          {{
+            section.settings.row3_image
+            | image_url: width: 1600
+            | image_tag: loading: 'lazy', alt: section.settings.row3_image.alt
+            | escape
+          }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        <div class="rrg-row3__overlay"></div>
+        <div class="rrg-row3__content">
+          {%- if section.settings.row3_title != blank -%}
+            <div class="rrg-row3__title">{{ section.settings.row3_title }}</div>
+          {%- endif -%}
+          {%- if section.settings.row3_body != blank -%}
+            <div class="rrg-row3__body">{{ section.settings.row3_body }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "By Numbers Grid",
+  "tag": "section",
+  "class": "section-real-results-grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable container (wrapper)",
+      "default": true
+    },
+
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section background",
+      "default": "#DDE3F0"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 2,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between tiles",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "tile_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Tile border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tile_pad",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Tile inner padding",
+      "default": 24
+    },
+    {
+        "type": "checkbox",
+        "id": "text_center",
+        "label": "Tile text Center",
+        "default" : false
+    },
+
+    {
+      "type": "header",
+      "content": " Row 1 — Heading & Product Image"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Real results you can see and feel.</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 38
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+
+    {
+      "type": "header",
+      "content": " Tile A — Image Stat "
+    },
+    {
+      "type": "image_picker",
+      "id": "tile_a_image",
+      "label": "Tile A — background image"
+    },
+    {
+      "type": "color",
+      "id": "tile_a_fallback",
+      "label": "Tile A — fallback background",
+      "default": "#b8a080"
+    },
+    {
+      "type": "color_background",
+      "id": "tile_a_overlay",
+      "label": "Tile A — overlay",
+      "default": "linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.10) 100%)"
+    },
+    {
+      "type": "text",
+      "id": "tile_a_top_label",
+      "label": "Tile A — top label",
+      "default": "Collagen Tablet"
+    },
+    {
+      "type": "text",
+      "id": "tile_a_number",
+      "label": "Tile A — stat number",
+      "default": "30%"
+    },
+    {
+      "type": "range",
+      "id": "tile_a_number_size",
+      "min": 32,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Tile A — number font size",
+      "default": 72
+    },
+    {
+      "type": "color",
+      "id": "tile_a_number_color",
+      "label": "Tile A — number color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "tile_a_bottom_label",
+      "label": "Tile A — bottom label",
+      "default": "Absorption Rate"
+    },
+    {
+      "type": "color",
+      "id": "tile_label_color",
+      "label": "Tiles A & C — label color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "tile_label_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tiles A & C — label font size",
+      "default": 14
+    },
+
+    {
+      "type": "header",
+      "content": " Tile B — White Stat "
+    },
+    {
+      "type": "color_background",
+      "id": "tile_b_bg",
+      "label": "Tile B — background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "tile_b_number",
+      "label": "Tile B — stat number",
+      "default": "87%"
+    },
+    {
+      "type": "range",
+      "id": "tile_b_number_size",
+      "min": 32,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Tile B — number font size",
+      "default": 72
+    },
+    {
+      "type": "color",
+      "id": "tile_b_number_color",
+      "label": "Tile B — number color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "text",
+      "id": "tile_b_label",
+      "label": "Tile B — label text",
+      "default": "Of users experience visibly reduced fine lines and wrinkles by 8 weeks."
+    },
+    {
+      "type": "color",
+      "id": "tile_b_label_color",
+      "label": "Tile B — label color",
+      "default": "#666666"
+    },
+
+    {
+      "type": "header",
+      "content": "Tile C"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile_c_image",
+      "label": "Tile C — background image"
+    },
+    {
+      "type": "color_background",
+      "id": "tile_c_overlay",
+      "label": "Tile C — overlay",
+      "default": "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.35) 100%)"
+    },
+    {
+      "type": "text",
+      "id": "tile_c_top_label",
+      "label": "Tile C — top label",
+      "default": "Liquid Collagen"
+    },
+    {
+      "type": "text",
+      "id": "tile_c_number",
+      "label": "Tile C — stat number",
+      "default": "95%"
+    },
+    {
+      "type": "range",
+      "id": "tile_c_number_size",
+      "min": 60,
+      "max": 300,
+      "step": 4,
+      "unit": "px",
+      "label": "Tile C — number font size",
+      "default": 140
+    },
+    {
+      "type": "color",
+      "id": "tile_c_number_color",
+      "label": "Tile C — number color",
+      "default": "#4a1a2a"
+    },
+    {
+      "type": "text",
+      "id": "tile_c_bottom_label",
+      "label": "Tile C — bottom label",
+      "default": "Absorption Rate"
+    },
+    {
+      "type": "color",
+      "id": "tile_c_label_color",
+      "label": "Tile C — label color",
+      "default": "#4a1a2a"
+    },
+    {
+      "type": "range",
+      "id": "tile_c_font_size",
+      "label": "Tile C — label Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 2,
+      "default" : 24
+    },
+
+    {
+      "type": "header",
+      "content": "🔥 Row 3 — Full-Width Image Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "row3_image",
+      "label": "Row 3 — background image"
+    },
+    {
+      "type": "color",
+      "id": "row3_fallback",
+      "label": "Row 3 — fallback background",
+      "default": "#c07830"
+    },
+    {
+      "type": "color_background",
+      "id": "row3_overlay",
+      "label": "Row 3 — overlay",
+      "default": "linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.10) 100%)"
+    },
+    {
+      "type": "range",
+      "id": "row3_pad",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Row 3 — inner padding",
+      "default": 36
+    },
+    {
+      "type": "richtext",
+      "id": "row3_title",
+      "label": "Row 3 — title",
+      "default": "<p>Good. Better. Best.</p>"
+    },
+    {
+      "type": "range",
+      "id": "row3_title_size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row 3 — title font size",
+      "default": 52
+    },
+    {
+      "type": "color",
+      "id": "row3_title_color",
+      "label": "Row 3 — title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "row3_body",
+      "label": "Row 3 — body text",
+      "default": "<p>Seven years in research and development. This is Australia's highest liquid collagen dose. The global gold standard of what supplementation should be. Premium. Proven and effective. Try it today</p>"
+    },
+    {
+      "type": "range",
+      "id": "row3_body_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Row 3 — body font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "row3_body_color",
+      "label": "Row 3 — body color",
+      "default": "#f0e8e0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "By Numbers Grid",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

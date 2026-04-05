@@ -1,0 +1,26 @@
+{%- comment -%}
+  Arrow pointing up-right (24×24). Stroke; color via currentColor.
+  Use for external links, “open in new context,” or diagonal exit arrows.
+  Optional: width, height (defaults 24).
+{%- endcomment -%}
+{%- liquid
+  assign w = width | default: 24
+  assign h = height | default: 24
+-%}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="{{ w }}"
+  height="{{ h }}"
+  viewBox="0 0 24 24"
+  fill="none"
+  focusable="false"
+  aria-hidden="true"
+>
+  <path
+    d="M7 17L17 7M17 7H7M17 7V17"
+    stroke="currentColor"
+    stroke-width="1.75"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

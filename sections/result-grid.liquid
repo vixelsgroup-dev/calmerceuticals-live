@@ -1,0 +1,454 @@
+{% comment %}
+  Section: Real Results – Complex Grid
+  Row 1: Light bg, centered heading + product image
+  Row 2: Left = two stats stacked | Right = dark burgundy quote card
+  Row 3: Left = image with text overlay | Right = single large stat
+{% endcomment %}
+
+<section
+  class="rr-section"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="inner rr-section__inner {% if section.settings.container_width %}wrapper {% endif %}" style="background: {{ section.settings.section_bg }}; border-radius:12px;" >
+    <!-- ROW 1: Heading + Product Image -->
+    <div class="rr-row1" >
+      <div class="rr-row1__inner">
+        {%- if section.settings.row1_heading != blank -%}
+          <div
+            class="rr-row1__heading"
+          >
+            {{ section.settings.row1_heading }}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.row1_image != blank -%}
+          <div class="rr-row1__img-wrap">
+            <img
+              src="{{ section.settings.row1_image | img_url: '700x600', crop: 'center' }}"
+              alt="{{ section.settings.row1_image.alt | default: 'Product image' | escape }}"
+              class="rr-row1__img"
+              loading="eager"
+              width="700"
+              height="600"
+            >
+          </div>
+        {%- else -%}
+          <div class="rr-row1__img-wrap rr-row1__img-placeholder">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- ROW 2: Stats Left + Quote Right -->
+    <div class="rr-row2">
+      <div class="rr-row2__stats" >
+        <div class="rr-stat" style="background: {{ section.settings.row2_left_bg }};">
+          <div
+            class="rr-stat__number"
+            style="color: {{ section.settings.stat_number_color }}; font-size: {{ section.settings.stat_number_size }}px;"
+          >
+            {{ section.settings.stat1_number }}
+          </div>
+          <div class="rr-stat__label" style="color: {{ section.settings.stat_label_color }};">
+            {{ section.settings.stat1_label }}
+          </div>
+        </div>
+        <div class="rr-stat" style="background: {{ section.settings.row2_left_bg }};">
+          <div
+            class="rr-stat__number"
+            style="color: {{ section.settings.stat_number_color }}; font-size: {{ section.settings.stat_number_size }}px;"
+          >
+            {{ section.settings.stat2_number }}
+          </div>
+          <div class="rr-stat__label" style="color: {{ section.settings.stat_label_color }};">
+            {{ section.settings.stat2_label }}
+          </div>
+        </div>
+
+
+        <div class="rr-stat row-3__stat hidden-desktop" style="background: {{ section.settings.row2_left_bg }};">
+          <div
+            class="rr-stat__number"
+            style="color: {{ section.settings.stat_number_color }}; font-size: {{ section.settings.stat_number_size }}px;"
+          >
+            {{ section.settings.stat3_number }}
+          </div>
+          <div class="rr-stat__label" style="color: {{ section.settings.stat_label_color }};">
+            {{ section.settings.stat3_label }}
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        class="rr-row2__quote"
+        style="background: {{ section.settings.quote_bg }}; border-radius: {{ section.settings.quote_radius }}px;"
+      >
+        {%- if section.settings.quote_heading != blank -%}
+          <div
+            class="rr-row2__quote-heading"
+          >
+            {{ section.settings.quote_heading }}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.quote_body != blank -%}
+          <div class="rr-row2__quote-body" >
+            {{ section.settings.quote_body }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- ROW 3: Image overlay Left + Single stat Right -->
+    <div class="rr-row3">
+      <div class="rr-row3__imgcol">
+        {%- if section.settings.row3_image != blank -%}
+          <img
+            src="{{ section.settings.row3_image | img_url: '800x500', crop: 'center' }}"
+            alt="{{ section.settings.row3_image.alt | default: 'Background' | escape }}"
+            class="rr-row3__bg-img"
+            loading="lazy"
+            width="800"
+            height="500"
+          >
+        {%- else -%}
+          <div class="rr-row3__bg-placeholder"></div>
+        {%- endif -%}
+        <div class="rr-row3__overlay" style="background: {{ section.settings.row3_overlay_color }};"></div>
+        {%- if section.settings.row3_text != blank -%}
+          <div
+            class="rr-row3__text"
+            
+          >
+            {{ section.settings.row3_text }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="rr-stat row-3__stat hidden-mobile" style="background: {{ section.settings.row2_left_bg }};">
+        <div
+          class="rr-stat__number"
+          style="color: {{ section.settings.stat_number_color }}; font-size: {{ section.settings.stat_number_size }}px;"
+        >
+          {{ section.settings.stat3_number }}
+        </div>
+        <div class="rr-stat__label" style="color: {{ section.settings.stat_label_color }};">
+          {{ section.settings.stat3_label }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rr-section { width: 100%; box-sizing: border-box; overflow: hidden; padding: 0 50px;}
+  .rr-section__inner{padding: 8px;}
+  /* ROW 1 */
+  .rr-row1 { width: 100%; padding: 128px 24px 0; box-sizing: border-box; }
+  .rr-row1__inner { margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .rr-row1__heading > * { color: {{ section.settings.heading_color }}; font-size: {{ section.settings.heading_size }}px; line-height: {{ section.settings.heading_size }}px; font-weight: 600; margin: 0 0 40px 0; font-family: "Jost";  }
+  .rr-row1__img-wrap { width: 100%; max-width: 600px; }
+  .rr-row1__img { width: 100%; height: auto; display: block; object-fit: contain; }
+  .rr-row1__img-placeholder { aspect-ratio: 4/3; background: rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; }
+
+  /* ROW 2 */
+  .rr-row2 { display: grid; grid-template-columns: 1fr 1.3fr; width: 100%; min-height: 300px; gap: 15px; margin-top: 40px; margin-bottom: 12px; }
+  .rr-row2__stats { display: flex; flex-direction: column; justify-content: center; }
+  .rr-stat { padding: 48px; border-radius: 8px; text-align: center;backdrop-filter: blur(20px); }
+  .rr-row2__quote { display: flex; flex-direction: column; justify-content: space-between; padding: 48px 44px; gap: 20px; }
+  .rr-row2__quote-heading > * {font-family: "Jost"; font-weight: 400; letter-spacing: -2px; color: {{ section.settings.quote_heading_color }}; font-size: {{ section.settings.quote_heading_size }}px; line-height:{{ section.settings.quote_heading_size }}px; }
+  .rr-row2__quote-heading p { margin: 0; }
+  .rr-row2__quote-heading strong, .rr-row2__quote-heading b { font-weight: 700; }
+  .rr-row2__quote-body > * {font-family: "Jost";  font-size: 18px; line-height: 25px; color: {{ section.settings.quote_body_color }}; font-weight: 500; }
+  .rr-row2__quote-body p { margin: 0 0 12px 0; }
+  .rr-row2__quote-body p:last-child { margin: 0; }
+  .rr-stat:first-child { margin-bottom: 15px; }
+  .rr-stat__label { font-size: 20px; color: #545454; font-weight: 500; font-family: 'Jost'; }
+
+  /* ROW 3 */
+  .rr-row3 { display: grid; grid-template-columns: 1.3fr 1fr; width: 100%; min-height: 240px; padding-bottom: 12px; gap: 15px; }
+  .rr-row3__imgcol { position: relative; overflow: hidden; min-height: 240px; border-radius: 8px; }
+  .rr-row3__bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .rr-row3__bg-placeholder { position: absolute; inset: 0; background: #9b9090; }
+  .rr-row3__overlay { position: absolute; inset: 0; z-index: 1; }
+  .rr-row3__text { position: relative; z-index: 2; padding: 36px 32px; }
+  .rr-row3__text > * {font-family:"Jost" ; color: {{ section.settings.row3_text_color }}; font-size: {{ section.settings.row3_text_size }}px; line-height: {{ section.settings.row3_text_size }}px; letter-spacing: -1.92px; font-weight: 500; }
+  .rr-row3__text p { margin: 0; }
+  .rr-row3__text strong, .rr-row3__text b { font-weight: 700; }
+  .rr-row3__stat { display: flex; flex-direction: column; justify-content: center; padding: 36px 40px; margin-left: 12px; }
+  .row-3__stat.hidden-desktop{display:none;}
+  .rr-stat__number{font-family: 'Jost'; margin-bottom : 48px; letter-spacing:-4%;}
+/* RESPONSIVE */
+@media screen and (max-width: 767px) {
+  .rr-section{padding-bottom : 0 !important; padding-left:8px; padding-right:8px;}
+  .rr-row1{padding-top: 60px;}
+  rr-section{padding-top: 30px !important; padding-bottom : 00px !important;}
+  .rr-row2 { grid-template-columns: 1fr; }
+  .rr-row3 { grid-template-columns: 1fr; min-height: 180px;  }
+  .rr-row3__imgcol { min-height: 180px; }
+  .rr-row1__heading > *{font-size: 34px; line-height: 34px;}
+  .rr-stat__number{font-size: 70px !important;}
+  .rr-row2__quote{padding: 26px !important;}
+  .rr-row2__quote, .rr-row2__stats, .rr-row3__stat{padding: 10px 0;}
+  .rr-stat{padding: 24px;}
+  .rr-row2__quote-heading{margin-bottom: 55px;}
+  .rr-row2__quote-heading br{display: none;}
+  .rr-row2__quote-heading > *{font-size: 24px; line-height: 28px; letter-spacing: 0px;}
+  .rr-row2__quote-body > *{font-size: 16px; line-height: 20px;}
+  .rr-row3__text > *{font-size: 26px; line-height: 26px;}
+  .row-3__stat.hidden-desktop{display: block; margin-top: 15px;}
+  .row-3__stat.hidden-mobile{display: none;}
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Real Results Grid",
+  "tag": "section",
+  "class": "section-rr",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "#dde3f0"
+    },
+    {
+      "type": "header",
+      "content": "Row 1 – Heading & Product Image"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "richtext",
+      "id": "row1_heading",
+      "label": "Heading Text",
+      "default": "<p>Real results you<br>can see and feel.</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 34
+    },
+    {
+      "type": "image_picker",
+      "id": "row1_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "header",
+      "content": "Row 2 Left – Stats"
+    },
+    {
+      "type": "color_background",
+      "id": "row2_left_bg",
+      "label": "Stats Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "stat_number_color",
+      "label": "Stat Number Color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Stat Label Color",
+      "default": "#6b6060"
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "min": 32,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Stat Number Font Size",
+      "default": 56
+    },
+    {
+      "type": "text",
+      "id": "stat1_number",
+      "label": "Stat 1 Number",
+      "default": "80%"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Stat 1 Label",
+      "default": "Improvement in learning and memory performance"
+    },
+    {
+      "type": "text",
+      "id": "stat2_number",
+      "label": "Stat 2 Number",
+      "default": "2 weeks"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "Stat 2 Label",
+      "default": "Within 2 weeks, inflammatory markers improved by up to 90%"
+    },
+    {
+      "type": "header",
+      "content": "Row 2 Right – Quote Card"
+    },
+    {
+      "type": "color_background",
+      "id": "quote_bg",
+      "label": "Quote Card Background",
+      "default": "radial-gradient(93.96% 93.96% at 54.14% 82.02%, #8A4C5B 0%, #170D0F 100%)"
+    },
+    {
+      "type": "range",
+      "id": "quote_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "quote_heading_color",
+      "label": "Quote Heading Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_heading",
+      "label": "Quote Heading",
+      "default": "<p>Ageing isn't driven by time. It's driven by biology <strong>under stress.</strong></p>"
+    },
+    {
+      "type": "range",
+      "id": "quote_heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Heading Size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "quote_body_color",
+      "label": "Quote Body Text Color",
+      "default": "#e0cdd1"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_body",
+      "label": "Quote Body Text",
+      "default": "<p>Inflammageing is the insidious low-grade chronic inflammation that silently accelerates biological decay, disrupts mitochondria, weakens your gut barrier, and triggers systemic immune dysfunction long before symptoms appear.</p><p>Traditional supplements address surface symptoms; Longevity intervenes at the source: the gut-brain-immune axis, where biological ageing is decided.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 3 Left – Image with Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "row3_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color_background",
+      "id": "row3_overlay_color",
+      "label": "Image Overlay",
+      "default": "linear-gradient(135deg, rgba(90,80,100,0.55) 0%, rgba(30,20,35,0.35) 100%)"
+    },
+    {
+      "type": "richtext",
+      "id": "row3_text",
+      "label": "Overlay Text",
+      "default": "<p>Short-chain fatty acids<br>increased by up to <strong>2x</strong></p>"
+    },
+    {
+      "type": "range",
+      "id": "row3_text_size",
+      "min": 14,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Overlay Text Size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "row3_text_color",
+      "label": "Overlay Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Row 3 Right – Single Stat"
+    },
+    {
+      "type": "color_background",
+      "id": "row3_right_bg",
+      "label": "Right Cell Background",
+      "default": "#f2f0ee"
+    },
+    {
+      "type": "text",
+      "id": "stat3_number",
+      "label": "Stat 3 Number",
+      "default": "67%"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Stat 3 Label",
+      "default": "boost in brain antioxidant protection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Real Results Grid"
+    }
+  ]
+}
+{% endschema %}

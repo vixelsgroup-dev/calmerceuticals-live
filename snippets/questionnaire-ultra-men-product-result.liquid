@@ -1,0 +1,86 @@
+{%- comment -%}
+  Ultra Performance (Men) — gut-axis path. CTA URL: JS matches gender answer to `data-gender-product-url-ultra` on the gender step (same pattern as collagen + `data-option-url`).
+{%- endcomment -%}
+<article
+  class="questionnaire__screen questionnaire__screen--product-result questionnaire__screen--product-result-ultra-men"
+  data-questionnaire-screen
+  data-screen-type="product_result"
+  data-default-url="{{ shop_now_url | escape }}"
+  {% if branch_parent != blank %}
+    data-branch-parent="{{ branch_parent | escape }}"
+  {% endif %}
+  {% if branch_trigger != blank %}
+    data-branch-trigger="{{ branch_trigger | escape }}"
+  {% endif %}
+>
+  <div class="questionnaire__product-stage questionnaire__product-stage--ultra-men">
+    <div class="questionnaire__product-card questionnaire__product-card--ultra-men">
+      <div class="questionnaire__product-badge questionnaire__product-badge--ultra-men">Recommended for you</div>
+
+      <div class="questionnaire__product-media questionnaire__product-media--ultra-men">
+        <img
+          class="questionnaire__product-img questionnaire__product-img--ultra-men"
+          src="{{ 'questionnaire-ultra-performance-product.png' | asset_url }}"
+          alt="Ultra Performance for Men"
+          width="460"
+          height="460"
+          decoding="async"
+          fetchpriority="high"
+          loading="eager"
+        >
+      </div>
+
+      <div class="questionnaire__product-banner questionnaire__product-banner--ultra-men">
+        <div class="questionnaire__product-banner-text questionnaire__product-banner-text--ultra-men">
+          <p class="questionnaire__product-banner-primary questionnaire__product-banner-primary--ultra-men">
+            See results in 180 days
+          </p>
+          <p class="questionnaire__product-banner-secondary questionnaire__product-banner-secondary--ultra-men">
+            or your money back
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-body questionnaire__product-body--ultra-men">
+        <div class="questionnaire__product-body-inner questionnaire__product-body-inner--ultra-men">
+          <h2 class="questionnaire__product-title questionnaire__product-title--ultra-men">
+            Ultra Performance for Men
+          </h2>
+
+          <div class="questionnaire__product-lead questionnaire__product-lead--ultra-men">
+            <p>
+              Based on your concern about low energy and fatigue, here is the formula built for all-day power without
+              the crash.
+            </p>
+          </div>
+          <p class="questionnaire__product-detail questionnaire__product-detail--ultra-men">
+            Formulated with Cultavit® Activated B-Complex and Shilajit to support energy production and reduce tiredness
+            at a cellular level. L-Theanine delivers calm, composed focus without jitters or crashes. Clinically studied
+            to reduce fatigue by 26% in 28 days. Liquid sachet — no water, no pills.
+          </p>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-price-row questionnaire__product-price-row--ultra-men">
+        <span class="questionnaire__product-plan questionnaire__product-plan--ultra-men"
+          >12-Week Performance Reset</span
+        >
+        <div class="questionnaire__product-prices questionnaire__product-prices--ultra-men">
+          <span class="questionnaire__product-price-compare questionnaire__product-price-compare--ultra-men"
+            >$686.00</span
+          >
+          <span class="questionnaire__product-price-sale questionnaire__product-price-sale--ultra-men">$447.00</span>
+        </div>
+      </div>
+
+      <div class="questionnaire__product-cta-wrap questionnaire__product-cta-wrap--ultra-men">
+        <a
+          class="questionnaire__product-cta questionnaire__product-cta--ultra-men"
+          href="{{ shop_now_url | escape }}"
+          data-questionnaire-product-cta
+          >SHOP NOW</a
+        >
+      </div>
+    </div>
+  </div>
+</article>

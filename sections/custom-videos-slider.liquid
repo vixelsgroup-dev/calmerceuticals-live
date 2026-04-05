@@ -1,0 +1,343 @@
+<link rel="stylesheet" href="{{ 'custom-videos-slider.css' | asset_url }}">
+
+{% liquid
+  assign cvs_pt_mobile = section.settings.padding_top_mobile | default: 56
+  assign cvs_pb_mobile = section.settings.padding_bottom_mobile | default: 56
+  assign cvs_pt_desktop = section.settings.padding_top_desktop | default: 80
+  assign cvs_pb_desktop = section.settings.padding_bottom_desktop | default: 86
+  assign cvs_container_max = section.settings.max_container_width | default: '1440'
+  assign videos_desktop = section.settings.videos_per_view_desktop | default: 4
+  assign videos_mobile = section.settings.videos_per_view_mobile | default: 1
+  assign autoplay_speed_seconds = section.settings.autoplay_speed | default: 28
+
+  if cvs_container_max == 'full'
+    assign cvs_container_max_css = 'none'
+  else
+    assign cvs_container_max_css = cvs_container_max | append: 'px'
+  endif
+%}
+
+<section
+  id="CustomVideosSlider-{{ section.id }}"
+  class="custom-videos-slider"
+  style="
+    --cvs-bg: {{ section.settings.background_color }};
+    --cvs-container-max: {{ cvs_container_max_css }};
+    --cvs-pt-mobile: {{ cvs_pt_mobile }}px;
+    --cvs-pb-mobile: {{ cvs_pb_mobile }}px;
+    --cvs-pt-desktop: {{ cvs_pt_desktop }}px;
+    --cvs-pb-desktop: {{ cvs_pb_desktop }}px;
+    --cvs-title-color: {{ section.settings.heading_color }};
+    --cvs-subtitle-color: {{ section.settings.subheading_color }};
+    --cvs-card-radius: {{ section.settings.card_radius }}px;
+    --cvs-cards-desktop: {{ videos_desktop }};
+    --cvs-cards-mobile: {{ videos_mobile }};
+  "
+  data-custom-videos-slider
+  data-show-arrows="{{ section.settings.show_arrows }}"
+  data-carousel-autoplay="{{ section.settings.autoplay_carousel }}"
+  data-autoplay-speed="{{ autoplay_speed_seconds }}"
+  {{ section.shopify_attributes }}
+>
+  <div class="custom-videos-slider__inner wrapper">
+    <header class="custom-videos-slider__header">
+      {% if section.settings.heading != blank %}
+        <div class="custom-videos-slider__title">{{ section.settings.heading }}</div>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="custom-videos-slider__subtitle">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+    </header>
+
+    <div
+      class="custom-videos-slider__viewport"
+      id="CustomVideosSliderViewport-{{ section.id }}"
+      data-slider-viewport
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="{{ section.settings.heading | default: 'Customer video slider' | strip_html | escape }}"
+      tabindex="0"
+    >
+      <div class="custom-videos-slider__track" data-slider-track>
+        {% for block in section.blocks %}
+          <article class="custom-videos-slider__slide" {{ block.shopify_attributes }}>
+            <div class="custom-videos-slider__media-wrap">
+              {% if block.settings.video != blank %}
+                <video
+                  class="custom-videos-slider__video"
+                  playsinline
+                  loop
+                  muted
+                  preload="metadata"
+                  poster="{% if block.settings.video.preview_image %}{{ block.settings.video.preview_image | image_url: width: 1200 }}{% endif %}"
+                  data-slider-video
+                >
+                  {% for source in block.settings.video.sources %}
+                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                  {% endfor %}
+                </video>
+              {% else %}
+                <div class="custom-videos-slider__placeholder">
+                  {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg custom-videos-slider__placeholder-svg' }}
+                </div>
+              {% endif %}
+
+              <div class="custom-videos-slider__gradient"></div>
+
+              <button
+                type="button"
+                class="custom-videos-slider__sound-toggle"
+                data-sound-toggle
+                aria-label="Unmute video"
+                aria-pressed="false"
+              >
+                <span class="custom-videos-slider__sound-icon custom-videos-slider__sound-icon--off">
+                  {%- render 'icon-sound-off' -%}
+                </span>
+                <span class="custom-videos-slider__sound-icon custom-videos-slider__sound-icon--on">
+                  {%- render 'icon-sound-on' -%}
+                </span>
+              </button>
+
+              {% if section.settings.show_likes
+                or section.settings.show_comments
+                or section.settings.show_saves
+                or section.settings.show_shares
+              %}
+                <div class="custom-videos-slider__social-col" aria-hidden="true">
+                  {% if section.settings.show_likes %}
+                    <span class="custom-videos-slider__social-item">
+                      {% render 'icon-heart-outline' %}
+                      <span>{{ block.settings.likes | escape }}</span>
+                    </span>
+                  {% endif %}
+                  {% if section.settings.show_comments %}
+                    <span class="custom-videos-slider__social-item">
+                      {% render 'icon-comment-outline' %}
+                      <span>{{ block.settings.comments | escape }}</span>
+                    </span>
+                  {% endif %}
+                  {% if section.settings.show_saves %}
+                    <span class="custom-videos-slider__social-item">
+                      {% render 'icon-bookmark-outline' %}
+                      <span>{{ block.settings.saves | escape }}</span>
+                    </span>
+                  {% endif %}
+                  {% if section.settings.show_shares %}
+                    <span class="custom-videos-slider__social-item">
+                      {% render 'icon-share-outline' %}
+                      <span>{{ block.settings.shares | escape }}</span>
+                    </span>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% if section.settings.show_handle or section.settings.show_caption or section.settings.show_hashtags %}
+                <div class="custom-videos-slider__meta">
+                  {% if section.settings.show_handle and block.settings.handle != blank %}
+                    <p class="custom-videos-slider__handle">{{ block.settings.handle | escape }}</p>
+                  {% endif %}
+                  {% if section.settings.show_caption and block.settings.caption != blank %}
+                    <p class="custom-videos-slider__caption">{{ block.settings.caption | escape }}</p>
+                  {% endif %}
+                  {% if section.settings.show_hashtags and block.settings.hashtags != blank %}
+                    <p class="custom-videos-slider__hashtags">{{ block.settings.hashtags | escape }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <div class="custom-videos-slider__progress" data-video-progress>
+                <span class="custom-videos-slider__progress-fill" data-video-progress-fill></span>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.settings.show_arrows %}
+      <div class="custom-videos-slider__nav">
+        <button
+          type="button"
+          class="custom-videos-slider__nav-btn"
+          data-slider-prev
+          aria-controls="CustomVideosSliderViewport-{{ section.id }}"
+          aria-label="Previous slide"
+        >
+          {% render 'icon-arrow-line-left' %}
+        </button>
+        <button
+          type="button"
+          class="custom-videos-slider__nav-btn"
+          data-slider-next
+          aria-controls="CustomVideosSliderViewport-{{ section.id }}"
+          aria-label="Next slide"
+        >
+          {% render 'icon-arrow-line-right' %}
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ 'custom-videos-slider.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Custom videos slider",
+  "tag": "section",
+  "class": "section-custom-videos-slider",
+  "settings": [
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#f4f4f4" },
+    { "type": "header", "content": "Spacing & Layout" },
+    {
+      "type": "select",
+      "id": "max_container_width",
+      "label": "Max container width",
+      "options": [
+        { "value": "full", "label": "Full width (no max)" },
+        { "value": "1100", "label": "1100px" },
+        { "value": "1200", "label": "1200px" },
+        { "value": "1280", "label": "1280px" },
+        { "value": "1320", "label": "1320px" },
+        { "value": "1440", "label": "1440px" },
+        { "value": "1536", "label": "1536px" },
+        { "value": "1600", "label": "1600px" },
+        { "value": "1680", "label": "1680px" },
+        { "value": "1920", "label": "1920px" }
+      ],
+      "default": "1440"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    { "type": "header", "content": "Content" },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Hear from people<br>who are already using our <strong>product</strong></p>"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Don't just take our word for it, see what our customers say"
+    },
+    { "type": "checkbox", "id": "autoplay_carousel", "label": "Autoplay carousel", "default": true },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "unit": "sec",
+      "min": 5,
+      "max": 70,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "videos_per_view_desktop",
+      "label": "Videos per view (desktop)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "videos_per_view_mobile",
+      "label": "Videos per view (mobile)",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "1"
+    },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_handle", "label": "Show handle", "default": true },
+    { "type": "checkbox", "id": "show_caption", "label": "Show caption", "default": true },
+    { "type": "checkbox", "id": "show_hashtags", "label": "Show hashtags", "default": true },
+    { "type": "checkbox", "id": "show_likes", "label": "Show likes", "default": true },
+    { "type": "checkbox", "id": "show_comments", "label": "Show comments", "default": true },
+    { "type": "checkbox", "id": "show_saves", "label": "Show saves", "default": true },
+    { "type": "checkbox", "id": "show_shares", "label": "Show shares", "default": true },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#610c27" },
+    { "type": "color", "id": "subheading_color", "label": "Subheading color", "default": "#323232" }
+  ],
+  "blocks": [
+    {
+      "type": "video_slide",
+      "name": "Video slide",
+      "settings": [
+        { "type": "video", "id": "video", "label": "Video" },
+        { "type": "text", "id": "handle", "label": "Handle", "default": "Gaga005" },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "Can you do it like me?" },
+        { "type": "text", "id": "hashtags", "label": "Hashtags", "default": "#yoga #beginneryoga #fyp #funny" },
+        { "type": "text", "id": "likes", "label": "Likes", "default": "191.2K" },
+        { "type": "text", "id": "comments", "label": "Comments", "default": "2,248" },
+        { "type": "text", "id": "saves", "label": "Saves", "default": "141.8K" },
+        { "type": "text", "id": "shares", "label": "Shares", "default": "8,840" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom videos slider",
+      "blocks": [
+        { "type": "video_slide" },
+        { "type": "video_slide" },
+        { "type": "video_slide" },
+        { "type": "video_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

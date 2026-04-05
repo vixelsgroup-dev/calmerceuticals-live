@@ -1,0 +1,333 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Inter:wght@400&family=Lexend:wght@400&display=swap"
+>
+<link rel="stylesheet" href="{{ 'hero-brand-intro.css' | asset_url }}">
+
+{% liquid
+  assign show_founder = false
+  if section.settings.founder_video != blank or section.settings.founder_image != blank
+    assign show_founder = true
+  endif
+  assign has_hero_ctas = false
+  if section.settings.button_label != blank or section.settings.formula_button_label != blank
+    assign has_hero_ctas = true
+  endif
+%}
+
+<section
+  id="HeroBrandIntro-{{ section.id }}"
+  class="hero-brand-intro"
+  style="--hbi-section-bg: {{ section.settings.background_color | default: '#f5f5f5' }};"
+  aria-label="{% if section.settings.heading != blank %}{{ section.settings.heading | escape }}{% else %}Hero{% endif %}"
+  {{ section.shopify_attributes }}
+>
+  {% liquid
+    assign hero_alt = section.settings.hero_image.alt | default: section.settings.heading | strip_html | escape
+    if hero_alt == blank
+      assign hero_alt = 'Hero' | escape
+    endif
+  %}
+
+  <div class="hero-brand-intro__inner">
+    <div class="hero-brand-intro__layout wrapper{% unless has_hero_ctas %} hero-brand-intro__layout--no-cta{% endunless %}">
+      <div class="hero-brand-intro__copy">
+        {% if section.settings.tagline_lead != blank
+          or section.settings.badge_text != blank
+          or section.settings.tagline_trail != blank
+        %}
+          <div class="hero-brand-intro__tagline">
+            {% if section.settings.tagline_lead != blank or section.settings.badge_text != blank %}
+              <div class="hero-brand-intro__tagline-line1">
+                {% if section.settings.tagline_lead != blank %}
+                  <span class="hero-brand-intro__tagline-text">{{ section.settings.tagline_lead | escape }}</span>
+                {% endif %}
+                {% if section.settings.badge_text != blank %}
+                  <span class="hero-brand-intro__badge">{{ section.settings.badge_text | escape }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if section.settings.tagline_trail != blank %}
+              <p class="hero-brand-intro__tagline-text hero-brand-intro__tagline-trail">
+                {{ section.settings.tagline_trail | escape }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h1 class="hero-brand-intro__heading">{{ section.settings.heading | escape }}</h1>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <p class="hero-brand-intro__sub">{{ section.settings.subheading | escape }}</p>
+        {% endif %}
+
+        {% if section.settings.button_label != blank or section.settings.formula_button_label != blank %}
+          <div class="hero-brand-intro__actions hero-brand-intro__actions--desktop-only">
+            {% if section.settings.button_label != blank %}
+              <a
+                href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{{ routes.all_products_collection_url }}{% endif %}"
+                class="hero-brand-intro__cta"
+              >
+                <span class="hero-brand-intro__cta-shine" aria-hidden="true"></span>
+                <span class="hero-brand-intro__cta-avatar" aria-hidden="true">
+                  {% render 'hero-brand-intro-cta-avatar', cta_avatar: section.settings.cta_avatar %}
+                </span>
+                <span class="hero-brand-intro__cta-label">{{ section.settings.button_label | escape }}</span>
+              </a>
+            {% endif %}
+
+            {% if section.settings.formula_button_label != blank %}
+              <a
+                href="{% if section.settings.formula_button_link != blank %}{{ section.settings.formula_button_link }}{% else %}{{ routes.root_url }}{% endif %}"
+                class="hero-brand-intro__second-cta"
+              >
+                <span class="hero-brand-intro__second-cta-inner">
+                  <span class="hero-brand-intro__second-cta-row">
+                    <span class="hero-brand-intro__second-cta-label">
+                      {{- section.settings.formula_button_label | escape -}}
+                    </span>
+                    <span class="hero-brand-intro__second-cta-icon" aria-hidden="true">
+                      {% render 'icon-arrow-up-right' %}
+                    </span>
+                  </span>
+                  <span class="hero-brand-intro__second-cta-rule"></span>
+                </span>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="hero-brand-intro__media">
+        {% if section.settings.hero_image != blank %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 2400
+            | image_tag:
+              class: 'hero-brand-intro__img',
+              loading: 'eager',
+              fetchpriority: 'high',
+              sizes: '(max-width: 749px) calc(100vw - 36px), (max-width: 1199px) 45vw, 42vw',
+              widths: '400, 600, 800, 1000, 1200, 1600, 2000, 2400',
+              alt: hero_alt
+          }}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: class: 'hero-brand-intro__img hero-brand-intro__placeholder-svg' }}
+        {% endif %}
+      </div>
+
+      {% if section.settings.button_label != blank or section.settings.formula_button_label != blank %}
+        <div class="hero-brand-intro__actions hero-brand-intro__actions--mobile-only">
+          {% if section.settings.button_label != blank %}
+            <a
+              href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{{ routes.all_products_collection_url }}{% endif %}"
+              class="hero-brand-intro__cta"
+            >
+              <span class="hero-brand-intro__cta-shine" aria-hidden="true"></span>
+              <span class="hero-brand-intro__cta-avatar" aria-hidden="true">
+                {% render 'hero-brand-intro-cta-avatar', cta_avatar: section.settings.cta_avatar %}
+              </span>
+              <span class="hero-brand-intro__cta-label">{{ section.settings.button_label | escape }}</span>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if show_founder %}
+      <div
+        class="hero-brand-intro__founder-row"
+        data-hero-founder-row
+        tabindex="0"
+        role="group"
+        aria-expanded="false"
+        aria-label="{{ section.settings.founder_label | default: 'Founder message' | escape }}"
+      >
+        <button
+          type="button"
+          class="hero-brand-intro__founder-close"
+          data-hero-founder-close
+          aria-label="{{ 'general.accessibility.close' | t }}"
+        >
+          <span class="hero-brand-intro__founder-close-icon" aria-hidden="true">
+            {% render 'icon-close' %}
+          </span>
+        </button>
+        <div class="hero-brand-intro__founder">
+          <div class="hero-brand-intro__founder-visual">
+            {% if section.settings.founder_video != blank %}
+              {% liquid
+                assign founder_poster = ''
+                if section.settings.founder_image != blank
+                  assign founder_poster = section.settings.founder_image | image_url: width: 800
+                endif
+              %}
+              {% if founder_poster != blank %}
+                {{
+                  section.settings.founder_video
+                  | video_tag:
+                    class: 'hero-brand-intro__founder-video',
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    controls: false,
+                    playsinline: true,
+                    poster: founder_poster
+                }}
+              {% else %}
+                {{
+                  section.settings.founder_video
+                  | video_tag:
+                    class: 'hero-brand-intro__founder-video',
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    controls: false,
+                    playsinline: true
+                }}
+              {% endif %}
+            {% elsif section.settings.founder_image != blank %}
+              {% liquid
+                assign founder_img_alt = section.settings.founder_image.alt | default: section.settings.founder_label | strip_html | escape
+                if founder_img_alt == blank
+                  assign founder_img_alt = 'Founder' | escape
+                endif
+              %}
+              {{
+                section.settings.founder_image
+                | image_url: width: 800
+                | image_tag: class: 'hero-brand-intro__founder-img', loading: 'lazy', alt: founder_img_alt
+              }}
+            {% endif %}
+          </div>
+          {% if section.settings.founder_label != blank %}
+            <p class="hero-brand-intro__founder-caption">{{ section.settings.founder_label | escape }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ 'hero-brand-intro.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Hero — brand intro",
+  "tag": "section",
+  "class": "section-hero-brand-intro",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#f5f5f5",
+      "info": "Shows behind the hero image (e.g. while loading) and in any letterboxing."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Product or lifestyle shot. Shown on the right on large screens and stacked on mobile. A Shopify placeholder image is shown if empty."
+    },
+    {
+      "type": "text",
+      "id": "tagline_lead",
+      "label": "Tagline (before badge)",
+      "default": "Australia's"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "#1 Collagen"
+    },
+    {
+      "type": "text",
+      "id": "tagline_trail",
+      "label": "Tagline (after badge)",
+      "default": "— Proven, Trusted, Certified"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Collagen, Reinvented"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "We utilize advanced hydrolysed technology that delivers visible benefits from within, setting an entirely new standard in beauty supplements."
+    },
+    {
+      "type": "header",
+      "content": "Primary CTA"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_avatar",
+      "label": "Button avatar image",
+      "info": "Circular mark left of the CTA. A Shopify placeholder is used if empty."
+    },
+    {
+      "type": "header",
+      "content": "Secondary CTA"
+    },
+    {
+      "type": "text",
+      "id": "formula_button_label",
+      "label": "Label",
+      "default": "Find Formula"
+    },
+    {
+      "type": "url",
+      "id": "formula_button_link",
+      "label": "Link",
+      "info": "e.g. quiz or collections page"
+    },
+    {
+      "type": "header",
+      "content": "Founder message"
+    },
+    {
+      "type": "video",
+      "id": "founder_video",
+      "label": "Founder video",
+      "info": "Portrait clip (autoplay, muted, loop). Shown below the hero."
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder image or GIF",
+      "info": "If no video: shown in the frame. If video is set: optional poster (first frame) while the video loads."
+    },
+    {
+      "type": "text",
+      "id": "founder_label",
+      "label": "Caption under video",
+      "default": "Founder Message"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero — brand intro"
+    }
+  ]
+}
+{% endschema %}

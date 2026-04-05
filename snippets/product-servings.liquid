@@ -1,0 +1,22 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign serving_each = 0 %}
+{% for allocation in current_variant.selling_plan_allocations %}
+  {% assign current_variant_subs_price = allocation.price %}
+  {% assign serving_each = allocation.price | divided_by: servings %}
+{% endfor %}
+
+<div class="servings-price-row" role="group" aria-label="Price and servings">
+  <div class="servings-left">
+    <span class="servings-count">{{ servings }}</span> SERVINGS
+    {% unless hide_per_serving %}
+      <span class="per-serving">({{ serving_each | money }} / SERVING)</span>
+    {% endunless %}
+  </div>
+  {% comment %} <div class="servings-right">{{current_variant_subs_price | money }}</div> {% endcomment %}
+</div>
+<style>
+    .servings-price-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid #000;border-bottom:1px solid #000;line-height:normal;}
+    .servings-left{text-transform:uppercase;letter-spacing:.02em;font-size:12px;font-weight:600;}
+    .servings-left .per-serving{margin-left:.35rem;}
+    .servings-right{font-weight:700;line-height:20px;color:#610c27;font-size:18px}
+</style>

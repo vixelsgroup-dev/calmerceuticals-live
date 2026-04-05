@@ -1,0 +1,379 @@
+{%- comment -%}
+  Layout:
+  • Heading block  (title + subtitle)
+  • Hero banner    (full-width image + left-aligned text overlay)
+  • 2-column tiles (image + bottom-left label each)
+
+  All colours, font sizes, images, spacing & container
+  are editable inside the Shopify Theme Customizer.
+{%- endcomment -%}
+
+<style>
+#csc-{{ section.id }}{background-color:{{ section.settings.section_bg_color }};padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+#csc-{{ section.id }} .csc-heading{margin-bottom:63px;}
+#csc-{{ section.id }} .csc-heading__title{display:block;font-size:{{ section.settings.title_size }}px;font-weight:500;color:{{ section.settings.title_color }};line-height:120%;letter-spacing:0%;font-family:"Jost";}
+#csc-{{ section.id }} .csc-heading__subtitle{display:block;font-size:{{ section.settings.subtitle_size }}px;font-weight:500;color:{{ section.settings.subtitle_color }};letter-spacing:0%;margin:0;font-family:"Jost";}
+#csc-{{ section.id }} .csc-hero{position:relative;width:100%;overflow:hidden;border-radius:{{ section.settings.border_radius }}px; margin-bottom:{{ section.settings.gap }}px;background-color:{{ section.settings.hero_fallback_color }};display:block; min-height: 300px;}
+#csc-{{ section.id }} .csc-hero img,#csc-{{ section.id }} .csc-hero svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+#csc-{{ section.id }} .csc-hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,{{ section.settings.hero_overlay_opacity | divided_by:100.0 }}) 0%,rgba(0,0,0,0) 65%);pointer-events:none;}
+#csc-{{ section.id }} .csc-hero__text{position:absolute; max-width:70%; z-index:2; top: 0; left: 24px; bottom: 0; display: flex; justify-content: center; align-items: start; flex-direction: column;}
+#csc-{{ section.id }} .csc-hero__title > *{display:block;font-size:{{ section.settings.hero_title_size }}px;font-weight:500;color:{{ section.settings.hero_title_color }};line-height:1.2;margin:0 0 8px;white-space:pre-line;font-family:"Jost";}
+#csc-{{ section.id }} .csc-hero__sub{display:block;font-size:{{ section.settings.hero_sub_size }}px;font-weight:400;color:{{ section.settings.hero_sub_color }};margin:0;line-height:1.4;font-family:"Jost";}
+#csc-{{ section.id }} .csc-tiles{display:grid;grid-template-columns:1fr 1fr;gap:{{ section.settings.gap }}px;}
+#csc-{{ section.id }} .csc-tile{position:relative;overflow:hidden;border-radius:{{ section.settings.border_radius }}px;min-height: 300px; background-color:{{ section.settings.tile_fallback_color }};}
+#csc-{{ section.id }} .csc-tile img,#csc-{{ section.id }} .csc-tile svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+#csc-{{ section.id }} .csc-tile__overlay{position:absolute;inset:0; pointer-events:none; background: rgba(0, 0, 0, 0.3);}
+#csc-{{ section.id }} .csc-tile__label > *{position:absolute; top: 0; left: 24px; bottom: 0; display: flex; justify-content: center; align-items: center; font-size:{{ section.settings.tile_label_size }}px; font-weight:500; color:{{ section.settings.tile_label_color }}; line-height:120%; margin:0; z-index:2; white-space:pre-line; font-family:"Jost"; }
+@media screen and (max-width:767px){
+  #csc-{{ section.id }} {padding-top: 40px; padding-bottom : 40px;}
+  #csc-{{ section.id }} .csc-heading{margin-bottom: 60px; }
+  #csc-{{ section.id }} .csc-hero__text{left:18px;max-width:82%;}
+  #csc-{{ section.id }} .csc-hero__title > *{font-size:32px;}
+  #csc-{{ section.id }} .csc-tile__label > * {font-size: 32px; left: 20px; top: 0; bottom: 0; right: 0; display: flex; justify-content: start; align-items: center;}
+  #csc-{{ section.id }} .csc-hero__sub{font-size:16px;}
+  #csc-{{ section.id }} .csc-tiles{grid-template-columns:1fr;}
+  #csc-{{ section.id }} .csc-heading__title{font-size:48px;  text-align: center; padding: 0 12px; margin-bottom : 10px;}
+   #csc-{{ section.id }} .csc-heading__subtitle {font-size: 32px; text-align: center;  padding: 0 20px; line-height: 32px;}
+}
+</style>
+
+<section id="csc-{{ section.id }}" class="csc-section">
+  <div class="{% if section.settings.use_container %}wrapper{% endif %} csc-inner">
+
+    {%- comment -%} ── Heading ── {%- endcomment -%}
+    {%- if section.settings.show_heading -%}
+      <div class="csc-heading">
+        {%- unless section.settings.title == blank -%}
+          <span class="csc-heading__title">{{ section.settings.title }}</span>
+        {%- endunless -%}
+        {%- unless section.settings.subtitle == blank -%}
+          <span class="csc-heading__subtitle">{{ section.settings.subtitle }}</span>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Hero Banner ── {%- endcomment -%}
+    <div class="csc-hero">
+      {%- if section.settings.hero_image != blank -%}
+        {{
+          section.settings.hero_image
+          | image_url: width: 1600
+          | image_tag:
+            loading: 'lazy',
+            alt: section.settings.hero_image.alt | escape
+        }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+      <div class="csc-hero__overlay"></div>
+      <div class="csc-hero__text">
+        {%- unless section.settings.hero_title == blank -%}
+          <div class="csc-hero__title">{{ section.settings.hero_title }}</div>
+        {%- endunless -%}
+        {%- unless section.settings.hero_sub == blank -%}
+          <span class="csc-hero__sub">{{ section.settings.hero_sub }}</span>
+        {%- endunless -%}
+      </div>
+    </div>
+
+    {%- comment -%} ── Feature Tiles ── {%- endcomment -%}
+    <div class="csc-tiles">
+
+      <div class="csc-tile">
+        {%- if section.settings.tile1_image != blank -%}
+          {{
+            section.settings.tile1_image
+            | image_url: width: 900
+            | image_tag:
+              loading: 'lazy',
+              alt: section.settings.tile1_image.alt | escape
+          }}
+        {%- else -%}
+          {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        <div class="csc-tile__overlay"></div>
+        {%- unless section.settings.tile1_label == blank -%}
+          <div class="csc-tile__label">{{ section.settings.tile1_label }}</div>
+        {%- endunless -%}
+      </div>
+
+      <div class="csc-tile">
+        {%- if section.settings.tile2_image != blank -%}
+          {{
+            section.settings.tile2_image
+            | image_url: width: 900
+            | image_tag:
+              loading: 'lazy',
+              alt: section.settings.tile2_image.alt | escape
+          }}
+        {%- else -%}
+          {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        <div class="csc-tile__overlay"></div>
+        {%- unless section.settings.tile2_label == blank -%}
+          <div class="csc-tile__label">{{ section.settings.tile2_label }}</div>
+        {%- endunless -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Clinically Studied",
+  "tag": "section",
+  "class": "csc-section-wrapper",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "⚙️ Layout & Container"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_container",
+      "label": "Enable container (wrapper class)",
+      "info": "Wraps content in your theme's .wrapper container",
+      "default": true
+    },
+
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding — top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding — bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 2,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between all elements",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+
+    {
+      "type": "header",
+      "content": "📝 Heading Block"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Clinically studied collagen"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Title — font size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title — color",
+      "default": "#111111"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "for visible beauty support"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle — font size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle — color",
+      "default": "#111111"
+    },
+
+    {
+      "type": "header",
+      "content": "🖼️ Hero Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero — image"
+    },
+    {
+      "type": "color",
+      "id": "hero_fallback_color",
+      "label": "Hero — fallback background color",
+      "default": "#82172e"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_title",
+      "label": "Hero — title",
+      "default": "<p>VERISOL® enhanced\nmarine collagen</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_size",
+      "min": 16,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Hero title — font size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "hero_title_color",
+      "label": "Hero title — color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "hero_sub",
+      "label": "Hero — subtext",
+      "default": "Powered by VERISOL® bioactive collagen peptides"
+    },
+    {
+      "type": "range",
+      "id": "hero_sub_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Hero subtext — font size",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "hero_sub_color",
+      "label": "Hero subtext — color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "🔬 Feature Tiles — Shared"
+    },
+    {
+      "type": "color",
+      "id": "tile_fallback_color",
+      "label": "Tiles — fallback background color",
+      "default": "#243f52"
+    },
+    {
+      "type": "range",
+      "id": "tile_overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Tiles — overlay darkness",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tile_label_size",
+      "min": 14,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "label": "Tile label — font size",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "tile_label_color",
+      "label": "Tile label — color",
+      "default": "#ffffff"
+    },
+
+    {
+      "type": "header",
+      "content": "Tile 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile1_image",
+      "label": "Tile 1 — image"
+    },
+    {
+      "type": "richtext",
+      "id": "tile1_label",
+      "label": "Tile 1 — label",
+      "default": "<p>Clinically studied\npeptides</p>"
+    },
+
+    {
+      "type": "header",
+      "content": "Tile 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile2_image",
+      "label": "Tile 2 — image"
+    },
+    {
+      "type": "richtext",
+      "id": "tile2_label",
+      "label": "Tile 2 — label",
+      "default": "<p>Third-party tested</p>"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Clinically Studied",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

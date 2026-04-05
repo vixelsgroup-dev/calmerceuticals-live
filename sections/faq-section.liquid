@@ -1,0 +1,428 @@
+{% comment %}
+  Section: FAQ – You Probably Have Some Questions
+  - Cream bg, left blue border
+  - Two columns: left = heading + body + button, right = accordion FAQ
+  - Active item: thick burgundy top border + × icon
+  - Closed items: thin grey divider + + icon
+  - Dynamic blocks for FAQ items
+{% endcomment %}
+
+{%- assign uid = section.id -%}
+
+<section
+  class="faq-section"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
+  "
+>
+  <div class="faq-section__inner {% if section.settings.container_width %}wrapper{% endif %}">
+    <!-- LEFT COLUMN -->
+    <div class="faq-section__left">
+      {%- if section.settings.heading != blank -%}
+        <div class="faq-section__heading">
+          {{ section.settings.heading }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.body_text != blank -%}
+        <div class="faq-section__body">
+          {{ section.settings.body_text }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="faq-section__btn"
+          style="background: {{ section.settings.button_bg }}; color: {{ section.settings.button_text_color }};"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <!-- RIGHT COLUMN: Accordion -->
+    <div class="faq-section__right" id="faqAccordion--{{ uid }}">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          {%- assign is_first = false -%}
+          {%- if forloop.first -%}{%- assign is_first = true -%}{%- endif -%}
+          <div
+            class="faq-item{% if is_first %} faq-item--open{% endif %}"
+            data-faq-item
+            {{ block.shopify_attributes }}
+          >
+            <button
+              class="faq-item__trigger"
+              data-faq-trigger
+              aria-expanded="{% if is_first %}true{% else %}false{% endif %}"
+            >
+              <span
+                class="faq-item__question"
+                style="color: {{ section.settings.question_color }}; font-size: {{ section.settings.question_size }}px;"
+              >
+                {{ block.settings.question }}
+              </span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <span class="faq-item__icon-plus">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="faq-item__icon-close">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <line x1="2" y1="2" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="2" x2="2" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div class="faq-item__answer" data-faq-answer>
+              <div class="faq-item__answer-inner">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section{width:100%;box-sizing:border-box;}
+  .faq-section__inner{display:grid;grid-template-columns:1fr 1.85fr;gap:60px;align-items:start;padding:0 32px;margin:0 auto;}
+  .faq-section__left{max-width: 300px; display:flex;flex-direction:column;gap:20px;position:sticky;top:40px;}
+  .faq-section__heading>*{font-family: "Jost"; font-weight:400;color:{{ section.settings.heading_color }};font-size:{{ section.settings.heading_size }}px;line-height:{{ section.settings.heading_size }}px;margin:0;letter-spacing:-1.2px;}
+  .faq-section__heading p{margin:0;}
+  .faq-section__body>*{font-weight: 400; font-family: "Jost"; line-height:calc({{ section.settings.body_size }}px + 5px);color:{{ section.settings.body_color }};font-size:{{ section.settings.body_size }}px;}
+  .faq-section__body p{margin:0;}
+  .faq-section__btn{font-family: "Jost"; display:inline-block;padding:13px 26px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity 0.2s ease;align-self:flex-start;}
+  .faq-section__btn:hover{opacity:0.85;}
+  .faq-section__right{display:flex;flex-direction:column;}
+  .faq-item{border-top:1.5px solid {{ section.settings.divider_color }};transition:border-color 0.2s ease;}
+  .faq-item--open{border-top:3px solid {{ section.settings.active_border_color }};}
+  .faq-item__trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;background:none;border:none;cursor:pointer;text-align:left;}
+  .faq-item__question{font-weight: 600; font-family: "Jost"; font-weight:400;line-height:1.4;flex:1;}
+  .faq-item__icon{width:32px;height:32px;border-radius:50%;border:1.5px solid {{ section.settings.icon_border_color }};display:flex;align-items:center;justify-content:center;flex-shrink:0;color:{{ section.settings.icon_color }};transition:border-color 0.2s;}
+  .faq-item__icon-plus,.faq-item__icon-close{display:flex;align-items:center;justify-content:center;line-height:0;}
+  .faq-item__icon-close{display:none;}
+  .faq-item__icon-plus{display:flex;}
+  .faq-item--open .faq-item__icon-close{display:flex;}
+  .faq-item--open .faq-item__icon-plus{display:none;}
+  .faq-item__answer{overflow:hidden;height:0;transition:height 0.32s cubic-bezier(0.4,0,0.2,1);}
+  .faq-item__answer-inner>*{font-weight: 400; font-family: "Jost"; padding-bottom:20px;color:{{ section.settings.answer_color }};font-size:{{ section.settings.answer_size }}px;line-height:calc({{ section.settings.answer_size }}px + 5px);}
+  .faq-item__answer-inner p{margin:0 0 10px 0;}
+  .faq-item__answer-inner p:last-child{margin:0;}
+
+  @media screen and (max-width:767px){
+      .faq-section__inner{grid-template-columns:1fr;gap:36px; padding:0 16px;}
+      .faq-section__left{position:static;}
+  }
+</style>
+
+<script>
+  (function () {
+    function initFAQ() {
+      var accordion = document.getElementById('faqAccordion--{{ uid }}');
+      if (!accordion) return;
+
+      var items = accordion.querySelectorAll('[data-faq-item]');
+
+      function setHeight(answer, inner) {
+        answer.style.height = inner.scrollHeight + 'px';
+      }
+
+      function openItem(item) {
+        var answer = item.querySelector('[data-faq-answer]');
+        var inner = item.querySelector('.faq-item__answer-inner');
+        var trigger = item.querySelector('[data-faq-trigger]');
+        item.classList.add('faq-item--open');
+        trigger.setAttribute('aria-expanded', 'true');
+        setHeight(answer, inner);
+      }
+
+      function closeItem(item) {
+        var answer = item.querySelector('[data-faq-answer]');
+        var trigger = item.querySelector('[data-faq-trigger]');
+        answer.style.height = answer.scrollHeight + 'px';
+        item.classList.remove('faq-item--open');
+        trigger.setAttribute('aria-expanded', 'false');
+        // Force reflow then animate to 0
+        answer.getBoundingClientRect();
+        answer.style.height = '0px';
+      }
+
+      // Init first item — use scrollHeight, no rAF needed
+      items.forEach(function (item) {
+        if (item.classList.contains('faq-item--open')) {
+          var inner = item.querySelector('.faq-item__answer-inner');
+          var answer = item.querySelector('[data-faq-answer]');
+          answer.style.height = inner.scrollHeight + 'px';
+        }
+      });
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector('[data-faq-trigger]');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', function () {
+          var isOpen = item.classList.contains('faq-item--open');
+          items.forEach(function (el) { closeItem(el); });
+          if (!isOpen) { openItem(item); }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+      initFAQ();
+    }
+  })();
+</script>
+{% schema %}
+{
+  "name": "FAQ Section",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f4f2ee"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Text Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "color",
+      "id": "active_border_color",
+      "label": "Active Item Top Border Color",
+      "default": "#7a1a30"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Line Color",
+      "default": "#d8d0cc"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question Text Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer Text Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color (+/×)",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "color",
+      "id": "icon_border_color",
+      "label": "Icon Circle Border Color",
+      "default": "#c8b8bc"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Body Font Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Font Size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer Font Size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Left Column"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>You probably have some questions</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Text",
+      "default": "<p>Check out our FAQs to find answers to common questions and feel free to reach out if you have more.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "All FAQs"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color_background",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "radial-gradient(93.96% 93.96% at 54.14% 82.02%, #8A4C5B 0%, #170D0F 100%)"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How can a formula change my \"biological age\" in just 14 days?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>We don't just \"support\" wellness; we modulate clinical biomarkers. Calmerceuticals Longevity™ is clinically shown to reduce major inflammatory markers within a 14-day window.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can a formula change my \"biological age\" in just 14 days?",
+            "answer": "<p>We don't just \"support\" wellness; we modulate clinical biomarkers. Calmerceuticals Longevity™ is clinically shown to reduce major inflammatory markers—specifically IL-6, CRP, and TNF-α—by up to 90% within a 14-day window. By lowering these signatures, your system shifts from a state of \"defense\" to a state of \"repair,\" effectively resetting your biological clock.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why are your probiotics \"Centenarian-Sourced\"?",
+            "answer": "<p>Our strains are isolated from the gut microbiomes of verified centenarians in longevity hotspots. These organisms have co-evolved with human longevity biology in ways that commercially farmed strains simply cannot replicate.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I have to take this forever to keep the results?",
+            "answer": "<p>Biological resilience compounds over time. Most users see sustained improvement after 90 days of consistent use, with measurable changes to microbiome diversity that persist well beyond supplementation.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes your \"ViaCap\" technology different from a standard capsule?",
+            "answer": "<p>Standard capsules dissolve in stomach acid, destroying up to 99% of probiotics before they reach the colon. ViaCap™ micro-encapsulation ensures 95% survivability to the target site.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to use with other supplements or medications?",
+            "answer": "<p>Longevity™ is formulated with clinically researched ingredients at safe, effective doses. We always recommend consulting your healthcare provider if you are on prescription medications.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

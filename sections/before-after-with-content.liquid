@@ -1,0 +1,285 @@
+{{ 'before-after-with-content.css' | asset_url | stylesheet_tag: preload: true }}
+
+<section
+  id="BeforeAfterWithContent-{{ section.id }}"
+  class="bawc-section"
+  style="
+    --bawc-bg: {{ section.settings.background_color }};
+    --bawc-heading: {{ section.settings.heading_color }};
+    --bawc-subheading: {{ section.settings.subheading_color }};
+    --bawc-primary: {{ section.settings.primary_color }};
+    --bawc-pad-x: {{ section.settings.padding_horizontal }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="bawc-section__inner">
+    <header class="bawc-section__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="bawc-section__heading">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="bawc-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+    </header>
+
+    {% if section.blocks.size > 0 %}
+      <div class="bawc-section__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'testimonial' %}
+            <article class="bawc-card" {{ block.shopify_attributes }}>
+              {% liquid
+                assign bawc_alt_after = block.settings.after_image.alt | default: block.settings.customer_name | default: 'After' | escape
+                assign bawc_alt_before = block.settings.before_image.alt | default: block.settings.customer_name | default: 'Before' | escape
+              %}
+              {% if block.settings.before_image != blank and block.settings.after_image != blank %}
+                <div class="bawc-comparison">
+                  <div class="bawc-comparison__after">
+                    {{
+                      block.settings.after_image
+                      | image_url: width: 1200
+                      | image_tag:
+                        class: 'bawc-comparison__img',
+                        loading: 'lazy',
+                        sizes: '(min-width: 900px) 33vw, 100vw',
+                        widths: '375, 550, 750, 1100, 1200',
+                        alt: bawc_alt_after
+                    }}
+                    {% if block.settings.after_text != blank %}
+                      <span class="bawc-comparison__caption">{{ block.settings.after_text | escape }}</span>
+                    {% endif %}
+                  </div>
+                  <div
+                    class="bawc-comparison__before"
+                    data-initial-split="{{ block.settings.initial_split }}%"
+                  >
+                    {{
+                      block.settings.before_image
+                      | image_url: width: 1200
+                      | image_tag:
+                        class: 'bawc-comparison__img',
+                        loading: 'lazy',
+                        sizes: '(min-width: 900px) 33vw, 100vw',
+                        widths: '375, 550, 750, 1100, 1200',
+                        alt: bawc_alt_before
+                    }}
+                    {% if block.settings.before_text != blank %}
+                      <span class="bawc-comparison__caption">{{ block.settings.before_text | escape }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="bawc-card__content">
+                {% if block.settings.customer_name != blank %}
+                  <div class="bawc-card__meta">
+                    <h3 class="bawc-card__name">{{ block.settings.customer_name | escape }}</h3>
+                    {% if block.settings.product_line != blank %}
+                      <p class="bawc-card__product">{{ block.settings.product_line | escape }}</p>
+                    {% endif %}
+                  </div>
+                {% elsif block.settings.product_line != blank %}
+                  <div class="bawc-card__meta">
+                    <p class="bawc-card__product">{{ block.settings.product_line | escape }}</p>
+                  </div>
+                {% endif %}
+
+                {% if block.settings.quote != blank %}
+                  <blockquote class="bawc-card__quote">{{ block.settings.quote | escape }}</blockquote>
+                {% endif %}
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.primary_label != blank or section.settings.secondary_label != blank %}
+      <div class="bawc-section__actions">
+        {% if section.settings.primary_label != blank %}
+          <a
+            class="bawc-section__btn bawc-section__btn--primary"
+            href="{{ section.settings.primary_link | default: '#' }}"
+          >
+            {{ section.settings.primary_label | escape }}
+          </a>
+        {% endif %}
+        {% if section.settings.secondary_label != blank %}
+          <a
+            class="bawc-section__btn bawc-section__btn--secondary"
+            href="{{ section.settings.secondary_link | default: '#' }}"
+          >
+            {{ section.settings.secondary_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ 'before-after-with-content.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Before/after + content",
+  "tag": "section",
+  "class": "section-before-after-with-content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Before & After"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Based on 12 Weeks daily use."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f9f9fb"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#323232"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary / button accent",
+      "default": "#610b27"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 12,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Start Your Skin Transformation"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "Try it once"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before image"
+        },
+        {
+          "type": "text",
+          "id": "before_text",
+          "label": "Before label (optional)",
+          "info": "Small badge on the before side"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After image"
+        },
+        {
+          "type": "text",
+          "id": "after_text",
+          "label": "After label (optional)"
+        },
+        {
+          "type": "range",
+          "id": "initial_split",
+          "min": 10,
+          "max": 90,
+          "step": 1,
+          "unit": "%",
+          "label": "Initial slider position",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Name / headline",
+          "default": "Ayesha - Age 42"
+        },
+        {
+          "type": "text",
+          "id": "product_line",
+          "label": "Product or subtitle",
+          "default": "Pericalm Sachet"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "I've tried so many brands, but nothing compares to PeriCalm. Within two weeks, my night sweats vanished and I finally feel like myself again. It's a total game-changer for my daily energy."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before/after + content",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

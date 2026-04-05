@@ -1,0 +1,317 @@
+{% comment %}
+  Section: Biological Transformation Timeline / Roadmap
+  - Cream bg, blue dotted top border
+  - Eyebrow + large bold burgundy heading
+  - Horizontal timeline: dots connected by line, each with time label + title + body
+{% endcomment %}
+
+<section class="tlr-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+">
+  <div class="tlr-section__inner {% if section.settings.container_width %}wrapper {% endif %}">
+
+    <!-- HEADER -->
+    <div class="tlr-section__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="tlr-section__eyebrow" style="color: {{ section.settings.eyebrow_color }};">
+          <span>—</span> {{ section.settings.eyebrow }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <div class="tlr-section__heading" >
+          {{ section.settings.heading }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="tlr-section__timeline">
+
+      <!-- Connecting line -->
+      
+      <div class="tlr-section__line" ></div>
+
+      <!-- Steps -->
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          <div class="tlr-section__step" {{ block.shopify_attributes }}>
+
+            <!-- Dot -->
+            <div class="tlr-section__dot-wrap">
+              <div class="tlr-section__dot">
+                <div class="tlr-section__dot-inner"></div>
+              </div>
+            </div>
+
+            <!-- Content below dot -->
+            <div class="tlr-section__step-content">
+              {%- if block.settings.time_label != blank -%}
+                <div class="tlr-section__time" style="color: {{ section.settings.time_color }}; font-size: {{ section.settings.time_size }}px;">
+                  {{ block.settings.time_label }}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <div class="tlr-section__step-title" style="color: {{ section.settings.step_title_color }}; font-size: {{ section.settings.step_title_size }}px;">
+                  {{ block.settings.title }}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="tlr-section__step-body" style="color: {{ section.settings.body_color }}; font-size: {{ section.settings.body_size }}px;">
+                  {{ block.settings.body }}
+                </div>
+              {%- endif -%}
+            </div>
+
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.tlr-section { width: 100%; box-sizing: border-box; }
+.tlr-section__inner { margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+/* HEADER */
+.tlr-section__header { display: flex; flex-direction: column; gap: 16px; }
+.tlr-section__eyebrow {font-family: "Jost"; display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 400; letter-spacing: 0.5px; }
+.tlr-section__heading > * {font-family: "Jost"; font-weight: 500; line-height: 1.15; margin: 0; color: {{ section.settings.heading_color }}; font-size: {{ section.settings.heading_size }}px; letter-spacing: -0.5px; }
+.tlr-section__heading p { margin: 0; }
+/* TIMELINE WRAPPER */
+.tlr-section__timeline { position: relative; display: grid; grid-template-columns: repeat({{ section.blocks | size }}, 1fr); gap: 0; align-items: start; }
+/* Horizontal connecting line — sits at dot vertical center */
+.tlr-section__line { position: absolute; top: 22px; left: 1px; right: 0; background: rgba(0, 0, 0, 0.1); height: 1px; z-index: 0; transform: translateY(-50%); }
+/* EACH STEP */
+.tlr-section__step { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-right: 20px; position: relative; z-index: 1; }
+/* DOT */
+.tlr-section__dot-wrap { display: flex; align-items: center; justify-content: center; margin: 0; }
+.tlr-section__dot { border-radius: 50%; border: 1.5px solid #7A8C6E; display: flex; align-items: center; justify-content: center; background: #f7f9ee; width: 25px; height: 25px; margin: 0; }
+.tlr-section__dot-inner { border-radius: 50%; width: 15px; height: 15px; background: #7A8C6E; display: flex; justify-content: center; align-items: center; margin: 0; }
+/* CONTENT */
+.tlr-section__step-content { display: flex; flex-direction: column; gap: 6px; }
+.tlr-section__time { font-weight: 400; letter-spacing: 1.99px; text-transform: uppercase; line-height: 1; }
+.tlr-section__step-title { font-weight: 600; line-height: 1.25; letter-spacing: -0.2px; }
+.tlr-section__step-body { line-height: 1.65; font-weight: 400; }
+.tlr-section__step-body p { margin: 0; }
+/* RESPONSIVE */
+@media screen and (max-width: 767px) {
+.tlr-section__timeline { grid-template-columns: repeat(1, 1fr); gap: 32px; }
+.tlr-section__line { display: none; }
+.tlr-section__heading > *{font-size: 34px; line-height: 40px; letter-spacing: 0;}
+.tlr-section__time{border-bottom : 1px solid rgba(0, 0, 0, 0.1); padding-bottom : 15px; margin-bottom : 16px; margin-top: 23px;}
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Timeline Roadmap",
+  "tag": "section",
+  "class": "section-tlr",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+   {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Max Container Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f4f2ee"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color",
+      "default": "#7a6060"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 42
+    },
+    {
+      "type": "color",
+      "id": "time_color",
+      "label": "Time Label Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "range",
+      "id": "time_size",
+      "min": 9,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "label": "Time Label Font Size",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Step Title Color",
+      "default": "#1a0d10"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "min": 13,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Title Font Size",
+      "default": 17
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Text Color",
+      "default": "#4a3a3e"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Body Font Size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow & Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "The Rejuvenation Roadmap"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Biological transformation,<br>mapped to the hour.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "time_label",
+          "label": "Time Label (e.g. HOUR 8, DAY 2)",
+          "default": "HOUR 8"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "ViaCap™ Absorption"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body Text",
+          "default": "<p>Micro-encapsulated probiotics bypass stomach acid and reach the colon intact. Initial colonization begins.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline Roadmap",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "time_label": "HOUR 8",
+            "title": "ViaCap™ Absorption",
+            "body": "<p>Micro-encapsulated probiotics bypass stomach acid and reach the colon intact. Initial colonization begins.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 2",
+            "title": "Mitophagy Activation",
+            "body": "<p>Postbiotic metabolites trigger cellular housekeeping. Damaged mitochondria are cleared and renewed.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 14",
+            "title": "Biological Age Reversal",
+            "body": "<p>IL-6, CRP, and TNF-α markers reach clinical improvement thresholds. Gut barrier integrity restored.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 120",
+            "title": "Peak Physical Strength",
+            "body": "<p>Mitochondrial density at optimal levels. Energy biogenesis sustains performance throughout the day.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 365",
+            "title": "Optimal Cellular Health",
+            "body": "<p>Microbiome diversity matches centenarian profiles. Systemic inflammageing markers sustained in optimal range.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

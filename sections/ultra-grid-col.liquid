@@ -1,0 +1,450 @@
+{% comment %}
+  SECTION: Ultra Real Results
+  - Row 1: centered heading + product image
+  - Row 2 TOP: 3 cards with their own height setting
+  - Row 2 BOTTOM: 2 cards with their own height setting
+  - Per-card: text position (bottom or center)
+{% endcomment %}
+
+<style>
+  #urr-{{ section.id }} {
+    background: {{ section.settings.section_bg }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    margin: 0 {{ section.settings.section_margin }}px;
+    border-radius: {{ section.settings.section_radius }}px;
+  }
+  .urr-inner {padding: 0 12px;}
+  /* ── Row 1 ── */
+  #urr-{{ section.id }} .urr-row1 { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: {{ section.settings.row1_gap }}px; }
+  #urr-{{ section.id }} .urr-row1__heading { margin-bottom: 32px; }
+  #urr-{{ section.id }} .urr-row1__heading p { font-family: "Jost"; font-size: {{ section.settings.heading_size }}px; font-weight: 500; color: {{ section.settings.heading_color }}; line-height: 1.2; margin: 0; }
+  #urr-{{ section.id }} .urr-row1__img-wrap { width: 100%; max-width: {{ section.settings.product_max_width }}px; }
+  #urr-{{ section.id }} .urr-row1__img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+  /* ── Top grid: 3 columns ── */
+  #urr-{{ section.id }} .urr-row2-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: {{ section.settings.card_gap }}px;
+    margin-bottom: {{ section.settings.card_gap }}px;
+  }
+
+  /* ── Bottom grid: 2 columns ── */
+  #urr-{{ section.id }} .urr-row2-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ section.settings.card_gap }}px;
+  }
+
+  /* ── Card base ── */
+  #urr-{{ section.id }} .urr-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ section.settings.card_radius }}px;
+    display: flex;
+    align-items: flex-end;
+  }
+  #urr-{{ section.id }} .urr-card img.urr-card__img-desktop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  #urr-{{ section.id }} .urr-card img.urr-card__img-mobile { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: none; }
+  #urr-{{ section.id }} .urr-card__placeholder { position: absolute; inset: 0; background: #2a2828; }
+
+  /* ── Top row card height (first 3) ── */
+  #urr-{{ section.id }} .urr-row2-top .urr-card { min-height: {{ section.settings.top_card_height }}px; }
+
+  /* ── Bottom row card height (last 2) ── */
+  #urr-{{ section.id }} .urr-row2-bottom .urr-card { min-height: {{ section.settings.bottom_card_height }}px; }
+
+  /* ── Content: bottom aligned (default) ── */
+  #urr-{{ section.id }} .urr-card__content {
+    position: relative;
+    z-index: 2;
+    padding: {{ section.settings.card_pad }}px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  /* ── Content: center aligned ── */
+  #urr-{{ section.id }} .urr-card--center {
+    align-items: center;
+    justify-content: center;
+  }
+  #urr-{{ section.id }} .urr-card--center .urr-card__content {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+    #urr-{{ section.id }} .urr-card__title.text-center{text-align: center;}
+  /* ── Typography: title (richtext) ── */
+  #urr-{{ section.id }} .urr-card__title,
+  #urr-{{ section.id }} .urr-card__title p { font-family: "Jost"; font-size: {{ section.settings.card_title_size }}px; font-weight: 600; color: {{ section.settings.card_title_color }}; margin: 0; line-height: 60px; }
+  #urr-{{ section.id }} .urr-card__title strong, #urr-{{ section.id }} .urr-card__title b { font-weight: 800; color: {{ section.settings.card_title_color }}; }
+
+  /* ── Typography: description (richtext) ── */
+  #urr-{{ section.id }} .urr-card__desc,
+  #urr-{{ section.id }} .urr-card__desc p { font-family: "Jost"; font-size: {{ section.settings.card_desc_size }}px; font-weight: 500; color: {{ section.settings.card_desc_color }}; margin: 0; line-height: 1.55; }
+  #urr-{{ section.id }} .urr-card__desc strong, #urr-{{ section.id }} .urr-card__desc b { font-weight: 700; color: {{ section.settings.card_desc_color }}; }
+   #urr-{{ section.id }} .urr-card__overlay{background: rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+  /* ── Responsive ── */
+  @media screen and (max-width: 767px) {
+    #urr-{{ section.id }} { margin: 0; padding-top: 70px; padding-bottom:6px; }
+     #urr-{{ section.id }} .urr-card__content{padding : 72px;}
+    #urr-{{ section.id }} .urr-card__content .urr-card__title br, #urr-{{ section.id }} .urr-card__content .urr-card__desc br{display: none;}
+    #urr-{{ section.id }} .urr-row1__heading p { font-size: {{ section.settings.heading_size | times: 0.7 | round }}px; }
+    #urr-{{ section.id }} .urr-card__title p { line-height: 120%; }
+    #urr-{{ section.id }} .urr-row2-top { grid-template-columns: 1fr; }
+    #urr-{{ section.id }} .urr-row2-bottom { grid-template-columns: 1fr; }
+    #urr-{{ section.id }} .urr-row2-top .urr-card { min-height: {{ section.settings.top_card_height | times: 0.8 | round }}px; }
+    #urr-{{ section.id }} .urr-row2-bottom .urr-card { min-height: {{ section.settings.bottom_card_height | times: 0.8 | round }}px; }
+
+    /* ── Mobile image swap ── */
+    #urr-{{ section.id }} .urr-card img.urr-card__img-desktop { display: none; }
+    #urr-{{ section.id }} .urr-card img.urr-card__img-mobile { display: block; }
+    /* ── Fallback: if no mobile image uploaded, show desktop image ── */
+    #urr-{{ section.id }} .urr-card.no-mobile-img img.urr-card__img-desktop { display: block; }
+  }
+</style>
+
+<section id="urr-{{ section.id }}">
+  <div class="urr-inner {% if section.settings.container_width %}wrapper{% endif %}">
+
+    {%- comment -%} ── Row 1: Heading + Product Image ── {%- endcomment -%}
+    <div class="urr-row1">
+      {%- if section.settings.heading != blank -%}
+        <div class="urr-row1__heading">{{ section.settings.heading }}</div>
+      {%- endif -%}
+      <div class="urr-row1__img-wrap">
+        {%- if section.settings.product_image != blank -%}
+          {{ section.settings.product_image | image_url: width: 800 | image_tag: loading: 'eager', class: 'urr-row1__img', alt: section.settings.product_image.alt }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} ── Split blocks: first 3 = top, rest = bottom ── {%- endcomment -%}
+    {%- assign card_blocks = section.blocks | where: 'type', 'card' -%}
+    {%- assign top_cards = card_blocks | slice: 0, 3 -%}
+    {%- assign bottom_cards = card_blocks | slice: 3, 10 -%}
+
+    {%- if card_blocks.size > 0 -%}
+
+      {%- comment -%} ── TOP ROW: first 3 cards ── {%- endcomment -%}
+      {%- if top_cards.size > 0 -%}
+        <div class="urr-row2-top">
+          {%- for block in top_cards -%}
+            {%- assign align_class = '' -%}
+            {%- if block.settings.text_align == 'center' -%}
+              {%- assign align_class = 'urr-card--center' -%}
+            {%- endif -%}
+            {%- assign mobile_class = '' -%}
+            {%- if block.settings.image_mobile == blank -%}
+              {%- assign mobile_class = 'no-mobile-img' -%}
+            {%- endif -%}
+            <div class="urr-card {{ align_class }} {{ mobile_class }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.image.alt, class: 'urr-card__img-desktop' }}
+              {%- else -%}
+                <div class="urr-card__placeholder"></div>
+              {%- endif -%}
+              {%- if block.settings.image_mobile != blank -%}
+                {{ block.settings.image_mobile | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.image_mobile.alt, class: 'urr-card__img-mobile' }}
+              {%- endif -%}
+              {%- if block.settings.show_overlay -%}<div class="urr-card__overlay"></div>{%- endif -%}
+              <div class="urr-card__content">
+                {%- if block.settings.title != blank -%}
+                  <div class="urr-card__title {% if section.settings.text_center_cards %} text-center {% endif %}">{{ block.settings.title }}</div>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <div class="urr-card__desc {% if section.settings.text_center_cards %} text-center {% endif %}">{{ block.settings.description }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} ── BOTTOM ROW: cards 4 & 5 ── {%- endcomment -%}
+      {%- if bottom_cards.size > 0 -%}
+        <div class="urr-row2-bottom {% if section.settings.text_center_cards %} text-center {% endif %}">
+          {%- for block in bottom_cards -%}
+            {%- assign align_class = '' -%}
+            {%- if block.settings.text_align == 'center' -%}
+              {%- assign align_class = 'urr-card--center' -%}
+            {%- endif -%}
+            {%- assign mobile_class = '' -%}
+            {%- if block.settings.image_mobile == blank -%}
+              {%- assign mobile_class = 'no-mobile-img' -%}
+            {%- endif -%}
+            <div class="urr-card {{ align_class }} {{ mobile_class }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.image.alt, class: 'urr-card__img-desktop' }}
+              {%- else -%}
+                <div class="urr-card__placeholder"></div>
+              {%- endif -%}
+              {%- if block.settings.image_mobile != blank -%}
+                {{ block.settings.image_mobile | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.image_mobile.alt, class: 'urr-card__img-mobile' }}
+              {%- endif -%}
+              {%- if block.settings.show_overlay -%}<div class="urr-card__overlay"></div>{%- endif -%}
+              <div class="urr-card__content">
+                {%- if block.settings.title != blank -%}
+                  <div class="urr-card__title {% if section.settings.text_center_cards %} text-center {% endif %}">{{ block.settings.title }}</div>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <div class="urr-card__desc {% if section.settings.text_center_cards %} text-center {% endif %}">{{ block.settings.description }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ultra Real Results",
+  "tag": "section",
+  "class": "section-ultra-real-results",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Enable container (wrapper)",
+      "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "#f0ecec"
+    },
+    {
+      "type": "range",
+      "id": "section_margin",
+      "min": 0, "max": 60, "step": 4, "unit": "px",
+      "label": "Side Margin",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "min": 0, "max": 32, "step": 2, "unit": "px",
+      "label": "Section Border Radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0, "max": 120, "step": 4, "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Row 1 — Heading & Product Image"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Real results you<br>can see and feel.</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24, "max": 72, "step": 2, "unit": "px",
+      "label": "Heading Font Size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#5c1a2e"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "range",
+      "id": "product_max_width",
+      "min": 200, "max": 900, "step": 20, "unit": "px",
+      "label": "Product Image Max Width",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "row1_gap",
+      "min": 0, "max": 80, "step": 4, "unit": "px",
+      "label": "Gap Below Product Image",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Cards — Shared Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 2, "max": 32, "step": 2, "unit": "px",
+      "label": "Gap Between Cards",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0, "max": 24, "step": 2, "unit": "px",
+      "label": "Card Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_pad",
+      "min": 12, "max": 48, "step": 4, "unit": "px",
+      "label": "Card Inner Padding",
+      "default": 24
+    },
+    {
+      "type": "color_background",
+      "id": "card_overlay",
+      "label": "Card Overlay",
+      "default": "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0) 100%)"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 14, "max": 36, "step": 1, "unit": "px",
+      "label": "Card Title Size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "card_desc_color",
+      "label": "Card Description Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "card_desc_size",
+      "min": 10, "max": 18, "step": 1, "unit": "px",
+      "label": "Card Description Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Top Row — First 3 Cards Height"
+    },
+    {
+      "type": "range",
+      "id": "top_card_height",
+      "min": 150, "max": 600, "step": 10, "unit": "px",
+      "label": "Top Cards Height",
+      "default": 280
+    },
+    {
+      "type": "header",
+      "content": "Bottom Row — Last 2 Cards Height"
+    },
+    {
+      "type": "range",
+      "id": "bottom_card_height",
+      "min": 150, "max": 700, "step": 10, "unit": "px",
+      "label": "Bottom Cards Height",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "text_center_cards",
+      "label": "Card Text Center",
+      "default" : true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Result Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image (Desktop)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Background Image (Mobile)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_overlay",
+          "label": "Show Overlay",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Steady Power. No Spike. No Crash.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Cultavit® B-Complex and Fermented Shilajit rebuild energy at the mitochondrial level. L-Theanine delivers smooth, calm focus—zero jitters, zero crash.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text Position",
+          "default": "bottom",
+          "options": [
+            { "value": "bottom", "label": "Bottom" },
+            { "value": "center", "label": "Center" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ultra Real Results",
+      "blocks": [
+        { "type": "card", "settings": { "title": "<p>Steady Power. No Spike. No Crash.</p>", "description": "<p>Cultavit® B-Complex and Fermented Shilajit rebuild energy at the mitochondrial level. L-Theanine delivers smooth, calm focus—zero jitters, zero crash.</p>", "text_align": "bottom" } },
+        { "type": "card", "settings": { "title": "<p>Own Your Momentum.</p>", "description": "<p>Supports healthy female androgens within the normal range—hormones directly linked to energy, strength, and confidence. Stabilize your biology. Reclaim control.</p>", "text_align": "bottom" } },
+        { "type": "card", "settings": { "title": "<p>Elevate Desire and Intimacy.</p>", "description": "<p>Maca Root, Pomegranate, and Cacao work synergistically to support healthy libido and arousal. When stress fades, intimacy returns.</p>", "text_align": "bottom" } },
+        { "type": "card", "settings": { "title": "<p>Stronger, Smoother, More You.</p>", "description": "<p>Clinical-dose VERISOL® Collagen triggers your body's fibroblast cells to rebuild from within. Improved elasticity, luminous glow, comfortable movement.</p>", "text_align": "center" } },
+        { "type": "card", "settings": { "title": "<p>Calm, Clear, Capable.</p>", "description": "<p>Sharp clarity and sustained attention, even under pressure. Adaptogens maintain composure when your schedule is relentless.</p>", "text_align": "center" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

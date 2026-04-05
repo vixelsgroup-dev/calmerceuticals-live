@@ -1,0 +1,579 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "padding_top": 60,
+        "padding_bottom": 30
+      }
+    },
+    "25dbd963-093c-4cc9-9cd4-7bde32b883ac": {
+      "type": "section-banner-image",
+      "blocks": {
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-0": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Your Questions, Answered</p>",
+            "size": 100
+          }
+        },
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>FAQ</p>",
+            "size": 180,
+            "heading_highlight_type": "italics",
+            "highlight_color": "rgba(0,0,0,0)",
+            "highlight_text_color": ""
+          }
+        },
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find all the information you need about Calmerceuticals, from product benefits to usage and safety. Everything you need to know is right here.</p>",
+            "size": 100
+          }
+        },
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--small",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--small"
+          }
+        }
+      },
+      "block_order": [
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-0",
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-1",
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-2",
+        "template--18952594030913__25dbd963-093c-4cc9-9cd4-7bde32b883ac-16831285413c69ee80-3"
+      ],
+      "settings": {
+        "height": "one-third-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/u9778399291_httpss.mj.runDsLV3T9-OwM_Water_drops_falling_on_s_c5e0b8c4-c506-4743-888c-8f0eb6a5f0a6_2_1.png",
+        "image_mobile": "shopify://shop_images/u9778399291_httpss.mj.runDsLV3T9-OwM_Water_drops_falling_on_s_c5e0b8c4-c506-4743-888c-8f0eb6a5f0a6_2_1.png",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "text_position": "center",
+        "text_alignment": "text-left",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "accordion-section-1": {
+      "type": "section-accordions",
+      "blocks": {
+        "accordion_block_1_3": {
+          "type": "text",
+          "settings": {
+            "title": "What does Calmerceuticals Collagen taste like?",
+            "text": "<p>Calmerceuticals Collagen is available in two delicious flavours, carefully crafted to deliver an exceptional taste experience: Mango & Mandarin and Wild Berry.</p>"
+          }
+        },
+        "accordion_block_1_1": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen gluten-free?",
+            "text": "<p>Yes, our collagen supplement is gluten-free and made with carefully selected, clean ingredients.</p>"
+          }
+        },
+        "accordion_block_1_2": {
+          "type": "text",
+          "settings": {
+            "title": "How and when should I take Calmerceuticals Collagen?",
+            "text": "<p>Take it your way! Our pre-measured sachets are ready to drink, making them perfect for your busy lifestyle. Enjoy it on the go or mix it with your favourite smoothie or yogurt at home.</p>"
+          }
+        },
+        "accordion_block_1_4": {
+          "type": "text",
+          "settings": {
+            "title": "Can I take Calmerceuticals Collagen if taking medicine?",
+            "text": "<p>We recommend to consult with a doctor first if taking medicine.</p>"
+          }
+        },
+        "text_kPWctq": {
+          "type": "text",
+          "settings": {
+            "title": "Can Calmerceuticals Collagen help with Menopause?",
+            "text": "<p>Our collagen has been specially formulated to help with menopausal skin. Studies show that women's skin loses about 30% of its collagen during the first five years of menopause. Its nutrient-rich formula promotes overall wellness during this transitional phase.</p>"
+          }
+        },
+        "text_LFA7kW": {
+          "type": "text",
+          "settings": {
+            "title": "Can Calmerceuticals Collagen help with dry skin?",
+            "text": "<p>Collagen is one of the building blocks of skin. Taking oral collagen can improve elasticity, combat wrinkles and help in healing skin issues.</p><p>Calmerceuticals Collagen has added hyaluronic acid to help hydration.</p>"
+          }
+        },
+        "text_pzK7WG": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen safe?",
+            "text": "<p>Yes, Calmerceuticals Collagen is extremely safe. Our formula is crafted under Australia’s strict regulations and certified by the TGA.</p>"
+          }
+        },
+        "text_kwkY7r": {
+          "type": "text",
+          "settings": {
+            "title": "Can I take Calmerceuticals Collagen if pregnant or breastfeeding?",
+            "text": "<p>Our products are made with naturally sourced, premium ingredients and are independently tested for quality and safety. However, pregnancy and breastfeeding are unique experiences for everyone. We recommend consulting your doctor or a healthcare professional for personalized advice before using any supplement, including Calmerceuticals Collagen.</p>"
+          }
+        },
+        "text_D6YYnB": {
+          "type": "text",
+          "settings": {
+            "title": "Does Calmerceuticals Collagen taste of fish?",
+            "text": "<p>No, our unique formula features a light, refreshing fruity taste with no fishy undertones, ensuring an enjoyable experience with every sachet.</p>"
+          }
+        },
+        "text_GNGBdw": {
+          "type": "text",
+          "settings": {
+            "title": "Where do you produce Calmerceuticals Collagen?",
+            "text": "<p>Calmerceuticals Collagen is proudly developed and manufactured in Australia, adhering to the highest industry standards and strict TGA regulations.</p>"
+          }
+        },
+        "text_MHWPTg": {
+          "type": "text",
+          "settings": {
+            "title": "How quickly will I see results?",
+            "text": "<p>While individual results may vary, many users notice visible improvements in skin elasticity, hydration, and overall radiance within 4-6 weeks of consistent use. Some users experience benefits as early as 14 days.</p>"
+          }
+        },
+        "text_GebUCg": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen suitable for vegans?",
+            "text": "<p>As our collagen is derived from sustainably sourced marine fish, it is not suitable for vegans. Though we are in the process of created a vegan version of our product.</p>"
+          }
+        },
+        "text_8QLLVa": {
+          "type": "text",
+          "settings": {
+            "title": "What is the protein content of Calmerceuticals Collagen?",
+            "text": "<p>Each sachet contains 10,000 mg (10g) of VERISOL® Marine Liquid Collagen, the clinically proven dose for enhancing skin elasticity, reducing wrinkles, and supporting hair, nail, and joint health.</p>"
+          }
+        },
+        "text_pDRwFF": {
+          "type": "text",
+          "settings": {
+            "title": "How does collagen affect hair?",
+            "text": "<p>Collagen strengthens hair by supporting its structure, improving thickness, and enhancing resilience. Benefits can often be noticed in as little as 4 weeks with consistent use.</p>"
+          }
+        },
+        "text_ap7HFF": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen ethically sourced?",
+            "text": "<p>Yes, our marine collagen is sustainably sourced from wild-caught fish in Sweden, while our other natural ingredients are sourced in Australia. This ensures minimal environmental impact and a commitment to uncompromising quality.</p>"
+          }
+        },
+        "text_bBApP4": {
+          "type": "text",
+          "settings": {
+            "title": "What makes Calmerceuticals different from other collagen supplements?",
+            "text": "<p>Calmerceuticals stands out by using only the highest quality ingredients with no fillers or additives. Our products are crafted from sustainably sourced ingredients, with nothing coming from questionable origins. We prioritize a superior formulation that ensures optimal absorption and bioavailability. The combination of VERISOL® Liquid Marine Collagen, nutrient-rich Cultavit®, hyaluronic acid, and essential vitamins works synergistically to deliver exceptional results, setting us apart as the gold standard in collagen supplementation.</p>"
+          }
+        },
+        "text_fGxHQi": {
+          "type": "text",
+          "settings": {
+            "title": "What are the main benefits of using Calmerceuticals Collagen?",
+            "text": "<p>Calmerceuticals Collagen supports skin elasticity, reduces wrinkles, strengthens hair and nails, and promotes joint and bone health. Its advanced formulation uses the highest quality ingredients to deliver visible results while ensuring maximum absorption and bioavailability.</p>"
+          }
+        },
+        "text_YYk6eJ": {
+          "type": "text",
+          "settings": {
+            "title": "How is Calmerceuticals Collagen absorbed by the body?",
+            "text": "<p>Our liquid formula is hydrolyzed for optimal bioavailability, allowing 90-95% absorption. This ensures that VERISOL® Liquid Marine Collagen effectively stimulates your body’s natural collagen production for fast, impactful results.</p>"
+          }
+        },
+        "text_ELfCFU": {
+          "type": "text",
+          "settings": {
+            "title": "What is the shelf life of Calmerceuticals Collagen?",
+            "text": "<p>Calmerceuticals Collagen has a shelf life of two years when stored in a cool, dry place. Each sachet is carefully sealed to maintain freshness, potency, and premium taste.</p>"
+          }
+        },
+        "text_NyLdDU": {
+          "type": "text",
+          "settings": {
+            "title": "How long should I use Calmerceuticals Collagen to see results?",
+            "text": "<p>While results may vary, most users notice improvements in skin elasticity, hydration, and radiance within 4-6 weeks of consistent daily use. Some benefits, such as stronger nails and reduced wrinkles, may begin as early as 14 days.</p>"
+          }
+        },
+        "text_eRFEY4": {
+          "type": "text",
+          "settings": {
+            "title": "Can I take Calmerceuticals Collagen with other supplements or medications?",
+            "text": "<p>Calmerceuticals Collagen is generally safe to use alongside other supplements or medications. However, we recommend consulting a healthcare professional before starting any new supplement regimen, especially if you’re on medication or have specific health conditions.</p>"
+          }
+        },
+        "text_iCmdrR": {
+          "type": "text",
+          "settings": {
+            "title": "Can I mix Calmerceuticals Collagen with food or drinks?",
+            "text": "<p>Yes! Calmerceuticals Collagen is heat-stable and versatile, making it perfect for mixing into smoothies, coffee, or even baked goods. Alternatively, enjoy it straight from the sachet for a quick, hassle-free beauty boost.</p>"
+          }
+        },
+        "text_jg8Mxk": {
+          "type": "text",
+          "settings": {
+            "title": "Are there any side effects of taking Calmerceuticals Collagen?",
+            "text": "<p>Calmerceuticals Collagen is made with safe, high-quality ingredients and is well-tolerated by most users. If you have specific allergies or sensitivities, review the ingredients or consult a healthcare professional before use.</p>"
+          }
+        },
+        "text_8mTi6J": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen suitable for people with allergies?",
+            "text": "<p>Our formula is gluten-free, dairy-free, and soy-free, making it suitable for many dietary needs. However, as it contains marine collagen, it is not suitable for those with fish allergies.</p>"
+          }
+        },
+        "text_HA9eGK": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen non-GMO?",
+            "text": "<p>Yes, all our ingredients, including VERISOL® Liquid Marine Collagen, are non-GMO, reflecting our commitment to clean, premium-quality products.</p>"
+          }
+        },
+        "text_NNJAbC": {
+          "type": "text",
+          "settings": {
+            "title": "Is Calmerceuticals Collagen suitable for men?",
+            "text": "<p>Absolutely. Collagen is essential for everyone, and men can benefit from Calmerceuticals Collagen to support healthy skin, stronger hair and nails, and improved joint and bone health. <a href=\"/products/enhanced-marine-collagen-for-men\" title=\"VERISOL® Marine Collagen for Men\"><strong>View our Verisol Enhanced Collagen for Men</strong></a>. </p>"
+          }
+        },
+        "text_Bg4aAK": {
+          "type": "text",
+          "settings": {
+            "title": "At what age should I start taking Calmerceuticals Collagen?",
+            "text": "<p>Collagen production starts to decline around age 25, making it an ideal time to begin supplementation. However, anyone looking to improve skin, hair, nails, or joint health can benefit from Calmerceuticals Collagen at any age.</p>"
+          }
+        },
+        "text_xUJN7D": {
+          "type": "text",
+          "settings": {
+            "title": "How does Calmerceuticals Collagen support joint health?",
+            "text": "<p>VERISOL® Liquid Marine Collagen helps maintain cartilage, support joint elasticity, and enhance bone density, making it an excellent choice for improving joint health and mobility.</p>"
+          }
+        },
+        "text_VKc7na": {
+          "type": "text",
+          "settings": {
+            "title": "Can I use Calmerceuticals Collagen if I don’t have visible signs of aging yet?",
+            "text": "<p>Yes, collagen supplementation is a proactive way to maintain skin elasticity, hydration, and overall wellness. Starting early helps combat the natural decline in collagen production, keeping your skin and body youthful and healthy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_block_1_3",
+        "accordion_block_1_1",
+        "accordion_block_1_2",
+        "accordion_block_1_4",
+        "text_kPWctq",
+        "text_LFA7kW",
+        "text_pzK7WG",
+        "text_kwkY7r",
+        "text_D6YYnB",
+        "text_GNGBdw",
+        "text_MHWPTg",
+        "text_GebUCg",
+        "text_8QLLVa",
+        "text_pDRwFF",
+        "text_ap7HFF",
+        "text_bBApP4",
+        "text_fGxHQi",
+        "text_YYk6eJ",
+        "text_ELfCFU",
+        "text_NyLdDU",
+        "text_eRFEY4",
+        "text_iCmdrR",
+        "text_jg8Mxk",
+        "text_8mTi6J",
+        "text_HA9eGK",
+        "text_NNJAbC",
+        "text_Bg4aAK",
+        "text_xUJN7D",
+        "text_VKc7na"
+      ],
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": true,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#f0eeed",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_VyyNeT": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_d3mj6j": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Subheading</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_8cXRb8": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Still Have </strong><em><strong>Questions?</strong></em></p>",
+            "size": 120,
+            "heading_highlight_type": "highlight-color",
+            "highlight_color": "#000000",
+            "highlight_text_color": "#610c27"
+          }
+        },
+        "text_KM3EC4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you couldn’t find the answer you’re looking for, we’re here to help! Send us an email at <a><strong>support@calmerceuticals.com</strong></a> or reach out to us via Instagram DM. Our dedicated customer support team strives to respond to all inquiries within 24 hours.</p>",
+            "size": 100
+          }
+        },
+        "button_nq9ggt": {
+          "type": "button",
+          "settings": {
+            "button_text": "Contact Us",
+            "button_link": "shopify://pages/contact-us",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--large"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_d3mj6j",
+        "heading_8cXRb8",
+        "text_KM3EC4",
+        "button_nq9ggt"
+      ],
+      "settings": {
+        "text_position": "center",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 60
+      }
+    },
+    "accordion-section-2": {
+      "type": "section-accordions",
+      "blocks": {
+        "accordion_block_2_0": {
+          "type": "text",
+          "settings": {
+            "title": "How long does it take to get my products?",
+            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p>"
+          }
+        },
+        "accordion_block_2_1": {
+          "type": "text",
+          "settings": {
+            "title": "How much does it cost?",
+            "text": "<p>Shipping rates can vary depending on your region and are calculated at checkout.<br/><br/>Here are the full details of our <a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">Shipping Policy</a>.</p>"
+          }
+        },
+        "accordion_block_2_2": {
+          "type": "text",
+          "settings": {
+            "title": "Is there free shipping?",
+            "text": "<p>Yes, we offer free shipping for large domestic orders.  Check the cart to see the current deal on free shipping..</p>"
+          }
+        },
+        "accordion_block_2_3": {
+          "type": "text",
+          "settings": {
+            "title": "Do you ship internationally?",
+            "text": "<p>Yes, we ship our products all over the globe.<br/><br/>Please note that free shipping is not applicable for international orders and that shipping rates could vary depending on your region.</p>"
+          }
+        },
+        "accordion_block_2_4": {
+          "type": "text",
+          "settings": {
+            "title": "Do you ship to my area?",
+            "text": "<p>A full list of all of our shipping areas can be found <a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">here</a>.<br/><br/>If your country or region is not mentioned, please feel free to reach out to see if we can work out the details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_block_2_0",
+        "accordion_block_2_1",
+        "accordion_block_2_2",
+        "accordion_block_2_3",
+        "accordion_block_2_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Shipping & Delivery",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "accordion-section-3": {
+      "type": "section-accordions",
+      "blocks": {
+        "accordion_block_3_0": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer warranty for your products?",
+            "text": "<p>All our products are subject to quality control.<br/><br/>Our warranty provides a guarantee against manufacturer defects.<br/><br/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br/><br/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.</p>"
+          }
+        },
+        "accordion_block_3_1": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer extended warranty?",
+            "text": "<p>An extended warranty can be added to your products for an additional cost.<br/><br/>Please get in touch for more information about extended warranties.</p>"
+          }
+        },
+        "accordion_block_3_2": {
+          "type": "text",
+          "settings": {
+            "title": "How much does extended warranty cost?",
+            "text": "<p>The extended warranty could come at a different cost depending on the type of product and extended period.<br/><br/>Please get in touch for more information.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_block_3_0",
+        "accordion_block_3_1",
+        "accordion_block_3_2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Warranty & Repair",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "accordion-section-4": {
+      "type": "section-accordions",
+      "blocks": {
+        "accordion_block_4_0": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer refunds?",
+            "text": "<p>Yes, we offer full and partial refunds.<br/><br/>Please enquire for more information about our Refund policy.</p>"
+          }
+        },
+        "accordion_block_4_1": {
+          "type": "text",
+          "settings": {
+            "title": "How long after I complete a purchase can I ask for a refund?",
+            "text": "<p>A refund request can be submitted within a month after the purchase is made.</p>"
+          }
+        },
+        "accordion_block_4_2": {
+          "type": "text",
+          "settings": {
+            "title": "How much can I get refunded?",
+            "text": "<p>In the case when the<strong>product and packaging are unopened and undamaged</strong>, you are<strong>eligible</strong>for a full refund.<br/><br/>In the case when<strong>the packaging has been opened and the product has been used</strong>, you are<strong>eligible</strong>for a partial refund.<br/><br/>In the case when a<strong>product has been damaged</strong>, and the damage is not covered by your warranty, you are<strong>not eligible</strong>for a refund.<br/><br/>Please check our <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a> to see if you're eligible for a refund.</p>"
+          }
+        },
+        "accordion_block_4_3": {
+          "type": "text",
+          "settings": {
+            "title": "Who pays the shipping costs in the case of a refund when the order doesn't have free shipping?",
+            "text": "<p>When an order does not include free shipping, all shipping costs (including the return shipping) are handled by the customer.</p>"
+          }
+        },
+        "accordion_block_4_4": {
+          "type": "text",
+          "settings": {
+            "title": "Who pays the shipping costs in the case of a refund when the order has free shipping?",
+            "text": "<p>When an order includes free shipping, only the cost of the return shipping is handled by the customer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_block_4_0",
+        "accordion_block_4_1",
+        "accordion_block_4_2",
+        "accordion_block_4_3",
+        "accordion_block_4_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Returns & Refunds",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "25dbd963-093c-4cc9-9cd4-7bde32b883ac",
+    "accordion-section-1",
+    "section_text_VyyNeT",
+    "accordion-section-2",
+    "accordion-section-3",
+    "accordion-section-4"
+  ]
+}

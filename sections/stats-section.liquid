@@ -1,0 +1,377 @@
+{% comment %}
+  Skin Stats Section - Shopify Theme Section
+  Matches the 4-column statistics design with icons and percentages
+{% endcomment %}
+
+<style>
+ .skin-stats-section { background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; } 
+ .skin-stats-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start; justify-items: center; } 
+ .skin-stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+ .skin-stat-image { width: 170px; height: 170px; object-fit: contain; display: block; } 
+ .skin-stat-content { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+ .skin-stat-label-top { font-family: "Jost"; font-size: {{ section.settings.label_font_size }}px; color: {{ section.settings.label_color }}; font-weight: 400; margin: 0; line-height: 120%; } 
+ .skin-stat-number { font-family: "Jost"; font-size: {{ section.settings.number_font_size }}px; color: {{ section.settings.number_color }}; font-weight: 400; margin: 0; line-height: 120%; }
+.skin-stat-highlight { font-family: "Jost"; font-size: {{ section.settings.highlight_font_size }}px; color: {{ section.settings.number_color }}; font-weight: 600; margin: 0; line-height: 1; } 
+.skin-stat-description { font-family: "Jost"; font-size: {{ section.settings.description_font_size }}px; color: {{ section.settings.description_color }}; font-weight: 600; margin: 0; line-height:120%; }
+ .skin-stat-subdescription { font-family: "Jost"; font-size: {{ section.settings.subdescription_font_size }}px; color: {{ section.settings.label_color }}; font-weight: 400; margin: 0; line-height:120%; }
+
+  @media screen and (max-width: 767px) {
+    .skin-stats-section{padding-top: 40px; padding-bottom: 0px;}
+    .skin-stats-container { grid-template-columns: repeat(1, 1fr); gap: 60px; } 
+    .skin-stat-image { width: 200px; height: 200px; } 
+  }
+</style>
+
+<section class="skin-stats-section">
+  <div class="skin-stats-container {% if section.settings.container_width %} wrapper {% endif %}">
+
+    {% comment %} Stat 1 {% endcomment %}
+    <div class="skin-stat-item">
+      {% if section.settings.stat1_image != blank %}
+        <img
+          class="skin-stat-image"
+          src="{{ section.settings.stat1_image | img_url: '300x300' }}"
+          alt="{{ section.settings.stat1_image.alt | default: section.settings.stat1_description }}"
+          loading="lazy"
+          height="170"
+        >
+      {% else %}
+        <div class="skin-stat-image" style="background: #e8d5c4; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #b89280; font-size: 14px;">Image</div>
+      {% endif %}
+      <div class="skin-stat-content">
+        <p class="skin-stat-label-top">{{ section.settings.stat1_label_top }}</p>
+        <p class="skin-stat-number">{{ section.settings.stat1_number }}</p>
+        <p class="skin-stat-description">{{ section.settings.stat1_description }}</p>
+        <p class="skin-stat-subdescription">{{ section.settings.stat1_subdescription }}</p>
+      </div>
+    </div>
+
+    {% comment %} Stat 2 {% endcomment %}
+    <div class="skin-stat-item">
+      {% if section.settings.stat2_image != blank %}
+        <img
+          class="skin-stat-image"
+          src="{{ section.settings.stat2_image | img_url: '300x300' }}"
+          alt="{{ section.settings.stat2_image.alt | default: section.settings.stat2_description }}"
+          loading="lazy"
+          height="170"
+        >
+      {% else %}
+        <div class="skin-stat-image" style="background: #e8d5c4; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #b89280; font-size: 14px;">Image</div>
+      {% endif %}
+      <div class="skin-stat-content">
+        <p class="skin-stat-label-top">{{ section.settings.stat2_label_top }}</p>
+        <p class="skin-stat-number">{{ section.settings.stat2_number }}</p>
+        <p class="skin-stat-description">{{ section.settings.stat2_description }}</p>
+        <p class="skin-stat-subdescription">{{ section.settings.stat2_subdescription }}</p>
+      </div>
+    </div>
+
+    {% comment %} Stat 3 {% endcomment %}
+    <div class="skin-stat-item">
+      {% if section.settings.stat3_image != blank %}
+        <img
+          class="skin-stat-image"
+          src="{{ section.settings.stat3_image | img_url: '300x300' }}"
+          alt="{{ section.settings.stat3_image.alt | default: section.settings.stat3_description }}"
+          loading="lazy"
+          height="170"
+        >
+      {% else %}
+        <div class="skin-stat-image" style="background: #e8d5c4; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #b89280; font-size: 14px;">Image</div>
+      {% endif %}
+      <div class="skin-stat-content">
+        <p class="skin-stat-label-top">{{ section.settings.stat3_label_top }}</p>
+        <p class="skin-stat-number">{{ section.settings.stat3_number }}</p>
+        <p class="skin-stat-description">{{ section.settings.stat3_description }}</p>
+        <p class="skin-stat-subdescription">{{ section.settings.stat3_subdescription }}</p>
+      </div>
+    </div>
+
+    {% comment %} Stat 4 {% endcomment %}
+    <div class="skin-stat-item">
+      {% if section.settings.stat4_image != blank %}
+        <img
+          class="skin-stat-image"
+          src="{{ section.settings.stat4_image | img_url: '300x300' }}"
+          alt="{{ section.settings.stat4_image.alt | default: section.settings.stat4_description }}"
+          loading="lazy"
+          height="170"
+        >
+      {% else %}
+        <div class="skin-stat-image" style="background: #e8d5c4; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #b89280; font-size: 14px;">Image</div>
+      {% endif %}
+      <div class="skin-stat-content">
+        <p class="skin-stat-label-top">{{ section.settings.stat4_label_top }}</p>
+        <p class="skin-stat-highlight">{{ section.settings.stat4_highlight }}</p>
+        <p class="skin-stat-description">{{ section.settings.stat4_description }}</p>
+        <p class="skin-stat-subdescription">{{ section.settings.stat4_subdescription }}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Skin Stats Section",
+  "tag": "section",
+  "class": "skin-stats-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Layout & Colors"
+    },
+    {
+        "type": "checkbox",
+        "id": "container_width",
+        "default" : true,
+        "label": "Container Width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "\"Up to\" Label Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "number_font_size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Percentage Number Font Size",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "highlight_font_size",
+      "min": 20,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Highlight Word Font Size (e.g. \"Noticeably\")",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Description (Bold) Font Size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "subdescription_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Sub-description Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "\"Up to\" Label & Sub-description Color",
+      "default": "#888888"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number / Highlight Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Bold Text Color",
+      "default": "#1a1a1a"
+    },
+
+    {
+      "type": "header",
+      "content": "Stat 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat1_image",
+      "label": "Stat 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label_top",
+      "label": "Stat 1 - Top Label",
+      "default": "Up to"
+    },
+    {
+      "type": "text",
+      "id": "stat1_number",
+      "label": "Stat 1 - Number",
+      "default": "43%"
+    },
+    {
+      "type": "text",
+      "id": "stat1_description",
+      "label": "Stat 1 - Bold Description",
+      "default": "reduction"
+    },
+    {
+      "type": "text",
+      "id": "stat1_subdescription",
+      "label": "Stat 1 - Sub-description",
+      "default": "in wrinkle depth"
+    },
+
+    {
+      "type": "header",
+      "content": "Stat 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat2_image",
+      "label": "Stat 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label_top",
+      "label": "Stat 2 - Top Label",
+      "default": "Up to"
+    },
+    {
+      "type": "text",
+      "id": "stat2_number",
+      "label": "Stat 2 - Number",
+      "default": "34%"
+    },
+    {
+      "type": "text",
+      "id": "stat2_description",
+      "label": "Stat 2 - Bold Description",
+      "default": "reduction"
+    },
+    {
+      "type": "text",
+      "id": "stat2_subdescription",
+      "label": "Stat 2 - Sub-description",
+      "default": "in crow's-feet wrinkles"
+    },
+
+    {
+      "type": "header",
+      "content": "Stat 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat3_image",
+      "label": "Stat 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label_top",
+      "label": "Stat 3 - Top Label",
+      "default": "Up to"
+    },
+    {
+      "type": "text",
+      "id": "stat3_number",
+      "label": "Stat 3 - Number",
+      "default": "30%"
+    },
+    {
+      "type": "text",
+      "id": "stat3_description",
+      "label": "Stat 3 - Bold Description",
+      "default": "improvement"
+    },
+    {
+      "type": "text",
+      "id": "stat3_subdescription",
+      "label": "Stat 3 - Sub-description",
+      "default": "in skin elasticity"
+    },
+
+    {
+      "type": "header",
+      "content": "Stat 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat4_image",
+      "label": "Stat 4 Image"
+    },
+    {
+      "type": "text",
+      "id": "stat4_label_top",
+      "label": "Stat 4 - Top Label",
+      "default": "Up to"
+    },
+    {
+      "type": "text",
+      "id": "stat4_highlight",
+      "label": "Stat 4 - Highlight Word",
+      "default": "Noticeably"
+    },
+    {
+      "type": "text",
+      "id": "stat4_description",
+      "label": "Stat 4 - Bold Description",
+      "default": "hydrated"
+    },
+    {
+      "type": "text",
+      "id": "stat4_subdescription",
+      "label": "Stat 4 - Sub-description",
+      "default": "smoother-looking skin"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin Stats Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,225 @@
+{% liquid
+  assign htu_hero = section.settings.image
+  assign htu_alt = section.settings.image.alt | default: section.settings.heading | default: 'Product' | escape
+  assign htu_pad_y_d = section.settings.padding_vertical_desktop | default: section.settings.padding_vertical | default: 80
+  assign htu_pad_y_m = section.settings.padding_vertical_mobile | default: 56
+  assign htu_pad_x_d = section.settings.padding_horizontal_desktop | default: section.settings.padding_horizontal | default: 36
+  assign htu_pad_x_m = section.settings.padding_horizontal_mobile | default: 24
+  assign htu_gap_d = section.settings.column_gap_desktop | default: section.settings.column_gap | default: 64
+  assign htu_gap_m = section.settings.column_gap_mobile | default: 40
+%}
+<link rel="preload" href="{{ 'how-to-use.css' | asset_url }}" as="style">
+{{ 'how-to-use.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="HowToUse-{{ section.id }}"
+  class="htu-section{% if section.settings.mobile_media_position == 'first' %} htu-section--mobile-media-first{% endif %}"
+  style="
+    --htu-pad-y-desktop: {{ htu_pad_y_d }}px;
+    --htu-pad-y-mobile: {{ htu_pad_y_m }}px;
+    --htu-pad-x-desktop: {{ htu_pad_x_d }}px;
+    --htu-pad-x-mobile: {{ htu_pad_x_m }}px;
+    --htu-gap-desktop: {{ htu_gap_d }}px;
+    --htu-gap-mobile: {{ htu_gap_m }}px;
+    {% if section.settings.background_color != blank %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+  "
+>
+  <div class="htu-section__inner">
+    <div class="htu-section__text">
+      {% if section.settings.heading != blank %}
+        <h2 class="htu-section__heading">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="htu-section__steps">
+          {% for block in section.blocks %}
+            {% if block.type == 'step' %}
+              <div class="htu-step" {{ block.shopify_attributes }}>
+                {% if block.settings.title != blank %}
+                  <h3 class="htu-step__title">{{ block.settings.title | escape }}</h3>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <p class="htu-step__body">{{ block.settings.text | escape | newline_to_br }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="htu-section__media">
+      {% if htu_hero != blank %}
+        {{
+          htu_hero
+          | image_url: width: 1400
+          | image_tag:
+            class: 'htu-section__image',
+            loading: 'lazy',
+            sizes: '(min-width: 990px) min(652px, 50vw), 100vw',
+            widths: '375, 550, 750, 1100, 1304, 1400',
+            alt: htu_alt
+        }}
+      {% else %}
+        <div class="htu-section__image htu-section__image--placeholder" aria-hidden="true">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'htu-section__placeholder-svg' }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How to use",
+  "tag": "section",
+  "class": "section-how-to-use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your New Daily Habit"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_position",
+      "label": "Mobile layout",
+      "options": [
+        { "value": "after", "label": "Text first, then image" },
+        { "value": "first", "label": "Image first, then text" }
+      ],
+      "default": "after"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#610b27"
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "min": 24,
+      "max": 96,
+      "step": 8,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical_mobile",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tear"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Take one 17.5ml ready-to-drink sachet daily."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to use",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Tear",
+            "text": "Take one 17.5ml ready-to-drink sachet daily."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Drink",
+            "text": "Enjoy the great-tasting Wild Berry or Mango & Mandarin flavour on its own, or drop it into your morning smoothie."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Transform",
+            "text": "Stick with it! Results typically begin at 4-6 weeks, with full, clinically backed results peaking at 12 weeks of continuous use."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

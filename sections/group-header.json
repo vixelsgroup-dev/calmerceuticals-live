@@ -1,0 +1,319 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "text_W4yAXg": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Order By DEC 16th For CHRISTMAS DELIVERY | Express Post Available Until Dec 19 🎁</strong></p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_QjLaKV": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>12-Week Subscription:</strong> Save More, Get Results</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "announcement-0": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Complimentary Facemask</strong> with every subscription</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_BwHx6L": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Complimentary Pericalm</strong> <strong>Product</strong> with every NEW Subscription</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_zPDkcJ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Complimentary 2 Facemask</strong> with every subscription - Code:SPINGGLOW</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_6wiGBz": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Made</strong> in Australia with ♥</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_nxtenx": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>FREE Express Shipping on Subscriptions</strong></p>",
+            "text_color": "rgba(0,0,0,0)",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "shopify://products/verisol-enhanced-marine-collagen",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_aa7GmD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Fast<strong> International</strong> Shipping - Flat Rate $30</p>",
+            "text_color": "#610c27",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_iJnD6A": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Same Day Dispatch </strong></p>",
+            "text_color": "#ffffff",
+            "heading_highlight_type": "italics",
+            "highlight_color": "#fbfbfb",
+            "highlight_text_color": "#000000",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text_W4yAXg",
+        "text_QjLaKV",
+        "announcement-0",
+        "text_BwHx6L",
+        "text_zPDkcJ",
+        "text_6wiGBz",
+        "text_nxtenx",
+        "text_aa7GmD",
+        "text_iJnD6A"
+      ],
+      "settings": {
+        "width": "wrapper--full",
+        "layout": "slider",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding": 10,
+        "slider_speed": 5,
+        "show_arrows": false,
+        "marquee_speed": 75,
+        "direction": "ticker-rtl",
+        "text_caps": false,
+        "type_font": "instrument_sans_n4",
+        "text_size": 120,
+        "letter_spacing": 0,
+        "message_spacing": 25,
+        "color_scheme": "scheme-3",
+        "color": "rgba(0,0,0,0)",
+        "border_color": "#0b0b0b"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_feature_item_FHiQMR": {
+          "type": "mega_feature_item",
+          "settings": {
+            "parent_menu_item": "Shop",
+            "menu_item": "Collegen",
+            "title": "",
+            "description": "Skin, glow & anti-aging",
+            "image": "shopify://shop_images/Collagen_-_Megamenu.png"
+          }
+        },
+        "mega_feature_item_wLHEUa": {
+          "type": "mega_feature_item",
+          "settings": {
+            "parent_menu_item": "Shop",
+            "menu_item": "Ultra Performance",
+            "title": "",
+            "description": "Energy, strength & vitality",
+            "image": "shopify://shop_images/Ultra_Performance_-_Megamenu.png"
+          }
+        },
+        "mega_feature_item_EdYFbJ": {
+          "type": "mega_feature_item",
+          "settings": {
+            "parent_menu_item": "Shop",
+            "menu_item": "Pericalm",
+            "title": "",
+            "description": "Hormone balance & comfort",
+            "image": "shopify://shop_images/Peri-menopause_-_Megamenu.png"
+          }
+        },
+        "mega_feature_item_Xta4EN": {
+          "type": "mega_feature_item",
+          "settings": {
+            "parent_menu_item": "Shop",
+            "menu_item": "Longevity",
+            "title": "",
+            "description": "Gut health, immunity & skin axis",
+            "image": "shopify://shop_images/Longevity_-_Megamenu.png"
+          }
+        }
+      },
+      "block_order": [
+        "mega_feature_item_FHiQMR",
+        "mega_feature_item_wLHEUa",
+        "mega_feature_item_EdYFbJ",
+        "mega_feature_item_Xta4EN"
+      ],
+      "settings": {
+        "header_background_color": "#610c27",
+        "navlink_color": "#ffffff",
+        "menu_transparent_color": "#000000",
+        "sticky_header": true,
+        "link_hover_effect": "dot",
+        "header_border": false,
+        "header_border_color": "rgba(0,0,0,0)",
+        "border_opacity": 50,
+        "logo_not_home": "shopify://shop_images/Logo_f3d49227-e79d-4866-a149-b183257765ce.png",
+        "logo_max_width": 290,
+        "main-menu": "header-nav-april-2026",
+        "main_menu_secondary": "",
+        "show_images": false,
+        "image_aspect_ratio": 1,
+        "menu_alignment": "center",
+        "header_icons_as_text": false,
+        "mega_menu_parent": "Shop",
+        "mega_card_bg": "#ffffff",
+        "mega_card_title_color": "#212121",
+        "mega_card_text_color": "#525252",
+        "mega_quick_bg": "#ffffff",
+        "mega_quick_text_color": "#212121",
+        "show_locale_selector": true,
+        "show_locale_code": true,
+        "show_country_selector": true,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "highlight_item": "Sale",
+        "enable_custom_badge": false,
+        "custom_badge_text": "10% OFF",
+        "highlight_item_color": "#610c27",
+        "highlight_item_text_color": "#ffffff",
+        "header_transparent": false,
+        "header_gradient": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

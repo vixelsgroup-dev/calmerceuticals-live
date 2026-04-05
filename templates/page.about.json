@@ -1,0 +1,603 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_banner_image_6Ug64G": {
+      "type": "section-banner-image-2",
+      "blocks": {
+        "image_BWwBCf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group.png",
+            "max_width": 150,
+            "max_width_mobile": 80
+          }
+        },
+        "text_Pz3cjt": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>We’re raising the bar on what supplementation should be. Scientifically proven, clinically validated, and engineered to deliver real, and proven results. We're not here to compete. We here to reinvent the industry, with clean, evidence-based formulations that outperform everything you thought a supplement could do.</em></p>",
+            "size": 100
+          }
+        },
+        "subheading_mCLYtm": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p><strong>Welcome to the new era of results.</strong></p>",
+            "size": 100
+          }
+        },
+        "image_63BpcL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rose_Rayner_sig.png",
+            "max_width": 260,
+            "max_width_mobile": 180
+          }
+        }
+      },
+      "block_order": [
+        "image_BWwBCf",
+        "text_Pz3cjt",
+        "subheading_mCLYtm",
+        "image_63BpcL"
+      ],
+      "custom_css": [
+        ".wrapper {width: 100%; padding: 0;}",
+        "@media (min-width: 768px) {.banner-image__content {max-width: 500px; margin: 40px auto; }}"
+      ],
+      "settings": {
+        "height": "full-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/ROSE_RAYNER_-_Brand_Colours_-_Calmerceuticals_Collagen.webp",
+        "image_mobile": "shopify://shop_images/ROSE_RAYNER_-_Collagen_Expert_-OTS100432_copy_1.webp",
+        "overlay_type": "disabled",
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 64,
+        "text_position": "right",
+        "text_alignment": "text-center",
+        "color_scheme": "scheme-1",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": "#fbfbfb",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_banner_image_xzrpL4": {
+      "type": "section-banner-image",
+      "blocks": {
+        "image_bmXFmK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group.png",
+            "max_width": 150,
+            "max_width_mobile": 80
+          }
+        },
+        "text_6DEKja": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>We’re raising the bar on what supplementation should be. Scientifically proven, clinically validated, and engineered to deliver real, and proven results. We're not here to compete. We here to reinvent the industry, with clean, evidence-based formulations that outperform everything you thought a supplement could do.</em></p>",
+            "size": 100
+          }
+        },
+        "subheading_QecBKd": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p><strong>Welcome to the new era of results.</strong></p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "image_bmXFmK",
+        "text_6DEKja",
+        "subheading_QecBKd"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 768px) {.banner-image__content {max-width: 500px; margin: 40px auto; }}"
+      ],
+      "name": "Banner image",
+      "settings": {
+        "height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/Rose_-_Hero_Banner_-_Brand_Colours.webp",
+        "image_mobile": "shopify://shop_images/ROSE_RAYNER_-_Collagen_Expert_-OTS100432_copy_1.webp",
+        "overlay_type": "disabled",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 64,
+        "text_position": "right",
+        "text_alignment": "text-center",
+        "color_scheme": "scheme-1",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": "#fbfbfb",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_Vqgby7": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_6whATJ": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>the founder</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_nPMtdW": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Meet Rose Rayner</p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_RUx8GC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Seven years; that's the time that Rose dedicated to the Calmerceuticals collagen formula. Working with some of Australia's leading scientists, using qualitative and quantitive methods, rigorously testing and comparing what was previously the best on the market with an all new, uncompromising Australian-made formula. </p>",
+            "size": 110
+          }
+        },
+        "button_p6UNUA": {
+          "type": "button",
+          "settings": {
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_6whATJ",
+        "heading_nPMtdW",
+        "text_RUx8GC",
+        "button_p6UNUA"
+      ],
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_grid_NA8mXp": {
+      "type": "section-grid",
+      "blocks": {
+        "image_GR4pNL": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/rose-with-collagen.png",
+            "overlay_type": "disabled",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": ""
+          }
+        },
+        "image_AczdwH": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/Rose-chair.webp",
+            "overlay_type": "disabled",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": ""
+          }
+        },
+        "image_LNPbeH": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify://shop_images/rose-sitting.png",
+            "overlay_type": "disabled",
+            "text_position": "center",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_GR4pNL",
+        "image_AczdwH",
+        "image_LNPbeH"
+      ],
+      "name": "Grid",
+      "settings": {
+        "desktop_height": "five-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "heading_size": 130,
+        "text_size": 100,
+        "button_1_color": "btn--white",
+        "button_1_style": "btn--text",
+        "button_1_size": "btn--medium",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--text",
+        "button_2_size": "btn--medium",
+        "color_scheme": "",
+        "overlayed_text": "#ffffff",
+        "enable_slider_mobile": true,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_7QwJAd": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_wrr7kt": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>The Difference</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_GGJYeJ": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Why Calmerceuticals?</p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_ghmEbF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rose was sick and tired of topical creams and ingestible supplements that don't work. In her own words Rose says, \"if you don't want to take Calmerceuticals that's fine but stop taking what you're taking, it's doing nothing for you!\" </p>",
+            "size": 110
+          }
+        },
+        "button_8Qk3ep": {
+          "type": "button",
+          "settings": {
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_wrr7kt",
+        "heading_GGJYeJ",
+        "text_ghmEbF",
+        "button_8Qk3ep"
+      ],
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_custom_html_FmQA4V": {
+      "type": "section-custom-html",
+      "name": "Custom code",
+      "settings": {
+        "custom_code": "<div style=\"display: flex; justify-content: center;\">\n  <iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/show/1NbnG3jRsr4DEx8OdILivF/video?utm_source=generator\" width=\"624\" height=\"351\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>\n</div>",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "section_promotion_row_nVQrDL": {
+      "type": "section-promotion-row",
+      "blocks": {
+        "column_NyV3Ew": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/marine-conservation-calmerceuticals.jpg",
+            "subheading": "<p>MAKING A REAL DIFFERENCE</p>",
+            "subheading_size": 75,
+            "heading": "<p>$2 from every sale</p>",
+            "heading_size": 295,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "description": "Donated to marine conservation. We ♥ natural beauty.",
+            "description_size": 100,
+            "disclaimer": "",
+            "disclaimer_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": "",
+            "gradient_background": "",
+            "text_color": "#ffffff",
+            "overlay_type": "disabled"
+          }
+        }
+      },
+      "block_order": [
+        "column_NyV3Ew"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.wrapper--full-padded {max-width: 1200px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "layout": "1",
+        "count_up_enabled": true,
+        "count_up_duration": 50,
+        "height": "400",
+        "enable_mobile_height": false,
+        "mobile_height": "400",
+        "color_scheme": "scheme-1",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_press_XDkeQa": {
+      "type": "section-press",
+      "blocks": {
+        "press_K4qJrW": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Shoppers are racing to buy Aussie collagen brand Calmerceuticals that sells one every minute</p>",
+            "link": "",
+            "press_logo": "shopify://shop_images/7NEWS_Logo.webp",
+            "logo_width": 140
+          }
+        },
+        "press_iEwcUz": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Calmerceuticals Marine Collagen Peptides set a new standard in beauty supplements! The results are actually amazing! </p>",
+            "link": "",
+            "press_logo": "shopify://shop_images/vogue-logo_4147a4fa-cb88-4ae0-b381-f072300da313.png",
+            "logo_width": 140
+          }
+        },
+        "press_WFkrjF": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Proudly Australian-made, this clinically proven marine hydrolysed liquid collagen is formulated to enhance skin, reduce wrinkles, and strengthen hair and nails for visible results.</p>",
+            "link": "https://7news.com.au/best-picks/shoppers-are-racing-to-buy-aussie-collagen-brand-calmerceuticals-that-sells-one-every-minute-c-19098450",
+            "press_logo": "shopify://shop_images/womans_day.webp",
+            "logo_width": 140
+          }
+        },
+        "press_NUBDJT": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Calmerceuticals impressed us with its advanced collagen formula. The results speak for themselves.</p>",
+            "link": "https://www.marieclaire.com.au/beauty/calmerceuticals-liquid-collagen/",
+            "press_logo": "shopify://shop_images/marie_claire-logo.png",
+            "logo_width": 140
+          }
+        },
+        "press_jBBUbP": {
+          "type": "press",
+          "settings": {
+            "text": "<p>The supplement industry didn’t see her coming: Now they’re scrambling to catch up!</p>",
+            "link": "https://www.forbes.com.au/brand-voice/brandvoice/rose-rayner-of-calmerceuticals-on-changing-the-future-of-beauty/",
+            "press_logo": "shopify://shop_images/forbes-logo-calmerceuticals-collab.png",
+            "logo_width": 140
+          }
+        },
+        "press_PdCY3b": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Calmerceuticals was founded with the goal of bridging the gap between scientific research and natural wellness</p>",
+            "link": "https://retailbeauty.com.au/pericalm-by-calmerceuticals/",
+            "press_logo": "shopify://shop_images/retail_beauty_Logo_RED_RGB.webp",
+            "logo_width": 140
+          }
+        },
+        "press_zXtTNH": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Calmerceuticals brings a luxurious touch to wellness, with a collagen formula that leaves skin radiant and rejuvenated.</p>",
+            "link": "",
+            "press_logo": "shopify://shop_images/vanity_fair-logo.png",
+            "logo_width": 140
+          }
+        }
+      },
+      "block_order": [
+        "press_K4qJrW",
+        "press_iEwcUz",
+        "press_WFkrjF",
+        "press_NUBDJT",
+        "press_jBBUbP",
+        "press_PdCY3b",
+        "press_zXtTNH"
+      ],
+      "settings": {
+        "title": "Featured In",
+        "show_quotations": true,
+        "show_rounded_corners": false,
+        "logo_opacity": 70,
+        "autoplay": true,
+        "duration": 4,
+        "color_scheme": "",
+        "enable_slider_mobile": true,
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_overlapping_images_XkY38K": {
+      "type": "section-overlapping-images",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "images_width": 750,
+        "images_offset": 80,
+        "image_1": "shopify://shop_images/CC_JULY_WEB-7.jpg",
+        "image_link_1": "",
+        "image_2": "shopify://shop_images/CC_JULY_WEB-14.jpg",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "subheading": "",
+        "title": "<p>Compare Top Brands</p>",
+        "heading_size": 100,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000000",
+        "highlight_text_color": "",
+        "description": "<p>Which is the best collagen? Compare Calmerceuticals with the leading collagen brands in Australia.</p>",
+        "text_size": 100,
+        "button_text": "Compare Best Brands",
+        "button_link": "shopify://pages/compare-collagen-brands",
+        "button_color": "btn--primary",
+        "button_style": "btn--outline",
+        "button_size": "btn--medium",
+        "video_text": "",
+        "video_link": "",
+        "color_scheme": "scheme-1",
+        "animation": "horizontal",
+        "animation_intensity": 50,
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5": {
+      "type": "section-icons-row",
+      "blocks": {
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-0": {
+          "type": "text",
+          "settings": {
+            "icon_name": "truck",
+            "title": "Free Shipping",
+            "text": "<p>on all orders</p>"
+          }
+        },
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-1": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "title": "Free Returns",
+            "text": "<p>within 30 days</p>"
+          }
+        },
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-2": {
+          "type": "text",
+          "settings": {
+            "icon_name": "eco-friendly",
+            "title": "$2 Donated",
+            "text": "<p>from every sale</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-0",
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-1",
+        "template--18952593965377__51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5-1683134998a2f033f1-2"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 30,
+        "show_vertical_borders": true,
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "heading_size": 120,
+        "text_size": 100,
+        "color_scheme": "scheme-1",
+        "text_color": "#333333",
+        "box_color": "",
+        "color_border": "#333333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--small",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_banner_image_6Ug64G",
+    "section_banner_image_xzrpL4",
+    "section_text_Vqgby7",
+    "section_grid_NA8mXp",
+    "section_text_7QwJAd",
+    "section_custom_html_FmQA4V",
+    "section_promotion_row_nVQrDL",
+    "section_press_XDkeQa",
+    "section_overlapping_images_XkY38K",
+    "51e7d4e9-f6b0-466d-bd09-84d7da4cdcb5"
+  ]
+}

@@ -1,0 +1,1171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_image_w9aGtF": {
+      "type": "section-image",
+      "disabled": true,
+      "name": "Image",
+      "settings": {
+        "height": "original-height",
+        "enable_mobile_height": false,
+        "mobile_height": "original-height-mobile",
+        "enable_stretch": true,
+        "image_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_slideshow_Qp6TAq": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_3Nr73n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_58.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p>Welcome to <strong>Calmer Rewards!</strong></p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "JOIN NOW",
+            "button_1_link": "#smile-home",
+            "button_1_color": "btn--black",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "LOGIN",
+            "button_2_link": "/account/login",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--outline",
+            "button_2_size": "btn--large",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_3Nr73n"
+      ],
+      "custom_css": [
+        ".slide__text.main-text {margin-top: 15px;}",
+        "@media (max-width: 767px) {.slide__text__wrapper {padding-bottom: 0; }}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "six-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": true,
+        "duration": 6,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "section_text_73jcf8": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_nFBwB8": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Proven Results. Serious Rewards.</p>",
+            "size": 110,
+            "margin_bottom": 41
+          }
+        },
+        "heading_iNRRnY": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Calmer Rewards <br/>Earn More. Save More. Love More.</strong></p>",
+            "size": 110,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_44e3fU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Calmer Rewards, your gateway to exclusive perks and rewards with every Calmerceuticals purchase.  Earn points by shopping and engaging, then unlock elevated VIP benefits as you go. It’s our way of saying thank you for being part of the calm-seeking community.</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_nFBwB8",
+        "heading_iNRRnY",
+        "text_44e3fU"
+      ],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 22
+      }
+    },
+    "section_multicolumn_Dxp4xE": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_dYcYnw": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/DSC09296_1.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_yfjbXF": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/DSC09298_1.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_dYcYnw",
+        "image_yfjbXF"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "color_scheme": "",
+        "layout_mobile": "stacked",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "smile-landing-page": {
+      "type": "smile-landing-page",
+      "settings": {}
+    },
+    "section_text_gtcRp4": {
+      "type": "section-text",
+      "blocks": {
+        "heading_hhzjnR": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>How it Works</strong></p>",
+            "size": 110,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_hhzjnR"
+      ],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 22
+      }
+    },
+    "info_grid_6wf6iW": {
+      "type": "info-grid",
+      "blocks": {
+        "card_PeerME": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_a94b831f-b031-4f83-9054-b9ebd0ec5777.png",
+            "title": "SIGN UP",
+            "text": "Create an account \nor sign up to your \nCalmerCeuticals \naccount and start \nearning points."
+          }
+        },
+        "card_8QRjdJ": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Group_5_040ecddd-3631-494b-b290-1e6173de7f5a.png",
+            "title": "EARN",
+            "text": "Earn 1 point for \nevery $1 you \nspend. "
+          }
+        },
+        "card_CJW4wV": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Group_56.png",
+            "title": "REDEEM",
+            "text": "Exchange your \npoints for \nrewards."
+          }
+        }
+      },
+      "block_order": [
+        "card_PeerME",
+        "card_8QRjdJ",
+        "card_CJW4wV"
+      ],
+      "name": "Info Grid 2x2",
+      "settings": {
+        "bg_gradient": "radial-gradient(rgba(62, 5, 31, 0.85), rgba(245, 215, 229, 0.37) 42.1%, rgba(255, 255, 255, 0.61) 55%)",
+        "num_of_cols": "3",
+        "divider_color": "#b46a7b",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_custom_rM3kPb": {
+      "type": "multicolumn-custom",
+      "blocks": {
+        "image_zEHnTB": {
+          "type": "image",
+          "settings": {
+            "points": "+20",
+            "points_bg_color": "linear-gradient(180deg, rgba(205, 136, 136, 1), rgba(101, 31, 31, 1) 100%)",
+            "image": "shopify://shop_images/Rectangle_317.png",
+            "title": "<p>Create an <strong><br/>Account</strong></p>",
+            "button_label": "FOLLOW US",
+            "button_link": ""
+          }
+        },
+        "image_EN3KcB": {
+          "type": "image",
+          "settings": {
+            "points": "+10",
+            "points_bg_color": "linear-gradient(180deg, rgba(217, 217, 217, 1), rgba(115, 115, 115, 1) 100%)",
+            "image": "shopify://shop_images/point_10_1.png",
+            "title": "<p>Follow <br/>us on <br/><strong>Instagram</strong></p>",
+            "button_label": "FOLLOW US",
+            "button_link": "https://www.facebook.com/page.calmerceuticals"
+          }
+        },
+        "image_MtPeVU": {
+          "type": "image",
+          "settings": {
+            "points": "+10",
+            "points_bg_color": "linear-gradient(180deg, rgba(217, 217, 217, 1), rgba(115, 115, 115, 1) 100%)",
+            "image": "shopify://shop_images/point_10_2.png",
+            "title": "<p>Like <br/>on <br/><strong>Facebook</strong></p>",
+            "button_label": "FOLLOW US",
+            "button_link": "https://www.instagram.com/calmerceuticals/"
+          }
+        },
+        "image_fGgFHg": {
+          "type": "image",
+          "settings": {
+            "points": "+20",
+            "points_bg_color": "linear-gradient(180deg, #CD8888 0%, #651F1F 100%)",
+            "image": "shopify://shop_images/point_20_1.png",
+            "title": "<p>Share <br/>on <br/><strong>Facebook</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_MfNeTr": {
+          "type": "image",
+          "settings": {
+            "points": "+20",
+            "points_bg_color": "linear-gradient(180deg, #CD8888 0%, #651F1F 100%)",
+            "image": "shopify://shop_images/point_20_2.png",
+            "title": "<p>Leave <br/>a <br/><strong>Review</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_4bGDMF": {
+          "type": "image",
+          "settings": {
+            "points": "+300",
+            "points_bg_color": "linear-gradient(180deg, #FFC400 0%, #9E5F00 100%)",
+            "image": "shopify://shop_images/point_300.png",
+            "title": "<p><strong>Birthday Reward</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zEHnTB",
+        "image_EN3KcB",
+        "image_MtPeVU",
+        "image_fGgFHg",
+        "image_MfNeTr",
+        "image_4bGDMF"
+      ],
+      "disabled": true,
+      "name": "Multicolumn - Custom",
+      "settings": {
+        "heading": "<p><strong>Ways to earn Points</strong></p>",
+        "heading_size": 110,
+        "subheading": "<p>Earning points with Calmer Rewards is easy, the more you engage, the more you earn!</p>",
+        "desktop_columns": 6,
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "graph_animation_hkJAz7": {
+      "type": "graph-animation",
+      "blocks": {
+        "bar_6xmCWw": {
+          "type": "bar",
+          "settings": {
+            "percentage": 20,
+            "text": "Create an Account",
+            "bar_image": "shopify://shop_images/1.avif",
+            "badge_bg_color": "linear-gradient(180deg, rgba(205, 136, 136, 1), rgba(101, 31, 31, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_link": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "bar_BCPbeP": {
+          "type": "bar",
+          "settings": {
+            "percentage": 10,
+            "text": "Follow on Instagram",
+            "bar_image": "shopify://shop_images/2.avif",
+            "badge_bg_color": "linear-gradient(180deg, rgba(217, 217, 217, 1), rgba(115, 115, 115, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "Follow Us",
+            "button_link": "https://www.instagram.com/calmerceuticals/",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "bar_B9N9KX": {
+          "type": "bar",
+          "settings": {
+            "percentage": 10,
+            "text": "Like on Facebook",
+            "bar_image": "shopify://shop_images/point_20_1.png",
+            "badge_bg_color": "linear-gradient(180deg, rgba(217, 217, 217, 1), rgba(115, 115, 115, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "Follow Us",
+            "button_link": "https://www.facebook.com/page.calmerceuticals",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "bar_rcxjjm": {
+          "type": "bar",
+          "settings": {
+            "percentage": 20,
+            "text": "Share on Facebook",
+            "bar_image": "shopify://shop_images/point_20_2.png",
+            "badge_bg_color": "linear-gradient(180deg, rgba(205, 136, 136, 1), rgba(101, 31, 31, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_link": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "bar_CL3FVp": {
+          "type": "bar",
+          "settings": {
+            "percentage": 20,
+            "text": "Leave a Review",
+            "bar_image": "shopify://shop_images/point_20_2.png",
+            "badge_bg_color": "linear-gradient(180deg, rgba(205, 136, 136, 1), rgba(101, 31, 31, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_link": "",
+            "button_bg_color": "#6a0036",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "bar_MyjPcF": {
+          "type": "bar",
+          "settings": {
+            "percentage": 300,
+            "text": "Birthday Reward",
+            "bar_image": "shopify://shop_images/point_300.png",
+            "badge_bg_color": "linear-gradient(180deg, rgba(255, 196, 0, 1), rgba(158, 95, 0, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "button_text": "",
+            "button_link": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "bar_6xmCWw",
+        "bar_BCPbeP",
+        "bar_B9N9KX",
+        "bar_rcxjjm",
+        "bar_CL3FVp",
+        "bar_MyjPcF"
+      ],
+      "name": "Animated Bar Chart",
+      "settings": {
+        "heading": "<p><strong>Ways to earn Points</strong></p>",
+        "subheading": "<p>Earning points with Calmer Rewards is easy, the more you engage, the more you earn!</p>"
+      }
+    },
+    "tiers_columns_Qm8dx4": {
+      "type": "tiers-columns",
+      "blocks": {
+        "tier_first_column_E9PaEK": {
+          "type": "tier-first-column",
+          "settings": {
+            "tier_row_title": "POINTS MULTIPLIER\nBIRTHDAY BONUS\nEARLY ACCESS TO SALES\nCOMPLEMENTARY SAMPLES\nCOMPLEMENTARY GIFTS\nEXCLUSIVE LAUNCHES"
+          }
+        },
+        "tier_next_column_DKgbV4": {
+          "type": "tier-next-column",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_bronze_background_and_reflection_but_do_not_change_the_sachet_in_anyway___4_1.png",
+            "title": "BRONZE",
+            "subtitle": "<p>Account Holders</p>",
+            "tier_row_text": "1x\nYes\nYes"
+          }
+        },
+        "tier_next_column_c3NrdJ": {
+          "type": "tier-next-column",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_silver_background_and_reflection_but_do_not_change_the_sachet_in_anyway___3_1.png",
+            "title": "SILVER",
+            "subtitle": "<p>Spend $200 - $499</p>",
+            "tier_row_text": "1x\nYes\nYes\nYes"
+          }
+        },
+        "tier_next_column_xjEmtb": {
+          "type": "tier-next-column",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_golden_background_and_reflection_but_do_not_change_the_sachet_in_anyway___2_3.png",
+            "title": "GOLD",
+            "subtitle": "<p>SPEND $500 - $999</p>",
+            "tier_row_text": "1x\nYes\nYes\nYes\nYes"
+          }
+        },
+        "tier_next_column_jb7mii": {
+          "type": "tier-next-column",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_platinum_background_and_reflection_but_do_not_change_the_sachet_in_anyway___4_1.png",
+            "title": "PLATINUM",
+            "subtitle": "<p>Spend $1000+</p>",
+            "tier_row_text": "1x\nYes\nYes\nYes\nYes\nYes"
+          }
+        }
+      },
+      "block_order": [
+        "tier_first_column_E9PaEK",
+        "tier_next_column_DKgbV4",
+        "tier_next_column_c3NrdJ",
+        "tier_next_column_xjEmtb",
+        "tier_next_column_jb7mii"
+      ],
+      "name": "Tiers Columns",
+      "settings": {
+        "heading": "<p><strong>VIP Tiers</strong></p>",
+        "heading_size": 100,
+        "subheading": "<p>Your Calmer Rewards status grows with you. As you move up each VIP tier, you’ll unlock bigger perks, better rewards, and exclusive access.</p>",
+        "desktop_columns": 6,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "section_text_jB8WgN": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_QMGeHg": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Proven Results. Serious Rewards.</p>",
+            "size": 110,
+            "margin_bottom": 41
+          }
+        },
+        "heading_EBkhHD": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Referral Program</strong></p>",
+            "size": 110,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_b4Dxp3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Invite your family or friends to enjoy our products and both of you will be rewarded. Simply log in or create your account and share your personal referral link.</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_QMGeHg",
+        "heading_EBkhHD",
+        "text_b4Dxp3"
+      ],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 22
+      }
+    },
+    "section_multicolumn_pjLizd": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_xeQMPR": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/CalmerCeuticals_Branding_Photoshoot_-_Valerie_Joseph_Creative-130_1.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "Refer a <strong>family</strong> or <strong>friend.</strong>",
+            "heading_size": 150,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_J8Gp97": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/DSC09421_1.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1,
+            "aspect_ratio_mobile": 1,
+            "title": "You both get <strong>$30 off.</strong>",
+            "heading_size": 150,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_xeQMPR",
+        "image_J8Gp97"
+      ],
+      "custom_css": [
+        "strong {font-weight: 700;}"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "color_scheme": "",
+        "layout_mobile": "stacked",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_accordions_k78Jzh": {
+      "type": "section-accordions",
+      "blocks": {
+        "text_n4TNqW": {
+          "type": "text",
+          "settings": {
+            "title": "How do I move up a VIP tier?",
+            "text": "<p>Your tier is based on your total spend. As you reach new milestones, your VIP status updates automatically.Do rewards work with other discounts?  In most cases, rewards can be combined with promotions. Any exclusions will be clearly stated at checkout.</p>"
+          }
+        },
+        "text_AtC3qJ": {
+          "type": "text",
+          "settings": {
+            "title": "How do I join Calmer Rewards?",
+            "text": "<p>Simply create an account or log in on our website. Enrollment is free and you’ll start earning points immediately.</p>"
+          }
+        },
+        "text_eDf7GP": {
+          "type": "text",
+          "settings": {
+            "title": "What are VIP tiers?",
+            "text": "<p>VIP tiers reward loyal customers with enhanced benefits as they shop more. Higher tiers unlock bigger rewards, bonus points, and exclusive perks.</p>"
+          }
+        },
+        "text_JVVT84": {
+          "type": "text",
+          "settings": {
+            "title": "How do I move up a VIP tier?",
+            "text": "<p>Your tier is based on your total spend. As you reach new milestones, your VIP status updates automatically.Do rewards work with other discounts?  In most cases, rewards can be combined with promotions. Any exclusions will be clearly stated at checkout.</p>"
+          }
+        },
+        "text_eQMeqE": {
+          "type": "text",
+          "settings": {
+            "title": "Do rewards work with other discounts?",
+            "text": "<p> In most cases, rewards can be combined with promotions. Any exclusions will be clearly stated at checkout.</p>"
+          }
+        },
+        "text_6Y9PpH": {
+          "type": "text",
+          "settings": {
+            "title": "Who can I contact for help?",
+            "text": "<p>Our support team is here to help. Reach out anytime via our contact page for assistance with your rewards. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_n4TNqW",
+        "text_AtC3qJ",
+        "text_eDf7GP",
+        "text_JVVT84",
+        "text_eQMeqE",
+        "text_6Y9PpH"
+      ],
+      "custom_css": [],
+      "name": "Accordions",
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "color_scheme": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "17533978157ff8f0a5": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_header_Acd7EF": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-header/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "background_image": "shopify://shop_images/Rewards-Banners-1604x640-Burgundy.jpg",
+            "title_text": "Welcome to Calmer Rewards!",
+            "description_text": "Earn points on every purchase and unlock perks, tiers, and exclusive rewards.",
+            "join_button_text": "Join now",
+            "login_button_text": "Log in",
+            "is_previewing_logged_in_state": false,
+            "discover_button_text": "View my rewards"
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_header_Acd7EF"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1753397694f81f2e56": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_how_it_works_nxTCEN": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-how-it-works/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "title_text": "HOW IT WORKS",
+            "step1_heading_text": "Sign Up",
+            "step1_description_text": "Create an account or sign up to your CalmerCeuticals account and start earning points.",
+            "step2_heading_text": "Earn",
+            "step2_description_text": "Earn 1 point for every $1 you sped.",
+            "step3_heading_text": "Redeem",
+            "step3_description_text": "Exchange your points for rewards."
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_how_it_works_nxTCEN"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1753397824a5f490b6": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_earning_rule_highlight_xGmJqn": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-earning-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "disabled": true,
+          "settings": {
+            "primary_colour": "#333333",
+            "secondary_colour": "#ffffff",
+            "image": "shopify://shop_images/bags.jpg",
+            "title_text": "Reduce your subscription cost",
+            "description_text": "The fact is that Calmerceuticals supplements require daily use for optimal results, that's why we reward dedicated customers by lowering subscription costs each month. In the end, loyal customers get better results and lower costs. It's a win-win scenario.",
+            "button_text": "Get started"
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_earning_rule_highlight_xGmJqn"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_xY7xTY": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_CX3CdB": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Subheading</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "heading_UBRhcr": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>WAYS TO EARN POINTS</p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_H8D7T4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100
+          }
+        },
+        "button_UwRPCU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "Read More",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_CX3CdB",
+        "heading_UBRhcr",
+        "text_H8D7T4",
+        "button_UwRPCU"
+      ],
+      "disabled": true,
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "section_icons_row_AeHBB9": {
+      "type": "section-icons-row",
+      "blocks": {
+        "text_y39dmX": {
+          "type": "text",
+          "settings": {
+            "icon_name": "lock",
+            "icon_image": "shopify://shop_images/user.svg",
+            "title": "Create an Account",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        },
+        "text_KbnNWa": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "icon_image": "shopify://shop_images/facebook.svg",
+            "title": "Share on Facebook",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        },
+        "text_pJdfKb": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "icon_image": "shopify://shop_images/thumb-up.svg",
+            "title": "Like on Facebook",
+            "text": "<p><strong>+10 POINTS</strong></p>"
+          }
+        },
+        "text_QBLqbC": {
+          "type": "text",
+          "settings": {
+            "icon_name": "heart",
+            "icon_image": "shopify://shop_images/birthday-cake.svg",
+            "title": "Birthday Reward",
+            "text": "<p><strong>+300 POINTS</strong></p>"
+          }
+        },
+        "text_NRpnMc": {
+          "type": "text",
+          "settings": {
+            "icon_name": "award",
+            "icon_image": "shopify://shop_images/instagram.svg",
+            "title": "Follow us on Instagram",
+            "text": "<p><strong>+10 POINTS</strong></p>"
+          }
+        },
+        "text_xXxYyh": {
+          "type": "text",
+          "settings": {
+            "icon_name": "message",
+            "icon_image": "shopify://shop_images/rating.svg",
+            "title": "Leave a Review",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_y39dmX",
+        "text_KbnNWa",
+        "text_pJdfKb",
+        "text_QBLqbC",
+        "text_NRpnMc",
+        "text_xXxYyh"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 768px) {.reward-icon, .icon-row svg {width: 60px; height: 60px; }}"
+      ],
+      "name": "Icons row",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 20,
+        "show_vertical_borders": false,
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "heading_size": 120,
+        "text_size": 100,
+        "color_scheme": "scheme-1",
+        "text_color": "#fbfbfb",
+        "box_color": "#610c27",
+        "color_border": "#333333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 32,
+        "padding_bottom": 60
+      }
+    },
+    "section_icons_row_fzeUVa": {
+      "type": "section-icons-row",
+      "blocks": {
+        "text_bTmkqw": {
+          "type": "text",
+          "settings": {
+            "icon_name": "lock",
+            "title": "Create an Account",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        },
+        "text_ncQx6C": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "title": "Join our Facebook",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        },
+        "text_inBwbL": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "title": "Like on Facebook",
+            "text": "<p><strong>+10 POINTS</strong></p>"
+          }
+        },
+        "text_wDM6cD": {
+          "type": "text",
+          "settings": {
+            "icon_name": "heart",
+            "title": "Birthday Reward",
+            "text": "<p><strong>+300 POINTS</strong></p>"
+          }
+        },
+        "text_LQbXVm": {
+          "type": "text",
+          "settings": {
+            "icon_name": "award",
+            "title": "Follow us on Instagram",
+            "text": "<p><strong>+10 POINTS</strong></p>"
+          }
+        },
+        "text_thXgx4": {
+          "type": "text",
+          "settings": {
+            "icon_name": "message",
+            "title": "Leave a Review",
+            "text": "<p><strong>+20 POINTS</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bTmkqw",
+        "text_ncQx6C",
+        "text_inBwbL",
+        "text_wDM6cD",
+        "text_LQbXVm",
+        "text_thXgx4"
+      ],
+      "disabled": true,
+      "name": "Icons row",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 20,
+        "show_vertical_borders": false,
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "heading_size": 120,
+        "text_size": 100,
+        "color_scheme": "",
+        "text_color": "#fbfbfb",
+        "box_color": "#610c27",
+        "color_border": "#333333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 32,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_F9Ch6k": {
+      "type": "section-text",
+      "blocks": {
+        "heading_BDNTiP": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>VIP TIERS</p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_BDNTiP"
+      ],
+      "disabled": true,
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "section_custom_html_GMniA8": {
+      "type": "section-custom-html",
+      "disabled": true,
+      "custom_css": [],
+      "name": "Custom code",
+      "settings": {
+        "custom_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>VIP Rewards Tier Structure</title>\n    <!-- Load Tailwind CSS -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        /* Define the custom color variable for easy use */\n        .header-bg {\n            background-color: #610C27; /* Dark Maroon/Burgundy */\n        }\n        /* Custom dot color updated to the requested dark maroon */\n        .perk-dot {\n            color: #610C27; /* Requested dark maroon color */\n            font-size: 0.8rem; /* Reduced size */\n            line-height: 1;\n        }\n        .text-custom-white {\n            color: #ffffff;\n        }\n        /* Removed rounded corners for sharp edges */\n        .sharp-corners {\n            border-radius: 0; \n        }\n    </style>\n    <script>\n        tailwind.config = {\n            theme: {\n                extend: {\n                    fontFamily: {\n                        sans: ['Inter', 'sans-serif'],\n                    },\n                }\n            }\n        }\n    </script>\n</head>\n<body class=\"bg-gray-50 p-4 sm:p-8 font-sans\">\n\n    <div class=\"max-w-6xl mx-auto bg-white shadow-2xl overflow-hidden sharp-corners\">\n        <!-- Main Responsive Table -->\n        <!-- The overflow-x-auto wrapper ensures horizontal scrolling on mobile, keeping all columns visible -->\n        <div class=\"overflow-x-auto\">\n            <table class=\"min-w-full divide-y divide-gray-200 border-collapse sharp-corners\">\n                <!-- Table Header (Tier Names and Spend Requirements) -->\n                <thead class=\"header-bg text-custom-white\">\n                    <tr>\n                        <!-- Corner cell - NOW CONTAINS THE TEXT \"PERK\" -->\n                        <th class=\"py-4 px-3 sm:px-6 sharp-corners text-center text-sm font-extrabold uppercase tracking-wider bg-transparent\">\n                            <div class=\"text-lg\">PERK</div>\n                        </th>\n\n                        <!-- Bronze Tier -->\n                        <th class=\"py-4 px-3 sm:px-6 text-center text-sm font-extrabold uppercase tracking-wider sharp-corners\">\n                            <div class=\"text-lg\">BRONZE</div>\n                            <div class=\"text-xs font-bold opacity-80 mt-1\">Account Holders</div>\n                        </th>\n\n                        <!-- Silver Tier -->\n                        <th class=\"py-4 px-3 sm:px-6 text-center text-sm font-extrabold uppercase tracking-wider sharp-corners\">\n                            <div class=\"text-lg\">SILVER</div>\n                            <div class=\"text-xs font-bold opacity-80 mt-1\">Spend $200 - $499</div>\n                        </th>\n\n                        <!-- Gold Tier -->\n                        <th class=\"py-4 px-3 sm:px-6 text-center text-sm font-extrabold uppercase tracking-wider sharp-corners\">\n                            <div class=\"text-lg\">GOLD</div>\n                            <div class=\"text-xs font-bold opacity-80 mt-1\">Spend $500 - $999</div>\n                        </th>\n\n                        <!-- Platinum Tier -->\n                        <th class=\"py-4 px-3 sm:px-6 text-center text-sm font-extrabold uppercase tracking-wider sharp-corners\">\n                            <div class=\"text-lg\">PLATINUM (VIP)</div>\n                            <div class=\"text-xs font-bold opacity-80 mt-1\">Spend $1000+</div>\n                        </th>\n                    </tr>\n                </thead>\n                \n                <!-- Table Body (The Rewards/Multipliers) -->\n                <tbody class=\"bg-white divide-y divide-gray-100\">\n                    <!-- Row 1: Points Multiplier (content is bold) -->\n                    <tr class=\"hover:bg-gray-50 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">POINTS MULTIPLIER</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center text-gray-600 whitespace-nowrap font-bold\">1x</td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center text-gray-600 whitespace-nowrap font-bold\">1x</td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center text-gray-600 whitespace-nowrap font-bold\">2x</td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center text-gray-600 whitespace-nowrap font-bold\">2x</td>\n                    </tr>\n                    \n                    <!-- Row 2: Birthday Bonus (title is bold) -->\n                    <tr class=\"bg-gray-50 hover:bg-gray-100 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">BIRTHDAY BONUS</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                    </tr>\n\n                    <!-- Row 3: Early Access to Sales (title is bold) -->\n                    <tr class=\"hover:bg-gray-50 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">EARLY ACCESS TO SALES</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                    </tr>\n\n                    <!-- Row 4: Complementary Samples (title is bold) -->\n                    <tr class=\"bg-gray-50 hover:bg-gray-100 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">COMPLEMENTARY SAMPLES</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                    </tr>\n\n                    <!-- Row 5: Complementary Gifts (title is bold) -->\n                    <tr class=\"hover:bg-gray-50 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">COMPLEMENTARY GIFTS</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                    </tr>\n\n                    <!-- Row 6: Exclusive Launches (title is bold) -->\n                    <tr class=\"bg-gray-50 hover:bg-gray-100 transition duration-150\">\n                        <!-- Perk Name Column -->\n                        <td class=\"py-4 px-3 sm:px-6 font-bold text-gray-800 whitespace-nowrap text-center\">EXCLUSIVE LAUNCHES</td>\n                        \n                        <!-- Tier Content -->\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"></td>\n                        <td class=\"py-4 px-3 sm:px-6 text-center\"><span class=\"perk-dot\">&#9899;</span></td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    </div>\n</body>\n</html>",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_mxt3UQ": {
+      "type": "section-text",
+      "blocks": {
+        "heading_iwVEQD": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>REFERAL PROGRAM</p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "subheading_iEJG64": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Refer a family or friend. </p><p>You both get $30 off.</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "text_TBPgBN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Invite your family or friends to enjoy our products and both of you will be rewarded.<br/>Simply log in or create your account and share your personal referral link.</p>",
+            "size": 100
+          }
+        },
+        "image_WLTTzr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group-Rewards.jpg",
+            "image_width": 380,
+            "image_link": ""
+          }
+        },
+        "button_B6fWr9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "Read More",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iwVEQD",
+        "subheading_iEJG64",
+        "text_TBPgBN",
+        "image_WLTTzr",
+        "button_B6fWr9"
+      ],
+      "disabled": true,
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_image_w9aGtF",
+    "section_slideshow_Qp6TAq",
+    "section_text_73jcf8",
+    "section_multicolumn_Dxp4xE",
+    "smile-landing-page",
+    "section_text_gtcRp4",
+    "info_grid_6wf6iW",
+    "multicolumn_custom_rM3kPb",
+    "graph_animation_hkJAz7",
+    "tiers_columns_Qm8dx4",
+    "section_text_jB8WgN",
+    "section_multicolumn_pjLizd",
+    "section_accordions_k78Jzh",
+    "17533978157ff8f0a5",
+    "1753397694f81f2e56",
+    "1753397824a5f490b6",
+    "section_text_xY7xTY",
+    "section_icons_row_AeHBB9",
+    "section_icons_row_fzeUVa",
+    "section_text_F9Ch6k",
+    "section_custom_html_GMniA8",
+    "section_text_mxt3UQ"
+  ]
+}

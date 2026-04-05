@@ -1,0 +1,264 @@
+<link rel="stylesheet" href="{{ 'global-spotlight.css' | asset_url }}">
+
+{% liquid
+  assign gs_pt_mobile = section.settings.padding_top_mobile | default: 56
+  assign gs_pb_mobile = section.settings.padding_bottom_mobile | default: 56
+  assign gs_pt_desktop = section.settings.padding_top_desktop | default: 72
+  assign gs_pb_desktop = section.settings.padding_bottom_desktop | default: 72
+  assign gs_container_max = section.settings.max_container_width | default: '1440'
+
+  if gs_container_max == 'full'
+    assign gs_container_max_css = 'none'
+  else
+    assign gs_container_max_css = gs_container_max | append: 'px'
+  endif
+%}
+
+<section
+  id="GlobalSpotlight-{{ section.id }}"
+  class="global-spotlight"
+  style="
+    --gs-bg: {{ section.settings.background_color }};
+    --gs-heading-color: {{ section.settings.heading_color }};
+    --gs-heading-accent-color: {{ section.settings.heading_accent_color }};
+    --gs-description-color: {{ section.settings.description_color }};
+    --gs-cta-text-color: {{ section.settings.button_text_color }};
+    --gs-cta-bg-color: {{ section.settings.button_background_color }};
+    --gs-container-max: {{ gs_container_max_css }};
+    --gs-pt-mobile: {{ gs_pt_mobile }}px;
+    --gs-pb-mobile: {{ gs_pb_mobile }}px;
+    --gs-pt-desktop: {{ gs_pt_desktop }}px;
+    --gs-pb-desktop: {{ gs_pb_desktop }}px;
+  "
+  {{ section.shopify_attributes }}
+>
+  <div class="global-spotlight__inner">
+    <div class="global-spotlight__left">
+      <h2 class="global-spotlight__title">
+        {% if section.settings.heading_line_1 != blank %}
+          <span class="global-spotlight__title-line global-spotlight__title-line--accent">
+            {{- section.settings.heading_line_1 | escape -}}
+          </span>
+        {% endif %}
+        {% if section.settings.heading_line_2 != blank %}
+          <span class="global-spotlight__title-line">{{ section.settings.heading_line_2 | escape }}</span>
+        {% endif %}
+        {% if section.settings.heading_line_3 != blank %}
+          <span class="global-spotlight__title-line">{{ section.settings.heading_line_3 | escape }}</span>
+        {% endif %}
+      </h2>
+
+      {% if section.settings.description != blank %}
+        <p class="global-spotlight__description">{{ section.settings.description | escape }}</p>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a
+          class="global-spotlight__cta"
+          href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{{ routes.all_products_collection_url }}{% endif %}"
+        >
+          <span class="global-spotlight__cta-shine" aria-hidden="true"></span>
+          <span class="global-spotlight__cta-avatar" aria-hidden="true">
+            {% if section.settings.button_icon != blank %}
+              {{
+                section.settings.button_icon
+                | image_url: width: 128
+                | image_tag:
+                  class: 'global-spotlight__cta-avatar-image',
+                  loading: 'lazy',
+                  widths: '64, 96, 128',
+                  sizes: '64px',
+                  alt: section.settings.button_label
+              }}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg global-spotlight__avatar-placeholder' }}
+            {% endif %}
+          </span>
+          <span class="global-spotlight__cta-label">{{ section.settings.button_label | escape }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="global-spotlight__right">
+      <div
+        class="global-spotlight__globe"
+        data-global-spotlight-globe
+        aria-hidden="true"
+      >
+        <canvas
+          id="GlobalSpotlightGlobe-{{ section.id }}"
+          class="global-spotlight__earth-canvas"
+          aria-hidden="true"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'global-spotlight.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Global spotlight",
+  "tag": "section",
+  "class": "section-global-spotlight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f4f4f4",
+      "info": "Spans the full width of the viewport."
+    },
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "select",
+      "id": "max_container_width",
+      "label": "Max container width",
+      "options": [
+        { "value": "full", "label": "Full width (no max)" },
+        { "value": "1100", "label": "1100px" },
+        { "value": "1200", "label": "1200px" },
+        { "value": "1280", "label": "1280px" },
+        { "value": "1320", "label": "1320px" },
+        { "value": "1440", "label": "1440px" },
+        { "value": "1536", "label": "1536px" },
+        { "value": "1600", "label": "1600px" },
+        { "value": "1680", "label": "1680px" },
+        { "value": "1920", "label": "1920px" }
+      ],
+      "default": "1440"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Left content colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Heading accent color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#131014"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#610c27"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Australia's"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "Leading Collagen"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_3",
+      "label": "Heading line 3",
+      "default": "Brand*"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Our formulations are built on clinically studied ingredients and tested in real-world routines. Across global users, we track visible improvements in skin elasticity, hydration, and overall vitality - because results should be measured, not assumed."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "button_icon",
+      "label": "Button icon"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Global spotlight"
+    }
+  ]
+}
+{% endschema %}

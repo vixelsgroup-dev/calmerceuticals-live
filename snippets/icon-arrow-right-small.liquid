@@ -1,0 +1,19 @@
+{%- comment -%}
+  Compact right-pointing arrow (8×8). Filled; color via currentColor.
+  Optional: width, height (defaults 8).
+{%- endcomment -%}
+{%- liquid
+  assign w = width | default: 8
+  assign h = height | default: 8
+-%}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="{{ w }}"
+  height="{{ h }}"
+  viewBox="0 0 8 8"
+  fill="none"
+  focusable="false"
+  aria-hidden="true"
+>
+  <path d="M4 0L8 4L4 8L3.204 7.204L5.845 4.563H0V3.437H5.845L3.204 0.796L4 0Z" fill="currentColor"/>
+</svg>

@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "disabled": true,
+      "custom_css": [
+        ".product__selectors .select-popout__item {background-color: #f0eeed;}",
+        ".product__selectors .select-popout__item:hover {background-color: #610c27;}",
+        ".product__selectors .select-popout__toggle {background-color: #f0eeed;}",
+        ".product__selectors .select-popout__toggle:hover {background-color: #d7d6d6;}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "image_layout": "carousel",
+        "image_width": "standard",
+        "product_image_aspect_ratio": false,
+        "enable_zoom": false,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "layout": "grid",
+        "columns_mobile": "1",
+        "type_style": "subheading-text",
+        "tab_heading_size": 130,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related"
+  ]
+}

@@ -1,0 +1,263 @@
+{% comment %}
+  Section: Logo Marquee
+  Infinite CSS scroll marquee of logo images
+  White background, dotted bottom border, fully dynamic
+{% endcomment %}
+
+<section class="logo-marquee" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background-color: {{ section.settings.background_color }};
+  border-top: {{ section.settings.border_top_width }}px {{ section.settings.border_style }} {{ section.settings.border_color }};
+  border-bottom: {{ section.settings.border_bottom_width }}px {{ section.settings.border_style }} {{ section.settings.border_color }};
+">
+  <div class="logo-marquee__track-wrap">
+    <div class="logo-marquee__track" style="animation-duration: {{ section.settings.speed }}s;">
+
+      {%- comment -%} First set {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'logo' and block.settings.logo_image != blank -%}
+          <div class="logo-marquee__item" {{ block.shopify_attributes }}>
+            <img
+              src="{{ block.settings.logo_image | img_url: '240x80' }}"
+              alt="{{ block.settings.logo_image.alt | default: 'Press logo' | escape }}"
+              class="logo-marquee__logo"
+              style="max-height: {{ section.settings.logo_height }}px;"
+              loading="lazy"
+              width="240"
+              height="80"
+            >
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- comment -%} Duplicate set for seamless loop {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'logo' and block.settings.logo_image != blank -%}
+          <div class="logo-marquee__item" aria-hidden="true">
+            <img
+              src="{{ block.settings.logo_image | img_url: '240x80' }}"
+              alt=""
+              class="logo-marquee__logo"
+              style="max-height: {{ section.settings.logo_height }}px;"
+              loading="lazy"
+              width="240"
+              height="80"
+            >
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-marquee {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .logo-marquee__track-wrap {
+    overflow: hidden;
+    width: 100%;
+    /* Fade edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .logo-marquee__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: logo-scroll linear infinite;
+  }
+
+  .logo-marquee__track:hover {
+    animation-play-state: {{ section.settings.pause_on_hover | default: 'running' }};
+  }
+
+  .logo-marquee__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 {{ section.settings.logo_gap }}px;
+    flex-shrink: 0;
+  }
+
+  .logo-marquee__logo {
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-marquee__logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+  @keyframes logo-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  {% if section.settings.pause_on_hover %}
+  .logo-marquee__track:hover {
+    animation-play-state: paused;
+  }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "Logo Marquee",
+  "tag": "section",
+  "class": "section-logo-marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors & Borders"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#6ab0e0"
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border Style",
+      "options": [
+        { "value": "solid", "label": "Solid" },
+        { "value": "dashed", "label": "Dashed" },
+        { "value": "dotted", "label": "Dotted" },
+        { "value": "none", "label": "None" }
+      ],
+      "default": "dotted"
+    },
+    {
+      "type": "range",
+      "id": "border_top_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Top Width",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_bottom_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Bottom Width",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Logo Height",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "logo_gap",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap Between Logos",
+      "default": 48
+    },
+   
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll Speed (higher = slower)",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on Hover",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Marquee",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

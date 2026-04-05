@@ -1,0 +1,222 @@
+{% comment %}
+  Section: Icon columns with heading + subtext + button
+{% endcomment %}
+<section class="icon-columns" id="icon-columns-{{ section.id }}">
+  <div class="icon-columns__inner wrapper--full-padded">
+    <!-- Headings -->
+    <div class="icon-columns__heading">
+      {% if section.settings.heading_line_1 != blank %}
+        <h2 class="icon-columns__heading-line icon-columns__heading-line--top">
+          {{ section.settings.heading_line_1 }}
+        </h2>
+      {% endif %}
+      {% if section.settings.heading_line_2 != blank %}
+        <h2 class="icon-columns__heading-line icon-columns__heading-line--bottom">
+          {{ section.settings.heading_line_2 }}
+        </h2>
+      {% endif %}
+    </div>
+
+    <!-- Icon columns -->
+    <div class="icon-columns__items">
+      {% for block in section.blocks %}
+        <div class="icon-columns__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="icon-columns__icon">
+            {{ block.settings.icon | image_url: width: 120 | image_tag: alt: block.settings.title_line_1, loading: 'lazy'  }}
+            </div>
+          {% endif %}
+
+          <div class="icon-columns__item-text">
+            {% if block.settings.title_line != blank %}
+              <p class="icon-columns__item-line">
+                {{ block.settings.title_line | newline_to_br }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Subtext -->
+    {% if section.settings.subtext != blank %}
+      <p class="icon-columns__subtext">
+        {{ section.settings.subtext }}
+      </p>
+    {% endif %}
+
+    <!-- Button (uses theme button classes) -->
+    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <div class="icon-columns__button-wrap">
+        <a
+          href="{{ section.settings.button_link }}"
+          class="btn btn--primary btn--solid btn--large btn--advanced btn--advanced-width-height"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #icon-columns-{{ section.id }} {
+    background: #ffffff;
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__heading-line {
+    margin: 0;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__heading-line--top {
+    margin-bottom: 4px;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__heading-line--bottom {
+    margin-bottom: 40px;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__item {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__icon {
+    display: flex;
+    margin-bottom: 18px;
+    height: 60px;
+  }
+  #icon-columns-{{ section.id }} .icon-columns__icon img {
+    max-width: 60px;
+    height: auto;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__item-text {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__item-line {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__subtext {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 40px auto 24px;
+  }
+
+  #icon-columns-{{ section.id }} .icon-columns__button-wrap {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    #icon-columns-{{ section.id }} .icon-columns__item {
+      flex: 1;
+    }
+    /* Vertical divider between items */
+    #icon-columns-{{ section.id }} .icon-columns__item + .icon-columns__item {
+      border-left: 1px solid #d4d4d4;
+    }
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 767px) {
+    #icon-columns-{{ section.id }} .icon-columns__item-line{font-size:12px;}
+    #icon-columns-{{ section.id }} {
+      padding: 40px 0 35px;
+    }
+
+    #icon-columns-{{ section.id }} .icon-columns__items {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #icon-columns-{{ section.id }} .icon-columns__item {
+      border-left: none;
+      padding: 0 0 16px;
+      width: calc(50% - 5px);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Icon columns with text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "We’d love to partner with you."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "We work with:"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "New to affiliate marketing? We’ll give you everything you need to start earning—no experience required."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "JOIN NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Icon column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "textarea",
+          "id": "title_line",
+          "label": "Title line",
+          "default": "TITLE LINE"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Icon columns with text",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

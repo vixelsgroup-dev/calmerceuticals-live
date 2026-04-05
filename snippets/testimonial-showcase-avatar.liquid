@@ -1,0 +1,14 @@
+{%- if avatar != blank -%}
+  <img
+    class="testimonial-showcase__avatar"
+    src="{{ avatar | image_url: width: 120 }}"
+    width="60"
+    height="60"
+    alt=""
+    loading="lazy"
+  >
+{%- else -%}
+  <div class="testimonial-showcase__avatar-placeholder">
+    {{ 'image' | placeholder_svg_tag: 'testimonial-showcase__placeholder-svg' }}
+  </div>
+{%- endif -%}

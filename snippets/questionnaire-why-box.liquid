@@ -1,0 +1,17 @@
+{%- liquid
+  assign why_heading = title | strip
+  assign why_body = text | strip
+-%}
+{%- if why_heading != blank or why_body != blank -%}
+  <div class="questionnaire__why">
+    <div class="questionnaire__why-icon" aria-hidden="true">{% render 'questionnaire-why-icon' %}</div>
+    <div class="questionnaire__why-content">
+      {%- if why_heading != blank -%}
+        <p class="questionnaire__why-title">{{ why_heading | escape }}</p>
+      {%- endif -%}
+      {%- if why_body != blank -%}
+        <p class="questionnaire__why-text">{{ why_body | escape | newline_to_br }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

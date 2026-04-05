@@ -1,0 +1,229 @@
+<div class="multicolumn-custom">
+    <div class="multicolumn-custom-inner wrapper">
+        <div class="section__header text-center">
+            {% if section.settings.heading != blank %}
+                <h2 class="section__heading h2">
+                    {{- section.settings.heading -}}
+                </h2>
+            {% endif %}
+            {% if section.settings.subheading != blank %}
+                <div class="text__content">
+                    {{- section.settings.subheading -}}
+                </div>
+            {% endif %}
+        </div>
+        <div id="multi-items-{{ section.id }}" class="multi-items text-center" data-aos-intersection="0.3">
+            <div class="multi-items-inner cols-{{ section.settings.desktop_columns }} multi-items-inner--slider-{{ section.id }}">
+                {% for block in section.blocks %}
+                    <div 
+                        class="multi-item block-{{ block.id }}">
+                        {% if block.settings.image != blank %}
+                            <div class="image">
+                              {{ block.settings.image | image_url: width: 1000 | image_tag }}
+                              {% if block.settings.title != blank %}
+                                  <div class="title h4 title-{{ section.id }} hidden-mobile">{{ block.settings.title }}</div>
+                              {% endif %}
+                            </div>
+                        {% endif %}
+                        <div class="bottom">
+                            {% if block.settings.title != blank %}
+                                <div class="title h4 title-{{ section.id }} hidden-desktop">{{ block.settings.title }}</div>
+                            {% endif %}
+                            {% if block.settings.text != blank %}
+                                <div class="text text-{{ section.id }}">{{ block.settings.text }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #shopify-section-{{ section.id }} .multicolumn-custom{background-image:url({{ section.settings.bg_image | image_url: width: 2000 }});background-repeat:no-repeat;background-size:cover;padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+    #shopify-section-{{ section.id }} h2{--adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ section.settings.heading_size | times: 0.01 }});}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item{display: flex;background-color:{{ section.settings.card_color }};}
+    #shopify-section-{{ section.id }} .multi-items-inner .text p:first-of-type{margin-top:0;}
+    {% if section.settings.box_shadow %}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item{box-shadow: 0 4px 13.9px 0 #D9D9D9;}
+    {% endif %}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image{position:relative;display: flex;flex-direction:column;align-items:center;justify-content: center;margin-left: auto; margin-right: auto;overflow:hidden;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image img{transition:all 1s ease;width:100%;}
+    #shopify-section-{{ section.id }} .flickity-page-dots{display:flex;justify-content:center;position:static;margin-top:30px;}
+    #shopify-section-{{ section.id }} .multi-items-inner .title{text-transform:uppercase;}
+    #shopify-section-{{ section.id }} .multi-items-inner .multi-item .title p{margin:0;}
+    @media (min-width: 768px) {
+      #shopify-section-{{ section.id }} .multi-items-inner .multi-item{flex-direction: column;flex:1;}
+      {% unless section.settings.desktop_carousel %}
+      #shopify-section-{{ section.id }} .multi-items-inner{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;}
+      #shopify-section-{{ section.id }} .cols-6 .multi-item{width:calc(16.6667% - 10px);}
+      #shopify-section-{{ section.id }} .cols-5 .multi-item{width:calc(20% - 10px);}
+      #shopify-section-{{ section.id }} .cols-4 .multi-item{width:calc(25% - 10px);}
+      #shopify-section-{{ section.id }} .cols-3 .multi-item{width:calc(33.3333% - 10px);}
+      #shopify-section-{{ section.id }} .cols-2 .multi-item{width:calc(50% - 10px);}
+      #shopify-section-{{ section.id }} .cols-1 .multi-item{width:calc(100% - 10px);}
+      {% else %}
+      #shopify-section-{{ section.id }} .cols-3 .multi-item{margin-right:10px;}
+      #shopify-section-{{ section.id }} .cols-6 .multi-item{width:calc(16.6667% - 5px);}
+      #shopify-section-{{ section.id }} .cols-5 .multi-item{width:calc(20% - 5px);}
+      #shopify-section-{{ section.id }} .cols-4 .multi-item{width:calc(25% - 5px);}
+      #shopify-section-{{ section.id }} .cols-3 .multi-item{width:calc(33.3333% - 5px);}
+      #shopify-section-{{ section.id }} .cols-2 .multi-item{width:calc(50% - 5px);}
+      #shopify-section-{{ section.id }} .cols-1 .multi-item{width:calc(100% - 5px);}
+      {% endunless %}
+      #shopify-section-{{ section.id }} .multi-items-inner .title{color:#fff;padding:0 15px 20px;position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, rgba(106, 9, 39, 0.00) 0%, #6A0927 100%); margin: 0;}
+      #shopify-section-{{ section.id }} .multi-items-inner .multi-item .text{padding:15px 15px;}
+      #shopify-section-{{ section.id }} .multi-items-inner .multi-item .image img{height:100%;}
+    }
+    @media (max-width: 767px) {
+        #shopify-section-{{ section.id }} .flickity-viewport{overflow:initial;}
+        #shopify-section-{{ section.id }} .multi-item{gap:12px;margin-bottom:15px;}
+        #shopify-section-{{ section.id }} .multi-item .image{width:40%;}
+        #shopify-section-{{ section.id }} .multi-item .image img{height:auto;}
+        #shopify-section-{{ section.id }} .multi-item .bottom{display:flex;flex-direction:column;justify-content:center;width:60%;text-align:left;min-height:100%;border-bottom:1px solid rgba(0,0,0,0.4);}
+        #shopify-section-{{ section.id }} .multi-item .bottom br{display:none;}
+        #shopify-section-{{ section.id }} .multi-item .bottom .title,
+        #shopify-section-{{ section.id }} .multi-item .bottom .text *{font-size:13px;height:auto!important;}
+        #shopify-section-{{ section.id }} .flickity-page-dots .dot{width:100%;}
+    }
+</style>
+<script>
+    function equalizeBottomHeight() {
+        const bottoms = document.querySelectorAll(
+            '.text-{{ section.id }}'
+        );
+        let maxHeight = 0;
+
+        bottoms.forEach(el => {
+            el.style.height = 'auto';
+        });
+
+        bottoms.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.height > maxHeight) {
+                maxHeight = rect.height;
+            }
+        });
+
+        // Set the height of each element to the maxHeight found
+        bottoms.forEach(el => {
+            el.style.height = maxHeight + 'px';
+        });
+    }
+
+    window.addEventListener('load', equalizeBottomHeight);
+    window.addEventListener('resize', equalizeBottomHeight);
+</script>
+{% schema %}
+{
+  "name": "Multicolumn Custom #5",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Multicolumn Custom</p>"
+    },
+    {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Size",
+        "min": 50,
+        "max": 300,
+        "default": 100,
+        "step": 5,
+        "unit": "%"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Earning points is easy, the more you engage, the more you earn!</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_carousel",
+      "label": "Desktop carousel",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "box_shadow",
+      "label": "Box shadow",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Create an Account</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn - Custom #5",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

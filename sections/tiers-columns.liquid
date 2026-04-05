@@ -1,0 +1,220 @@
+<div class="columns-table-main">
+    <div class="columns-table-inner wrapper">
+        <div class="section__header text-center">
+            {% if section.settings.heading != blank %}
+                <h2 class="section__heading h2">
+                    {{- section.settings.heading -}}
+                </h2>
+            {% endif %}
+            {% if section.settings.subheading != blank %}
+                <div class="text__content">
+                    {{- section.settings.subheading -}}
+                </div>
+            {% endif %}
+        </div>
+        <div class="columns-table-content">
+            <div class="columns-table-content-inner">
+                {% for block in section.blocks %}
+                    {% if block.type == 'tier-first-column' %}
+                    <div class="first-column column">
+                        <div class="top-row"></div>
+                        {% assign rows = block.settings.tier_row_title | newline_to_br | split: '<br />' %}
+                        <div class="inner-row">
+                            <div class="content"></div>
+                            {% for row in rows %}
+                                {% assign clean_row = row | strip %}
+                                <div class="row">{{ clean_row }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if block.type == 'tier-next-column' %}
+                    <div class="next-column column">
+                        <div class="top-row">
+                            {% if block.settings.image != blank %}
+                            <div class="figure">
+                                {{ block.settings.image | image_url: width: 300, height: 300 | image_tag }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% assign rows = block.settings.tier_row_text | newline_to_br | split: '<br />' %}
+                        <div class="inner-row">
+                            <div class="content">
+                                {% if block.settings.title != blank %}
+                                    <h3>{{ block.settings.title }}</h3>
+                                {% endif %}
+                                {% if block.settings.subtitle != blank %}
+                                    <div class="text__content">{{ block.settings.subtitle }}</div>
+                                {% endif %}
+                            </div>
+                            {% for row in rows %}
+                                <div class="row">
+                                    {% assign clean_row = row | strip %}
+                                    {% if clean_row == 'Yes' or clean_row == 'yes' %}
+                                        <div class="circle"></div>
+                                    {% else %}
+                                        {{ clean_row }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #shopify-section-{{ section.id }} .columns-table-main{padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+    #shopify-section-{{ section.id }} .columns-table-content-inner{display:flex;gap:10px;}
+    #shopify-section-{{ section.id }} .column{display:flex;flex-direction:column;background-color:#fff;}
+    #shopify-section-{{ section.id }} .column .inner-row{padding-top:15px;margin-top:25px;}
+    #shopify-section-{{ section.id }} .first-column.column .top-row{flex:1;aspect-ratio:1/1;}
+    #shopify-section-{{ section.id }} .column:not(.first-column) .inner-row{background: #FFF; box-shadow: 0 4px 4px 0 rgba(158, 145, 151, 0.46);height:100%;text-align:center;}
+    #shopify-section-{{ section.id }} .column .row{margin-bottom:35px;}
+    #shopify-section-{{ section.id }} .column .inner-row .content{margin-bottom:30px;min-height:45px;}
+    #shopify-section-{{ section.id }} .column .row .circle{width:18px;height:18px;border-radius:100%;background:#6A0927;margin:0 auto;}
+    #shopify-section-{{ section.id }} .column .figure img{height:auto;}
+    @media (min-width: 768px) {
+        #shopify-section-{{ section.id }} .columns-table-content-inner{flex-wrap:wrap;gap:30px;}
+        #shopify-section-{{ section.id }} .columns-table-content-inner .column{width:calc(20% - 30px);}
+    }
+    @media (max-width: 767px) {
+        #shopify-section-{{ section.id }} .columns-table-content-inner{overflow-x:auto;padding-bottom:10px;}
+        #shopify-section-{{ section.id }} .column{width:30%;flex-shrink:0;}
+        #shopify-section-{{ section.id }} .column .row{padding:0 7px;}
+        #shopify-section-{{ section.id }} .column .text__content *{font-size:11px;}
+        #shopify-section-{{ section.id }} .first-column.column{position:sticky;left:0;align-self:initial;}
+        #shopify-section-{{ section.id }} .first-column.column .row{font-size:10px;}
+    }
+</style>
+<script>
+    function equalizeBottomHeight() {
+    const bottoms = document.querySelectorAll(
+        '.column .content'
+    );
+    let maxHeight = 0;
+
+    bottoms.forEach(el => {
+        el.style.height = 'auto';
+    });
+
+    bottoms.forEach(el => {
+        if (el.offsetHeight > maxHeight) {
+        maxHeight = el.offsetHeight;
+        }
+    });
+
+    bottoms.forEach(el => {
+        el.style.height = maxHeight + 'px';
+    });
+    }
+
+    window.addEventListener('load', equalizeBottomHeight);
+    window.addEventListener('resize', equalizeBottomHeight);
+</script>
+{% schema %}
+{
+    "name": "Tiers Columns",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading",
+            "default": "<p>Tiers Custom</p>"
+        },
+        {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Size",
+            "min": 50,
+            "max": 300,
+            "default": 100,
+            "step": 5,
+            "unit": "%"
+        },
+        {
+            "type": "richtext",
+            "id": "subheading",
+            "label": "Subheading",
+            "default": "<p>Earning points is easy, the more you engage, the more you earn!</p>"
+        },
+        {
+            "type": "range",
+            "id": "desktop_columns",
+            "label": "Desktop columns",
+            "min": 3,
+            "max": 6,
+            "step": 1,
+            "default": 6
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "default": 60
+        }
+    ],
+    "blocks": [
+    {
+      "type": "tier-first-column",
+      "name": "Tier First Column",
+      "limit": 1,
+      "settings": [
+            {
+                "type": "textarea",
+                "id": "tier_row_title",
+                "label": "Tier row title",
+                "info": "Write titles for the first column on each line"
+            }
+        ],
+    },
+    {
+      "type": "tier-next-column",
+      "name": "Tier Next Column",
+      "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Tier image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Tier title",
+                "default": "BRONZE"
+            },
+            {
+                "type": "richtext",
+                "id": "subtitle",
+                "label": "Subtitle"
+            },
+            {
+                "type": "textarea",
+                "id": "tier_row_text",
+                "label": "tier_row_text",
+                "info": "Write titles for the first column on each line"
+            },
+        ],
+    }
+  ],
+  "presets": [
+        {
+        "name": "Tiers Columns",
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,89 @@
+{%- comment -%}
+  Branching email step. Unique suffix avoids duplicate form/iframe IDs when several capture screens exist.
+  Pass either branch_trigger OR branch_any (pipe-separated), not both.
+{%- endcomment -%}
+{%- liquid
+  assign qec_form_id = 'QuestionnaireCustomerForm-' | append: section.id | append: '-' | append: suffix
+  assign qec_iframe = 'qcust_' | append: section.id | append: '-' | append: suffix | handleize
+  assign qec_err_id = 'QuestionnaireEmailError-' | append: section.id | append: '-' | append: suffix
+
+  assign questionnaire_customer_return = request.path
+  if questionnaire_customer_return == blank
+    assign questionnaire_customer_return = routes.root_url
+  endif
+  if questionnaire_customer_return == blank
+    assign questionnaire_customer_return = '/'
+  endif
+-%}
+<article
+  class="questionnaire__screen"
+  data-questionnaire-screen
+  data-screen-type="email_capture"
+  {% if branch_parent != blank %}
+    data-branch-parent="{{ branch_parent | escape }}"
+  {% endif %}
+  {% if branch_any != blank %}
+    data-branch-any="{{ branch_any | escape }}"
+  {% elsif branch_trigger != blank %}
+    data-branch-trigger="{{ branch_trigger | escape }}"
+  {% endif %}
+>
+  <div class="questionnaire__email-wrap">
+    {%- form 'customer',
+      id: qec_form_id,
+      class: 'questionnaire__customer-form-hidden',
+      data-questionnaire-customer-form: true,
+      return_to: questionnaire_customer_return
+    -%}
+      <input type="hidden" name="contact[accepts_marketing]" value="true">
+      <input type="hidden" name="contact[tags]" value="questionnaire">
+      <input
+        type="hidden"
+        name="contact[email]"
+        value=""
+        data-questionnaire-customer-email-field
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      >
+    {%- endform -%}
+    <iframe
+      class="questionnaire__customer-iframe"
+      src="about:blank"
+      title="Questionnaire email signup"
+      name="{{ qec_iframe }}"
+      tabindex="-1"
+      aria-hidden="true"
+    ></iframe>
+    <h2 class="questionnaire__question questionnaire__email-heading">You&rsquo;re Almost There!</h2>
+    <p class="questionnaire__email-subtitle">
+      Sign up to get an email with your personalized recommendations, plus exclusive access to sales, new product
+      launches, and more.
+    </p>
+    <div class="questionnaire__email-form">
+      <div class="questionnaire__email-field">
+        <input
+          type="email"
+          class="questionnaire__email-input"
+          placeholder="Enter your email address"
+          data-questionnaire-email
+          autocomplete="email"
+          aria-describedby="{{ qec_err_id }}"
+        >
+        <p
+          id="{{ qec_err_id }}"
+          class="questionnaire__email-error"
+          data-questionnaire-email-error
+          role="alert"
+        ></p>
+      </div>
+      <button class="questionnaire__email-submit" type="button" data-questionnaire-email-submit>
+        <span class="questionnaire__email-submit-label">Submit and View Results</span>
+      </button>
+    </div>
+    <p class="questionnaire__email-or">or</p>
+    <button class="questionnaire__email-skip" type="button" data-questionnaire-email-skip>
+      No thanks, just show me my recommendations.
+    </button>
+  </div>
+</article>

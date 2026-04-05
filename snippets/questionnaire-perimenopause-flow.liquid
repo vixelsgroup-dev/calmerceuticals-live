@@ -1,0 +1,1285 @@
+    {%- comment -%} Perimenopause — symptom entry (Energy path) {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which area of health are you looking to support?"
+      data-branch-trigger="Energy, strength & vitality"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Which symptom is disrupting your daily life most?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Hot flushes and night sweats"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Hot flushes and night sweats</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Poor sleep and exhaustion"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Poor sleep and exhaustion</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mood swings, anxiety or low mood"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mood swings, anxiety or low mood</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low libido, energy and sexual wellbeing"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low libido, energy and sexual wellbeing</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — hot — frequency {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Hot flushes and night sweats"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How often are hot flushes disrupting you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Multiple times a day — severely affecting me"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Multiple times a day — severely affecting me</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mostly at night — breaking my sleep"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mostly at night — breaking my sleep</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few times a week — manageable but frustrating"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few times a week — manageable but frustrating</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — hot — mood confidence {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Hot flushes and night sweats"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Are hot flushes also affecting your mood or confidence?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — I feel anxious and embarrassed about them"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — I feel anxious and embarrassed about them</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — mainly the physical discomfort"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — mainly the physical discomfort</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — I just want the physical symptoms gone"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — I just want the physical symptoms gone</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — hot — skin {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Hot flushes and night sweats"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Is your skin also changing during this time?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — drier, more lines, losing its glow"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — drier, more lines, losing its glow</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — subtle changes but I notice them"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — subtle changes but I notice them</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Not really — skin feels okay"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Not really — skin feels okay</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — hot — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Hot flushes and night sweats"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been experiencing hot flushes?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Just started — early stages"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Just started — early stages</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few months — becoming more frequent"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few months — becoming more frequent</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — I really need relief now"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — I really need relief now</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — hot — 8-week outcome {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Hot flushes and night sweats"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 8 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Fewer and less intense hot flushes"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Fewer and less intense hot flushes</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Better sleep through the night"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Better sleep through the night</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Calmer mood and more confidence"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Calmer mood and more confidence</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above — full perimenopausal support"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above — full perimenopausal support</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Perimenopause — email / result (peri-hot) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'peri-hot',
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Hot flushes and night sweats'
+    %}
+    {% render 'questionnaire-perimenopause-product-result',
+      shop_now_url: perimenopause_shop_url,
+      section: section,
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Hot flushes and night sweats',
+      peri_concern: 'hot'
+    %}
+
+    {%- comment -%} Peri — sleep — pattern {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Poor sleep and exhaustion"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What does poor sleep look like for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Waking repeatedly through the night"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Waking repeatedly through the night</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Can't fall asleep — mind racing at night"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Can't fall asleep — mind racing at night</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Waking exhausted despite sleeping long enough"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Waking exhausted despite sleeping long enough</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — sleep — daily impact {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Poor sleep and exhaustion"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is poor sleep affecting your daily life?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Struggling to concentrate at work"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Struggling to concentrate at work</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Irritable, emotional and overwhelmed"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Irritable, emotional and overwhelmed</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Physically exhausted, unable to exercise"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Physically exhausted, unable to exercise</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — sleep — hot flushes link {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Poor sleep and exhaustion"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Are hot flushes also disrupting your sleep?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — waking drenched in sweat"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — waking drenched in sweat</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Sometimes — they are linked"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Sometimes — they are linked</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — sleep is the only issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — sleep is the only issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — sleep — how long {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Poor sleep and exhaustion"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been struggling with sleep?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few weeks — something has recently shifted"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few weeks — something has recently shifted</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Several months — getting worse"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Several months — getting worse</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — it is really affecting my health"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — it is really affecting my health</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — sleep — 8-week outcome {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Poor sleep and exhaustion"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 8 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Sleeping through the night consistently"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Sleeping through the night consistently</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Waking feeling rested and energised"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Waking feeling rested and energised</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Less anxiety and tension at night"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Less anxiety and tension at night</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Perimenopause — email / result (peri-sleep) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'peri-sleep',
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Poor sleep and exhaustion'
+    %}
+    {% render 'questionnaire-perimenopause-product-result',
+      shop_now_url: perimenopause_shop_url,
+      section: section,
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Poor sleep and exhaustion',
+      peri_concern: 'sleep'
+    %}
+
+    {%- comment -%} Peri — mood — how showing {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Mood swings, anxiety or low mood"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How are mood changes showing up for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Irritability and emotional sensitivity"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Irritability and emotional sensitivity</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Anxiety and feeling constantly overwhelmed"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Anxiety and feeling constantly overwhelmed</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low mood, flat and unmotivated"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low mood, flat and unmotivated</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — mood — sleep link {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Mood swings, anxiety or low mood"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Are mood changes linked to sleep issues for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — poor sleep makes everything worse"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — poor sleep makes everything worse</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Sometimes — they come and go together"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Sometimes — they come and go together</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — sleep is okay, mood is the main issue"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — sleep is okay, mood is the main issue</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — mood — relationships {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Mood swings, anxiety or low mood"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How are mood changes affecting your relationships?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Significantly — causing tension with people I love"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Significantly — causing tension with people I love</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — I am more withdrawn than usual"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — I am more withdrawn than usual</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mainly internal — affecting me personally"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mainly internal — affecting me personally</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — mood — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Mood swings, anxiety or low mood"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been experiencing mood changes?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Just started — feels sudden and new"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Just started — feels sudden and new</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few months — coming and going"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few months — coming and going</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — it has become my new normal"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — it has become my new normal</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — mood — 8-week outcome {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Mood swings, anxiety or low mood"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 8 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Calmer, more emotionally stable"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Calmer, more emotionally stable</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Less anxiety and more confidence"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Less anxiety and more confidence</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Better motivation and sense of self"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Better motivation and sense of self</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Perimenopause — email / result (peri-mood) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'peri-mood',
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Mood swings, anxiety or low mood'
+    %}
+    {% render 'questionnaire-perimenopause-product-result',
+      shop_now_url: perimenopause_shop_url,
+      section: section,
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Mood swings, anxiety or low mood',
+      peri_concern: 'mood'
+    %}
+
+    {%- comment -%} Peri — libido — showing up {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Low libido, energy and sexual wellbeing"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is low libido or energy showing up for you?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low desire and reduced intimacy"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low desire and reduced intimacy</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Low motivation and vitality day to day"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Low motivation and vitality day to day</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Feeling disconnected from myself"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Feeling disconnected from myself</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — libido — other symptoms {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Low libido, energy and sexual wellbeing"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">Are other perimenopausal symptoms also present?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Yes — hot flushes and sleep issues too"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Yes — hot flushes and sleep issues too</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Some — mood and energy mainly"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Some — mood and energy mainly</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="No — libido and vitality are the main concerns"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">No — libido and vitality are the main concerns</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — libido — relationship confidence {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Low libido, energy and sexual wellbeing"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How is this affecting your relationship or confidence?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Significantly — it is straining my relationship"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Significantly — it is straining my relationship</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Somewhat — I feel less like myself"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Somewhat — I feel less like myself</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Mainly internal — I just want to feel vital again"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Mainly internal — I just want to feel vital again</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — libido — duration {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Low libido, energy and sexual wellbeing"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">How long have you been experiencing low libido?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="A few months — something has changed"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">A few months — something has changed</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Over a year — gradual but steady decline"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Over a year — gradual but steady decline</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="It comes and goes with my cycle"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">It comes and goes with my cycle</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Peri — libido — 8-week outcome {%- endcomment -%}
+    <article
+      class="questionnaire__screen"
+      data-questionnaire-screen
+      data-screen-type="single_choice"
+      data-branch-parent="Which symptom is disrupting your daily life most?"
+      data-branch-trigger="Low libido, energy and sexual wellbeing"
+      data-show-nav
+    >
+      <h2 class="questionnaire__question">What outcome matters most to you in 8 weeks?</h2>
+      <div class="questionnaire__options questionnaire__options--radio" role="radiogroup">
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Restored desire and sexual confidence"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Restored desire and sexual confidence</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="More energy and day-to-day vitality"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">More energy and day-to-day vitality</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="Feeling connected to myself again"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">Feeling connected to myself again</span>
+        </button>
+        <button
+          class="questionnaire__option questionnaire__option--radio"
+          type="button"
+          data-questionnaire-option
+          data-value="All of the above"
+          aria-pressed="false"
+        >
+          <span class="questionnaire__option-radio" aria-hidden="true"></span>
+          <span class="questionnaire__option-label">All of the above</span>
+        </button>
+      </div>
+      <div class="questionnaire__inline-nav">
+        <button class="questionnaire__inline-back" type="button" data-questionnaire-back>
+          <span class="questionnaire__inline-back-label">← Back</span>
+        </button>
+        <button class="questionnaire__inline-continue" type="button" data-questionnaire-continue>
+          <span class="questionnaire__inline-continue-label">Continue →</span>
+        </button>
+      </div>
+      {% render 'questionnaire-why-box',
+        title: section.settings.why_title,
+        text: section.settings.why_text
+      %}
+    </article>
+
+    {%- comment -%} Perimenopause — email / result (peri-libido) {%- endcomment -%}
+    {% render 'questionnaire-email-capture',
+      section: section,
+      suffix: 'peri-libido',
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Low libido, energy and sexual wellbeing'
+    %}
+    {% render 'questionnaire-perimenopause-product-result',
+      shop_now_url: perimenopause_shop_url,
+      section: section,
+      branch_parent: 'Which symptom is disrupting your daily life most?',
+      branch_trigger: 'Low libido, energy and sexual wellbeing',
+      peri_concern: 'libido'
+    %}

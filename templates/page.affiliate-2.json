@@ -1,0 +1,775 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_slideshow_Qp6TAq": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_9ezbGC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/main-banner.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p><strong>Join Australia’s Most Rewarding Affiliate Program</strong></p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Earn up to 40% commission promoting the premium beauty and wellness brand trusted for visible, clinical results in just 12 weeks.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_1_color": "btn--primary",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        },
+        "image_3Nr73n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/main-banner-2.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p><strong>Join Australia’s Most Rewarding Affiliate Program</strong></p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Earn up to 40% commission promoting the premium beauty and wellness brand trusted for visible, clinical results in just 12 weeks.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_1_color": "btn--primary",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        },
+        "image_jPmrwM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/main-banner-4.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p><strong>Join Australia’s Most Rewarding Affiliate Program</strong></p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Earn up to 40% commission promoting the premium beauty and wellness brand trusted for visible, clinical results in just 12 weeks.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_1_color": "btn--primary",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        },
+        "image_UBwzwd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/main-banner-6.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "bottom-left",
+            "text_alignment": "text-left",
+            "subheading": "",
+            "title": "<p><strong>Join Australia’s Most Rewarding Affiliate Program</strong></p>",
+            "heading_size": 120,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Earn up to 40% commission promoting the premium beauty and wellness brand trusted for visible, clinical results in just 12 weeks.",
+            "text_size": 80,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "#ffffff",
+            "stacked_button": false,
+            "button_1_text": "APPLY NOW",
+            "button_1_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_1_color": "btn--primary",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--large",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_9ezbGC",
+        "image_3Nr73n",
+        "image_jPmrwM",
+        "image_UBwzwd"
+      ],
+      "custom_css": [
+        ".slide__text.main-text {margin-top: 15px;}",
+        ".flickity-page-dots .dot {border-color: #fff;}"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "six-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": true,
+        "duration": 6,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "show_page_title": true,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_EWFQzX": {
+      "type": "section-text",
+      "blocks": {
+        "subheading_e6zQHa": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Proven Results. Serious Rewards.</p>",
+            "size": 110,
+            "margin_bottom": 41
+          }
+        },
+        "heading_eh6hLz": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Why Partner with Calmerceuticals?</strong></p>",
+            "size": 110,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_ExAzUG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re not just another collagen brand—we’re a clinically backed, founder-led wellness company with viral growth and results that speak for themselves.</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "subheading_e6zQHa",
+        "heading_eh6hLz",
+        "text_ExAzUG"
+      ],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 22
+      }
+    },
+    "section_multicolumn_Dxp4xE": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_dYcYnw": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/Mask_group_fc3bc13f-66ce-48c8-a9d9-df6869442810.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_yfjbXF": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/Mask_group_1.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_jQ7qUD": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/Mask_group_2.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "",
+            "heading_size": 120,
+            "text": "",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_dYcYnw",
+        "image_yfjbXF",
+        "image_jQ7qUD"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "color_scheme": "",
+        "layout_mobile": "stacked",
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "info_grid_NzPcHA": {
+      "type": "info-grid",
+      "blocks": {
+        "card_UA4JiQ": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Group_4.png",
+            "title": "40% commission –",
+            "text": "one of the highest in the industry "
+          }
+        },
+        "card_FPtKN9": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Group_5.png",
+            "title": "High AOV – premium pricing",
+            "text": "= bigger payouts for you "
+          }
+        },
+        "card_YjdEpY": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_ef4e7726-7465-4343-8e4d-dbf09e4181ee.png",
+            "title": "Conversion-optimised creative –",
+            "text": "banners, captions, and UGC that sell"
+          }
+        },
+        "card_CMAWbL": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Group_6.png",
+            "title": "Clean, Australian-made, science-backed –",
+            "text": "no BS, no fillers "
+          }
+        }
+      },
+      "block_order": [
+        "card_UA4JiQ",
+        "card_FPtKN9",
+        "card_YjdEpY",
+        "card_CMAWbL"
+      ],
+      "name": "Info Grid 2x2",
+      "settings": {
+        "bg_gradient": "radial-gradient(rgba(90, 1, 42, 0.85), rgba(255, 197, 197, 0.37) 35.1%, rgba(255, 255, 255, 0.61) 50%)",
+        "num_of_cols": "2",
+        "divider_color": "#b46a7b",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_image_with_text_EWijAd": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_AxXzD3": {
+          "type": "heading",
+          "settings": {
+            "title": "<p><strong>Our Ideal Partner</strong></p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_LHxBtR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If your audience loves:</p><p><br/><br/></p><ul><li>Premium skincare and wellness</li></ul><p></p><ul><li>Honest product reviews </li></ul><p></p><ul><li>Healthy aging backed by science</li></ul><p></p><ul><li>Proven results over hype</li></ul>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "button_BhpHxR": {
+          "type": "button",
+          "settings": {
+            "button_text": "Join Now",
+            "button_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--large",
+            "video_link": "",
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_AxXzD3",
+        "text_LHxBtR",
+        "button_BhpHxR"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "four-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "three-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify://shop_images/influencer_1.jpg",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper",
+        "add_gutter": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "icon_columns_with_text_QTb3Dc": {
+      "type": "icon-columns-with-text",
+      "blocks": {
+        "item_AVTptK": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_13.svg",
+            "title_line": "Content creators \nand influencers "
+          }
+        },
+        "item_qMNj3C": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_14.svg",
+            "title_line": "Review sites and \nskincare blogs"
+          }
+        },
+        "item_cjyGVd": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector.svg",
+            "title_line": "TikTokers, YouTubers, \nand wellness coaches"
+          }
+        },
+        "item_nEtKUK": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group.svg",
+            "title_line": "Facebook group \nadmins, newsletters, \nand affiliate pros "
+          }
+        }
+      },
+      "block_order": [
+        "item_AVTptK",
+        "item_qMNj3C",
+        "item_cjyGVd",
+        "item_nEtKUK"
+      ],
+      "name": "Icon columns with text",
+      "settings": {
+        "heading_line_1": "We’d love to partner with you.",
+        "heading_line_2": "We work with:",
+        "subtext": "New to affiliate marketing? We’ll give you everything you need to start earning—no experience required.",
+        "button_label": "JOIN NOW",
+        "button_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937"
+      }
+    },
+    "section_image_with_text_9g4MwP": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "heading_8JwPUT": {
+          "type": "heading",
+          "settings": {
+            "title": "<p><strong>What’s in It for You</strong></p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_F4Y7LE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If your audience loves:</p><p><br/></p><ul><li>Beautiful product photos and high-converting banners  </li></ul><p></p><ul><li>Ready-to-post captions and UGC-style content  </li></ul><p></p><ul><li>Early access to new launches  </li></ul><p></p><ul><li>Custom coupon codes and gifting options  </li></ul><p></p><ul><li>VIP commissions and bonuses for top performers</li></ul><p></p><p><strong>Hands-on support to help you scale your earnings </strong></p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "button_EBQGKV": {
+          "type": "button",
+          "settings": {
+            "button_text": "Start Earning",
+            "button_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "video_link": "",
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_8JwPUT",
+        "text_F4Y7LE",
+        "button_EBQGKV"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify://shop_images/DSC09301_1.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "testimonials_custom_9VLQ3J": {
+      "type": "testimonials-custom",
+      "blocks": {
+        "testimonial_GNhrty": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_block_text": "It’s refreshing to promote a product that actually works. Their team is responsive, generous, and genuinely invested in creators success.",
+            "testimonial_block_author": "James, Wellness creator"
+          }
+        },
+        "testimonial_EyLrm6": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_block_text": "What I really love is that the products feel premium and legit - I’ve heard multiple followers say they noticed improved skin and hair after a month of use. That kind of genuine feedback builds trust, which makes it way easier to promote (and to sleep at night).",
+            "testimonial_block_author": "Anonymous, Affiliate Partner"
+          }
+        },
+        "testimonial_CJQWje": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_block_text": "The Conversion rate on Calmerceuticals is wild - My audience loves the results and so many people DM me post-purchase.",
+            "testimonial_block_author": "Mia, Affiliate Partner"
+          }
+        },
+        "testimonial_mYG9Jh": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_block_text": "The support team is responsive, and when I had a question about tracking or setup, they helped me get sorted fast. For a small content creator, that kind of hands-on help is rare - and it means a lot.",
+            "testimonial_block_author": "Anonymous, Affiliate Partner"
+          }
+        },
+        "testimonial_zeJTmC": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_block_text": "What I really love is that the products feel premium and legit - I’ve heard multiple followers say they noticed improved skin and hair after a month of use. That kind of genuine feedback builds trust, which makes it way easier to promote (and to sleep at night).",
+            "testimonial_block_author": "Anonymous, Affiliate Partner"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GNhrty",
+        "testimonial_EyLrm6",
+        "testimonial_CJQWje",
+        "testimonial_mYG9Jh",
+        "testimonial_zeJTmC"
+      ],
+      "name": "Testimonials Custom",
+      "settings": {
+        "testimonial_title": "<h2><strong>Why Affiliates Love Us</strong></h2>",
+        "background_quote_image": "shopify://shop_images/Group_12.png",
+        "enable_swipe": true
+      }
+    },
+    "apps_h7pwNn": {
+      "type": "apps",
+      "blocks": {
+        "instareel_ig_reels_instagram_reels_feed_QpH3Yf": {
+          "type": "shopify://apps/instareel-ig-reels/blocks/instagram-reels-feed/6399ee9c-54c8-4f76-97d7-8f02f7662aa1",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "instareel_ig_reels_instagram_reels_feed_QpH3Yf"
+      ],
+      "settings": {
+        "color_scheme": "scheme-e36e7c8d-f101-4479-b61b-93ca99e95f7e",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "custom_images_section_4BniTR": {
+      "type": "custom-images-section",
+      "blocks": {
+        "image_zpFfRF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.45.51_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_HVwYx4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/calmerceuticals-pilot-using-collagen.webp",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_npPH4K": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ugc-calmerceuticals.webp",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_W8BwUC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CC_SNEAKP_WEB-3.jpg",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_CKxUXq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.49.32_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_rNLDrh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/perimenopause-georgia.jpg",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_cf8cjt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-07-09_at_6.03.25_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_aTmXFf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.50.46_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_GHtjqC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_1.28.07_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        },
+        "image_A6etnb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_4.37.00_PM.png",
+            "link_url": "",
+            "link_target": "_self"
+          }
+        }
+      },
+      "block_order": [
+        "image_zpFfRF",
+        "image_HVwYx4",
+        "image_npPH4K",
+        "image_W8BwUC",
+        "image_CKxUXq",
+        "image_rNLDrh",
+        "image_cf8cjt",
+        "image_aTmXFf",
+        "image_GHtjqC",
+        "image_A6etnb"
+      ],
+      "disabled": true,
+      "name": "Custom Images",
+      "settings": {
+        "heading": "From Our Community",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_m6xYFJ": {
+      "type": "section-text",
+      "blocks": {
+        "heading_7WBXjk": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Ready to Start Earning?</strong></p>",
+            "size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_EpUefF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you’re a seasoned pro or brand new to affiliate marketing, we’ll help you get set up in minutes and start earning, fast.</p>",
+            "size": 100
+          }
+        },
+        "button_KX9gze": {
+          "type": "button",
+          "settings": {
+            "button_text": "Join Now",
+            "button_link": "https://dashboard.commissionfactory.com/Register/?merchant=91937",
+            "button_color": "btn--primary",
+            "button_style": "btn--solid",
+            "button_size": "btn--large"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7WBXjk",
+        "text_EpUefF",
+        "button_KX9gze"
+      ],
+      "name": "Text",
+      "settings": {
+        "text_position": "center",
+        "color_scheme": "",
+        "width": "wrapper--narrow",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "section_slideshow_Qp6TAq",
+    "main",
+    "section_text_EWFQzX",
+    "section_multicolumn_Dxp4xE",
+    "info_grid_NzPcHA",
+    "section_image_with_text_EWijAd",
+    "icon_columns_with_text_QTb3Dc",
+    "section_image_with_text_9g4MwP",
+    "testimonials_custom_9VLQ3J",
+    "apps_h7pwNn",
+    "custom_images_section_4BniTR",
+    "section_text_m6xYFJ"
+  ]
+}

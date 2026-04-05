@@ -1,0 +1,270 @@
+<section class="custom-addtocart-banner color-{{ section.settings.color_scheme }}">
+  <div class="custom-addtocart-banner__wrap page-width">
+    <div class="custom-addtocart-banner__media">
+      {% if section.settings.image != blank %}
+        {% if section.settings.image != blank %}
+          <picture>
+            {% if section.settings.image_mobile != blank %}
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ section.settings.image_mobile | image_url: width: 700 }}"
+              >
+            {% endif %}
+            {{
+              section.settings.image
+              | image_url: width: 2000
+              | image_tag:
+                alt: section.settings.image.alt,
+                loading: 'lazy'
+            }}
+          </picture>
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="custom-addtocart-banner__content">
+        <div class="custom-addtocart-banner__content-inner">
+            <div class="content-main">
+                {% if section.settings.price_badge != blank %}
+                <div class="custom-addtocart-banner__badge">
+                    {{ section.settings.price_badge }}
+                </div>
+                {% endif %}
+                <div class="content-details">
+                    <div class="custom-addtocart-banner__title">
+                        {{ section.settings.heading }}
+                    </div>
+                    <div class="custom-addtocart-banner__desc">
+                        {{ section.settings.description }}
+                    </div>
+                    <!-- ADD TO CART -->
+                    {% assign product = section.settings.product %}
+                    {% assign current_variant = product.selected_or_first_available_variant %}
+                    {% assign product_form_id = 'AddToCartForm--' | append: section.id %}
+                    {% assign current_variant_title = product.title | append: ' - ' | append: current_variant.title %}
+                    {% assign custom_selling_plan_id = section.settings.selling_plan_id | times: 1 %}
+
+                    {% if custom_selling_plan_id != blank %}
+                        {% assign matched_variant = nil %}
+
+                        {% for v in product.variants %}
+                            {% for allocation in v.selling_plan_allocations %}
+                                {% if allocation.selling_plan.id == custom_selling_plan_id %}
+                                    {% assign matched_variant = v %}
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                            {% if matched_variant %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <product-form>
+                        {%- form 'product',
+                            product,
+                            class: 'product__form',
+                            data-product-form: '',
+                            id: product_form_id,
+                            data-error-message-position: 'form',
+                            data-variant-title: current_variant_title
+                        -%}
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="hidden" name="id" value="{{ matched_variant.id | default: current_variant.id }}" data-product-select="">
+                            {% if custom_selling_plan_id != blank %}
+                            <input
+                                type="hidden"
+                                name="selling_plan"
+                                value="{{ custom_selling_plan_id }}"
+                            >
+                            {% endif %}
+                            {%- assign sold_out_text = 'products.product.sold_out' | t -%}
+                            <div class="product__submit__holder">
+                                <div class="product__submit__buttons">
+                                    <div class="product__submit__item">
+                                        <button
+                                            type="submit"
+                                            name="add"
+                                            id="AddToCart--{{ section.id }}"
+                                            class="custom-addtocart-banner__btn btn btn--primary btn--solid"
+                                            data-add-to-cart
+                                        >
+                                        <hover-button></hover-button>
+                                        <span
+                                            data-add-to-cart-text
+                                            {% if settings.atc_show_product_price %}
+                                            data-price-wrapper data-atc-button
+                                            {% endif %}
+                                        >
+                                            {%- if current_variant.available and product.tags contains '_preorder' -%}
+                                            {{ 'products.product.preorder' | t }}
+                                            {%- elsif current_variant.available -%}
+                                            {{ 'products.product.add_to_cart' | t }}
+                                            {%- else -%}
+                                            {{ sold_out_text }}
+                                            {%- endif -%}
+
+                                            {%- if settings.atc_show_product_price -%}
+                                            <span data-product-price class="product__price--regular">
+                                                {%- liquid
+                                                if current_variant.price == 0
+                                                    echo 'products.product.free' | t
+                                                elsif settings.currency_code_enable
+                                                    echo current_variant.price | money_with_currency
+                                                else
+                                                    echo current_variant.price | money
+                                                endif
+                                                -%}
+                                            </span>
+
+                                            <s data-compare-price class="product__price--compare">
+                                                {%- liquid
+                                                if current_variant.compare_at_price
+                                                    if settings.currency_code_enable
+                                                    echo current_variant.compare_at_price | money_with_currency
+                                                    else
+                                                    echo current_variant.compare_at_price | money
+                                                    endif
+                                                endif
+                                                -%}
+                                            </s>
+                                            {%- endif -%}
+                                        </span>
+
+                                        <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div data-cart-errors-container role="alert" class="product__form__errors"></div>
+                            </div>
+                        {%- endform -%}
+                    </product-form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+    #shopify-section-{{ section.id }}{padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+    .custom-addtocart-banner__wrap{position:relative;}
+    .custom-addtocart-banner__media img{width:100%;height:auto;display:block;}
+    .custom-addtocart-banner__content{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:flex-end;}
+    .custom-addtocart-banner__content .content-main{display:flex;gap:20px;}
+    .custom-addtocart-banner__content .custom-addtocart-banner__content-inner{max-width:700px;margin-right:20px;}
+    .custom-addtocart-banner__badge{background:{{section.settings.badge_bg}};border-radius:100%;min-width:90px;max-width:90px;height:90px;margin-top: -30px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;font-weight:600;padding:20px;}
+    .custom-addtocart-banner__badge p,
+    .custom-addtocart-banner__badge h3{margin:0;}
+    .custom-addtocart-banner__title{font-weight:700;margin-bottom:12px;}
+    .custom-addtocart-banner__desc{opacity:.9;margin-bottom:14px;}
+    .custom-addtocart-banner__list{margin:0 0 24px;padding-left:18px;}
+    .custom-addtocart-banner__btn{width:100%;}
+    .custom-addtocart-banner__badge h3 strong{display:block;margin-top:10px;}
+    @media (min-width: 768px) {
+        .custom-addtocart-banner__badge{min-width: 200px;max-width:200px;height: 200px; margin-top: -60px;}
+        .custom-addtocart-banner__content .content-main{display:flex;gap:40px;}
+        .custom-addtocart-banner__content .custom-addtocart-banner__content-inner{margin-right: 60px;}
+    }
+    @media(max-width:900px){
+        .custom-addtocart-banner__badge{position:static;margin-bottom:20px;}
+    }
+    @media (max-width: 767px) {
+      .custom-addtocart-banner__content .custom-addtocart-banner__content-inner{max-width:250px;}
+      .custom-addtocart-banner__title *{font-size:12px;}
+      .custom-addtocart-banner__badge p,
+      .custom-addtocart-banner__desc *{font-size:9px;line-height:normal;}
+      .custom-addtocart-banner__badge h3{font-size:13px;}
+      .custom-addtocart-banner__desc p{margin:5px 0;}
+      .custom-addtocart-banner .btn{font-size: 12px; padding: 8px 10px;}
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Addtocart Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Main Image Mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "price_badge",
+      "label": "Price Badge Text",
+      "default": "<p>12 Week Programme <br>$489.00</p>"
+    },
+    {
+      "type": "color_background",
+      "id": "badge_bg",
+      "label": "Gradient Color"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>THE SMART WAY TO TAKE MEN'S ULTRA</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product for Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "selling_plan_id",
+      "label": "Selling Plan ID (Subscription)",
+      "info": "Enter selling plan ID for subscription"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Addtocart Banner"
+    }
+  ]
+}
+{% endschema %}

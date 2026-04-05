@@ -1,0 +1,281 @@
+{{ 'benefits-grid.css' | asset_url | stylesheet_tag: preload: true }}
+
+<section
+  id="BenefitsGrid-{{ section.id }}"
+  class="benefits-grid"
+  style="
+    --benefits-grid-section-bg: {{ section.settings.background_color }};
+    --bg-panel: {{ section.settings.panel_background }};
+    --heading: {{ section.settings.heading_color }};
+    --sub: {{ section.settings.subheading_color }};
+    --container-pad: {{ section.settings.padding_horizontal }}px;
+    --card-radius: {{ section.settings.card_radius }}px;
+    --panel-radius: {{ section.settings.panel_radius }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="benefits-grid__shell">
+    <div class="benefits-grid__panel">
+      <header class="benefits-grid__intro">
+        {% if section.settings.heading != blank %}
+          <h2 class="benefits-grid__heading">{{ section.settings.heading | escape }}</h2>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="benefits-grid__sub">{{ section.settings.subheading | escape }}</p>
+        {% endif %}
+      </header>
+
+      {% if section.settings.hero_image != blank %}
+        <div class="benefits-grid__hero">
+          {% liquid
+            assign hero_alt = section.settings.hero_image.alt | default: section.settings.heading | default: 'Product' | escape
+          %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1840
+            | image_tag:
+              class: 'benefits-grid__hero-img',
+              loading: 'lazy',
+              sizes: '(min-width: 990px) min(920px, 90vw), 100vw',
+              widths: '550, 750, 920, 1100, 1400, 1840',
+              alt: hero_alt
+          }}
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="benefits-grid__bento">
+          <div class="benefits-grid__row benefits-grid__row--top" role="list">
+            {% for block in section.blocks %}
+              {% if forloop.index <= 3 %}
+                <article
+                  class="benefits-grid__card benefits-grid__card--tall{% unless forloop.first %} benefits-grid__card--bordered{% endunless %}"
+                  role="listitem"
+                  {{ block.shopify_attributes }}
+                >
+                  {% render 'benefits-grid-card', block: block %}
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if section.blocks.size > 3 %}
+            <div class="benefits-grid__row benefits-grid__row--bottom" role="list">
+              {% for block in section.blocks %}
+                {% if forloop.index > 3 %}
+                  <article
+                    class="benefits-grid__card benefits-grid__card--wide benefits-grid__card--bordered"
+                    role="listitem"
+                    {{ block.shopify_attributes }}
+                  >
+                    {% render 'benefits-grid-card', block: block %}
+                  </article>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits grid (science)",
+  "tag": "section",
+  "class": "section-benefits-grid",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pure Potency. Zero Compromise"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every sachet is precision-dosed for therapeutic impact no fillers, no synthetic hormones, and no \"label dressing.\" Just high-concentration actives that work"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero product image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f9f9fb"
+    },
+    {
+      "type": "text",
+      "id": "panel_background",
+      "label": "Panel background (CSS)",
+      "info": "e.g. rgba(110,131,196,0.1) or a solid hex color",
+      "default": "rgba(110,131,196,0.1)"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#610c27"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#323232"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (section)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (section)",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal inset",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "panel_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Panel corner radius",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_card",
+      "name": "Benefit card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "select",
+          "id": "image_focus",
+          "label": "Image focal point",
+          "info": "cropping when the photo aspect ratio differs from the card.",
+          "options": [
+            { "value": "center center", "label": "Center" },
+            { "value": "center top", "label": "Top" },
+            { "value": "center bottom", "label": "Bottom" },
+            { "value": "left center", "label": "Left" },
+            { "value": "right center", "label": "Right" },
+            { "value": "left top", "label": "Top left" },
+            { "value": "right top", "label": "Top right" },
+            { "value": "left bottom", "label": "Bottom left" },
+            { "value": "right bottom", "label": "Bottom right" }
+          ],
+          "default": "center center"
+        },
+        {
+          "type": "text",
+          "id": "title_line_1",
+          "label": "Title line 1",
+          "default": "Restore Desire"
+        },
+        {
+          "type": "text",
+          "id": "title_line_2",
+          "label": "Title line 2",
+          "default": "and Confidence"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Description",
+          "default": "Adaptogenic Maca Root (200mg) targets the HPA axis to help your body calibrate estrogen levels. Naturally cool hot flashes and stabilize mood swings without synthetic hormones."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits grid (science)",
+      "blocks": [
+        {
+          "type": "benefit_card",
+          "settings": {
+            "title_line_1": "Restore Desire",
+            "title_line_2": "and Confidence",
+            "body": "Adaptogenic Maca Root (200mg) targets the HPA axis to help your body calibrate estrogen levels. Naturally cool hot flashes and stabilize mood swings without synthetic hormones."
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "title_line_1": "Balance Your",
+            "title_line_2": "Internal Climate.",
+            "body": "White Grape Seed and Maca Root work systemically to stabilize your body's natural cooling response. Reduce the frequency of hot flashes and night sweats while reclaiming your daily comfort"
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "title_line_1": "Deep Rest Nervous",
+            "title_line_2": "System Calm.",
+            "body": "Magnesium Lactate (1,000mg) powers 300+ enzymatic processes to relax muscles and improve sleep architecture. Build resilience against daily cortisol spikes and restore your baseline calm"
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "title_line_1": "Erase Fog",
+            "title_line_2": "Sustain Focus",
+            "body": "Cultavit® Activated B-Complex provides full-spectrum, bioavailable fuel to power cellular repair. Sharpen your cognitive performance and sustain energy when hormonal shifts leave you feeling depleted"
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "title_line_1": "Immune Defense",
+            "title_line_2": "Clear Complexion",
+            "body": "Xobiome® Postbiotics strengthen the skin barrier and balance the gut-skin axis. Ensure your internal digestive health reflects on your external glow with precision-formulated microbial support"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

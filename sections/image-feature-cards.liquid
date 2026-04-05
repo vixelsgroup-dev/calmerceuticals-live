@@ -1,0 +1,359 @@
+{% comment %}
+  Section: Image with Frosted Glass Feature Cards
+  - Full width background image
+  - 4 frosted glass cards overlaid at bottom, side by side edge to edge
+  - Each card: burgundy bold heading + body text
+  - Fully dynamic blocks
+{% endcomment %}
+{% assign blur_filter = 'none' %}
+{% if section.settings.card_backdrop_blur %}
+  {% assign blur_filter = 'blur(' | append: section.settings.card_blur_amount | append: 'px)' %}
+{% endif %}
+
+{% assign block_count = section.blocks | size %}
+{% assign mobile_height = block_count | times: 380 | plus: 190 %}
+{%- assign bg_opacity = section.settings.card_bg_opacity | divided_by: 100.0 -%}
+{%- assign card_bg = section.settings.card_background | color_modify: 'alpha', bg_opacity -%}
+
+<section
+  class="ifc-section"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    --card-box-shadow: {{ section.settings.card_box_shadow }};
+    --card-backdrop-filter: {{ blur_filter }};
+  "
+>
+  <div class="ifc-section__wrap">
+    <!-- Background Image -->
+    {%- if section.settings.bg_image != blank -%}
+      <img
+        src="{{ section.settings.bg_image | img_url: '2000x1000', crop: 'center' }}"
+        alt="{{ section.settings.bg_image.alt | default: 'Background' | escape }}"
+        class="ifc-section__bg-img"
+        loading="eager"
+        width="2000"
+        height="1000"
+      >
+    {%- else -%}
+      <div class="ifc-section__bg-placeholder"></div>
+    {%- endif -%}
+
+    <!-- Cards Row -->
+    <div class="ifc-section__cards" style="--card-gap: {{ section.settings.card_gap }}px;">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          <div
+            class="ifc-section__card {% if section.settings.card_text_center %} text-center {% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.heading != blank -%}
+              <div class="ifc-section__card-heading ">
+                {{ block.settings.heading }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.card_icon != blank -%}
+              <div class="ifc-section__card-icon">
+                {{
+                  block.settings.card_icon
+                  | image_url: width: 80
+                  | image_tag: loading: 'lazy', alt: block.settings.card_icon.alt, class: 'ifc-section__card-icon-img'
+                }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.body != blank -%}
+              <div class="ifc-section__card-body">
+                {{ block.settings.body }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ifc-section { width: 100%; box-sizing: border-box; }
+  .ifc-section__card.text-center{align-items:center;}
+  .ifc-section__wrap { position: relative; width: 100%; overflow: hidden; }
+  .ifc-section__card-icon { display: flex; }
+  .ifc-section__card-icon-img { width: 80px; height: 80px; object-fit: contain; display: block; }
+
+  /* Centered variant */
+  .ifc-section__card--centered { align-items: center; text-align: center; }
+  .ifc-section__card--centered .ifc-section__card-icon { justify-content: center; }
+
+  /* Background image */
+  .ifc-section__bg-img { width: 100%; height: {{ section.settings.image_height }}px; object-fit: cover; object-position: {{ section.settings.image_position }}; display: block; }
+  .ifc-section__bg-placeholder { width: 100%; height: {{ section.settings.image_height }}px; background: linear-gradient(135deg, #c9b8bc 0%, #8a7080 100%); }
+  /* Cards container — sits over bottom portion of image */
+  .ifc-section__cards { position: absolute; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat({{ section.blocks | size }}, 1fr); gap: var(--card-gap, 0px); margin-bottom: 34px; margin-left: 48px; margin-right: 48px; }
+  /* Individual card */
+  .ifc-section__card { display: flex; flex-direction: column; gap: 34px; border-bottom: none; box-sizing: border-box; padding: 72px 24px; border-radius: {{ section.settings.card_radius }}px; box-shadow: var(--card-box-shadow); backdrop-filter: var(--card-backdrop-filter); -webkit-backdrop-filter: var(--card-backdrop-filter); {%- if section.settings.use_custom_card_bg -%} background: {{ card_bg }}; {%- else -%} background: rgba(255, 255, 255, 0.5); {%- endif -%} }
+  .ifc-section__card-heading > * { font-family: "Jost"; font-weight: 600; line-height: 1.15; letter-spacing: -0.3px; font-size: {{ section.settings.card_heading_size }}px; {%- if section.settings.use_heading_gradient -%} background: linear-gradient(90deg, {{ section.settings.card_heading_gradient_start }} 0%, {{ section.settings.card_heading_gradient_end }} 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; {%- else -%} background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset; background-clip: unset; color: {{ section.settings.card_heading_color }}; {%- endif -%} }
+  .ifc-section__card-heading p { margin: 0; }
+  .ifc-section__card-body > * {font-family:"Jost" ;  line-height: calc({{ section.settings.card_body_size }}px + 6px); font-weight: 400; color: {{ section.settings.card_body_color }}; font-size: {{ section.settings.card_body_size }}px; }
+  .ifc-section__card-body p { margin: 0; }
+
+  /* Responsive */
+  @media screen and (max-width: 767px) {
+  .ifc-section__card{padding: 42px 24px; }
+  .ifc-section{padding-top: 0 !important;}
+
+  .ifc-section__bg-img, .ifc-section__bg-placeholder { min-height: {{ mobile_height }}px; }
+  .ifc-section__wrap { display: flex; flex-direction: column; min-height: {{ mobile_height }}px; }
+  .ifc-section__cards { grid-template-columns: 1fr; top: 60px; margin-left: 10px; margin-right: 10px;}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image Feature Cards",
+  "tag": "section",
+  "class": "section-ifc",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 300,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Height (desktop)",
+      "default": 580
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Focus Position",
+      "options": [
+        { "value": "center center", "label": "Center" },
+        { "value": "center top", "label": "Top" },
+        { "value": "center bottom", "label": "Bottom" },
+        { "value": "left center", "label": "Left" },
+        { "value": "right center", "label": "Right" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_card_bg",
+      "label": "Use Custom Card Background Color",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Card Background Opacity",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 0,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Cards",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Heading Font Size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "card_body_color",
+      "label": "Card Body Text Color",
+      "default": "#2a1a1e"
+    },
+    {
+      "type": "range",
+      "id": "card_body_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Body Font Size",
+      "default": 13
+    },
+    {
+      "type": "checkbox",
+      "id": "card_text_center",
+      "label": "Center card text & icon",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "card_box_shadow",
+      "label": "Card Box Shadow & Blur",
+      "default": "-8px -8px 16px rgba(255,255,255,0.4), 8px 8px 16px rgba(0,0,0,0.15)",
+      "info": "Enter CSS box-shadow value only. Example: 0 8px 32px rgba(0,0,0,0.2)"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_backdrop_blur",
+      "label": "Enable backdrop blur",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_blur_amount",
+      "label": "Blur amount (px)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_heading_gradient",
+      "label": "Use Gradient Heading Color",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card Heading Color (if gradient off)",
+      "default": "#6A0927"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_gradient_start",
+      "label": "Heading Gradient Start Color",
+      "default": "#6A0927"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_gradient_end",
+      "label": "Heading Gradient End Color",
+      "default": "#D0114D"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_icon",
+          "label": "Card Icon / Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Card Heading",
+          "default": "<p>Gut<br>Balance</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Card Body Text",
+          "default": "<p>Supports microbiome diversity and strengthens gut barrier integrity, a foundation for immune and metabolic health.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Feature Cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Gut<br>Balance</p>",
+            "body": "<p>Supports microbiome diversity and strengthens gut barrier integrity, a foundation for immune and metabolic health.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Cellular<br>Energy</p>",
+            "body": "<p>Postbiotics and polyphenols support healthy mitochondrial function and sustained cellular energy production.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Oxidative<br>Defence</p>",
+            "body": "<p>Antioxidants help protect cells from daily oxidative stress, supporting long-term cellular resilience.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Vitality &amp;<br>Resilience</p>",
+            "body": "<p>Supports clarity, sustained energy, and the biological systems linked to healthy ageing.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

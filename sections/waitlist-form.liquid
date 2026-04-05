@@ -1,0 +1,341 @@
+<div class="custom-klaviyo-form-main">
+    <div class="custom-klaviyo-form--inner wrapper">
+        <div class="header text-center">
+            {% if section.settings.title != blank %}
+                <div class="title">{{ section.settings.title }}</div>
+            {% endif %}
+            {% if section.settings.sub_title != blank %}
+                <div class="sub-title">{{ section.settings.sub_title }}</div>
+            {% endif %}
+        </div>
+        <div id="custom-klaviyo-form" class="custom-klaviyo-form text-center">
+            <form 
+                action="//manage.kmail-lists.com/subscriptions/subscribe" 
+                method="GET" 
+                novalidate="novalidate" 
+                target="_blank" 
+                class="custom-popup-form"
+                data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe"
+                data-klaviyo-key="Xj52Kk"
+                data-klaviyo-list-id="W4mF2K">
+                <input type="hidden" name="iso_code" class="klaviyo-field" data-klaviyo-name="iso_code" value="{{ request.locale.iso_code }}" />
+                <input type="hidden" name="product_url" class="klaviyo-field" data-klaviyo-name="product_url" value="{{ shop.url }}{{ product.url }}" />
+                <div class="custom-popup-form-inner">
+                <div class="form-row columns-2">
+                    <div class="form-group">
+                        <input type="text" name="first_name" class="klaviyo-field" placeholder="{{ 'general.klaviyo.waitlist.first_name' | t }}*" required data-klaviyo-name="First Name" data-validate="true" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="last_name" class="klaviyo-field" placeholder="{{ 'general.klaviyo.waitlist.last_name' | t }}*" data-klaviyo-name="Last Name" data-validate="true" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="klaviyo-field" placeholder="{{ 'general.klaviyo.waitlist.email' | t }}*" required data-klaviyo-name="email" data-validate="true" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn--solid btn--large btn--primary btn--advanced btn--advanced-width-height">{{ 'general.klaviyo.waitlist.button' | t }}</button>
+                    </div>
+                </div>
+                </div>
+                <div class="messages">
+                <div class="success-msg msg hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-success" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.success_msg' | t }}</span>
+                </div>
+                <div class="newsletter-warning-msg error-msg msg hidden" aria-live="assertive">
+                    <span>{{ 'general.klaviyo.waitlist.already_subscribe' | t }}</span>
+                </div>
+                <div class="error-msg msg error-input hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-error" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.error_msg_1' | t }}</span>
+                </div>
+                <div class="error-msg msg error-send hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-error" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.error_msg_2' | t }}</span>
+                </div>
+                <div class="error-msg msg required-error hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-error" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.required_msg' | t }}</span>
+                </div>
+                <div class="error-msg msg email-error hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-error" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.email_error' | t }}</span>
+                </div>
+                <div class="error-msg msg phone-error hidden" aria-live="assertive">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-error" fill="none" viewBox="0 0 24 24"> <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="currentColor"></path> </svg>
+                    <span>{{ 'general.klaviyo.waitlist.phone_error' | t }}</span>
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom-txt text-center"><small><em>Have questions before you begin? Contact us anytime, Our team is here to support your longevity journey.</em></small></div>
+    </div>
+</div>
+<style>
+    #shopify-section-{{ section.id }} .custom-klaviyo-form-main{padding-top:{{section.settings.padding_top}}px;padding-bottom:{{section.settings.padding_bottom}}px;}
+    #shopify-section-{{ section.id }} .custom-klaviyo-form{max-width:650px;margin:0 auto 20px;padding:0 25px;}
+    #shopify-section-{{ section.id }} .custom-klaviyo-form .form-group input{text-transform:uppercase;text-align:center;background-color:#E8E8E9;width:100%;}
+    #shopify-section-{{ section.id }} .custom-klaviyo-form .form-group:not(:last-of-type){margin-bottom:20px;}
+    #shopify-section-{{ section.id }} .msg{margin-top:15px;color:#610c27;}
+    #shopify-section-{{ section.id }} .msg:not(.hidden){display:flex;justify-content:center;gap:7px;}
+    #shopify-section-{{ section.id }} .msg svg{width:20px;}
+    #shopify-section-{{ section.id }} .bottom-txt{line-height:12px;}
+    @media (max-width: 767px) {
+        #shopify-section-{{ section.id }} .sub-title *{font-size:13px;}
+    }
+</style>
+<script>
+  class CustomKlaviyoForm {
+    constructor(formWrapper) {
+      this.elForm = formWrapper.querySelector('form');
+      this.publicKey = this.elForm.dataset.klaviyoKey;
+      this.listId = this.elForm.dataset.klaviyoListId;
+      this.revision = '2025-04-15';
+      this.fields = Array.from(formWrapper.querySelectorAll('.klaviyo-field'));
+
+      this.elSuccess = formWrapper.querySelector('.success-msg');
+      this.elWarning = formWrapper.querySelector('.newsletter-warning-msg');
+      this.elError = formWrapper.querySelector('.error-msg.error-input');
+      this.elErrorSend = formWrapper.querySelector('.error-msg.error-send');
+      this.elRequiredError = formWrapper.querySelector('.error-msg.required-error');
+      this.elPhoneError = formWrapper.querySelector('.error-msg.phone-error');
+      this.elEmailError = formWrapper.querySelector('.error-msg.email-error');
+      this.init();
+    }
+
+    static instantiateForms() {
+      document.querySelectorAll('.custom-klaviyo-form').forEach(wrapper => {
+        new CustomKlaviyoForm(wrapper);
+      });
+    }
+
+    init() {
+      this.hideAllErrors();
+
+      this.elForm.addEventListener('submit', async e => {
+        e.preventDefault();
+      
+        this.hideAllErrors();
+      
+        const validFields = this.validateRequiredFields();
+        const validPhone = this.validatePhone();
+        const validEmail = this.validateEmail();
+      
+        if (!validFields) {
+          this.elRequiredError.classList.remove('hidden');
+          return;
+        }
+      
+        if (!validPhone || !validEmail) return;
+      
+        await this.submitForm();
+      });
+    }
+
+    hideAllErrors() {
+      this.elError.classList.add('hidden');
+      this.elErrorSend.classList.add('hidden');
+      this.elWarning.classList.add('hidden');
+      this.elSuccess.classList.add('hidden');
+      this.elRequiredError.classList.add('hidden');
+      this.elPhoneError.classList.add('hidden');
+      this.elEmailError.classList.add('hidden');
+    }
+
+    validateRequiredFields() {
+      return this.fields
+        .filter(f => f.dataset.validate === 'true')
+        .every(f => f.value && f.value.trim());
+    }
+
+    validatePhone() {
+      const phoneField = this.fields.find(f => f.type === 'tel');
+      if (!phoneField) return true;
+
+      const phone = phoneField.value.trim();
+      const isValid = /^\+1\d{10}$/.test(phone);
+
+      if (!isValid) {
+        this.elPhoneError.classList.remove('hidden');
+        return false;
+      }
+
+      return true;
+    }
+
+    validateEmail() {
+      const emailField = this.fields.find(f => f.type === 'email');
+      if (!emailField) return true;
+
+      const email = emailField.value.trim();
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!isValid) {
+        this.elEmailError.classList.remove('hidden');
+        return false;
+      }
+
+      return true;
+    }
+
+    async submitForm() {
+      const d = {};
+      this.fields.forEach(f => {
+        if (f.dataset.klaviyoName) {
+          d[f.dataset.klaviyoName.trim()] = f.value.trim();
+        }
+      });
+
+      const iso_code = d.iso_code || document.documentElement.lang?.substring(0, 2) || 'en';
+      const email = d.Email || d.email;
+      const phone_number = d['Phone Number'];
+      const first_name = d['First Name'] || '';
+      const last_name = d['Last Name'] || '';
+      const message = d['Message'] || '';
+      const product_url = d['product_url'] || '';
+      let event_name = '';
+    
+      const subscriptionPayload = {
+        data: {
+          type: 'subscription',
+          attributes: {
+            profile: {
+              data: {
+                type: 'profile',
+                attributes: {
+                  email,
+                  phone_number,
+                  first_name,
+                  last_name,
+                  properties: { message, product_url }
+                }
+              }
+            },
+            custom_source: 'custom_form'
+          },
+          relationships: {
+            list: {
+              data: { type: 'list', id: this.listId }
+            }
+          }
+        }
+      };
+      if (iso_code == 'fr') {
+        event_name = 'Product Popup Form Submission (FR)';
+      } else if (iso_code == 'en') {
+        event_name = 'Product Popup Form Submission (EN)';
+      } else {
+        event_name = 'Product Popup Form Submission';
+      }
+      const eventPayload = {
+        data: {
+          type: 'event',
+          attributes: {
+            metric: { data: { type: 'metric', attributes: { name: event_name } } },
+            properties: { first_name, last_name, email, phone_number, message, product_url },
+            profile: {
+              data: {
+                type: 'profile',
+                attributes: { email, phone_number, first_name, last_name }
+              }
+            },
+            unique_id: window.crypto.randomUUID(),
+            time: new Date().toISOString()
+          }
+        }
+      };
+    
+      try {
+        const subRes = await fetch(
+          `https://a.klaviyo.com/client/subscriptions?company_id=${encodeURIComponent(this.publicKey)}`,
+          {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/vnd.api+json',
+              'Content-Type': 'application/vnd.api+json',
+              'revision': this.revision
+            },
+            body: JSON.stringify(subscriptionPayload)
+          }
+        );
+        if (!subRes.ok && subRes.status !== 202) {
+          throw new Error(`Subscription API error ${subRes.status}`);
+        }
+    
+        const evRes = await fetch(
+          `https://a.klaviyo.com/client/events?company_id=${encodeURIComponent(this.publicKey)}`,
+          {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/vnd.api+json',
+              'Content-Type': 'application/vnd.api+json',
+              'revision': this.revision
+            },
+            body: JSON.stringify(eventPayload)
+          }
+        );
+        if (!evRes.ok && evRes.status !== 202) {
+          console.warn(`Event API responded with status ${evRes.status}`);
+        }
+    
+        this.hideAllErrors();
+        this.elSuccess.classList.remove('hidden');
+      } catch (err) {
+        console.error('Submission error:', err);
+        this.elErrorSend.classList.remove('hidden');
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    CustomKlaviyoForm.instantiateForms();
+  });
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+</script>
+{% schema %}
+{
+    "name": "Waitlist Form (Klaviyo)",
+    "class": "supports-transparent-header",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Heading",
+            "default": "<h2>Wait list form</h2>"
+        },
+        {
+            "type": "richtext",
+            "id": "sub_title",
+            "label": "Sub heading",
+            "default": "<p>Wait list form</p>"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 60
+        }
+    ],
+    "presets": [
+      {
+        "name": "Waitlist Form (Klaviyo)"
+      }
+    ]
+}
+{% endschema %}

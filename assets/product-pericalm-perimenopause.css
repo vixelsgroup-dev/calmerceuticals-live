@@ -1,0 +1,127 @@
+/**
+ * Styles for the product.pericalm-perimenopause template only.
+ * Loaded from layout/theme.liquid when that template is active.
+ */
+
+ /* Product Right Area Begin */
+.product-single__wrapper .jdgm-preview-badge .jdgm-star.jdgm-star {
+  color: #F7BB07;
+}
+
+.product-single__wrapper  .star-ratings {
+  gap: 6px;
+  margin-top: 40px;
+}
+
+.product-single__wrapper .product-single__details h1.product__title:first-line {
+  font-weight: 600;
+}
+
+.product-single__wrapper .product-single__details .product__form .product__submit__holder .product__submit__buttons .product__submit__add, 
+.product-single__wrapper .product-single__details .product__form .product__submit__holder .product__submit__buttons .product__submit__add:hover {
+  background: var(--bawc-primary, #610b27);
+  background-color: var(--bawc-primary, #610b27);
+  color: #fff;
+  border: 1px solid var(--bawc-primary, #610b27);
+}
+
+.product-single__wrapper .product-single__details .product__form .product__submit__holder .product__submit__buttons .product__submit__add:hover {
+  opacity: 0.92;
+}
+
+.product-single__wrapper .product-single__details .product__form .product__submit__holder .product__submit__buttons .product__submit__add:before, 
+.product-single__wrapper .product-single__details .product__form .product__submit__holder .product__submit__buttons .product__submit__add:after {
+  display: none;
+}
+
+.product-single__wrapper .program-card__content .weeks-cards, 
+.product-single__wrapper .program-card__content .week-timeline {
+  display: none;
+}
+
+/* Product Right Area End */
+
+.fi-quote .fi-quote__eyebrow,
+.fi-quote .fi-quote__marks,
+.fi-quote .fi-quote__text p,
+.wis-section .wis-section__heading,
+.wis-section .wis-section__subtext, 
+.wis-section .wis-section__footnote {
+  font-family: "Jost", system-ui, sans-serif;
+}
+
+.it-section .it-section__after-button-text {
+  margin: 24px 0 0;
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #545454;
+}
+
+.it-section .it-section__btn {
+  min-width: 436px;
+}
+
+.it-section .it-section__image-col {
+  display: flex;
+  height: 100%;
+}
+
+.it-section .it-section__image {
+  object-fit: cover;
+}
+
+.wis-section .wis-section__card-label {
+  text-align: center;
+}
+
+.hci-section .hci-section__btn {
+  border-radius: 8px;
+}
+
+.wis-section .wis-section__btn.wis-section__main-btn, 
+.it-section .it-section__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 53px;
+  padding: 10px 38px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: normal !important;
+  text-transform: uppercase;
+  background-color: #610b27 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border: 1px solid #610b27 !important;
+  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.wis-section .wis-section__btn.wis-section__main-btn:hover, 
+.it-section .it-section__btn:hover {
+  opacity: 0.92;
+}
+
+.wis-section .wis-section__secondary_btn {
+  border-radius: 8px;
+}
+
+.fi-quote .fi-quote__marks {
+  left: -140px;
+}
+
+@media screen and (max-width: 767px) {
+  .wis-section .wis-section__btn.wis-section__main-btn, 
+  .it-section .it-section__btn {
+    font-size: 16px !important;
+    padding: 10px 38px !important;
+  }
+
+  .it-section .it-section__btn {
+    min-width: 100%;
+  }  
+}

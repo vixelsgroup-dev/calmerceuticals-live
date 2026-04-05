@@ -1,0 +1,433 @@
+{% comment %}
+  Skin Stats Blocks Section - Shopify Theme Section
+  Block-based: each stat is its own block, fully optional fields
+  Supports 1–6 blocks, auto-adjusts grid columns
+{% endcomment %}
+
+<style>
+  .sksb-section {
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .sksb-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | at_most: 4 }}, 1fr);
+    column-gap: {{ section.settings.column_gap }}px;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .sksb-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sksb-image {
+    width: {{ section.settings.image_size }}px;
+    height: {{ section.settings.image_size }}px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: {{ section.settings.image_gap }}px;
+  }
+
+  .sksb-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .sksb-label-top {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.label_font_size }}px;
+    color: {{ section.settings.label_color }};
+    font-weight: 400;
+    margin: 0;
+    line-height: 120%;
+  }
+
+  .sksb-number {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.number_font_size }}px;
+    color: {{ section.settings.number_color }};
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .sksb-highlight {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.highlight_font_size }}px;
+    color: {{ section.settings.number_color }};
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .sksb-description {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.description_font_size }}px;
+    color: {{ section.settings.description_color }};
+    font-weight: 600;
+    margin: 0;
+    line-height: 120%;
+  }
+
+  .sksb-subdescription {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.subdescription_font_size }}px;
+    color: {{ section.settings.label_color }};
+    font-weight: 400;
+    margin: 0;
+    line-height: 120%;
+  }
+
+  /* Inline number + suffix on same line (e.g. "12 Weeks") */
+  .sksb-number-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .sksb-suffix {
+    font-family: "Jost", sans-serif;
+    font-size: {{ section.settings.suffix_font_size }}px;
+    color: {{ section.settings.number_color }};
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 1023px) and (min-width: 768px) {
+    .sksb-grid {
+      grid-template-columns: repeat({{ section.blocks.size | at_most: 4 | at_least: 2 | divided_by: 2 | ceil }}, 1fr);
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .sksb-section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .sksb-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    .sksb-image {
+      width: 170px;
+      height: 160px;
+    }
+  }
+</style>
+
+<section class="sksb-section">
+  <div class="sksb-grid {% if section.settings.container_width %}wrapper{% endif %}">
+
+    {% for block in section.blocks %}
+      {% if block.type == 'stat' %}
+        <div class="sksb-item" {{ block.shopify_attributes }}>
+
+          {% comment %} Image – only if set {% endcomment %}
+          {% if block.settings.image != blank %}
+            <img
+              class="sksb-image"
+              src="{{ block.settings.image | img_url: '300x300' }}"
+              alt="{{ block.settings.image.alt | default: block.settings.description }}"
+              loading="lazy"
+              width="{{ section.settings.image_size }}"
+              height="{{ section.settings.image_size }}"
+            >
+          {% endif %}
+
+          <div class="sksb-content">
+
+            {% comment %} Top label (e.g. "Up to") {% endcomment %}
+            {% if block.settings.label_top != blank %}
+              <p class="sksb-label-top">{{ block.settings.label_top }}</p>
+            {% endif %}
+
+            {% comment %} Number row: number + optional inline suffix {% endcomment %}
+            {% if block.settings.number != blank %}
+              {% if block.settings.number_suffix != blank %}
+                <div class="sksb-number-row">
+                  <span class="sksb-number">{{ block.settings.number }}</span>
+                  <span class="sksb-suffix">{{ block.settings.number_suffix }}</span>
+                </div>
+              {% else %}
+                <p class="sksb-number">{{ block.settings.number }}</p>
+              {% endif %}
+            {% endif %}
+
+            {% comment %} Highlight word (e.g. "Noticeably") – use instead of number {% endcomment %}
+            {% if block.settings.highlight != blank %}
+              <p class="sksb-highlight">{{ block.settings.highlight }}</p>
+            {% endif %}
+
+            {% comment %} Bold description {% endcomment %}
+            {% if block.settings.description != blank %}
+              <p class="sksb-description">{{ block.settings.description }}</p>
+            {% endif %}
+
+            {% comment %} Sub-description {% endcomment %}
+            {% if block.settings.subdescription != blank %}
+              <p class="sksb-subdescription">{{ block.settings.subdescription }}</p>
+            {% endif %}
+
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Skin Stats Blocks",
+  "tag": "section",
+  "class": "sksb-wrapper",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Colors"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "default": true,
+      "label": "Use Container Width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap Between Columns",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 80,
+      "max": 240,
+      "step": 8,
+      "unit": "px",
+      "label": "Image Size",
+      "default": 160
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Below Image",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typography Sizes"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Top Label Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "number_font_size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Font Size",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "highlight_font_size",
+      "min": 20,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Highlight Word Font Size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Description (Bold) Font Size",
+      "default": 15
+    },
+     {
+      "type": "range",
+      "id": "suffix_font_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Suffix Font Size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "subdescription_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Sub-description Font Size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label & Sub-description Color",
+      "default": "#888888"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number / Highlight Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Bold Text Color",
+      "default": "#1a1a1a"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "label_top",
+          "label": "Top Label (e.g. \"Up to\")",
+          "default": "Up to"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number (e.g. \"84%\" or \"12\")",
+          "default": "84%"
+        },
+        {
+          "type": "text",
+          "id": "number_suffix",
+          "label": "Inline Suffix after number (e.g. \"Weeks\") — leave blank if not needed"
+        },
+        {
+          "type": "text",
+          "id": "highlight",
+          "label": "Highlight Word (e.g. \"Noticeably\") — use instead of Number"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Bold Description (e.g. \"Hormonal Balance\")",
+          "default": "Hormonal Balance"
+        },
+        {
+          "type": "text",
+          "id": "subdescription",
+          "label": "Sub-description (e.g. \"Peak Transformation\")"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin Stats Blocks",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "label_top": "Up to",
+            "number": "84%",
+            "description": "Hormonal Balance"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "label_top": "Up to",
+            "number": "92%",
+            "description": "Energy & Focus"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "label_top": "Up to",
+            "number": "12",
+            "number_suffix": "Weeks",
+            "description": "Peak Transformation"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
