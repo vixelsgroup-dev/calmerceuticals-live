@@ -411,6 +411,13 @@
     "benefits_icons_row_Q69HPF": {
       "type": "benefits-icons-row",
       "blocks": {
+        "benefit_item_HRJYwE": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/4_f603da6f-fd2e-4f3e-a0ac-c5b88e9268b7.png",
+            "description": "<p>Inflammatory markers <br/>improved by up to <br/><strong>90% within 2 weeks</strong></p>"
+          }
+        },
         "benefit_item_VMrRMK": {
           "type": "benefit_item",
           "settings": {
@@ -430,13 +437,6 @@
           "settings": {
             "icon": "shopify://shop_images/3_e1fbfc71-e76d-4b93-a4ed-025d66d948b8.png",
             "description": "<p>Learning and memory <br/>performance improved <br/>by <strong>over 80%</strong></p>"
-          }
-        },
-        "benefit_item_HRJYwE": {
-          "type": "benefit_item",
-          "settings": {
-            "icon": "shopify://shop_images/4_f603da6f-fd2e-4f3e-a0ac-c5b88e9268b7.png",
-            "description": "<p>Inflammatory markers <br/>improved by up to <br/><strong>90% within 2 weeks</strong></p>"
           }
         },
         "benefit_item_b7TGQG": {
@@ -462,10 +462,10 @@
         }
       },
       "block_order": [
+        "benefit_item_HRJYwE",
         "benefit_item_VMrRMK",
         "benefit_item_RdhARa",
         "benefit_item_3cC3WN",
-        "benefit_item_HRJYwE",
         "benefit_item_b7TGQG",
         "benefit_item_7UhjgG",
         "benefit_item_66jcdQ"

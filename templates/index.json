@@ -17,7 +17,7 @@
         "hero_image": "shopify://shop_images/Hero_1.png",
         "tagline_lead": "Australia's",
         "badge_text": "#1 Collagen",
-        "tagline_trail": "— Proven, Trusted, Certified",
+        "tagline_trail": "— Proven, Trusted, Guaranteed",
         "heading": "Collagen, Reinvented",
         "subheading": "We utilize advanced hydrolysed technology that delivers visible benefits from within, setting an entirely new standard in beauty supplements.",
         "button_label": "Shop Now",
@@ -174,7 +174,7 @@
         "video_slide_pafWRF": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/Bel ad 1 OPTIMIZED.mp4",
+            "video": "shopify://files/videos/WhatsApp Video 2026-04-05 at 20.14.53.mp4",
             "handle": "Bel",
             "caption": "My skin just glowed up like my teenage years again ✨",
             "hashtags": "#GlowUp #SkincareRoutine #HealthySkin",
@@ -358,18 +358,11 @@
     "clinical_stats_hhXJ4n": {
       "type": "clinical-stats",
       "blocks": {
-        "metric_4ncTGa": {
+        "metric_dwVezn": {
           "type": "metric",
           "settings": {
-            "label": "improvement in skin elasticity",
-            "value": "30%"
-          }
-        },
-        "metric_3KFaWe": {
-          "type": "metric",
-          "settings": {
-            "label": "fewer crow's feet",
-            "value": "34%"
+            "label": "VERISOL(R) per serve",
+            "value": "10,000mg"
           }
         },
         "metric_URexBj": {
@@ -379,11 +372,18 @@
             "value": "42%"
           }
         },
-        "metric_dwVezn": {
+        "metric_3KFaWe": {
           "type": "metric",
           "settings": {
-            "label": "VERISOL(R) per serve",
-            "value": "10,000mg"
+            "label": "fewer crow's feet",
+            "value": "34%"
+          }
+        },
+        "metric_4ncTGa": {
+          "type": "metric",
+          "settings": {
+            "label": "improvement in skin elasticity",
+            "value": "30%"
           }
         }
       },
@@ -463,11 +463,12 @@
         "product_card_RVPmgQ",
         "product_card_z3Fz7P"
       ],
+      "custom_css": [],
       "name": "Product cards slider",
       "settings": {
-        "heading_line_1": "The right formula",
-        "heading_line_2": "for the right need.",
-        "description": "From collagen for skin and hair, to adaptogenic support for energy and focus, to targeted solutions for menopause, scalp health, and daily hydration, each product is built for a specific outcome.",
+        "heading_line_1": "Formula for the right outcome.",
+        "heading_line_2": "",
+        "description": "From collagen for skin and hair to adaptogenic support for energy and focus, to targeted solutions for menopause, inflammation, and longevity—each product is designed for a specific result.",
         "quiz_label": "Take the quiz",
         "quiz_link": "shopify://pages/questionnaire",
         "products_label": "See all products",
