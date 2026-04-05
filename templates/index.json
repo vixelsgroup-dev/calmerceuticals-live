@@ -362,40 +362,36 @@
           "type": "metric",
           "settings": {
             "label": "improvement in skin elasticity",
-            "value": "30%",
-            "start_offset_desktop": 300
+            "value": "30%"
           }
         },
         "metric_3KFaWe": {
           "type": "metric",
           "settings": {
             "label": "fewer crow's feet",
-            "value": "34%",
-            "start_offset_desktop": 220
+            "value": "34%"
           }
         },
         "metric_URexBj": {
           "type": "metric",
           "settings": {
-            "label": "absorption via liquid delivery",
-            "value": "44%",
-            "start_offset_desktop": 140
+            "label": "reduction in wrinkles",
+            "value": "42%"
           }
         },
         "metric_dwVezn": {
           "type": "metric",
           "settings": {
             "label": "VERISOL(R) per serve",
-            "value": "10,000mg",
-            "start_offset_desktop": 72
+            "value": "10,000mg"
           }
         }
       },
       "block_order": [
-        "metric_4ncTGa",
-        "metric_3KFaWe",
+        "metric_dwVezn",
         "metric_URexBj",
-        "metric_dwVezn"
+        "metric_3KFaWe",
+        "metric_4ncTGa"
       ],
       "name": "Clinical stats",
       "settings": {

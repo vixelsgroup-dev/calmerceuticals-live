@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="{{ 'clinical-stats.css' | asset_url }}">
 
 {% liquid
-  assign cs_pt_mobile = section.settings.padding_top_mobile | default: 72
-  assign cs_pb_mobile = section.settings.padding_bottom_mobile | default: 72
-  assign cs_pt_desktop = section.settings.padding_top_desktop | default: 100
-  assign cs_pb_desktop = section.settings.padding_bottom_desktop | default: 100
+  assign cs_pt_mobile = section.settings.padding_top_mobile | default: 48
+  assign cs_pb_mobile = section.settings.padding_bottom_mobile | default: 48
+  assign cs_pt_desktop = section.settings.padding_top_desktop | default: 56
+  assign cs_pb_desktop = section.settings.padding_bottom_desktop | default: 56
   assign cs_container_max = section.settings.max_container_width | default: '1440'
 
   if cs_container_max == 'full'
@@ -30,7 +30,6 @@
     --cs-divider-color: {{ section.settings.divider_color }};
     --cs-placeholder-color: {{ section.settings.placeholder_color }};
   "
-  data-clinical-stats
   {{ section.shopify_attributes }}
 >
   <div class="clinical-stats__inner wrapper">
@@ -40,14 +39,11 @@
       </div>
     {% endif %}
 
-    <div class="clinical-stats__lock-panel" data-stats-shell>
-      <div class="clinical-stats__metrics" data-stats-grid>
+    <div class="clinical-stats__metrics-wrap">
+      <div class="clinical-stats__metrics">
         {% for block in section.blocks %}
           <article
             class="clinical-stats__metric"
-            data-metric
-            data-start-offset="{{ block.settings.start_offset_desktop }}"
-            data-step-start="{{ forloop.index0 }}"
             {{ block.shopify_attributes }}
           >
             <div class="clinical-stats__metric-placeholder" aria-hidden="true">
@@ -63,8 +59,6 @@
     </div>
   </div>
 </section>
-
-<script src="{{ 'clinical-stats.js' | asset_url }}" defer></script>
 
 {% schema %}
 {
@@ -113,7 +107,7 @@
       "max": 220,
       "step": 4,
       "unit": "px",
-      "default": 100
+      "default": 56
     },
     {
       "type": "range",
@@ -123,7 +117,7 @@
       "max": 220,
       "step": 4,
       "unit": "px",
-      "default": 100
+      "default": 56
     },
     {
       "type": "range",
@@ -133,7 +127,7 @@
       "max": 180,
       "step": 4,
       "unit": "px",
-      "default": 72
+      "default": 48
     },
     {
       "type": "range",
@@ -143,7 +137,7 @@
       "max": 180,
       "step": 4,
       "unit": "px",
-      "default": 72
+      "default": 48
     },
     {
       "type": "header",
@@ -206,17 +200,6 @@
           "id": "value",
           "label": "Value",
           "default": "30%"
-        },
-        {
-          "type": "range",
-          "id": "start_offset_desktop",
-          "label": "Desktop start offset",
-          "min": 0,
-          "max": 400,
-          "step": 4,
-          "unit": "px",
-          "default": 300,
-          "info": "Higher value starts lower and travels further during desktop animation."
         }
       ]
     }
@@ -229,33 +212,29 @@
         {
           "type": "metric",
           "settings": {
-            "label": "improvement in skin elasticity",
-            "value": "30%",
-            "start_offset_desktop": 300
+            "label": "VERISOL(R) per serve",
+            "value": "10,000mg"
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "label": "wrinkles",
+            "value": "42% reduction in wrinkles"
           }
         },
         {
           "type": "metric",
           "settings": {
             "label": "fewer crow's feet",
-            "value": "34%",
-            "start_offset_desktop": 220
+            "value": "34%"
           }
         },
         {
           "type": "metric",
           "settings": {
-            "label": "absorption via liquid delivery",
-            "value": "44%",
-            "start_offset_desktop": 140
-          }
-        },
-        {
-          "type": "metric",
-          "settings": {
-            "label": "VERISOL(R) per serve",
-            "value": "10,000mg",
-            "start_offset_desktop": 72
+            "label": "improvement in skin elasticity",
+            "value": "30%"
           }
         }
       ]
