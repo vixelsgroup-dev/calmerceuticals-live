@@ -48,7 +48,7 @@
               {%- if menu_group != blank -%}
                 {%- for item_link in menu_group.links limit: 4 -%}
                   {%- liquid
-                    assign item_menu_key = item_link.title | downcase | strip
+                    assign item_menu_key = item_link.title | downcase | strip | replace: 'collegen', 'collagen'
                     assign item_title = item_link.title
                     assign item_desc = blank
                     assign item_image = blank
@@ -56,7 +56,7 @@
                   {%- for block in section.blocks -%}
                     {%- if block.type == 'mega_feature_item' -%}
                       {%- assign block_parent_key = block.settings.parent_menu_item | downcase | strip -%}
-                      {%- assign block_item_key = block.settings.menu_item | downcase | strip -%}
+                      {%- assign block_item_key = block.settings.menu_item | downcase | strip | replace: 'collegen', 'collagen' -%}
                       {%- if block_parent_key == mega_parent and block_item_key == item_menu_key -%}
                         {%- if block.settings.title != blank -%}
                           {%- assign item_title = block.settings.title -%}
@@ -92,7 +92,7 @@
                 {%- for item_link in link.links -%}
                   {%- if item_link.links.size == 0 and direct_feature_count < 4 -%}
                     {%- liquid
-                      assign item_menu_key = item_link.title | downcase | strip
+                      assign item_menu_key = item_link.title | downcase | strip | replace: 'collegen', 'collagen'
                       assign item_title = item_link.title
                       assign item_desc = blank
                       assign item_image = blank
@@ -101,7 +101,7 @@
                       {%- for block in section.blocks -%}
                         {%- if block.type == 'mega_feature_item' -%}
                           {%- assign block_parent_key = block.settings.parent_menu_item | downcase | strip -%}
-                          {%- assign block_item_key = block.settings.menu_item | downcase | strip -%}
+                          {%- assign block_item_key = block.settings.menu_item | downcase | strip | replace: 'collegen', 'collagen' -%}
                           {%- if block_parent_key == mega_parent and block_item_key == item_menu_key -%}
                             {%- if block.settings.title != blank -%}
                               {%- assign item_title = block.settings.title -%}
@@ -141,7 +141,7 @@
             <div class="header-mega-grid__row" style="--columns: 3;">
               {%- assign quick_count = 0 -%}
               {%- for child_link in link.links -%}
-                {%- assign child_key = child_link.title | downcase | strip -%}
+                {%- assign child_key = child_link.title | downcase | strip | replace: 'collegen', 'collagen' -%}
                 {%- capture featured_token -%}|{{ child_key }}|{%- endcapture -%}
                 {%- unless featured_keys contains featured_token -%}
                   {%- if child_link.links.size == 0 and quick_count < 3 and child_key != 'products' -%}
@@ -150,7 +150,9 @@
                       class="header-mega-grid__card header-mega-grid__quick"
                       style="background: var(--mega-quick-bg); color: var(--mega-quick-text); box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);"
                     >
-                      <p class="header-mega-grid__title">{{ child_link.title | escape }}</p>
+                      <p class="header-mega-grid__title">
+                        {%- render 'nav-menu-link-title', raw_title: child_link.title -%}
+                      </p>
                     </a>
                     {%- assign quick_count = quick_count | plus: 1 -%}
                   {%- endif -%}

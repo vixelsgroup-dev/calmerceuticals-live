@@ -1,6 +1,8 @@
 {%- liquid
   assign section_id = section.id
-  assign link_title = link.title | strip_html | escape
+  capture link_title
+    render 'nav-menu-link-title', raw_title: link.title
+  endcapture
   assign link_title_lowercase = link.title | downcase | strip_html | escape
   assign highlight_color = false
   if highlight_item_color.alpha != 0.0 and highlight_item_color != ''
@@ -62,7 +64,7 @@
         data-collapsible-content
       >
         {%- for sub_link in link.links -%}
-          {%- assign link_title = sub_link.title | strip_html | escape -%}
+          {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: sub_link.title -%}{%- endcapture -%}
           {%- assign link_title_lowercase = sub_link.title | downcase | strip_html | escape -%}
 
           {%- capture link_image_markup -%}
@@ -116,7 +118,7 @@
               >
                 <ul class="mobile-nav__sub-sublist" data-collapsible-content>
                   {%- for sub_sub_link in sub_link.links -%}
-                    {%- assign link_title = sub_sub_link.title | strip_html | escape -%}
+                    {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: sub_sub_link.title -%}{%- endcapture -%}
                     {%- assign link_title_lowercase = sub_sub_link.title | downcase | strip_html | escape -%}
                     <li class="mobile-menu__item mobile-menu__item--level-3{% if sub_sub_link.active %} mobile-menu__item--active{% endif %}">
                       <a

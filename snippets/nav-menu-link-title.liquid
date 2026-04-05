@@ -1,0 +1,9 @@
+{%- liquid
+  assign raw = raw_title | strip_html | strip
+  assign raw_down = raw | downcase
+  if raw_down == 'collegen'
+    echo 'Collagen' | escape
+  else
+    echo raw | escape
+  endif
+-%}

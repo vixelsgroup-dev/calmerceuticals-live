@@ -2,7 +2,9 @@
   assign highlight_item = section.settings.highlight_item | downcase | strip_html | escape
   assign custom_badge_text = section.settings.custom_badge_text
   assign enable_custom_badge = section.settings.enable_custom_badge
-  assign link_title = link.title | strip_html | escape
+  capture link_title
+    render 'nav-menu-link-title', raw_title: link.title
+  endcapture
   assign link_title_lowercase = link.title | downcase | strip_html | escape
   assign nav_secondary = nav_secondary | default: false
   assign parent = false
@@ -132,7 +134,7 @@
                     {%- endcapture -%}
 
                     <div class="dropdown__family">
-                      {%- assign link_title = link.title | strip_html | escape -%}
+                      {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: link.title -%}{%- endcapture -%}
                       {%- assign link_title_lowercase = link.title | downcase | strip_html | escape -%}
                       <a
                         href="{{ link.url }}"
@@ -148,7 +150,7 @@
                         {%- endif -%}
                       </a>
                       {%- for link in link.links -%}
-                        {%- assign link_title = link.title | strip_html | escape -%}
+                        {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: link.title -%}{%- endcapture -%}
                         {%- assign link_title_lowercase = link.title | downcase | strip_html | escape -%}
                         <a
                           href="{{ link.url }}"
@@ -170,7 +172,7 @@
                 {%- elsif link.levels == 1 -%}
                   <div class="dropdown__family">
                     {%- for link in link.links -%}
-                      {%- assign link_title = link.title | strip_html | escape -%}
+                      {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: link.title -%}{%- endcapture -%}
                       {%- assign link_title_lowercase = link.title | downcase | strip_html | escape -%}
                       <a
                         href="{{ link.url }}"
@@ -209,7 +211,7 @@
           {%- else -%}
             {% comment %} Simple dropdown {% endcomment %}
             {%- for link in link.links -%}
-              {%- assign link_title = link.title | strip_html | escape -%}
+              {%- capture link_title -%}{%- render 'nav-menu-link-title', raw_title: link.title -%}{%- endcapture -%}
               {%- assign link_title_lowercase = link.title | downcase | strip_html | escape -%}
               <a
                 href="{{ link.url }}"
