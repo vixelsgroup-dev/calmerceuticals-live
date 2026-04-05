@@ -272,6 +272,88 @@
         "padding_bottom": 20
       }
     },
+    "why_us_FKxmKE": {
+      "type": "why-us",
+      "blocks": {
+        "video_card_EfQwHw": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 6.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_W4Qm9k": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 7.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_RDX9gR": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 1 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_GD4EUi": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_DqKXp9": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_w69BTA": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 4 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_card_EfQwHw",
+        "video_card_W4Qm9k",
+        "video_card_RDX9gR",
+        "video_card_GD4EUi",
+        "video_card_DqKXp9",
+        "video_card_w69BTA"
+      ],
+      "name": "Why us",
+      "settings": {
+        "heading": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>",
+        "subtext": "<p>Don't just take our word for it, see what our customers say</p>",
+        "heading_size": 48,
+        "button_label": "START YOUR REJUVENATION",
+        "button_link": "",
+        "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
+        "background_color": "#F9F9FB",
+        "heading_color": "#610c27",
+        "subtext_color": "#2a2a2a",
+        "card_background": "#ffffff",
+        "body_color": "#1e1e1e",
+        "button_bg": "#6b0329",
+        "button_text_color": "#ffffff",
+        "footnote_color": "#2a2a2a",
+        "play_bg": "#ffffff",
+        "play_icon": "#2f2f2f",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
     "section_marquee_fmBda3": {
       "type": "section-marquee",
       "blocks": {
@@ -1168,6 +1250,7 @@
   },
   "order": [
     "main",
+    "why_us_FKxmKE",
     "section_marquee_fmBda3",
     "section_banner_image_8AdRmP",
     "section_text_YfbdP6",

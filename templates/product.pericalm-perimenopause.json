@@ -1,1 +1,1194 @@
-{"sections":{"main":{"type":"product-new-2","blocks":{"divider_twPkfy":{"type":"divider","settings":{"show_line":false,"padding_bottom":0}},"custom_code_cFfqcH":{"type":"custom_code","settings":{"custom_code":"<div class=\"star-ratings\">\n<!-- Start of Judge.me code --> \n<div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> \n    {{ product.metafields.judgeme.badge }}  {% if product.metafields.judgeme.badge %}{% endif %} \n<\/div>\n<!-- End of Judge.me code -->\n<div class=\"trusted-badge-text\"><span> | <\/span><small>Trusted by 10K+ customers | 14 Servings<\/small><\/div>\n<\/div>\n<style>\n.star-ratings{display:flex;align-items:center;gap:10px;}\n.jdgm-prev-badge__text{font-size:12px;font-weight:700;}\n.star-ratings .trusted-badge{line-height:12px;}\n<\/style>","padding_bottom":10}},"title":{"type":"title","settings":{"show_price":false,"subheading":"none","title_size":130,"price_size":100,"bold_price":true,"padding_bottom":10}},"description_EpLHTM":{"type":"description","settings":{"enable_full_width":false,"show_read_more":true,"limit_text":9,"padding_bottom":20}},"custom_code_Ga7Xki":{"type":"custom_code","settings":{"custom_code":"<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  \/* DM Sans applied via CSS *\/\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n<\/style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"\/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"\/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"\/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"\/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"\/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"\/>\n  <\/g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"\/>\n  <\/g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"\/>\n  <\/g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"\/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"\/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"\/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"\/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"\/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"\/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"\/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"\/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"\/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"\/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"\/>\n  <\/g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  <\/text>\n\n<\/svg>","padding_bottom":20}},"text_WVMFyQ":{"type":"text","disabled":true,"settings":{"title":"<h6>*Studies conducted on the ingredient complex; not on Calmerceuticals Longevity as a finished product. Individual results may vary<\/h6>","text_alignment":"left","padding_bottom":20}},"custom_code_yJBYRC":{"type":"custom_code","disabled":true,"settings":{"custom_code":"{% render 'longevity-columns', section: section %}","padding_bottom":20}},"icon_row_RfdBbM":{"type":"icon_row","disabled":true,"settings":{"icon_name_1":"truck","icon_color_1":"#610c27","icon_image_1":"shopify:\/\/shop_images\/free-express-shipping-icon.svg","icon_width_1":40,"icon_text_1":"Free Express \nShipping","icon_sub_text_1":"on all subscriptions","icon_name_2":"check","icon_color_2":"#610c27","icon_image_2":"shopify:\/\/shop_images\/gurantee-icon.svg","icon_width_2":40,"icon_text_2":"Money-back \nguarantee","icon_sub_text_2":"See T&Cs.","icon_name_3":"vegan","icon_color_3":"#610c27","icon_image_3":"shopify:\/\/shop_images\/ingredients-icon.svg","icon_width_3":40,"icon_text_3":"Clinically trialled \ningredients","icon_sub_text_3":"by experts","icon_name_4":"none","icon_color_4":"","icon_width_4":33,"icon_text_4":"","icon_sub_text_4":"Feature sub","alignment":"center","bg_color":"#ffffff","padding_bottom":6}},"form":{"type":"form","settings":{"show_price":false,"enable_payment_terms":false,"show_labels":true,"show_quantity":false,"show_payment_button":false,"enable_subscriptions_selectors":true,"subscriptions_cards_style":"stack","padding_bottom":0}},"custom_code_P4zYHw":{"type":"custom_code","disabled":true,"settings":{"custom_code":"{% render 'product-servings' product: product, servings: 14, hide_per_serving: true %}","padding_bottom":20}},"product_accordion_dDignk":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"Description","heading_style":"font-heading","accordion_text":"<p><strong>Meet Peri<\/strong><\/p><p>Peri is pro-aging, solution-focused self-care. She’s hot. She feels good and looks good doing it. She’s clean. She’s clinically researched. And she’s backed by science.<\/p><p>Peri gets women's health. She knows this isn’t about fighting age, it’s about embracing change and feeling empowered through it. She knows you want calm, clarity, and control. That your hormones haven’t exactly been playing nice. Peri was made for you. To support your mood. To bring balance back. To help you feel more like you.<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_tR8fPG":{"type":"divider","settings":{"show_line":true,"padding_bottom":0}},"product_accordion_jiBCAJ":{"type":"product_accordion","disabled":true,"settings":{"show_description":false,"show_read_more":false,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"How it works","heading_style":"font-heading","accordion_text":"<p>As we age, the body’s natural collagen production slows down, leading to a loss of skin elasticity, firmness, and hydration - and the visible signs of ageing such as wrinkles, fine lines, and dryness begin to appear.<\/p><p>Each daily sachet of Calmerceuticals Premium Liquid Collagen delivers 10,000 mg of Type I hydrolysed marine collagen, clinically shown to support the body’s natural collagen matrix. Once ingested, these bioactive collagen peptides are efficiently absorbed into the bloodstream and transported to the deeper layers of the skin, where they help stimulate and boost the body’s own collagen synthesis.<\/p><p>This internal support system promotes skin rejuvenation from within — helping to restore firmness and elasticity, reduce the appearance of wrinkles, and reveal a smoother, more radiant complexion.<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_DTrdrU":{"type":"divider","disabled":true,"settings":{"show_line":true,"padding_bottom":0}},"product_accordion_PMFRX8":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"How To Use","heading_style":"font-heading","accordion_text":"<h3><strong>Recommended Usage<\/strong><\/h3><p><strong>Daily:<\/strong> One sachet every day is recommended.<br\/><br\/><strong>Consistency Matters: <\/strong>Minimum 4-6 weeks and continue with daily use to experience optimal benefits from PERICALM<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_tDa8RC":{"type":"divider","settings":{"show_line":true,"padding_bottom":0}},"product_accordion_KpdcJF":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"Key Ingredients","heading_style":"font-heading","accordion_text":"<p><strong>• 8,000 mg of VERISOL® Collagen<\/strong><br\/><br\/>Contains VERISOL® bioactive collagen peptides, which have been clinically studied to support skin health and maintain skin elasticity.<\/p><p><strong>• Adaptogenic Maca Root<\/strong><br\/><br\/>Traditionally used in South American medicine to support vitality and help the body adapt to stress, including during times of hormonal change.<\/p><p><strong>• White Grape Seed Extract<\/strong><br\/><br\/>A source of antioxidants that helps reduce free radical damage and supports general health and wellbeing. Has been studied for its potential to support skin and cardiovascular health during menopause.<\/p><p><strong>• Cultavit® Activated B-Complex<\/strong><br\/><br\/>Provides activated B vitamins that support energy production, assist with healthy stress response, and contribute to normal cognitive and skin function.<\/p><p><strong>• Magnesium Lactate<\/strong><br\/><br\/>Supports nervous system function and muscle health. May help reduce muscle cramps and support healthy sleep patterns.<\/p><p><strong>• Vitamin C<\/strong><br\/><br\/>Supports collagen formation, contributes to healthy immune system function, and helps reduce free radical damage to body cells.<\/p><p><strong>• Vitamin D3<\/strong><br\/><br\/>Supports bone health, immune system function, and assists in the regulation of calcium metabolism. May help maintain healthy mood balance.<\/p><p><strong>• EpiBright™<\/strong><br\/><br\/>A botanical complex containing plant-based antioxidants. Antioxidants help reduce free radicals formed in the body and support skin health.<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_NiLTG8":{"type":"divider","settings":{"show_line":true,"padding_bottom":10}},"divider_JHYrTm":{"type":"divider","disabled":true,"settings":{"show_line":true,"padding_bottom":10}},"divider_UqbMgY":{"type":"divider","disabled":true,"settings":{"show_line":true,"padding_bottom":10}},"testimonials_MXPwbJ":{"type":"testimonials","disabled":true,"settings":{"reviews_text":"I have been using this product for 3 months and I have to say it's completely blown me away. I have used many collagens over the years but have never had results like these. My skin is glowing - I get so many compliments from friends and family (my daughter even saying I looked younger last week) and the hair growth has been incredible. I cannot recommend this product highly enough - WELL DONE CALMERCEUTICALS, I'll be a customer for life! || Isabella\n\nI’ve been taking these for 4 weeks now and was impressed enough after two weeks to get a subscription. They taste great, are SO convenient to take (I grab one on my way out the door for the morning school run and have it in the car), and there are noticeable differences in my hair, nails, and the finer lines around my eyes already. I’m looking forward to seeing how things continue to progress over the next couple of months. || Ally\n\nSince I have been using this amazing product I feel and look so amazing. My skin is flawless and my hair has grown and become so much stronger with my nails growing at. Rapid pace even though I have acrylic shellac nails my natural nails are growing so much. Overall I feel 37 not 57 years old and I feel so much more energy too. I just am so grateful that I stumbled upon this natural collagen product thank you xxxx || Annamária"}},"divider_CkftgQ":{"type":"divider","settings":{"show_line":false,"padding_bottom":16}},"text_Gdh4VU":{"type":"text","disabled":true,"settings":{"title":"<h6><em>*Statements refer to ingredient research. Individual results may vary.<\/em><\/h6>","text_alignment":"center","padding_bottom":0}}},"block_order":["divider_twPkfy","custom_code_cFfqcH","title","description_EpLHTM","custom_code_Ga7Xki","text_WVMFyQ","custom_code_yJBYRC","icon_row_RfdBbM","form","custom_code_P4zYHw","product_accordion_dDignk","divider_tR8fPG","product_accordion_jiBCAJ","divider_DTrdrU","product_accordion_PMFRX8","divider_tDa8RC","product_accordion_KpdcJF","divider_NiLTG8","divider_JHYrTm","divider_UqbMgY","testimonials_MXPwbJ","divider_CkftgQ","text_Gdh4VU"],"custom_css":[".sldr-label-img-container img {aspect-ratio: 2 \/ 1.2;}",".sldr-content-mobile-reverse {width: 100%;}",".twelve-weeks-card .program-name {display: none;}"],"settings":{"product_sticky_enable":true,"addtocart_sticky_enable":true,"sticky_bg_color":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","sticky_text_color":"#ffffff","image_layout":"carousel","image_width":"standard","product_image_aspect_ratio":true,"enable_zoom":false,"enable_video_looping":false,"color_scheme":"","width":"wrapper","padding_top":50,"padding_bottom":80}},"image_with_text_features_6L9fNd":{"type":"image-with-text-features","blocks":{"feature_HttefL":{"type":"feature","settings":{"label":"Pure Results","text":"No fillers or synthetic hormones."}},"feature_TCaPWL":{"type":"feature","settings":{"label":"Clinical Precision","text":"Made in Australia to the world's highest safety standards."}},"feature_eAGiJk":{"type":"feature","settings":{"label":"Total Support","text":"Specifically formulated to end brain fog, night sweats, and mood swings."}}},"block_order":["feature_HttefL","feature_TCaPWL","feature_eAGiJk"],"name":"Image with text features","settings":{"heading":"Stop Masking Symptoms. Start Solving Them","intro":"<p>Unlike traditional supplements, PeriCalm™ works at the source to stabilize your internal cooling system and mental focus<\/p>","image":"shopify:\/\/shop_images\/Stop_Masking_Symptoms._Start_Solving_Them.png","image_position":"right","padding_top":48,"padding_bottom":48,"padding_horizontal":48,"column_gap":64,"image_radius":8,"background_color":"#f9f9fb","heading_color":"#610c27","body_color":"#323232","list_color":"#545454"}},"before_after_with_content_dpxtnM":{"type":"before-after-with-content","blocks":{"testimonial_mqkMey":{"type":"testimonial","settings":{"before_image":"shopify:\/\/shop_images\/Before_10A_57aee777-a8d6-4245-95ba-97b836346a22.jpg","before_text":"","after_image":"shopify:\/\/shop_images\/After_10B_09b2a24a-c5c2-4a4b-94ef-b1172b8db264.jpg","after_text":"","initial_split":50,"customer_name":"Matilda - Age 34","product_line":"Pericalm Sachet","quote":"I’ve tried a lot of supplements, but this is different. My energy levels are up, and I feel more focused throughout the day. Definitely part of my daily routine now."}},"testimonial_RAxExc":{"type":"testimonial","settings":{"before_image":"shopify:\/\/shop_images\/Before_2A.webp","before_text":"","after_image":"shopify:\/\/shop_images\/After_2B.webp","after_text":"","initial_split":50,"customer_name":"Tahlia - Age 41","product_line":"Pericalm Sachet","quote":"I was feeling drained most days, but after a few weeks, I noticed a real difference. I feel more confident and active again."}},"testimonial_yxzb6V":{"type":"testimonial","settings":{"before_image":"shopify:\/\/shop_images\/Before_12A.webp","before_text":"","after_image":"shopify:\/\/shop_images\/After_12B.webp","after_text":"","initial_split":50,"customer_name":"Keira - Age 38","product_line":"Pericalm Sachet","quote":"You can tell this is a high-quality product. Clean ingredients, no side effects, and it actually delivers on what it promises."}}},"block_order":["testimonial_mqkMey","testimonial_RAxExc","testimonial_yxzb6V"],"name":"Before\/after + content","settings":{"heading":"Before & After","subheading":"Based on 12 Weeks daily use.","background_color":"#f9f9fb","heading_color":"#610c27","subheading_color":"#323232","primary_color":"#610b27","padding_top":44,"padding_bottom":44,"padding_horizontal":24,"primary_label":"Start Your Skin Transformation","primary_link":"#product__subs__wrap-main","secondary_label":"Try it once","secondary_link":"#product__subs__wrap-main"}},"benefits_grid_EFfFg3":{"type":"benefits-grid","blocks":{"benefit_card_4EjEwP":{"type":"benefit_card","settings":{"image":"shopify:\/\/shop_images\/Restore_Desire_and_Confidence.png","image_focus":"center center","title_line_1":"Restore Desire","title_line_2":"and Confidence","body":"Adaptogenic Maca Root (200mg) targets the HPA axis to help your body calibrate estrogen levels. Naturally cool hot flashes and stabilize mood swings without synthetic hormones."}},"benefit_card_7gxwRf":{"type":"benefit_card","settings":{"image":"shopify:\/\/shop_images\/Balance_Your_Internal_Climate.png","image_focus":"center center","title_line_1":"Balance Your","title_line_2":"Internal Climate.","body":"White Grape Seed and Maca Root work systemically to stabilize your body's natural cooling response. Reduce the frequency of hot flashes and night sweats while reclaiming your daily comfort"}},"benefit_card_rYJ3Tf":{"type":"benefit_card","settings":{"image":"shopify:\/\/shop_images\/Deep_Rest_Nervous_System_Calm.png","image_focus":"center center","title_line_1":"Deep Rest Nervous","title_line_2":"System Calm.","body":"Magnesium Lactate (1,000mg) powers 300+ enzymatic processes to relax muscles and improve sleep architecture. Build resilience against daily cortisol spikes and restore your baseline calm"}},"benefit_card_GHiJrk":{"type":"benefit_card","settings":{"image":"shopify:\/\/shop_images\/Erase_Fog_Sustain_Focus.png","image_focus":"center center","title_line_1":"Erase Fog","title_line_2":"Sustain Focus","body":"Cultavit® Activated B-Complex provides full-spectrum, bioavailable fuel to power cellular repair. Sharpen your cognitive performance and sustain energy when hormonal shifts leave you feeling depleted"}},"benefit_card_U6Gy9R":{"type":"benefit_card","settings":{"image":"shopify:\/\/shop_images\/Immune_Defense_Clear_Complexion.png","image_focus":"center center","title_line_1":"Immune Defense","title_line_2":"Clear Complexion","body":"Xobiome® Postbiotics strengthen the skin barrier and balance the gut-skin axis. Ensure your internal digestive health reflects on your external glow with precision-formulated microbial support"}}},"block_order":["benefit_card_4EjEwP","benefit_card_7gxwRf","benefit_card_rYJ3Tf","benefit_card_GHiJrk","benefit_card_U6Gy9R"],"name":"Benefits grid (science)","settings":{"heading":"Pure Potency. Zero Compromise","subheading":"Every sachet is precision-dosed for therapeutic impact no fillers, no synthetic hormones, and no \"label dressing.\" Just high-concentration actives that work","hero_image":"shopify:\/\/shop_images\/Pure_Potency._Zero_Compromise.png","background_color":"#f9f9fb","panel_background":"rgba(110,131,196,0.1)","heading_color":"#610c27","subheading_color":"#323232","padding_top":0,"padding_bottom":128,"padding_horizontal":48,"card_radius":8,"panel_radius":12}},"featured_quote_3BLBfp":{"type":"featured-quote","name":"Featured In – Quote","settings":{"padding_top":24,"padding_bottom":44,"background_color":"#f9f9fb","eyebrow_color":"#0b0b0b","quote_image":"shopify:\/\/shop_images\/quote-icon.png","quote_mark_color":"#e0d8db","text_color":"#0b0b0b","eyebrow":"FEATURED IN","quote_text":"<p>Formulated to rebuild <br\/>what time diminishes.<\/p>","font_size":32}},"logo_marquee_iitEU6":{"type":"logo-marquee","blocks":{"logo_kkrKTk":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-1.png"}},"logo_6pjAj3":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-2.png"}},"logo_Vim8ni":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-3.png"}},"logo_a8KMD4":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-4.png"}},"logo_WPHy9R":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-5.png"}},"logo_Uxk6LR":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-6.png"}},"logo_ar73ci":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-7.png"}}},"block_order":["logo_kkrKTk","logo_6pjAj3","logo_Vim8ni","logo_a8KMD4","logo_WPHy9R","logo_Uxk6LR","logo_ar73ci"],"name":"Logo Marquee","settings":{"padding_top":16,"padding_bottom":28,"background_color":"#f9f9fb","border_color":"#000000","border_style":"none","border_top_width":0,"border_bottom_width":2,"logo_height":40,"logo_gap":20,"speed":25,"pause_on_hover":true}},"image_cards_dHL8zh":{"type":"image-cards","blocks":{"image_card_68Q8Dt":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Sagging_and_crepey_skin.png","label":"<p>Sagging and<br\/>crepey skin<\/p>"}},"image_card_VFBT3Y":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Fine_lines_and.png","label":"<p>Fine lines and<br\/>visible wrinkles<\/p>"}},"image_card_RAHfXT":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Brittle_hair_1dec661a-52c8-4ef7-9393-f13c7a01f492.png","label":"<p>Brittle hair<br\/>and nails<\/p>"}},"image_card_fAnMJh":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Dull_uneven.png","label":"<p>Dull, uneven-<br\/>looking skin<\/p>"}}},"block_order":["image_card_68Q8Dt","image_card_VFBT3Y","image_card_RAHfXT","image_card_fAnMJh"],"name":"Image Cards","settings":{"padding_top":90,"padding_bottom":90,"container_width":false,"background_color":"#f9f9fb","heading_color":"#5c1a2e","subtext_color":"#323232","label_text_color":"#ffffff","button_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","button_text_color":"#ffffff","heading":"<p>Balance What Time Changes<\/p>","heading_size":48,"subtext":"<p>A therapeutic systemic formula designed to stabilize the hormonal shifts of perimenopause. Restore your internal<br\/> cooling system, mental clarity, and physical vitality from the inside out.<\/p>","button_label":"Start Your Skin Transformation","mobile_button_label":"","button_link":"#product__subs__wrap-main","secondary_button_label":"Try it once","secondary_button_link":"#product__subs__wrap-main","footnote":"Perimenopause isn't just a phase; it's a systemic shift. While single-symptom solutions only mask the surface, PeriCalm™ targets the root cause of hormonal imbalance to help you feel like yourself again","text_alignment":false}},"ingredients_transparency_WJtFTL":{"type":"ingredients-transparency","blocks":{"ingredient_eWgCpP":{"type":"ingredient","settings":{"name":"VERISOL®HydrolysedMarine Collagen","source":"Clinically studied bioactive collagen peptides that help support skin elasticity, firmness, and hydration, while reducing the appearance of fine lines for a smoother, more youthful complexion.","code":"8000mg"}},"ingredient_6NxcGm":{"type":"ingredient","settings":{"name":"Vitamin C(Fermented Kakadu Plum)","source":"Encourages natural collagen formation while providing potent antioxidant protection against free radical damage","code":"80mg"}},"ingredient_3G4a7E":{"type":"ingredient","settings":{"name":"Magnesium Lactate","source":"Supports nervous system function and muscle health. May help reduce muscle cramps and support healthy sleep patterns.","code":"150mg"}},"ingredient_LptHBi":{"type":"ingredient","settings":{"name":"Adaptogenic Maca Root","source":"Traditionally used in South American medicine to support vitality and help the body adapt to stress, including during times of hormonal change.","code":""}},"ingredient_bTjM3h":{"type":"ingredient","settings":{"name":"Vitamin D3","source":"Supports immune function and overall wellbeing.","code":""}},"ingredient_6RxyVM":{"type":"ingredient","settings":{"name":"White Grape Seed Extract","source":"A source of antioxidants that helps reduce free radical damage and supports general health and wellbeing. Has been studied for its potential to support skin and cardiovascular health during menopause","code":""}},"ingredient_kjTtA8":{"type":"ingredient","settings":{"name":"EpiBright™","source":"A botanical complex containing plant-based antioxidants. Antioxidants help reduce free radicals formed in the body and support skin health.","code":""}},"ingredient_PMXcfY":{"type":"ingredient","settings":{"name":"Cultavit® Activated B-Complex","source":"Provides activated B vitamins that support energy production, assist with healthy stress response, and contribute to normal cognitive and skin function.","code":""}}},"block_order":["ingredient_eWgCpP","ingredient_6NxcGm","ingredient_3G4a7E","ingredient_LptHBi","ingredient_bTjM3h","ingredient_6RxyVM","ingredient_kjTtA8","ingredient_PMXcfY"],"name":"Ingredients Transparency","settings":{"padding_top":32,"padding_bottom":60,"container_width":true,"background_color":"#f9f9fb","eyebrow_color":"#610c27","eyebrow":"Radical Transparency","heading_color":"#3a3d38","heading":"<p>Simple ingredients,<br\/><strong>powerful results.<\/strong><\/p>","heading_size":64,"body_color":"#545454","body_text":"<p>Made using peer-reviewed, scientifically researched, and clinically studied ingredients.<\/p>","body_size":18,"product_image":"shopify:\/\/shop_images\/Simple_ingredients_powerful_results.png","image_radius":12,"list_label":"Active Ingredients","badge_bg_color":"#d4dccf","label_color":"#000000","label_border_color":"rgba(0,0,0,0)","ingredient_name_color":"#333333","use_custom_tag_bg":false,"tag_bg_color":"#7a8c6e","tag_bg_opacity":15,"tag_text_color":"#000000","ingredient_name_size":18,"ingredient_source_font":"Space Mono","ingredient_source_font_weight":"100","ingredient_source_color":"#333333","ingredient_source_size":12,"ingredient_code_size":11,"divider_color":"#dedede","bottom_text_color":"#545454","button_label":"START YOUR BALANCED JOURNEY","mobile_button_label":"","button_link":"#product__subs__wrap-main","button_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","button_text_color":"#ffffff","bottom_text":"*Formulated for daily beauty support from within."}},"how_to_use_W3B9Ne":{"type":"how-to-use","blocks":{"step_gdNAtG":{"type":"step","settings":{"title":"Tear","text":"Take one 17.5ml ready-to-drink sachet daily."}},"step_UFkrAC":{"type":"step","settings":{"title":"Drink","text":"Enjoy the great-tasting Wild Berry or Mango & Mandarin flavour on its own, or drop it into your morning smoothie."}},"step_QAWF3L":{"type":"step","settings":{"title":"Transform","text":"Stick with it! Results typically begin at 4-6 weeks, with full, clinically backed results peaking at 12 weeks of continuous use."}}},"block_order":["step_gdNAtG","step_UFkrAC","step_QAWF3L"],"name":"How to use","settings":{"heading":"Your New Daily Habit","image":"shopify:\/\/shop_images\/Your_New_Daily_Habit.png","mobile_media_position":"after","background_color":"#610b27","padding_vertical_desktop":80,"padding_horizontal_desktop":36,"column_gap_desktop":64,"padding_vertical_mobile":56,"padding_horizontal_mobile":24,"column_gap_mobile":32}},"reviews_slider_CTqD8H":{"type":"reviews-slider","blocks":{"review_UxdkCD":{"type":"review","settings":{"stars":5,"quote":"<p>“Absolutely love this! My skin feels firmer and the fine lines around my eyes are so much less noticeable. Even my nails and hair feel stronger. My complexion is brighter and more even than ever. Highly recommend!”<\/p>","name":"Emily (Sydney, NSW)"}},"review_m3PiTY":{"type":"review","settings":{"stars":5,"quote":"<p>“I was skeptical at first, but this product really works. Sagging and crepey skin have improved, and my wrinkles are visibly reduced. Hair and nails feel healthier, and my skin looks radiant. Couldn’t be happier!”<\/p>","name":"Liam (Melbourne, VIC)"}},"review_dme6hk":{"type":"review","settings":{"stars":5,"quote":"<p>“This is a game-changer! My skin is smoother and more lifted, fine lines are fading, and my hair and nails are stronger. Plus, my skin has a gorgeous, even glow. Highly impressed!”<\/p>","name":"Sophie (Brisbane, QLD)"}},"review_PiiAP7":{"type":"review","settings":{"stars":5,"quote":"<p>Results are amazing! My sagging skin is firmer, wrinkles less obvious, and my hair and nails are noticeably stronger. My overall skin tone looks brighter and more even. Definitely worth every penny!”<\/p>","name":"Ethan (Perth, WA)"}},"review_7T8GRX":{"type":"review","settings":{"stars":5,"quote":"<p>“I can’t believe the difference! My skin looks youthful and revitalized, fine lines and wrinkles are softer, and my hair and nails feel so healthy. Plus, my skin glow is incredible. Totally recommend this!”<\/p>","name":"Isabella (Isabella, Adelaide, SA)"}}},"block_order":["review_UxdkCD","review_m3PiTY","review_dme6hk","review_PiiAP7","review_7T8GRX"],"name":"Reviews Slider","settings":{"padding_top":60,"padding_bottom":64,"header_gap":42,"container_width":true,"slides_desktop":4,"background_color":"#f9f9fb","heading_main":"1,450 verified","heading_accent":"5 star reviews","heading_main_color":"#610c27","heading_accent_color":"#f7bb07","heading_size":48,"heading_letter_spacing":-12,"button_label":"All reviews","button_link":"shopify:\/\/pages\/results-review-and-before-after-photos","button_text_color":"#212121","button_border_color":"#ccceb7","button_size":16,"button_padding_y":16,"button_padding_x":24,"card_bg":"#ebebeb","slider_shadow_padding":20,"card_radius":16,"star_color":"#f7bb07","star_empty_color":"#f7bb07","star_size":20,"quote_color":"#212121","quote_size":20,"name_color":"#212121","name_size":14}},"video_testimonial_slider_ALWhG7":{"type":"video-testimonial-slider","blocks":{"video_card_9whBE8":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4","quote":"After trying it once I was hooked","name":"Our founder Rose"}},"video_card_7VCmfR":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/Ultra UGC.webm","quote":"One Calmerceuticals is all you need","name":"Brigitte"}},"video_card_WfdyLh":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/Women and testosterone UGC.webm","quote":"Best Ever","name":"Claire"}},"video_card_ihqxJb":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/CC x VVV - Jan Reel 01 - 1080p for posting.webm","quote":"It quite literally has changed my life","name":"Victoria"}},"video_card_YdmVQK":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/1973acf6-8208-48c4-8af8-9ad99aaa353c.mp4","quote":"After trying it once I was hooked","name":"Sarah"}}},"block_order":["video_card_9whBE8","video_card_7VCmfR","video_card_WfdyLh","video_card_ihqxJb","video_card_YdmVQK"],"name":"Video Testimonials Slider","settings":{"padding_top":32,"padding_bottom":32,"container_width":true,"background_color":"#f9f9fb","heading_color":"#1a0d10","heading_brand_color":"#5c1a2e","heading_brand":"Calmerceuticals","heading_rest":"is loved by thousands","heading_size":40,"card_width":320,"card_gap":16,"card_radius":16,"quote_size":18,"name_size":13}},"section_marquee_pep6NQ":{"type":"section-marquee","blocks":{"image_xNek33":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.45.51_PM.png","link":"","image_width":180}},"image_dLbtUF":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/calmerceuticals-pilot-using-collagen.webp","link":"","image_width":180}},"image_UTQYRe":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ugc-calmerceuticals.webp","link":"","image_width":180}},"image_e8yKtk":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/CC_SNEAKP_WEB-3.jpg","link":"","image_width":180}},"image_DmiJ7D":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.49.32_PM.png","link":"","image_width":180}},"image_dU9h6i":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/perimenopause-georgia.jpg","link":"","image_width":180}},"image_HDbjgd":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-07-09_at_6.03.25_PM.png","link":"","image_width":180}},"image_QjY6pr":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.50.46_PM.png","link":"","image_width":170}},"image_WyTxLh":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_1.28.07_PM.png","link":"","image_width":180}},"image_6gtPdt":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_4.37.00_PM.png","link":"","image_width":170}}},"block_order":["image_xNek33","image_dLbtUF","image_UTQYRe","image_e8yKtk","image_DmiJ7D","image_dU9h6i","image_HDbjgd","image_QjY6pr","image_WyTxLh","image_6gtPdt"],"settings":{"container_width":false,"layout":"marquee","show_top_border":false,"show_bottom_border":false,"padding":10,"marquee_speed":100,"direction":"ticker-ltr","slider_speed":10,"show_arrows":false,"text_caps":false,"type_font":"space_mono_n4","text_size":120,"text_size_mobile":80,"letter_spacing":0,"message_spacing":10,"color_scheme":"scheme-1","color":"#000000","border_color":"#000000","padding_top":60,"padding_bottom":70}},"hero_cta_tix9q4":{"type":"hero-cta","name":"Hero CTA with Image","settings":{"padding_top":80,"padding_bottom":80,"container_width":true,"background_color":"#6b0027","eyebrow":"Recommended plan","eyebrow_color":"#f7f9ee","eyebrow_size":16,"heading":"Support Your Performance - Backed by Research","heading_color":"#ffffff","heading_size":40,"body_text":"<p> Bio-fermentation enhances nutrient bioavailability and functional activity in the gut.<\/p><p>Advanced biomanufacturing improves delivery, stability, and efficacy - so the body can actually use what you take.<\/p><p><br\/>This is proactive ageing support, not damage control.<\/p>","body_color":"#f7f9ee","body_size":16,"tagline":"","tagline_color":"#ffffff","tagline_size":16,"button_label":"12 Week Performance Reset","button_link":"#product__subs__wrap-main","button_text_color":"#212121","button_border_color":"#f7f9ee","button_bg":"#F7F9EE","button_size":16,"image":"shopify:\/\/shop_images\/Support_Your_Performance_-_Backed_by_Research.png","image_ratio":"16 \/ 9","image_radius":12,"image_gap":40,"show_placeholder":true}},"reviews_grid_PGLA68":{"type":"reviews-grid","blocks":{"review_KEBrTU":{"type":"review","settings":{"stars":5,"quote":"<p>“About three weeks in and I genuinely feel more energised during the day. I originally bought this for inflammation support but the steady energy has been the biggest surprise.”<\/p>","name":""}},"review_MxGFb8":{"type":"review","settings":{"stars":5,"quote":"<p>“I’m really impressed with this formula. My body just feels better overall - less stiffness in the morning and better recovery after workouts - another great product Calmerceuticals ”<\/p>","name":""}},"review_4FddhG":{"type":"review","settings":{"stars":5,"quote":"<p>“I’ve been focusing on longevity and health recently and this product was recommended to me. I could feel it by about day 8 - a lot less bloated and like my body had let go of a lot of fluid. Love the ingredients and the science behind it.”<\/p>","name":""}}},"block_order":["review_KEBrTU","review_MxGFb8","review_4FddhG"],"disabled":true,"name":"Reviews Grid","settings":{"padding_top":60,"padding_bottom":60,"container_width":true,"background_color":"#ffffff","heading_main":"1,450 verified","heading_accent":"5 star reviews","heading_main_color":"#610c27","heading_accent_color":"#ff961b","heading_size":40,"button_label":"All reviews","button_link":"","button_text_color":"#1a0d10","button_border_color":"#7a2040","button_size":13,"card_bg":"#f7f9ee","card_border_color":"#f7f9ee","card_radius":12,"card_padding":28,"card_gap":16,"star_color":"#7a2040","star_empty_color":"#7a2040","star_size":18,"quote_color":"#212121","quote_size":20,"name_color":"#212121","name_size":14}},"images_marquee_PDJF6R":{"type":"images-marquee","blocks":{"image_gCBL9b":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center.png"}},"image_xfKT4y":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/calmerceuticals-pilot-using-collagen_webp.png"}},"image_pBbV9j":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-1.png"}},"image_UpMe7h":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-2.png"}},"image_tNMAcN":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-3.png"}},"image_HdcchX":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-4.png"}},"image_GRjJA6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-5.png"}}},"block_order":["image_gCBL9b","image_xfKT4y","image_pBbV9j","image_UpMe7h","image_tNMAcN","image_HdcchX","image_GRjJA6"],"disabled":true,"name":"Image Marquee","settings":{"padding_top":0,"padding_bottom":60,"background_color":"#ffffff","image_height":240,"image_ratio":"3 \/ 4","image_gap":10,"image_radius":8,"speed":40,"pause_on_hover":true}},"video_list_3_QQRMF9":{"type":"video-list-3","blocks":{"video_block_4RywEP":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_rzdqdB":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_yzGVwc":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_46HexU":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_QFbYUp":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}}},"block_order":["video_block_4RywEP","video_block_rzdqdB","video_block_yzGVwc","video_block_46HexU","video_block_QFbYUp"],"disabled":true,"name":"Video list #3","settings":{"title":"Calmerceuticalsis loved by thousands","heading_size":120,"layout_desktop":"carousel","autoplay":false,"align_text":"text-left","columns":4,"show_borders":false,"layout_mobile":"carousel","columns_mobile":"2","equalize_height":true,"desktop_aspect_ratio":0.8,"mobile_aspect_ratio":0.8,"color_scheme":"","color_borders":"#000000","width":"wrapper","padding_top":60,"padding_bottom":60}},"custom_addtocart_banner_HPLjjT":{"type":"custom-addtocart-banner","disabled":true,"custom_css":["@media (max-width: 767px) {.custom-addtocart-banner__media img {height: 280px; object-fit: cover; }}"],"name":"Custom Addtocart Banner","settings":{"image":"shopify:\/\/shop_images\/Mask_group_7_299249b9-64b7-45c7-a404-1f403f6de8d4.png","image_mobile":"shopify:\/\/shop_images\/Mask_group_8_e970f9a9-0022-448a-8383-35a25d9fa8ea.png","price_badge":"<h3>12 Week <br\/>Programme <br\/><strong>$599.97<\/strong><\/h3>","badge_bg":"linear-gradient(180deg, rgba(35, 52, 111, 1), rgba(11, 23, 65, 1) 100%)","heading":"<h2><strong>CLEAN FORMULATION<br\/> PROMISE<\/strong><\/h2>","description":"<ul><li>Clinically researched ingredient complexes<\/li><li>No fillers<\/li><li>No underdosing<\/li><li>Designed as a system, not a single solution<\/li><\/ul>","product":"microbiome-first-longevity-support","selling_plan_id":"4602888285","button_label":"ADD TO CART","color_scheme":"scheme-f93e8e9e-e109-4770-ac17-6598613b7403","padding_top":0,"padding_bottom":0}},"section_custom_html_HwzF4g":{"type":"section-custom-html","disabled":true,"name":"Custom code","settings":{"custom_code":"<!-- Start of Judge.me code --> \n<div style='clear:both'><\/div> \n<div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}' data-product-title='{{ product.title | escape }}'> \n    {{ product.metafields.judgeme.widget }} \n<\/div> \n<!-- End of Judge.me code -->","width":"wrapper","padding_top":0,"padding_bottom":30}},"related":{"type":"related-products","blocks":{"related":{"type":"related","settings":{"title":"You May Also Like","product_recommendations_limit":4}},"recent":{"type":"recent","settings":{"title":"Recently viewed","product_recently_limit":4}}},"block_order":["related","recent"],"disabled":true,"settings":{"enable_tabs":true,"layout":"grid","columns_mobile":"2","type_style":"subheading-text","tab_heading_size":130,"color_scheme":"","width":"wrapper--full-padded","padding_top":60,"padding_bottom":60}}},"order":["main","image_with_text_features_6L9fNd","before_after_with_content_dpxtnM","benefits_grid_EFfFg3","featured_quote_3BLBfp","logo_marquee_iitEU6","image_cards_dHL8zh","ingredients_transparency_WJtFTL","how_to_use_W3B9Ne","reviews_slider_CTqD8H","video_testimonial_slider_ALWhG7","section_marquee_pep6NQ","hero_cta_tix9q4","reviews_grid_PGLA68","images_marquee_PDJF6R","video_list_3_QQRMF9","custom_addtocart_banner_HPLjjT","section_custom_html_HwzF4g","related"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-new-2",
+      "blocks": {
+        "divider_twPkfy": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 0
+          }
+        },
+        "custom_code_cFfqcH": {
+          "type": "custom_code",
+          "settings": {
+            "custom_code": "<div class=\"star-ratings\">\n<!-- Start of Judge.me code --> \n<div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> \n    {{ product.metafields.judgeme.badge }}  {% if product.metafields.judgeme.badge %}{% endif %} \n</div>\n<!-- End of Judge.me code -->\n<div class=\"trusted-badge-text\"><span> | </span><small>Trusted by 10K+ customers | 14 Servings</small></div>\n</div>\n<style>\n.star-ratings{display:flex;align-items:center;gap:10px;}\n.jdgm-prev-badge__text{font-size:12px;font-weight:700;}\n.star-ratings .trusted-badge{line-height:12px;}\n</style>",
+            "padding_bottom": 10
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_price": false,
+            "subheading": "none",
+            "title_size": 130,
+            "price_size": 100,
+            "bold_price": true,
+            "padding_bottom": 10
+          }
+        },
+        "description_EpLHTM": {
+          "type": "description",
+          "settings": {
+            "enable_full_width": false,
+            "show_read_more": true,
+            "limit_text": 9,
+            "padding_bottom": 20
+          }
+        },
+        "custom_code_Ga7Xki": {
+          "type": "custom_code",
+          "settings": {
+            "custom_code": "<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  /* DM Sans applied via CSS */\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n</style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http://www.w3.org/2000/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"/>\n  </g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n  </g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  </text>\n\n</svg>",
+            "padding_bottom": 20
+          }
+        },
+        "product_video_HCDMCX": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 1_1873b335-644f-4331-ae35-a71e828a2083.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_9p7faA": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 2_bcc03744-b763-491d-8db6-82252a4eed5b.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_xUpQxW": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 3_65c22715-2197-4a8c-a09a-21702e69c108.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_GcUA3h": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 4 v2_ccf77496-8078-4bce-9bd1-6350a1d42350.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_7PYFHC": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 5_fffca16b-a77b-4166-b8a1-a17a94cdc2e7.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_e4qGpB": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 6_26c37465-7514-495d-8680-64b2b4501477.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_n6RgMQ": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 7_5ff967a7-eda1-4c71-82e8-3839df976ca3.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_WFEUm9": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 8_4eaf386c-439c-4fb6-88fb-ed561d1a5b49.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_price": false,
+            "enable_payment_terms": false,
+            "show_labels": true,
+            "show_quantity": false,
+            "show_payment_button": false,
+            "enable_subscriptions_selectors": true,
+            "subscriptions_cards_style": "stack",
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_dDignk": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Description",
+            "heading_style": "font-heading",
+            "accordion_text": "<p><strong>Meet Peri</strong></p><p>Peri is pro-aging, solution-focused self-care. She’s hot. She feels good and looks good doing it. She’s clean. She’s clinically researched. And she’s backed by science.</p><p>Peri gets women's health. She knows this isn’t about fighting age, it’s about embracing change and feeling empowered through it. She knows you want calm, clarity, and control. That your hormones haven’t exactly been playing nice. Peri was made for you. To support your mood. To bring balance back. To help you feel more like you.</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tR8fPG": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_PMFRX8": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "How To Use",
+            "heading_style": "font-heading",
+            "accordion_text": "<h3><strong>Recommended Usage</strong></h3><p><strong>Daily:</strong> One sachet every day is recommended.<br/><br/><strong>Consistency Matters: </strong>Minimum 4-6 weeks and continue with daily use to experience optimal benefits from PERICALM</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tDa8RC": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_KpdcJF": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Key Ingredients",
+            "heading_style": "font-heading",
+            "accordion_text": "<p><strong>• 8,000 mg of VERISOL® Collagen</strong><br/><br/>Contains VERISOL® bioactive collagen peptides, which have been clinically studied to support skin health and maintain skin elasticity.</p><p><strong>• Adaptogenic Maca Root</strong><br/><br/>Traditionally used in South American medicine to support vitality and help the body adapt to stress, including during times of hormonal change.</p><p><strong>• White Grape Seed Extract</strong><br/><br/>A source of antioxidants that helps reduce free radical damage and supports general health and wellbeing. Has been studied for its potential to support skin and cardiovascular health during menopause.</p><p><strong>• Cultavit® Activated B-Complex</strong><br/><br/>Provides activated B vitamins that support energy production, assist with healthy stress response, and contribute to normal cognitive and skin function.</p><p><strong>• Magnesium Lactate</strong><br/><br/>Supports nervous system function and muscle health. May help reduce muscle cramps and support healthy sleep patterns.</p><p><strong>• Vitamin C</strong><br/><br/>Supports collagen formation, contributes to healthy immune system function, and helps reduce free radical damage to body cells.</p><p><strong>• Vitamin D3</strong><br/><br/>Supports bone health, immune system function, and assists in the regulation of calcium metabolism. May help maintain healthy mood balance.</p><p><strong>• EpiBright™</strong><br/><br/>A botanical complex containing plant-based antioxidants. Antioxidants help reduce free radicals formed in the body and support skin health.</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_NiLTG8": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "divider_CkftgQ": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "divider_twPkfy",
+        "custom_code_cFfqcH",
+        "title",
+        "description_EpLHTM",
+        "custom_code_Ga7Xki",
+        "product_video_HCDMCX",
+        "product_video_9p7faA",
+        "product_video_xUpQxW",
+        "product_video_GcUA3h",
+        "product_video_7PYFHC",
+        "product_video_e4qGpB",
+        "product_video_n6RgMQ",
+        "product_video_WFEUm9",
+        "form",
+        "product_accordion_dDignk",
+        "divider_tR8fPG",
+        "product_accordion_PMFRX8",
+        "divider_tDa8RC",
+        "product_accordion_KpdcJF",
+        "divider_NiLTG8",
+        "divider_CkftgQ"
+      ],
+      "custom_css": [
+        ".sldr-label-img-container img {aspect-ratio: 2 / 1.2;}",
+        ".sldr-content-mobile-reverse {width: 100%;}",
+        ".twelve-weeks-card .program-name {display: none;}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "addtocart_sticky_enable": true,
+        "sticky_bg_color": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "sticky_text_color": "#ffffff",
+        "image_layout": "carousel",
+        "image_width": "standard",
+        "product_image_aspect_ratio": true,
+        "enable_zoom": false,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 80
+      }
+    },
+    "why_us_FKxmKE": {
+      "type": "why-us",
+      "blocks": {
+        "video_card_EfQwHw": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 6.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_W4Qm9k": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 7.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_RDX9gR": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 1 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_GD4EUi": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_DqKXp9": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_w69BTA": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 4 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_card_EfQwHw",
+        "video_card_W4Qm9k",
+        "video_card_RDX9gR",
+        "video_card_GD4EUi",
+        "video_card_DqKXp9",
+        "video_card_w69BTA"
+      ],
+      "name": "Why us",
+      "settings": {
+        "heading": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>",
+        "subtext": "<p>Don't just take our word for it, see what our customers say</p>",
+        "heading_size": 48,
+        "button_label": "START YOUR REJUVENATION",
+        "button_link": "",
+        "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
+        "background_color": "#f9f9fb",
+        "heading_color": "#610c27",
+        "subtext_color": "#2a2a2a",
+        "card_background": "#ffffff",
+        "body_color": "#1e1e1e",
+        "button_bg": "#6b0329",
+        "button_text_color": "#ffffff",
+        "footnote_color": "#2a2a2a",
+        "play_bg": "#ffffff",
+        "play_icon": "#2f2f2f",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "image_with_text_features_6L9fNd": {
+      "type": "image-with-text-features",
+      "blocks": {
+        "feature_HttefL": {
+          "type": "feature",
+          "settings": {
+            "label": "Pure Results",
+            "text": "No fillers or synthetic hormones."
+          }
+        },
+        "feature_TCaPWL": {
+          "type": "feature",
+          "settings": {
+            "label": "Clinical Precision",
+            "text": "Made in Australia to the world's highest safety standards."
+          }
+        },
+        "feature_eAGiJk": {
+          "type": "feature",
+          "settings": {
+            "label": "Total Support",
+            "text": "Specifically formulated to end brain fog, night sweats, and mood swings."
+          }
+        }
+      },
+      "block_order": [
+        "feature_HttefL",
+        "feature_TCaPWL",
+        "feature_eAGiJk"
+      ],
+      "name": "Image with text features",
+      "settings": {
+        "heading": "Stop Masking Symptoms. Start Solving Them",
+        "intro": "<p>Unlike traditional supplements, PeriCalm™ works at the source to stabilize your internal cooling system and mental focus</p>",
+        "image": "shopify://shop_images/Stop_Masking_Symptoms._Start_Solving_Them.png",
+        "image_position": "right",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "padding_horizontal": 48,
+        "column_gap": 64,
+        "image_radius": 8,
+        "background_color": "#f9f9fb",
+        "heading_color": "#610c27",
+        "body_color": "#323232",
+        "list_color": "#545454"
+      }
+    },
+    "before_after_with_content_dpxtnM": {
+      "type": "before-after-with-content",
+      "blocks": {
+        "testimonial_mqkMey": {
+          "type": "testimonial",
+          "settings": {
+            "before_image": "shopify://shop_images/Before_10A_57aee777-a8d6-4245-95ba-97b836346a22.jpg",
+            "before_text": "",
+            "after_image": "shopify://shop_images/After_10B_09b2a24a-c5c2-4a4b-94ef-b1172b8db264.jpg",
+            "after_text": "",
+            "initial_split": 50,
+            "customer_name": "Matilda - Age 34",
+            "product_line": "Pericalm Sachet",
+            "quote": "I’ve tried a lot of supplements, but this is different. My energy levels are up, and I feel more focused throughout the day. Definitely part of my daily routine now."
+          }
+        },
+        "testimonial_RAxExc": {
+          "type": "testimonial",
+          "settings": {
+            "before_image": "shopify://shop_images/Before_2A.webp",
+            "before_text": "",
+            "after_image": "shopify://shop_images/After_2B.webp",
+            "after_text": "",
+            "initial_split": 50,
+            "customer_name": "Tahlia - Age 41",
+            "product_line": "Pericalm Sachet",
+            "quote": "I was feeling drained most days, but after a few weeks, I noticed a real difference. I feel more confident and active again."
+          }
+        },
+        "testimonial_yxzb6V": {
+          "type": "testimonial",
+          "settings": {
+            "before_image": "shopify://shop_images/Before_12A.webp",
+            "before_text": "",
+            "after_image": "shopify://shop_images/After_12B.webp",
+            "after_text": "",
+            "initial_split": 50,
+            "customer_name": "Keira - Age 38",
+            "product_line": "Pericalm Sachet",
+            "quote": "You can tell this is a high-quality product. Clean ingredients, no side effects, and it actually delivers on what it promises."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_mqkMey",
+        "testimonial_RAxExc",
+        "testimonial_yxzb6V"
+      ],
+      "name": "Before/after + content",
+      "settings": {
+        "heading": "Before & After",
+        "subheading": "Based on 12 Weeks daily use.",
+        "background_color": "#f9f9fb",
+        "heading_color": "#610c27",
+        "subheading_color": "#323232",
+        "primary_color": "#610b27",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_horizontal": 24,
+        "primary_label": "Start Your Skin Transformation",
+        "primary_link": "#product__subs__wrap-main",
+        "secondary_label": "Try it once",
+        "secondary_link": "#product__subs__wrap-main"
+      }
+    },
+    "benefits_grid_EFfFg3": {
+      "type": "benefits-grid",
+      "blocks": {
+        "benefit_card_4EjEwP": {
+          "type": "benefit_card",
+          "settings": {
+            "image": "shopify://shop_images/Restore_Desire_and_Confidence.png",
+            "image_focus": "center center",
+            "title_line_1": "Restore Desire",
+            "title_line_2": "and Confidence",
+            "body": "Adaptogenic Maca Root (200mg) targets the HPA axis to help your body calibrate estrogen levels. Naturally cool hot flashes and stabilize mood swings without synthetic hormones."
+          }
+        },
+        "benefit_card_7gxwRf": {
+          "type": "benefit_card",
+          "settings": {
+            "image": "shopify://shop_images/Balance_Your_Internal_Climate.png",
+            "image_focus": "center center",
+            "title_line_1": "Balance Your",
+            "title_line_2": "Internal Climate.",
+            "body": "White Grape Seed and Maca Root work systemically to stabilize your body's natural cooling response. Reduce the frequency of hot flashes and night sweats while reclaiming your daily comfort"
+          }
+        },
+        "benefit_card_rYJ3Tf": {
+          "type": "benefit_card",
+          "settings": {
+            "image": "shopify://shop_images/Deep_Rest_Nervous_System_Calm.png",
+            "image_focus": "center center",
+            "title_line_1": "Deep Rest Nervous",
+            "title_line_2": "System Calm.",
+            "body": "Magnesium Lactate (1,000mg) powers 300+ enzymatic processes to relax muscles and improve sleep architecture. Build resilience against daily cortisol spikes and restore your baseline calm"
+          }
+        },
+        "benefit_card_GHiJrk": {
+          "type": "benefit_card",
+          "settings": {
+            "image": "shopify://shop_images/Erase_Fog_Sustain_Focus.png",
+            "image_focus": "center center",
+            "title_line_1": "Erase Fog",
+            "title_line_2": "Sustain Focus",
+            "body": "Cultavit® Activated B-Complex provides full-spectrum, bioavailable fuel to power cellular repair. Sharpen your cognitive performance and sustain energy when hormonal shifts leave you feeling depleted"
+          }
+        },
+        "benefit_card_U6Gy9R": {
+          "type": "benefit_card",
+          "settings": {
+            "image": "shopify://shop_images/Immune_Defense_Clear_Complexion.png",
+            "image_focus": "center center",
+            "title_line_1": "Immune Defense",
+            "title_line_2": "Clear Complexion",
+            "body": "Xobiome® Postbiotics strengthen the skin barrier and balance the gut-skin axis. Ensure your internal digestive health reflects on your external glow with precision-formulated microbial support"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_card_4EjEwP",
+        "benefit_card_7gxwRf",
+        "benefit_card_rYJ3Tf",
+        "benefit_card_GHiJrk",
+        "benefit_card_U6Gy9R"
+      ],
+      "name": "Benefits grid (science)",
+      "settings": {
+        "heading": "Pure Potency. Zero Compromise",
+        "subheading": "Every sachet is precision-dosed for therapeutic impact no fillers, no synthetic hormones, and no \"label dressing.\" Just high-concentration actives that work",
+        "hero_image": "shopify://shop_images/Pure_Potency._Zero_Compromise.png",
+        "background_color": "#f9f9fb",
+        "panel_background": "rgba(110,131,196,0.1)",
+        "heading_color": "#610c27",
+        "subheading_color": "#323232",
+        "padding_top": 0,
+        "padding_bottom": 128,
+        "padding_horizontal": 48,
+        "card_radius": 8,
+        "panel_radius": 12
+      }
+    },
+    "featured_quote_3BLBfp": {
+      "type": "featured-quote",
+      "name": "Featured In – Quote",
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 44,
+        "background_color": "#f9f9fb",
+        "eyebrow_color": "#0b0b0b",
+        "quote_image": "shopify://shop_images/quote-icon.png",
+        "quote_mark_color": "#e0d8db",
+        "text_color": "#0b0b0b",
+        "eyebrow": "FEATURED IN",
+        "quote_text": "<p>Formulated to rebuild <br/>what time diminishes.</p>",
+        "font_size": 32
+      }
+    },
+    "logo_marquee_iitEU6": {
+      "type": "logo-marquee",
+      "blocks": {
+        "logo_kkrKTk": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-1.png"
+          }
+        },
+        "logo_6pjAj3": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-2.png"
+          }
+        },
+        "logo_Vim8ni": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-3.png"
+          }
+        },
+        "logo_a8KMD4": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-4.png"
+          }
+        },
+        "logo_WPHy9R": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-5.png"
+          }
+        },
+        "logo_Uxk6LR": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-6.png"
+          }
+        },
+        "logo_ar73ci": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-7.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_kkrKTk",
+        "logo_6pjAj3",
+        "logo_Vim8ni",
+        "logo_a8KMD4",
+        "logo_WPHy9R",
+        "logo_Uxk6LR",
+        "logo_ar73ci"
+      ],
+      "name": "Logo Marquee",
+      "settings": {
+        "padding_top": 16,
+        "padding_bottom": 28,
+        "background_color": "#f9f9fb",
+        "border_color": "#000000",
+        "border_style": "none",
+        "border_top_width": 0,
+        "border_bottom_width": 2,
+        "logo_height": 40,
+        "logo_gap": 20,
+        "speed": 25,
+        "pause_on_hover": true
+      }
+    },
+    "image_cards_dHL8zh": {
+      "type": "image-cards",
+      "blocks": {
+        "image_card_68Q8Dt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Sagging_and_crepey_skin.png",
+            "label": "<p>Sagging and<br/>crepey skin</p>"
+          }
+        },
+        "image_card_VFBT3Y": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Fine_lines_and.png",
+            "label": "<p>Fine lines and<br/>visible wrinkles</p>"
+          }
+        },
+        "image_card_RAHfXT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Brittle_hair_1dec661a-52c8-4ef7-9393-f13c7a01f492.png",
+            "label": "<p>Brittle hair<br/>and nails</p>"
+          }
+        },
+        "image_card_fAnMJh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Dull_uneven.png",
+            "label": "<p>Dull, uneven-<br/>looking skin</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_68Q8Dt",
+        "image_card_VFBT3Y",
+        "image_card_RAHfXT",
+        "image_card_fAnMJh"
+      ],
+      "name": "Image Cards",
+      "settings": {
+        "padding_top": 90,
+        "padding_bottom": 90,
+        "container_width": false,
+        "background_color": "#f9f9fb",
+        "heading_color": "#5c1a2e",
+        "subtext_color": "#323232",
+        "label_text_color": "#ffffff",
+        "button_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Balance What Time Changes</p>",
+        "heading_size": 48,
+        "subtext": "<p>A therapeutic systemic formula designed to stabilize the hormonal shifts of perimenopause. Restore your internal<br/> cooling system, mental clarity, and physical vitality from the inside out.</p>",
+        "button_label": "Start Your Skin Transformation",
+        "mobile_button_label": "",
+        "button_link": "#product__subs__wrap-main",
+        "secondary_button_label": "Try it once",
+        "secondary_button_link": "#product__subs__wrap-main",
+        "footnote": "Perimenopause isn't just a phase; it's a systemic shift. While single-symptom solutions only mask the surface, PeriCalm™ targets the root cause of hormonal imbalance to help you feel like yourself again",
+        "text_alignment": false
+      }
+    },
+    "ingredients_transparency_WJtFTL": {
+      "type": "ingredients-transparency",
+      "blocks": {
+        "ingredient_eWgCpP": {
+          "type": "ingredient",
+          "settings": {
+            "name": "VERISOL®HydrolysedMarine Collagen",
+            "source": "Clinically studied bioactive collagen peptides that help support skin elasticity, firmness, and hydration, while reducing the appearance of fine lines for a smoother, more youthful complexion.",
+            "code": "8000mg"
+          }
+        },
+        "ingredient_6NxcGm": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamin C(Fermented Kakadu Plum)",
+            "source": "Encourages natural collagen formation while providing potent antioxidant protection against free radical damage",
+            "code": "80mg"
+          }
+        },
+        "ingredient_3G4a7E": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Magnesium Lactate",
+            "source": "Supports nervous system function and muscle health. May help reduce muscle cramps and support healthy sleep patterns.",
+            "code": "150mg"
+          }
+        },
+        "ingredient_LptHBi": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Adaptogenic Maca Root",
+            "source": "Traditionally used in South American medicine to support vitality and help the body adapt to stress, including during times of hormonal change.",
+            "code": ""
+          }
+        },
+        "ingredient_bTjM3h": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamin D3",
+            "source": "Supports immune function and overall wellbeing.",
+            "code": ""
+          }
+        },
+        "ingredient_6RxyVM": {
+          "type": "ingredient",
+          "settings": {
+            "name": "White Grape Seed Extract",
+            "source": "A source of antioxidants that helps reduce free radical damage and supports general health and wellbeing. Has been studied for its potential to support skin and cardiovascular health during menopause",
+            "code": ""
+          }
+        },
+        "ingredient_kjTtA8": {
+          "type": "ingredient",
+          "settings": {
+            "name": "EpiBright™",
+            "source": "A botanical complex containing plant-based antioxidants. Antioxidants help reduce free radicals formed in the body and support skin health.",
+            "code": ""
+          }
+        },
+        "ingredient_PMXcfY": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Cultavit® Activated B-Complex",
+            "source": "Provides activated B vitamins that support energy production, assist with healthy stress response, and contribute to normal cognitive and skin function.",
+            "code": ""
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_eWgCpP",
+        "ingredient_6NxcGm",
+        "ingredient_3G4a7E",
+        "ingredient_LptHBi",
+        "ingredient_bTjM3h",
+        "ingredient_6RxyVM",
+        "ingredient_kjTtA8",
+        "ingredient_PMXcfY"
+      ],
+      "name": "Ingredients Transparency",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 60,
+        "container_width": true,
+        "background_color": "#f9f9fb",
+        "eyebrow_color": "#610c27",
+        "eyebrow": "Radical Transparency",
+        "heading_color": "#3a3d38",
+        "heading": "<p>Simple ingredients,<br/><strong>powerful results.</strong></p>",
+        "heading_size": 64,
+        "body_color": "#545454",
+        "body_text": "<p>Made using peer-reviewed, scientifically researched, and clinically studied ingredients.</p>",
+        "body_size": 18,
+        "product_image": "shopify://shop_images/Simple_ingredients_powerful_results.png",
+        "image_radius": 12,
+        "list_label": "Active Ingredients",
+        "badge_bg_color": "#d4dccf",
+        "label_color": "#000000",
+        "label_border_color": "rgba(0,0,0,0)",
+        "ingredient_name_color": "#333333",
+        "use_custom_tag_bg": false,
+        "tag_bg_color": "#7a8c6e",
+        "tag_bg_opacity": 15,
+        "tag_text_color": "#000000",
+        "ingredient_name_size": 18,
+        "ingredient_source_font": "Space Mono",
+        "ingredient_source_font_weight": "100",
+        "ingredient_source_color": "#333333",
+        "ingredient_source_size": 12,
+        "ingredient_code_size": 11,
+        "divider_color": "#dedede",
+        "bottom_text_color": "#545454",
+        "button_label": "START YOUR BALANCED JOURNEY",
+        "mobile_button_label": "",
+        "button_link": "#product__subs__wrap-main",
+        "button_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "bottom_text": "*Formulated for daily beauty support from within."
+      }
+    },
+    "how_to_use_W3B9Ne": {
+      "type": "how-to-use",
+      "blocks": {
+        "step_gdNAtG": {
+          "type": "step",
+          "settings": {
+            "title": "Tear",
+            "text": "Take one 17.5ml ready-to-drink sachet daily."
+          }
+        },
+        "step_UFkrAC": {
+          "type": "step",
+          "settings": {
+            "title": "Drink",
+            "text": "Enjoy the great-tasting Wild Berry or Mango & Mandarin flavour on its own, or drop it into your morning smoothie."
+          }
+        },
+        "step_QAWF3L": {
+          "type": "step",
+          "settings": {
+            "title": "Transform",
+            "text": "Stick with it! Results typically begin at 4-6 weeks, with full, clinically backed results peaking at 12 weeks of continuous use."
+          }
+        }
+      },
+      "block_order": [
+        "step_gdNAtG",
+        "step_UFkrAC",
+        "step_QAWF3L"
+      ],
+      "name": "How to use",
+      "settings": {
+        "heading": "Your New Daily Habit",
+        "image": "shopify://shop_images/Your_New_Daily_Habit.png",
+        "mobile_media_position": "after",
+        "background_color": "#610b27",
+        "padding_vertical_desktop": 80,
+        "padding_horizontal_desktop": 36,
+        "column_gap_desktop": 64,
+        "padding_vertical_mobile": 56,
+        "padding_horizontal_mobile": 24,
+        "column_gap_mobile": 32
+      }
+    },
+    "reviews_slider_CTqD8H": {
+      "type": "reviews-slider",
+      "blocks": {
+        "review_UxdkCD": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“Absolutely love this! My skin feels firmer and the fine lines around my eyes are so much less noticeable. Even my nails and hair feel stronger. My complexion is brighter and more even than ever. Highly recommend!”</p>",
+            "name": "Emily (Sydney, NSW)"
+          }
+        },
+        "review_m3PiTY": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“I was skeptical at first, but this product really works. Sagging and crepey skin have improved, and my wrinkles are visibly reduced. Hair and nails feel healthier, and my skin looks radiant. Couldn’t be happier!”</p>",
+            "name": "Liam (Melbourne, VIC)"
+          }
+        },
+        "review_dme6hk": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“This is a game-changer! My skin is smoother and more lifted, fine lines are fading, and my hair and nails are stronger. Plus, my skin has a gorgeous, even glow. Highly impressed!”</p>",
+            "name": "Sophie (Brisbane, QLD)"
+          }
+        },
+        "review_PiiAP7": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>Results are amazing! My sagging skin is firmer, wrinkles less obvious, and my hair and nails are noticeably stronger. My overall skin tone looks brighter and more even. Definitely worth every penny!”</p>",
+            "name": "Ethan (Perth, WA)"
+          }
+        },
+        "review_7T8GRX": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“I can’t believe the difference! My skin looks youthful and revitalized, fine lines and wrinkles are softer, and my hair and nails feel so healthy. Plus, my skin glow is incredible. Totally recommend this!”</p>",
+            "name": "Isabella (Isabella, Adelaide, SA)"
+          }
+        }
+      },
+      "block_order": [
+        "review_UxdkCD",
+        "review_m3PiTY",
+        "review_dme6hk",
+        "review_PiiAP7",
+        "review_7T8GRX"
+      ],
+      "name": "Reviews Slider",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 64,
+        "header_gap": 42,
+        "container_width": true,
+        "container_width_slider": true,
+        "slides_desktop": 4,
+        "autoplay_carousel": true,
+        "autoplay_speed": 28,
+        "background_color": "#f9f9fb",
+        "heading_main": "1,450 verified",
+        "heading_accent": "5 star reviews",
+        "heading_main_color": "#610c27",
+        "heading_accent_color": "#f7bb07",
+        "heading_size": 48,
+        "heading_letter_spacing": -12,
+        "button_label": "All reviews",
+        "button_link": "shopify://pages/results-review-and-before-after-photos",
+        "button_text_color": "#212121",
+        "button_border_color": "#ccceb7",
+        "button_size": 16,
+        "button_padding_y": 16,
+        "button_padding_x": 24,
+        "card_bg": "#ebebeb",
+        "slider_shadow_padding": 20,
+        "card_radius": 16,
+        "star_color": "#f7bb07",
+        "star_empty_color": "#f7bb07",
+        "star_size": 20,
+        "quote_color": "#212121",
+        "quote_size": 20,
+        "name_color": "#212121",
+        "name_size": 14
+      }
+    },
+    "video_testimonial_slider_ALWhG7": {
+      "type": "video-testimonial-slider",
+      "blocks": {
+        "video_card_9whBE8": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4",
+            "quote": "After trying it once I was hooked",
+            "name": "Our founder Rose"
+          }
+        },
+        "video_card_7VCmfR": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Ultra UGC.webm",
+            "quote": "One Calmerceuticals is all you need",
+            "name": "Brigitte"
+          }
+        },
+        "video_card_WfdyLh": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Women and testosterone UGC.webm",
+            "quote": "Best Ever",
+            "name": "Claire"
+          }
+        },
+        "video_card_ihqxJb": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/CC x VVV - Jan Reel 01 - 1080p for posting.webm",
+            "quote": "It quite literally has changed my life",
+            "name": "Victoria"
+          }
+        },
+        "video_card_YdmVQK": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/1973acf6-8208-48c4-8af8-9ad99aaa353c.mp4",
+            "quote": "After trying it once I was hooked",
+            "name": "Sarah"
+          }
+        }
+      },
+      "block_order": [
+        "video_card_9whBE8",
+        "video_card_7VCmfR",
+        "video_card_WfdyLh",
+        "video_card_ihqxJb",
+        "video_card_YdmVQK"
+      ],
+      "name": "Video Testimonials Slider",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "container_width": true,
+        "background_color": "#f9f9fb",
+        "heading_color": "#1a0d10",
+        "heading_brand_color": "#5c1a2e",
+        "heading_brand": "Calmerceuticals",
+        "heading_rest": "is loved by thousands",
+        "heading_size": 40,
+        "card_width": 320,
+        "card_gap": 16,
+        "card_radius": 16,
+        "quote_size": 18,
+        "name_size": 13
+      }
+    },
+    "section_marquee_pep6NQ": {
+      "type": "section-marquee",
+      "blocks": {
+        "image_xNek33": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.45.51_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_dLbtUF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/calmerceuticals-pilot-using-collagen.webp",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_UTQYRe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ugc-calmerceuticals.webp",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_e8yKtk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CC_SNEAKP_WEB-3.jpg",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_DmiJ7D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.49.32_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_dU9h6i": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/perimenopause-georgia.jpg",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_HDbjgd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-07-09_at_6.03.25_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_QjY6pr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.50.46_PM.png",
+            "link": "",
+            "image_width": 170
+          }
+        },
+        "image_WyTxLh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_1.28.07_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_6gtPdt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_4.37.00_PM.png",
+            "link": "",
+            "image_width": 170
+          }
+        }
+      },
+      "block_order": [
+        "image_xNek33",
+        "image_dLbtUF",
+        "image_UTQYRe",
+        "image_e8yKtk",
+        "image_DmiJ7D",
+        "image_dU9h6i",
+        "image_HDbjgd",
+        "image_QjY6pr",
+        "image_WyTxLh",
+        "image_6gtPdt"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding": 10,
+        "marquee_speed": 100,
+        "direction": "ticker-ltr",
+        "slider_speed": 10,
+        "show_arrows": false,
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "text_size": 120,
+        "text_size_mobile": 80,
+        "letter_spacing": 0,
+        "message_spacing": 10,
+        "color_scheme": "scheme-1",
+        "background_color": "",
+        "color": "#000000",
+        "border_color": "#000000",
+        "padding_top": 60,
+        "padding_bottom": 70
+      }
+    },
+    "hero_cta_tix9q4": {
+      "type": "hero-cta",
+      "name": "Hero CTA with Image",
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "container_width": true,
+        "background_color": "#6b0027",
+        "eyebrow": "Recommended plan",
+        "eyebrow_color": "#f7f9ee",
+        "eyebrow_size": 16,
+        "heading": "Support Your Performance - Backed by Research",
+        "heading_color": "#ffffff",
+        "heading_size": 40,
+        "body_text": "<p> Bio-fermentation enhances nutrient bioavailability and functional activity in the gut.</p><p>Advanced biomanufacturing improves delivery, stability, and efficacy - so the body can actually use what you take.</p><p><br/>This is proactive ageing support, not damage control.</p>",
+        "body_color": "#f7f9ee",
+        "body_size": 16,
+        "tagline": "",
+        "tagline_color": "#ffffff",
+        "tagline_size": 16,
+        "button_label": "12 Week Performance Reset",
+        "button_link": "#product__subs__wrap-main",
+        "button_text_color": "#212121",
+        "button_border_color": "#f7f9ee",
+        "button_bg": "#F7F9EE",
+        "button_size": 16,
+        "image": "shopify://shop_images/Support_Your_Performance_-_Backed_by_Research.png",
+        "image_ratio": "16 / 9",
+        "image_radius": 12,
+        "image_gap": 40,
+        "show_placeholder": true
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "title": "You May Also Like",
+            "product_recommendations_limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "title": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "layout": "grid",
+        "columns_mobile": "2",
+        "type_style": "subheading-text",
+        "tab_heading_size": 130,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "why_us_FKxmKE",
+    "image_with_text_features_6L9fNd",
+    "before_after_with_content_dpxtnM",
+    "benefits_grid_EFfFg3",
+    "featured_quote_3BLBfp",
+    "logo_marquee_iitEU6",
+    "image_cards_dHL8zh",
+    "ingredients_transparency_WJtFTL",
+    "how_to_use_W3B9Ne",
+    "reviews_slider_CTqD8H",
+    "video_testimonial_slider_ALWhG7",
+    "section_marquee_pep6NQ",
+    "hero_cta_tix9q4",
+    "related"
+  ]
+}

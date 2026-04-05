@@ -45,51 +45,67 @@
             "padding_bottom": 8
           }
         },
-        "custom_code_yJBYRC": {
-          "type": "custom_code",
-          "disabled": true,
-          "settings": {
-            "custom_code": "{% render 'collagen-columns', section: section %}",
-            "padding_bottom": 20
-          }
-        },
-        "icon_row_RfdBbM": {
-          "type": "icon_row",
-          "disabled": true,
-          "settings": {
-            "icon_name_1": "truck",
-            "icon_color_1": "#610c27",
-            "icon_image_1": "shopify://shop_images/free-express-shipping-icon.svg",
-            "icon_width_1": 40,
-            "icon_text_1": "Free Express \nShipping",
-            "icon_sub_text_1": "on all subscriptions",
-            "icon_name_2": "check",
-            "icon_color_2": "#610c27",
-            "icon_image_2": "shopify://shop_images/gurantee-icon.svg",
-            "icon_width_2": 40,
-            "icon_text_2": "Money-back \nguarantee",
-            "icon_sub_text_2": "See T&Cs.",
-            "icon_name_3": "vegan",
-            "icon_color_3": "#610c27",
-            "icon_image_3": "shopify://shop_images/ingredients-icon.svg",
-            "icon_width_3": 40,
-            "icon_text_3": "Clinically trialled \ningredients",
-            "icon_sub_text_3": "by experts",
-            "icon_name_4": "none",
-            "icon_color_4": "",
-            "icon_width_4": 33,
-            "icon_text_4": "",
-            "icon_sub_text_4": "Feature sub",
-            "alignment": "center",
-            "bg_color": "#ffffff",
-            "padding_bottom": 6
-          }
-        },
         "custom_code_P9EJCh": {
           "type": "custom_code",
           "settings": {
             "custom_code": "<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  /* DM Sans applied via CSS */\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n</style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http://www.w3.org/2000/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"/>\n  </g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n  </g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  </text>\n\n</svg>",
             "padding_bottom": 8
+          }
+        },
+        "product_video_drgx8g": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 1 v2.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_nNa9XX": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 2 v2.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_rKnab3": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 3 v2_01b8b8f0-936d-4a7d-b7e4-2a4e6ecf359d.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_rbd3Fm": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 4_665e12c2-9c36-4322-bea9-4b157d280e18.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_iKdxn6": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 5_848f3f00-1629-49c6-91e5-2c61c1dc5fe1.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_tbCjym": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 6_f1be464a-8f57-4193-990a-5887a12189e9.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_L3kPbx": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 7 v2_9fa5dbc9-c1a6-4b4e-8644-933c355c158d.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_TLDb3t": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 8_e58796e4-1e92-48b0-a2d8-ddfc1a300b42.mp4",
+            "product": "{{ product }}"
           }
         },
         "form": {
@@ -120,14 +136,6 @@
             "padding_bottom": 16
           }
         },
-        "custom_code_P4zYHw": {
-          "type": "custom_code",
-          "disabled": true,
-          "settings": {
-            "custom_code": "{% render 'product-servings' product: product, servings: 14, hide_per_serving: true %}",
-            "padding_bottom": 20
-          }
-        },
         "product_accordion_dDignk": {
           "type": "product_accordion",
           "settings": {
@@ -148,33 +156,6 @@
         },
         "divider_tR8fPG": {
           "type": "divider",
-          "settings": {
-            "show_line": true,
-            "padding_bottom": 0
-          }
-        },
-        "product_accordion_jiBCAJ": {
-          "type": "product_accordion",
-          "disabled": true,
-          "settings": {
-            "show_description": false,
-            "show_read_more": false,
-            "open_by_default": false,
-            "enable_full_width": false,
-            "tabs_bg_color": "",
-            "show_accordion_divider": false,
-            "line_thickness": "normal",
-            "accordion_heading": "How it works",
-            "heading_style": "font-heading",
-            "accordion_text": "<p>As we age, the body’s natural collagen production slows down, leading to a loss of skin elasticity, firmness, and hydration - and the visible signs of ageing such as wrinkles, fine lines, and dryness begin to appear.</p><p>Each daily sachet of Calmerceuticals Premium Liquid Collagen delivers 10,000 mg of Type I hydrolysed marine collagen, clinically shown to support the body’s natural collagen matrix. Once ingested, these bioactive collagen peptides are efficiently absorbed into the bloodstream and transported to the deeper layers of the skin, where they help stimulate and boost the body’s own collagen synthesis.</p><p>This internal support system promotes skin rejuvenation from within — helping to restore firmness and elasticity, reduce the appearance of wrinkles, and reveal a smoother, more radiant complexion.</p>",
-            "accordion_liquid": "",
-            "accordion_page": "",
-            "padding_bottom": 0
-          }
-        },
-        "divider_DTrdrU": {
-          "type": "divider",
-          "disabled": true,
           "settings": {
             "show_line": true,
             "padding_bottom": 0
@@ -251,13 +232,6 @@
             "text_alignment": "center",
             "padding_bottom": 0
           }
-        },
-        "testimonials_MXPwbJ": {
-          "type": "testimonials",
-          "disabled": true,
-          "settings": {
-            "reviews_text": "I have been using this product for 3 months and I have to say it's completely blown me away. I have used many collagens over the years but have never had results like these. My skin is glowing - I get so many compliments from friends and family (my daughter even saying I looked younger last week) and the hair growth has been incredible. I cannot recommend this product highly enough - WELL DONE CALMERCEUTICALS, I'll be a customer for life! || Isabella\n\nI’ve been taking these for 4 weeks now and was impressed enough after two weeks to get a subscription. They taste great, are SO convenient to take (I grab one on my way out the door for the morning school run and have it in the car), and there are noticeable differences in my hair, nails, and the finer lines around my eyes already. I’m looking forward to seeing how things continue to progress over the next couple of months. || Ally\n\nSince I have been using this amazing product I feel and look so amazing. My skin is flawless and my hair has grown and become so much stronger with my nails growing at. Rapid pace even though I have acrylic shellac nails my natural nails are growing so much. Overall I feel 37 not 57 years old and I feel so much more energy too. I just am so grateful that I stumbled upon this natural collagen product thank you xxxx || Annamária"
-          }
         }
       },
       "block_order": [
@@ -265,24 +239,26 @@
         "custom_code_cFfqcH",
         "title",
         "text_VrgJkk",
-        "custom_code_yJBYRC",
-        "icon_row_RfdBbM",
         "custom_code_P9EJCh",
+        "product_video_drgx8g",
+        "product_video_nNa9XX",
+        "product_video_rKnab3",
+        "product_video_rbd3Fm",
+        "product_video_iKdxn6",
+        "product_video_tbCjym",
+        "product_video_L3kPbx",
+        "product_video_TLDb3t",
         "form",
         "trust_icons_qere3z",
-        "custom_code_P4zYHw",
         "product_accordion_dDignk",
         "divider_tR8fPG",
-        "product_accordion_jiBCAJ",
-        "divider_DTrdrU",
         "product_accordion_PMFRX8",
         "divider_tDa8RC",
         "product_accordion_KpdcJF",
         "divider_NiLTG8",
         "divider_zdChKR",
         "testimonials_v2_nR4AhD",
-        "text_Gdh4VU",
-        "testimonials_MXPwbJ"
+        "text_Gdh4VU"
       ],
       "custom_css": [
         ".sldr-label-img-container img {aspect-ratio: 2 / 1.2;}",
@@ -372,7 +348,7 @@
         "button_label": "START YOUR REJUVENATION",
         "button_link": "",
         "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
-        "background_color": "#F9F9FB",
+        "background_color": "#f9f9fb",
         "heading_color": "#610c27",
         "subtext_color": "#2a2a2a",
         "card_background": "#ffffff",
@@ -488,6 +464,7 @@
         "letter_spacing": 0,
         "message_spacing": 25,
         "color_scheme": "scheme-1",
+        "background_color": "",
         "color": "#000000",
         "border_color": "#000000",
         "padding_top": 82,
@@ -1362,6 +1339,7 @@
         "letter_spacing": 0,
         "message_spacing": 10,
         "color_scheme": "scheme-1",
+        "background_color": "",
         "color": "#000000",
         "border_color": "#000000",
         "padding_top": 60,

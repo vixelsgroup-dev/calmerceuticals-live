@@ -1,1 +1,1549 @@
-{"sections":{"main":{"type":"product-new-3","blocks":{"divider_twPkfy":{"type":"divider","settings":{"show_line":false,"padding_bottom":0}},"custom_code_cFfqcH":{"type":"custom_code","settings":{"custom_code":"<div class=\"star-ratings\">\n<!-- Start of Judge.me code --> \n<div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> \n    {{ product.metafields.judgeme.badge }}  {% if product.metafields.judgeme.badge %} | {% endif %} \n<\/div> \n<!-- End of Judge.me code -->\n<div class=\"trusted-badge-text\"><small>Trusted by 10K+ customers | 14 Servings<\/small><\/div>\n<\/div>\n<style>\n.star-ratings{display:flex;align-items:center;gap:10px;}\n.jdgm-prev-badge__text{font-size:12px;font-weight:700;}\n.star-ratings .trusted-badge{line-height:12px;}\n<\/style>","padding_bottom":10}},"title":{"type":"title","settings":{"show_price":false,"subheading":"none","title_size":130,"price_size":100,"bold_price":true,"padding_bottom":10}},"text_VrgJkk":{"type":"text","settings":{"title":"<p>Longevity is a precision-engineered formula designed to support the gut-brain-immune axis, the core biological network that drives inflammation, cognition, energy, and ageing.<\/p>","text_alignment":"left","padding_bottom":0}},"text_WVMFyQ":{"type":"text","disabled":true,"settings":{"title":"<h6>*Studies conducted on the ingredient complex; not on Calmerceuticals Longevity as a finished product. Individual results may vary<\/h6>","text_alignment":"left","padding_bottom":20}},"custom_code_yJBYRC":{"type":"custom_code","disabled":true,"settings":{"custom_code":"{% render 'longevity-columns', section: section %}","padding_bottom":20}},"icon_row_RfdBbM":{"type":"icon_row","disabled":true,"settings":{"icon_name_1":"truck","icon_color_1":"#610c27","icon_image_1":"shopify:\/\/shop_images\/free-express-shipping-icon.svg","icon_width_1":40,"icon_text_1":"Free Express \nShipping","icon_sub_text_1":"on all subscriptions","icon_name_2":"check","icon_color_2":"#610c27","icon_image_2":"shopify:\/\/shop_images\/gurantee-icon.svg","icon_width_2":40,"icon_text_2":"Money-back \nguarantee","icon_sub_text_2":"See T&Cs.","icon_name_3":"vegan","icon_color_3":"#610c27","icon_image_3":"shopify:\/\/shop_images\/ingredients-icon.svg","icon_width_3":40,"icon_text_3":"Clinically trialled \ningredients","icon_sub_text_3":"by experts","icon_name_4":"none","icon_color_4":"","icon_width_4":33,"icon_text_4":"","icon_sub_text_4":"Feature sub","alignment":"center","bg_color":"#ffffff","padding_bottom":6}},"custom_code_ERJNqb":{"type":"custom_code","disabled":true,"settings":{"custom_code":"<style>\n  @keyframes float {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-5px); }\n  }\n  @keyframes sway1 {\n    0%, 100% { transform: rotate(-8deg); }\n    50% { transform: rotate(-14deg); }\n  }\n  @keyframes sway2 {\n    0%, 100% { transform: rotate(8deg); }\n    50% { transform: rotate(14deg); }\n  }\n  @keyframes shimmer {\n    0% { opacity: 0.6; }\n    50% { opacity: 1; }\n    100% { opacity: 0.6; }\n  }\n  .egg1 { animation: float 3.2s ease-in-out infinite; }\n  .egg2 { animation: float 2.8s ease-in-out infinite 0.4s; }\n  .egg3 { animation: float 3.5s ease-in-out infinite 0.8s; }\n  .chick { animation: float 3s ease-in-out infinite 0.2s; }\n  .tulip-l { animation: sway1 4s ease-in-out infinite; transform-origin: 200px 110px; }\n  .tulip-r { animation: sway2 4s ease-in-out infinite 0.5s; transform-origin: 480px 110px; }\n  .star { animation: shimmer 2s ease-in-out infinite; }\n<\/style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 160\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n\n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"160\" rx=\"16\" fill=\"#FDF6FF\"\/>\n  \n  <circle cx=\"30\" cy=\"30\" r=\"3\" fill=\"#F9C6E0\" opacity=\"0.5\"\/>\n  <circle cx=\"650\" cy=\"30\" r=\"3\" fill=\"#B8E6D4\" opacity=\"0.5\"\/>\n  <circle cx=\"30\" cy=\"130\" r=\"3\" fill=\"#C5D8F9\" opacity=\"0.5\"\/>\n  <circle cx=\"650\" cy=\"130\" r=\"3\" fill=\"#F9D6A0\" opacity=\"0.5\"\/>\n  <circle cx=\"340\" cy=\"18\" r=\"2.5\" fill=\"#E8C5F9\" opacity=\"0.5\"\/>\n  <circle cx=\"200\" cy=\"148\" r=\"2.5\" fill=\"#B8E6D4\" opacity=\"0.5\"\/>\n  <circle cx=\"480\" cy=\"148\" r=\"2.5\" fill=\"#F9C6E0\" opacity=\"0.5\"\/>\n  <circle cx=\"100\" cy=\"148\" r=\"2\" fill=\"#F9D6A0\" opacity=\"0.4\"\/>\n  <circle cx=\"580\" cy=\"148\" r=\"2\" fill=\"#C5D8F9\" opacity=\"0.4\"\/>\n\n  <line x1=\"40\" y1=\"26\" x2=\"640\" y2=\"26\" stroke=\"#E8B4D8\" stroke-width=\"1.2\" stroke-dasharray=\"5,4\" opacity=\"0.6\"\/>\n  <line x1=\"40\" y1=\"134\" x2=\"640\" y2=\"134\" stroke=\"#B4D4E8\" stroke-width=\"1.2\" stroke-dasharray=\"5,4\" opacity=\"0.6\"\/>\n\n  <g class=\"tulip-l\">\n    <line x1=\"200\" y1=\"110\" x2=\"200\" y2=\"138\" stroke=\"#82C9A0\" stroke-width=\"2.5\" stroke-linecap=\"round\"\/>\n    <path d=\"M200 128 Q190 118 196 112\" fill=\"none\" stroke=\"#82C9A0\" stroke-width=\"2\" stroke-linecap=\"round\"\/>\n    <ellipse cx=\"200\" cy=\"102\" rx=\"7\" ry=\"11\" fill=\"#F9A8CC\" transform=\"rotate(-12,200,102)\"\/>\n    <ellipse cx=\"200\" cy=\"102\" rx=\"7\" ry=\"11\" fill=\"#F9C6DC\" transform=\"rotate(12,200,102)\"\/>\n    <ellipse cx=\"200\" cy=\"100\" rx=\"6\" ry=\"10\" fill=\"#FFD6E8\"\/>\n  <\/g>\n\n  <g class=\"tulip-r\">\n    <line x1=\"480\" y1=\"110\" x2=\"480\" y2=\"138\" stroke=\"#82C9A0\" stroke-width=\"2.5\" stroke-linecap=\"round\"\/>\n    <path d=\"M480 128 Q490 118 484 112\" fill=\"none\" stroke=\"#82C9A0\" stroke-width=\"2\" stroke-linecap=\"round\"\/>\n    <ellipse cx=\"480\" cy=\"102\" rx=\"7\" ry=\"11\" fill=\"#A8C6F9\" transform=\"rotate(-12,480,102)\"\/>\n    <ellipse cx=\"480\" cy=\"102\" rx=\"7\" ry=\"11\" fill=\"#C6D8F9\" transform=\"rotate(12,480,102)\"\/>\n    <ellipse cx=\"480\" cy=\"100\" rx=\"6\" ry=\"10\" fill=\"#D8E8FF\"\/>\n  <\/g>\n\n  <g class=\"egg1\">\n    <ellipse cx=\"100\" cy=\"88\" rx=\"14\" ry=\"18\" fill=\"#F9C6E0\"\/>\n    <ellipse cx=\"100\" cy=\"88\" rx=\"14\" ry=\"18\" fill=\"none\" stroke=\"#F09FBF\" stroke-width=\"1\"\/>\n    <path d=\"M88 84 Q100 80 112 84\" fill=\"none\" stroke=\"#F09FBF\" stroke-width=\"1.5\" stroke-linecap=\"round\"\/>\n    <path d=\"M87 90 Q100 86 113 90\" fill=\"none\" stroke=\"#F09FBF\" stroke-width=\"1.5\" stroke-linecap=\"round\"\/>\n    <circle cx=\"100\" cy=\"96\" r=\"2.5\" fill=\"#F09FBF\"\/>\n  <\/g>\n\n  <g class=\"egg2\">\n    <ellipse cx=\"580\" cy=\"88\" rx=\"14\" ry=\"18\" fill=\"#B8E6D4\"\/>\n    <ellipse cx=\"580\" cy=\"88\" rx=\"14\" ry=\"18\" fill=\"none\" stroke=\"#7CC9A8\" stroke-width=\"1\"\/>\n    <path d=\"M568 84 L574 80 L580 84 L586 80 L592 84\" fill=\"none\" stroke=\"#7CC9A8\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\/>\n    <circle cx=\"580\" cy=\"93\" r=\"2.5\" fill=\"#7CC9A8\"\/>\n    <circle cx=\"575\" cy=\"98\" r=\"1.5\" fill=\"#7CC9A8\" opacity=\"0.6\"\/>\n    <circle cx=\"585\" cy=\"98\" r=\"1.5\" fill=\"#7CC9A8\" opacity=\"0.6\"\/>\n  <\/g>\n\n  <g class=\"egg3\">\n    <ellipse cx=\"60\" cy=\"58\" rx=\"9\" ry=\"12\" fill=\"#F9D6A0\"\/>\n    <ellipse cx=\"60\" cy=\"58\" rx=\"9\" ry=\"12\" fill=\"none\" stroke=\"#E8B870\" stroke-width=\"0.8\"\/>\n    <circle cx=\"60\" cy=\"56\" r=\"2\" fill=\"#E8B870\"\/>\n    <circle cx=\"56\" cy=\"62\" r=\"1.5\" fill=\"#E8B870\" opacity=\"0.7\"\/>\n    <circle cx=\"64\" cy=\"62\" r=\"1.5\" fill=\"#E8B870\" opacity=\"0.7\"\/>\n  <\/g>\n\n  <g class=\"egg1\">\n    <ellipse cx=\"620\" cy=\"58\" rx=\"9\" ry=\"12\" fill=\"#C5D8F9\"\/>\n    <ellipse cx=\"620\" cy=\"58\" rx=\"9\" ry=\"12\" fill=\"none\" stroke=\"#7CA8E8\" stroke-width=\"0.8\"\/>\n    <path d=\"M613 55 Q620 51 627 55\" fill=\"none\" stroke=\"#7CA8E8\" stroke-width=\"1.2\" stroke-linecap=\"round\"\/>\n    <circle cx=\"620\" cy=\"62\" r=\"2\" fill=\"#7CA8E8\"\/>\n  <\/g>\n\n  <g class=\"chick\">\n    <ellipse cx=\"340\" cy=\"112\" rx=\"16\" ry=\"14\" fill=\"#FFE066\"\/>\n    <circle cx=\"340\" cy=\"94\" r=\"11\" fill=\"#FFE066\"\/>\n    <circle cx=\"336\" cy=\"91\" r=\"2.5\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"337\" cy=\"90\" r=\"0.8\" fill=\"white\"\/>\n    <circle cx=\"344\" cy=\"91\" r=\"2.5\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"345\" cy=\"90\" r=\"0.8\" fill=\"white\"\/>\n    <path d=\"M338 96 L340 99 L342 96\" fill=\"#F5A623\"\/>\n    <path d=\"M325 108 Q318 100 322 95\" fill=\"none\" stroke=\"#F5C842\" stroke-width=\"3\" stroke-linecap=\"round\"\/>\n    <path d=\"M355 108 Q362 100 358 95\" fill=\"none\" stroke=\"#F5C842\" stroke-width=\"3\" stroke-linecap=\"round\"\/>\n    <line x1=\"333\" y1=\"125\" x2=\"330\" y2=\"134\" stroke=\"#F5A623\" stroke-width=\"2\" stroke-linecap=\"round\"\/>\n    <line x1=\"347\" y1=\"125\" x2=\"350\" y2=\"134\" stroke=\"#F5A623\" stroke-width=\"2\" stroke-linecap=\"round\"\/>\n    <line x1=\"325\" y1=\"135\" x2=\"335\" y2=\"133\" stroke=\"#F5A623\" stroke-width=\"1.5\" stroke-linecap=\"round\"\/>\n    <line x1=\"355\" y1=\"135\" x2=\"345\" y2=\"133\" stroke=\"#F5A623\" stroke-width=\"1.5\" stroke-linecap=\"round\"\/>\n    <ellipse cx=\"333\" cy=\"96\" rx=\"3\" ry=\"2\" fill=\"#FFAAAA\" opacity=\"0.5\"\/>\n    <ellipse cx=\"347\" cy=\"96\" rx=\"3\" ry=\"2\" fill=\"#FFAAAA\" opacity=\"0.5\"\/>\n  <\/g>\n\n  <g class=\"star\">\n    <path d=\"M155 42 L157 38 L159 42 L163 44 L159 46 L157 50 L155 46 L151 44 Z\" fill=\"#F9C6E0\" opacity=\"0.8\"\/>\n  <\/g>\n  <g class=\"star\" style=\"animation-delay:0.7s\">\n    <path d=\"M525 42 L527 38 L529 42 L533 44 L529 46 L527 50 L525 46 L521 44 Z\" fill=\"#B8E6D4\" opacity=\"0.8\"\/>\n  <\/g>\n  <g class=\"star\" style=\"animation-delay:1.2s\">\n    <path d=\"M260 30 L261.5 27 L263 30 L266 31.5 L263 33 L261.5 36 L260 33 L257 31.5 Z\" fill=\"#C5D8F9\" opacity=\"0.7\"\/>\n  <\/g>\n  <g class=\"star\" style=\"animation-delay:0.4s\">\n    <path d=\"M418 30 L419.5 27 L421 30 L424 31.5 L421 33 L419.5 36 L418 33 L415 31.5 Z\" fill=\"#F9D6A0\" opacity=\"0.7\"\/>\n  <\/g>\n\n  <text x=\"340\" y=\"70\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"15\" font-style=\"italic\" fill=\"#9B6BA8\" letter-spacing=\"0.5\">~ Spring offer ~<\/text>\n  <text x=\"340\" y=\"96\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"18\" font-weight=\"700\" fill=\"#5C3A7A\" letter-spacing=\"0.3\">Start today and get<\/text>\n  <rect x=\"253\" y=\"100\" width=\"174\" height=\"28\" rx=\"14\" fill=\"#F9C6E0\" opacity=\"0.9\"\/>\n  <text x=\"340\" y=\"119\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"18\" font-weight=\"700\" fill=\"#B03878\" letter-spacing=\"0.3\">2 weeks free<\/text>\n  <text x=\"340\" y=\"143\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"14\" font-style=\"italic\" fill=\"#7A5A8A\" letter-spacing=\"0.2\">on our 12-week programme<\/text>\n\n<\/svg>","padding_bottom":20}},"custom_code_kweQfj":{"type":"custom_code","settings":{"custom_code":"<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  \/* DM Sans applied via CSS *\/\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n<\/style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"\/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"\/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"\/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"\/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"\/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"\/>\n  <\/g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"\/>\n  <\/g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"\/>\n  <\/g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"\/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"\/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"\/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"\/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"\/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"\/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"\/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"\/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"\/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"\/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"\/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"\/>\n  <\/g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  <\/text>\n\n<\/svg>","padding_bottom":20}},"form":{"type":"form","settings":{"show_price":false,"enable_payment_terms":false,"show_labels":true,"show_quantity":false,"show_payment_button":false,"enable_subscriptions_selectors":true,"subscriptions_cards_style":"stack","padding_bottom":0}},"trust_icons_UxH6mi":{"type":"trust_icons","settings":{"icon_img_1":"shopify:\/\/shop_images\/free-ship.png","text_1":"Free express shipping","icon_img_2":"shopify:\/\/shop_images\/money-back.png","text_2":"100% money back guarantee","icon_img_3":"shopify:\/\/shop_images\/ingredients.png","text_3":"Clinically trialled ingredients","icon_color":"#212121","icon_size":16,"font_size":14,"padding_bottom":16}},"custom_code_P4zYHw":{"type":"custom_code","disabled":true,"settings":{"custom_code":"{% render 'product-servings' product: product, servings: 14, hide_per_serving: true %}","padding_bottom":20}},"product_accordion_dDignk":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"Description","heading_style":"font-heading","accordion_text":"<p><strong>Microbiome-First Longevity Support:<\/strong><br\/><br\/>Calmerceuticals® Longevity is a clinically engineered, bio-fermented triple-biotic system designed to support healthy biological ageing at its source.<br\/>Rather than chasing surface-level outcomes, Longevity targets one of the core drivers of accelerated ageing: chronic low-grade inflammation linked to microbiome imbalance.<br\/>At the centre of the formula is <strong>evaBiome™ EternaGen Polyphenol Complex<\/strong>, a next-generation bio-fermented polyphenol system combined with a clinically researched Blue Zone probiotic complex delivering 60 billion live probiotics and 10 billion postbiotics per serve.<br\/>Together, this precision-engineered system supports the gut–brain–immune axis — helping regulate inflammatory response, protect cognitive function, and strengthen cellular resilience.<br\/>This is foundational longevity support.<br\/> Built for absorption. Designed for impact.<br\/><br\/><\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_tR8fPG":{"type":"divider","settings":{"show_line":true,"padding_bottom":0}},"product_accordion_jiBCAJ":{"type":"product_accordion","disabled":true,"settings":{"show_description":false,"show_read_more":false,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"How it works","heading_style":"font-heading","accordion_text":"<p>As we age, the body’s natural collagen production slows down, leading to a loss of skin elasticity, firmness, and hydration - and the visible signs of ageing such as wrinkles, fine lines, and dryness begin to appear.<\/p><p>Each daily sachet of Calmerceuticals Premium Liquid Collagen delivers 10,000 mg of Type I hydrolysed marine collagen, clinically shown to support the body’s natural collagen matrix. Once ingested, these bioactive collagen peptides are efficiently absorbed into the bloodstream and transported to the deeper layers of the skin, where they help stimulate and boost the body’s own collagen synthesis.<\/p><p>This internal support system promotes skin rejuvenation from within — helping to restore firmness and elasticity, reduce the appearance of wrinkles, and reveal a smoother, more radiant complexion.<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_DTrdrU":{"type":"divider","disabled":true,"settings":{"show_line":true,"padding_bottom":0}},"product_accordion_PMFRX8":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"How To Use","heading_style":"font-heading","accordion_text":"<p>Simple. Consistent. Foundational.<br\/><strong>Take 1 sachet daily<\/strong><br\/><br\/>Mix with 200–250ml of cold water.<br\/>On an empty stomach or before your first meal for optimal microbiome support.*<br\/><br\/><strong>Stay consistent<\/strong><br\/>Designed for daily, long-term use to support healthy biological ageing.<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_tDa8RC":{"type":"divider","settings":{"show_line":true,"padding_bottom":0}},"product_accordion_KpdcJF":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"Key Ingredients","heading_style":"font-heading","accordion_text":"<p><strong>evaBiome™ EternaGen Polyphenol Complex:<\/strong><br\/>A next-generation, bio-fermented polyphenol system delivering:<br\/><\/p><ul><li>Bioavailable polyphenols<\/li><li>Antioxidants<\/li><li>Postbiotic metabolites<\/li><\/ul><p>Designed to support gut, immune, and brain vitality through advanced fermentation and biomolecular optimisation.<br\/><br\/><strong>Blue Zone Probiotic Complex:<\/strong><br\/>A clinically researched probiotic blend delivering:<br\/><\/p><ul><li>60 billion live probiotics<\/li><li>10 billion postbiotics per serve<\/li><\/ul><p>Featuring strains shown to support microbial balance, gut-barrier integrity, and inflammatory regulation.<br\/><br\/><strong>Triple-Biotic Synergy (Pre • Pro • Post):<\/strong><br\/>A complete system designed to:<br\/><\/p><ul><li>Nourish beneficial bacteria<\/li><li>Restore microbiome diversity<\/li><\/ul><p>Strengthen gut-barrier function\u2028<br\/><br\/><\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_NiLTG8":{"type":"divider","settings":{"show_line":true,"padding_bottom":10}},"product_accordion_6PjTye":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"Benefits","heading_style":"font-heading","accordion_text":"<p>1. Supports a Healthy Inflammatory Response*<br\/>Chronic low-grade inflammation is a key biological stressor linked to ageing. Longevity supports normal inflammatory regulation through microbiome restoration and bio-fermented antioxidant activity.*<br\/><br\/>2. Supports Gut–Brain–Immune Balance<br\/>The gut influences immune signaling, cognitive clarity, and systemic resilience. A triple-biotic approach (pre • pro • post) helps restore microbial diversity and gut-barrier integrity.*<br\/><br\/>3. Supports Cognitive Clarity & Resilience*<br\/>Postbiotic metabolites and polyphenols help support antioxidant activity in the brain, contributing to mental clarity and learning performance.*<br\/><br\/>4. Supports Cellular Defence & Mitochondrial Energy*<br\/>Bioavailable polyphenols and postbiotics help neutralise free radicals and support normal cellular energy production.*<br\/><br\/>5. Supports Long-Term Vitality<br\/>Designed for consistent daily use to support resilience, energy, and healthy biological ageing over t<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_JHYrTm":{"type":"divider","settings":{"show_line":true,"padding_bottom":10}},"product_accordion_U7V4Mx":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"What to Expect","heading_style":"font-heading","accordion_text":"<p>Microbiome shifts begin. Digestive balance and inflammatory regulation support starts at the gut level.*<br\/><br\/><strong>Weeks 3–6<\/strong><br\/>Cellular antioxidant activity and resilience pathways strengthen.*<br\/><br\/><strong>Ongoing<\/strong><br\/>Supports sustained clarity, vitality, and healthy inflammatory response as part of your daily routine.*<\/p>","accordion_liquid":"","accordion_page":"","padding_bottom":0}},"divider_UqbMgY":{"type":"divider","settings":{"show_line":true,"padding_bottom":10}},"testimonials_MXPwbJ":{"type":"testimonials","disabled":true,"settings":{"reviews_text":"I have been using this product for 3 months and I have to say it's completely blown me away. I have used many collagens over the years but have never had results like these. My skin is glowing - I get so many compliments from friends and family (my daughter even saying I looked younger last week) and the hair growth has been incredible. I cannot recommend this product highly enough - WELL DONE CALMERCEUTICALS, I'll be a customer for life! || Isabella\n\nI’ve been taking these for 4 weeks now and was impressed enough after two weeks to get a subscription. They taste great, are SO convenient to take (I grab one on my way out the door for the morning school run and have it in the car), and there are noticeable differences in my hair, nails, and the finer lines around my eyes already. I’m looking forward to seeing how things continue to progress over the next couple of months. || Ally\n\nSince I have been using this amazing product I feel and look so amazing. My skin is flawless and my hair has grown and become so much stronger with my nails growing at. Rapid pace even though I have acrylic shellac nails my natural nails are growing so much. Overall I feel 37 not 57 years old and I feel so much more energy too. I just am so grateful that I stumbled upon this natural collagen product thank you xxxx || Annamária","review_anchor_id":"rv-section__grid-column"}},"testimonials_v2_zwQDfw":{"type":"testimonials_v2","settings":{"reviews_text":"About three weeks in and I genuinely feel more energised during the day. I originally bought this for inflammation support but the steady energy has been the biggest surprise. \n\nI’m really impressed with this formula. My body just feels better overall - less stiffness in the morning and better recovery after workouts - another great product Calmerceuticals.\n\nI’ve been focusing on longevity and health recently and this product was recommended to me. I could feel it by about day 8 - a lot less bloated and like my body had let go of a lot of fluid. Love the ingredients and the science behind it.","review_anchor_id":"rv-section__grid-column"}},"divider_CkftgQ":{"type":"divider","settings":{"show_line":false,"padding_bottom":16}},"text_Gdh4VU":{"type":"text","disabled":true,"settings":{"title":"<h6><em>*Statements refer to ingredient research. Individual results may vary.<\/em><\/h6>","text_alignment":"center","padding_bottom":0}}},"block_order":["divider_twPkfy","custom_code_cFfqcH","title","text_VrgJkk","text_WVMFyQ","custom_code_yJBYRC","icon_row_RfdBbM","custom_code_ERJNqb","custom_code_kweQfj","form","trust_icons_UxH6mi","custom_code_P4zYHw","product_accordion_dDignk","divider_tR8fPG","product_accordion_jiBCAJ","divider_DTrdrU","product_accordion_PMFRX8","divider_tDa8RC","product_accordion_KpdcJF","divider_NiLTG8","product_accordion_6PjTye","divider_JHYrTm","product_accordion_U7V4Mx","divider_UqbMgY","testimonials_MXPwbJ","testimonials_v2_zwQDfw","divider_CkftgQ","text_Gdh4VU"],"custom_css":[".sldr-label-img-container img {aspect-ratio: 2 \/ 1.2;}",".sldr-content-mobile-reverse {width: 100%;}",".twelve-weeks-card .program-name {display: none;}"],"settings":{"product_sticky_enable":true,"addtocart_sticky_enable":true,"sticky_bg_color":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","sticky_text_color":"#ffffff","image_layout":"carousel","image_width":"standard","product_image_aspect_ratio":true,"enable_zoom":false,"enable_video_looping":false,"color_scheme":"","width":"wrapper","padding_top":50,"padding_bottom":80}},"benefits_icons_row_Q69HPF":{"type":"benefits-icons-row","blocks":{"benefit_item_VMrRMK":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/1.png","description":"<p>Brain antioxidant <br\/>protection increased by <br\/><strong>up to 67%<\/strong><\/p>"}},"benefit_item_RdhARa":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/2_86d6c8ed-baa8-46eb-9ba6-9186418df1b3.png","description":"<p>Cellular stress markers <br\/>reduced by <br\/><strong>approximately 40%<\/strong><\/p>"}},"benefit_item_3cC3WN":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/3_e1fbfc71-e76d-4b93-a4ed-025d66d948b8.png","description":"<p>Learning and memory <br\/>performance improved <br\/>by <strong>over 80%<\/strong><\/p>"}},"benefit_item_HRJYwE":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/4_f603da6f-fd2e-4f3e-a0ac-c5b88e9268b7.png","description":"<p>Inflammatory markers <br\/>improved by up to <br\/><strong>90% within 2 weeks<\/strong><\/p>"}},"benefit_item_b7TGQG":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/5_c2898233-44ca-4be1-b162-05af2564bfaa.png","description":"<p>Neuronal resilience and <br\/>cell survival increased <strong>by <br\/>nearly 60%<\/strong><\/p>"}},"benefit_item_7UhjgG":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/6_1ae1b05d-ada8-4c2d-8211-0f8e15dc9a25.png","description":"<p>Short-chain fatty acids <br\/>increased by <br\/><strong>up to 2x<\/strong><\/p>"}},"benefit_item_66jcdQ":{"type":"benefit_item","settings":{"icon":"shopify:\/\/shop_images\/7_36f46a16-428f-40d6-9ff7-087140cc60b3.png","description":"<p>Beneficial gut bacteria <br\/>and short-chain <strong>fatty <br\/>acids increased<\/strong><\/p>"}}},"block_order":["benefit_item_VMrRMK","benefit_item_RdhARa","benefit_item_3cC3WN","benefit_item_HRJYwE","benefit_item_b7TGQG","benefit_item_7UhjgG","benefit_item_66jcdQ"],"name":"Benefits Icons Row","settings":{"padding_top":40,"padding_bottom":44,"container_width":true,"background_color":"#f9f9fb","text_color":"#2d3748","font_size":13,"disclaimer":"<p>Evidence-driven formulation Published research on the hero ingredient complex show.<\/p>"}},"hero_rewrite_age_F6bXmt":{"type":"hero-rewrite-age","blocks":{"stat_WTm69a":{"type":"stat","settings":{"number":"–90%","label":"INFLAMMATORY AGE REDUCTION"}},"stat_4Hkcba":{"type":"stat","settings":{"number":"14","label":"DAY CLINICAL WINDOW"}},"stat_DYxHbc":{"type":"stat","settings":{"number":"+84%","label":"COGNITIVE PERFORMANCE"}}},"block_order":["stat_WTm69a","stat_4Hkcba","stat_DYxHbc"],"name":"Hero – Rewrite Your Age","settings":{"padding_top":80,"padding_bottom":80,"container_width":true,"background_color":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","eyebrow_color":"#f7f9ee","heading_color":"#ffffff","subheading_color":"#ff961b","body_color":"#f7f9ee","stat_number_color":"#f0e8e8","stat_label_color":"#b09298","button_border_color":"#ffffff","button_text_color":"#000000","eyebrow":"Precision Longevity System","divider":false,"heading":"<h2>Rewrite<br\/>Your <strong>Age.<\/strong><\/h2>","subheading":"World's First","body_text":"<p>The world's first microbiome catalyst clinically shown to reduce biological inflammageing markers by up to 90% within 14 days*. Engineered from centenarian-sourced probiotics.<\/p>","disclaimer":"<p>*Studies conducted on the ingredient complex; not on Calmerceuticals Longevity as a finished product. Individual results may vary.<\/p>","button_label":"START YOUR 14-DAY REJUVENATION","button_link":"#product__subs__wrap-main","product_image":"shopify:\/\/shop_images\/image-hero-2.png","product_label":""}},"featured_quote_3BLBfp":{"type":"featured-quote","name":"Featured In – Quote","settings":{"padding_top":32,"padding_bottom":76,"background_color":"#ffffff","eyebrow_color":"#0b0b0b","quote_image":"shopify:\/\/shop_images\/quote-icon.png","quote_mark_color":"#e0d8db","text_color":"#0b0b0b","eyebrow":"FEATURED IN","quote_text":"<p>Built around the mechanisms that shape how we age.<\/p>","font_size":32}},"logo_marquee_iitEU6":{"type":"logo-marquee","blocks":{"logo_kkrKTk":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-1.png"}},"logo_6pjAj3":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-2.png"}},"logo_Vim8ni":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-3.png"}},"logo_a8KMD4":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-4.png"}},"logo_WPHy9R":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-5.png"}},"logo_Uxk6LR":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-6.png"}},"logo_ar73ci":{"type":"logo","settings":{"logo_image":"shopify:\/\/shop_images\/marquee-7.png"}}},"block_order":["logo_kkrKTk","logo_6pjAj3","logo_Vim8ni","logo_a8KMD4","logo_WPHy9R","logo_Uxk6LR","logo_ar73ci"],"name":"Logo Marquee","settings":{"padding_top":16,"padding_bottom":28,"background_color":"#ffffff","border_color":"#000000","border_style":"none","border_top_width":0,"border_bottom_width":2,"logo_height":40,"logo_gap":20,"speed":25,"pause_on_hover":true}},"video_testimonial_slider_ALWhG7":{"type":"video-testimonial-slider","blocks":{"video_card_9whBE8":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4","quote":"After trying it once I was hooked","name":"Our founder Rose"}},"video_card_7VCmfR":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/Ultra UGC.webm","quote":"One Calmerceuticals is all you need","name":"Brigitte"}},"video_card_WfdyLh":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/Women and testosterone UGC.webm","quote":"Best Ever","name":"Claire"}},"video_card_ihqxJb":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/CC x VVV - Jan Reel 01 - 1080p for posting.webm","quote":"It quite literally has changed my life","name":"Victoria"}},"video_card_YdmVQK":{"type":"video_card","settings":{"video":"shopify:\/\/files\/videos\/1973acf6-8208-48c4-8af8-9ad99aaa353c.mp4","quote":"After trying it once I was hooked","name":"Sarah"}}},"block_order":["video_card_9whBE8","video_card_7VCmfR","video_card_WfdyLh","video_card_ihqxJb","video_card_YdmVQK"],"name":"Video Testimonials Slider","settings":{"padding_top":32,"padding_bottom":32,"container_width":true,"background_color":"#ffffff","heading_color":"#1a0d10","heading_brand_color":"#5c1a2e","heading_brand":"Calmerceuticals","heading_rest":"is loved by thousands","heading_size":40,"card_width":320,"card_gap":16,"card_radius":16,"quote_size":18,"name_size":13}},"image_cards_dHL8zh":{"type":"image-cards","blocks":{"image_card_68Q8Dt":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Repair_Slows.jpg","label":"<p>Repair<br\/>slows<\/p>"}},"image_card_VFBT3Y":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Metabolic_efficiency_drops.jpg","label":"<p>Metabolic <br\/>efficiency drops<\/p>"}},"image_card_RAHfXT":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Cognitive_clarity_declines.jpg","label":"<p>Cognitive clarity <br\/>declines<\/p>"}},"image_card_fAnMJh":{"type":"image_card","settings":{"image":"shopify:\/\/shop_images\/Ageing_accelerates.jpg","label":"<p>Ageing <br\/>accelerates<\/p>"}}},"block_order":["image_card_68Q8Dt","image_card_VFBT3Y","image_card_RAHfXT","image_card_fAnMJh"],"name":"Image Cards","settings":{"padding_top":90,"padding_bottom":90,"container_width":false,"background_color":"rgba(0,0,0,0)","heading_color":"#5c1a2e","subtext_color":"#323232","label_text_color":"#ffffff","button_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","button_text_color":"#ffffff","heading":"<p>When inflammation stays<br\/><strong>elevated<\/strong><\/p>","heading_size":48,"subtext":"<p>cellular repair declines, metabolic balance falters, and biological ageing accelerates<\/p>","button_label":"START YOUR REJUVENATION","mobile_button_label":"","button_link":"#product__subs__wrap-main","secondary_button_label":"","secondary_button_link":"","footnote":"Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.","text_alignment":false}},"result_grid_YDKnCh":{"type":"result-grid","name":"Real Results Grid","settings":{"container_width":false,"padding_top":0,"padding_bottom":60,"section_bg":"#dde3f0","heading_color":"#610c27","row1_heading":"<p><strong>Real results<\/strong> you<br\/>can see and feel.<\/p>","heading_size":64,"row1_image":"shopify:\/\/shop_images\/longevity-result-grid-image__1_-removebg-preview.png","row2_left_bg":"#F0F0F0","stat_number_color":"#5c1a2e","stat_label_color":"#545454","stat_number_size":96,"stat1_number":"80%","stat1_label":"Improvement in learning and memory performance","stat2_number":"2 weeks","stat2_label":"Within 2 weeks, inflammatory markers improved by up to 90%","quote_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","quote_radius":8,"quote_heading_color":"#ffffff","quote_heading":"<p>Ageing isn't driven by time. <br\/>It's driven by biology <br\/><strong>under stress.<\/strong><\/p>","quote_heading_size":48,"quote_body_color":"#ffffff","quote_body":"<p>Inflammageing is the insidious low-grade chronic inflammation that silently accelerates biological decay, disrupts mitochondria, weakens your gut barrier, and triggers systemic immune dysfunction long before symptoms appear.<\/p><p>Traditional supplements address surface symptoms; Longevity intervenes at the source: the gut-brain-immune axis, where biological ageing is decided.<\/p>","row3_image":"shopify:\/\/shop_images\/short-chain.png","row3_overlay_color":"linear-gradient(135deg, rgba(90, 80, 100, 0.55), rgba(30, 20, 35, 0.35) 100%)","row3_text":"<p>Short-chain fatty acids<br\/>increased by up to <strong>2x<\/strong><\/p>","row3_text_size":48,"row3_text_color":"#ffffff","row3_right_bg":"#f2f0ee","stat3_number":"67%","stat3_label":"boost in brain antioxidant protection"}},"support_level_DJVUmF":{"type":"support-level","name":"Support at Every Level","settings":{"padding_top":64,"padding_bottom":0,"container_width":true,"background_color":"rgba(0,0,0,0)","heading_color":"#1a0d10","body_color":"#323232","heading":"<p>Support at<br\/><strong>Every Level<\/strong><\/p>","heading_size":64,"button_label":"START YOUR REJUVENATION","mobile_button_label":"","button_link":"#product__subs__wrap-main","button_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","button_text_color":"#ffffff","secondary_button_label":"START YOUR REJUVENATION","mobile_secondary_button_label":"","secondary_button_link":"","secondary_button_bg":"#fff","secondary_button_text_color":"#000000","secondary_btn_border_color":"#000000","body_text":"<p>Longevity is systemic. When the core biological pathways that govern energy, inflammation, and repair are supported consistently, resilience strengthens over time<\/p>","body_size":20,"card_bg":"#ffffff","card_radius":34,"card_text":"Longevity is built through consistency, not intensity.","card_text_size":20,"card_text_color":"#2a1a1e"}},"image_feature_cards_RaFKtx":{"type":"image-feature-cards","blocks":{"card_EtwJpN":{"type":"card","settings":{"heading":"<p>Gut<br\/>Balance<\/p>","body":"<p>Supports microbiome diversity and strengthens gut barrier integrity, a foundation for immune and metabolic health.<\/p>"}},"card_DaXi3K":{"type":"card","settings":{"heading":"<p>Cellular<br>Energy<\/p>","body":"<p>Postbiotics and polyphenols support healthy mitochondrial function and sustained cellular energy production.<\/p>"}},"card_gVaknd":{"type":"card","settings":{"heading":"<p>Oxidative<br>Defence<\/p>","body":"<p>Antioxidants help protect cells from daily oxidative stress, supporting long-term cellular resilience.<\/p>"}},"card_mEKLRm":{"type":"card","settings":{"heading":"<p>Vitality &amp;<br>Resilience<\/p>","body":"<p>Supports clarity, sustained energy, and the biological systems linked to healthy ageing.<\/p>"}}},"block_order":["card_EtwJpN","card_DaXi3K","card_gVaknd","card_mEKLRm"],"name":"Image Feature Cards","settings":{"padding_top":0,"padding_bottom":36,"bg_image":"shopify:\/\/shop_images\/image-feature-card-image.png","image_height":600,"image_position":"center center","use_custom_card_bg":false,"card_background":"#ffffff","card_bg_opacity":80,"card_gap":10,"card_radius":12,"card_heading_size":36,"card_body_color":"#1d1d1d","card_body_size":20,"card_text_center":false,"card_box_shadow":"-8px -8px 16px rgba(255,255,255,0.4), 8px 8px 16px rgba(0,0,0,0.15)","card_backdrop_blur":true,"card_blur_amount":10,"use_heading_gradient":true,"card_heading_color":"#6a0927","card_heading_gradient_start":"#6a0927","card_heading_gradient_end":"#d0114d"}},"ingredients_transparency_WJtFTL":{"type":"ingredients-transparency","blocks":{"ingredient_eWgCpP":{"type":"ingredient","settings":{"name":"Akkermansia muciniphila","source":"Centenarian-sourced · Okinawa","code":"LTL1361"}},"ingredient_6NxcGm":{"type":"ingredient","settings":{"name":"Lactobacillus longevitas","source":"Biofermented · Guangxi","code":"LB-72"}},"ingredient_3G4a7E":{"type":"ingredient","settings":{"name":"Faecalibacterium prausnitzii","source":"Centenarian-sourced · Sardinia","code":"FP-106"}},"ingredient_LptHBi":{"type":"ingredient","settings":{"name":"Urolithin A","source":"Pomegranate ellagitannins","code":"UA-P1"}},"ingredient_6RxyVM":{"type":"ingredient","settings":{"name":"Oleuropein Complex","source":"Cold-pressed olive leaf","code":"OL-Phyto"}},"ingredient_PMXcfY":{"type":"ingredient","settings":{"name":"EGCG (Green Tea)","source":"Standardised extract","code":"GT-866"}}},"block_order":["ingredient_eWgCpP","ingredient_6NxcGm","ingredient_3G4a7E","ingredient_LptHBi","ingredient_6RxyVM","ingredient_PMXcfY"],"name":"Ingredients Transparency","settings":{"padding_top":32,"padding_bottom":0,"container_width":true,"background_color":"rgba(0,0,0,0)","eyebrow_color":"#610c27","eyebrow":"Radical Transparency","heading_color":"#3a3d38","heading":"<p>Simple ingredients,<br\/><strong>powerful results.<\/strong><\/p>","heading_size":64,"body_color":"#545454","body_text":"<p>We believe you deserve to see the exact strains, doses, and clinical trial matches behind every sachet. No proprietary blends. No hiding behind \"complexes.\"<\/p>","body_size":18,"product_image":"shopify:\/\/shop_images\/3_x_4_Image.png","image_radius":12,"list_label":"Active Ingredients","badge_bg_color":"#d4dccf","label_color":"#000000","label_border_color":"rgba(0,0,0,0)","ingredient_name_color":"#333333","use_custom_tag_bg":false,"tag_bg_color":"#7a8c6e","tag_bg_opacity":15,"tag_text_color":"#000000","ingredient_name_size":18,"ingredient_source_font":"Space Mono","ingredient_source_font_weight":"100","ingredient_source_color":"#333333","ingredient_source_size":12,"ingredient_code_size":11,"divider_color":"#dedede","bottom_text_color":"#545454","button_label":"START YOUR REJUVENATION","mobile_button_label":"","button_link":"#product__subs__wrap-main","button_bg":"radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)","button_text_color":"#ffffff","bottom_text":""}},"three_columns_KAFYB4":{"type":"three-columns","blocks":{"step_JRDVwP":{"type":"step","settings":{"icon_image":"shopify:\/\/shop_images\/three-col-1.png","title":"Nourish","number":"01","body":"<p>Biofermented polyphenols from olives, tea, and cocoa create the precise gut environment for centenarian strains to thrive and proliferate.<\/p>"}},"step_aULgWV":{"type":"step","settings":{"icon_image":"shopify:\/\/shop_images\/three-col-2.png","title":"Replenish","number":"02","body":"<p>Centenarian-sourced strains—Akkermansia, Lactobacillus longevitas, and Faecalibacterium—delivered via ViaCap™ to ensure 95% colon survivability.<\/p>"}},"step_VgUdxX":{"type":"step","settings":{"icon_image":"shopify:\/\/shop_images\/three-col-3.png","title":"Repair","number":"03","body":"<p>Fermentation-derived metabolites including short-chain fatty acids and urolithins reinforce the gut barrier and trigger mitophagy for cellular renewal.<\/p>"}}},"block_order":["step_JRDVwP","step_aULgWV","step_VgUdxX"],"name":"Three Column Steps","settings":{"padding_top":40,"padding_bottom":48,"container_width":true,"col_gap":56,"background_color":"#ffffff","title_color":"#333333","title_size":18,"number_color":"#333333","number_size":18,"body_color":"#545454","body_size":14}},"reviews_grid_PGLA68":{"type":"reviews-grid","blocks":{"review_KEBrTU":{"type":"review","settings":{"stars":5,"quote":"<p>“About three weeks in and I genuinely feel more energised during the day. I originally bought this for inflammation support but the steady energy has been the biggest surprise.”<\/p>","name":""}},"review_MxGFb8":{"type":"review","settings":{"stars":5,"quote":"<p>“I’m really impressed with this formula. My body just feels better overall - less stiffness in the morning and better recovery after workouts - another great product Calmerceuticals ”<\/p>","name":""}},"review_4FddhG":{"type":"review","settings":{"stars":5,"quote":"<p>“I’ve been focusing on longevity and health recently and this product was recommended to me. I could feel it by about day 8 - a lot less bloated and like my body had let go of a lot of fluid. Love the ingredients and the science behind it.”<\/p>","name":""}}},"block_order":["review_KEBrTU","review_MxGFb8","review_4FddhG"],"name":"Reviews Grid","settings":{"padding_top":60,"padding_bottom":60,"container_width":true,"background_color":"#ffffff","heading_main":"1,450 verified","heading_accent":"5 star reviews","heading_main_color":"#610c27","heading_accent_color":"#ff961b","heading_size":40,"button_label":"All reviews","button_link":"","button_text_color":"#1a0d10","button_border_color":"#7a2040","button_size":13,"card_bg":"#f7f9ee","card_border_color":"#f7f9ee","card_radius":12,"card_padding":28,"card_gap":16,"star_color":"#7a2040","star_empty_color":"#7a2040","star_size":18,"quote_color":"#212121","quote_size":20,"name_color":"#212121","name_size":14}},"timeline_roadmap_XHbRwp":{"type":"timeline-roadmap","blocks":{"step_UBqwgL":{"type":"step","settings":{"time_label":"HOUR 8","title":"ViaCap™ Absorption","body":"<p>Micro-encapsulated probiotics bypass stomach acid and reach the colon intact. Initial colonization begins.<\/p>"}},"step_bKpErk":{"type":"step","settings":{"time_label":"DAY 2","title":"Mitophagy Activation","body":"<p>Postbiotic metabolites trigger cellular housekeeping. Damaged mitochondria are cleared and renewed.<\/p>"}},"step_zDYUzP":{"type":"step","settings":{"time_label":"DAY 14","title":"Biological Age Reversal","body":"<p>IL-6, CRP, and TNF-α markers reach clinical improvement thresholds. Gut barrier integrity restored.<\/p>"}},"step_YJKK93":{"type":"step","settings":{"time_label":"DAY 120","title":"Peak Physical Strength","body":"<p>Mitochondrial density at optimal levels. Energy biogenesis sustains performance throughout the day.<\/p>"}},"step_JmDmGm":{"type":"step","settings":{"time_label":"DAY 365","title":"Optimal Cellular Health","body":"<p>Microbiome diversity matches centenarian profiles. Systemic inflammageing markers sustained in optimal range.<\/p>"}}},"block_order":["step_UBqwgL","step_bKpErk","step_zDYUzP","step_YJKK93","step_JmDmGm"],"name":"Timeline Roadmap","settings":{"padding_top":120,"padding_bottom":56,"container_width":true,"background_color":"#f7f9ee","eyebrow_color":"#000000","heading_color":"#610c27","heading_size":48,"time_color":"#000000","time_size":10,"step_title_color":"#000000","step_title_size":18,"body_color":"#000000","body_size":12,"eyebrow":"The Rejuvenation Roadmap","heading":"<p>Biological transformation,<br\/>mapped to the hour.<\/p>"}},"magic_science_g69gE4":{"type":"magic-science","blocks":{"body_block_rANjpC":{"type":"body_block","disabled":true,"settings":{"bold_line":"Ageing is driven by a process called Inflammageing.","body_text":"<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.<\/p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".<\/p>"}},"accent_line_iqtpxw":{"type":"accent_line","settings":{"text":"Ageing is driven by a process called Inflammageing.","accordion_body":"<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.<\/p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".<\/p>"}},"accent_line_tbrUgJ":{"type":"accent_line","settings":{"text":"Ageing cells suffer from Mitochondrial Decay.","accordion_body":"<p>As these \"cellular batteries\" wear out, they stop producing energy and start producing \"cellular rust\" (oxidative stress). This decay is the primary reason your \"Health Span\" feels shorter than your actual years, leading to a body that performs below its potential.<\/p>"}},"accent_line_Ffkf68":{"type":"accent_line","settings":{"text":"Persistent low energy is a byproduct of Metabolic Ageing.","accordion_body":"<p>A \"metabolically old\" system accumulates specific markers like BCAAs and Lysine, which are linked to systemic resistance and inflammation. By lowering these metabolic signatures and doubling your production of Short-Chain Fatty Acids (SCFAs), we provide the clean cellular fuel required for the sustained vitality of a younger body.<\/p>"}}},"block_order":["body_block_rANjpC","accent_line_iqtpxw","accent_line_tbrUgJ","accent_line_Ffkf68"],"name":"Magic Science","settings":{"padding_top":32,"padding_bottom":32,"container_width":true,"background_color":"#f0ede8","heading_color":"#1a0d10","body_dark_color":"#1a0d10","body_light_color":"#4a3a3e","accent_color":"#7a2040","divider_color":"#ccceb7","heading_size":64,"product_image":"shopify:\/\/shop_images\/3e41f3695f81088d104e3626a6b6a1927f045bfa.jpg","image_radius":12,"heading":"<p>It's not magic,<br\/>It's science<\/p>"}},"available_flavors_z3EFe3":{"type":"available-flavors","blocks":{"flavour_card_DAhHJF":{"type":"flavour_card","settings":{"image":"shopify:\/\/shop_images\/S1.png","label":"Watermelon Crush"}},"flavour_card_bCfT7B":{"type":"flavour_card","settings":{"image":"shopify:\/\/shop_images\/S1_1.png","label":"Pink Lemonade"}}},"block_order":["flavour_card_DAhHJF","flavour_card_bCfT7B"],"name":"Available Flavours","settings":{"padding_top":32,"padding_bottom":32,"container_width":true,"background_color":"#f0ede8","heading_color":"#610c27","label_color":"#ffffff","heading_size":48,"label_size":36,"card_radius":12,"card_gap":16,"heading":"Available Flavours"}},"video_list_3_QQRMF9":{"type":"video-list-3","blocks":{"video_block_4RywEP":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_rzdqdB":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_yzGVwc":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_46HexU":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}},"video_block_QFbYUp":{"type":"video_block","settings":{"video":"shopify:\/\/files\/videos\/c44a1997-5956-4e67-877a-7e1ecab86ecd.mp4","caption_quote":"","caption_name":""}}},"block_order":["video_block_4RywEP","video_block_rzdqdB","video_block_yzGVwc","video_block_46HexU","video_block_QFbYUp"],"disabled":true,"name":"Video list #3","settings":{"title":"Calmerceuticalsis loved by thousands","heading_size":120,"layout_desktop":"carousel","autoplay":false,"align_text":"text-left","columns":4,"show_borders":false,"layout_mobile":"carousel","columns_mobile":"2","equalize_height":true,"desktop_aspect_ratio":0.8,"mobile_aspect_ratio":0.8,"color_scheme":"","color_borders":"#000000","width":"wrapper","padding_top":60,"padding_bottom":60}},"faq_section_j69Y9r":{"type":"faq-section","blocks":{"faq_item_TjaCz9":{"type":"faq_item","settings":{"question":"How can a formula change my \"biological age\" in just 14 days?","answer":"<p>We don't just \"support\" wellness; we modulate clinical biomarkers. Calmerceuticals Longevity™ is clinically shown to reduce major inflammatory markers—specifically IL-6, CRP, and TNF-α—by up to 90% within a 14-day window. By lowering these signatures, your system shifts from a state of \"defense\" to a state of \"repair,\" effectively resetting your biological clock.<\/p>"}},"faq_item_CQtL6Y":{"type":"faq_item","settings":{"question":"Why are your probiotics \"Centenarian-Sourced\"?","answer":"<p>Our strains are isolated from the gut microbiomes of verified centenarians in longevity hotspots. These organisms have co-evolved with human longevity biology in ways that commercially farmed strains simply cannot replicate.<\/p>"}},"faq_item_bJxebn":{"type":"faq_item","settings":{"question":"Will I have to take this forever to keep the results?","answer":"<p>Biological resilience compounds over time. Most users see sustained improvement after 90 days of consistent use, with measurable changes to microbiome diversity that persist well beyond supplementation.<\/p>"}},"faq_item_cqwVpR":{"type":"faq_item","settings":{"question":"What makes your \"ViaCap\" technology different from a standard capsule?","answer":"<p>Standard capsules dissolve in stomach acid, destroying up to 99% of probiotics before they reach the colon. ViaCap™ micro-encapsulation ensures 95% survivability to the target site.<\/p>"}},"faq_item_DF9wn9":{"type":"faq_item","settings":{"question":"Is it safe to use with other supplements or medications?","answer":"<p>Longevity™ is formulated with clinically researched ingredients at safe, effective doses. We always recommend consulting your healthcare provider if you are on prescription medications.<\/p>"}}},"block_order":["faq_item_TjaCz9","faq_item_CQtL6Y","faq_item_bJxebn","faq_item_cqwVpR","faq_item_DF9wn9"],"name":"FAQ Section","settings":{"padding_top":64,"padding_bottom":64,"container_width":true,"background_color":"#f7f9ee","heading_color":"#1a0d10","body_color":"#4a3a3e","active_border_color":"#7a1a30","divider_color":"#d8d0cc","question_color":"#1a0d10","answer_color":"#4a3a3e","icon_color":"#1a0d10","icon_border_color":"#c8b8bc","heading_size":40,"body_size":16,"question_size":16,"answer_size":16,"heading":"<p>You probably have some questions<\/p>","body_text":"<p>Check out our FAQs to find answers to common questions and feel free to reach out if you have more.<\/p>","button_label":"All FAQs","button_link":"\/pages\/faq","button_bg":"#6B0027","button_text_color":"#ffffff"}},"images_marquee_PDJF6R":{"type":"images-marquee","blocks":{"image_gCBL9b":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center.png"}},"image_xfKT4y":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/calmerceuticals-pilot-using-collagen_webp.png"}},"image_pBbV9j":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-1.png"}},"image_UpMe7h":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-2.png"}},"image_tNMAcN":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-3.png"}},"image_HdcchX":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-4.png"}},"image_GRjJA6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Container_align-center-5.png"}}},"block_order":["image_gCBL9b","image_xfKT4y","image_pBbV9j","image_UpMe7h","image_tNMAcN","image_HdcchX","image_GRjJA6"],"disabled":true,"name":"Image Marquee","settings":{"padding_top":0,"padding_bottom":60,"background_color":"#ffffff","image_height":240,"image_ratio":"3 \/ 4","image_gap":10,"image_radius":8,"speed":40,"pause_on_hover":true}},"section_marquee_pep6NQ":{"type":"section-marquee","blocks":{"image_xNek33":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.45.51_PM.png","link":"","image_width":180}},"image_dLbtUF":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/calmerceuticals-pilot-using-collagen.webp","link":"","image_width":180}},"image_UTQYRe":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ugc-calmerceuticals.webp","link":"","image_width":180}},"image_e8yKtk":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/CC_SNEAKP_WEB-3.jpg","link":"","image_width":180}},"image_DmiJ7D":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.49.32_PM.png","link":"","image_width":180}},"image_dU9h6i":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/perimenopause-georgia.jpg","link":"","image_width":180}},"image_HDbjgd":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-07-09_at_6.03.25_PM.png","link":"","image_width":180}},"image_QjY6pr":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_12.50.46_PM.png","link":"","image_width":170}},"image_WyTxLh":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_1.28.07_PM.png","link":"","image_width":180}},"image_6gtPdt":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-02-28_at_4.37.00_PM.png","link":"","image_width":170}}},"block_order":["image_xNek33","image_dLbtUF","image_UTQYRe","image_e8yKtk","image_DmiJ7D","image_dU9h6i","image_HDbjgd","image_QjY6pr","image_WyTxLh","image_6gtPdt"],"settings":{"container_width":false,"layout":"marquee","show_top_border":false,"show_bottom_border":false,"padding":10,"marquee_speed":100,"direction":"ticker-ltr","slider_speed":10,"show_arrows":false,"text_caps":false,"type_font":"space_mono_n4","text_size":120,"text_size_mobile":80,"letter_spacing":0,"message_spacing":10,"color_scheme":"scheme-1","color":"#000000","border_color":"#000000","padding_top":60,"padding_bottom":70}},"hero_cta_tix9q4":{"type":"hero-cta","name":"Hero CTA with Image","settings":{"padding_top":80,"padding_bottom":80,"container_width":true,"background_color":"#6b0027","eyebrow":"Recommended plan","eyebrow_color":"#f7f9ee","eyebrow_size":16,"heading":"Balance your nights with better mornings","heading_color":"#ffffff","heading_size":40,"body_text":"<p>Bio-fermentation enhances nutrient bioavailability and functional activity in the gut.<\/p><p>Advanced biomanufacturing improves delivery, stability, and efficacy – so the body can actually use what you take.<\/p><p><br\/>This is proactive ageing support, not damage control.<\/p>","body_color":"#f7f9ee","body_size":16,"tagline":"","tagline_color":"#ffffff","tagline_size":16,"button_label":"12 Week Performance Reset","button_link":"https:\/\/calmerceuticals.com\/products\/microbiome-first-longevity-support#product__subs__wrap-main","button_text_color":"#000000","button_border_color":"#ffffff","button_bg":"#fff","button_size":16,"image":"shopify:\/\/shop_images\/hero-cta-image.png","image_ratio":"16 \/ 9","image_radius":12,"image_gap":40,"show_placeholder":true}},"custom_addtocart_banner_HPLjjT":{"type":"custom-addtocart-banner","disabled":true,"custom_css":["@media (max-width: 767px) {.custom-addtocart-banner__media img {height: 280px; object-fit: cover; }}"],"name":"Custom Addtocart Banner","settings":{"image":"shopify:\/\/shop_images\/Mask_group_7_299249b9-64b7-45c7-a404-1f403f6de8d4.png","image_mobile":"shopify:\/\/shop_images\/Mask_group_8_e970f9a9-0022-448a-8383-35a25d9fa8ea.png","price_badge":"<h3>12 Week <br\/>Programme <br\/><strong>$599.97<\/strong><\/h3>","badge_bg":"linear-gradient(180deg, rgba(35, 52, 111, 1), rgba(11, 23, 65, 1) 100%)","heading":"<h2><strong>CLEAN FORMULATION<br\/> PROMISE<\/strong><\/h2>","description":"<ul><li>Clinically researched ingredient complexes<\/li><li>No fillers<\/li><li>No underdosing<\/li><li>Designed as a system, not a single solution<\/li><\/ul>","product":"microbiome-first-longevity-support","selling_plan_id":"4602888285","button_label":"ADD TO CART","color_scheme":"scheme-f93e8e9e-e109-4770-ac17-6598613b7403","padding_top":0,"padding_bottom":0}},"section_custom_html_HwzF4g":{"type":"section-custom-html","disabled":true,"name":"Custom code","settings":{"custom_code":"<!-- Start of Judge.me code --> \n<div style='clear:both'><\/div> \n<div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}' data-product-title='{{ product.title | escape }}'> \n    {{ product.metafields.judgeme.widget }} \n<\/div> \n<!-- End of Judge.me code -->","width":"wrapper","padding_top":0,"padding_bottom":30}},"related":{"type":"related-products","blocks":{"related":{"type":"related","settings":{"title":"You May Also Like","product_recommendations_limit":4}},"recent":{"type":"recent","settings":{"title":"Recently viewed","product_recently_limit":4}}},"block_order":["related","recent"],"disabled":true,"settings":{"enable_tabs":true,"layout":"grid","columns_mobile":"2","type_style":"subheading-text","tab_heading_size":130,"color_scheme":"","width":"wrapper--full-padded","padding_top":60,"padding_bottom":60}}},"order":["main","benefits_icons_row_Q69HPF","hero_rewrite_age_F6bXmt","featured_quote_3BLBfp","logo_marquee_iitEU6","video_testimonial_slider_ALWhG7","image_cards_dHL8zh","result_grid_YDKnCh","support_level_DJVUmF","image_feature_cards_RaFKtx","ingredients_transparency_WJtFTL","three_columns_KAFYB4","reviews_grid_PGLA68","timeline_roadmap_XHbRwp","magic_science_g69gE4","available_flavors_z3EFe3","video_list_3_QQRMF9","faq_section_j69Y9r","images_marquee_PDJF6R","section_marquee_pep6NQ","hero_cta_tix9q4","custom_addtocart_banner_HPLjjT","section_custom_html_HwzF4g","related"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-new-3",
+      "blocks": {
+        "divider_twPkfy": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 0
+          }
+        },
+        "custom_code_cFfqcH": {
+          "type": "custom_code",
+          "settings": {
+            "custom_code": "<div class=\"star-ratings\">\n<!-- Start of Judge.me code --> \n<div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> \n    {{ product.metafields.judgeme.badge }}  {% if product.metafields.judgeme.badge %} | {% endif %} \n</div> \n<!-- End of Judge.me code -->\n<div class=\"trusted-badge-text\"><small>Trusted by 10K+ customers | 14 Servings</small></div>\n</div>\n<style>\n.star-ratings{display:flex;align-items:center;gap:10px;}\n.jdgm-prev-badge__text{font-size:12px;font-weight:700;}\n.star-ratings .trusted-badge{line-height:12px;}\n</style>",
+            "padding_bottom": 10
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_price": false,
+            "subheading": "none",
+            "title_size": 130,
+            "price_size": 100,
+            "bold_price": true,
+            "padding_bottom": 10
+          }
+        },
+        "text_VrgJkk": {
+          "type": "text",
+          "settings": {
+            "title": "<p>Longevity is a precision-engineered formula designed to support the gut-brain-immune axis, the core biological network that drives inflammation, cognition, energy, and ageing.</p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "custom_code_kweQfj": {
+          "type": "custom_code",
+          "settings": {
+            "custom_code": "<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  /* DM Sans applied via CSS */\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n</style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http://www.w3.org/2000/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"/>\n  </g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n  </g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  </text>\n\n</svg>",
+            "padding_bottom": 20
+          }
+        },
+        "product_video_Q9pkfy": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 1 v2_4751d58a-d975-49e0-9e27-2abff6f97548.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_MyTeHx": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 2 v2_9bcac791-726d-480b-ae4d-d7d5c35494cf.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_VLp4Ef": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 3 v2_fbd17711-bddb-4936-9d63-95cd1a518dbe.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_yiHdxU": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 4_3f4fcda4-1edc-4406-8f29-acee995cbad0.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_iJDHbF": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 5_18249e3d-1fcd-4ffb-b972-fa36aa3f7312.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_qFXn49": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 6_976dcef5-9bc9-4f65-b4e2-98bc5435522b.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_i4eEJF": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 7_86149506-b7d8-49f3-b81c-fd74f95d06c2.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_wtXpfz": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 8_b4c6cffc-392d-4236-830b-73b1e9848889.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_price": false,
+            "enable_payment_terms": false,
+            "show_labels": true,
+            "show_quantity": false,
+            "show_payment_button": false,
+            "enable_subscriptions_selectors": true,
+            "subscriptions_cards_style": "stack",
+            "padding_bottom": 0
+          }
+        },
+        "trust_icons_UxH6mi": {
+          "type": "trust_icons",
+          "settings": {
+            "icon_img_1": "shopify://shop_images/free-ship.png",
+            "text_1": "Free express shipping",
+            "icon_img_2": "shopify://shop_images/money-back.png",
+            "text_2": "100% money back guarantee",
+            "icon_img_3": "shopify://shop_images/ingredients.png",
+            "text_3": "Clinically trialled ingredients",
+            "icon_color": "#212121",
+            "icon_size": 16,
+            "font_size": 14,
+            "padding_bottom": 16
+          }
+        },
+        "product_accordion_dDignk": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Description",
+            "heading_style": "font-heading",
+            "accordion_text": "<p><strong>Microbiome-First Longevity Support:</strong><br/><br/>Calmerceuticals® Longevity is a clinically engineered, bio-fermented triple-biotic system designed to support healthy biological ageing at its source.<br/>Rather than chasing surface-level outcomes, Longevity targets one of the core drivers of accelerated ageing: chronic low-grade inflammation linked to microbiome imbalance.<br/>At the centre of the formula is <strong>evaBiome™ EternaGen Polyphenol Complex</strong>, a next-generation bio-fermented polyphenol system combined with a clinically researched Blue Zone probiotic complex delivering 60 billion live probiotics and 10 billion postbiotics per serve.<br/>Together, this precision-engineered system supports the gut–brain–immune axis — helping regulate inflammatory response, protect cognitive function, and strengthen cellular resilience.<br/>This is foundational longevity support.<br/> Built for absorption. Designed for impact.<br/><br/></p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tR8fPG": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_PMFRX8": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "How To Use",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>Simple. Consistent. Foundational.<br/><strong>Take 1 sachet daily</strong><br/><br/>Mix with 200–250ml of cold water.<br/>On an empty stomach or before your first meal for optimal microbiome support.*<br/><br/><strong>Stay consistent</strong><br/>Designed for daily, long-term use to support healthy biological ageing.</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_tDa8RC": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 0
+          }
+        },
+        "product_accordion_KpdcJF": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Key Ingredients",
+            "heading_style": "font-heading",
+            "accordion_text": "<p><strong>evaBiome™ EternaGen Polyphenol Complex:</strong><br/>A next-generation, bio-fermented polyphenol system delivering:<br/></p><ul><li>Bioavailable polyphenols</li><li>Antioxidants</li><li>Postbiotic metabolites</li></ul><p>Designed to support gut, immune, and brain vitality through advanced fermentation and biomolecular optimisation.<br/><br/><strong>Blue Zone Probiotic Complex:</strong><br/>A clinically researched probiotic blend delivering:<br/></p><ul><li>60 billion live probiotics</li><li>10 billion postbiotics per serve</li></ul><p>Featuring strains shown to support microbial balance, gut-barrier integrity, and inflammatory regulation.<br/><br/><strong>Triple-Biotic Synergy (Pre • Pro • Post):</strong><br/>A complete system designed to:<br/></p><ul><li>Nourish beneficial bacteria</li><li>Restore microbiome diversity</li></ul><p>Strengthen gut-barrier function <br/><br/></p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_NiLTG8": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "product_accordion_6PjTye": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "Benefits",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>1. Supports a Healthy Inflammatory Response*<br/>Chronic low-grade inflammation is a key biological stressor linked to ageing. Longevity supports normal inflammatory regulation through microbiome restoration and bio-fermented antioxidant activity.*<br/><br/>2. Supports Gut–Brain–Immune Balance<br/>The gut influences immune signaling, cognitive clarity, and systemic resilience. A triple-biotic approach (pre • pro • post) helps restore microbial diversity and gut-barrier integrity.*<br/><br/>3. Supports Cognitive Clarity & Resilience*<br/>Postbiotic metabolites and polyphenols help support antioxidant activity in the brain, contributing to mental clarity and learning performance.*<br/><br/>4. Supports Cellular Defence & Mitochondrial Energy*<br/>Bioavailable polyphenols and postbiotics help neutralise free radicals and support normal cellular energy production.*<br/><br/>5. Supports Long-Term Vitality<br/>Designed for consistent daily use to support resilience, energy, and healthy biological ageing over t</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_JHYrTm": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "product_accordion_U7V4Mx": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "What to Expect",
+            "heading_style": "font-heading",
+            "accordion_text": "<p>Microbiome shifts begin. Digestive balance and inflammatory regulation support starts at the gut level.*<br/><br/><strong>Weeks 3–6</strong><br/>Cellular antioxidant activity and resilience pathways strengthen.*<br/><br/><strong>Ongoing</strong><br/>Supports sustained clarity, vitality, and healthy inflammatory response as part of your daily routine.*</p>",
+            "accordion_liquid": "",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "divider_UqbMgY": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "testimonials_v2_zwQDfw": {
+          "type": "testimonials_v2",
+          "settings": {
+            "reviews_text": "About three weeks in and I genuinely feel more energised during the day. I originally bought this for inflammation support but the steady energy has been the biggest surprise. \n\nI’m really impressed with this formula. My body just feels better overall - less stiffness in the morning and better recovery after workouts - another great product Calmerceuticals.\n\nI’ve been focusing on longevity and health recently and this product was recommended to me. I could feel it by about day 8 - a lot less bloated and like my body had let go of a lot of fluid. Love the ingredients and the science behind it.",
+            "review_anchor_id": "rv-section__grid-column"
+          }
+        },
+        "divider_CkftgQ": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "divider_twPkfy",
+        "custom_code_cFfqcH",
+        "title",
+        "text_VrgJkk",
+        "custom_code_kweQfj",
+        "product_video_Q9pkfy",
+        "product_video_MyTeHx",
+        "product_video_VLp4Ef",
+        "product_video_yiHdxU",
+        "product_video_iJDHbF",
+        "product_video_qFXn49",
+        "product_video_i4eEJF",
+        "product_video_wtXpfz",
+        "form",
+        "trust_icons_UxH6mi",
+        "product_accordion_dDignk",
+        "divider_tR8fPG",
+        "product_accordion_PMFRX8",
+        "divider_tDa8RC",
+        "product_accordion_KpdcJF",
+        "divider_NiLTG8",
+        "product_accordion_6PjTye",
+        "divider_JHYrTm",
+        "product_accordion_U7V4Mx",
+        "divider_UqbMgY",
+        "testimonials_v2_zwQDfw",
+        "divider_CkftgQ"
+      ],
+      "custom_css": [
+        ".sldr-label-img-container img {aspect-ratio: 2 / 1.2;}",
+        ".sldr-content-mobile-reverse {width: 100%;}",
+        ".twelve-weeks-card .program-name {display: none;}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "addtocart_sticky_enable": true,
+        "sticky_bg_color": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "sticky_text_color": "#ffffff",
+        "image_layout": "carousel",
+        "image_width": "standard",
+        "product_image_aspect_ratio": true,
+        "enable_zoom": false,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 80
+      }
+    },
+    "why_us_FKxmKE": {
+      "type": "why-us",
+      "blocks": {
+        "video_card_EfQwHw": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 6.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_W4Qm9k": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 7.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_RDX9gR": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 1 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_GD4EUi": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Pericalm-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_DqKXp9": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 3 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        },
+        "video_card_w69BTA": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Longevity-testimonial 4 v2.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
+            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_card_EfQwHw",
+        "video_card_W4Qm9k",
+        "video_card_RDX9gR",
+        "video_card_GD4EUi",
+        "video_card_DqKXp9",
+        "video_card_w69BTA"
+      ],
+      "name": "Why us",
+      "settings": {
+        "heading": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>",
+        "subtext": "<p>Don't just take our word for it, see what our customers say</p>",
+        "heading_size": 48,
+        "button_label": "START YOUR REJUVENATION",
+        "button_link": "",
+        "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
+        "background_color": "#f9f9fb",
+        "heading_color": "#610c27",
+        "subtext_color": "#2a2a2a",
+        "card_background": "#ffffff",
+        "body_color": "#1e1e1e",
+        "button_bg": "#6b0329",
+        "button_text_color": "#ffffff",
+        "footnote_color": "#2a2a2a",
+        "play_bg": "#ffffff",
+        "play_icon": "#2f2f2f",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "benefits_icons_row_Q69HPF": {
+      "type": "benefits-icons-row",
+      "blocks": {
+        "benefit_item_VMrRMK": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/1.png",
+            "description": "<p>Brain antioxidant <br/>protection increased by <br/><strong>up to 67%</strong></p>"
+          }
+        },
+        "benefit_item_RdhARa": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/2_86d6c8ed-baa8-46eb-9ba6-9186418df1b3.png",
+            "description": "<p>Cellular stress markers <br/>reduced by <br/><strong>approximately 40%</strong></p>"
+          }
+        },
+        "benefit_item_3cC3WN": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/3_e1fbfc71-e76d-4b93-a4ed-025d66d948b8.png",
+            "description": "<p>Learning and memory <br/>performance improved <br/>by <strong>over 80%</strong></p>"
+          }
+        },
+        "benefit_item_HRJYwE": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/4_f603da6f-fd2e-4f3e-a0ac-c5b88e9268b7.png",
+            "description": "<p>Inflammatory markers <br/>improved by up to <br/><strong>90% within 2 weeks</strong></p>"
+          }
+        },
+        "benefit_item_b7TGQG": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/5_c2898233-44ca-4be1-b162-05af2564bfaa.png",
+            "description": "<p>Neuronal resilience and <br/>cell survival increased <strong>by <br/>nearly 60%</strong></p>"
+          }
+        },
+        "benefit_item_7UhjgG": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/6_1ae1b05d-ada8-4c2d-8211-0f8e15dc9a25.png",
+            "description": "<p>Short-chain fatty acids <br/>increased by <br/><strong>up to 2x</strong></p>"
+          }
+        },
+        "benefit_item_66jcdQ": {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "shopify://shop_images/7_36f46a16-428f-40d6-9ff7-087140cc60b3.png",
+            "description": "<p>Beneficial gut bacteria <br/>and short-chain <strong>fatty <br/>acids increased</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_item_VMrRMK",
+        "benefit_item_RdhARa",
+        "benefit_item_3cC3WN",
+        "benefit_item_HRJYwE",
+        "benefit_item_b7TGQG",
+        "benefit_item_7UhjgG",
+        "benefit_item_66jcdQ"
+      ],
+      "name": "Benefits Icons Row",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 44,
+        "container_width": true,
+        "background_color": "#f9f9fb",
+        "text_color": "#2d3748",
+        "font_size": 13,
+        "disclaimer": "<p>Evidence-driven formulation Published research on the hero ingredient complex show.</p>"
+      }
+    },
+    "hero_rewrite_age_F6bXmt": {
+      "type": "hero-rewrite-age",
+      "blocks": {
+        "stat_WTm69a": {
+          "type": "stat",
+          "settings": {
+            "number": "–90%",
+            "label": "INFLAMMATORY AGE REDUCTION"
+          }
+        },
+        "stat_4Hkcba": {
+          "type": "stat",
+          "settings": {
+            "number": "14",
+            "label": "DAY CLINICAL WINDOW"
+          }
+        },
+        "stat_DYxHbc": {
+          "type": "stat",
+          "settings": {
+            "number": "+84%",
+            "label": "COGNITIVE PERFORMANCE"
+          }
+        }
+      },
+      "block_order": [
+        "stat_WTm69a",
+        "stat_4Hkcba",
+        "stat_DYxHbc"
+      ],
+      "name": "Hero – Rewrite Your Age",
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "container_width": true,
+        "background_color": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "eyebrow_color": "#f7f9ee",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ff961b",
+        "body_color": "#f7f9ee",
+        "stat_number_color": "#f0e8e8",
+        "stat_label_color": "#b09298",
+        "button_border_color": "#ffffff",
+        "button_text_color": "#000000",
+        "eyebrow": "Precision Longevity System",
+        "divider": false,
+        "heading": "<h2>Rewrite<br/>Your <strong>Age.</strong></h2>",
+        "subheading": "World's First",
+        "body_text": "<p>The world's first microbiome catalyst clinically shown to reduce biological inflammageing markers by up to 90% within 14 days*. Engineered from centenarian-sourced probiotics.</p>",
+        "disclaimer": "<p>*Studies conducted on the ingredient complex; not on Calmerceuticals Longevity as a finished product. Individual results may vary.</p>",
+        "button_label": "START YOUR 14-DAY REJUVENATION",
+        "button_link": "#product__subs__wrap-main",
+        "product_image": "shopify://shop_images/image-hero-2.png",
+        "product_label": ""
+      }
+    },
+    "featured_quote_3BLBfp": {
+      "type": "featured-quote",
+      "name": "Featured In – Quote",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 76,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#0b0b0b",
+        "quote_image": "shopify://shop_images/quote-icon.png",
+        "quote_mark_color": "#e0d8db",
+        "text_color": "#0b0b0b",
+        "eyebrow": "FEATURED IN",
+        "quote_text": "<p>Built around the mechanisms that shape how we age.</p>",
+        "font_size": 32
+      }
+    },
+    "logo_marquee_iitEU6": {
+      "type": "logo-marquee",
+      "blocks": {
+        "logo_kkrKTk": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-1.png"
+          }
+        },
+        "logo_6pjAj3": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-2.png"
+          }
+        },
+        "logo_Vim8ni": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-3.png"
+          }
+        },
+        "logo_a8KMD4": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-4.png"
+          }
+        },
+        "logo_WPHy9R": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-5.png"
+          }
+        },
+        "logo_Uxk6LR": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-6.png"
+          }
+        },
+        "logo_ar73ci": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/marquee-7.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_kkrKTk",
+        "logo_6pjAj3",
+        "logo_Vim8ni",
+        "logo_a8KMD4",
+        "logo_WPHy9R",
+        "logo_Uxk6LR",
+        "logo_ar73ci"
+      ],
+      "name": "Logo Marquee",
+      "settings": {
+        "padding_top": 16,
+        "padding_bottom": 28,
+        "background_color": "#ffffff",
+        "border_color": "#000000",
+        "border_style": "none",
+        "border_top_width": 0,
+        "border_bottom_width": 2,
+        "logo_height": 40,
+        "logo_gap": 20,
+        "speed": 25,
+        "pause_on_hover": true
+      }
+    },
+    "video_testimonial_slider_ALWhG7": {
+      "type": "video-testimonial-slider",
+      "blocks": {
+        "video_card_9whBE8": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4",
+            "quote": "After trying it once I was hooked",
+            "name": "Our founder Rose"
+          }
+        },
+        "video_card_7VCmfR": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Ultra UGC.webm",
+            "quote": "One Calmerceuticals is all you need",
+            "name": "Brigitte"
+          }
+        },
+        "video_card_WfdyLh": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/Women and testosterone UGC.webm",
+            "quote": "Best Ever",
+            "name": "Claire"
+          }
+        },
+        "video_card_ihqxJb": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/CC x VVV - Jan Reel 01 - 1080p for posting.webm",
+            "quote": "It quite literally has changed my life",
+            "name": "Victoria"
+          }
+        },
+        "video_card_YdmVQK": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/1973acf6-8208-48c4-8af8-9ad99aaa353c.mp4",
+            "quote": "After trying it once I was hooked",
+            "name": "Sarah"
+          }
+        }
+      },
+      "block_order": [
+        "video_card_9whBE8",
+        "video_card_7VCmfR",
+        "video_card_WfdyLh",
+        "video_card_ihqxJb",
+        "video_card_YdmVQK"
+      ],
+      "name": "Video Testimonials Slider",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "container_width": true,
+        "background_color": "#ffffff",
+        "heading_color": "#1a0d10",
+        "heading_brand_color": "#5c1a2e",
+        "heading_brand": "Calmerceuticals",
+        "heading_rest": "is loved by thousands",
+        "heading_size": 40,
+        "card_width": 320,
+        "card_gap": 16,
+        "card_radius": 16,
+        "quote_size": 18,
+        "name_size": 13
+      }
+    },
+    "image_cards_dHL8zh": {
+      "type": "image-cards",
+      "blocks": {
+        "image_card_68Q8Dt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Repair_Slows.jpg",
+            "label": "<p>Repair<br/>slows</p>"
+          }
+        },
+        "image_card_VFBT3Y": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Metabolic_efficiency_drops.jpg",
+            "label": "<p>Metabolic <br/>efficiency drops</p>"
+          }
+        },
+        "image_card_RAHfXT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Cognitive_clarity_declines.jpg",
+            "label": "<p>Cognitive clarity <br/>declines</p>"
+          }
+        },
+        "image_card_fAnMJh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Ageing_accelerates.jpg",
+            "label": "<p>Ageing <br/>accelerates</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_68Q8Dt",
+        "image_card_VFBT3Y",
+        "image_card_RAHfXT",
+        "image_card_fAnMJh"
+      ],
+      "name": "Image Cards",
+      "settings": {
+        "padding_top": 90,
+        "padding_bottom": 90,
+        "container_width": false,
+        "background_color": "rgba(0,0,0,0)",
+        "heading_color": "#5c1a2e",
+        "subtext_color": "#323232",
+        "label_text_color": "#ffffff",
+        "button_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "heading": "<p>When inflammation stays<br/><strong>elevated</strong></p>",
+        "heading_size": 48,
+        "subtext": "<p>cellular repair declines, metabolic balance falters, and biological ageing accelerates</p>",
+        "button_label": "START YOUR REJUVENATION",
+        "mobile_button_label": "",
+        "button_link": "#product__subs__wrap-main",
+        "secondary_button_label": "",
+        "secondary_button_link": "",
+        "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
+        "text_alignment": false
+      }
+    },
+    "result_grid_YDKnCh": {
+      "type": "result-grid",
+      "name": "Real Results Grid",
+      "settings": {
+        "container_width": false,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "section_bg": "#dde3f0",
+        "heading_color": "#610c27",
+        "row1_heading": "<p><strong>Real results</strong> you<br/>can see and feel.</p>",
+        "heading_size": 64,
+        "row1_image": "shopify://shop_images/longevity-result-grid-image__1_-removebg-preview.png",
+        "row2_left_bg": "#F0F0F0",
+        "stat_number_color": "#5c1a2e",
+        "stat_label_color": "#545454",
+        "stat_number_size": 96,
+        "stat1_number": "80%",
+        "stat1_label": "Improvement in learning and memory performance",
+        "stat2_number": "2 weeks",
+        "stat2_label": "Within 2 weeks, inflammatory markers improved by up to 90%",
+        "quote_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "quote_radius": 8,
+        "quote_heading_color": "#ffffff",
+        "quote_heading": "<p>Ageing isn't driven by time. <br/>It's driven by biology <br/><strong>under stress.</strong></p>",
+        "quote_heading_size": 48,
+        "quote_body_color": "#ffffff",
+        "quote_body": "<p>Inflammageing is the insidious low-grade chronic inflammation that silently accelerates biological decay, disrupts mitochondria, weakens your gut barrier, and triggers systemic immune dysfunction long before symptoms appear.</p><p>Traditional supplements address surface symptoms; Longevity intervenes at the source: the gut-brain-immune axis, where biological ageing is decided.</p>",
+        "row3_image": "shopify://shop_images/short-chain.png",
+        "row3_overlay_color": "linear-gradient(135deg, rgba(90, 80, 100, 0.55), rgba(30, 20, 35, 0.35) 100%)",
+        "row3_text": "<p>Short-chain fatty acids<br/>increased by up to <strong>2x</strong></p>",
+        "row3_text_size": 48,
+        "row3_text_color": "#ffffff",
+        "row3_right_bg": "#f2f0ee",
+        "stat3_number": "67%",
+        "stat3_label": "boost in brain antioxidant protection"
+      }
+    },
+    "support_level_DJVUmF": {
+      "type": "support-level",
+      "name": "Support at Every Level",
+      "settings": {
+        "padding_top": 64,
+        "padding_bottom": 0,
+        "container_width": true,
+        "background_color": "rgba(0,0,0,0)",
+        "heading_color": "#1a0d10",
+        "body_color": "#323232",
+        "heading": "<p>Support at<br/><strong>Every Level</strong></p>",
+        "heading_size": 64,
+        "button_label": "START YOUR REJUVENATION",
+        "mobile_button_label": "",
+        "button_link": "#product__subs__wrap-main",
+        "button_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "secondary_button_label": "START YOUR REJUVENATION",
+        "mobile_secondary_button_label": "",
+        "secondary_button_link": "",
+        "secondary_button_bg": "#fff",
+        "secondary_button_text_color": "#000000",
+        "secondary_btn_border_color": "#000000",
+        "body_text": "<p>Longevity is systemic. When the core biological pathways that govern energy, inflammation, and repair are supported consistently, resilience strengthens over time</p>",
+        "body_size": 20,
+        "card_bg": "#ffffff",
+        "card_radius": 34,
+        "card_text": "Longevity is built through consistency, not intensity.",
+        "card_text_size": 20,
+        "card_text_color": "#2a1a1e"
+      }
+    },
+    "image_feature_cards_RaFKtx": {
+      "type": "image-feature-cards",
+      "blocks": {
+        "card_EtwJpN": {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Gut<br/>Balance</p>",
+            "body": "<p>Supports microbiome diversity and strengthens gut barrier integrity, a foundation for immune and metabolic health.</p>"
+          }
+        },
+        "card_DaXi3K": {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Cellular<br>Energy</p>",
+            "body": "<p>Postbiotics and polyphenols support healthy mitochondrial function and sustained cellular energy production.</p>"
+          }
+        },
+        "card_gVaknd": {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Oxidative<br>Defence</p>",
+            "body": "<p>Antioxidants help protect cells from daily oxidative stress, supporting long-term cellular resilience.</p>"
+          }
+        },
+        "card_mEKLRm": {
+          "type": "card",
+          "settings": {
+            "heading": "<p>Vitality &amp;<br>Resilience</p>",
+            "body": "<p>Supports clarity, sustained energy, and the biological systems linked to healthy ageing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_EtwJpN",
+        "card_DaXi3K",
+        "card_gVaknd",
+        "card_mEKLRm"
+      ],
+      "name": "Image Feature Cards",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "bg_image": "shopify://shop_images/image-feature-card-image.png",
+        "image_height": 600,
+        "image_position": "center center",
+        "use_custom_card_bg": false,
+        "card_background": "#ffffff",
+        "card_bg_opacity": 80,
+        "card_gap": 10,
+        "card_radius": 12,
+        "card_heading_size": 36,
+        "card_body_color": "#1d1d1d",
+        "card_body_size": 20,
+        "card_text_center": false,
+        "card_box_shadow": "-8px -8px 16px rgba(255,255,255,0.4), 8px 8px 16px rgba(0,0,0,0.15)",
+        "card_backdrop_blur": true,
+        "card_blur_amount": 10,
+        "use_heading_gradient": true,
+        "card_heading_color": "#6a0927",
+        "card_heading_gradient_start": "#6a0927",
+        "card_heading_gradient_end": "#d0114d"
+      }
+    },
+    "ingredients_transparency_WJtFTL": {
+      "type": "ingredients-transparency",
+      "blocks": {
+        "ingredient_eWgCpP": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Akkermansia muciniphila",
+            "source": "Centenarian-sourced · Okinawa",
+            "code": "LTL1361"
+          }
+        },
+        "ingredient_6NxcGm": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Lactobacillus longevitas",
+            "source": "Biofermented · Guangxi",
+            "code": "LB-72"
+          }
+        },
+        "ingredient_3G4a7E": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Faecalibacterium prausnitzii",
+            "source": "Centenarian-sourced · Sardinia",
+            "code": "FP-106"
+          }
+        },
+        "ingredient_LptHBi": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Urolithin A",
+            "source": "Pomegranate ellagitannins",
+            "code": "UA-P1"
+          }
+        },
+        "ingredient_6RxyVM": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Oleuropein Complex",
+            "source": "Cold-pressed olive leaf",
+            "code": "OL-Phyto"
+          }
+        },
+        "ingredient_PMXcfY": {
+          "type": "ingredient",
+          "settings": {
+            "name": "EGCG (Green Tea)",
+            "source": "Standardised extract",
+            "code": "GT-866"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_eWgCpP",
+        "ingredient_6NxcGm",
+        "ingredient_3G4a7E",
+        "ingredient_LptHBi",
+        "ingredient_6RxyVM",
+        "ingredient_PMXcfY"
+      ],
+      "name": "Ingredients Transparency",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "container_width": true,
+        "background_color": "rgba(0,0,0,0)",
+        "eyebrow_color": "#610c27",
+        "eyebrow": "Radical Transparency",
+        "heading_color": "#3a3d38",
+        "heading": "<p>Simple ingredients,<br/><strong>powerful results.</strong></p>",
+        "heading_size": 64,
+        "body_color": "#545454",
+        "body_text": "<p>We believe you deserve to see the exact strains, doses, and clinical trial matches behind every sachet. No proprietary blends. No hiding behind \"complexes.\"</p>",
+        "body_size": 18,
+        "product_image": "shopify://shop_images/3_x_4_Image.png",
+        "image_radius": 12,
+        "list_label": "Active Ingredients",
+        "badge_bg_color": "#d4dccf",
+        "label_color": "#000000",
+        "label_border_color": "rgba(0,0,0,0)",
+        "ingredient_name_color": "#333333",
+        "use_custom_tag_bg": false,
+        "tag_bg_color": "#7a8c6e",
+        "tag_bg_opacity": 15,
+        "tag_text_color": "#000000",
+        "ingredient_name_size": 18,
+        "ingredient_source_font": "Space Mono",
+        "ingredient_source_font_weight": "100",
+        "ingredient_source_color": "#333333",
+        "ingredient_source_size": 12,
+        "ingredient_code_size": 11,
+        "divider_color": "#dedede",
+        "bottom_text_color": "#545454",
+        "button_label": "START YOUR REJUVENATION",
+        "mobile_button_label": "",
+        "button_link": "#product__subs__wrap-main",
+        "button_bg": "radial-gradient(rgba(138, 76, 91, 1), rgba(23, 13, 15, 1) 100%)",
+        "button_text_color": "#ffffff",
+        "bottom_text": ""
+      }
+    },
+    "three_columns_KAFYB4": {
+      "type": "three-columns",
+      "blocks": {
+        "step_JRDVwP": {
+          "type": "step",
+          "settings": {
+            "icon_image": "shopify://shop_images/three-col-1.png",
+            "title": "Nourish",
+            "number": "01",
+            "body": "<p>Biofermented polyphenols from olives, tea, and cocoa create the precise gut environment for centenarian strains to thrive and proliferate.</p>"
+          }
+        },
+        "step_aULgWV": {
+          "type": "step",
+          "settings": {
+            "icon_image": "shopify://shop_images/three-col-2.png",
+            "title": "Replenish",
+            "number": "02",
+            "body": "<p>Centenarian-sourced strains—Akkermansia, Lactobacillus longevitas, and Faecalibacterium—delivered via ViaCap™ to ensure 95% colon survivability.</p>"
+          }
+        },
+        "step_VgUdxX": {
+          "type": "step",
+          "settings": {
+            "icon_image": "shopify://shop_images/three-col-3.png",
+            "title": "Repair",
+            "number": "03",
+            "body": "<p>Fermentation-derived metabolites including short-chain fatty acids and urolithins reinforce the gut barrier and trigger mitophagy for cellular renewal.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_JRDVwP",
+        "step_aULgWV",
+        "step_VgUdxX"
+      ],
+      "name": "Three Column Steps",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 48,
+        "container_width": true,
+        "col_gap": 56,
+        "background_color": "#ffffff",
+        "title_color": "#333333",
+        "title_size": 18,
+        "number_color": "#333333",
+        "number_size": 18,
+        "body_color": "#545454",
+        "body_size": 14
+      }
+    },
+    "reviews_grid_PGLA68": {
+      "type": "reviews-grid",
+      "blocks": {
+        "review_KEBrTU": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“About three weeks in and I genuinely feel more energised during the day. I originally bought this for inflammation support but the steady energy has been the biggest surprise.”</p>",
+            "name": ""
+          }
+        },
+        "review_MxGFb8": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“I’m really impressed with this formula. My body just feels better overall - less stiffness in the morning and better recovery after workouts - another great product Calmerceuticals ”</p>",
+            "name": ""
+          }
+        },
+        "review_4FddhG": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "<p>“I’ve been focusing on longevity and health recently and this product was recommended to me. I could feel it by about day 8 - a lot less bloated and like my body had let go of a lot of fluid. Love the ingredients and the science behind it.”</p>",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_KEBrTU",
+        "review_MxGFb8",
+        "review_4FddhG"
+      ],
+      "name": "Reviews Grid",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "container_width": true,
+        "background_color": "#ffffff",
+        "heading_main": "1,450 verified",
+        "heading_accent": "5 star reviews",
+        "heading_main_color": "#610c27",
+        "heading_accent_color": "#ff961b",
+        "heading_size": 40,
+        "button_label": "All reviews",
+        "button_link": "",
+        "button_text_color": "#1a0d10",
+        "button_border_color": "#7a2040",
+        "button_size": 13,
+        "card_bg": "#f7f9ee",
+        "card_border_color": "#f7f9ee",
+        "card_radius": 12,
+        "card_padding": 28,
+        "card_gap": 16,
+        "star_color": "#7a2040",
+        "star_empty_color": "#7a2040",
+        "star_size": 18,
+        "quote_color": "#212121",
+        "quote_size": 20,
+        "name_color": "#212121",
+        "name_size": 14
+      }
+    },
+    "timeline_roadmap_XHbRwp": {
+      "type": "timeline-roadmap",
+      "blocks": {
+        "step_UBqwgL": {
+          "type": "step",
+          "settings": {
+            "time_label": "HOUR 8",
+            "title": "ViaCap™ Absorption",
+            "body": "<p>Micro-encapsulated probiotics bypass stomach acid and reach the colon intact. Initial colonization begins.</p>"
+          }
+        },
+        "step_bKpErk": {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 2",
+            "title": "Mitophagy Activation",
+            "body": "<p>Postbiotic metabolites trigger cellular housekeeping. Damaged mitochondria are cleared and renewed.</p>"
+          }
+        },
+        "step_zDYUzP": {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 14",
+            "title": "Biological Age Reversal",
+            "body": "<p>IL-6, CRP, and TNF-α markers reach clinical improvement thresholds. Gut barrier integrity restored.</p>"
+          }
+        },
+        "step_YJKK93": {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 120",
+            "title": "Peak Physical Strength",
+            "body": "<p>Mitochondrial density at optimal levels. Energy biogenesis sustains performance throughout the day.</p>"
+          }
+        },
+        "step_JmDmGm": {
+          "type": "step",
+          "settings": {
+            "time_label": "DAY 365",
+            "title": "Optimal Cellular Health",
+            "body": "<p>Microbiome diversity matches centenarian profiles. Systemic inflammageing markers sustained in optimal range.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_UBqwgL",
+        "step_bKpErk",
+        "step_zDYUzP",
+        "step_YJKK93",
+        "step_JmDmGm"
+      ],
+      "name": "Timeline Roadmap",
+      "settings": {
+        "padding_top": 120,
+        "padding_bottom": 56,
+        "container_width": true,
+        "background_color": "#f7f9ee",
+        "eyebrow_color": "#000000",
+        "heading_color": "#610c27",
+        "heading_size": 48,
+        "time_color": "#000000",
+        "time_size": 10,
+        "step_title_color": "#000000",
+        "step_title_size": 18,
+        "body_color": "#000000",
+        "body_size": 12,
+        "eyebrow": "The Rejuvenation Roadmap",
+        "heading": "<p>Biological transformation,<br/>mapped to the hour.</p>"
+      }
+    },
+    "magic_science_g69gE4": {
+      "type": "magic-science",
+      "blocks": {
+        "body_block_rANjpC": {
+          "type": "body_block",
+          "disabled": true,
+          "settings": {
+            "bold_line": "Ageing is driven by a process called Inflammageing.",
+            "body_text": "<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.</p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".</p>"
+          }
+        },
+        "accent_line_iqtpxw": {
+          "type": "accent_line",
+          "settings": {
+            "text": "Ageing is driven by a process called Inflammageing.",
+            "accordion_body": "<p>When our bodies are under constant stress, they produce chronic, low-grade inflammation that never fully turns off.</p><p>That \"biological fire\" is largely responsible for the cognitive dullness, metabolic resistance, and persistent fatigue we often mistake for \"just getting older\".</p>"
+          }
+        },
+        "accent_line_tbrUgJ": {
+          "type": "accent_line",
+          "settings": {
+            "text": "Ageing cells suffer from Mitochondrial Decay.",
+            "accordion_body": "<p>As these \"cellular batteries\" wear out, they stop producing energy and start producing \"cellular rust\" (oxidative stress). This decay is the primary reason your \"Health Span\" feels shorter than your actual years, leading to a body that performs below its potential.</p>"
+          }
+        },
+        "accent_line_Ffkf68": {
+          "type": "accent_line",
+          "settings": {
+            "text": "Persistent low energy is a byproduct of Metabolic Ageing.",
+            "accordion_body": "<p>A \"metabolically old\" system accumulates specific markers like BCAAs and Lysine, which are linked to systemic resistance and inflammation. By lowering these metabolic signatures and doubling your production of Short-Chain Fatty Acids (SCFAs), we provide the clean cellular fuel required for the sustained vitality of a younger body.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "body_block_rANjpC",
+        "accent_line_iqtpxw",
+        "accent_line_tbrUgJ",
+        "accent_line_Ffkf68"
+      ],
+      "name": "Magic Science",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "container_width": true,
+        "background_color": "#f0ede8",
+        "heading_color": "#1a0d10",
+        "body_dark_color": "#1a0d10",
+        "body_light_color": "#4a3a3e",
+        "accent_color": "#7a2040",
+        "divider_color": "#ccceb7",
+        "heading_size": 64,
+        "product_image": "shopify://shop_images/3e41f3695f81088d104e3626a6b6a1927f045bfa.jpg",
+        "image_radius": 12,
+        "heading": "<p>It's not magic,<br/>It's science</p>"
+      }
+    },
+    "available_flavors_z3EFe3": {
+      "type": "available-flavors",
+      "blocks": {
+        "flavour_card_DAhHJF": {
+          "type": "flavour_card",
+          "settings": {
+            "image": "shopify://shop_images/S1.png",
+            "label": "Watermelon Crush"
+          }
+        },
+        "flavour_card_bCfT7B": {
+          "type": "flavour_card",
+          "settings": {
+            "image": "shopify://shop_images/S1_1.png",
+            "label": "Pink Lemonade"
+          }
+        }
+      },
+      "block_order": [
+        "flavour_card_DAhHJF",
+        "flavour_card_bCfT7B"
+      ],
+      "name": "Available Flavours",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "container_width": true,
+        "background_color": "#f0ede8",
+        "heading_color": "#610c27",
+        "label_color": "#ffffff",
+        "heading_size": 48,
+        "label_size": 36,
+        "card_radius": 12,
+        "card_gap": 16,
+        "heading": "Available Flavours"
+      }
+    },
+    "faq_section_j69Y9r": {
+      "type": "faq-section",
+      "blocks": {
+        "faq_item_TjaCz9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can a formula change my \"biological age\" in just 14 days?",
+            "answer": "<p>We don't just \"support\" wellness; we modulate clinical biomarkers. Calmerceuticals Longevity™ is clinically shown to reduce major inflammatory markers—specifically IL-6, CRP, and TNF-α—by up to 90% within a 14-day window. By lowering these signatures, your system shifts from a state of \"defense\" to a state of \"repair,\" effectively resetting your biological clock.</p>"
+          }
+        },
+        "faq_item_CQtL6Y": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why are your probiotics \"Centenarian-Sourced\"?",
+            "answer": "<p>Our strains are isolated from the gut microbiomes of verified centenarians in longevity hotspots. These organisms have co-evolved with human longevity biology in ways that commercially farmed strains simply cannot replicate.</p>"
+          }
+        },
+        "faq_item_bJxebn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I have to take this forever to keep the results?",
+            "answer": "<p>Biological resilience compounds over time. Most users see sustained improvement after 90 days of consistent use, with measurable changes to microbiome diversity that persist well beyond supplementation.</p>"
+          }
+        },
+        "faq_item_cqwVpR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes your \"ViaCap\" technology different from a standard capsule?",
+            "answer": "<p>Standard capsules dissolve in stomach acid, destroying up to 99% of probiotics before they reach the colon. ViaCap™ micro-encapsulation ensures 95% survivability to the target site.</p>"
+          }
+        },
+        "faq_item_DF9wn9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to use with other supplements or medications?",
+            "answer": "<p>Longevity™ is formulated with clinically researched ingredients at safe, effective doses. We always recommend consulting your healthcare provider if you are on prescription medications.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_TjaCz9",
+        "faq_item_CQtL6Y",
+        "faq_item_bJxebn",
+        "faq_item_cqwVpR",
+        "faq_item_DF9wn9"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "container_width": true,
+        "background_color": "#f7f9ee",
+        "heading_color": "#1a0d10",
+        "body_color": "#4a3a3e",
+        "active_border_color": "#7a1a30",
+        "divider_color": "#d8d0cc",
+        "question_color": "#1a0d10",
+        "answer_color": "#4a3a3e",
+        "icon_color": "#1a0d10",
+        "icon_border_color": "#c8b8bc",
+        "heading_size": 40,
+        "body_size": 16,
+        "question_size": 16,
+        "answer_size": 16,
+        "heading": "<p>You probably have some questions</p>",
+        "body_text": "<p>Check out our FAQs to find answers to common questions and feel free to reach out if you have more.</p>",
+        "button_label": "All FAQs",
+        "button_link": "/pages/faq",
+        "button_bg": "#6B0027",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "section_marquee_pep6NQ": {
+      "type": "section-marquee",
+      "blocks": {
+        "image_xNek33": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.45.51_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_dLbtUF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/calmerceuticals-pilot-using-collagen.webp",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_UTQYRe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ugc-calmerceuticals.webp",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_e8yKtk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CC_SNEAKP_WEB-3.jpg",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_DmiJ7D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.49.32_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_dU9h6i": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/perimenopause-georgia.jpg",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_HDbjgd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-07-09_at_6.03.25_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_QjY6pr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_12.50.46_PM.png",
+            "link": "",
+            "image_width": 170
+          }
+        },
+        "image_WyTxLh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_1.28.07_PM.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_6gtPdt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-02-28_at_4.37.00_PM.png",
+            "link": "",
+            "image_width": 170
+          }
+        }
+      },
+      "block_order": [
+        "image_xNek33",
+        "image_dLbtUF",
+        "image_UTQYRe",
+        "image_e8yKtk",
+        "image_DmiJ7D",
+        "image_dU9h6i",
+        "image_HDbjgd",
+        "image_QjY6pr",
+        "image_WyTxLh",
+        "image_6gtPdt"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding": 10,
+        "marquee_speed": 100,
+        "direction": "ticker-ltr",
+        "slider_speed": 10,
+        "show_arrows": false,
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "text_size": 120,
+        "text_size_mobile": 80,
+        "letter_spacing": 0,
+        "message_spacing": 10,
+        "color_scheme": "scheme-1",
+        "background_color": "",
+        "color": "#000000",
+        "border_color": "#000000",
+        "padding_top": 60,
+        "padding_bottom": 70
+      }
+    },
+    "hero_cta_tix9q4": {
+      "type": "hero-cta",
+      "name": "Hero CTA with Image",
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "container_width": true,
+        "background_color": "#6b0027",
+        "eyebrow": "Recommended plan",
+        "eyebrow_color": "#f7f9ee",
+        "eyebrow_size": 16,
+        "heading": "Balance your nights with better mornings",
+        "heading_color": "#ffffff",
+        "heading_size": 40,
+        "body_text": "<p>Bio-fermentation enhances nutrient bioavailability and functional activity in the gut.</p><p>Advanced biomanufacturing improves delivery, stability, and efficacy – so the body can actually use what you take.</p><p><br/>This is proactive ageing support, not damage control.</p>",
+        "body_color": "#f7f9ee",
+        "body_size": 16,
+        "tagline": "",
+        "tagline_color": "#ffffff",
+        "tagline_size": 16,
+        "button_label": "12 Week Performance Reset",
+        "button_link": "https://calmerceuticals.com/products/microbiome-first-longevity-support#product__subs__wrap-main",
+        "button_text_color": "#000000",
+        "button_border_color": "#ffffff",
+        "button_bg": "#fff",
+        "button_size": 16,
+        "image": "shopify://shop_images/hero-cta-image.png",
+        "image_ratio": "16 / 9",
+        "image_radius": 12,
+        "image_gap": 40,
+        "show_placeholder": true
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "title": "You May Also Like",
+            "product_recommendations_limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "title": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "layout": "grid",
+        "columns_mobile": "2",
+        "type_style": "subheading-text",
+        "tab_heading_size": 130,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "why_us_FKxmKE",
+    "benefits_icons_row_Q69HPF",
+    "hero_rewrite_age_F6bXmt",
+    "featured_quote_3BLBfp",
+    "logo_marquee_iitEU6",
+    "video_testimonial_slider_ALWhG7",
+    "image_cards_dHL8zh",
+    "result_grid_YDKnCh",
+    "support_level_DJVUmF",
+    "image_feature_cards_RaFKtx",
+    "ingredients_transparency_WJtFTL",
+    "three_columns_KAFYB4",
+    "reviews_grid_PGLA68",
+    "timeline_roadmap_XHbRwp",
+    "magic_science_g69gE4",
+    "available_flavors_z3EFe3",
+    "faq_section_j69Y9r",
+    "section_marquee_pep6NQ",
+    "hero_cta_tix9q4",
+    "related"
+  ]
+}
