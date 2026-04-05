@@ -302,23 +302,7 @@
         "video_card_RDX9gR": {
           "type": "video_card",
           "settings": {
-            "video": "shopify://files/videos/Pericalm-testimonial 1 v2.mp4",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
-          }
-        },
-        "video_card_GD4EUi": {
-          "type": "video_card",
-          "settings": {
-            "video": "shopify://files/videos/Pericalm-testimonial 3 v2.mp4",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
-          }
-        },
-        "video_card_DqKXp9": {
-          "type": "video_card",
-          "settings": {
-            "video": "shopify://files/videos/Longevity-testimonial 3 v2.mp4",
+            "video": "shopify://files/videos/Collagen-testimonial-2 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
             "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
           }
@@ -326,9 +310,9 @@
         "video_card_w69BTA": {
           "type": "video_card",
           "settings": {
-            "video": "shopify://files/videos/Longevity-testimonial 4 v2.mp4",
+            "video": "shopify://files/videos/Deepika UGC OPTIMIZED v3.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+            "review_text": "<p>Visible difference in texture and elasticity. Can’t imagine my skincare without it.</p><p><strong>-Deepika</strong></p>"
           }
         }
       },
@@ -336,8 +320,6 @@
         "video_card_EfQwHw",
         "video_card_W4Qm9k",
         "video_card_RDX9gR",
-        "video_card_GD4EUi",
-        "video_card_DqKXp9",
         "video_card_w69BTA"
       ],
       "name": "Why us",
