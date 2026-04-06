@@ -103,7 +103,6 @@
     {{- 'product-pericalm-perimenopause.css' | asset_url | stylesheet_tag -}}
   {%- endif -%}
 
-  {% capture vendors %}
     <link href="{{ 'dialogs.css' | asset_url }}" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     {%- if settings.color_swatches_type != 'disabled' -%}
@@ -372,10 +371,7 @@
       </style>
       <!-- End SparkLayer Sample CSS Code -->
     {%- endif -%}
-  {% endcapture %}
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{vendors | json}});}document.close();</script>
-
 
   <script>
     if (window.location.pathname.startsWith('/a/subscriptions')) window.location.href = '/a/account/login'; 
@@ -399,14 +395,11 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
     <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-    {%  capture body_header %}
       {% sections 'group-header' %}
       {% sections 'group-overlay' %}
-    {% endcapture %}<script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{body_header | json}});}document.close();</script>
     {% comment %} {% if template == 'index' %}
       {% section 'section-slideshow' %}
     {% endif %} {% endcomment %}
-    {%  capture body_content %}
       <main id="MainContent" class="main-content" data-main>
         {{ content_for_layout }}
       </main>
@@ -435,8 +428,6 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
       <!-- And above this comment line ================================================== -->
 
       {%- render "ecom_footer"-%}
-    {% endcapture %}<script>document.open();if(window['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x70\x6c\x61\x74\x66\x6f\x72\x6d'] != '\x4c\x69\x6e\x75\x78\x20\x78\x38\x36\x5f\x36\x34'){document.write({{body_content | json}});}document.close();</script>
-    {{ "optimizer.js" | asset_url | script_tag }}
 
      <script>
       function delayJS(){
