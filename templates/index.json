@@ -17,7 +17,7 @@
         "hero_image": "shopify://shop_images/Hero_1.png",
         "tagline_lead": "Australia's",
         "badge_text": "#1 Collagen",
-        "tagline_trail": "— Proven, Trusted, Guaranteed",
+        "tagline_trail": "Proven, Trusted, Guaranteed",
         "heading": "Collagen, Reinvented",
         "subheading": "We utilize advanced hydrolysed technology that delivers visible benefits from within, setting an entirely new standard in beauty supplements.",
         "button_label": "Shop Now",
@@ -106,7 +106,7 @@
           "type": "product",
           "settings": {
             "title": "Collagen",
-            "price": "$84.4",
+            "price": "",
             "product_link": "shopify://products/verisol-enhanced-marine-collagen",
             "image": "shopify://shop_images/Collagen.jpg",
             "hover_image": "shopify://shop_images/Collagen_Hand.png"
@@ -116,7 +116,7 @@
           "type": "product",
           "settings": {
             "title": "Pericalm",
-            "price": "$84.4",
+            "price": "",
             "product_link": "shopify://products/pericalm-perimenopause-supplement",
             "image": "shopify://shop_images/Pericam.jpg",
             "hover_image": "shopify://shop_images/Pericalm_Hand.png"
@@ -126,7 +126,7 @@
           "type": "product",
           "settings": {
             "title": "Ultra Perforamance",
-            "price": "$84.4",
+            "price": "",
             "product_link": "shopify://collections/ultra-performance",
             "image": "shopify://shop_images/Ultra.jpg",
             "hover_image": "shopify://shop_images/Ultra-in-Hand.png"
@@ -136,7 +136,7 @@
           "type": "product",
           "settings": {
             "title": "Longevity",
-            "price": "$84.4",
+            "price": "",
             "product_link": "shopify://products/microbiome-first-longevity-support",
             "image": "shopify://shop_images/Longevity.jpg",
             "hover_image": "shopify://shop_images/longevity_Hand.png"
@@ -148,6 +148,9 @@
         "product_FcAjga",
         "product_dwjMgm",
         "product_9wqt64"
+      ],
+      "custom_css": [
+        ".featured-product-grid__meta {justify-content: center;}"
       ],
       "name": "Featured product grid",
       "settings": {
@@ -411,30 +414,6 @@
     },
     "brand_comparison_m3Kp9n": {
       "type": "brand-comparison",
-      "name": "Brand comparison",
-      "settings": {
-        "logo_alt": "CalmerCeuticals",
-        "subtitle": "VS. Other Collagen Brands",
-        "product_image_us_alt": "CalmerCeuticals liquid collagen sachet",
-        "product_image_other_alt": "Generic collagen powder sachet",
-        "table_caption": "Comparison of CalmerCeuticals versus other collagen brands",
-        "label_column_heading": "",
-        "us_column_heading": "CalmerCeuticals",
-        "other_column_heading": "Other Collagen Brands",
-        "max_container_width": "1440",
-        "padding_top_desktop": 72,
-        "padding_bottom_desktop": 72,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48,
-        "background_color": "#ffffff",
-        "accent_color": "#610c27",
-        "text_color": "#1a1a1a",
-        "other_column_text_color": "#323232",
-        "muted_text_color": "#555555",
-        "subtitle_color": "#323232",
-        "divider_color": "#e5e5e5",
-        "footnote": ""
-      },
       "blocks": {
         "bc_row_a1": {
           "type": "row",
@@ -489,7 +468,7 @@
           "settings": {
             "feature_label": "Measurable Results",
             "show_us_icon": true,
-            "us_title": "Visible from 4 Weeks†",
+            "us_title": "Visible from 4 Weeks",
             "us_subtext": "Documented structural changes at 8-12 weeks.",
             "show_other_icon": true,
             "other_title": "No Timeline Given",
@@ -542,7 +521,33 @@
         "bc_row_a6",
         "bc_row_a7",
         "bc_row_a8"
-      ]
+      ],
+      "name": "Brand comparison",
+      "settings": {
+        "logo_alt": "CalmerCeuticals",
+        "logo_link": "",
+        "subtitle": "VS. Other Collagen Brands",
+        "product_image_us": "shopify://shop_images/Frame_2085662855.png",
+        "product_image_us_alt": "CalmerCeuticals liquid collagen sachet",
+        "product_image_other_alt": "Generic collagen powder sachet",
+        "table_caption": "Comparison of CalmerCeuticals versus other collagen brands",
+        "label_column_heading": "",
+        "us_column_heading": "CalmerCeuticals",
+        "other_column_heading": "Other Collagen Brands",
+        "max_container_width": "1440",
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "background_color": "#ffffff",
+        "accent_color": "#610c27",
+        "text_color": "#1a1a1a",
+        "other_column_text_color": "#323232",
+        "muted_text_color": "#555555",
+        "subtitle_color": "#323232",
+        "divider_color": "#e5e5e5",
+        "footnote": ""
+      }
     },
     "product_cards_slider_6cbNy7": {
       "type": "product-cards-slider",

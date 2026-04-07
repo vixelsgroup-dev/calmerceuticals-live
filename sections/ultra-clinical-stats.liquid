@@ -29,6 +29,50 @@
     #cst-{{ section.id }} .cst-card { border-bottom: 1px solid {{ section.settings.divider_color }}; padding-bottom: 24px; margin-bottom: 4px; } 
     #cst-{{ section.id }} .cst-card:nth-child(2), #cst-{{ section.id }} .cst-card:last-child { border-bottom: none; }
   }
+  @media screen and (max-width: 767px) {
+
+  #cst-{{ section.id }} {
+    padding-top: calc({{ section.settings.padding_top }}px * 0.6);
+    padding-bottom: calc({{ section.settings.padding_bottom }}px * 0.6);
+  }
+
+  #cst-{{ section.id }} .cst-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  #cst-{{ section.id }} .cst-card { 
+    padding: 20px 10px; 
+    border-bottom: 1px solid {{ section.settings.divider_color }};
+  }
+
+  #cst-{{ section.id }} .cst-card:last-child {
+    border-bottom: none;
+  }
+
+  #cst-{{ section.id }} .cst-card__icon,
+  #cst-{{ section.id }} .cst-card__icon-placeholder {
+    width: calc({{ section.settings.icon_size }}px * 0.8);
+    height: calc({{ section.settings.icon_size }}px * 0.8);
+  }
+
+  #cst-{{ section.id }} .cst-card__heading {
+    font-size: calc({{ section.settings.heading_size }}px * 0.8);
+  }
+
+  #cst-{{ section.id }} .cst-card__number {
+    font-size: calc({{ section.settings.number_size }}px * 0.75);
+  }
+
+  #cst-{{ section.id }} .cst-card__desc {
+    font-size: calc({{ section.settings.desc_size }}px * 0.8);
+    max-width: 300px;
+  }
+
+  #cst-{{ section.id }} .cst-card:not(:last-child)::after {
+    display: none;
+  }
+}
 
 </style>
 

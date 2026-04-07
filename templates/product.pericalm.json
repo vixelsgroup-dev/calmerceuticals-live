@@ -88,6 +88,62 @@
             "padding_bottom": 50
           }
         },
+        "product_video_HCDMCX": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 1_1873b335-644f-4331-ae35-a71e828a2083.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_9p7faA": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 2_bcc03744-b763-491d-8db6-82252a4eed5b.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_xUpQxW": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 3_65c22715-2197-4a8c-a09a-21702e69c108.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_GcUA3h": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 4 v2_ccf77496-8078-4bce-9bd1-6350a1d42350.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_7PYFHC": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 5_fffca16b-a77b-4166-b8a1-a17a94cdc2e7.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_e4qGpB": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 6_26c37465-7514-495d-8680-64b2b4501477.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_n6RgMQ": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 7_5ff967a7-eda1-4c71-82e8-3839df976ca3.mp4",
+            "product": "{{ product }}"
+          }
+        },
+        "product_video_WFEUm9": {
+          "type": "product_video",
+          "settings": {
+            "video": "shopify://files/videos/Clip 8_4eaf386c-439c-4fb6-88fb-ed561d1a5b49.mp4",
+            "product": "{{ product }}"
+          }
+        },
         "form": {
           "type": "form",
           "settings": {
@@ -237,6 +293,14 @@
         "description",
         "text_PDKdAh",
         "divider_fMkTtJ",
+        "product_video_HCDMCX",
+        "product_video_9p7faA",
+        "product_video_xUpQxW",
+        "product_video_GcUA3h",
+        "product_video_7PYFHC",
+        "product_video_e4qGpB",
+        "product_video_n6RgMQ",
+        "product_video_WFEUm9",
         "form",
         "icon_iKriEA",
         "icon_GHV7XY",

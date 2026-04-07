@@ -11,7 +11,7 @@
 {% endif %}
 
 {% assign block_count = section.blocks | size %}
-{% assign mobile_height = block_count | times: 380 | plus: 190 %}
+{% assign mobile_height = block_count | times: 300 | plus: 190 %}
 {%- assign bg_opacity = section.settings.card_bg_opacity | divided_by: 100.0 -%}
 {%- assign card_bg = section.settings.card_background | color_modify: 'alpha', bg_opacity -%}
 
@@ -98,12 +98,22 @@
 
   /* Responsive */
   @media screen and (max-width: 767px) {
-  .ifc-section__card{padding: 42px 24px; }
+  .ifc-section__card{padding: 42px 24px;    gap: 18px; }
   .ifc-section{padding-top: 0 !important;}
 
   .ifc-section__bg-img, .ifc-section__bg-placeholder { min-height: {{ mobile_height }}px; }
   .ifc-section__wrap { display: flex; flex-direction: column; min-height: {{ mobile_height }}px; }
   .ifc-section__cards { grid-template-columns: 1fr; top: 60px; margin-left: 10px; margin-right: 10px;}
+  .ifc-section__card-heading > *{
+      font-size: 26px;
+  }
+  .ifc-section__card-icon-img {
+    width: 60px;
+    height: 60px;
+}
+.ifc-section__card-body > *{
+  font-size: 16px;
+}
   }
 </style>
 

@@ -924,15 +924,18 @@
   .program-card--disabled .select-btn-main button{
     cursor:not-allowed;
   } {% endcomment %}
-  .program-cards .program-card{background-color:#fff;border: 1px solid #EFE6E9;position:relative;transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease;border-radius:12px;}
-  .program-cards .program-card.program-card--active{border: 1px solid #610C27;box-shadow:0px 0px 15px 2px #F3C5D3;}
+  .program-card__inner .program-card__content .program-card__content-inner{
+    align-items: self-start;
+  }
+  .program-cards .program-card{background-color:#fff;border: 0px solid #EFE6E9;position:relative;transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease;border-radius:12px;}
+  .program-cards .program-card.program-card--active{border: 1px solid #610C27;}
   .program-cards .program-card:not(:last-child){margin-bottom:25px;}
   .program-cards .program-card--regular-subscriptions-general{margin-top:50px;}
   .program-card .discount-badge{background: #6A0927; border: 1px solid #ccc; border-radius: 30px; color: #fff; font-size: 15px;text-transform:uppercase;padding: 0 20px; width: max-content; margin: 0 auto;height:32px;line-height:32px;}
   .program-card .program-card__content{flex:1;}
-  .program-card .program-card__content .program-card__content-inner{display:flex;justify-content:space-between;height:100%;}
+  .program-card .program-card__content .program-card__content-inner{display:flex;justify-content:space-between;height:100%;padding:0;}
   .program-card .price-area{text-align:center;}
-  .program-card .prices{display: flex; flex-direction: row-reverse; align-items: center;font-size:16px;gap: 3px; line-height: 20px;}
+  .program-card .prices{display: flex; flex-direction: row; align-items: center;font-size:16px;gap: 3px; line-height: 20px;}
   .program-card .program-card__price-wrap s{display:block;font-size:10px;}
   .program-card .program-card__price-wrap .price-per-delivery{font-size:11px;line-height:10px;}
   .program-card .program-card__price-wrap .price-per-delivery-wrapper{line-height:10px;}
@@ -964,9 +967,14 @@
   .flavor-guarantee .flavor-icon{max-width:30px;}
   .flavor-guarantee h4{font-weight:700;margin:0;}
   .flavor-guarantee p{margin:0;}
+  span.radio-element {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
   @media (min-width: 768px) {
-    .program-card .prices{font-size:24px;}
-    .program-card__title{font-size:22px;}
+    .program-card .prices{font-size:18px;}
+    .program-card__title{font-size:16px; font-weight:500;}
     .free-badge{font-size:15px;line-height:16px;top:-25px;}
     .free-badge span{font-size:14px;}
     .free-offer-image img{max-width:135px;}
@@ -975,7 +983,7 @@
     .weeks-cards .weeks-cards-inner{gap:15px;}
     .weeks-cards .weeks-cards-inner .week-card{font-size:13px;padding:25px 15px;}
     .timeline li p{font-size:12px;}
-    .program-name{font-size:9px;}
+    .program-name{font-size:12px;}
     .flavor-guarantee{gap:20px;}
     .program-card .program-card__price-wrap{margin-bottom:5px;}
     .program-card .program-card__price-wrap s{font-size:16px;}

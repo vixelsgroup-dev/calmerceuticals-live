@@ -1,1 +1,56 @@
-{"type":"aside","name":"Overlay","sections":{"popup":{"type":"popup","blocks":{"promo_popup_overlay_Req7qp":{"type":"promo-popup-overlay","settings":{"position":"center-center","image_desktop":"shopify:\/\/shop_images\/Easter_Banner_DESKTOP.jpg","image_mobile":"shopify:\/\/shop_images\/Easter_Banner_MOB.jpg","height":"original-height","height_mobile":"original-height","pre_title":"","sub_title":"","title":"","custom_liquid":"","button_url":"","button_text":"","trigger":"always","target_url_enabled":false,"target_url":"","target_referrer_enabled":false,"target_referrer":"","target_device_enabled":false,"target_device":"mobile","bg_color":"#ffffff"}}},"block_order":["promo_popup_overlay_Req7qp"],"custom_css":[".promo-popup .popup__content::after {display: none !important;}",".promo-popup .actions {display: none !important;}"],"settings":{}}},"order":["popup"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "aside",
+  "name": "Overlay",
+  "sections": {
+    "popup": {
+      "type": "popup",
+      "blocks": {
+        "promo_popup_overlay_Req7qp": {
+          "type": "promo-popup-overlay",
+          "disabled": true,
+          "settings": {
+            "position": "center-center",
+            "image_desktop": "shopify://shop_images/Easter_Banner_DESKTOP.jpg",
+            "image_mobile": "shopify://shop_images/Easter_Banner_MOB.jpg",
+            "height": "original-height",
+            "height_mobile": "original-height",
+            "pre_title": "",
+            "sub_title": "",
+            "title": "",
+            "custom_liquid": "",
+            "button_url": "",
+            "button_text": "",
+            "trigger": "always",
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile",
+            "bg_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "promo_popup_overlay_Req7qp"
+      ],
+      "custom_css": [
+        ".promo-popup .popup__content::after {display: none !important;}",
+        ".promo-popup .actions {display: none !important;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "popup"
+  ]
+}

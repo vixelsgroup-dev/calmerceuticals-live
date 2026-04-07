@@ -43,6 +43,7 @@
         },
         "custom_code_GrbPLC": {
           "type": "custom_code",
+          "disabled": true,
           "settings": {
             "custom_code": "<style>\n  @keyframes hop {\n    0%, 100% { transform: translateY(0px); }\n    50% { transform: translateY(-4px); }\n  }\n  @keyframes shimmer {\n    0%, 100% { opacity: 0.5; }\n    50% { opacity: 1; }\n  }\n  .bunny { animation: hop 2.4s ease-in-out infinite; }\n  .star1 { animation: shimmer 2s ease-in-out infinite; }\n  .star2 { animation: shimmer 2s ease-in-out infinite 0.6s; }\n  .star3 { animation: shimmer 2s ease-in-out infinite 1.1s; }\n\n  /* DM Sans applied via CSS */\n  .main-text {\n    font-family: \"DM Sans\", Arial, sans-serif;\n    font-size: 16px;\n    font-weight: 700;\n    fill: #3A2000;\n  }\n</style>\n\n<svg width=\"100%\" viewBox=\"0 0 680 64\" xmlns=\"http://www.w3.org/2000/svg\">\n  \n  <rect x=\"0\" y=\"0\" width=\"680\" height=\"64\" rx=\"4\" fill=\"#ffdb23\"/>\n\n  <ellipse cx=\"38\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#F9C6E0\" opacity=\"0.9\"/>\n  <path d=\"M31 29 Q38 26 45 29\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n  <path d=\"M31 33 Q38 30 45 33\" fill=\"none\" stroke=\"#E07090\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n\n  <ellipse cx=\"642\" cy=\"32\" rx=\"8\" ry=\"10\" fill=\"#B8E6D4\" opacity=\"0.9\"/>\n  <path d=\"M635 29 L638 26 L641 29 L644 26 L647 29\" fill=\"none\" stroke=\"#5AA888\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n\n  <g class=\"star1\">\n    <path d=\"M80 20 L81.2 17 L82.4 20 L85 21 L82.4 22 L81.2 25 L80 22 L77 21 Z\" fill=\"#E07090\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star2\">\n    <path d=\"M600 20 L601.2 17 L602.4 20 L605 21 L602.4 22 L601.2 25 L600 22 L597 21 Z\" fill=\"#5AA888\" opacity=\"0.7\"/>\n  </g>\n  <g class=\"star3\">\n    <path d=\"M108 46 L109 44 L110 46 L112 47 L110 48 L109 50 L108 48 L106 47 Z\" fill=\"#9A60D8\" opacity=\"0.55\"/>\n  </g>\n\n  <g class=\"bunny\">\n    <ellipse cx=\"313\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"313\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"4\" ry=\"9\" fill=\"#FFF0A0\"/>\n    <ellipse cx=\"323\" cy=\"14\" rx=\"2\" ry=\"6\" fill=\"#F9C6DC\" opacity=\"0.8\"/>\n    <circle cx=\"318\" cy=\"30\" r=\"12\" fill=\"#FFF0A0\"/>\n    <circle cx=\"314\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"322\" cy=\"28\" r=\"2\" fill=\"#3A2A1A\"/>\n    <circle cx=\"314.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <circle cx=\"322.6\" cy=\"27.3\" r=\"0.7\" fill=\"white\"/>\n    <ellipse cx=\"318\" cy=\"32\" rx=\"1.5\" ry=\"1\" fill=\"#F9A8CC\"/>\n    <path d=\"M316 33.5 Q318 35.5 320 33.5\" fill=\"none\" stroke=\"#C07090\" stroke-width=\"0.8\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"312\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n    <ellipse cx=\"324\" cy=\"31\" rx=\"2.5\" ry=\"1.5\" fill=\"#FFAAAA\" opacity=\"0.45\"/>\n  </g>\n\n  <text x=\"348\" y=\"36\" text-anchor=\"middle\" class=\"main-text\">\n    Hop into Easter! 🐰 Enjoy 2 Weeks Free on All New Subscriptions\n  </text>\n\n</svg>",
             "padding_bottom": 20
@@ -319,25 +320,25 @@
         "video_card_EfQwHw": {
           "type": "video_card",
           "settings": {
-            "video": "shopify://files/videos/Pericalm-testimonial 6.mp4",
+            "video": "shopify://files/videos/Ultra-testimonial 1 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+            "review_text": "<p>My stamina and focus have improved significantly. I feel more productive throughout the day.</p><p><strong>-Emily Carter</strong></p>"
           }
         },
         "video_card_W4Qm9k": {
           "type": "video_card",
           "settings": {
-            "video": "shopify://files/videos/Pericalm-testimonial 7.mp4",
+            "video": "shopify://files/videos/Ultra-testimonial 5 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+            "review_text": "<p>I noticed a real boost in energy without crashes. It’s become part of my daily routine.</p><p><strong>-Hannah Lee</strong></p>"
           }
         },
         "video_card_RDX9gR": {
           "type": "video_card",
           "settings": {
-            "video": "shopify://files/videos/Pericalm-testimonial 1 v2.mp4",
+            "video": "shopify://files/videos/Ultra-testimonial 3 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+            "review_text": "<p>Stronger performance in workouts and better recovery. Solid results so far.</p><p><strong>-Daniel Foster</strong></p>"
           }
         },
         "video_card_GD4EUi": {
@@ -345,23 +346,7 @@
           "settings": {
             "video": "shopify://files/videos/Pericalm-testimonial 3 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
-          }
-        },
-        "video_card_DqKXp9": {
-          "type": "video_card",
-          "settings": {
-            "video": "shopify://files/videos/Longevity-testimonial 3 v2.mp4",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
-          }
-        },
-        "video_card_w69BTA": {
-          "type": "video_card",
-          "settings": {
-            "video": "shopify://files/videos/Longevity-testimonial 4 v2.mp4",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
-            "review_text": "<p>I've been using Calmerceuticals for a month, and my skin is glowing! So impressed!!</p><p><strong>-EMILY</strong></p>"
+            "review_text": "<p>Great for staying sharp and active, especially during long, busy days.</p><p><strong>-Olivia Bennett</strong></p>"
           }
         }
       },
@@ -369,9 +354,7 @@
         "video_card_EfQwHw",
         "video_card_W4Qm9k",
         "video_card_RDX9gR",
-        "video_card_GD4EUi",
-        "video_card_DqKXp9",
-        "video_card_w69BTA"
+        "video_card_GD4EUi"
       ],
       "name": "Why us",
       "settings": {
