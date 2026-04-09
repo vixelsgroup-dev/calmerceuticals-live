@@ -14,12 +14,13 @@
       "name": "Hero — brand intro",
       "settings": {
         "background_color": "#f5f5f5",
+        "hero_video": "shopify://files/videos/Gen-4_5 - Use the uploaded image as the baseDo not change anything in the sceneAnimate only the co.gen-4_5 - use the uploaded image as the basedo not change anything in the sceneanimate only the co.mp4",
         "hero_image": "shopify://shop_images/Hero_1.png",
         "tagline_lead": "Australia's",
-        "badge_text": "#1 Collagen",
-        "tagline_trail": "Proven, Trusted, Guaranteed",
-        "heading": "Collagen, Reinvented",
-        "subheading": "We utilize advanced hydrolysed technology that delivers visible benefits from within, setting an entirely new standard in beauty supplements.",
+        "badge_text": "#1 Ingestible Brand",
+        "tagline_trail": "Proven. Clinical. Guaranteed.",
+        "heading": "Supplementation, Reinvented",
+        "subheading": "Results, Reinvented. Most supplements are built for margins. Ours are built to perform.\nScientifically studied ingredients. Clinical doses. Third-party tested. No sugar, no synthetics, no shortcuts. Ever.\nThis is supplementation as it should be.",
         "button_label": "Shop Now",
         "button_link": "shopify://collections/all",
         "cta_avatar": "shopify://shop_images/calmerceuticals-cta.png",
@@ -108,7 +109,7 @@
             "title": "Collagen",
             "price": "",
             "product_link": "shopify://products/verisol-enhanced-marine-collagen",
-            "image": "shopify://shop_images/Collagen.jpg",
+            "image": "shopify://shop_images/Collagen_FA.jpg",
             "hover_image": "shopify://shop_images/Collagen_Hand.png"
           }
         },
@@ -118,7 +119,7 @@
             "title": "Pericalm",
             "price": "",
             "product_link": "shopify://products/pericalm-perimenopause-supplement",
-            "image": "shopify://shop_images/Pericam.jpg",
+            "image": "shopify://shop_images/Peri_hanging.jpg",
             "hover_image": "shopify://shop_images/Pericalm_Hand.png"
           }
         },
@@ -128,7 +129,7 @@
             "title": "Ultra Perforamance",
             "price": "",
             "product_link": "shopify://collections/ultra-performance",
-            "image": "shopify://shop_images/Ultra.jpg",
+            "image": "shopify://shop_images/Ultra_vending.jpg",
             "hover_image": "shopify://shop_images/Ultra-in-Hand.png"
           }
         },
@@ -138,7 +139,7 @@
             "title": "Longevity",
             "price": "",
             "product_link": "shopify://products/microbiome-first-longevity-support",
-            "image": "shopify://shop_images/Longevity.jpg",
+            "image": "shopify://shop_images/Ultra_FA.jpg",
             "hover_image": "shopify://shop_images/longevity_Hand.png"
           }
         }
@@ -427,6 +428,30 @@
             "other_subtext": "Below the effective threshold"
           }
         },
+        "row_hxRbaJ": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Vitamin C",
+            "show_us_icon": true,
+            "us_title": "80mg Vitamin C",
+            "us_subtext": "Supports collagen synthesis and antioxidant protection.",
+            "show_other_icon": true,
+            "other_title": "Low or Missing",
+            "other_subtext": "Insufficient levels to effectively support collagen formation."
+          }
+        },
+        "row_LR99Gf": {
+          "type": "row",
+          "settings": {
+            "feature_label": "Hyaluronic Acid",
+            "show_us_icon": true,
+            "us_title": "150mg Hyaluronic Acid",
+            "us_subtext": "Supports skin hydration, elasticity, and moisture retention.",
+            "show_other_icon": true,
+            "other_title": "Trace or Absent",
+            "other_subtext": "Too low to deliver meaningful hydration benefits."
+          }
+        },
         "bc_row_a2": {
           "type": "row",
           "settings": {
@@ -514,6 +539,8 @@
       },
       "block_order": [
         "bc_row_a1",
+        "row_hxRbaJ",
+        "row_LR99Gf",
         "bc_row_a2",
         "bc_row_a3",
         "bc_row_a4",
@@ -527,7 +554,7 @@
         "logo_alt": "CalmerCeuticals",
         "logo_link": "",
         "subtitle": "VS. Other Collagen Brands",
-        "product_image_us": "shopify://shop_images/Frame_2085662855.png",
+        "product_image_us": "shopify://shop_images/collgen.png",
         "product_image_us_alt": "CalmerCeuticals liquid collagen sachet",
         "product_image_other_alt": "Generic collagen powder sachet",
         "table_caption": "Comparison of CalmerCeuticals versus other collagen brands",

@@ -1,1 +1,38 @@
-{"sections":{"questionnaire":{"type":"questionnaire","settings":{"logo":"shopify:\/\/shop_images\/Naming_2.png","logo_max_width":308,"why_title":"Why We're Asking","why_text":"Nutritional needs vary based on hormones, body composition, and metabolism. While some products are categorized for specific groups, our formulations are designed for broad applicability. Our approach is grounded in clinical research, which is often reported using traditional demographic groupings.","bg_type":"color","bg_color":"#ffffff","bg_image_position":"center center","bg_image_size":"cover","bg_overlay_opacity":0,"bg_overlay_color":"#ffffff","collagen_url_male":"https:\/\/calmerceuticals.com\/products\/enhanced-marine-collagen-for-men","collagen_url_female_nonbinary":"https:\/\/calmerceuticals.com\/products\/verisol-enhanced-marine-collagen","perimenopause_shop_url":"https:\/\/calmerceuticals.com\/products\/pericalm-perimenopause-supplement","longevity_shop_url":"https:\/\/calmerceuticals.com\/products\/microbiome-first-longevity-support","url_default":""}}},"order":["questionnaire"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "questionnaire": {
+      "type": "questionnaire",
+      "settings": {
+        "logo": "shopify://shop_images/Naming_2.png",
+        "logo_max_width": 308,
+        "why_title": "Why We're Asking",
+        "why_text": "Nutritional needs vary based on hormones, body composition, and metabolism. While some products are categorized for specific groups, our formulations are designed for broad applicability. Our approach is grounded in clinical research, which is often reported using traditional demographic groupings.",
+        "bg_type": "image",
+        "bg_color": "#ffffff",
+        "bg_image": "shopify://shop_images/age.png",
+        "mobile_image": "shopify://shop_images/Frame_2085662855_1c9d1b57-8fed-42ce-8f12-b26f582643c6.png",
+        "bg_image_position": "center center",
+        "bg_image_size": "cover",
+        "bg_overlay_opacity": 0,
+        "bg_overlay_color": "#ffffff",
+        "collagen_url_male": "https://calmerceuticals.com/products/enhanced-marine-collagen-for-men",
+        "collagen_url_female_nonbinary": "https://calmerceuticals.com/products/verisol-enhanced-marine-collagen",
+        "perimenopause_shop_url": "https://calmerceuticals.com/products/pericalm-perimenopause-supplement",
+        "longevity_shop_url": "https://calmerceuticals.com/products/microbiome-first-longevity-support",
+        "url_default": ""
+      }
+    }
+  },
+  "order": [
+    "questionnaire"
+  ]
+}

@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "type": "header",
   "name": "Header",
   "sections": {
@@ -176,7 +176,7 @@
         "text_iJnD6A": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Same Day Dispatch </strong></p>",
+            "text": "<p><strong>Same Day Shipping</strong></p>",
             "text_color": "#ffffff",
             "heading_highlight_type": "italics",
             "highlight_color": "#fbfbfb",

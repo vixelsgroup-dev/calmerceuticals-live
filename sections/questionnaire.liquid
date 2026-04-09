@@ -135,6 +135,22 @@
     </a>
   </div>
 
+  <div>
+    {% if section.settings.mobile_image != blank %}
+    <div class="questionnaire__media questionnaire__media--mobile">
+      {{
+        section.settings.mobile_image
+        | image_url: width: 1200
+        | image_tag:
+          class: 'questionnaire__img',
+          loading: 'lazy',
+          alt: hero_alt
+      }}
+    </div>
+  {% endif %}
+
+  </div>
+
   {%- comment -%} ── Screens ── {%- endcomment -%}
   <div class="questionnaire__body">
     {%- comment -%} ══ SCREEN 1 — Age ══ {%- endcomment -%}
@@ -377,6 +393,11 @@
       "type": "image_picker",
       "id": "bg_image",
       "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile View image"
     },
     {
       "type": "select",

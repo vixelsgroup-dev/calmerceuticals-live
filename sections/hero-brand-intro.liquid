@@ -102,8 +102,18 @@
         {% endif %}
       </div>
 
-      <div class="hero-brand-intro__media">
-        {% if section.settings.hero_image != blank %}
+      <div class="hero-brand-intro__media"  {% if section.settings.hero_video != blank %} style="width: 100%;"{% endif %}>
+        {% if section.settings.hero_video != blank %}
+          {{
+            section.settings.hero_video
+            | video_tag:
+              class: 'hero-brand-intro__img',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: false
+          }}
+        {% elsif section.settings.hero_image != blank %}
           {{
             section.settings.hero_image
             | image_url: width: 2400
@@ -227,6 +237,11 @@
       "label": "Section background",
       "default": "#f5f5f5",
       "info": "Shows behind the hero image (e.g. while loading) and in any letterboxing."
+    },
+    {
+      "type": "video",
+      "id": "hero_video",
+      "label": "Hero Video"    
     },
     {
       "type": "image_picker",

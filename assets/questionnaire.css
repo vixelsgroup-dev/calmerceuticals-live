@@ -6,9 +6,26 @@
 #questionnaire div[data-section-type="announcement-bar"],
 #questionnaire .shopify-section-header,
 #questionnaire #SiteFooter {
-  display: none;
+  /* display: none; */
 }
-
+@media screen and (min-width:757px){
+  .questionnaire__media--mobile{
+    display: none;
+  }
+}
+@media screen and (max-width:757px){
+  .questionnaire__logo-wrap{
+    display: none !important;
+  }
+}
+img.questionnaire__img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.questionnaire__media.questionnaire__media--mobile {
+    margin-bottom: 20px;
+}
 #questionnaire .main-content--parallax {
   --footer-bg: none !important;
 }
