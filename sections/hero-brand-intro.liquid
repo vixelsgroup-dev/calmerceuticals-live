@@ -8,8 +8,10 @@
 
 {% liquid
   assign show_founder = false
-  if section.settings.founder_video != blank or section.settings.founder_image != blank
-    assign show_founder = true
+  if section.settings.show_founder_message != false
+    if section.settings.founder_video != blank or section.settings.founder_image != blank
+      assign show_founder = true
+    endif
   endif
   assign has_hero_ctas = false
   if section.settings.button_label != blank or section.settings.formula_button_label != blank
@@ -319,6 +321,13 @@
     {
       "type": "header",
       "content": "Founder message"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_founder_message",
+      "label": "Show founder message",
+      "default": true,
+      "info": "Turn off to hide the expandable founder video or image below the hero."
     },
     {
       "type": "video",

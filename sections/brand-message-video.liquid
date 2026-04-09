@@ -1,0 +1,209 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500&display=swap"
+>
+<link rel="stylesheet" href="{{ 'brand-message-video.css' | asset_url }}">
+
+{% liquid
+  assign url_desktop = section.settings.video_url_desktop | strip
+  assign url_mobile = section.settings.video_url_mobile | strip
+  if url_mobile == blank
+    assign url_mobile = url_desktop
+  endif
+  if url_desktop == blank
+    assign url_desktop = url_mobile
+  endif
+  assign has_video = false
+  if url_desktop != blank or url_mobile != blank
+    assign has_video = true
+  endif
+  assign use_single_video = false
+  if url_desktop != blank and url_mobile != blank and url_desktop == url_mobile
+    assign use_single_video = true
+  endif
+
+  assign poster_desktop = ''
+  assign poster_mobile = ''
+  if section.settings.poster_image != blank
+    assign poster_desktop = section.settings.poster_image | image_url: width: 3840
+  endif
+  if section.settings.poster_image_mobile != blank
+    assign poster_mobile = section.settings.poster_image_mobile | image_url: width: 2400
+  elsif poster_desktop != blank
+    assign poster_mobile = poster_desktop
+  endif
+%}
+
+<section
+  id="BrandMessageVideo-{{ section.id }}"
+  class="brand-message-video"
+  data-brand-message-video
+  style="
+    --bmv-fallback: {{ section.settings.fallback_background | default: '#1a1a1a' }};
+    --bmv-text: {{ section.settings.text_color | default: '#ffffff' }};
+    --bmv-min-height: {{ section.settings.min_height | default: 65 }}vh;
+  "
+  {{ section.shopify_attributes }}
+>
+  <div class="brand-message-video__media">
+    {% if has_video %}
+      {% if use_single_video %}
+        <video
+          class="brand-message-video__video brand-message-video__video--single"
+          src="{{ url_desktop | escape }}"
+          muted
+          playsinline
+          loop
+          preload="metadata"
+          {% if poster_desktop != blank %}
+            poster="{{ poster_desktop | escape }}"
+          {% endif %}
+        ></video>
+      {% else %}
+        {% if url_desktop != blank %}
+          <video
+            class="brand-message-video__video brand-message-video__video--desktop"
+            src="{{ url_desktop | escape }}"
+            muted
+            playsinline
+            loop
+            preload="metadata"
+            {% if poster_desktop != blank %}
+              poster="{{ poster_desktop | escape }}"
+            {% endif %}
+          ></video>
+        {% endif %}
+        {% if url_mobile != blank %}
+          <video
+            class="brand-message-video__video brand-message-video__video--mobile"
+            src="{{ url_mobile | escape }}"
+            muted
+            playsinline
+            loop
+            preload="metadata"
+            {% if poster_mobile != blank %}
+              poster="{{ poster_mobile | escape }}"
+            {% endif %}
+          ></video>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if has_video %}
+    <div class="brand-message-video__controls">
+      <button
+        type="button"
+        class="brand-message-video__mute"
+        data-bmv-mute
+        aria-pressed="true"
+        aria-label="Unmute video"
+      >
+        <span class="brand-message-video__mute-icon brand-message-video__mute-icon--on" aria-hidden="true">
+          {% render 'icon-sound-on' %}
+        </span>
+        <span class="brand-message-video__mute-icon brand-message-video__mute-icon--off" aria-hidden="true">
+          {% render 'icon-sound-off' %}
+        </span>
+      </button>
+    </div>
+  {% endif %}
+
+  <div class="brand-message-video__content wrapper">
+    {% if section.settings.heading != blank %}
+      <h2 class="brand-message-video__heading">{{ section.settings.heading | escape }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="brand-message-video__sub">{{ section.settings.subheading | escape }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ 'brand-message-video.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Brand message video",
+  "tag": "section",
+  "class": "section-brand-message-video",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Paste direct links to MP4 files (for example from Shopify Files). Desktop and mobile can use different assets."
+    },
+    {
+      "type": "text",
+      "id": "video_url_desktop",
+      "label": "Desktop / full-width video URL",
+      "info": "Shown from 750px width and up."
+    },
+    {
+      "type": "text",
+      "id": "video_url_mobile",
+      "label": "Mobile video URL",
+      "info": "Shown below 750px. If empty, the desktop URL is used."
+    },
+    {
+      "type": "header",
+      "content": "Poster (sharp thumbnail)"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster image (desktop)",
+      "info": "Optional. Clear still shown before play and as the video poster. Use a high-resolution JPG or PNG (wide)."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_mobile",
+      "label": "Poster image (mobile)",
+      "info": "Optional. Falls back to desktop poster if empty."
+    },
+    {
+      "type": "header",
+      "content": "Text overlay"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rose, Founder"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "of Calmerceuticals Message"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "fallback_background",
+      "label": "Background (no video or loading)",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Minimum section height",
+      "default": 65
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand message video"
+    }
+  ]
+}
+{% endschema %}

@@ -26,6 +26,7 @@
         "cta_avatar": "shopify://shop_images/calmerceuticals-cta.png",
         "formula_button_label": "Find Formula",
         "formula_button_link": "shopify://pages/questionnaire",
+        "show_founder_message": false,
         "founder_video": "shopify://files/videos/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4",
         "founder_label": "Founder Message"
       }
@@ -98,6 +99,19 @@
         "logo_gap": 20,
         "speed": 25,
         "pause_on_hover": true
+      }
+    },
+    "brand_message_video_bg_6Tk4mL": {
+      "type": "brand-message-video",
+      "name": "Brand message video",
+      "settings": {
+        "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/feb0702d559b466384eceb94fc64751c.mp4",
+        "video_url_mobile": "https://cdn.shopify.com/videos/c/o/v/356bcb584dca4ee495d37a67c82d847f.mp4",
+        "heading": "Rose, Founder",
+        "subheading": "of Calmerceuticals Message",
+        "text_color": "#ffffff",
+        "fallback_background": "#1a1a1a",
+        "min_height": 85
       }
     },
     "featured_product_grid_U7hdWd": {
@@ -1066,6 +1080,7 @@
   "order": [
     "hero_brand_intro_7FeDWQ",
     "logo_marquee_XGdpzG",
+    "brand_message_video_bg_6Tk4mL",
     "featured_product_grid_U7hdWd",
     "custom_videos_slider_7n67zb",
     "clinical_stats_hhXJ4n",
