@@ -11,16 +11,20 @@
   "sections": {
     "hero_brand_intro_7FeDWQ": {
       "type": "hero-brand-intro",
+      "custom_css": [
+        ".hero-brand-intro * {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Hero — brand intro",
       "settings": {
         "background_color": "#f5f5f5",
         "hero_video": "shopify://files/videos/Gen-4_5 - Use the uploaded image as the baseDo not change anything in the sceneAnimate only the co.gen-4_5 - use the uploaded image as the basedo not change anything in the sceneanimate only the co.mp4",
+        "hero_video_mobile_url": "https://cdn.shopify.com/videos/c/o/v/8bc46b0bde37487e931f3b94a565947d.mp4",
         "hero_image": "shopify://shop_images/Hero_1.png",
         "tagline_lead": "Australia's",
         "badge_text": "#1 Ingestible Brand",
-        "tagline_trail": "Proven. Clinical. Guaranteed.",
-        "heading": "Supplementation, Reinvented",
-        "subheading": "Results, Reinvented. Most supplements are built for margins. Ours are built to perform.\nScientifically studied ingredients. Clinical doses. Third-party tested. No sugar, no synthetics, no shortcuts. Ever.\nThis is supplementation as it should be.",
+        "tagline_trail": "Premium. Proven. Effective.",
+        "heading": "Supplementation as it should be.",
+        "subheading": "Scientifically studied. Clinically dosed. Third party tested. Guaranteed results.",
         "button_label": "Shop Now",
         "button_link": "shopify://collections/all",
         "cta_avatar": "shopify://shop_images/calmerceuticals-cta.png",
@@ -103,6 +107,10 @@
     },
     "brand_message_video_bg_6Tk4mL": {
       "type": "brand-message-video",
+      "disabled": true,
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Brand message video",
       "settings": {
         "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/feb0702d559b466384eceb94fc64751c.mp4",
@@ -165,7 +173,8 @@
         "product_9wqt64"
       ],
       "custom_css": [
-        ".featured-product-grid__meta {justify-content: center;}"
+        ".featured-product-grid__meta {justify-content: center;}",
+        "* {font-family: \"Jost\", sans-serif !important;}"
       ],
       "name": "Featured product grid",
       "settings": {
@@ -346,6 +355,9 @@
         "video_slide_ftwP7x",
         "video_slide_N8bHJT"
       ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Custom videos slider",
       "settings": {
         "background_color": "#f4f4f4",
@@ -410,6 +422,9 @@
         "metric_URexBj",
         "metric_3KFaWe",
         "metric_4ncTGa"
+      ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
       ],
       "name": "Clinical stats",
       "settings": {
@@ -563,6 +578,9 @@
         "bc_row_a7",
         "bc_row_a8"
       ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Brand comparison",
       "settings": {
         "logo_alt": "CalmerCeuticals",
@@ -644,12 +662,14 @@
         "product_card_RVPmgQ",
         "product_card_z3Fz7P"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Product cards slider",
       "settings": {
-        "heading_line_1": "Formula for the right outcome.",
+        "heading_line_1": "Formulated for the right outcome.",
         "heading_line_2": "",
-        "description": "From collagen for skin and hair to adaptogenic support for energy and focus, to targeted solutions for menopause, inflammation, and longevity—each product is designed for a specific result.",
+        "description": "From collagen for skin and hair to adaptogenic support for energy and focus, to targeted solutions for menopause, inflammation, and longevity, each product is designed for a specific result.",
         "quiz_label": "Take the quiz",
         "quiz_link": "shopify://pages/questionnaire",
         "products_label": "See all products",
@@ -680,6 +700,9 @@
     },
     "global_spotlight_iEKXU4": {
       "type": "global-spotlight",
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Global spotlight",
       "settings": {
         "background_color": "#f4f4f4",
@@ -693,9 +716,9 @@
         "description_color": "#131014",
         "button_text_color": "#ffffff",
         "button_background_color": "#610c27",
-        "heading_line_1": "Australia's",
-        "heading_line_2": "Leading Collagen",
-        "heading_line_3": "Brand*",
+        "heading_line_1": "Australia's # 1",
+        "heading_line_2": "",
+        "heading_line_3": "ingestible brand",
         "description": "Our formulations are built on clinically studied ingredients and tested in real-world routines. Across global users, we track visible improvements in skin elasticity, hydration, and overall vitality - because results should be measured, not assumed.",
         "button_label": "Shop Now",
         "button_icon": "shopify://shop_images/calmerceuticals-cta.png",
@@ -747,6 +770,9 @@
         "testimonial_3mnyfG",
         "testimonial_tWqpmx",
         "testimonial_YaFDWw"
+      ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
       ],
       "name": "Testimonial showcase",
       "settings": {
@@ -925,6 +951,9 @@
         "video_card_mxAqrK",
         "video_card_dpkdkL"
       ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
+      ],
       "name": "Video Testimonials Slider",
       "settings": {
         "padding_top": 32,
@@ -993,6 +1022,9 @@
         "review_p3KQpq",
         "review_w8g8m3",
         "review_Q6hTii"
+      ],
+      "custom_css": [
+        "* {font-family: \"Jost\", sans-serif !important;}"
       ],
       "name": "Reviews Slider",
       "settings": {

@@ -17,11 +17,29 @@
   if section.settings.button_label != blank or section.settings.formula_button_label != blank
     assign has_hero_ctas = true
   endif
+
+  assign hero_video_mobile_url = section.settings.hero_video_mobile_url | strip
+  assign has_mobile_hero_shopify = false
+  if section.settings.hero_video_mobile != blank
+    assign has_mobile_hero_shopify = true
+  endif
+  assign has_mobile_hero_url = false
+  if hero_video_mobile_url != blank
+    assign has_mobile_hero_url = true
+  endif
+  assign has_separate_mobile_hero_video = false
+  if has_mobile_hero_shopify or has_mobile_hero_url
+    assign has_separate_mobile_hero_video = true
+  endif
+  assign use_mobile_video_hero_layout = false
+  if section.settings.hero_video != blank
+    assign use_mobile_video_hero_layout = true
+  endif
 %}
 
 <section
   id="HeroBrandIntro-{{ section.id }}"
-  class="hero-brand-intro"
+  class="hero-brand-intro{% if use_mobile_video_hero_layout %} hero-brand-intro--has-hero-video{% endif %}"
   style="--hbi-section-bg: {{ section.settings.background_color | default: '#f5f5f5' }};"
   aria-label="{% if section.settings.heading != blank %}{{ section.settings.heading | escape }}{% else %}Hero{% endif %}"
   {{ section.shopify_attributes }}
@@ -34,38 +52,105 @@
   %}
 
   <div class="hero-brand-intro__inner">
+    <div class="hero-brand-intro__media">
+      {% if section.settings.hero_video != blank %}
+        {% if has_separate_mobile_hero_video %}
+          {{
+            section.settings.hero_video
+            | video_tag:
+              class: 'hero-brand-intro__img hero-brand-intro__video--desktop-only',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: false,
+              playsinline: true
+          }}
+          {% if has_mobile_hero_shopify %}
+            {{
+              section.settings.hero_video_mobile
+              | video_tag:
+                class: 'hero-brand-intro__img hero-brand-intro__video--mobile-only',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true
+            }}
+          {% elsif has_mobile_hero_url %}
+            <video
+              class="hero-brand-intro__img hero-brand-intro__video--mobile-only"
+              src="{{ hero_video_mobile_url }}"
+              autoplay
+              muted
+              loop
+              playsinline
+              webkit-playsinline
+              preload="metadata"
+            ></video>
+          {% endif %}
+        {% else %}
+          {{
+            section.settings.hero_video
+            | video_tag:
+              class: 'hero-brand-intro__img',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: false,
+              playsinline: true
+          }}
+        {% endif %}
+      {% elsif section.settings.hero_image != blank %}
+        {{
+          section.settings.hero_image
+          | image_url: width: 2400
+          | image_tag:
+            class: 'hero-brand-intro__img',
+            loading: 'eager',
+            fetchpriority: 'high',
+            sizes: '(max-width: 749px) calc(100vw - 36px), (max-width: 1199px) 45vw, 42vw',
+            widths: '400, 600, 800, 1000, 1200, 1600, 2000, 2400',
+            alt: hero_alt
+        }}
+      {% else %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: class: 'hero-brand-intro__img hero-brand-intro__placeholder-svg' }}
+      {% endif %}
+    </div>
+
     <div class="hero-brand-intro__layout wrapper{% unless has_hero_ctas %} hero-brand-intro__layout--no-cta{% endunless %}">
       <div class="hero-brand-intro__copy">
-        {% if section.settings.tagline_lead != blank
-          or section.settings.badge_text != blank
-          or section.settings.tagline_trail != blank
-        %}
-          <div class="hero-brand-intro__tagline">
-            {% if section.settings.tagline_lead != blank or section.settings.badge_text != blank %}
-              <div class="hero-brand-intro__tagline-line1">
-                {% if section.settings.tagline_lead != blank %}
-                  <span class="hero-brand-intro__tagline-text">{{ section.settings.tagline_lead | escape }}</span>
-                {% endif %}
-                {% if section.settings.badge_text != blank %}
-                  <span class="hero-brand-intro__badge">{{ section.settings.badge_text | escape }}</span>
-                {% endif %}
-              </div>
-            {% endif %}
-            {% if section.settings.tagline_trail != blank %}
-              <p class="hero-brand-intro__tagline-text hero-brand-intro__tagline-trail">
-                {{ section.settings.tagline_trail | escape }}
-              </p>
-            {% endif %}
-          </div>
-        {% endif %}
+        <div class="hero-brand-intro__heading-block">
+          {% if section.settings.tagline_lead != blank
+            or section.settings.badge_text != blank
+            or section.settings.tagline_trail != blank
+          %}
+            <div class="hero-brand-intro__tagline">
+              {% if section.settings.tagline_lead != blank or section.settings.badge_text != blank %}
+                <div class="hero-brand-intro__tagline-line1">
+                  {% if section.settings.tagline_lead != blank %}
+                    <span class="hero-brand-intro__tagline-text">{{ section.settings.tagline_lead | escape }}</span>
+                  {% endif %}
+                  {% if section.settings.badge_text != blank %}
+                    <span class="hero-brand-intro__badge">{{ section.settings.badge_text | escape }}</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if section.settings.tagline_trail != blank %}
+                <p class="hero-brand-intro__tagline-text hero-brand-intro__tagline-trail">
+                  {{ section.settings.tagline_trail | escape }}
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
 
-        {% if section.settings.heading != blank %}
-          <h1 class="hero-brand-intro__heading">{{ section.settings.heading | escape }}</h1>
-        {% endif %}
+          {% if section.settings.heading != blank %}
+            <h1 class="hero-brand-intro__heading">{{ section.settings.heading | escape }}</h1>
+          {% endif %}
 
-        {% if section.settings.subheading != blank %}
-          <p class="hero-brand-intro__sub">{{ section.settings.subheading | escape }}</p>
-        {% endif %}
+          {% if section.settings.subheading != blank %}
+            <p class="hero-brand-intro__sub">{{ section.settings.subheading | escape }}</p>
+          {% endif %}
+        </div>
 
         {% if section.settings.button_label != blank or section.settings.formula_button_label != blank %}
           <div class="hero-brand-intro__actions hero-brand-intro__actions--desktop-only">
@@ -101,34 +186,6 @@
               </a>
             {% endif %}
           </div>
-        {% endif %}
-      </div>
-
-      <div class="hero-brand-intro__media"  {% if section.settings.hero_video != blank %} style="width: 100%;"{% endif %}>
-        {% if section.settings.hero_video != blank %}
-          {{
-            section.settings.hero_video
-            | video_tag:
-              class: 'hero-brand-intro__img',
-              autoplay: true,
-              loop: true,
-              muted: true,
-              controls: false
-          }}
-        {% elsif section.settings.hero_image != blank %}
-          {{
-            section.settings.hero_image
-            | image_url: width: 2400
-            | image_tag:
-              class: 'hero-brand-intro__img',
-              loading: 'eager',
-              fetchpriority: 'high',
-              sizes: '(max-width: 749px) calc(100vw - 36px), (max-width: 1199px) 45vw, 42vw',
-              widths: '400, 600, 800, 1000, 1200, 1600, 2000, 2400',
-              alt: hero_alt
-          }}
-        {% else %}
-          {{ 'lifestyle-1' | placeholder_svg_tag: class: 'hero-brand-intro__img hero-brand-intro__placeholder-svg' }}
         {% endif %}
       </div>
 
@@ -243,7 +300,20 @@
     {
       "type": "video",
       "id": "hero_video",
-      "label": "Hero Video"    
+      "label": "Hero Video"
+    },
+    {
+      "type": "video",
+      "id": "hero_video_mobile",
+      "label": "Hero video (mobile)",
+      "info": "Optional. When set, narrow screens use this clip instead of the main hero video."
+    },
+    {
+      "type": "text",
+      "id": "hero_video_mobile_url",
+      "label": "Hero video URL (mobile)",
+      "default": "https://cdn.shopify.com/videos/c/o/v/8bc46b0bde37487e931f3b94a565947d.mp4",
+      "info": "Optional direct MP4 link for mobile. Used when no mobile hero video is uploaded above. If both are empty, mobile uses the main hero video."
     },
     {
       "type": "image_picker",
