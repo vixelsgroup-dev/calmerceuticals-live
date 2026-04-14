@@ -55,6 +55,46 @@
   object-position: center center;
 }
 
+/* LCP: static poster until hero video can play (see hero-brand-intro.js) */
+.hero-brand-intro__lcp-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.hero-brand-intro--hero-media-ready .hero-brand-intro__lcp-poster {
+  opacity: 0;
+}
+
+/* Separate LCP posters: desktop vs mobile library picks */
+.hero-brand-intro__lcp-poster--desktop,
+.hero-brand-intro__lcp-poster--mobile {
+  display: none;
+}
+
+@media screen and (min-width: 999px) {
+  .hero-brand-intro__lcp-poster--desktop {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .hero-brand-intro__lcp-poster--mobile {
+    display: block;
+  }
+}
+
+.hero-brand-intro--has-hero-video .hero-brand-intro__media > video.hero-brand-intro__img {
+  position: relative;
+  z-index: 0;
+}
+
 /* Split sources: must align with desktop layout (min-width: 999px), not max-width: 1000px */
 .hero-brand-intro__video--mobile-only {
   display: none;
@@ -100,6 +140,7 @@
   }
 
   /* Nudge frame up: less empty top visible, subject sits higher above the CTA */
+  .hero-brand-intro--has-hero-video .hero-brand-intro__media .hero-brand-intro__lcp-poster,
   .hero-brand-intro--has-hero-video .hero-brand-intro__media .hero-brand-intro__img,
   .hero-brand-intro--has-hero-video .hero-brand-intro__media video.hero-brand-intro__img {
     width: 100%;
@@ -650,6 +691,10 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .hero-brand-intro__founder-row {
+    display: none !important;
+  }
+
   /* Media is first in DOM inside inner; restore copy → media → CTA for image/placeholder heroes */
   .hero-brand-intro:not(.hero-brand-intro--has-hero-video) .hero-brand-intro__inner {
     display: flex;
@@ -729,79 +774,6 @@
       ),
       linear-gradient(90deg, var(--hbi-burgundy) 0%, var(--hbi-burgundy) 100%);
   }
-
-  .hero-brand-intro__founder-row {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    top: auto;
-    z-index: auto;
-    --hbi-founder-w: 153px;
-    --hbi-founder-h: 258px;
-    width: var(--hbi-founder-w);
-    height: var(--hbi-founder-h);
-    margin-inline: auto;
-    margin-top: 8px;
-    display: block;
-    padding-bottom: 35px;
-    transform-origin: center center;
-  }
-
-  .hero-brand-intro__founder-row.is-expanded {
-    --hbi-founder-w: 260px;
-    --hbi-founder-h: min(490px, calc(100vh - 120px));
-  }
-
-  .hero-brand-intro__founder {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    align-items: center;
-    gap: 0;
-    background-color: transparent;
-  }
-
-  .hero-brand-intro__founder-row.is-expanded .hero-brand-intro__founder {
-    padding: 8px;
-    background-color: #fff;
-    gap: 18px;
-    align-items: flex-start;
-  }
-
-  .hero-brand-intro__founder-visual {
-    width: 153px;
-    margin-inline: 0;
-  }
-
-  .hero-brand-intro__founder-img {
-    height: 123%;
-    width: 100%;
-    top: -11.54%;
-    position: relative;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .hero-brand-intro__founder-row.is-expanded .hero-brand-intro__founder-img {
-    height: 100%;
-    top: 0;
-    position: static;
-    object-position: center center;
-  }
-
-  .hero-brand-intro__founder-caption {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 19.2px;
-    letter-spacing: -0.07em;
-    color: #000;
-  }
-
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -838,9 +810,14 @@
     transition: none;
   }
 
+  .hero-brand-intro--has-hero-video .hero-brand-intro__media .hero-brand-intro__lcp-poster,
   .hero-brand-intro--has-hero-video .hero-brand-intro__media .hero-brand-intro__img,
   .hero-brand-intro--has-hero-video .hero-brand-intro__media video.hero-brand-intro__img {
     transform: none;
+  }
+
+  .hero-brand-intro--hero-media-ready .hero-brand-intro__lcp-poster {
+    transition: none;
   }
 }
 

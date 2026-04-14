@@ -35,6 +35,29 @@
   if section.settings.hero_video != blank
     assign use_mobile_video_hero_layout = true
   endif
+
+  assign lcp_poster_desktop_url = ''
+  assign lcp_poster_mobile_url = ''
+  assign lcp_poster_two_images = false
+  if section.settings.hero_video != blank
+    if section.settings.hero_lcp_poster_desktop != blank
+      assign lcp_poster_desktop_url = section.settings.hero_lcp_poster_desktop | image_url: width: 1800
+    elsif section.settings.hero_image != blank
+      assign lcp_poster_desktop_url = section.settings.hero_image | image_url: width: 1800
+    elsif section.settings.hero_video.preview_image != blank
+      assign lcp_poster_desktop_url = section.settings.hero_video.preview_image | image_url: width: 1800
+    endif
+
+    if section.settings.hero_lcp_poster_mobile != blank
+      assign lcp_poster_mobile_url = section.settings.hero_lcp_poster_mobile | image_url: width: 1200
+    elsif lcp_poster_desktop_url != blank
+      assign lcp_poster_mobile_url = lcp_poster_desktop_url
+    endif
+
+    if section.settings.hero_lcp_poster_mobile != blank and lcp_poster_mobile_url != lcp_poster_desktop_url
+      assign lcp_poster_two_images = true
+    endif
+  endif
 %}
 
 <section
@@ -53,33 +76,163 @@
 
   <div class="hero-brand-intro__inner">
     <div class="hero-brand-intro__media">
+      {% if section.settings.hero_video != blank and lcp_poster_desktop_url != blank %}
+        {% if lcp_poster_two_images %}
+          {% if section.settings.hero_lcp_poster_desktop != blank %}
+            {{
+              section.settings.hero_lcp_poster_desktop
+              | image_url: width: 1800
+              | image_tag:
+                class: 'hero-brand-intro__lcp-poster hero-brand-intro__lcp-poster--desktop',
+                loading: 'eager',
+                fetchpriority: 'high',
+                decoding: 'async',
+                sizes: '100vw',
+                widths: '450, 900, 1200, 1500, 1800',
+                alt: ''
+            }}
+          {% elsif section.settings.hero_image != blank %}
+            {{
+              section.settings.hero_image
+              | image_url: width: 1800
+              | image_tag:
+                class: 'hero-brand-intro__lcp-poster hero-brand-intro__lcp-poster--desktop',
+                loading: 'eager',
+                fetchpriority: 'high',
+                decoding: 'async',
+                sizes: '100vw',
+                widths: '450, 900, 1200, 1500, 1800',
+                alt: ''
+            }}
+          {% elsif section.settings.hero_video.preview_image != blank %}
+            {{
+              section.settings.hero_video.preview_image
+              | image_url: width: 1800
+              | image_tag:
+                class: 'hero-brand-intro__lcp-poster hero-brand-intro__lcp-poster--desktop',
+                loading: 'eager',
+                fetchpriority: 'high',
+                decoding: 'async',
+                sizes: '100vw',
+                widths: '450, 900, 1200, 1500, 1800',
+                alt: ''
+            }}
+          {% endif %}
+          {{
+            section.settings.hero_lcp_poster_mobile
+            | image_url: width: 1200
+            | image_tag:
+              class: 'hero-brand-intro__lcp-poster hero-brand-intro__lcp-poster--mobile',
+              loading: 'eager',
+              fetchpriority: 'high',
+              decoding: 'async',
+              sizes: '100vw',
+              widths: '400, 600, 800, 1000, 1200',
+              alt: ''
+          }}
+        {% elsif section.settings.hero_lcp_poster_desktop != blank %}
+          {{
+            section.settings.hero_lcp_poster_desktop
+            | image_url: width: 1800
+            | image_tag:
+              class: 'hero-brand-intro__lcp-poster',
+              loading: 'eager',
+              fetchpriority: 'high',
+              decoding: 'async',
+              sizes: '100vw',
+              widths: '450, 900, 1200, 1500, 1800',
+              alt: ''
+          }}
+        {% elsif section.settings.hero_image != blank %}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1800
+            | image_tag:
+              class: 'hero-brand-intro__lcp-poster',
+              loading: 'eager',
+              fetchpriority: 'high',
+              decoding: 'async',
+              sizes: '100vw',
+              widths: '450, 900, 1200, 1500, 1800',
+              alt: ''
+          }}
+        {% elsif section.settings.hero_video.preview_image != blank %}
+          {{
+            section.settings.hero_video.preview_image
+            | image_url: width: 1800
+            | image_tag:
+              class: 'hero-brand-intro__lcp-poster',
+              loading: 'eager',
+              fetchpriority: 'high',
+              decoding: 'async',
+              sizes: '100vw',
+              widths: '450, 900, 1200, 1500, 1800',
+              alt: ''
+          }}
+        {% endif %}
+      {% endif %}
       {% if section.settings.hero_video != blank %}
         {% if has_separate_mobile_hero_video %}
-          {{
-            section.settings.hero_video
-            | video_tag:
-              class: 'hero-brand-intro__img hero-brand-intro__video--desktop-only',
-              autoplay: true,
-              loop: true,
-              muted: true,
-              controls: false,
-              playsinline: true
-          }}
-          {% if has_mobile_hero_shopify %}
+          {% if lcp_poster_desktop_url != blank %}
             {{
-              section.settings.hero_video_mobile
+              section.settings.hero_video
               | video_tag:
-                class: 'hero-brand-intro__img hero-brand-intro__video--mobile-only',
+                class: 'hero-brand-intro__img hero-brand-intro__video--desktop-only',
                 autoplay: true,
                 loop: true,
                 muted: true,
                 controls: false,
-                playsinline: true
+                playsinline: true,
+                poster: lcp_poster_desktop_url,
+                preload: 'metadata'
             }}
+          {% else %}
+            {{
+              section.settings.hero_video
+              | video_tag:
+                class: 'hero-brand-intro__img hero-brand-intro__video--desktop-only',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% endif %}
+          {% if has_mobile_hero_shopify %}
+            {% if lcp_poster_mobile_url != blank %}
+              {{
+                section.settings.hero_video_mobile
+                | video_tag:
+                  class: 'hero-brand-intro__img hero-brand-intro__video--mobile-only',
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  controls: false,
+                  playsinline: true,
+                  poster: lcp_poster_mobile_url,
+                  preload: 'metadata'
+              }}
+            {% else %}
+              {{
+                section.settings.hero_video_mobile
+                | video_tag:
+                  class: 'hero-brand-intro__img hero-brand-intro__video--mobile-only',
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  controls: false,
+                  playsinline: true,
+                  preload: 'metadata'
+              }}
+            {% endif %}
           {% elsif has_mobile_hero_url %}
             <video
               class="hero-brand-intro__img hero-brand-intro__video--mobile-only"
               src="{{ hero_video_mobile_url }}"
+              {% if lcp_poster_mobile_url != blank %}
+                poster="{{ lcp_poster_mobile_url | escape }}"
+              {% endif %}
               autoplay
               muted
               loop
@@ -89,16 +242,32 @@
             ></video>
           {% endif %}
         {% else %}
-          {{
-            section.settings.hero_video
-            | video_tag:
-              class: 'hero-brand-intro__img',
-              autoplay: true,
-              loop: true,
-              muted: true,
-              controls: false,
-              playsinline: true
-          }}
+          {% if lcp_poster_desktop_url != blank %}
+            {{
+              section.settings.hero_video
+              | video_tag:
+                class: 'hero-brand-intro__img',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                poster: lcp_poster_desktop_url,
+                preload: 'metadata'
+            }}
+          {% else %}
+            {{
+              section.settings.hero_video
+              | video_tag:
+                class: 'hero-brand-intro__img',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% endif %}
         {% endif %}
       {% elsif section.settings.hero_image != blank %}
         {{
@@ -316,10 +485,26 @@
       "info": "Optional direct MP4 link for mobile. Used when no mobile hero video is uploaded above. If both are empty, mobile uses the main hero video."
     },
     {
+      "type": "header",
+      "content": "Video posters (LCP)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_lcp_poster_desktop",
+      "label": "Poster image (desktop)",
+      "info": "Shown full-width behind the hero until the desktop video plays. If empty, falls back to Hero image, then the main video preview."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_lcp_poster_mobile",
+      "label": "Poster image (mobile)",
+      "info": "Shown until the mobile hero video plays. If empty, uses the desktop poster (or Hero image / video preview). Upload a different file here only when you need a separate mobile crop."
+    },
+    {
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero image",
-      "info": "Product or lifestyle shot. Shown on the right on large screens and stacked on mobile. A Shopify placeholder image is shown if empty."
+      "info": "Without a hero video: main hero visual. With a video: fallback for desktop/mobile posters when the poster pickers above are empty."
     },
     {
       "type": "text",
