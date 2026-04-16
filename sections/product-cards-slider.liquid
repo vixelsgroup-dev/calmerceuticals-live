@@ -6,12 +6,25 @@
   assign pcs_pt_desktop = section.settings.padding_top_desktop | default: 60
   assign pcs_pb_desktop = section.settings.padding_bottom_desktop | default: 64
   assign pcs_container_max = section.settings.max_container_width | default: '1440'
+  assign pcs_heading_size_mobile = section.settings.heading_font_size_mobile | default: 36
+  assign pcs_heading_size_desktop = section.settings.heading_font_size_desktop | default: 52
   if pcs_container_max == 'full'
     assign pcs_container_max_css = 'none'
   else
     assign pcs_container_max_css = pcs_container_max | append: 'px'
   endif
 %}
+
+<style>
+  #ProductCardsSlider-{{ section.id }} .product-cards-slider__heading {
+    font-size: {{ pcs_heading_size_mobile }}px;
+  }
+  @media (min-width: 768px) {
+    #ProductCardsSlider-{{ section.id }} .product-cards-slider__heading {
+      font-size: {{ pcs_heading_size_desktop }}px;
+    }
+  }
+</style>
 
 <section
   id="ProductCardsSlider-{{ section.id }}"
@@ -185,6 +198,30 @@
       "type": "url",
       "id": "products_link",
       "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Heading font size"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 36
     },
     {
       "type": "header",

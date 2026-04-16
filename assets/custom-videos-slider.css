@@ -17,15 +17,11 @@
   margin: 0;
   color: var(--cvs-title-color, #610c27);
   font-family: "Jost", sans-serif;
-  font-size: 44px;
+  font-size: 30px; /* reduced from 44px */
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.04em;
   max-width: 645px;
-}
-
-.custom-videos-slider__title p {
-  margin: 0;
 }
 
 .custom-videos-slider__title strong {

@@ -314,6 +314,7 @@
       "blocks": {
         "video_card_EfQwHw": {
           "type": "video_card",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/Collagen-testimonial-5 v2.mp4",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/168d500150664011aa3820b5a6104bae.mp4",
@@ -356,6 +357,7 @@
         "heading": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>",
         "subtext": "<p>Don't just take our word for it, see what our customers say</p>",
         "heading_size": 48,
+        "heading_size_mobile": 30,
         "button_label": "START YOUR REJUVENATION",
         "button_link": "",
         "footnote": "Formulated with clinically researched bio-fermented polyphenols and triple-biotic synergy.",
@@ -478,8 +480,8 @@
         "background_color": "",
         "color": "#000000",
         "border_color": "#000000",
-        "padding_top": 82,
-        "padding_bottom": 30
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "hover_before_after_BMMLqM": {
@@ -589,7 +591,7 @@
       "settings": {
         "use_container": true,
         "section_bg_color": "#ffffff",
-        "padding_top": 96,
+        "padding_top": 0,
         "padding_bottom": 96,
         "gap": 8,
         "border_radius": 8,
@@ -744,8 +746,8 @@
       ],
       "name": "Image Cards",
       "settings": {
-        "padding_top": 88,
-        "padding_bottom": 88,
+        "padding_top": 40,
+        "padding_bottom": 26,
         "container_width": true,
         "background_color": "#ffffff",
         "heading_color": "#5c1a2e",
@@ -755,7 +757,7 @@
         "button_text_color": "#ffffff",
         "heading": "<p>Restore What Time Takes</p>",
         "heading_size": 48,
-        "subtext": "<p>A therapeutic 10,000mg dose of VERISOL® marine collagen, enhanced with bioactive ingredients to rebuild skin density, <br/>improve elasticity, and strengthen hair and nails from within.</p>",
+        "subtext": "<p>10,000mg VERISOL® marine collagen, boosted with bioactives to improve skin density, elasticity, & hair and nail strength.</p>",
         "button_label": "Start Your Skin Transformation",
         "mobile_button_label": "Start Your Beauty Routine",
         "button_link": "#product__subs__wrap",
@@ -814,9 +816,9 @@
         "row3_overlay": "rgba(0, 0, 0, 0.1)",
         "row3_pad": 40,
         "row3_title": "<p>Good. Better. Best.</p>",
-        "row3_title_size": 96,
+        "row3_title_size": 78,
         "row3_title_color": "#ffffff",
-        "row3_body": "<p>Seven years in research and development. This is Australia's highest liquid collagen dose. The global gold standard of what supplementation should be. Premium. Proven and effective. Try it today</p>",
+        "row3_body": "<p>Seven years of R&D. Australia’s highest-dose liquid collagen. A global benchmark, premium, proven, effective. Try it today.</p>",
         "row3_body_size": 32,
         "row3_body_color": "#ffffff"
       }
@@ -825,14 +827,14 @@
       "type": "support-level",
       "name": "Support at Every Level",
       "settings": {
-        "padding_top": 120,
+        "padding_top": 64,
         "padding_bottom": 40,
         "container_width": true,
         "background_color": "#ffffff",
         "heading_color": "#3a3d38",
         "body_color": "#323232",
-        "heading": "<p>Clinically Studied <br/><strong>Beauty Support</strong></p>",
-        "heading_size": 64,
+        "heading": "<p>Clinically Studied <br/>Beauty Support</p>",
+        "heading_size": 58,
         "button_label": "Start Your Skin Transformation",
         "mobile_button_label": "Start Your Beauty Routine",
         "button_link": "#product__subs__wrap-main",
@@ -844,7 +846,7 @@
         "secondary_button_bg": "#fff",
         "secondary_button_text_color": "#610c27",
         "secondary_btn_border_color": "#610c27",
-        "body_text": "<p>Science-backed beauty from within. We combine scientifically studied ingredients at clinically effective doses, with no synthetics, no fillers, no trace-level dosing and zero sugar.Every ingredient is carefully selected and used at doses shown to significantly improve healthier skin, stronger hair, and resilient nails.Formulated for visible, measurable and proven results.<br/><br/></p>",
+        "body_text": "<p>Science-backed beauty, clinically proven doses, zero fillers or sugar, for visible results in skin, hair, and nails.</p>",
         "body_size": 20,
         "card_bg": "#ffffff",
         "card_radius": 16,
@@ -1064,7 +1066,7 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "quote": "<p>“I’m 44 and have tried just about every powder on the market, but they always made me feel so bloated. I’ve been taking these liquid sachets for six weeks now and the difference is night and day. My skin actually feels ‘plump’ again, especially around my eyes where I usually get dry. Plus, no bloating at all!”</p>",
+            "quote": "<p>I’m 44 and after trying countless powders that caused bloating, these liquid sachets changed everything in six weeks, no bloating, just results.<br/>My skin feels plumper again, especially around my eyes.</p>",
             "name": "Sarah J. (Melbourne, VIC)"
           }
         },
@@ -1072,7 +1074,7 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "quote": "<p>“I bought this specifically for my hair after a lot of postpartum shedding. It took about two months of consistent daily use, but I’m finally seeing all these little baby hairs coming in at my temples. The Wild Berry flavor is nice—I just mix it into my morning water and go. It’s a bit of an investment, but the results are actually visible.”</p>",
+            "quote": "<p>I bought this for postpartum hair shedding and after two months I’m seeing baby hairs returning at my temples. The Wild Berry flavor is easy to take daily. It’s an investment, but the results are visible.</p>",
             "name": "Elena D. (Brisbane, QLD)"
           }
         },
@@ -1080,7 +1082,7 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "quote": "<p>“Honestly, I was mostly interested in the Vitamin D and Hyaluronic Acid combo since I’m always running low on energy. Not only do I feel a bit more ‘vibrant’ throughout the day, but my nail technician actually asked what I was doing differently because my natural nails are so much stronger. Definitely sticking with the subscription.”</p>",
+            "quote": "<p>Initially for Vitamin D and hyaluronic acid to support energy, I now feel more vibrant daily and have noticeably stronger nails—enough for my nail tech to comment. I’m sticking with the subscription.</p>",
             "name": "Rachel W. (Perth, WA)"
           }
         },
@@ -1088,7 +1090,7 @@
           "type": "review",
           "settings": {
             "stars": 5,
-            "quote": "<p>“I’ve been using the Mango & Mandarin for about 3 months. At first, I wasn’t sure if it was doing much, but then I looked at a photo of myself from last year and my skin looks so much more radiant now. The fine lines on my forehead have softened significantly. It has a slight 'vitamin' taste, but it’s 100% worth it for the glow it gives.”</p>",
+            "quote": "<p>After 3 months of Mango & Mandarin, I noticed my skin is more radiant compared to last year, with softened forehead lines. Slight vitamin taste, but worth it for the glow.</p>",
             "name": "Michelle K. (Sydney, NSW)"
           }
         }
@@ -1102,7 +1104,7 @@
       "name": "Reviews Grid",
       "settings": {
         "padding_top": 60,
-        "padding_bottom": 60,
+        "padding_bottom": 24,
         "container_width": true,
         "background_color": "#f9f9fb",
         "heading_main": "1,450 verified",
@@ -1156,16 +1158,16 @@
       ],
       "name": "Available Flavours",
       "settings": {
-        "padding_top": 48,
-        "padding_bottom": 48,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "container_width": true,
-        "background_color": "#f7f9ee",
+        "background_color": "#ffffff",
         "heading_color": "#610c27",
         "label_color": "#ffffff",
         "heading_size": 48,
         "label_size": 36,
-        "card_radius": 12,
-        "card_gap": 14,
+        "card_radius": 8,
+        "card_gap": 8,
         "heading": "Available Flavours"
       }
     },
@@ -1225,7 +1227,7 @@
         "padding_top": 32,
         "padding_bottom": 32,
         "container_width": true,
-        "background_color": "#ecefdf",
+        "background_color": "#ffffff",
         "heading_color": "#1a0d10",
         "heading_brand_color": "#5c1a2e",
         "heading_brand": "Calmerceuticals",

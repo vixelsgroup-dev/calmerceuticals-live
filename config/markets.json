@@ -9,6 +9,12 @@
  */
 {
   "markets": {
+    "united-states": {
+      "parent": "@default"
+    },
+    "united-kingdom": {
+      "parent": "@default"
+    },
     "south-america": {
       "parent": "@default"
     },
@@ -16,12 +22,6 @@
       "parent": "@default"
     },
     "canada": {
-      "parent": "@default"
-    },
-    "united-kingdom": {
-      "parent": "@default"
-    },
-    "united-states": {
       "parent": "@default"
     }
   }

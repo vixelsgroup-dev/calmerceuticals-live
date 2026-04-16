@@ -32,6 +32,7 @@
       "block_order": [
         "button_aBy9bi"
       ],
+      "disabled": true,
       "custom_css": [
         ".banner-image.banner-image--slide {padding-top: 0;}"
       ],
@@ -150,7 +151,7 @@
         "heading_eh6hLz": {
           "type": "heading",
           "settings": {
-            "text": "<p><strong>THE FORMULA THAT CHANGES EVERYTHING</strong></p>",
+            "text": "<p><strong>THE NEW ERA OF VITALITY</strong></p>",
             "size": 100,
             "heading_highlight_type": "highlight",
             "highlight_color": "#000000",
@@ -160,7 +161,7 @@
         "subheading_e6zQHa": {
           "type": "subheading",
           "settings": {
-            "text": "<p>We didn't just raise the bar. We built a new league. </p><p>Ultra Performance. World First. Game Changed.<br/><br/></p>",
+            "text": "<p>THE EVOLUTION OF SKINCARE AND STRENGTH.</p><p>DEEP HYDRATION. PURE POTENCY. UNMATCHED RESULTS.</p>",
             "size": 110,
             "margin_bottom": 0
           }
@@ -168,7 +169,7 @@
         "text_ExAzUG": {
           "type": "text",
           "settings": {
-            "text": "<p>Get ready for the ultimate upgrade to your body. Our clinically advanced adaptogen formula is engineered for peak human performance. Your best is about to get better.</p>",
+            "text": "<p>Experience the definitive formula for resilience. Our clinically advanced collagen peptide blend is crafted to support cellular longevity and effortless glow. Your finest self, redefined.</p>",
             "size": 100
           }
         }
@@ -227,16 +228,16 @@
           "type": "image",
           "settings": {
             "column_width": 50,
-            "image": "shopify://shop_images/DSC01320_v2.jpg",
+            "image": "shopify://shop_images/Womans.png",
             "image_width": 100,
-            "aspect_ratio_desktop": 1.2,
+            "aspect_ratio_desktop": 0.8,
             "aspect_ratio_mobile": 1,
-            "title": "Ultra Performance: For Men",
+            "title": "VERISOL® Marine Collagen | Women",
             "heading_size": 150,
             "text": "",
             "text_size": 175,
             "button_text": "SHOP NOW",
-            "button_link": "shopify://products/ultra-performance-for-men",
+            "button_link": "shopify://products/verisol-enhanced-marine-collagen",
             "button_color": "btn--black",
             "button_style": "btn--solid",
             "button_size": "btn--medium"
@@ -246,11 +247,11 @@
           "type": "image",
           "settings": {
             "column_width": 50,
-            "image": "shopify://shop_images/DSC00937_v2.jpg",
+            "image": "shopify://shop_images/mens_colllagen.png",
             "image_width": 100,
-            "aspect_ratio_desktop": 1.2,
+            "aspect_ratio_desktop": 0.8,
             "aspect_ratio_mobile": 1,
-            "title": "Ultra Performance: For Women",
+            "title": "VERISOL® Marine Collagen | Men",
             "heading_size": 150,
             "text": "",
             "text_size": 100,

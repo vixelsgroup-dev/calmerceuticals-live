@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  padding: 20px 18px;
+  padding: 8px 18px; /* reduced from 20px */
   border-top: 1px solid var(--cs-divider-color, rgba(255, 255, 255, 0.15));
 }
 
@@ -68,7 +68,7 @@
 .clinical-stats__metric-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 8px; /* reduced from 30px */
   width: 100%;
 }
 
@@ -143,7 +143,7 @@
 
   .clinical-stats__metric {
     min-height: 0;
-    padding: 12px 16px 16px;
+    padding: 8px 16px; /* reduced from 12px 16px 16px */
     border-top: 0;
     border-left: 1px solid var(--cs-divider-color, rgba(255, 255, 255, 0.15));
     justify-content: center;
@@ -160,7 +160,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 2.5vh, 36px);
+    gap: 8px; /* reduced from clamp(20px, 2.5vh, 36px) */
     min-height: 0;
     width: 100%;
   }

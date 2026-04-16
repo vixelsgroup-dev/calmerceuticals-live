@@ -18,7 +18,10 @@
       "settings": {
         "background_color": "#f5f5f5",
         "hero_video": "shopify://files/videos/Gen-4_5 - Use the uploaded image as the baseDo not change anything in the sceneAnimate only the co.gen-4_5 - use the uploaded image as the basedo not change anything in the sceneanimate only the co.mp4",
+        "hero_video_mobile": "shopify://files/videos/hero-bg-mobile-new.mp4",
         "hero_video_mobile_url": "https://cdn.shopify.com/videos/c/o/v/8bc46b0bde37487e931f3b94a565947d.mp4",
+        "hero_lcp_poster_desktop": "shopify://shop_images/hero-desk-placeholder.png",
+        "hero_lcp_poster_mobile": "shopify://shop_images/hero-bg-mobile-new-pic_1.png",
         "hero_image": "shopify://shop_images/Screenshot_2026-04-12_at_10.48.58_PM.png",
         "tagline_lead": "Australia's",
         "badge_text": "#1 Ingestible Brand",
@@ -30,7 +33,7 @@
         "cta_avatar": "shopify://shop_images/calmerceuticals-cta.png",
         "formula_button_label": "Find Formula",
         "formula_button_link": "shopify://pages/questionnaire",
-        "show_founder_message": false,
+        "show_founder_message": true,
         "founder_video": "shopify://files/videos/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4",
         "founder_label": "Founder Message"
       }
@@ -148,7 +151,7 @@
         "product_dwjMgm": {
           "type": "product",
           "settings": {
-            "title": "Ultra Perforamance",
+            "title": "Ultra Performance",
             "price": "",
             "product_link": "shopify://collections/ultra-performance",
             "image": "shopify://shop_images/Ultra_vending.jpg",
@@ -180,10 +183,10 @@
       "settings": {
         "background_color": "#610c27",
         "max_container_width": "1440",
-        "padding_top_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "padding_top_desktop": 72,
-        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 44,
+        "padding_bottom_desktop": 44,
         "heading_line_1": "Four systems.",
         "heading_line_2": "One gold standard.",
         "subheading": "Clinically dosed systems for skin, hormones, gut, and performance.",
@@ -364,8 +367,8 @@
         "max_container_width": "1440",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
         "heading": "<p>Hear from people<br/>who are already using our <strong>product</strong></p>",
         "subheading": "Don't just take our word for it, see what our customers say",
         "autoplay_carousel": true,
@@ -391,28 +394,28 @@
         "metric_dwVezn": {
           "type": "metric",
           "settings": {
-            "label": "VERISOL(R) per serve",
+            "label": "VERISOL(R) per serve (up to)",
             "value": "10,000mg"
           }
         },
         "metric_URexBj": {
           "type": "metric",
           "settings": {
-            "label": "reduction in wrinkles",
+            "label": "Up to reduction in wrinkles",
             "value": "42%"
           }
         },
         "metric_3KFaWe": {
           "type": "metric",
           "settings": {
-            "label": "fewer crow's feet",
+            "label": "Fewer crow’s feet (up to)",
             "value": "34%"
           }
         },
         "metric_4ncTGa": {
           "type": "metric",
           "settings": {
-            "label": "improvement in skin elasticity",
+            "label": "improvement in skin elasticity (up to)",
             "value": "30%"
           }
         }
@@ -430,11 +433,11 @@
       "settings": {
         "background_color": "#610c27",
         "max_container_width": "1440",
-        "padding_top_desktop": 100,
+        "padding_top_desktop": 92,
         "padding_bottom_desktop": 100,
-        "padding_top_mobile": 72,
-        "padding_bottom_mobile": 48,
-        "heading": "<p>Our formulations are built on clinically studied ingredients and tested in real-world routines. Across global users, we track visible improvements in skin elasticity, hydration, and overall vitality - because results should be measured, not assumed.</p>",
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 44,
+        "heading": "<p>Clinically studied, real-world tested formulas.</p>",
         "heading_color": "#ffffff",
         "label_color": "#e0e0e0",
         "value_color": "#ffffff",
@@ -617,9 +620,9 @@
             "image": "shopify://shop_images/The_right_formula_for_the_right_need_1.png",
             "title_line_1": "PeriCalm™",
             "title_line_2": "Perimenopause Relief",
-            "description": "Formulated with clinically studied ingredients designed to support hormonal balance, reduce hot flushes and night sweats, improve sleep, and stabilise mood — while VERISOL® collagen and EpiBrightTM support skin elasticity and pigmentation balance. A complete system for perimenopause.",
+            "description": "Clinically formulated for hormonal balance, menopause relief, and skin support in one complete system.",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "shopify://products/pericalm-perimenopause-supplement-f12"
           }
         },
         "product_card_eFDkMx": {
@@ -628,9 +631,9 @@
             "image": "shopify://shop_images/The_right_formula_for_the_right_need_2.png",
             "title_line_1": "Ultra Performance",
             "title_line_2": "For Men",
-            "description": "Formulated with Fermented Shilajit, Maca Root, and Punica Granatum — clinically studied ingredients designed to support testosterone balance, strength, endurance, and connective tissue recovery. Built for output that holds.",
+            "description": "Formulated to support testosterone, strength, endurance, and recovery built for lasting performance.",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "shopify://products/ultra-performance-for-men"
           }
         },
         "product_card_RVPmgQ": {
@@ -639,9 +642,9 @@
             "image": "shopify://shop_images/The_right_formula_for_the_right_need_3.png",
             "title_line_1": "VERISOL®",
             "title_line_2": "Enhanced Marine Collagen",
-            "description": "Formulated with 10,000mg VERISOL® marine collagen peptides — clinically studied ingredients shown to support up to 43% reduction in wrinkle depth and 34% fewer crow's feet in 12 weeks. Liquid delivery supports rapid absorption — so the dose your skin needs actually gets there.",
+            "description": "10,000mg VERISOL® marine collagen for smoother skin, reduced wrinkles, and fast-absorbing delivery that ensures results.",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "shopify://products/enhanced-marine-collagen-for-men"
           }
         },
         "product_card_z3Fz7P": {
@@ -650,9 +653,9 @@
             "image": "shopify://shop_images/The_right_formula_for_the_right_need_4.png",
             "title_line_1": "Longevity Starts",
             "title_line_2": "In Your Gut",
-            "description": "Formulated with 60 billion probiotics and 10 billion postbiotics — clinically studied ingredients designed to restore microbiome balance, reinforce gut barrier integrity, and reduce inflammatory load. When your gut functions correctly, everything else follows.",
+            "description": "60 billion probiotics & 10 billion postbiotics to restore gut balance, strengthen the barrier, & reduce inflammation for whole-body health.",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "shopify://products/microbiome-first-longevity-support"
           }
         }
       },
@@ -669,13 +672,15 @@
       "settings": {
         "heading_line_1": "Formulated for the right outcome.",
         "heading_line_2": "",
-        "description": "From collagen for skin and hair to adaptogenic support for energy and focus, to targeted solutions for menopause, inflammation, and longevity, each product is designed for a specific result.",
+        "description": "Targeted formulas from collagen and adaptogens to menopause and longevity support deliver specific results.",
         "quiz_label": "Take the quiz",
         "quiz_link": "shopify://pages/questionnaire",
         "products_label": "See all products",
         "products_link": "shopify://collections/all",
+        "heading_font_size_desktop": 52,
+        "heading_font_size_mobile": 30,
         "max_container_width": "1440",
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 32,
         "padding_bottom_mobile": 72,
         "padding_top_desktop": 72,
         "padding_bottom_desktop": 64,
@@ -707,15 +712,17 @@
       "settings": {
         "background_color": "#f4f4f4",
         "max_container_width": "1440",
-        "padding_top_desktop": 152,
-        "padding_bottom_desktop": 152,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
         "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
+        "padding_bottom_mobile": 0,
         "heading_color": "#000000",
         "heading_accent_color": "#610c27",
         "description_color": "#131014",
         "button_text_color": "#ffffff",
         "button_background_color": "#610c27",
+        "heading_font_size_desktop": 56,
+        "heading_font_size_mobile": 36,
         "heading_line_1": "Australia's # 1",
         "heading_line_2": "",
         "heading_line_3": "ingestible brand",
@@ -777,8 +784,8 @@
       "name": "Testimonial showcase",
       "settings": {
         "background_color": "#ffffff",
-        "padding_top": 120,
-        "padding_bottom": 120
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     },
     "section_marquee_pep6NQ": {
