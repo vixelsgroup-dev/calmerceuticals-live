@@ -32,7 +32,7 @@
         "button_link": "shopify://collections/all",
         "cta_avatar": "shopify://shop_images/calmerceuticals-cta.png",
         "formula_button_label": "Find Formula",
-        "formula_button_link": "shopify://pages/questionnaire",
+        "formula_button_link": "shopify://pages/start-calmerceuticals-com-quiz",
         "show_founder_message": true,
         "founder_video": "shopify://files/videos/4594ff1e-98a4-4664-8755-c2f090189bbd.mp4",
         "founder_label": "Founder Message"
@@ -674,7 +674,7 @@
         "heading_line_2": "",
         "description": "Targeted formulas from collagen and adaptogens to menopause and longevity support deliver specific results.",
         "quiz_label": "Take the quiz",
-        "quiz_link": "shopify://pages/questionnaire",
+        "quiz_link": "shopify://pages/start-calmerceuticals-com-quiz",
         "products_label": "See all products",
         "products_link": "shopify://collections/all",
         "heading_font_size_desktop": 52,
@@ -1093,7 +1093,7 @@
           "type": "button",
           "settings": {
             "button_text": "Find Formula",
-            "button_link": "shopify://pages/questionnaire",
+            "button_link": "shopify://pages/start-calmerceuticals-com-quiz",
             "button_color": "btn--secondary",
             "button_style": "btn--outline",
             "button_size": "btn--medium"
