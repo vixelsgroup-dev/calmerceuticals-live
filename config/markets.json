@@ -14,9 +14,6 @@
     },
     "south-america": {
       "parent": "@default"
-    },
-    "europe": {
-      "parent": "@default"
     }
   }
 }
