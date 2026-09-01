@@ -17,9 +17,6 @@
     },
     "europe": {
       "parent": "@default"
-    },
-    "canada": {
-      "parent": "@default"
     }
   }
 }
